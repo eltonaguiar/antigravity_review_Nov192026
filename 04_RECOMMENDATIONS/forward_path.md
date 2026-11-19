@@ -25,6 +25,20 @@ forward); the third is capital discipline.
    kill the `bt_backtest_trades` duplication (pre-aggregate to (strategy, symbol, class,
    month)); add staleness assertions that fail CI.
 
+## Addendum (adopted from peer work, 2026-11-19)
+
+Two peer findings sharpen the plan:
+
+1. **Keep a shadow/negative control emitting.** Phase 1's "pause emission everywhere else"
+   conflicts with the need to accrue forward observations. Keep a low-cost shadow cohort
+   (a handful of strategies emitting at paper size, including known-losers as controls) so
+   `forward_observations` accumulates the rows audit3 needs to promote. Without forward rows
+   the promotion path stays dead regardless of gates. (07_PEER_REVIEW_UNIVERSAL_PISCES.)
+2. **Fix the leaky walk-forward gate first.** `wf_verdict` reads +0.96%/trade raw but
+   collapses to −0.19%/trade under point-in-time replay because `at_issue_*` is stamped on
+   only 6% of rows. Stamp `at_issue_*` at creation as a P0-1 fix before trusting any
+   walk-forward verdict. (05_KILO_REVIEW F3.)
+
 ## Phase 2 — Pre-registered pods (weeks 2–3; signed before any new data)
 
 | Pod | Expression | Gate |
