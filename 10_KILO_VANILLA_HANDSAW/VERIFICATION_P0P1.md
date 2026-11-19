@@ -70,10 +70,14 @@ shadow trades for pods that have no registered condition).
 `_promote` (FDR/DSR/forward), no harm gate. They could reach `PROVEN_T2` on raw
 statistics alone. Now gated like every other bucket.
 
-## Fix commit
+## Fix commits
 
-`b9dd4378e65` on `fix/audit3-alpha-scope` (worktree
-`.kilo/worktrees/vanilla-handsaw-audit3`, based on `3dfa66e`):
+Two commits on `fix/audit3-alpha-scope` (worktree
+`.kilo/worktrees/vanilla-handsaw-audit3`, based on `3dfa66e`). The second exists
+because an adversarial review of the first found five defects, including one that
+would have left G8 fail-open on the published path.
+
+`b9dd4378e65` — first pass:
 
 - `alpha_engine/audit3_selection_alpha.py` — emit `by_strategy`
 - `alpha_engine/audit3_tribunal.py` — scope-aware G8, `GLOBAL_TRIAL_FLOOR`,
@@ -82,8 +86,22 @@ statistics alone. Now gated like every other bucket.
 - `tests/test_audit3_tribunal.py` — 9 new tests
 - `updates/2026-11-19-audit3-g8-scope-global-dsr-family-gates-forward-schedule.md`
 
-Verification: `75 passed` across the six audit3/forward test files;
-workflow YAML parses. Not pushed.
+`3844a4e34e2` — second pass, closing the review's findings:
+
+- `require_alpha=True` on the CLI path + `demote_proven_without_alpha()`: a
+  missing alpha sidecar (the ledger workflow tolerates one) now demotes
+  `PROVEN_T2` instead of proving nothing.
+- `direction_key` normalisation: `BUY` no longer becomes `"?"` (it produced an
+  inverted benchmark and an unmatchable `by_strategy` key).
+- Rows with `issued_at == closed_at` are skipped: that case fabricated a zero
+  benchmark and `alpha == pnl`.
+- Coverage floor: proof now requires `alpha_n >= max(20, 0.5 × cell.n)`, so a
+  20-row sample cannot certify a 500-row cell.
+- Workflow pins `ref: main`, refuses to commit off-main, and fails when
+  `n_admissible == 0`.
+
+Verification: `79 passed` across the six audit3/forward test files; workflow
+YAML parses. Not pushed.
 
 ## Residual gaps (honest list)
 
@@ -100,6 +118,10 @@ workflow YAML parses. Not pushed.
 5. **Blocklist fail-open:** `forward_validator.py:811` wraps the filter in
    `except Exception: pass`, and the scraper sets `_is_blocked_pick = None` on
    import failure. Cheap to make loud; not changed here.
+6. **Alpha/tribunal row-set mismatch:** alpha is measured on
+   `picks.recent_closed`, while the tribunal may score the hash-matched
+   canonical view. The new `alpha_n` coverage floor makes the gap visible per
+   cell but does not remove it; feeding both the same rows is a pipeline change.
 
 ## Reviewer note
 
