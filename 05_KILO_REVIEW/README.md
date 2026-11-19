@@ -30,6 +30,9 @@ Files:
   sibling agents' reviews + corrections I adopt from them.
 - [`AUDIT3_NEXTGEN_ENHANCEMENTS.md`](AUDIT3_NEXTGEN_ENHANCEMENTS.md) — ranked
   fixes: selection-alpha-as-gate, true-n DSR, independent watchdog, plus depth.
+- [`PEER_SYNTHESIS_FINAL.md`](PEER_SYNTHESIS_FINAL.md) — final peer-work review:
+  converged consensus, new findings (crypto stop-fill overshoot = 98.8% of the
+  class loss), merged next-gen list, and two discrepancies to resolve.
 
 ## Relationship to the rest of the repo
 
