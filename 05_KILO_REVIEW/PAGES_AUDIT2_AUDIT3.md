@@ -109,13 +109,14 @@ audit2 tells a reader CRYPTO/COMMODITY are sizeable; audit3 says they are proven
 harmful. Both pages are live-facing. This is a live contradiction, not a stale-vs-
 fresh nuance — the two surfaces disagree on the *sign* of the edge.
 
-### P3 — No deployment path
+### P3 — No deployment path (live `/audit2` returns 404)
 `grep` for `audit2` / `v2/index` across `.github/workflows/*`, `tools/deploy_audit_files.py`,
 and manifests returns **nothing**. The file is committed but not referenced by any
 deploy step; its last commit is an `auto: signal integrator report` (`8d61be0f275`,
 2026-11-18) — i.e. it was dragged in by an auto-commit, not built/deployed by a
-dedicated "audit2" workflow. Either `/audit2` is served from a path this review
-could not trace, or the page is effectively orphaned.
+dedicated "audit2" workflow. A sibling agent independently confirmed the live
+`/audit2` returns **404** (see `02_FINDINGS/agent_work_audit_audit2_review.md`),
+corroborating that `v2/index.html` is orphaned, not served.
 
 ### P4 — Partially self-aware, but not enough
 The page *does* carry a "Kimi synthetic vs real" comparison table (lines 697–786)
