@@ -28,6 +28,8 @@ Files:
   vs small-sample illusions, what deserves to be in an audit2.
 - [`PEER_REVIEW_ASSESSMENT.md`](PEER_REVIEW_ASSESSMENT.md) — assessment of the
   sibling agents' reviews + corrections I adopt from them.
+- [`AUDIT3_NEXTGEN_ENHANCEMENTS.md`](AUDIT3_NEXTGEN_ENHANCEMENTS.md) — ranked
+  fixes: selection-alpha-as-gate, true-n DSR, independent watchdog, plus depth.
 
 ## Relationship to the rest of the repo
 

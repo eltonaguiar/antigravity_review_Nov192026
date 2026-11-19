@@ -118,8 +118,9 @@ Sharpe claims are therefore suspect.
 
 **Contradictory surfaces** (`docs/AUDIT_SURFACE_REVIEW_2026-11-19.md`):
 - `/audit` vs `/audit3` disagree on the same classes. ETF is the tell: **1.9% WR /
-  PF 0.02** (n=52) on `/audit` vs **43.1% WR / PF 0.98** (n=584) on audit3 — both
-  cannot be right.
+  PF 0.02** (n=52) on `/audit` vs **43.1% WR / PF 0.98** (n=584) on audit3. This
+  is **incomparable denominators** (different windows, filters, cost models), a
+  dashboard-design flaw — not proof that one row set is a data bug.
 - audit3 scores **3,500 of 16,330** closed picks (**21.4%**); 7,502 excluded for
   integrity (46%), 9,100 auto-expired. The page did not state this until a recent fix.
 - **Two kill lists that do not reconcile**: kill_switch reports 42 kills of 56;
