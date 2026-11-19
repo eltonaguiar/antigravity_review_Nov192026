@@ -16,3 +16,13 @@ Captured because the peer worktrees changed materially mid-session and one
 Conclusion: no unique *audit* code was at risk. The changes are main-sync copies
 and COMS/cross-PC work. Patches and text files are preserved under each
 worktree's folder here.
+
+## Addendum (17:40Z)
+`audit2-page-tunable-variables` advanced to `39404db` (**2 commits ahead**), but the
+content is **COMS documentation only**: `updates/2026-11-19-coms-patch-handoff.md`
+(B1–B8 patch handoff + audit2/audit3 tunables) and a COMS status update. Copied here
+as `COMS_PATCH_HANDOFF_2026-11-19.md`. The enormous `origin/main..HEAD` diff is an
+artifact of the branch being based on the old `f9e6c82`, not new audit code.
+
+`audit2-page-forward-path` gained one more dirty file (`REDIS_BUS_QUICKREF.md`) —
+also COMS/cross-PC, not audit.
