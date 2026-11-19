@@ -33,6 +33,9 @@ Files:
 - [`PEER_SYNTHESIS_FINAL.md`](PEER_SYNTHESIS_FINAL.md) — final peer-work review:
   converged consensus, new findings (crypto stop-fill overshoot = 98.8% of the
   class loss), merged next-gen list, and two discrepancies to resolve.
+- [`QUANT_FUND_MANAGER_PLAYBOOK.md`](QUANT_FUND_MANAGER_PLAYBOOK.md) — per-asset-
+  class, risk-tiered strategy playbook (conservative → aggressive) + the 5-step
+  method to quick viable sleeves (fix fills, kill the bleed, premia pods, barbell).
 
 ## Relationship to the rest of the repo
 
