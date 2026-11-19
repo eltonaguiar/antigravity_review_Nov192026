@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>audit2 — Candidate & Methodology Library</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --line:#242a36; --tx:#e6e9ef; --dim:#9aa4b5;
+    --ok:#3ecf8e; --warn:#e7b43a; --bad:#e55a5a; --info:#5aa7e8; --mono:#a9c1e8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+  header{padding:18px 26px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#141821,#0f1115)}
+  h1{font-size:20px;margin:0 0 4px}
+  .sub{color:var(--dim);font-size:13px}
+  .banner{margin:12px 26px;padding:10px 14px;border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:6px;background:#1a1416;color:#f0dada;font-size:13px}
+  main{padding:0 26px 40px;max-width:1180px}
+  h2{font-size:16px;margin:30px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+  .card .id{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--mono)}
+  .card h3{margin:2px 0 8px;font-size:15px}
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:600;margin:0 4px 4px 0}
+  .pre{pill:2px 9px;background:#22303f;color:var(--info)}
+  .post{background:#3a2d1d;color:var(--warn)}
+  .decl{background:#3a1d1d;color:var(--bad)}
+  .meta{color:var(--dim);font-size:12px;margin:6px 0}
+  .gate{margin-top:10px;border-top:1px solid var(--line);padding-top:8px;font-size:12.5px;color:var(--dim)}
+  .gate b{color:var(--tx)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+  .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)} .info{color:var(--info)}
+  .note{color:var(--dim);font-size:12.5px}
+  blockquote{margin:10px 0;padding:8px 14px;border-left:3px solid var(--line);color:var(--dim);background:var(--card);border-radius:0 6px 6px 0}
+  code{font-family:ui-monospace,Menlo,monospace;background:#1d232e;padding:1px 5px;border-radius:4px;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>audit2 — Candidate &amp; Methodology Library</h1>
+  <div class="sub">The positive side of the audit: what is worth a forward test, and how we judge it. · <span id="ts">generated on load</span></div>
+</header>
+
+<div class="banner" id="banner">
+  Nothing here is money-ready. This page lists <b>pre-registered candidates</b> and the
+  measurement kit for judging them. Promotion is governed by the <code>forward_observations</code>
+  ledger and audit3's gates — not by this page. <span id="feednote"></span>
+</div>
+
+<main>
+  <h2>Forward candidate pods</h2>
+  <div class="grid" id="pods"></div>
+
+  <h2>Statistical measures — the "how we judge" kit</h2>
+  <table id="measures"></table>
+
+  <h2>Methodology</h2>
+  <div id="methodology"></div>
+
+  <h2>Retired with reason</h2>
+  <table id="retired"></table>
+
+  <h2>Benchmarks</h2>
+  <table id="benchmarks"></table>
+
+  <p class="note">Global trial counter (placeholder, feeds off the forward ledger): <code id="trialcount">—</code> · cumulative-N DSR note: see audit3 `dsr_threshold`.</p>
+</main>
+
+<script>
+const feed = {
+  confirmatory: "reports/audit3_confirmatory.json",
+  forward: "reports/forward_observations.jsonl"
+};
+
+// ---- embedded sample data (used when real feeds are unavailable) ----
+const SAMPLE_PODS = [
+  {id:"POD-EQUITY-BREAKOUT", status:"pre_registered", registered_at:"2026-11-19",
+   hypothesis_id:"H-BABY-EQUITY-VT-PATTERN-SWEEP-001",
+   strategies:["donchian-stock-breakout","rs-breakout-scout","vol-contraction-scout","adx-trend-scout"],
+   asset_classes:["EQUITY","ETF"], directions:["LONG"],
+   thesis:"Breakout continuation on liquid US equities/ETFs is the one family with positive out-of-sample statistics (EQUITY OOS Sharpe +0.61 on 33 folds, ETF +0.21 on 53).",
+   expression:"Monthly/weekly cadence only. Exit on time or a 2–3 ATR trail, vol-scaled size, no fixed take-profit. ETF daily cadence ruled out: measured slippage is 234% of per-trade PnL.",
+   acceptance_criteria:"Forward rows after 2026-11-19: n≥100, net CI-LB > 0 at 2× measured slippage, IR≥0.5 vs matched SPY leg, split-half stable. CI-LB≤0 at day 30/60 ends the pod.",
+   evidence:"EQUITY is the only class with positive walk-forward OOS Sharpe; individual breakout cells straddle zero."},
+  {id:"POD-LUXALGO-SHORT", status:"post_hoc", registered_at:"2026-11-19",
+   hypothesis_id:"H-20260612-luxalgo_confluence_v2_short",
+   strategies:["luxalgo_confluence"], asset_classes:["CRYPTO"], directions:["SHORT"],
+   thesis:"LuxAlgo confluence shorts carry positive expectancy after costs on n=476 (+0.67%/trade, CI [+0.35,+0.96], DSR 0.977).",
+   evidence:"Registered after the rows were scored, so cannot confer confirmatory status. 97.7% single-source; LONG side is proven-harm (n=754, −0.33%/trade) — sign flip points at short beta.",
+   acceptance_criteria:"Observe only. Requires an independent second source, a BTC-beta regression, and 90 days of forward rows before re-registration."},
+  {id:"POD-CRYPTO-ENSEMBLE-GRADE", status:"declined", registered_at:"2026-11-19",
+   strategies:["clone_hl_bybit_copy_C_R_Y_P_T_O___K_I_N_","luxalgo_confluence","strong consensus"],
+   asset_classes:["CRYPTO"], directions:["LONG"],
+   thesis:"'grade A / score≥60' cluster as a crypto ensemble-grade pod.",
+   evidence:"The cluster is a reconstructed segment proxy, not a strategy: 'grade A' and 'score≥60' are the same 33 rows; elite_grade B is the superset. n=33 cannot carry a pod; CRYPTO class aggregate is proven-harm.",
+   acceptance_criteria:"A named emitter accumulates n≥100 forward rows with positive net CI in a class that is not KILL."}
+];
+const SAMPLE_MEASURES = [
+  ["DSR (Deflated Sharpe Ratio)","Sharpe deflated by trial count / effective N — the honest overfit score","audit3 dsr_threshold=0.95; H10 effective-N≈38"],
+  ["PBO (Probability of Backtest Overfitting)","probability the 'best' backtest is a fluke","edge-search v1–v4"],
+  ["SPA (Superior Predictive Ability)","multiple-testing-corrected OOS comparison","built-in"],
+  ["FDR / Benjamini–Hochberg","false-discovery control across tested cells","audit3 multiplicity q≤0.10"],
+  ["Bootstrap net-expectancy CI","2,000 seeded resamples; the primary edge test (G2)","audit3 edge_test"],
+  ["Walk-forward + purged K-fold + embargo","time-series CV with purge/embargo (López de Prado)","walkforward reports"],
+  ["Intrabar-true resolution","SL-wins-ties first-touch; fixes EXPIRED→WON artifacts","money_ready_verdict; INCIDENT #18"],
+  ["Cost ×2 stress + measured slippage","2×-slippage column; per-strategy measured cost","audit3 cost_basis; slippage_validation"],
+  ["Benchmark-relative gates","excess vs SPY/BTC/T-bills/AGG/GSG; IR; down-capture","BENCHMARK_GATES.md"]
+];
+const SAMPLE_METHODOLOGY = [
+  "“The binding constraint is hypothesis quality and trial budget, not techniques.” — EDGE_REVIEW_2026-11-19",
+  "“Real edge ≠ better forecasting. It = risk-premia harvesting + cost elimination + honest sizing, in a boring portfolio.” — EDGE_REVIEW_2026-11-19",
+  "“Edge should be expressed with symmetric, vol-scaled, time-based exits — the expression changes the statistics more than the signal does.” — EDGE_REVIEW_2026-11-19",
+  "“The single-source gate alone eliminates all 166 cells.” — quant-audit VERDICT",
+  "“The gap is between research and production: profitable approaches exist but are not deployed in the live ledger.” — quant-audit VERDICT"
+];
+const SAMPLE_RETIRED = [
+  ["H-143 tactical ETF swing","Eliminated — lost ~8.75pp/yr to SPY at base cost; MDD 11.86% vs 18.76% insufficient","2026-11-15"],
+  ["CRYPTO SWING","n=243, WR 28.4%, PF 0.457, −328.6pp — 39% of the class loss","2026-11-14"],
+  ["COT positioning CT=F","falsified; 6.33× over-emission → SHADOW_INSUFFICIENT_N","2026-05-13"],
+  ["Score-band '100% WR' S-tier","survivorship + fixed-TP labeling artifact; intrabar-true ≈34%","INCIDENT #18"]
+];
+const SAMPLE_BENCHMARKS = [
+  ["CRYPTO SHORT","BTC-hold","excess vs short-BTC; kill if alpha vanishes vs beta"],
+  ["EQUITY/ETF LONG","SPY total return","IR≥0.5, down-capture, PF≥1.15 at n≥500"],
+  ["BOND","AGG / T-bills","duration-matched; low vol"],
+  ["COMMODITY","GSG","futures-term-structure neutral"]
+];
+
+// ---- fetch helpers ----
+async function tryFetch(url){
+  try{
+    const r = await fetch(url, {cache:"no-store"});
+    if(!r.ok) return null;
+    const t = await r.text();
+    if(!t.trim()) return null;
+    if(url.endsWith(".jsonl")) return t.trim().split(/\r?\n/).filter(Boolean).map(l=>{try{return JSON.parse(l)}catch(e){return null}}).filter(Boolean);
+    return JSON.parse(t);
+  }catch(e){ return null; }
+}
+function esc(s){ return String(s ?? "").replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+// ---- renderers ----
+function podCard(p){
+  const statusCls = {pre_registered:"pre", post_hoc:"post", declined:"decl"}[p.status] || "pre";
+  const dirs = (p.directions||[]).join("/");
+  const classes = (p.asset_classes||[]).join(", ");
+  return `<div class="card">
+    <span class="pill ${statusCls}">${esc(p.status)}</span>
+    <span class="id">${esc(p.id)}</span>
+    <h3>${esc(p.thesis||"")}</h3>
+    <div class="meta">▸ strategies: ${esc((p.strategies||[]).join(", "))}</div>
+    <div class="meta">▸ classes: ${esc(classes)} · dir: ${esc(dirs)} · hypothesis: <code>${esc(p.hypothesis_id||"")}</code></div>
+    <div class="meta">▸ registered: ${esc(p.registered_at||"")} · <span class="info">${esc(p.evidence||p.evidence_at_registration||"")}</span></div>
+    <div class="gate"><b>Expression:</b> ${esc(p.expression||"—")}</div>
+    <div class="gate"><b>Gate:</b> ${esc(p.acceptance_criteria||p.decline_reason||"—")}</div>
+  </div>`;
+}
+function renderPods(pods){
+  document.getElementById("pods").innerHTML = pods.map(podCard).join("");
+}
+function renderMeasures(rows){
+  document.getElementById("measures").innerHTML =
+    `<tr><th>Measure</th><th>What it is</th><th>Used in</th></tr>` +
+    rows.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td>${esc(r[1])}</td><td class="note">${esc(r[2])}</td></tr>`).join("");
+}
+function renderMethodology(q){
+  document.getElementById("methodology").innerHTML = q.map(x=>`<blockquote>${esc(x)}</blockquote>`).join("");
+}
+function renderRetired(rows){
+  document.getElementById("retired").innerHTML =
+    `<tr><th>Strategy</th><th>Why retired</th><th>Date</th></tr>` +
+    rows.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td>${esc(r[1])}</td><td class="note">${esc(r[2])}</td></tr>`).join("");
+}
+function renderBenchmarks(rows){
+  document.getElementById("benchmarks").innerHTML =
+    `<tr><th>Pod / class</th><th>Benchmark leg</th><th>Note</th></tr>` +
+    rows.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td>${esc(r[1])}</td><td class="note">${esc(r[2])}</td></tr>`).join("");
+}
+
+// ---- init ----
+(async function(){
+  const ts = new Date().toISOString().slice(0,16).replace("T"," ");
+  document.getElementById("ts").textContent = "rendered " + ts;
+
+  const [conf, fwd] = await Promise.all([
+    tryFetch(feed.confirmatory),
+    tryFetch(feed.forward)
+  ]);
+
+  let pods = SAMPLE_PODS, fwdCount = 0, note = "";
+  if(conf && Array.isArray(conf.pods)){
+    pods = conf.pods;
+    note = "Loaded live confirmatory manifest.";
+  }
+  if(Array.isArray(fwd)){ fwdCount = fwd.length; }
+  if(note) document.getElementById("feednote").textContent = note;
+  document.getElementById("trialcount").textContent = fwdCount + " forward rows";
+
+  renderPods(pods);
+  renderMeasures(SAMPLE_MEASURES);
+  renderMethodology(SAMPLE_METHODOLOGY);
+  renderRetired(SAMPLE_RETIRED);
+  renderBenchmarks(SAMPLE_BENCHMARKS);
+})();
+</script>
+</body>
+</html>

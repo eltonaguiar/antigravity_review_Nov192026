@@ -34,3 +34,9 @@ Every quantitative claim in this review maps to a measured source. (Paths relati
 | Confirmatory pod manifest (POD-EQUITY-BREAKOUT pre-registered 2026-11-19) | `reports/audit3_confirmatory.json` |
 | Strategy discovery: crypto RSI(5), forex max-carry, flagged keltner/corr-vwap | `STRATEGY_DISCOVERY_REPORT_V3_2026-11-18.md` |
 | Walkforward verdicts (ETF dual momentum PASS, VWAP reversion PASS) | `verified_strategies/WALKFORWARD_REPORT.json` (2026-06-02) |
+| audit3 current-state: WR-as-descriptor, namespace split, provenance SHA, measured costs, 2× stress, forward-gate, source-cap enforced | `alpha_engine/audit3_tribunal.py` (lines: G1/G2 doc, load_confirmatory, _git_sha, _apply_measured_costs, nets_2x, forward_gate_block, 1174) |
+| Forward ledger empty; no ingestion adapter (P0 blocker) | `alpha_engine/forward_observations.py` note; `updates/2026-11-19-forward-observations-contract.md` |
+| Selection-alpha available=false (price tables missing) | `alpha_engine/audit3_selection_alpha.py`; ledger `selection_alpha.available=false` |
+| Random-entry MC exists only on closed ledger, not per cell | `alpha_engine/benchmark_closed_ledger.py` vs audit3 |
+| Audit2 page prototype + sample feeds | `06_AUDIT2_PAGE/` (this repo) |
+| Implementation status / remaining gaps | `06_IMPLEMENTATION_STATUS.md` (this repo) |
