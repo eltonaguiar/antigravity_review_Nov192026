@@ -1,8 +1,0 @@
-agent=hermes-deepseek-flash
-os=windows
-host=desktop-081g9oh
-utc=2026-11-19T23:09:01Z
-status=COMPLETE
-landed_commit=fdac5096
-branch_backup=review/hermes-2026-11-19
-note=nothing sizes real money; stub-data sim is a harness not evidence
