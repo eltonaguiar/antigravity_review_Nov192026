@@ -27,6 +27,13 @@ to the promotion machinery — that is audit2. audit3 is the filter that keeps a
 `n_rows=8,613` · `n_cells_total=359` · `n_cells_tested=67` · **`n_proven=0` ·
 `n_candidate=0`** · `n_weak=59` · `n_kill=8` · `n_insufficient=292`.
 
+Those counts are **strategy-cell only** (the ledger now says so). The symbol bucket carries
+one `CANDIDATE`: **FOREX / AUDJPY / LONG, n=33, net CI [0.242, 0.942]** — the only cell on the
+surface whose net-expectancy CI is entirely above zero. It is single-symbol (33/33 rows), so
+it is a lead, not evidence. Of the 67 cells with n≥20, only **three** have a net-CI lower
+bound above zero (`macd_rsi_m048` n=24, `strong consensus` n=24 with a PF of 1,098 — an
+artifact — and `forex_rsi2_mean_reversion` n=24); all three are WEAK at the n≥30 floor.
+
 Class aggregates:
 
 | Class | Verdict | n | Net/trade | 95% CI | required_n |
@@ -78,7 +85,8 @@ it is **ETF `rs-breakout-scout`** — n=80, CI low −0.146 (closest to zero of 
 required_n 201, stable halves. That is a single-cell bet on a class whose aggregate edge
 is ~0 (+0.006%), so it is a worse *class* answer and a better *experiment*.
 
-**Neither justifies real money today.** No class meets Tier-2 (n≥100 clean, WR≥50%,
+**Neither justifies real money today.** The AUDJPY symbol candidate is the closest thing to
+a positive measurement on either surface, but one symbol at n=33 is a hypothesis, not an edge. No class meets Tier-2 (n≥100 clean, WR≥50%,
 PF≥1.5, MDD<20); no pod has forward rows; every confirmatory cell fails the 2× cost gate.
 
 ## 5. The blocking fact: the forward clock is empty for this pod
