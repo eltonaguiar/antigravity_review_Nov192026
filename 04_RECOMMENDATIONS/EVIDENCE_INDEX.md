@@ -20,3 +20,10 @@ Every quantitative claim in this review maps to a measured source. (Paths relati
 | Investment hub asset classes present (stocks/mutual/crypto/forex/goldmines/multi-asset/graveyard) | `TORONTOEVENTS_ANTIGRAVITY/index.html` grep hits; `audit3_ledger.json` classes |
 | Staleness (hyro 157h, bt_backtest_runs frozen Mar, portfolio_snapshots frozen) | memory `audit_live_data_file_freshness_nov`; schema spec |
 | Framework structure followed (charter/evidence-index) | `eltonaguiar/AGENT_FOLDERFRAMEWORK` folderframework-v4 (README, 00_CHARTER.md) |
+| audit3 agent lineage (PRs #884–905) | `git log --all --grep=audit3`; PR merge commits (b5956d5…087acd4) |
+| audit2 has no page (404), only helper scripts | live probe `/audit2` = 404; `git log --name-only` for audit2 → only `score_audit2.py`, `tmp/check_audit2.py`, `tmp/db_audit2.py` |
+| Surface review (denominator disagreement, OOS Sharpe, measured slippage) | `docs/AUDIT_SURFACE_REVIEW_2026-11-19.md` (PR #891, commit 0a23cea6) |
+| v3.1 feedback rewrite (39.5 KB) | `AUDIT3_FEEDBACK_2026-11-19.md` on branch `docs-audit3-feedback-v3` (PR #903, OPEN/unmerged) |
+| Measured slippage: ETF 234% of PnL; FUTURES/COMMODITY flat < measured | `dashboard_data.json.slippage_validation`; v3.1 §1.5 |
+| Walk-forward OOS Sharpe: EQUITY +0.608 (33f), CRYPTO −2.077 (32f) | `/audit` walk-forward panel; surface-review §3.2 |
+| Smart-picks tile contradiction; dead tier2-proven panel | v3.1 §2; surface-review §4 |

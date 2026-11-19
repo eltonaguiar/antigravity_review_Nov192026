@@ -9,7 +9,10 @@ Probed 2026-11-19 against `https://findtorontoevents.ca/`:
 | `/audit3` | 200 | 36,331 B | Live, active "Quant Kill Tribunal" ledger page (`audit_dashboard/audit3.html`, mtime 2026-11-19 05:37). |
 
 The user asked to review "audit, audit2, audit3 (whichever has data)". **audit2 has no
-data** — it is gone. The data-bearing surfaces are `/audit` and `/audit3`.
+data** — it is gone (no `audit2.html` exists anywhere in git history; the only artifacts
+are helper scripts `score_audit2.py`, `tmp/check_audit2.py`, `tmp/db_audit2.py`). The
+data-bearing surfaces are `/audit` and `/audit3`. audit3 is the continuation of the
+"audit2" effort under a stricter statistical design (see `02_FINDINGS/agent_work_audit_audit2_review.md`).
 
 ## What each live page actually serves
 

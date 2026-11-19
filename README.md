@@ -73,7 +73,8 @@ antigravity_review_Nov192026/
 │   ├── why_no_wins.md            ← the five root causes
 │   ├── measured_verdicts.md      ← audit3 ledger tables
 │   ├── data_quality_resolver.md  ← ghost rows, resolver mislabels, staleness
-│   └── contradictions.md         ← conflicting self-assessments
+│   ├── contradictions.md         ← conflicting self-assessments
+│   └── agent_work_audit_audit2_review.md  ← review of audit3 lineage (PRs #884–905) + audit2 404
 ├── 03_VARIABLES/
 │   └── tunable_variables.md      ← what can be switched & observed
 └── 04_RECOMMENDATIONS/
