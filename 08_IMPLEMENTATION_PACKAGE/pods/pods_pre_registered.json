@@ -1,0 +1,52 @@
+{
+  "schema": "audit3.confirmatory.v1",
+  "rule": "A cell may reach PROVEN_T2 only if it matches a pod here whose status is pre_registered. Pods must be declared before the forward data they will be judged on exists; a pod extracted from the results being judged is post_hoc and cannot promote. Everything unmatched is discovery.",
+  "note": "This is the recommended addition to reports/audit3_confirmatory.json. All three pods follow the fund-manager playbook (07_FUND_MANAGER_PLAYBOOK.md) and use the literature-correct expression (vol-targeted, time/vol exit, no fixed TP).",
+  "status_meaning": {
+    "pre_registered": "may confer confirmatory; judged on forward rows from registered_at",
+    "post_hoc": "recorded for the audit trail only; cannot confer confirmatory",
+    "declined": "evaluated and rejected; recorded so nobody re-proposes it blind"
+  },
+  "pods": [
+    {
+      "id": "POD-FUTURES-TSMOM",
+      "status": "pre_registered",
+      "registered_at": "2026-11-19",
+      "hypothesis_id": "H-P1-FUTURES-TSMOM",
+      "strategies": ["tsmom_trend_futures", "etf_managed_futures_proxy"],
+      "asset_classes": ["FUTURES", "ETF"],
+      "directions": ["LONG", "SHORT"],
+      "thesis": "Time-series momentum / trend across 20-60 liquid futures (equity idx, bonds, FX, rates, commodities) or ETF proxies. Strongest documented premium with ~140 years of evidence and crisis alpha (Moskowitz-Ooi-Pedersen 2012; Hurst 100y).",
+      "expression": "Vol-scaled TSMOM: ensemble of 3-12m lookbacks, 40-60% portfolio vol target, monthly rebalance, symmetric time/vol exit. No TP/SL.",
+      "acceptance_criteria": "Forward rows after 2026-11-19: n>=100, net CI-LB > 0 at 2x measured slippage, IR>=0.5 vs matched benchmark (e.g. 60/40 or GSG/AGG blend), split-half stable. CI-LB<=0 at day 30/60 ends the pod.",
+      "evidence_at_registration": "FUTURES measured slippage 0.10-0.15% is at/above the 3x cost gate; use ETF proxies (DBMF/KMLM/HMF-style) if futures fills are too costly. Vol-targeting is the documented correct expression."
+
+    },
+    {
+      "id": "POD-FX-G10-CARRY",
+      "status": "pre_registered",
+      "registered_at": "2026-11-19",
+      "hypothesis_id": "H-P2-FX-G10-CARRY",
+      "strategies": ["g10_carry_trend"],
+      "asset_classes": ["FOREX"],
+      "directions": ["LONG", "SHORT"],
+      "thesis": "G10 currency carry (long high-yield, short low-yield) with a trend overlay to cut carry-crash risk. Classic, documented premium (Lustig-Roussanov-Verdelhan).",
+      "expression": "Rank G10 by 1-3m forward discount (or rate differential); long top-3 / short bottom-3; vol-targeted; 200d trend overlay; monthly rebalance.",
+      "acceptance_criteria": "Forward rows after 2026-11-19: n>=100, net CI-LB > 0 at 2x measured slippage, IR>=0.5 (FX data must be backfilled first - series currently ends 2026-02-09). KILL if forward CI-LB <=0 at day 60.",
+      "evidence_at_registration": "FX carry is the one classic premium with existing plumbing (H21-H23 funding-carry work shows the pattern, small but real). Requires data backfill + >=3 walk-forward folds before promotion."
+    },
+    {
+      "id": "POD-EQUITY-PEAD",
+      "status": "pre_registered",
+      "registered_at": "2026-11-19",
+      "hypothesis_id": "H-P3-EQUITY-PEAD",
+      "strategies": ["pead_sue_drift"],
+      "asset_classes": ["EQUITY"],
+      "directions": ["LONG"],
+      "thesis": "Post-earnings-announcement drift on liquid large-caps: SUE-ranked earnings surprise, long +1 sigma surprise decile, 60-day hold. One of the most replicated anomalies (Bernard-Thomas 1989).",
+      "expression": "Screen 500+ names; SUE ranking; long +1sigma decile, avoid/negative shorts; 60-day hold; weekly rebalance; low turnover.",
+      "acceptance_criteria": "Forward rows after 2026-11-19: n>=100, net CI-LB > 0 at 2x measured slippage, IR>=0.5 vs SPY matched exposure. Requires the PEAD pipeline to be fixed first (existing 60/60 pipeline known broken).",
+      "evidence_at_registration": "PEAD is a small-per-event effect that needs breadth (500+ names); low turnover defeats the fee wall. Equity class is the only one with a positive after-cost win-rate margin (+2.9pp)."
+    }
+  ]
+}

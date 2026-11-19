@@ -45,3 +45,4 @@ Every quantitative claim in this review maps to a measured source. (Paths relati
 | FX carry P2 / futures TSMOM P1 / PEAD P3 | `EDGE_REVIEW_2026-11-19.md` §3 Phase 1 (P1/P2/P3) |
 | ETF/commodity intraday cost gate (3× round-trip) | `PER_CLASS_PATHS_TO_PROFIT.md` #2; `slippage_validation` |
 | ETF dual momentum walkforward PASS | `verified_strategies/WALKFORWARD_REPORT.json` (2026-06-02) |
+| Implementation package: pod P1/P2/P3, forward ledger SQL, ingest adapter, shadow harness, audit2 checklist | `08_IMPLEMENTATION_PACKAGE/` (this repo) |
