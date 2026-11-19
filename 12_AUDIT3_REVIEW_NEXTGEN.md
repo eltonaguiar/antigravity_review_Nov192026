@@ -120,6 +120,26 @@ audit3-ledger.yml (6-hourly)
 
 ---
 
+## 5a. Implementation status update (peers have landed E1/E4 + net-of-cost)
+
+*Added 2026-11-19 evening after re-reviewing peer work:*
+
+| Enhancement | Status | Evidence |
+|---|---|---|
+| **E4 forward-observation clock & contract** | **IMPLEMENTED** | `alpha_engine/forward_observations.py` (commit `feat/forward-observations-contract` `2ae0573`): schema, net-return def, promotion rule, ETA from observed rate |
+| **E4 wire into PROVEN_T2** | **IMPLEMENTED** | `_promote()` demotes PROVEN_T2→CANDIDATE w/o forward rows (`feat/forward-gate-and-ingest` `5c0c42d`; test `test_audit3_forward_gate.py`) |
+| **E1 selection alpha scheduled** | **IMPLEMENTED** | `reports/selection_alpha_2026-11-19.json`: per-class alpha; no class shows skill after costs, all CIs include 0; stale credential read fixed |
+| **Cost honesty (net-of-cost gate)** | **IMPLEMENTED** | `feat/forward-lane-net-of-cost` `a7df4ff`: FOREX gross 1.102→net 1.035; COMMODITY 1.048→1.005; gates read `net_pf` |
+| Kill-list reconcile / vintage labeling | IMPLEMENTED | `fix/h119-vintage-and-kill-list-reconcile` `8da1bf3` |
+| **E2 full-book coverage (21.4%→>90%)** | **open** | — |
+| **E5 2×-cost as a hard gate** | **open** | still report-only |
+| **E3 per-cell required_n (power)** | **open** | contract sets n≥100, not effect-size power per cell |
+| Denylist staleness → loud alert | open | still fail-open only |
+
+See `13_PEER_MERGE_STATUS.md` for the full merge ledger.
+
+---
+
 ## 6. Bottom line
 
 audit3 is already the correct statistical core. The leap to "next-gen" is not a
