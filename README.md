@@ -82,6 +82,7 @@ antigravity_review_Nov192026/
 │   ├── forward_path.md           ← 90-day plan
 │   └── EVIDENCE_INDEX.md         ← every claim → source
 └── 05_AUDIT2_SPEC.md             ← curated content spec for /audit2 (candidates, measures, methodology)
+└── 07_FUND_MANAGER_PLAYBOOK.md   ← per-asset-class strategies tiered by risk (Conservative/Moderate/Aggressive)
 ```
 
 *Not personalized investment advice.*

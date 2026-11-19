@@ -40,3 +40,8 @@ Every quantitative claim in this review maps to a measured source. (Paths relati
 | Random-entry MC exists only on closed ledger, not per cell | `alpha_engine/benchmark_closed_ledger.py` vs audit3 |
 | Audit2 page prototype + sample feeds | `06_AUDIT2_PAGE/` (this repo) |
 | Implementation status / remaining gaps | `06_IMPLEMENTATION_STATUS.md` (this repo) |
+| Fund-manager playbook (per-class, risk-tiered) | `07_FUND_MANAGER_PLAYBOOK.md` (this repo) |
+| EQUITY breakout pod (pre-registered) | `reports/audit3_confirmatory.json` → POD-EQUITY-BREAKOUT |
+| FX carry P2 / futures TSMOM P1 / PEAD P3 | `EDGE_REVIEW_2026-11-19.md` §3 Phase 1 (P1/P2/P3) |
+| ETF/commodity intraday cost gate (3× round-trip) | `PER_CLASS_PATHS_TO_PROFIT.md` #2; `slippage_validation` |
+| ETF dual momentum walkforward PASS | `verified_strategies/WALKFORWARD_REPORT.json` (2026-06-02) |
