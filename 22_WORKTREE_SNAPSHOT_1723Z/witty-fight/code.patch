@@ -1,0 +1,399 @@
+diff --git a/alpha_engine/audit3_tribunal.py b/alpha_engine/audit3_tribunal.py
+index f89de6974b6..2ac04d9124a 100644
+--- a/alpha_engine/audit3_tribunal.py
++++ b/alpha_engine/audit3_tribunal.py
+@@ -439,7 +439,9 @@ def load_rows(path: str, drops: dict[str, int] | None = None
+ 
+ 
+ def _coverage_statement(scored: int, total: int | None, integrity: int | None,
+-                        expired: int | None, overlap: bool) -> str:
++                        expired: int | None, overlap: bool, *,
++                        valid: int | None = None, flat_rows: int | None = None,
++                        canonical_mode: bool = False) -> str:
+     if not total:
+         return ("The source payload carries no closed-book counts, so this ledger "
+                 f"cannot state what share of the book its {scored:,} scored rows "
+@@ -453,13 +455,34 @@ def _coverage_statement(scored: int, total: int | None, integrity: int | None,
+     txt = (f"audit3 scores {scored:,} of {total:,} closed picks ({share:.1f}%). "
+            f"The other {max(0, total - scored):,} are not in this ledger")
+     if parts:
+-        txt += (": the publishing dashboard reports " + " and ".join(parts)
+-                + " rows, and no surface scores any of them.")
++        txt += ": the publishing dashboard reports " + " and ".join(parts) + " rows."
+     else:
+         txt += "."
++    # 2026-11-19: the earlier wording said every excluded cohort is never scored.
++    # That was false for auto-expiries once the canonical view became the source:
++    # timeouts that survive integrity checks are retained at their resolved exit,
++    # and the scored book still carries zero-P&L rows. State the measured case.
++    if expired and canonical_mode:
++        txt += (" Auto-expired rows that survive integrity checks are retained in "
++                "the canonical view at their resolved exit")
++        if flat_rows:
++            txt += (f" — {flat_rows:,} scored rows carry zero P&L — so the timeout "
++                    "cohort is only partly absent from these verdicts.")
++        else:
++            txt += ", so the timeout cohort is only partly absent from these verdicts."
++    elif parts:
++        txt += " No surface scores any of them."
+     if overlap:
+         txt += (" Those cohorts overlap, so they do not sum to the gap — read them as "
+                 "reasons rows are missing, not as a partition.")
++    # A3: scored rows can exceed the dashboard's 'valid closed' count when the
++    # canonical, hash-verified view is the source. Say so instead of publishing a
++    # >100% ratio that reads as an arithmetic bug.
++    if valid and scored > valid:
++        txt += (f" Denominator check: this ledger scores {scored:,} rows against a "
++                f"dashboard 'valid closed' count of {valid:,} "
++                f"(canonical view {scored - valid:+,}); the share is therefore "
++                "computed against total closed picks only.")
+     return txt
+ 
+ 
+@@ -492,26 +515,10 @@ def payload_coverage(data: Any, scored_rows: list[dict],
+                                 for r in scored_rows)
+                     if isinstance(s, str) and s)
+ 
+-    excluded: list[dict[str, Any]] = []
+-    if integrity:
+-        excluded.append({
+-            "cohort": "integrity_excluded", "n": integrity,
+-            "reason": "failed the publishing dashboard's own integrity checks "
+-                      "(ghost rows, WON-vs-PnL sign contradictions, constant/zero "
+-                      "pnl) and is removed before the export slice",
+-        })
+-    if expired:
+-        excluded.append({
+-            "cohort": "auto_expired", "n": expired,
+-            "reason": "resolved by timeout instead of TP/SL; a timeout is neither a "
+-                      "win nor a loss, so it is dropped before scoring and never "
+-                      "counted against the strategy either",
+-        })
+-    overlap = bool(total and integrity and expired and integrity + expired > total)
+-
+     # A2: which denominator did this run actually score? 'canonical' means the
+     # row count equals the published resolved_closed_picks_net view, so a reader
+-    # can compare this page against /audit without guessing.
++    # can compare this page against /audit without guessing. Computed before the
++    # cohort list because the auto-expiry wording depends on it (2026-11-19).
+     canon = data.get("resolved_closed_picks_net") if isinstance(data, dict) else None
+     canon = canon if isinstance(canon, dict) else {}
+     canon_counts = canon.get("counts") if isinstance(canon.get("counts"), dict) else {}
+@@ -521,6 +528,32 @@ def payload_coverage(data: Any, scored_rows: list[dict],
+     den_state = LAST_DENOMINATOR if LAST_DENOMINATOR.get("kept_rows") == canon_kept else {}
+     loaded_from_sidecar = den_state.get("mode") == "canonical"
+     canonical_mode = bool(loaded_from_sidecar and canon_kept and scored == canon_kept)
++
++    excluded: list[dict[str, Any]] = []
++    if integrity:
++        excluded.append({
++            "cohort": "integrity_excluded", "n": integrity,
++            "reason": "failed the publishing dashboard's own integrity checks "
++                      "(ghost rows, WON-vs-PnL sign contradictions, constant/zero "
++                      "pnl) and is removed before the export slice",
++        })
++    if expired:
++        reason = ("resolved by timeout instead of TP/SL; a timeout is neither a win "
++                  "nor a loss")
++        if canonical_mode:
++            reason += (". Timeouts that survive integrity checks are retained in the "
++                       "canonical view at their resolved exit")
++            if zero_pnl:
++                reason += (f" ({zero_pnl:,} scored rows carry zero P&L), so this is a "
++                           "cohort label, not a guarantee the rows are absent")
++            else:
++                reason += ", so this is a cohort label, not a guarantee the rows are absent"
++        else:
++            reason += (" and is dropped before scoring and never counted against the "
++                       "strategy either")
++        excluded.append({"cohort": "auto_expired", "n": expired, "reason": reason})
++    overlap = bool(total and integrity and expired and integrity + expired > total)
++
+     denominator = {
+         "mode": "canonical" if canonical_mode else "payload_slice",
+         "loaded_from_sidecar": loaded_from_sidecar,
+@@ -538,11 +571,20 @@ def payload_coverage(data: Any, scored_rows: list[dict],
+                  "stale, or hashed differently, so this is NOT the same denominator "
+                  "as /audit"),
+     }
+-    cov_statement = _coverage_statement(scored, total, integrity, expired, overlap)
++    cov_statement = _coverage_statement(
++        scored, total, integrity, expired, overlap,
++        valid=valid, flat_rows=zero_pnl, canonical_mode=canonical_mode)
+     if canonical_mode:
+         cov_statement = (f"{cov_statement} This run scores the canonical resolved "
+                          f"view (sha256 {str(canon.get('rows_sha256'))[:12]}…).")
+ 
++    # A3: a ratio above 100% means the two denominators disagree, not that more
++    # rows were scored than exist. Publish the raw value separately and null the
++    # headline ratio so no reader sees an impossible percentage.
++    valid_inconsistent = bool(valid and scored > valid)
++    share_valid_raw = round(100.0 * scored / valid, 2) if valid else None
++    share_valid = None if valid_inconsistent else share_valid_raw
++
+     return {
+         "denominator": denominator,
+         "scored_rows": scored,
+@@ -552,8 +594,26 @@ def payload_coverage(data: Any, scored_rows: list[dict],
+         "zero_pnl_count": zero_pnl,
+         "scored_share_of_total_pct": (round(100.0 * scored / total, 2)
+                                       if total else None),
+-        "scored_share_of_valid_pct": (round(100.0 * scored / valid, 2)
+-                                      if valid else None),
++        "scored_share_of_valid_pct": share_valid,
++        "scored_share_of_valid_pct_raw": share_valid_raw,
++        "valid_denominator_inconsistent": valid_inconsistent,
++        "denominator_reconciliation": {
++            "canonical_rows": scored if canonical_mode else None,
++            "dashboard_valid_closed_picks": valid,
++            "delta": (scored - valid) if valid else None,
++            # 2026-11-19: the arithmetic gap needs a name. With scored=8605 and
++            # valid=8175, total-closed minus valid is 6457 while unscored_rows is
++            # 6027; the 430-row difference is exactly the scored-but-not-"valid"
++            # set. Publishing it stops readers from finding an unexplained hole.
++            "scored_but_not_dashboard_valid": ((scored - valid)
++                                               if valid_inconsistent else 0),
++            "consistent": not valid_inconsistent,
++            "note": ("scored rows exceed the dashboard's 'valid closed' count; the "
++                     "canonical, hash-verified view is the larger set, so the share "
++                     "is computed against total closed picks only"
++                     if valid_inconsistent else
++                     "scored rows are within the dashboard's 'valid closed' count"),
++        },
+         "unscored_rows": (max(0, total - scored) if total else None),
+         "cohorts_overlap": overlap,
+         "excluded_cohorts": excluded,
+@@ -1155,6 +1215,12 @@ def build_report(rows: list[dict], source: str, source_generated_at: str | None,
+         "n_discovery_cells": sum(1 for c in cells if c.get("namespace") == "discovery"),
+         "n_proven": count("PROVEN_T2", cells),
+         "n_candidate": count("CANDIDATE", cells),
++        # 2026-11-19: the headline counts strategy cells only, but the same ledger
++        # also publishes symbol and section verdicts. A symbol CANDIDATE (live
++        # example: AUDJPY LONG, n=31) used to exist in the table while the KPI read
++        # "Candidate 0", which readers correctly treated as a contradiction.
++        "n_candidate_symbols": count("CANDIDATE", symbols),
++        "n_candidate_segments": count("CANDIDATE", segments),
+         "n_weak": count("WEAK", cells),
+         "n_kill": count("KILL", cells),
+         "n_insufficient": count("INSUFFICIENT_N", cells),
+diff --git a/audit_dashboard/audit3.html b/audit_dashboard/audit3.html
+index 3bb8c171438..1487d63b366 100644
+--- a/audit_dashboard/audit3.html
++++ b/audit_dashboard/audit3.html
+@@ -316,7 +316,13 @@ function render(d){
+       sharePct!=null && sharePct<50 ? 'red' : ''],
+     ['Tested cells', tested, ''],
+     ['Proven T2', s.n_proven, s.n_proven? 'green':'red'],
+-    ['Candidate', s.n_candidate, s.n_candidate? 'amber':'' ],
++    // 2026-11-19: the headline counts strategy cells, but the page also renders
++    // symbol and section verdicts. A symbol CANDIDATE beside "Candidate 0" read
++    // as a contradiction, so label the cell count and show the symbol count.
++    ['Candidate cells', s.n_candidate, s.n_candidate? 'amber':'' ],
++    ['Candidate symbols',
++      s.n_candidate_symbols==null ? '—' : s.n_candidate_symbols,
++      s.n_candidate_symbols? 'amber':''],
+     ['Proven harmful', s.n_kill, 'red'],
+     ['Kill rate', (s.kill_rate_pct||0)+'%', 'red'],
+     ['Symbol kills', s.n_kill_symbols, 'red'],
+@@ -621,14 +627,29 @@ function renderEvidence(d){
+   $('evGaps').innerHTML = (d.known_gaps||[]).map(g=>`<li>${esc(g)}</li>`).join('');
+ }
+ 
+-fetch('audit3_evidence.json', {cache:'no-store'})
+-  .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
++async function fetchJsonWithFallback(paths){
++  let last = null;
++  for (const p of paths){
++    try {
++      const r = await fetch(p, {cache:'no-store'});
++      if (!r.ok){ last = new Error('HTTP '+r.status+' at '+p); continue; }
++      return await r.json();
++    } catch(e){ last = e; }
++  }
++  throw last || new Error('not found in any known location');
++}
++
++// The page ships at /audit3/ live, where the sidecars sit beside index.html.
++// In the repo they live in audit_dashboard/data/, so local static serving and
++// the historical /audit/ layout are tried too instead of failing on one 404.
++fetchJsonWithFallback(['audit3_evidence.json', 'data/audit3_evidence.json',
++                       '../audit/data/audit3_evidence.json'])
+   .then(renderEvidence)
+   .catch(err=>{ if($('evSub')) $('evSub').textContent =
+     'Evidence registry not published yet ('+err.message+'). The weekly audit3-evidence workflow writes it.'; });
+ 
+-fetch('audit3_ledger.json', {cache:'no-store'})
+-  .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
++fetchJsonWithFallback(['audit3_ledger.json', 'data/audit3_ledger.json',
++                       '../audit/data/audit3_ledger.json'])
+   .then(d=>{
+     render(d);
+     const fresh = d.source_generated_at ? stamp(d.source_generated_at) : '—';
+diff --git a/tests/test_audit3_coverage_alpha.py b/tests/test_audit3_coverage_alpha.py
+index 5fa87dfafbd..c25bad32a65 100644
+--- a/tests/test_audit3_coverage_alpha.py
++++ b/tests/test_audit3_coverage_alpha.py
+@@ -117,3 +117,108 @@ def test_report_stays_json_safe():
+     rows = [_row(pnl_pct=p) for p in (1.0, -1.0, 0.5, 2.0, -0.2) * 5]
+     rep = build_report(rows, "x", None)
+     json.dumps(rep, allow_nan=False)
++
++
++def _canonical_payload(rows, kept, **summary):
++    payload = _payload(rows, **summary)
++    payload["resolved_closed_picks_net"] = {
++        "schema": "audit.canonical.v1",
++        "rows_sha256": "deadbeef",
++        "counts": {"kept_rows": kept,
++                   "excluded_by_reason": {"invalid_row": 100}},
++    }
++    return payload
++
++
++def _set_canonical(kept: int) -> None:
++    import alpha_engine.audit3_tribunal as trib
++    trib.LAST_DENOMINATOR.clear()
++    trib.LAST_DENOMINATOR.update({"mode": "canonical", "kept_rows": kept,
++                                  "rows_sha256": "deadbeef"})
++
++
++def test_scored_rows_above_valid_never_publish_over_100_pct():
++    """8605 scored vs 8175 'valid closed' used to print 105.26%.
++
++    2026-11-19 live ledger did exactly that. A ratio above 100% means the two
++    denominators disagree, so the headline ratio must be withheld and the raw
++    value plus a reconciliation kept for auditors.
++    """
++    rows = [_row() for _ in range(860)]
++    payload = _canonical_payload(
++        rows, 860,
++        total_closed_picks=14632, valid_closed_picks=817,
++        integrity_excluded=5935, auto_expired_excluded=9110,
++        zero_pnl_count=134,
++        resolver_anomalies={"expired_zero_pnl_rows": 3481},
++    )
++    _set_canonical(860)
++    try:
++        cov = payload_coverage(payload, rows)
++    finally:
++        import alpha_engine.audit3_tribunal as trib
++        trib.LAST_DENOMINATOR.clear()
++
++    assert cov["denominator"]["mode"] == "canonical"
++    assert cov["scored_share_of_valid_pct"] is None
++    assert cov["scored_share_of_valid_pct_raw"] > 100
++    assert cov["valid_denominator_inconsistent"] is True
++    assert cov["denominator_reconciliation"]["delta"] == 43
++    assert cov["denominator_reconciliation"]["scored_but_not_dashboard_valid"] == 43
++    assert cov["denominator_reconciliation"]["consistent"] is False
++    assert "Denominator check" in cov["statement"]
++
++
++def test_auto_expired_wording_matches_canonical_reality():
++    """Timeouts are retained at their resolved exit in the canonical view.
++
++    The old text claimed auto-expired rows are "dropped before scoring and never
++    counted"; the live canonical book still carries zero-P&L rows, so that claim
++    was false. The cohort reason and statement must say so in canonical mode.
++    """
++    rows = [_row() for _ in range(50)]
++    payload = _canonical_payload(
++        rows, 50, total_closed_picks=1000, valid_closed_picks=900,
++        integrity_excluded=300, auto_expired_excluded=400, zero_pnl_count=7)
++    _set_canonical(50)
++    try:
++        cov = payload_coverage(payload, rows)
++    finally:
++        import alpha_engine.audit3_tribunal as trib
++        trib.LAST_DENOMINATOR.clear()
++
++    expired = [c for c in cov["excluded_cohorts"] if c["cohort"] == "auto_expired"][0]
++    assert "retained in the canonical view" in expired["reason"]
++    assert "zero P&L" in expired["reason"]
++    assert "never counted" not in cov["statement"]
++    assert "only partly absent" in cov["statement"]
++
++
++def test_payload_slice_mode_keeps_strict_auto_expired_wording():
++    rows = [_row() for _ in range(5)]
++    cov = payload_coverage(
++        _payload(rows, total_closed_picks=1000, valid_closed_picks=900,
++                 integrity_excluded=300, auto_expired_excluded=400), rows)
++    expired = [c for c in cov["excluded_cohorts"] if c["cohort"] == "auto_expired"][0]
++    assert "dropped before scoring" in expired["reason"]
++    assert cov["denominator"]["mode"] == "payload_slice"
++
++
++def test_summary_candidate_counts_match_each_table():
++    """The KPI used to count strategy cells only while a symbol CANDIDATE existed.
++
++    Live 2026-11-19 ledger: n_candidate=0 but the symbols table carried
++    AUDJPY LONG as CANDIDATE. Each headline count must equal its own table so the
++    page cannot contradict itself.
++    """
++    rows = [_row(strategy=f"s{i % 3}", symbol="BTCUSDT",
++                 pnl_pct=1.0 if i % 2 == 0 else -0.4,
++                 closed_at=f"2026-11-{1 + i % 20:02d}T00:00:00Z")
++            for i in range(48)]
++    rep = build_report(rows, "x", None)
++    s = rep["summary"]
++    assert s["n_candidate"] == sum(1 for c in rep["cells"] if c["verdict"] == "CANDIDATE")
++    assert s["n_candidate_symbols"] == sum(
++        1 for c in rep["symbols"] if c["verdict"] == "CANDIDATE")
++    assert s["n_candidate_segments"] == sum(
++        1 for c in rep["segments"] if c["verdict"] == "CANDIDATE")
+diff --git a/tools/serve_local.py b/tools/serve_local.py
+index fbcc4b135e3..08f0b2fe965 100644
+--- a/tools/serve_local.py
++++ b/tools/serve_local.py
+@@ -39,6 +39,27 @@ FAVCREATORS_DOCS_ROOT = _WORKSPACE_ROOT / "favcreators" / "docs"
+ FAVCREATORS_CREATORS_JSON = _WORKSPACE_ROOT / "data" / "favcreators_creators.json"
+ AUDIT_DOCS_ROOT = _WORKSPACE_ROOT / "audit_dashboard"
+ 
++# The live site publishes these pages as directories: /audit2/ and /audit3/ each
++# hold their own page plus the JSON sidecars it fetches. Locally the files live in
++# audit_dashboard/ and audit_dashboard/data/, so map the live URL to the repo file
++# here and keep the mapping testable (tests/test_serve_local_audit_routes.py).
++AUDIT_LIVE_ALIASES = {
++    "/audit2/audit2.html": AUDIT_DOCS_ROOT / "audit2.html",
++    "/audit2/audit2.js": AUDIT_DOCS_ROOT / "audit2.js",
++    "/audit2/audit2_forward.json": AUDIT_DOCS_ROOT / "data" / "audit2_forward.json",
++    "/audit2/audit3_ledger.json": AUDIT_DOCS_ROOT / "data" / "audit3_ledger.json",
++    "/audit3/index.html": AUDIT_DOCS_ROOT / "audit3.html",
++    "/audit3/audit3.html": AUDIT_DOCS_ROOT / "audit3.html",
++    "/audit3/audit3_ledger.json": AUDIT_DOCS_ROOT / "data" / "audit3_ledger.json",
++    "/audit3/audit3_evidence.json": AUDIT_DOCS_ROOT / "data" / "audit3_evidence.json",
++}
++AUDIT_DIRECTORY_INDEX = {
++    "/audit2": "/audit2/audit2.html",
++    "/audit2/": "/audit2/audit2.html",
++    "/audit3": "/audit3/index.html",
++    "/audit3/": "/audit3/index.html",
++}
++
+ def _send_json(handler, obj):
+     out = json.dumps(obj).encode("utf-8")
+     handler.send_response(200)
+@@ -261,6 +282,22 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
+                 self.wfile.write(index_html.read_bytes())
+                 return
+ 
++        # /audit2/ and /audit3/ mirror the live layout: the page and the JSON
++        # sidecars it fetches share one directory. Locally those files live in
++        # audit_dashboard/ and audit_dashboard/data/, so a page opened at
++        # /audit2/ used to 404 its own ledger and appear "unavailable".
++        _alias_key = AUDIT_DIRECTORY_INDEX.get(raw_path, raw_path)
++        _aliased = AUDIT_LIVE_ALIASES.get(_alias_key)
++        if _aliased and _aliased.is_file():
++            _ct = (".json" == _aliased.suffix and "application/json; charset=utf-8") or \
++                  (".js" == _aliased.suffix and "application/javascript; charset=utf-8") or \
++                  "text/html; charset=utf-8"
++            self.send_response(200)
++            self.send_header("Content-Type", _ct)
++            self.end_headers()
++            self.wfile.write(_aliased.read_bytes())
++            return
++
+         # Audit dashboard: mirror the live /audit/ route from local audit_dashboard/.
+         if raw_path == "/audit" or raw_path == "/audit/":
+             audit_index = AUDIT_DOCS_ROOT / "index.html"

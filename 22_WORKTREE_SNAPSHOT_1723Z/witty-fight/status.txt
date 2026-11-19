@@ -1,0 +1,19 @@
+ M alpha_engine/audit3_tribunal.py
+ M audit_dashboard/audit3.html
+ M tests/test_audit3_coverage_alpha.py
+ M tools/serve_local.py
+?? COMS/
+?? alpha_engine/forward_observations.py
+?? alpha_engine/forward_observations_ingest.py
+?? audit_dashboard/audit2.html
+?? audit_dashboard/audit2.js
+?? tests/test_audit2_forward_summary.py
+?? tests/test_forward_observations.py
+?? tests/test_forward_observations_ingest.py
+?? tests/test_serve_local_audit_routes.py
+?? tools/audit2_forward_summary.py
+?? updates/2026-11-19-audit-surface-verification-and-stale-branch-delta.md
+?? updates/2026-11-19-audit-vs-audit3-contradiction-reconciliation.md
+?? updates/2026-11-19-audit2-reproducibility-and-local-routes.md
+?? updates/2026-11-19-audit3-coverage-honesty-fix.md
+?? updates/2026-11-19-forward-benchmark-window-right-edge-fix.md

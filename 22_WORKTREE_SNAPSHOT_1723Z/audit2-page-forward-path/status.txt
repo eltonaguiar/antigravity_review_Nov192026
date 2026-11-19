@@ -1,0 +1,8 @@
+ M .claude/skills/cross-pc-health/SKILL.md
+ M .claude/skills/cross-pc-protocol-debug-first/SKILL.md
+ M .claude/skills/cross-pc-sendmsg/SKILL.md
+ M COMS_STATUS_2026-11-19.md
+ M GATEWAY_ADDRESS.json
+ M cross_pc_protocol/__init__.py
+ M cross_pc_protocol/gateway.py
+?? COMS/

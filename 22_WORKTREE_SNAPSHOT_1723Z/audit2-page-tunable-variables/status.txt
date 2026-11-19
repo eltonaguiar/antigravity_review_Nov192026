@@ -1,0 +1,2 @@
+?? updates/2026-11-19-coms-handoff-guide.md
+?? updates/2026-11-19-coms-windows-patch-procedure.md

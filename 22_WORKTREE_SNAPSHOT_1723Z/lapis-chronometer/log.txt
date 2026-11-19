@@ -1,0 +1,5 @@
+f9e6c8202a1 data: Auto-update backtest results 2026-11-19 06:13 UTC [skip ci]
+1cd4f6527ee Merge pull request #905 from eltonaguiar/feat/wr-semantics-measured-cost-timeline
+53bd7766a07 fix(audit): wr means the class rows, measured cost in audit3, one smart-picks def
+90163a6e2e4 KIMI_FEB172026 [2026-11-19 06:05 UTC] - scan cycle [skip ci]
+dd83beb7f33 Copy trader intelligence scan 2026-11-19 06:05 UTC [skip ci]

@@ -1,0 +1,5 @@
+e2c73151a5d fix(audit3): install pymysql so selection alpha computes in CI
+c2787a3a753 Merge pull request #936 from eltonaguiar/feat/audit3-db-tracking
+a0dbf2ae5da feat(audit3): mirror verdict history into ejaguiar1_stocks
+4ac2acd1ade DARWIN ENGINE: Hourly DNA evolution cycle 2026-11-19 17:03 UTC [skip ci]
+2652cbd1ed9 Sustained Gainer scan: 2026-11-19 16:58 [AUTO] [skip ci]
