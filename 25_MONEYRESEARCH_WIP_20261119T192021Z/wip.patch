@@ -1,0 +1,425 @@
+diff --git a/alpha_engine/money_ready_verdict.py b/alpha_engine/money_ready_verdict.py
+index 2f80db7af60..5795bf0767b 100644
+--- a/alpha_engine/money_ready_verdict.py
++++ b/alpha_engine/money_ready_verdict.py
+@@ -462,6 +462,7 @@ def _load_picks(*, ci_mode: bool = False) -> list[dict]:
+ 
+ 
+ PF_REGISTRY_PATH = REPO_ROOT / "audit_dashboard/data/pf_registry.json"
++AUDIT3_LEDGER_PATH = REPO_ROOT / "audit_dashboard/data/audit3_ledger.json"
+ 
+ 
+ # Sleeve plausibility guard (2026-11-16 audit). A profit factor this high on a
+@@ -652,6 +653,72 @@ def _merge_top_sleeves(
+     return merged[:5]
+ 
+ 
++_AUDIT3_CELL_INDEX: dict[str, dict[tuple[str, str], str]] | None = None
++
++
++def _audit3_cell_index(ledger_path: Path | None = None) -> dict[tuple[str, str], str]:
++    """(asset_class, strategy) -> tribunal verdict from the audit3 ledger.
++
++    The /audit3 tribunal is the only surface that scores sleeves with DSR,
++    FDR multiplicity, cost stress and split-half stability. Fail-open: a
++    missing/corrupt ledger returns {} and sleeves are marked NOT_SCORED.
++    """
++    global _AUDIT3_CELL_INDEX
++    path = ledger_path or AUDIT3_LEDGER_PATH
++    cache_key = str(path)
++    if _AUDIT3_CELL_INDEX is not None and cache_key in _AUDIT3_CELL_INDEX:
++        return _AUDIT3_CELL_INDEX[cache_key]
++    index: dict[tuple[str, str], str] = {}
++    try:
++        with open(path, encoding="utf-8") as f:
++            ledger = json.load(f)
++        for cell in ledger.get("cells") or []:
++            ac = str(cell.get("asset_class") or "").upper()
++            strat = str(cell.get("strategy") or "")
++            verdict = str(cell.get("verdict") or "")
++            if not (ac and strat and verdict):
++                continue
++            prev = index.get((ac, strat))
++            # Keep the strongest claim per (class, strategy) across directions
++            # so a LONG CANDIDATE is not hidden by a SHORT INSUFFICIENT_N.
++            rank = {"PROVEN_T2": 5, "CANDIDATE": 4, "WEAK": 3, "KILL": 2,
++                    "INSUFFICIENT_N": 1}
++            if prev is None or rank.get(verdict, 0) > rank.get(prev, 0):
++                index[(ac, strat)] = verdict
++    except Exception:
++        index = {}
++    if _AUDIT3_CELL_INDEX is None:
++        _AUDIT3_CELL_INDEX = {}
++    _AUDIT3_CELL_INDEX[cache_key] = index
++    return index
++
++
++def _audit3_cross_mark(
++    sleeves: list[dict], asset_class: str, ledger_path: Path | None = None,
++) -> list[dict]:
++    """Stamp each sleeve with the audit3 tribunal's independent verdict.
++
++    Root cause this fixes (2026-11-19): resolver-grade sleeves are selected
++    post-hoc from MySQL at_pick_outcomes with a WR>=50 & PF>=1.5 filter over
++    ~277 strategies — survivorship display with no multiplicity correction.
++    Several headline sleeves (Multi-Timeframe Trend Alignment PF 11.8,
++    AuditEnsemble PF 10.1) never appear in the audit3 payload at all, so
++    nothing independent ever scored them. A sleeve is only
++    `tribunal_corroborated` when audit3 rates it PROVEN_T2 or CANDIDATE.
++    """
++    index = _audit3_cell_index(ledger_path)
++    ac = asset_class.upper()
++    for s in sleeves:
++        verdict = index.get((ac, str(s.get("strategy") or ""))) or "NOT_SCORED"
++        s["audit3_verdict"] = verdict
++        s["tribunal_corroborated"] = verdict in ("PROVEN_T2", "CANDIDATE")
++        note = s.get("note") or ""
++        tag = f"audit3:{verdict}"
++        if tag not in note:
++            s["note"] = f"{note}; {tag}" if note else tag
++    return sleeves
++
++
+ def _load_dashboard_health() -> dict[str, dict]:
+     """Per-class n/wr/pf used as a display fallback when a class has fewer
+     than MIN_N_CLASS resolved picks.
+@@ -1661,7 +1728,9 @@ def money_ready_verdict(asset_class: str | None = None, n_boot: int = 500, ci_mo
+         wf_oos = _simple_wf_oos_ratio(ac_picks) if not _CI_MODE else {"ratio": None, "ok": None, "note": "skipped in CI mode"}
+         reg_sleeves = _top_money_ready_sleeves(full_reg, ac) if full_reg else []
+         outcome_sleeves = _top_sleeves_from_outcomes(ac) if not ci_mode else []
+-        top_sleeves = _merge_top_sleeves(reg_sleeves, outcome_sleeves)
++        top_sleeves = _audit3_cross_mark(
++            _merge_top_sleeves(reg_sleeves, outcome_sleeves), ac,
++        )
+ 
+         # OVERALL/110 transparency: machine-readable daily-vs-honest-intrabar divergence.
+         # The verdict already GATES on honest intrabar via _sizing_metrics_from_intrabar
+diff --git a/audit_dashboard/template.html b/audit_dashboard/template.html
+index b23a4d3ff9b..fb4eec5a594 100644
+--- a/audit_dashboard/template.html
++++ b/audit_dashboard/template.html
+@@ -1195,7 +1195,16 @@ a:hover { text-decoration: underline; }
+                 // Say so instead of headlining an artifact as "Top".
+                 sleeveTxt = ' <span style="color:#fca5a5;font-size:11px" title="' + (s0.note || 'artifact') + '">No credible sleeve &mdash; top candidate flagged ' + (s0.note || 'artifact') + '</span>';
+               } else {
+-                sleeveTxt = ' <span style="color:#a5b4fc;font-size:11px">Top: <code>' + (s0.strategy || '?') + '</code> (n=' + s0.n + ', PF=' + s0.pf + (s0.is_single_source ? ', &#x26a0; single-src' : '') + ')</span>';
++                var a3v = s0.audit3_verdict || 'NOT_SCORED';
++                var a3Badge;
++                if (s0.tribunal_corroborated) {
++                  a3Badge = ' <span title="Independently scored by the /audit3 kill tribunal (DSR, FDR, cost stress)" style="background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.4);padding:1px 5px;border-radius:6px;font-size:9px;font-weight:700">AUDIT3 ' + a3v + '</span>';
++                } else if (a3v === 'NOT_SCORED') {
++                  a3Badge = ' <span title="This sleeve never reached the /audit3 tribunal payload — resolver-grade selection display (post-hoc WR/PF filter over ~277 strategies, no multiplicity correction). Do not size on it." style="background:rgba(245,158,11,0.15);color:#fbbf24;border:1px solid rgba(245,158,11,0.4);padding:1px 5px;border-radius:6px;font-size:9px;font-weight:700">&#x26a0; UNVERIFIED (not in audit3)</span>';
++                } else {
++                  a3Badge = ' <span title="The /audit3 tribunal independently rates this sleeve ' + a3v + ' after DSR/FDR/cost-stress — the headline PF here is selection-biased" style="background:rgba(239,68,68,0.12);color:#fca5a5;border:1px solid rgba(239,68,68,0.35);padding:1px 5px;border-radius:6px;font-size:9px;font-weight:700">AUDIT3 ' + a3v + '</span>';
++                }
++                sleeveTxt = ' <span style="color:#a5b4fc;font-size:11px">Top: <code>' + (s0.strategy || '?') + '</code> (n=' + s0.n + ', PF=' + s0.pf + (s0.is_single_source ? ', &#x26a0; single-src' : '') + ')</span>' + a3Badge;
+               }
+             }
+             if (!span.dataset.mgStatic) span.dataset.mgStatic = span.innerHTML;
+diff --git a/reports/audit3_confirmatory.json b/reports/audit3_confirmatory.json
+index 4430f94bcff..43dc8481dc8 100644
+--- a/reports/audit3_confirmatory.json
++++ b/reports/audit3_confirmatory.json
+@@ -117,7 +117,8 @@
+       "hypothesis_id": "H-2026-11-19-03",
+       "strategies": [
+         "faber_taa",
+-        "etf_faber_tactical"
++        "etf_faber_tactical",
++        "faber_taa_paper_pilot"
+       ],
+       "asset_classes": [
+         "EQUITY",
+@@ -191,6 +192,49 @@
+       "why_observe_not_pre_registered": "The slice was measured on the same closed ledger the tribunal judges, so it cannot confer confirmatory status. observe = shadow rows only, no promotion.",
+       "acceptance_criteria": "Forward rows closed after 2026-11-19: n>=100, mean selection alpha CI-LB > 0, 2x-cost CI-LB > 0, split-half stable, IR>=0.5 vs a matched hold. Promote to pre_registered only on a fresh decision after those rows exist.",
+       "evidence_at_registration": "reports/alpha_slice_scan_2026-11-19.json: class_tf:CRYPTO/POSITION +2.006%/pick, n=145, q=0.001 (post-hoc, disclosure recorded above)."
++    },
++    {
++      "id": "POD-ETF-DUAL-MOMENTUM",
++      "status": "observe",
++      "registered_at": "2026-11-19",
++      "hypothesis_id": "H-2026-11-19-06",
++      "strategies": [
++        "etf_verified_dual_momentum",
++        "etf_dual_momentum"
++      ],
++      "asset_classes": [
++        "ETF",
++        "EQUITY"
++      ],
++      "directions": [
++        "LONG"
++      ],
++      "thesis": "12-1 sector-vs-SPY dual momentum is the only ETF sleeve with a lab WF PASS (OOS PF 2.746) but the forward pilot accrued zero closes (winner-stays bug).",
++      "expression": "Monthly decision cadence; hold top sector beating SPY with positive 12-1 momentum, else cash; calendar-month segment closes.",
++      "acceptance_criteria": "Forward rows dated after 2026-11-19: n>=100, net CI lower bound > 0 at 2x measured slippage, IR>=0.5 vs a matched SPY leg, split-half stable.",
++      "evidence_at_registration": "reports/edge_hunt_ETF_2026-06-05.md (lab WF PASS); verified_strategies/paper_pilot/etf_dual_momentum_pilot.py state shows open XLE position, 0 closes.",
++      "observe_reason": "forward n=0; lab-only evidence."
++    },
++    {
++      "id": "POD-CRYPTO-BTC4H-RSIMACD",
++      "status": "observe",
++      "registered_at": "2026-11-19",
++      "hypothesis_id": "H-2026-11-19-07",
++      "strategies": [
++        "btc_4h_rsi_macd",
++        "btc-4h-rsi-macd-scout"
++      ],
++      "asset_classes": [
++        "CRYPTO"
++      ],
++      "directions": [
++        "LONG"
++      ],
++      "thesis": "Best CRYPTO discovery cell by DSR (0.118) and net expectancy (+2.0%/trade, n=35) in the 2026-11-19 tribunal; still WEAK and fails 2x cost stress, so forward-only.",
++      "expression": "4h RSI+MACD confluence long on BTC/ETH/SOL with TP/SL and time exit, run as a live paper slot (crypto_intraday_sim).",
++      "acceptance_criteria": "Forward rows dated after 2026-11-19: n>=100, net CI lower bound > 0 at 2x measured slippage, IR>=0.5 vs a matched BTC leg, split-half stable.",
++      "evidence_at_registration": "audit3_ledger 2026-11-19 cell btc-4h-rsi-macd-scout LONG n=35 WR 57% PF 2.15 DSR 0.118 verdict WEAK.",
++      "observe_reason": "discovery-namespace WEAK; n=35 lab rows only."
+     }
+   ]
+ }
+diff --git a/reports/hypothesis_registry.json b/reports/hypothesis_registry.json
+index 9df1dabfa48..2af210b8503 100644
+--- a/reports/hypothesis_registry.json
++++ b/reports/hypothesis_registry.json
+@@ -2474,40 +2474,88 @@
+    },
+    "banned_check": "Not a re-test of killed families H-032 (intraday orderbook imbalance reversion) or H-033 (residualised overnight reversal): this is a holding-horizon selection effect on the emitted book, not an intraday signal, and it is judged only on post-registration rows."
+   },
+-{
+-    "id": "H-145",
+-    "asset_class": "ETF",
+-    "family": "exit_geometry_time_exit",
+-    "description": "ETF picks: a fixed 7-day time exit (no TP, no SL) versus the exit the emitter actually took, measured on the same entry fill and direction. The counterfactual fills at the last bar at or before entry+7d and pays 0.10% round-trip; the actual leg already carries its own cost.",
+-    "test_statistic": "mean paired per-pick delta (time exit minus actual exit, pct) with a bootstrap 95% CI, judged at a Bonferroni-corrected alpha for the 3 asset classes x 3 horizons tested in one pass",
+-    "acceptance_criteria": {
+-      "min_n": 100,
+-      "min_delta_pct": 0.2,
+-      "min_ci_lb_pct": 0.0,
+-      "bonferroni": {
+-        "family_k": 9,
+-        "family_alpha": 0.05,
+-        "alpha_corrected": 0.005556,
+-        "min_abs_z": 2.773
+-      },
+-      "multiplicity_note": "9 = 3 asset classes x 3 horizons (1d, 3d, 7d) evaluated in one run; the ETF/7d cell was identified by looking at all 9, so it is post-hoc and only forward rows may judge it.",
+-      "rule": "ETF rows closed after 2026-11-19 only: n>=100, mean paired delta > 0 with CI-LB > 0 at alpha 0.005556 (two-sided |z| >= 2.773), split-half stable, and reproduced at 2x the cost assumption. Judged on forward rows only; a result on the selecting sample, however significant, does not count."
+-    },
+-    "economic_prior": "An index ETF that has already begun to trend may keep drifting, and a fixed TAKE_PROFIT realises the move before the drift is exhausted. The prior is weak and ETF-specific: a blanket time exit is worse for CRYPTO and EQUITY at every horizon tested, and the vol-scaled arm does not reproduce the ETF effect.",
+-    "status": "PRE_REGISTERED",
+-    "registered_at": "2026-11-19",
+-    "data_sample_lock": "The motivating +0.460%/pick (n=261, CI [+0.154, +0.766]) was measured on the same closed-pick ledger the tribunal judges and was selected as the best of 9 class x horizon cells: POST-HOC. Only ETF rows closed after 2026-11-19 may judge this hypothesis.",
+-    "result": {
+-      "verdict": "UNTESTED",
+-      "reason": "Pre-registered after a post-hoc 1-of-9 selection; the selecting sample cannot promote it."
++  {
++   "id": "H-145",
++   "asset_class": "ETF",
++   "family": "exit_geometry_time_exit",
++   "description": "ETF picks: a fixed 7-day time exit (no TP, no SL) versus the exit the emitter actually took, measured on the same entry fill and direction. The counterfactual fills at the last bar at or before entry+7d and pays 0.10% round-trip; the actual leg already carries its own cost.",
++   "test_statistic": "mean paired per-pick delta (time exit minus actual exit, pct) with a bootstrap 95% CI, judged at a Bonferroni-corrected alpha for the 3 asset classes x 3 horizons tested in one pass",
++   "acceptance_criteria": {
++    "min_n": 100,
++    "min_delta_pct": 0.2,
++    "min_ci_lb_pct": 0.0,
++    "bonferroni": {
++     "family_k": 9,
++     "family_alpha": 0.05,
++     "alpha_corrected": 0.005556,
++     "min_abs_z": 2.773
+     },
+-    "banned_check": "Not a re-test of H-032/H-033 (intraday reversion): no signal or universe change, only exit geometry on ETF picks the emitter already produced.",
+-    "evidence": [
+-      "reports/exit_ab_paper_2026-11-19.json",
+-      "updates/2026-11-19-exit-ab-paper.md",
+-      "tools/exit_ab_paper.py"
+-    ],
+-    "notes": "Counter-evidence recorded at registration: the vol-scaled arm (3% target, median hold 0.75d) puts ETF at +0.019%/pick (n=261, CI [-0.275, +0.313]), so the effect is not stable under a re-timed exit. Both arms are reproducible with tools/exit_ab_paper.py (--vol-target 0 disables the vol arm)."
++    "multiplicity_note": "9 = 3 asset classes x 3 horizons (1d, 3d, 7d) evaluated in one run; the ETF/7d cell was identified by looking at all 9, so it is post-hoc and only forward rows may judge it.",
++    "rule": "ETF rows closed after 2026-11-19 only: n>=100, mean paired delta > 0 with CI-LB > 0 at alpha 0.005556 (two-sided |z| >= 2.773), split-half stable, and reproduced at 2x the cost assumption. Judged on forward rows only; a result on the selecting sample, however significant, does not count."
++   },
++   "economic_prior": "An index ETF that has already begun to trend may keep drifting, and a fixed TAKE_PROFIT realises the move before the drift is exhausted. The prior is weak and ETF-specific: a blanket time exit is worse for CRYPTO and EQUITY at every horizon tested, and the vol-scaled arm does not reproduce the ETF effect.",
++   "status": "PRE_REGISTERED",
++   "registered_at": "2026-11-19",
++   "data_sample_lock": "The motivating +0.460%/pick (n=261, CI [+0.154, +0.766]) was measured on the same closed-pick ledger the tribunal judges and was selected as the best of 9 class x horizon cells: POST-HOC. Only ETF rows closed after 2026-11-19 may judge this hypothesis.",
++   "result": {
++    "verdict": "UNTESTED",
++    "reason": "Pre-registered after a post-hoc 1-of-9 selection; the selecting sample cannot promote it."
++   },
++   "banned_check": "Not a re-test of H-032/H-033 (intraday reversion): no signal or universe change, only exit geometry on ETF picks the emitter already produced.",
++   "evidence": [
++    "reports/exit_ab_paper_2026-11-19.json",
++    "updates/2026-11-19-exit-ab-paper.md",
++    "tools/exit_ab_paper.py"
++   ],
++   "notes": "Counter-evidence recorded at registration: the vol-scaled arm (3% target, median hold 0.75d) puts ETF at +0.019%/pick (n=261, CI [-0.275, +0.313]), so the effect is not stable under a re-timed exit. Both arms are reproducible with tools/exit_ab_paper.py (--vol-target 0 disables the vol arm)."
++  },
++  {
++   "id": "H-2026-11-19-06",
++   "asset_class": "ETF",
++   "family": "etf_dual_momentum",
++   "description": "12-1 relative momentum sector-vs-SPY rotation (etf_verified_dual_momentum pilot), monthly decision cadence with calendar-month segment closes so the forward book accrues one closed row per held month.",
++   "test_statistic": "net expectancy per trade (net of per-class slippage), bootstrap CI",
++   "acceptance_criteria": {
++    "min_n_forward": 100,
++    "net_ci_lb_gt": 0,
++    "cost_stress": "2x measured slippage",
++    "ir_min": 0.5,
++    "benchmark": "matched SPY hold over the same window",
++    "stability": "split-half stable"
++   },
++   "economic_prior": "Cross-sectional momentum across low-correlation sector sleeves with an absolute filter; the most-replicated practitioner TAA family (Antonacci/Faber).",
++   "status": "PRE_REGISTERED",
++   "registered_at": "2026-11-19",
++   "data_sample_lock": "forward rows closed on/after 2026-11-19",
++   "result": {
++    "verdict": "OBSERVE - lab PASS but forward n=0.",
++    "lab_evidence": "reports/edge_hunt_ETF_2026-06-05.md: only sleeve with lab WF PASS (OOS PF 2.746); pilot had zero closed trades because winner-stays positions never closed.",
++    "operator_note": "Registered with monthly segment closes (2026-11-19) so the forward clock can actually accrue; promote only via the audit3 forward gate."
++   }
++  },
++  {
++   "id": "H-2026-11-19-07",
++   "asset_class": "CRYPTO",
++   "family": "btc_4h_rsi_macd",
++   "description": "BTC(+ETH/SOL) 4h RSI+MACD confluence long scout, TP/SL + time exit, run as a live paper slot in crypto_intraday_sim.",
++   "test_statistic": "net expectancy per trade (net of per-class slippage), bootstrap CI",
++   "acceptance_criteria": {
++    "min_n_forward": 100,
++    "net_ci_lb_gt": 0,
++    "cost_stress": "2x measured slippage",
++    "ir_min": 0.5,
++    "benchmark": "matched BTC hold over the same window",
++    "stability": "split-half stable"
++   },
++   "economic_prior": "Short-horizon continuation at 4h cadence in a 24/7 market; the only CRYPTO cell with positive net expectancy and the highest DSR in the 2026-11-19 tribunal.",
++   "status": "PRE_REGISTERED",
++   "registered_at": "2026-11-19",
++   "data_sample_lock": "forward rows closed on/after 2026-11-19",
++   "result": {
++    "verdict": "OBSERVE - discovery-namespace WEAK; forward-only from registration.",
++    "lab_evidence": "audit3_ledger 2026-11-19: cell btc-4h-rsi-macd-scout LONG n=35 WR 57% PF 2.15 net +2.0%/trade net CI [-0.19, 4.72] DSR 0.118 verdict WEAK; fails 2x cost stress.",
++    "operator_note": "Pre-registered before any forward data from the sim; nothing promotes without the audit3 forward gate."
++   }
+   }
+  ],
+  "fork2_new_signals": [
+@@ -4072,4 +4120,4 @@
+    "protocol_path": "2026-11-15_AM_profitability-plan/copilot-financial-review/08_SIMULATION_PLAN.md"
+   }
+  ]
+-}
++}
+\ No newline at end of file
+diff --git a/tests/test_money_ready_verdict.py b/tests/test_money_ready_verdict.py
+index e1f184f00b9..12777feb5bd 100644
+--- a/tests/test_money_ready_verdict.py
++++ b/tests/test_money_ready_verdict.py
+@@ -847,3 +847,69 @@ class TestSleevePlausibilityGuard:
+         merged = _merge_top_sleeves(reg, out)
+         assert merged[0]["strategy"] == "clean_high_pf"
+         assert merged[1]["strategy"] == "resolver_artifact"
++
++
++class TestAudit3CrossMark:
++    """Sleeves must carry the audit3 tribunal's independent verdict
++    (2026-11-19: headline sleeves with PF>10 were absent from audit3 cells)."""
++
++    def _ledger(self, tmp_path, cells):
++        import json
++        p = tmp_path / "audit3_ledger.json"
++        p.write_text(json.dumps({"cells": cells}), encoding="utf-8")
++        return p
++
++    def _fresh(self):
++        import alpha_engine.money_ready_verdict as mrv
++        mrv._AUDIT3_CELL_INDEX = None
++        return mrv
++
++    def test_sleeve_absent_from_ledger_is_not_scored(self, tmp_path):
++        mrv = self._fresh()
++        path = self._ledger(tmp_path, [
++            {"asset_class": "CRYPTO", "strategy": "other", "verdict": "WEAK"},
++        ])
++        sleeves = mrv._audit3_cross_mark(
++            [{"strategy": "Multi-Timeframe Trend Alignment", "pf": 11.77,
++              "note": "resolver_grade"}],
++            "CRYPTO", ledger_path=path,
++        )
++        assert sleeves[0]["audit3_verdict"] == "NOT_SCORED"
++        assert sleeves[0]["tribunal_corroborated"] is False
++        assert "audit3:NOT_SCORED" in sleeves[0]["note"]
++
++    def test_candidate_cell_corroborates(self, tmp_path):
++        mrv = self._fresh()
++        path = self._ledger(tmp_path, [
++            {"asset_class": "ETF", "strategy": "rs-breakout-scout",
++             "direction": "LONG", "verdict": "CANDIDATE"},
++        ])
++        sleeves = mrv._audit3_cross_mark(
++            [{"strategy": "rs-breakout-scout", "pf": 1.59}],
++            "ETF", ledger_path=path,
++        )
++        assert sleeves[0]["audit3_verdict"] == "CANDIDATE"
++        assert sleeves[0]["tribunal_corroborated"] is True
++
++    def test_strongest_verdict_wins_across_directions(self, tmp_path):
++        mrv = self._fresh()
++        path = self._ledger(tmp_path, [
++            {"asset_class": "EQUITY", "strategy": "donchian-stock-breakout",
++             "direction": "SHORT", "verdict": "INSUFFICIENT_N"},
++            {"asset_class": "EQUITY", "strategy": "donchian-stock-breakout",
++             "direction": "LONG", "verdict": "WEAK"},
++        ])
++        sleeves = mrv._audit3_cross_mark(
++            [{"strategy": "donchian-stock-breakout", "pf": 1.69}],
++            "EQUITY", ledger_path=path,
++        )
++        assert sleeves[0]["audit3_verdict"] == "WEAK"
++        assert sleeves[0]["tribunal_corroborated"] is False
++
++    def test_missing_ledger_fails_open(self, tmp_path):
++        mrv = self._fresh()
++        sleeves = mrv._audit3_cross_mark(
++            [{"strategy": "x", "pf": 2.0}],
++            "CRYPTO", ledger_path=tmp_path / "nope.json",
++        )
++        assert sleeves[0]["audit3_verdict"] == "NOT_SCORED"
+diff --git a/verified_strategies/paper_pilot/etf_dual_momentum_pilot.py b/verified_strategies/paper_pilot/etf_dual_momentum_pilot.py
+index 0f878986009..efbed8ad14d 100644
+--- a/verified_strategies/paper_pilot/etf_dual_momentum_pilot.py
++++ b/verified_strategies/paper_pilot/etf_dual_momentum_pilot.py
+@@ -111,19 +111,30 @@ def run_one_shot() -> dict:
+ 
+     if open_pos and open_pos.get("status") == "OPEN":
+         held = open_pos.get("symbol")
+-        if signal == "CASH" or symbol != held:
++        # Calendar-month segment close: the strategy's decision cadence is
++        # monthly, but winner-stays holds used to span months with zero closed
++        # trades (forward n=0 since June). Close the segment at the month
++        # boundary and re-open below if the symbol is still the pick, so the
++        # forward book accrues one closed row per held month.
++        seg_rollover = str(open_pos.get("entry_date") or "")[:7] != today[:7]
++        if signal == "CASH" or symbol != held or seg_rollover:
+             entry = float(open_pos.get("entry_price") or 0.0)
+             exit_px = _last_close(str(held))
+             pnl_pct = (exit_px / entry - 1.0) if entry else 0.0
++            reason = ("cash" if signal == "CASH"
++                      else "rotation" if symbol != held else "month_segment")
+             _append_log(
+                 {
+                     "date": today,
+                     "event": "CLOSE",
+                     "strategy": STRATEGY_ID,
++                    "asset_class": "ETF",
+                     "symbol": held,
+                     "direction": open_pos.get("direction", "BUY"),
+                     "entry_price": entry,
++                    "entry_date": open_pos.get("entry_date"),
+                     "exit_price": exit_px,
++                    "exit_reason": reason,
+                     "pnl_pct": round(pnl_pct, 6),
+                     "outcome": "WIN" if pnl_pct > 0 else "LOSS",
+                     "r12_1m": returns.get(str(held)),

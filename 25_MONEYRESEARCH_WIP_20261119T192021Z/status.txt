@@ -1,0 +1,11 @@
+ M alpha_engine/money_ready_verdict.py
+ M audit_dashboard/template.html
+ M reports/audit3_confirmatory.json
+ M reports/hypothesis_registry.json
+ M tests/test_money_ready_verdict.py
+ M verified_strategies/paper_pilot/etf_dual_momentum_pilot.py
+?? .github/workflows/crypto-intraday-sim.yml
+?? tests/test_crypto_intraday_sim.py
+?? tools/crypto_bars.py
+?? tools/pilot_forward_bridge.py
+?? verified_strategies/paper_pilot/crypto_intraday_sim.py
