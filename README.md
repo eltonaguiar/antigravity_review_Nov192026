@@ -78,9 +78,10 @@ antigravity_review_Nov192026/
 │   └── peer_worktree_review.md   ← review of peer worktrees (quant-audit 0/166, copilot WIRED_IN)
 ├── 03_VARIABLES/
 │   └── tunable_variables.md      ← what can be switched & observed
-└── 04_RECOMMENDATIONS/
-    ├── forward_path.md           ← 90-day plan
-    └── EVIDENCE_INDEX.md         ← every claim → source
+├── 04_RECOMMENDATIONS/
+│   ├── forward_path.md           ← 90-day plan
+│   └── EVIDENCE_INDEX.md         ← every claim → source
+└── 05_AUDIT2_SPEC.md             ← curated content spec for /audit2 (candidates, measures, methodology)
 ```
 
 *Not personalized investment advice.*

@@ -29,3 +29,8 @@ Every quantitative claim in this review maps to a measured source. (Paths relati
 | Smart-picks tile contradiction; dead tier2-proven panel | v3.1 §2; surface-review §4 |
 | quant-audit peer review: 0/166 cells pass; per-class table; crypto stop-fill overshoot 98.8% | worktree `quant-audit-2026-11-14` branch `docs/final-v2-per-asset-class-profitability`, commits b8d7d033/bine + ef2621a6134 (`final_v2/`, `05_final/VERDICT.md`) |
 | copilot peer review: WIRED_IN cards + H-143 elimination + fund/ETF baseline | worktree `copilot-financial-review-20261115` branch `docs/copilot-profitability-20261115`, commits 770a3f1a30a + 59f9224060d (`WIRED_IN/2026-11-15T0150Z_childlike-airport/`) |
+| Viable premia candidates P1–P3, statistical governance, "boring portfolio" | `EDGE_REVIEW_2026-11-19.md` (root) §2/§3/§4/§5 |
+| 0/166 cells; per-class table; stop-fill overshoot 98.8% | `quant-audit` VERDICT.md + `PER_CLASS_PATHS_TO_PROFIT.md` + `RANKED_IDEAS.md` (worktree `quant-audit-2026-11-14`) |
+| Confirmatory pod manifest (POD-EQUITY-BREAKOUT pre-registered 2026-11-19) | `reports/audit3_confirmatory.json` |
+| Strategy discovery: crypto RSI(5), forex max-carry, flagged keltner/corr-vwap | `STRATEGY_DISCOVERY_REPORT_V3_2026-11-18.md` |
+| Walkforward verdicts (ETF dual momentum PASS, VWAP reversion PASS) | `verified_strategies/WALKFORWARD_REPORT.json` (2026-06-02) |
