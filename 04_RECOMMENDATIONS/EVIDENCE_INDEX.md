@@ -27,3 +27,5 @@ Every quantitative claim in this review maps to a measured source. (Paths relati
 | Measured slippage: ETF 234% of PnL; FUTURES/COMMODITY flat < measured | `dashboard_data.json.slippage_validation`; v3.1 §1.5 |
 | Walk-forward OOS Sharpe: EQUITY +0.608 (33f), CRYPTO −2.077 (32f) | `/audit` walk-forward panel; surface-review §3.2 |
 | Smart-picks tile contradiction; dead tier2-proven panel | v3.1 §2; surface-review §4 |
+| quant-audit peer review: 0/166 cells pass; per-class table; crypto stop-fill overshoot 98.8% | worktree `quant-audit-2026-11-14` branch `docs/final-v2-per-asset-class-profitability`, commits b8d7d033/bine + ef2621a6134 (`final_v2/`, `05_final/VERDICT.md`) |
+| copilot peer review: WIRED_IN cards + H-143 elimination + fund/ETF baseline | worktree `copilot-financial-review-20261115` branch `docs/copilot-profitability-20261115`, commits 770a3f1a30a + 59f9224060d (`WIRED_IN/2026-11-15T0150Z_childlike-airport/`) |
