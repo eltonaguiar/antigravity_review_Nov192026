@@ -1,0 +1,30 @@
+# 05_KILO_REVIEW — Independent confirming review (Kilo)
+
+This folder is a **parallel, independent review** by a second agent (Kilo,
+worktree `lapis-chronometer`). It confirms the peer review in `02_FINDINGS/` /
+`03_VARIABLES/` / `04_RECOMMENDATIONS/` and adds what that review did not carry:
+
+- **Exact selection-alpha numbers** with confidence intervals (F1): crypto LONG
+  −0.442%/pick and ETF LONG −0.272%/pick vs direction-adjusted hold.
+- **The leaky walk-forward gate** (F3): `wf_verdict` +0.96%/trade raw vs
+  −0.19%/trade under point-in-time replay; at-issue inputs stamped on 6% of rows.
+- **Backtest-n vs realized-n confusion** (F6): `crypto_liquidity_wick_reversal_v1`
+  cited n=4,904 (backtest) but realized n=43.
+- **Contradictory internal audits** (F7): `ML_SYSTEMS_HEALTH_AUDIT` (optimistic,
+  walk-forward lift) vs `audit3 edge hunt` (rigorous, beta-separated).
+- **Commit-SHA-level evidence index** for every claim.
+
+Files:
+- [`FINDINGS_ROOT_CAUSE.md`](FINDINGS_ROOT_CAUSE.md) — findings F1–F7 + bottom line.
+- [`EVIDENCE_INDEX.md`](EVIDENCE_INDEX.md) — claim → file / commit SHA / URL.
+- [`PLAN.md`](PLAN.md) — sequenced recovery plan incl. the forward A/B (hold-benchmark) harness.
+
+## Relationship to the rest of the repo
+
+| Folder | Author | Content |
+|---|---|---|
+| `01_INVENTORY/` … `04_RECOMMENDATIONS/` | peer agent | inventory, findings, tunable-variable table, forward path |
+| `05_KILO_REVIEW/` | Kilo | confirming root-cause + evidence index + A/B-harness plan |
+
+Both reviews reach the same conclusion: **no positive selection alpha; the fix is
+stop-the-bleed + forward measurement, not another strategy.**
