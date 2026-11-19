@@ -18,6 +18,9 @@ Files:
 - [`FINDINGS_ROOT_CAUSE.md`](FINDINGS_ROOT_CAUSE.md) — findings F1–F7 + bottom line.
 - [`EVIDENCE_INDEX.md`](EVIDENCE_INDEX.md) — claim → file / commit SHA / URL.
 - [`PLAN.md`](PLAN.md) — sequenced recovery plan incl. the forward A/B (hold-benchmark) harness.
+- [`PAGES_AUDIT2_AUDIT3.md`](PAGES_AUDIT2_AUDIT3.md) — review of the two pages:
+  audit3 (honest, live, wired) vs audit2/v2 (stale baked data, undeployed,
+  contradicts audit3).
 
 ## Relationship to the rest of the repo
 
