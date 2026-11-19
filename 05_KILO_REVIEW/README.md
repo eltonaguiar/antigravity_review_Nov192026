@@ -21,6 +21,13 @@ Files:
 - [`PAGES_AUDIT2_AUDIT3.md`](PAGES_AUDIT2_AUDIT3.md) — review of the two pages:
   audit3 (honest, live, wired) vs audit2/v2 (stale baked data, undeployed,
   contradicts audit3).
+- [`SWARM_AUDIT2_HISTORY.md`](SWARM_AUDIT2_HISTORY.md) — the Google/Gemini swarm
+  "fix audit2 page": audit2 is a 404, pivoted to audit3, FTP-secret fix.
+- [`MD_SURVEY_STRATEGIES_METHODOLOGIES.md`](MD_SURVEY_STRATEGIES_METHODOLOGIES.md)
+  — survey of 3,951 MD files: statistical-measure vocabulary, strategy families
+  vs small-sample illusions, what deserves to be in an audit2.
+- [`PEER_REVIEW_ASSESSMENT.md`](PEER_REVIEW_ASSESSMENT.md) — assessment of the
+  sibling agents' reviews + corrections I adopt from them.
 
 ## Relationship to the rest of the repo
 
