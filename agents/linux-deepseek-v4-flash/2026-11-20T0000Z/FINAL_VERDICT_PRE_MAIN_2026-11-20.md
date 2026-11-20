@@ -8,7 +8,7 @@ session; commands are listed so anyone can re-run them.
 | Surface | HTTP | bytes | data source | generated_at | rows |
 |---|---|---|---|---|---|
 | `/audit/` | 200 | 1,439,211 | `audit/data/dashboard_data.json` (200, 25,435,612 B) | 2026-11-19T21:55:00 | 8621 |
-| `/audit2/` | 200 | 6,916 | page loads **only `audit2.js`**; `audit2/data/dashboard_data.json` → **404** | — | — |
+| `/audit2/` | 200 | 6,916 | `audit2.js` → first resolving entry in a LEDGER_PATHS fallback chain | **22:47:15 or 21:02:25** (see §2a) | **8632 or 8621** |
 | `/audit3/` | 200 | 45,287 | `audit3/audit3_ledger.json` (200, 665,250 B) + `audit3_evidence.json` | 2026-11-19T22:47:15 | 8632 |
 
 `audit3_ledger.json` (schema `audit3.v1`):
@@ -35,6 +35,28 @@ That is true of **my local build** and false of **production**: the live
 `audit3_ledger.json` has no `sleeves` key. The persistence patch has never been
 deployed because it sits behind the same P0 the hotfix fixes. Withdrawn as a
 production claim; it stands only as a verified local build + patch.
+
+## 2a. Correction: `/audit2` is not an empty shell — it is a third, non-deterministic surface
+
+My first pass reported `/audit2` as "page 200 but data 404". That was wrong: I probed
+`audit2/data/dashboard_data.json`, which `/audit2` never asks for. `audit2.js` fetches
+through a `LEDGER_PATHS` fallback loop, and I measured every entry:
+
+```
+/audit2/audit3_ledger.json          404   992B
+/audit3/audit3_ledger.json          200   665,250B   generated 2026-11-19T22:47:15  n_rows 8632
+/audit2/data/audit3_ledger.json     404   992B
+/audit/data/audit3_ledger.json      200   665,028B   generated 2026-11-19T21:02:25  n_rows 8621
+/audit2/audit2_forward.json         200   185B
+```
+
+So `/audit2` renders **whichever ledger it reaches first**, and there are two that
+resolve, 105 minutes and 11 rows apart. It is not broken; it is *unpinned*. The page
+silently serves the older ledger, and `tools/assert_surface_parity.py` never looks at
+it, so the divergence is invisible to the gate. This is the same defect class as the
+105-min `/audit`-vs-`/audit3` gap, one layer down. The one-ledger patch must also
+give `/audit2` a single deterministic path and the parity assertion must gain a third
+surface check, or `/audit2` will keep quietly disagreeing with both other pages.
 
 ## 3. What I verified about the hotfix (isolated worktree, then removed)
 
@@ -79,9 +101,11 @@ not in this branch and I am not inventing one.
    it against the current broken file.
 6. **`hotfix/audit3-merge-repair`** (7112829) — overlaps #1's file. Two hotfixes
    touching one file is how the last regression happened. Pick one.
-7. **Hermes' `/audit2` mirror** — the page is 200 but `audit2/data/dashboard_data.json`
-   is **404**, so the mirror ships a shell with no data. Do not call `/audit2` deployed
-   until its data path 200s.
+7. **Hermes' `/audit2` mirror** — ships and works, but it is **unpinned**: its fallback
+   chain resolves to two different ledgers (see §2a), so it can render either 8632
+   rows at 22:47Z or 8621 rows at 21:02Z. It must be pinned to one path *and* added to
+   the parity assertion before it can be called consistent. Not a reason to hold the
+   hotfix.
 
 ## 5. How to test (copy-paste)
 
