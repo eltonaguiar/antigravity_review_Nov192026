@@ -1,0 +1,85 @@
+{
+  "snapshot_utc": "2026-11-19T23:08:00Z",
+  "agent": "opencode",
+  "os": "windows",
+  "host": "desktop-081g9oh",
+  "seat": "inbox/desktop-081g9oh/findtorontoevents_antigravity-ca/opencode",
+  "scope": "review-only; no source changes",
+  "repos": {
+    "findtorontoevents": {
+      "url": "https://github.com/eltonaguiar/findtorontoevents_antigravity.ca",
+      "main_at_snapshot": "9c7c66d40f8143bb0c169aed51f87645783a29f4"
+    },
+    "agent_folderframework": {
+      "url": "https://github.com/eltonaguiar/AGENT_FOLDERFRAMEWORK",
+      "main_at_snapshot": "269f1214845e5d2b515ca83e9eebafdb8edc025f",
+      "review_branch": "review/windows-2026-11-19",
+      "review_commit": "51d6de429cfedf9d6648b4838d89e5cbaaca5206"
+    }
+  },
+  "artifacts": [
+    "00_SUMMARY.md",
+    "01_proof.md",
+    "02_open_items.md",
+    "03_followup_verification.md",
+    "04_audit_surfaces_asset_class_deep_review.md",
+    "05_COLLABORATION_PROTOCOL.md",
+    "README.md",
+    "MANIFEST.json"
+  ],
+  "live_snapshot": {
+    "pages": {"/audit": 200, "/audit2": 200, "/audit3": 200},
+    "audit3_ledger_generated_at": "2026-11-19T21:02:25Z",
+    "audit3_source_generated_at": "2026-11-19T20:05:51Z",
+    "audit3_provenance_id": "c4efa215e26a91ba",
+    "audit3_population": "canonical",
+    "rows_scored": 8621,
+    "rows_total": 14658,
+    "coverage_pct": 58.81,
+    "proven": 0,
+    "candidate": 0,
+    "weak": 59,
+    "kill": 8,
+    "selection_alpha_pct": -0.2689,
+    "selection_alpha_ci": [-0.5043, -0.0364],
+    "selection_alpha_n": 3185,
+    "forward_rows": 430,
+    "forward_hypotheses": ["H-119"],
+    "equity_pod_forward_rows": 0,
+    "money_ready": [],
+    "watch": ["COMMODITY"],
+    "equity": {
+      "n": 941,
+      "net_expectancy_pct": 0.1666,
+      "net_ci_pct": [-0.4185, 0.7479],
+      "pf": 1.08,
+      "required_n": 9064,
+      "verdict": "WEAK"
+    }
+  },
+  "archive_tags": {
+    "findtorontoevents": [
+      "archive/2026-11-19/pr965",
+      "archive/2026-11-19/audit2-3-p0-p1",
+      "archive/2026-11-19/buffy-money-maker",
+      "archive/2026-11-19/buffy-findings",
+      "archive/2026-11-19/audit2-3-review"
+    ],
+    "agent_folderframework": [
+      "archive/2026-11-19/review-windows"
+    ]
+  },
+  "merge_policy": {
+    "main": "KEEP; no force-push",
+    "review_windows": "docs-only; safe to review/merge",
+    "pr965": "DO NOT MERGE WHOLESALE; fresh branch off current main + cherry-pick unique tests/fixes; stale ledger must be dropped",
+    "fix_audit2_3_p0_p1": "next merge candidate after CI",
+    "audit_review_organization": "QUARANTINE; credential commit; rotate and rewrite before any cherry-pick",
+    "buffy_branches": "preserve tags; merge docs only; park strategy/sim work"
+  },
+  "notes": [
+    "The shared AGENT_FOLDERFRAMEWORK checkout was restored to main; review work lives in E:\\AGENT_FOLDERFRAMEWORK-review-windows.",
+    "This folder is isolated; no files outside windows/opencode/2026-11-19T2308Z/ were edited.",
+    "Review artifact, not investment advice."
+  ]
+}
