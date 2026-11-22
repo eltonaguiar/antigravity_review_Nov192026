@@ -189,4 +189,17 @@ Part 3 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-202
 
 ---
 
+## 2026-11-22 · Part 4 follow-ups — `githubcopilot-mercury3AI`
+
+**Timestamp:** 2026-11-22 06:00 EST
+
+| Doc | Purpose |
+|---|---|
+| `PAPERTRADE_EQUITY_MOMENTUM_SPEC.md` | Auto-tracked paper-trade spec for the equity-momentum sleeve (6/2m, top-3, 20bps). Success gate: n≥100 forward, 2× cost CI-LB>0, IR≥0.5 vs SPY. Paper only. |
+| `OPS_DASHBOARD_FRESHNESS_AND_FX_BACKFILL.md` | Runbook: (A) fix ~34-day-stale `dashboard_data.json` (regenerate from canonical view + freshness guard); (B) backfill `fx_prices` to unlock the FOREX DSR-0.966 cell. |
+
+**Concrete fix shipped:** source-repo PR **#1048** adds the missing `merge_gate` to `tools/audit2_forward_summary.py` — unblocks the red `CI Tests` collection (`ImportError`), 3 tests pass.
+
+---
+
 *Not personalized investment advice.*
