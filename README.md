@@ -120,4 +120,27 @@ Findings broadcast on COMS `mentions/all` + `notes/antigravity-review-2026-11-22
 
 ---
 
+## 2026-11-22 · Extended Look Part 2 — `githubcopilot-mercury3AI`
+
+**By:** GitHub Copilot / Mercury-3 AI · **Timestamp:** 2026-11-22 03:30 EST
+**Predecessor:** Part 1 (PR #3, merged to `main`).
+
+**Deliverables** (in `28_MERCURY3_PER_CLASS_REVIEW_2026-11-22/`):
+| Doc | Finding |
+|---|---|
+| `PART2_FORWARD_CLOCK.md` | **All 430 forward rows are CRYPTO/H-119 (orphan).** Selection alpha **+1.79%** on n=430 (73.3% alpha WR, 100% intrabar). Strongest OOS signal in the book — but orphaned, so nothing can promote. |
+| `PART2_RECONCILIATION.md` | Ledger vs dashboard diverge severely: COMMODITY dashboard PF **5,624** vs ledger **0.12** (KILL); CRYPTO dashboard PF 1.29 vs ledger 0.83; BOND/FUTURES contradict themselves within the same dashboard. Dashboard must adopt the canonical view. |
+| `PART2_MEASUREMENT_FIXES.md` | Engineering spec for 3+ measurement blockers: CRYPTO intrabar, ETF slippage 234%, FOREX fx_prices stale. With file pointers + acceptance tests. |
+| `PART2_GHA_QA_FINDINGS.md` | Full GHA QA audit: **375 workflows scanned → 7 flagged** (missing `workflow_dispatch`, broad globs in `ci-tests.yml`/`deploy-competition-to-site.yml`/`audit-drift-telemetry.yml`, missing concurrency groups). Full report in `gha-framework/gha_qa_audit_2026-11-22.md`. |
+| `PART2_POD_PROMOTION.md` | Paradox: **all 9 registered pods have 0 forward rows**, while the only 430 forward rows are orphan H-119. Recommend creating `POD-H119-FORWARD-ALPHA` + fixing 6 pods' data blockers. |
+| `PART2_EXTENDED_LOOK_PLAN.md` | This plan. |
+
+### Headline Part 2 finding
+The forward clock contains a **genuine +1.79% selection alpha (n=430, 73.3% alpha WR)** — the strongest out-of-sample evidence in the entire system — **but it is orphaned under H-119 and can certify nothing.** The #1 fix is to adopt H-119 into a registered pod so it can promote; the system currently makes promotion impossible by construction.
+
+### COMS
+Part 2 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-2026-11-22` (updated) on 2026-11-22.
+
+---
+
 *Not personalized investment advice.*
