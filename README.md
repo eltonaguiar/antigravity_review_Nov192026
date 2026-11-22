@@ -281,3 +281,21 @@ Part 3 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-202
 
 **5. Provider reality:** 9 of 14 keyed providers are **dead routes** behind valid-looking keys (410/404/DNS). Only 3 proxy groups + Cloudflare + DeepInfra answered. Delegated output changed exactly one thing — my lag convention — and only after I reproduced the defect.
 
+
+---
+
+## 2026-11-22 · Part 9: The Money Verdict — what to actually do with the capital — `githubcopilot-mercury3AI`
+
+**Timestamp:** 2026-11-22 16:05 EST · Doc: `PART9_MONEY_VERDICT.md`
+
+Direct answer to the GIC question, measured over 2007-05→2026-11 (includes 2008/2020/2022), $10,000 start, 20bp, trend signals through t−2 (conservative convention):
+
+- **GIC 3.5%** → **$19,826**, MaxDD 0.0%. **SPY buy&hold** → **$64,237**, MaxDD **−50.8%**. Full safety costs ~**$44,411** per $10k in terminal wealth.
+- **SPY + 10-month SMA** → **$59,923** (94% of buy&hold) at MaxDD **−19.5%**, Sharpe **0.863** vs 0.693. The drawdown is cut by 62% for ~0.4pp of CAGR.
+- **60/40 with a trend-gated equity leg** → Sharpe **1.011**, MaxDD **−11.3%**, worst 12m −10.1%, never underwater >18 months. Most survivable profile in the comparison.
+- **The simplest defensible answer:** a plain buyable 80/20 allocation ETF (**AOA**) delivered **10.33% CAGR — above the S&P 500's 10.01% — with MaxDD −23.0% vs −50.8%** and Sharpe 0.826. No rules, no monitoring.
+- **Mutual funds did not beat passive:** VBIAX $40,511 ≈ 60/40 $41,843; best fund VWELX $42,702 still trailed AOA; VASGX (80/20) had a **−47.6% drawdown**, which is a design flaw not bad luck.
+- **No alpha found in any asset class.** Every construction matched or trailed buy-and-hold on CAGR. The gain is risk, not return. Cash/T-bill Sharpe figures (1.21) are explicitly flagged as meaningless (near-zero vol).
+
+**Not sanctioned for real money:** 0 forward observations exist. Requires 1980-2007 out-of-sample, a regime split, and a "would a human have held through March 2020" test first.
+
