@@ -35,6 +35,11 @@ UNMEASURED at the dashboard surface and WEAK-but-unproven at the ledger; no edge
 
 Least survivable number: WR 43.24 pct at n 37. The same class shows a 7.69 pct intrabar WR on 26 trades [SRC: _raw/audit_data_money_ready_verdict.json]; the two disagree by 35 points on overlapping populations, so one will not survive.
 
+## 9 Cross-check against /audit and the database
+[SRC: _raw/audit_data_money_ready_verdict.json] `/audit` publishes a daily WR of 1.0 on n 2 (PF null) while the intrabar path gives WR 0.0769 on n 26 (PF 0.3915), a 92.3 percentage point gap. n 2 is not a measurement, but the published number is the n 2 one.
+[SRC: reports/class_metric_reconciliation_20261122.md] The live `trading_picks` table gives gross PF 0.658 and net PF 0.564 over n 75, while `/audit3` gives 0.806 on n 37. All three are below 1.0.
+[SRC: _raw/audit_data_money_ready_verdict.json] BOND is `policy_frozen: true`, so any BOND verdict today reflects an operator block as much as the data.
+
 ## Provenance
 - model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
 - prompt: none

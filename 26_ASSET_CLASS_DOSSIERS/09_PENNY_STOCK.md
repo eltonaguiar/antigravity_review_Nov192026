@@ -33,6 +33,11 @@ UNMEASURED: four trades, no intrabar truth, no DSR baseline. The PF 0.18 is nois
 
 Least survivable number: PF 0.1779. It is computed on four trades [SRC: _raw/audit_data_money_ready_verdict.json], so one trade flips it.
 
+## 9 Cross-check against /audit and the database
+[SRC: _raw/audit_data_money_ready_verdict.json] `/audit` reports PF 0.1779 on n 4 with no intrabar measurement, so the number rests on four trades and has no honest-resolution counterpart.
+[SRC: reports/class_metric_reconciliation_20261122.md] The live `trading_picks` table has no PENNY_STOCK category rows, and `/audit3` has no PENNY_STOCK class bucket, so three surfaces cannot corroborate the four-row figure.
+[SRC: _raw/audit3_audit3_ledger.json] PENNY_STOCK is charged the highest cost in the system at 0.3 pct, ten times EQUITY, which on a four-row sample can flip the sign of PF by itself.
+
 ## Provenance
 - model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
 - prompt: none

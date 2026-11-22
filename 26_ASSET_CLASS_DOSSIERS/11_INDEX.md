@@ -35,6 +35,11 @@ UNMEASURED as a class; on present evidence it is an alias, not a class, and shou
 
 Least survivable number: there is no INDEX number at all [SRC: _raw/audit3_audit3_ledger.json]. The least survivable claim is that INDEX is a class: any re-bucketing test will show SPY already lives under ETF.
 
+## 9 Cross-check against /audit and the database
+[SRC: _raw/audit_data_money_ready_verdict.json] INDEX does not appear in `/audit`'s classes at all, and `/audit3` has no INDEX class bucket, so the canonical taxonomy does not recognise it as a class.
+[SRC: reports/class_metric_reconciliation_20261122.md] The live `trading_picks` table does have 25 INDEX rows with gross PF 0.392, so data exists under a name the verdict surfaces do not score. INDEX is effectively an alias that leaks rows out of the denominator.
+[SRC: _raw/audit3_audit3_ledger.json] INDEX is absent from `slippage_pct_by_class`, so even if it were scored there is no cost model for it.
+
 ## Provenance
 - model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
 - prompt: none

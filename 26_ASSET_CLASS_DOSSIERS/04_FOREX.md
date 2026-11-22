@@ -39,6 +39,11 @@ UNMEASURED on the central question (price-data coverage not checked), and NOT PR
 
 Least survivable number: PF net 0.8496. It is computed on 264 of 468 rows [SRC: _raw/audit3_audit3_ledger.json], so pricing the unjoined rows can move it.
 
+## 9 Cross-check against /audit and the database
+[SRC: reports/class_metric_reconciliation_20261122.md] FOREX is the largest DB population at n 8014 with gross PF 1.5335 and net PF 1.081 at the ledger's own cost, yet `/audit3` publishes 0.8496 on only n 264 and `/audit` publishes 0.1751 on n 468. The database has roughly 30x the ledger's sample for this class.
+[SRC: _raw/audit_data_money_ready_verdict.json] `/audit` daily PF 0.1751 versus intrabar PF 0.6351 (n 641), `pf_inflation_x` 0.28, and FOREX is `policy_frozen: true`, so its verdict is an operator freeze as much as a measurement.
+[SRC: _raw/audit_data_denominator.json] Either the canonical 264-row cohort is an unrepresentative slice of the 8014 available rows, or the DB filter admits rows the canonical pipeline rejects (`invalid_row` is the largest exclusion at 11782). This is the strongest single case for cohort forensics.
+
 ## Provenance
 - model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
 - prompt: none

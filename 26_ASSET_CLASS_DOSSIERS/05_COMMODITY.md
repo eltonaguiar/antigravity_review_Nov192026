@@ -26,6 +26,7 @@ So the surfaces disagree less than the plan claimed, and the plan's WATCH label 
 
 ## 5 Data integrity
 [SRC: _raw/audit3_audit3_ledger.json] Only 50 rows survive, and 64 COMMODITY picks were denylisted, so the surviving sample may be unrepresentative.
+Adversarial review note [SRC: docs/audit_review_2026-11-22/_reviews/05_COMMODITY.review.md]: the H-101 COT publication-lag look-ahead is a known COMMODITY contamination, so this PF may be contaminated independently of n; the KILL does not rest on it (gross expectancy -2.8119 pct).
 
 ## 6 Cost reality
 [SRC: _raw/audit3_audit3_ledger.json] Flat constant 0.15 pct. For contract-sized commodities that is likely optimistic rather than conservative, and measured slippage is UNMEASURED. Even at 2x the CI stays below zero, so the direction of the kill is robust.
@@ -39,6 +40,6 @@ NO defensible edge: KILL on the ledger, CI entirely below zero, negative selecti
 Least survivable number: PF net 0.1505. With only 50 rows and many denylisted picks around them, one or two bad rows dominate the ratio [SRC: _raw/audit3_audit3_ledger.json]; the sign is robust but the magnitude is not.
 
 ## Provenance
-- model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
-- prompt: none
+- model: deepinfra/meta-llama/Meta-Llama-3.1-8B-Instruct (adversarial reviewer only; dossier drafted by the curator. Reviewer raised H-101 contamination in the data-integrity section. Drafter outage recorded in BLOCKERS.md B1.)
+- prompt: the adversarial prompt file under /tmp (leakage-context block plus the class summaries)
 - snapshot: `/audit3/audit3_ledger.json` 88606e1e… generated 2026-11-22T06:35:41Z

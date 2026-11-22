@@ -31,6 +31,11 @@ The plan recalled ghost-row inflation.
 
 [SRC: _raw/audit_data_money_ready_verdict.json] Least survivable number: PF 0.0234. Ten trades with one symbol at 40 pct, so one lucky trade moves it several-fold; the WR 10 pct is equally fragile.
 
+## 9 Cross-check against /audit and the database
+[SRC: _raw/audit_data_money_ready_verdict.json] `/audit` reports PF 0.0234 with WR 0.1 on n 10 and no intrabar measurement. PF 0.0234 means losses are about 43x wins and is the most extreme number on any surface.
+[SRC: reports/class_metric_reconciliation_20261122.md] The live `trading_picks` table splits the class across two category spellings, `meme` (n 79, gross PF 0.960) and `memecoin` (n 23, gross PF 0.837), both far less extreme than 0.0234. The `/audit` figure is therefore either a different cohort or a different cost basis, and it is not reconcilable from the published fields.
+[SRC: _raw/audit3_audit3_ledger.json] `/audit3` has no MEME class bucket, though MEME is charged 0.3 pct in `slippage_pct_by_class`.
+
 ## Provenance
 - model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
 - prompt: none

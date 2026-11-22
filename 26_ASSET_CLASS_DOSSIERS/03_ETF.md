@@ -35,6 +35,12 @@ The dashboard's 33 rows are a subset, so its PF is a small-n artifact rather tha
 
 [SRC: _raw/audit3_audit3_ledger.json] Least survivable number: PF net 0.9947. Near-zero net expectancy pins it to one, so any cost or mix change flips it either side.
 
+## 9 Cross-check against /audit and the database
+[SRC: _raw/audit_data_money_ready_verdict.json] This is the worst inversion in the system: `/audit` publishes daily PF 1.8752 (n 32) but the intrabar PF is 0.0187 (n 56), a `pf_inflation_x` of 100.28 and 58.9 percentage points of WR that do not survive honest first-touch resolution. The daily ETF number is an artifact.
+[SRC: reports/class_metric_reconciliation_20261122.md] The live `trading_picks` table agrees with the intrabar column, not the daily one: gross PF 0.940 and net PF 0.889 over n 74. `/audit3` gives 0.9947 on n 590.
+[SRC: _raw/audit_data_money_ready_verdict.json] `/audit` labels the class INSUFFICIENT_DATA on n 32 while also publishing a PF of 1.8752, so the label and the number disagree about whether the class is measurable.
+[SRC: reports/forward_observations.jsonl] Zero non-CRYPTO forward rows exist, so ETF has no forward observation path.
+
 ## Provenance
 - model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
 - prompt: none

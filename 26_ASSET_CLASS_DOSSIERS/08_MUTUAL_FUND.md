@@ -35,6 +35,11 @@ UNMEASURED: a required placeholder with zero rows; it should not appear as a tra
 
 Least survivable number: n 0. It is the only number and the first ingested fund pick falsifies it [SRC: _raw/audit_data_money_ready_verdict.json].
 
+## 9 Cross-check against /audit and the database
+[SRC: _raw/audit_data_money_ready_verdict.json] `/audit` reports n 0 with PF 0.0 for MUTUAL_FUND, so there is nothing measured and the 0.0 must never be read as a performance figure.
+[SRC: reports/class_metric_reconciliation_20261122.md] The live `trading_picks` table has no MUTUAL_FUND category rows at all, and `/audit3` has no MUTUAL_FUND class bucket, so the class is absent from every measured surface rather than performing badly.
+[SRC: _raw/audit3_audit3_ledger.json] MUTUAL_FUND appears only in `slippage_pct_by_class` at 0.08, i.e. it is configured but never populated.
+
 ## Provenance
 - model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
 - prompt: none

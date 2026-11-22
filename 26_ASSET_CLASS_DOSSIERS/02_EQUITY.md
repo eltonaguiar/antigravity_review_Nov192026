@@ -38,6 +38,12 @@ NOT PROVEN: PF above one on the ledger, but the CI straddles zero and the split 
 
 Least survivable number: PF net 1.0499. It rests on 956 rows whose first half is positive and second half negative [SRC: _raw/audit3_audit3_ledger.json], so a mix change moves it across one easily.
 
+## 9 Cross-check against /audit and the database
+[SRC: _raw/audit_data_money_ready_verdict.json] `/audit` gives PF 1.08 (n 121) daily versus 0.9796 intrabar (n 258), and `wr_inflation_pp` is -25.8, meaning the intrabar WR is HIGHER than the daily one, the opposite of the usual direction.
+[SRC: reports/class_metric_reconciliation_20261122.md] The live `trading_picks` table gives gross PF 1.016 and net PF 0.959 over n 1210, so of four surfaces only `/audit3` (1.0499) is above 1.0 and the database says the class is below it after cost.
+[SRC: _raw/audit3_audit3_ledger.json] The ledger requires n 22569 for EQUITY and has 956, so the one positive number is measured on about 4% of the sample needed to detect it. Any claim that EQUITY is the best class is a claim about the least-powered number on the page.
+[SRC: reports/forward_observations.jsonl] There are zero non-CRYPTO forward rows, so EQUITY cannot accumulate forward observations and cannot clear the forward gate regardless of its backtest.
+
 ## Provenance
 - model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
 - prompt: none

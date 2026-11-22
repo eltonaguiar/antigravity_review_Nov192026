@@ -42,6 +42,13 @@ NO defensible edge today: negative selection alpha with a CI that excludes zero,
 
 Least survivable number: PF net 0.7886. It is an average over a bucket that mixes symbol cells with different cost models and sources, and verdict_churn already shows two CRYPTO cells flipping WEAK to KILL in one run [SRC: _raw/audit3_audit3_ledger.json].
 
+## 9 Cross-check against /audit and the database
+[SRC: _raw/audit_data_money_ready_verdict.json] `/audit` publishes PF 0.2621 (n 22287) as its daily number but sizes on the intrabar number PF 0.9169 (n 3731), a difference of 3.5x; `pf_inflation_x` is 0.29 and `wr_inflation_pp` 5.3.
+[SRC: reports/class_metric_reconciliation_20261122.md] The live `trading_picks` table under the scrutiny filter gives gross PF 1.051 and net PF 0.996 at the ledger's own 0.0996 cost over n 11006, so the ledger's published 0.7886 sits 0.2077 BELOW what the same cost model produces on the broader table. Cost moves PF by about 0.055; the remaining gap is cohort, not cost.
+[SRC: _raw/audit_data_denominator.json] The ledger scores 8827 of 14914 closed picks and the largest exclusion bucket is `invalid_row` at 11782, so the cohort difference is driven by an unexplained filter, not by a documented one.
+[SRC: reports/class_metric_reconciliation_20261122.md] Selection alpha is measured on only 1674 of the 6926 class rows (24.2%), so the gating metric does not cover the class it gates.
+No forward rows exist for any class other than CRYPTO: `reports/forward_observations.jsonl` holds only H-119 rows, which is why every other class sits at zero forward observations.
+
 ## Provenance
 - model: none (drafter fan-out blocked, see BLOCKERS.md B1; written by the curator from frozen evidence)
 - prompt: none
