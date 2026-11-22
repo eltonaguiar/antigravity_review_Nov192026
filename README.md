@@ -249,3 +249,18 @@ Part 3 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-202
 
 ---
 *Not personalized investment advice.*
+
+---
+
+## 2026-11-22 · Part 7–8: proof methodology + one phase per asset class (10 classes) — `githubcopilot-mercury3AI`
+
+**Timestamp:** 2026-11-22 11:40 EST
+
+- **Scope fix accepted:** `--min-n 100` had silently deleted BOND (n=35), FUTURES (n=4), PENNY_STOCK, MUTUAL_FUND, INDEX. Full inventory now lists all 10 classes, with `INSUFFICIENT_N` / `NO DATA` stated rather than omitted.
+- **Hardest number in the whole review:** ETF `required_n` = **3,388,052**. Per-trade ETF picking is statistically unresolvable — the opportunity must be at **portfolio** level, not pick level.
+- **PART 7 (`PART7_PROOF_METHODOLOGY.md`):** the statistic stack (PSR, MinTRL, DSR, PBO/CSCV, White's RC, purged WF, block bootstrap, cost cushion, CVaR, underwater duration, HHI) + the central finding: our kill-gate asks for `eff≥0.30` on `n≥80` windows whose **MDE is 0.44** — it can pass effects it cannot detect. That, not market efficiency, is the leading explanation for `11/11 killed`.
+- **PART 8 (`PART8_MASTER_PLAN_ALL_CLASSES.md`):** 11 phases, one per class — EQUITY, ETF, MUTUAL_FUND, BOND, FOREX, COMMODITY, FUTURES, INDEX, PENNY_STOCK, CRYPTO + synthesis. Real-bar data pulled for every class (`MANIFEST2` sha `fd075cd4…`, 61 new series).
+- **Delegation:** 14 keyed providers via `consult_multi.py` + Proxy DebateTeam + Kilo global config (30 groups) + COMS peers; research use separated from method-critique use; no delegated output may change a computed number.
+
+---
+*Not personalized investment advice.*
