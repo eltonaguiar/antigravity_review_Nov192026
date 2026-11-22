@@ -106,9 +106,30 @@ compared to the cohort difference, but it must be stated whenever a PF is quoted
 - Exclusion reasons total 12,174 but `total - canonical` is 6,087. The publisher's own note
   [SRC: `_raw/audit_data_denominator.json:36`]: "the publisher and the tribunal exclude different
   cohorts, so these are separate pipelines, not one subtraction."
-- The free-text reason `invalid_row` accounts for 11,782 of the exclusions
-  [SRC: `_raw/audit_data_denominator.json:13`]. That single bucket is larger than the entire scored set.
-  What `invalid_row` means is the highest-leverage open question in the system.
+- The reason `invalid_row` accounts for 11,782 of the exclusion records
+  [SRC: `_raw/audit_data_denominator.json:13`], but that figure is a SUM ACROSS TWO BLOCKS and must not be
+  quoted as a row count. The same JSON lists it once per block: 5,891 in `resolved_closed_picks_net`
+  [SRC: `_raw/audit_data_denominator.json` via `_raw/audit_data_dashboard_data.json` -> `resolved_closed_picks_net.counts.excluded_by_reason`]
+  and 5,891 again in the coverage block [SRC: `_raw/audit3_audit3_ledger.json:97`]. Reading both blocks as one
+  list double-counts it (5,891 x 2 = 11,782). The real figure is **5,891 of 6,087 excluded rows (96.8%)**.
+  This is a defect in my own earlier reading, corrected here.
+- **What `invalid_row` means** (`alpha_engine/resolved_closed_view.py:207-245`, `:309-311`): it is the
+  catch-all label for a row that the coarse reason classifier could not name, i.e. the caller's stricter
+  `validity` predicate rejected it. The predicate is `_is_valid_resolved_pick`
+  [SRC: `audit_trail/dashboard_generator.py:4924`], with these rejection branches: paper_trade / expired_no_pnl /
+  auto_expired; missing pnl; corrupt pnl vs prices (`_pnl_pct_looks_corrupt`); impossible non-crypto price move
+  (>50%); entry-vs-exit price ratio >100x; placeholder exit price <= 0; historically blocked
+  symbol/strategy; non-performance exit reason; STALE or INVALID_ENTRY; RESOLVE_FAILED fallback;
+  non-performance terminal status; micro-hold under the minimum seconds; and no close marker with an
+  unknown exit reason.
+- So `invalid_row` is NOT one thing. It is "data-integrity rejection", and it is dominated by corrupt-price,
+  placeholder-exit and micro-hold rows. Those are correctly excluded: counting them would inflate PF.
+  The remaining open question is only the SPLIT between those branches, and `excluded_cohorts.summarize_excluded`
+  [SRC: `audit_trail/excluded_cohorts.py:31`] is the existing tool that can produce it (n, WR, mean PnL,
+  long/short, top symbols per reason) if the generator is wired to publish the dropped rows rather than just counts.
+- The overall exclusion picture is documented by the ledger itself [SRC: `_raw/audit3_audit3_ledger.json:141`]:
+  the dashboard reports 5,994 integrity-excluded and 9,277 auto-expired rows, the cohorts overlap, and they
+  are reasons rows are missing rather than a partition.
 - `per_class_scrutiny` reads `trading_picks` in MySQL directly, with its own filter
   `status NOT IN ('OPEN','ABANDONED','FLAT','FORCE_CLOSED_TOXIC') AND closed_at > '2026-01-01'`
   and a hard exclusion of the 2026-06-04 backfill (5,960 commodity rows)
