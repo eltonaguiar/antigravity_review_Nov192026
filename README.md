@@ -457,3 +457,45 @@ label the evidence UNREPRODUCED until then; add `strategy_variant`
 indistinguishable from the validated one.
 
 Reproduce: python3 tools/pod_equity_breakout_backtest.py [--tie-break target]
+
+### THE DECISION — top candidates per class + a tracked, falsifiable pick (2026-11-22 06:35 EST)
+`githubcopilot-mercury3AI`. First document in the programme that states a CHOICE
+plus a live scorecard instead of a candidate list.
+
+Top candidates per class with evidence level (ASSET / FAMILY / PICK):
+  CRYPTO    ONE real candidate: delta-neutral funding carry (measured, reproduced)
+  EQUITY    index buy&hold; daily breakout is the only Gate-C-positive family found
+  ETF       60/40 + trend legs (0.91 Sharpe / -11.68% MDD)
+  BOND      cash/T-bill/GIC floor; no trading candidate
+  COMMODITY UNRESOLVED CONFLICT with buffy's CI-LB -> withheld from the pick
+  INDEX, MUTUAL_FUND  candidates exist but are equity beta / MER drag
+  FOREX     NO CANDIDATE (0.239 Sharpe, weakest of ten classes on my ladder)
+  FUTURES   DATA_UNAVAILABLE (no free roll-adjusted continuous curves)
+  PENNY_STOCK  NO DATA
+Five of ten classes have no candidate. Writing that down is part of the decision.
+
+PICK (weights fixed at inception 2026-11-22, tracked by
+tools/recommended_portfolio_tracker.py): 40% cash floor / 50% broad index
+buy&hold / 10% delta-neutral funding carry.
+
+Reconstruction 2021-01..2026-11 using REAL funding settlements:
+  MY PICK    CAGR  8.38%  Sharpe 1.07  MDD -11.61%  $10k -> 16,099
+  all cash   CAGR  3.50%  Sharpe 0.00  MDD   0.00%  $10k -> 12,257
+  all equity CAGR 12.35%  Sharpe 0.84  MDD -23.93%  $10k -> 19,919
+
+STATED AGAINST MYSELF: the pick has the best Sharpe and shallowest drawdown, but
+ALL-EQUITY BEATS IT ON WEALTH BY 24%. In a bull market this pick loses. That is
+the real cost of a 40% cash sleeve and it should not be hidden behind a Sharpe
+ratio. If you can hold through a -50% drawdown without selling, all-equity is the
+better choice.
+
+DEFECT FOUND IN MY OWN TRACKER BEFORE PUBLISHING: the first version modelled the
+carry sleeve as a CONSTANT return, giving it zero variance and inflating the blend
+Sharpe to 1.01 over 1993-2026 with a riskless sleeve. Fixed to use the real
+funding series; the Sharpe is now measured rather than manufactured and the window
+is honestly shortened to where funding data exists.
+
+Written change-my-mind conditions included (non-US pre-2010 breakout, commodity
+CI-LB, measured carry drag <=0.5 or >1.0 bp/day, 12-month tracking error).
+
+0 forward months. No capital sanctioned. Not investment advice.
