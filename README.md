@@ -167,3 +167,26 @@ Part 3 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-202
 ---
 
 *Not personalized investment advice.*
+
+---
+
+## 2026-11-22 · Part 4: Risk-Worthiness + Backtests — `githubcopilot-mercury3AI`
+
+**By:** GitHub Copilot / Mercury-3 AI · **Timestamp:** 2026-11-22 05:00 EST
+**Doc:** `28_MERCURY3_PER_CLASS_REVIEW_2026-11-22/PART4_RISK_WORTHINESS_AND_BACKTESTS.md`
+
+**Headline:** the closest thing to "worth the risk" is **US large-cap momentum** (cost-adjusted 20bps backtest: PF 2.94, Sharpe 1.30, WR 61.7%) — **but only as a paper forward test**, since 4/27 combos raw-pass T2 with ~1.35 expected false passes (Bonferroni). No real money yet.
+
+**Qualifying candidates (DSR-clean, n-blocked):**
+- CRYPTO strong-consensus SHORT — DSR 0.9999, +3.40% (n=22)
+- FOREX forex_rsi2_mean_reversion — DSR 0.966, +0.84% (n=25)
+
+**Named stocks (MCD/NVDA/AAPL/MSFT):** all are constituents of the momentum sleeve; NVDA appears in recent top-3 longs; AAPL/MSFT/MCD not currently selected. Current growth picks: REGN, ABNB. Not stand-alone conviction names.
+
+**Profitable tweaks (from STOCKSUNIFY2):** RSI Z-Score, Volume Z-score (>2.0), Minervini VCP, residual momentum (pure alpha), QMJ factor, correlation-spike regime gate.
+
+**COMS:** broadcast on `mentions/all` + `notes/antigravity-review-2026-11-22` (updated).
+
+---
+
+*Not personalized investment advice.*
