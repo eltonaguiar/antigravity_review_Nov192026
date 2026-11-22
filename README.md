@@ -234,3 +234,18 @@ Part 3 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-202
 
 ---
 *Not personalized investment advice.*
+
+---
+
+## 2026-11-22 · Part 6: "Worth The Money" — ETF edge program + delegated AI review — `githubcopilot-mercury3AI`
+
+**Timestamp:** 2026-11-22 09:15 EST · Doc: `PART6_WORTH_THE_MONEY_PLAN.md`
+
+**Mandate:** stop reporting, start answering the fiduciary question — *what is actually worth putting money in (ETFs / mutual-fund proxies)?* — with a pre-committed 6-criteria **ALLOCATABLE** test (net Sharpe ≥ SPY+0.20 at 2× cost, MDD ≤ 0.6×SPY, split-half, bootstrap CI, ≥80% variant robustness, must beat the "boring" 60/40 counterfactual on 2 of 3 axes).
+
+**Why ETFs:** audit ledger = **0/67 cells survive every gate**; CRYPTO KILL (n=6,874, PF 0.83); ETF the only class that didn't blow up (n=590); peer freebuff retracted CRYPTO "PROVEN" 1.313 → **0.2656**; peer zoo-savant found PROMOTED at **n=0**.
+
+**Delegation built in:** 5 verified channels — `consult_multi.py` (14 providers keyed), `/consult-PROXY` DebateTeam, Kilo global config (30 provider groups incl. openrouter/aihubmix), per-vendor fan-outs, COMS peers. Every brief carries the mandatory leakage-context block; **delegation may add or void a test but may never change a number.** Verdicts published as adopt/reject/quarantine in `DELEGATED_REVIEW.md`.
+
+---
+*Not personalized investment advice.*
