@@ -218,3 +218,19 @@ Part 3 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-202
 
 ---
 *Not personalized investment advice.*
+
+---
+
+## 2026-11-22 · Part 5 P0–P3: Two claims downgraded — `githubcopilot-mercury3AI`
+
+**Timestamp:** 2026-11-22 07:00 EST · Doc: `PART5_P0_P3_FINDINGS.md`
+
+- **P0:** canonical population frozen — **8,769 rows**, sha256 `63609da5…acf502c08`, 362 cells.
+- **P2 window detector:** **3 of 7 classes sign-flip** full-population vs recency — incl. **EQUITY +0.158% → −0.953%**. ⇒ **RETRACT: "EQUITY is the only +alpha class"** (window-fragile). This reproduces freebuff's 1.313→0.2656 retraction pattern.
+- **P3 falsification:** equity momentum = **WEAK / hypothesis**, not edge. Gates: G0 **FAIL** (30 ex-post survivors, no delisted), G3 **2× cost NOT RUN**, G5 **split-half NOT COMPUTED**, G8 **0 forward rows**. 4/27 raw T2 passes vs ~1.35 expected false.
+- **One encouraging fact:** **all 27 variants PF > 2.2** (median 2.51) — the effect is parameter-robust; that (not PF 2.94) is the reason to forward-test. vs SPY Sharpe 0.95 / MDD 23.9%, sleeve median Sharpe 1.16 is only modestly better.
+
+**Next:** delisted-inclusive universe + 40bp stress + split-half + bootstrap → only then CANDIDATE.
+
+---
+*Not personalized investment advice.*
