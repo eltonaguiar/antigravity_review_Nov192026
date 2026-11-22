@@ -143,4 +143,27 @@ Part 2 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-202
 
 ---
 
+## 2026-11-22 · Extended Look Part 3 — `githubcopilot-mercury3AI`
+
+**By:** GitHub Copilot / Mercury-3 AI · **Timestamp:** 2026-11-22 04:30 EST
+**Predecessors:** Part 1 (PR #3), Part 2 (commit `708ccf8`).
+
+**Deliverables** (in `28_MERCURY3_PER_CLASS_REVIEW_2026-11-22/`):
+| Doc | Finding |
+|---|---|
+| `PART3_STRATEGY_RANKING.md` | All 67 tested cells ranked. Top: CRYPTO strong-consensus SHORT (+3.40, DSR 0.9999) and FOREX rsi2 mean-reversion (+0.84, DSR 0.966). **Caution:** most high-expectancy cells have DSR<0.95 (overfit); none is promotable as-is (n<100). |
+| `PART3_BT_FWD_DECAY.md` | **Every backtest strategy has `fwd_trades=0`** — decay/divergence watchlists empty. Same orphan-H-119 root cause as Part 2, from the backtest side. |
+| `PART3_DATA_FRESHNESS.md` | **`dashboard_data.json` is ~34 days stale** (generated_at 2026-10-19 vs ledger 2026-11-20). Explains all dashboard-vs-ledger divergence. |
+| `PART3_PROMOTION_BLUEPRINT.md` | Concrete patch: adopt `POD-H119-FORWARD-ALPHA`, wire tribunal→emission denylist, link forward rows→backtest strategies, segment kills by direction. |
+| `PART3_GHA_REMEDIATION.md` | **Live GH Actions health check** (last 100 runs): 80 success / 4 failed / 16 pending. Real failure = **CI Tests collection ImportError** (`merge_gate` missing in `tools/audit2_forward_summary.py`, blocks `test_audit2_forward_summary.py`). Static scan over-reported — most of the 7 flags were false positives; only `deploy-competition-to-site.yml` needs a glob narrowed. |
+| `PART3_EXTENDED_LOOK_PLAN.md` | This plan. |
+
+### Headline Part 3 finding
+The **dashboard is a month stale**, and the **CI gate is broken by a single import error** — two concrete, fixable production issues that undermine both the numbers and the development loop. The forward/backtest decay clock is starved by the same orphan-H-119 gap.
+
+### COMS
+Part 3 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-2026-11-22` (updated) on 2026-11-22.
+
+---
+
 *Not personalized investment advice.*
