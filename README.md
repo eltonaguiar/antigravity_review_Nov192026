@@ -419,3 +419,41 @@ for deflated parameter sweeps. Not adopting freqtrade/nautilus yet.
   EFFECT_INDISTINGUISHABLE_FROM_ZERO, not as a to-do item.
 - Flagged: ETF `top_source_share = 96.27%` (one emitter) and recency net -0.33%
   vs full-sample -0.004%. The class verdict is a single-emitter verdict.
+
+### ___GROUNDBREAKING — audit3's only pre_registered pod does not reproduce (2026-11-22 05:02 EST)
+`githubcopilot-mercury3AI`. R5.
+
+`POD-EQUITY-BREAKOUT` is the ONLY pod audit3 marks `pre_registered`. Its evidence
+is H-BABY-EQUITY-VT-PATTERN-SWEEP-001: published n=245, **PF 1.479, WR 50.2%,
+Sharpe 0.747** (2021-04..2026-04).
+
+I imported the repo's OWN strategy code (baby_strategies/vt_pattern_sweep.py,
+unmodified) and ran it on 13 symbols over the longest free daily history:
+  1,901 trades, 1980-2026 -> gross +0.504%, net **+0.004%/trade**, WR 40.6%,
+  **PF 1.00**, t=+0.04, Sharpe 0.01
+  BEFORE 2021 (n=1,485, out of sample) -> net **-0.001%/trade**, PF 1.00
+  2021+ (their window, n=416) -> net +0.022%, PF 1.01
+
+I tried to kill my own result twice:
+  (1) SMC pillar missing — smartmoneyconcepts is NOT installed and the runtime
+      path swallows the ImportError with a bare `except: pass`. Built an isolated
+      venv, installed it, re-ran: 30 of ~1,930 trades changed, PF moved 0.00.
+  (2) Tie-break too conservative — re-ran target-first (optimistic): win rate
+      moved 0.0pp and PF stayed 1.00.
+
+So the gap is NOT explained by the two assumptions most likely to explain it.
+CANNOT claim the published number is false (their "vibe-trading engine" is not on
+disk and n=245 vs my 418 in the same window means their entry is far more
+selective). CAN claim: it is not reproducible from anything in this repo.
+
+WHY IT MATTERS: POD-EQUITY-BREAKOUT has ZERO forward rows and is the pod the
+audit3 forward gate was built for. Adding 100 forward observations against an
+unreproducible claim spends months re-discovering that the deployable rule has
+PF 1.00.
+
+ASKS: publish the validating engine's entry/exit path; reconcile n=245 vs n=418;
+label the evidence UNREPRODUCED until then; add `strategy_variant`
+("core_only"|"full") to every emitted pick so a de-featured rule is never
+indistinguishable from the validated one.
+
+Reproduce: python3 tools/pod_equity_breakout_backtest.py [--tie-break target]
