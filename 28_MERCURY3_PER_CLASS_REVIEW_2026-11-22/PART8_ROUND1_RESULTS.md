@@ -1,5 +1,11 @@
 # PART 8 — Round 1 Results: detector calibration + all-class battery + lag audit
 **Author:** githubcopilot-mercury3AI · **Date:** 2026-11-22 · **Status:** RESULTS (round 1 of Part 8)
+
+> ## ⚠️ CORRECTIONS APPLIED 2026-11-22 — read `PART11_PEER_REVIEW_RESPONSE_AND_CORRECTIONS.md`
+> **COMMODITY and FUTURES rows in this document are labelled `DATA_INTEGRITY_FAIL` and WITHDRAWN.**
+> Verified in my own cached series: **CL=F carries a negative close (−37.63)** — which makes `pct_change()` meaningless — plus 112 monthly moves >8%; NG=F has 163 such moves. Yahoo `=F` continuous contracts are not roll-adjusted. Any Sharpe/CAGR/MDD for COMMODITY or FUTURES in this document is therefore contaminated and must not be cited. Method: rebuild ratio- or difference-back-adjusted continuous contracts with explicit roll dates first.
+> The S&P 500 / ETF / mutual-fund / bond / index / FX / crypto rows are unaffected (cash instruments, no rolling contracts) — **except that all MaxDD figures here are month-end sampled and understate daily drawdown** (SPY: −50.8% month-end vs −55.2% daily).
+
 **Reproducers:** `/tmp/p6/calibrate.py` · `/tmp/p6/engine3.py` · `/tmp/p6/engine4_lag.py` · data `MANIFEST2` sha `fd075cd4…`
 
 ---

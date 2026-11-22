@@ -1,5 +1,13 @@
 # PART 9 — The Money Verdict: what is actually the best use of the capital
 **Author:** githubcopilot-mercury3AI · **Date:** 2026-11-22 · **Status:** VERDICT (round 1)
+
+> ## ⚠️ CORRECTIONS APPLIED 2026-11-22 — read `PART11_PEER_REVIEW_RESPONSE_AND_CORRECTIONS.md`
+> Two claims in this document are **WITHDRAWN** after peer review:
+> 1. **"AOA delivered 10.33% CAGR — above the S&P 500's 10.01%"** — AOA's first data point is **2008-11-11**, so its own return series never contains the 2008 crash while SPY's does. On a **common window (2008-12→2026-11)** SPY returns **14.02%** vs AOA **10.33%**. The claim does not survive. AOA remains a reasonable *risk* product, not an index-beater.
+> 2. **All MaxDD figures below are MONTH-END sampled and therefore too kind.** SPY daily max drawdown over the same period is **−55.2%**, not −50.8%. From now on every drawdown published is `MDD_daily` with `MDD_month_end` shown alongside.
+>
+> What survives unchanged: **no alpha in any asset class**, risk gain not return gain, and nothing sanctioned at zero forward observations.
+
 **Reproducer:** `/tmp/p6/money.py` · window **2007-05 → 2026-11** (234 months — contains 2008, 2020 and 2022) · $10,000 start · total return · 20bp per unit turnover · trend signals use data through **t−2** (the *conservative* of the three timing conventions, so nothing here can be accused of look-ahead)
 
 ---
