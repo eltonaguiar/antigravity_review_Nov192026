@@ -219,9 +219,52 @@ Items 1-3 are code changes to the generator and the verdict module; 4 is data re
 
 ---
 
+## 14 Delegation track (multi-AI review of each phase)
+
+The repo has a working multi-provider consult path: `tools/consult_multi.py`, which reads keys from
+`~/dbpasses.txt` and exposes 14 providers. Verified 2026-11-22 with `--list`: nvidia, groq, cerebras,
+together, fireworks, github_models, huggingface, gemini_api, cloudflare, deepinfra, nous, mistral,
+aimlapi, hypereal all report `has_key yes`.
+
+Mechanism (exact, from the tool's own contract):
+
+```bash
+python3 tools/consult_multi.py --fanout diverse5 --prompt-file /tmp/q.md --out-dir /tmp/fanout_results
+python3 tools/consult_multi.py --fanout reasoning4 --prompt-file /tmp/q.md --out-dir /tmp/fanout_results
+python3 tools/consult_multi.py --provider gemini_api --model gemini-flash-latest --prompt "..."
+```
+
+Each peer writes one `.md` file into `--out-dir`. The workflow is therefore:
+
+1. I write the question to a prompt file and fan it out.
+2. Peers drop their suggestions as `.md`.
+3. I read every file, cross-check each claim against the frozen evidence (a suggestion that cites a
+   number I cannot find in `_raw/` is rejected, not adopted).
+4. I record the outcome in the review repo: what was suggested, what I accepted, what I rejected and why.
+
+Delegated reviews, one per phase:
+
+| Id | Phase reviewed | Prompt | Preset | Deliverable |
+|---|---|---|---|---|
+| D1 | E0 fixes | Are the 8 measurement fixes the right ones, and which is missing? Which of the 9 predicate branches most likely explains the 18,610 unexplained rows? | diverse5 | `_delegated/D1_e0_review.md` |
+| D2 | E2/E3 design | Critique the pre-registration schema and the hypothesis families. What would a quant desk add or cut? | reasoning4 | `_delegated/D2_prereg_review.md` |
+| D3 | E4/E5 statistics | Is the gate sequence (net CI, alpha CI, BH, DSR, 2x-cost, persistence) correctly ordered and powered? What is the false-discovery risk? | reasoning4 | `_delegated/D3_stats_review.md` |
+| D4 | E6 forward testing | What is the fastest legitimate route from 0 forward rows to n>=100, and what would invalidate it? | diverse5 | `_delegated/D4_forward_review.md` |
+| D5 | Red team | Argue that the whole project cannot find edge, and name the strongest reason. | all or reasoning4 | `_delegated/D5_redteam.md` |
+
+Rules for the delegation track:
+- **Peers are advisors, not evidence.** Nothing is adopted on consensus; it is adopted only if it survives a check against `_raw/`.
+- Every consulted model and its response file are recorded in the Provenance footer of the document it influenced.
+- A failed or empty peer response is recorded as `UNMEASURED` for that peer, never silently dropped.
+- The fan-out prompt never contains credentials; keys stay in `~/dbpasses.txt` and are read only by the tool.
+- The red-team (D5) is run even if D1-D4 agree, because agreement among similar models is not independent evidence.
+
+---
+
 ## Provenance
 
 - model: none (curator-written plan from frozen evidence and the sources cited inline)
+- delegated: consult_multi.py (14 providers verified 2026-11-22); peer outputs land in `_delegated/` and are reviewed before adoption
 - evidence: `docs/audit_review_2026-11-22/_raw/` (sha256 in `_MANIFEST.json`),
   `reports/class_metric_reconciliation_20261122.json`
 - COMS reviewed 2026-11-22T07:41Z: Mercury3 CI fix PR #1048, equity momentum paper-trade spec at review-repo main 774bff9,
