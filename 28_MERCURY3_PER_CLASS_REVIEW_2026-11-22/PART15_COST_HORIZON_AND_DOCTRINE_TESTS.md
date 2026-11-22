@@ -51,16 +51,36 @@ consistent: my errors have all over-stated evidence.
 
 ## 3. THE MAIN RESULT: EDGE PER TRADE RISES MONOTONICALLY WITH HORIZON
 
-Median gross edge per trade across all positive cells:
+Median gross edge per trade across **all** cells (12 per horizon):
 
-| horizon | n positive cells | median gross |
-|---|---:|---:|
-| 15m | 5 | **+2.48 bp** |
-| 1h | 7 | **+7.49 bp** |
-| 4h | 8 | **+21.16 bp** |
-| 1D | 12 | **+24.21 bp** |
+| horizon | n all cells | n positive | median gross (ALL cells) | ~~published~~ |
+|---|---:|---:|---:|---:|
+| 15m | 12 | 5 | **−0.57 bp** | ~~+2.48 bp~~ |
+| 1h | 12 | 7 | **+3.85 bp** | ~~+7.49 bp~~ |
+| 4h | 12 | 8 | **+8.64 bp** | ~~+21.16 bp~~ |
+| 1D | 12 | 12 | **+24.21 bp** | +24.21 bp |
 
-**Monotone increasing.** Cost per trade does *not* rise with horizon, so
+> ### CORRECTION 2026-11-22 — the originally published column was wrong
+>
+> This table first read "median gross edge per trade across **all positive
+> cells**" with n = 5/7/8/12. Taking a median *after* discarding every negative
+> observation is **selection on the dependent variable**: it guarantees a
+> positive number by construction and roughly doubled the apparent ladder.
+>
+> Reproduced exactly against `reports/cost_horizon/cost_horizon_ladder.json`:
+> positive-cell medians are 2.477 / 7.486 / 21.162 / 24.206 vs published
+> 2.48 / 7.49 / 21.16 / 24.21.
+>
+> **1D agreed only because all 12 of its cells were positive**, so the
+> positive-subset median happened to equal the all-cell median. That is exactly
+> why the error survived a spot check — the one horizon anyone would sanity-check
+> was the one horizon where the bug was invisible.
+>
+> Caught by `tools/harness_certification.py` on its **first run**, not by review.
+
+**Monotone increasing — this conclusion SURVIVES the correction** on the honest
+all-cell medians (−0.57 → +3.85 → +8.64 → +24.21). But 15m is *negative*, not
++2.48 bp, so the short-horizon arm is worse than published, not better. Cost per trade does *not* rise with horizon, so
 edge/cost improves monotonically with horizon. This mechanism does not depend on
 any single cell's t-stat, which is precisely why it is the finding to trust:
 it is a statement about the *shape* of the data, not about a lucky cell.
