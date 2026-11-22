@@ -165,3 +165,40 @@ deliverable will be a ranked, documented list of what is worth forward-testing a
 - inventory: `search_files` over `*.py` on 2026-11-22 for DSR/PBO/PEAD/survivorship implementations
 - prior results cited: `backtest_results/eq1_pead_S1.json` (FAIL),
   `docs/backtests/EQ1_PEAD_S1_RESULTS.md`, `reports/h010_equity_pead_2026-05-18.md` (kill #6)
+
+---
+
+## 6 All-class sweep result (2026-11-22, `--min-n 1` so nothing is dropped)
+
+A first sweep used `--min-n 100` and silently omitted six classes. That was a reporting defect:
+a class with 4 rows must appear as INSUFFICIENT_N, not vanish. Re-run with no minimum:
+
+| class | n | gross PF | net PF | 2x PF | CI-LB | halves | WF | verdict |
+|---|---|---|---|---|---|---|---|---|
+| CRYPTO | 11007 | 1.0462 | 0.9917 | 0.9404 | -0.1334 | -0.018/-0.014 | 2/5 | WEAK |
+| FOREX | 8041 | 1.5000 | 1.0629 | 0.8008 | -0.0033 | -0.018/0.026 | 2/5 | WEAK |
+| COMMODITY | 1506 | 0.6202 | 0.5219 | 0.4455 | -0.6638 | -0.221/-0.820 | 0/5 | KILL |
+| EQUITY | 1224 | 0.9931 | 0.9390 | 0.8885 | -0.2068 | -0.252/0.140 | 2/5 | WEAK |
+| UNCATEGORIZED | 149 | 0.7414 | 0.6626 | 0.5929 | -0.8314 | -0.316/-0.565 | 0/5 | KILL |
+| MEME | 102 | 0.9237 | 0.8188 | 0.7278 | -2.2517 | 0.276/-1.262 | 3/5 | WEAK |
+| ETF | 79 | 1.5737 | 1.4974 | **1.4256** | -0.2660 | 0.989/-0.089 | n/a | INSUFFICIENT_N |
+| BOND | 77 | 0.8074 | 0.6959 | 0.6050 | -0.2931 | -0.149/-0.086 | n/a | INSUFFICIENT_N |
+| FUTURES | 70 | 1.0627 | 0.9432 | 0.8420 | -0.5608 | 0.178/-0.277 | n/a | INSUFFICIENT_N |
+| INDEX | 25 | 0.3919 | 0.2634 | 0.1846 | -0.6880 | -0.297/-0.405 | n/a | INSUFFICIENT_N |
+| MUTUAL_FUND | 0 | - | - | - | - | - | - | NO_ROWS |
+| SPORTS | 0 | - | - | - | - | - | - | NO_ROWS |
+
+**Zero classes have a positive CI lower bound. Zero have both halves positive.** No class clears
+even the CANDIDATE bar, so no class is worth forward capital on this evidence.
+
+Notes on the classes asked about specifically:
+- **ETF** is the only class whose PF stays above 1 at **2x cost** (1.4256), which is why it deserved a
+  second look. It does not survive: 79 rows across many sources (largest 14 on QQQ), 27 rows with no
+  `created_at`, 11 with empty `exit_reason`, and the mean is carried by a few outliers
+  (SPY +15.02, GLD +18.86, XLK -23.41). That is noise with a positive mean, not a mechanism.
+- **BOND** at 77 rows is below 1 at every cost level, and its effective sample is a handful of rate
+  regimes, not 77 independent bets.
+- **FUTURES** is 70 rows, net below 1, second half negative.
+- **PENNY_STOCK** has no rows in `trading_picks` under this filter, so it is NO_ROWS rather than a
+  measured class; `/audit` reports only 4 picks for it.
+- **MUTUAL_FUND** has 0 rows, which is the honest structural answer: NAV-only, end-of-day, no shorting.
