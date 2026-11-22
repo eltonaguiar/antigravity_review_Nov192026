@@ -92,6 +92,26 @@ input the ledger was built from is exactly the file now being served.
 - `/audit3` ledger: 7 class buckets (CRYPTO…FUTURES), 374 cells across 12 symbol/segment buckets
 - projection-market picks (Kalshi/Polymarket) carry no SPORTS/INDEX class in the ledger `[SRC: _raw/audit3_audit3_ledger.json]`
 
+### C8. CRYPTO is PASS and KILL on the same day (added 2026-11-22)
+- `mega_mutation`/crypto: n 339, WR 67.0, PF 3.50, PASS_ALL_AXES `[SRC: reports/per_class_scrutiny_20261004.json:6]`
+- CRYPTO class: n 6926, WR 39.39, PF 0.7886, KILL `[SRC: _raw/audit3_audit3_ledger.json:1556]`
+- `/audit` policy_clean: n 22287, PF 0.2621 `[SRC: _raw/audit_data_money_ready_verdict.json:32]`
+- Cause is measurable, not mysterious: the scrutiny engine uses GROSS `pnl_pct` with no cost model `[SRC: tools/per_class_scrutiny_engine.py:87]`, keys on a `(source_system, category)` pair `[SRC: tools/per_class_scrutiny_engine.py:74]`, runs at n>=30 `[SRC: tools/per_class_scrutiny_engine.py:199]`, and its "OOS" is a mid-date split of the same rows `[SRC: tools/per_class_scrutiny_engine.py:128]`. `PASS_ALL_AXES` is not `PROVEN_T2`.
+
+### C9. The class population itself is contested (added 2026-11-22)
+- The denominator's own note: exclusion reasons total 12,174 but total minus canonical is 6,087, because the publisher and the tribunal exclude different cohorts `[SRC: _raw/audit_data_denominator.json:36]`.
+- 8,827 of 14,914 closed picks scored (59.2%) `[SRC: _raw/audit_data_denominator.json:39]`; `invalid_row` alone accounts for 11,782 exclusions `[SRC: _raw/audit_data_denominator.json:13]`.
+- Measured bridge: CRYPTO DB gross PF 1.051 to net 0.996 at the ledger's cost, versus a published 0.789, a residual of +0.2077 `[SRC: reports/class_metric_reconciliation_20261122.md]`. Cost explains about 0.055; the rest is cohort.
+
+### C10. `/audit` publishes one PF and sizes on another (added 2026-11-22)
+- CRYPTO daily PF 0.2621 versus intrabar PF 0.9169, `pf_inflation_x` 0.29, `wr_inflation_pp` 5.3, `flag: false`, `sizing_source: intrabar_truth` `[SRC: _raw/audit_data_money_ready_verdict.json:14]`.
+- ETF is the extreme: daily 1.8752 versus intrabar 0.0187, a 100.28x inflation `[SRC: _raw/audit_data_money_ready_verdict.json]`.
+- BOND: daily WR 1.0 on n 2 versus intrabar WR 7.69% on n 26, 92.3pp `[SRC: _raw/audit_data_money_ready_verdict.json]`.
+
+### C11. The backtest winners file is stale and self-declares low confidence (added 2026-11-22)
+- Generated 2026-06-01, tiers TIER_2/TIER_3/REHAB, FOREX PF `null` with tier REHAB `[SRC: reports/eight_class_winners_20260601.json:1]`.
+- Nothing in it has been re-run against the current ledger, and it must not be quoted as current performance.
+
 ## 4. Metric glossary (so a dossier number is unambiguous)
 
 - **WR** win rate = wins / resolved. `/audit` counts flat as neither; `/audit3` uses `net pnl > 0` as the win definition `[SRC: _raw/audit3_audit3_ledger.json → provenance.win_definition]`.
