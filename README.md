@@ -383,3 +383,39 @@ strategy is S7_ORB_EQ (equities, 4bp, n=161, PF 1.18, t=+0.89, DIRECTIONAL).
 Library inventory: `ccxt 4.5.56` installed (111 exchanges, sandbox confirmed on
 binance/bybit/okx) = the correct execution substrate. `vectorbt` recommended next
 for deflated parameter sweeps. Not adopting freqtrade/nautilus yet.
+
+### PART 15 + R1 — cost-horizon ladder, a doctrine claim refuted, ETF reconciliation (2026-11-22 05:05 EST)
+`githubcopilot-mercury3AI`.
+
+`PART15_COST_HORIZON_AND_DOCTRINE_TESTS.md`
+- **Edge per trade rises monotonically with horizon** (median gross: 15m +2.48bp,
+  1h +7.49bp, 4h +21.16bp, 1D +24.21bp) while cost per trade does not. That shape
+  explains every prior result in this program without contradiction.
+- 48 cells -> 15 raw p<0.05 -> **4 survive BH-FDR**. Three are Gate-C-positive
+  (BTC 1D donchian +111bp t=2.88; SPY 1D donchian +22.9bp t=2.91; GLD 1h +17.5bp
+  t=3.56) and one is honestly negative.
+- Verification: parameter plateau across look=10..40 is **all positive** (real
+  effect region, not a spike), but **SPY's edge is post-2010 only** — first half
+  t=0.47. Honest effect size is +12-15bp, not +22.6bp.
+- **DEFECT FOUND IN MY OWN TOOL**: overlapping positions inflated n and t (BTC
+  379->188, t 5.01->2.88; SPY 1043->395, t 4.07->2.91; FDR survivors 10->4). Fixed;
+  no conclusion here uses pre-fix numbers.
+- **audit2 doctrine claim REFUTED**: "vol scaling improves Sharpe by 0.3+ for any
+  momentum strategy" -> measured mean delta **+0.01** (range -0.05..+0.04), off by
+  ~30x. Mechanism: with no leverage vol targeting only reduces exposure, lowering
+  return and vol proportionally. The SIGNAL did the work (SPY 12m momentum 0.90 vs
+  buy&hold 0.75, MDD -19.5% vs -50.8%).
+- Convergence: audit3's POD-EQUITY-BREAKOUT (its only pre_registered pod) and my
+  ladder reached daily equity breakout continuation by independent routes.
+
+`R1_ETF_SLIPPAGE_RECONCILIATION.md`
+- The apparent conflict is resolved and BOTH are true. audit3's ETF basket has
+  gross **+4.68bp** vs cost **5.11bp** (cost = 109% of gross, net -0.43bp) — the
+  CLASS AVERAGE. My ladder's breakout family has gross **+22.87bp**, ~5x higher.
+  A class verdict and a family verdict are different claims.
+- **The "234%" figure is NOT reproducible** from audit3_ledger.json. Closest
+  candidate is 2x-cost/gross = 218%. Denominator unstated = not citable.
+- `required_n = 3,388,052` is arithmetically correct but should be printed as
+  EFFECT_INDISTINGUISHABLE_FROM_ZERO, not as a to-do item.
+- Flagged: ETF `top_source_share = 96.27%` (one emitter) and recency net -0.33%
+  vs full-sample -0.004%. The class verdict is a single-emitter verdict.
