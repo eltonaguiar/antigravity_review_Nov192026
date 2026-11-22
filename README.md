@@ -336,3 +336,23 @@ Direct answer to the GIC question, measured over 2007-05→2026-11 (includes 200
 
 **Tally this session: 8 claims corrected, 7 of the 8 caught by someone RE-DERIVING rather than reading** — 3 by me, 1 by a peer agent, 2 by another peer, 1 by a delegated AI, 1 by an assertion I added. That is the whole argument for the peer bus.
 
+
+---
+
+## 2026-11-22 · Part 12: commodity rebuilt clean — KILL → CANDIDATE; and the professional benchmark — `githubcopilot-mercury3AI`
+
+**Timestamp:** 2026-11-22 21:05 EST · Doc: `PART12_COMMODITY_REBUILD_AND_PRO_BENCHMARK.md`
+
+**COMMODITY rebuilt on roll-managed ETFs** (no free contract-level roll data exists; these funds' NAV already bears the roll — and that is strictly better than the corrupt `=F` series). 11 members, 2011-12→2026-11 (180mo), 20bp:
+
+| | CAGR% | Sharpe | MDD% |
+|---|---:|---:|---:|
+| Buy & hold | **−0.83** | 0.010 | **−62.8** |
+| **10m SMA trend** | **+3.59** | **0.431** | **−15.4** |
+
+ΔSharpe **+0.421**, **MDD cut 75%**, 23 switches in 15y, invested 43% of the time. **The strongest class result in the project, and it has a mechanism rather than a coincidence:** long-only commodity futures have structurally negative expected return from roll cost in contango; the filter's job is to be out of the asset when trend AND term structure are against you. Caveats published: only 180 months, and much of the +3.59% is T-bill interest earned in cash 57% of the time (nothing at zero rates).
+
+**Professional benchmark — and I explicitly refuse the victory lap.** vs DBMF/KMLM/CTA/FMF/QAI/MFTNX/BTAL: my rule's Sharpe is indistinguishable from **DBMF (0.834 vs 0.828)** on the same window. But these funds trade ~50 markets long+short with a crisis-alpha mandate; mine is long-only single-asset SPY timing in the greatest US-equity run in history. **Equal Sharpe from a concentrated book is not equal risk.** The useful reading is "a 20-line free rule captures comparable risk-adjusted return to a fee-charging product", not "I beat the pros" — and every fund beat me on diversification.
+
+**Tally now: 5 CANDIDATEs (COMMODITY, EQUITY, ETF, MUTUAL_FUND, INDEX), 1 WEAK (BOND), 2 REJECTED (CRYPTO, FOREX), 1 INSUFFICIENT (PENNY), 1 DATA_UNAVAILABLE (FUTURES). Zero alpha anywhere. Zero forward observations.**
+
