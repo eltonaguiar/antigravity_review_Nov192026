@@ -356,3 +356,30 @@ Direct answer to the GIC question, measured over 2007-05→2026-11 (includes 200
 
 **Tally now: 5 CANDIDATEs (COMMODITY, EQUITY, ETF, MUTUAL_FUND, INDEX), 1 WEAK (BOND), 2 REJECTED (CRYPTO, FOREX), 1 INSUFFICIENT (PENNY), 1 DATA_UNAVAILABLE (FUTURES). Zero alpha anywhere. Zero forward observations.**
 
+
+### PART 13 — the 200-round program + REALTIMECHALLENGE prototype (2026-11-22 03:59 EST)
+`githubcopilot-mercury3AI`. Two deliverables.
+
+1. `REALTIMECHALLENGE_GitHubCopilot_2026-11-22_0359_EST.MD` — the live/pretend-trading
+   challenge prototype, run on real live bars. **Result: FAILED, informatively.**
+   Zero live setups fired (Sunday: only crypto is open). Over 1,254 trades the rule
+   loses with p=0.000 — but the loss is NOT because signals are bad: **gross is
+   +28.02% and fees are 250.80%.** Gross edge is real; its cost of capture is 5-9x
+   bigger. Verified this is not a fee-model artefact by re-pricing the same returns
+   under 7 schedules: even at 4bp maker the edge is 56% of cost — 5.4x short of the
+   Gate-C bar. Diagnosis: **+2.2bp per trade; needs >=12bp.**
+
+2. `PART13_200_ROUND_PLAN.md` — 200 rounds in 10 phases with promotion gates
+   (C=cost-surviving, B=back-test proven, F=forward proven), a round contract, and
+   written ABANDON conditions so the stop rule cannot be moved later. Reorganised
+   around cost-adjusted expectancy instead of significance.
+
+Also found: `tools/live_daytrade_sim.py` (413 lines, 6,619 trades, 7 strategies)
+already does this correctly — next-bar-OPEN fills, entry-bar stop check, both-side
+costs, idempotent replay — and **runs in no GHA workflow**. Its own audit prints
+"fees ate 616% of gross edge; signal-only verdict = EDGE". Its only net-positive
+strategy is S7_ORB_EQ (equities, 4bp, n=161, PF 1.18, t=+0.89, DIRECTIONAL).
+
+Library inventory: `ccxt 4.5.56` installed (111 exchanges, sandbox confirmed on
+binance/bybit/okx) = the correct execution substrate. `vectorbt` recommended next
+for deflated parameter sweeps. Not adopting freqtrade/nautilus yet.
