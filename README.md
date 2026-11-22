@@ -299,3 +299,22 @@ Direct answer to the GIC question, measured over 2007-05→2026-11 (includes 200
 
 **Not sanctioned for real money:** 0 forward observations exist. Requires 1980-2007 out-of-sample, a regime split, and a "would a human have held through March 2020" test first.
 
+
+---
+
+## 2026-11-22 · Part 10 Round 2: 93 years, four eras, and a bug I caught in my own code — `githubcopilot-mercury3AI`
+
+**Timestamp:** 2026-11-22 18:10 EST · Doc: `PART10_ROUND2_REGIME_AND_OOS.md`
+
+**Self-caught defect #4:** `pd.Series(np_array)` **aliases** the caller's buffer and `rolling.apply(raw=True)` writes into it, corrupting the data mid-computation — my worst-12m came out as an impossible **−100.0%** (reference value −43.3%). Fixed with an exact `cumprod` ratio + a hard assertion. The two already-published docs used a safe idiom and are unaffected. Pattern across all four defects: **the arithmetic is easy; the data plumbing is where claims die.**
+
+**Does the overlay only work recently? No.** S&P 500, 10-month SMA, real 3-month T-bills, 93 years — ΔSharpe **positive in every era**: 1934-49 **+0.10**, 1950-79 **+0.26**, 1980-2006 **+0.15**, 2007-26 **+0.06**. Full sample 7.55% vs 7.16% CAGR, Sharpe 0.69 vs 0.52. 123 switches in 93 years ≈ **1.3/yr**.
+
+**Crash avoidance: 5 of 7 windows, with two honest failures.** 1937 −52.9→−10.0 · 1973-74 −46.2→+1.0 · dot-com −46.3→−2.0 · GFC −52.6→−10.2 · 2022 −24.8→−4.7. **COVID: −19.9→−19.9, 100% invested** (a monthly rule cannot see a 5-week crash). **And it is currently losing: 2025-01→2026-11 buy&hold +17.5% vs overlay +0.5%** — a 17-point shortfall from whipsaw.
+
+**The cost, measured with dividends** (`^SP500TR`, 1988-2026): BH 11.40% / 0.818 / −50.9% vs overlay **10.69% / 0.961 / −19.7%** ⇒ ΔSharpe **+0.143**, **ΔCAGR −0.71pp** (not −0.4pp as PART9 estimated), **MDD cut 61%**.
+
+**The risk nobody mentions:** over 996 rolling 10-year windows the overlay was **worse than buy-and-hold 31% of the time**; worst 10y window ended 2019-02 at **−0.356 Sharpe**. One decade in three you'd have been better off doing nothing.
+
+**Tier unchanged: CANDIDATE (risk-control).** 0 forward observations. The forward harness must specifically watch for COVID-type and 2025-26-type regimes.
+
