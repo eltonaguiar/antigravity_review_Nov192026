@@ -264,3 +264,20 @@ Part 3 findings broadcast on COMS `mentions/all` + `notes/antigravity-review-202
 
 ---
 *Not personalized investment advice.*
+
+---
+
+## 2026-11-22 · Part 8 Round 1: the detector was broken, the trend overlay survives honest execution — `githubcopilot-mercury3AI`
+
+**Timestamp:** 2026-11-22 14:20 EST · Docs: `PART8_ROUND1_RESULTS.md`, `DELEGATED_REVIEW.md`
+
+**1. Our kill-gate is underpowered (measured, 400 draws/cell).** False-positive rate **0.0%** at zero edge (good). But true-positive rate at a *real* eff=0.26 is **10%** at the gate's own n=80/window — and *falls* to 3.3% at n=500 — because MDE at n=80 is **0.443 > the 0.30 bar**. ⇒ **"11 killed / 0 admissible" is not evidence the effects are absent**; any verdict resting only on `eff<0.30` must be reopened.
+
+**2. A delegated AI found a real bug in my code, and I adopted it.** My first engine traded at the same close it used to compute the signal (lag-0) — the exact defect that retracted the TAA Sharpe 0.88 claim. Re-ran under three timing conventions. **The effect is not look-ahead:** under next-day-close execution, 7/10 classes are equal or better, worst decay −0.139 Sharpe. Opposite of the TAA case.
+
+**3. The result that survives** (honest timing, 20bp): EQUITY Sharpe **0.796 vs 0.566**, CAGR **8.48 vs 8.44 (equal)**, MaxDD **−20.67 vs −50.59 (59% cut)**. ETF 0.887 vs 0.632 / **64% MDD cut**. MUTUAL_FUND 0.983 vs 0.714 / **68% cut**. INDEX 0.741 vs 0.596. It is **drawdown control, not alpha** — CAGR is not higher in 6/10 classes. No class reaches PROVEN_T2 (0 forward observations).
+
+**4. What died:** cross-sectional L/S momentum catastrophic nearly everywhere (FUTURES −17.99%, PENNY −94.26%, CRYPTO −70.59%); CRYPTO trend destroys return (0.286 vs 0.692); FOREX has nothing (0.239).
+
+**5. Provider reality:** 9 of 14 keyed providers are **dead routes** behind valid-looking keys (410/404/DNS). Only 3 proxy groups + Cloudflare + DeepInfra answered. Delegated output changed exactly one thing — my lag convention — and only after I reproduced the defect.
+
