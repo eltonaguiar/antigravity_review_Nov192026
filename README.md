@@ -86,4 +86,38 @@ antigravity_review_Nov192026/
 └── 08_IMPLEMENTATION_PACKAGE/    ← ready-to-adapt artifacts (pods, SQL, shadow harness, audit2 checklist)
 ```
 
+---
+
+## 2026-11-22 · Per-class deep-dive review — `githubcopilot-mercury3AI`
+
+**By:** GitHub Copilot / Mercury-3 AI · **Timestamp:** 2026-11-22 03:00 EST (07:00 UTC)
+**Methods:** live probes of `findtorontoevents.ca/audit`, `/audit2`, `/audit3` (2026-11-22 build) cross-checked against local `audit_dashboard/data/audit3_ledger.json`, `audit3_evidence.json`, `audit2_pods.json`, `audit2_forward.json`, `dashboard_data.json`, `pick_summary_stats_{14d,48h}.json`, and `money_ready_verdict.json`.
+
+**Deliverables:** `28_MERCURY3_PER_CLASS_REVIEW_2026-11-22/` — seven per-class deep-dive reports (`CRYPTO`, `COMMODITY`, `EQUITY`, `ETF`, `FOREX`, `BOND`, `FUTURES`) + `SUMMARY.md` (cross-class verdict matrix) + `gha-framework/` (GitHub Actions QA meta-workflow).
+
+### Headline finding
+**0 of 67 tested cells survive every gate.** No class, strategy, or symbol is PROVEN or CANDIDATE. Two classes are KILL (CRYPTO, COMMODITY); five WEAK; FUTURES INSUFFICIENT_N.
+
+| Class | n | WR | Net expectancy | Alpha | PF | Verdict |
+|---|---|---|---|---|---|---|
+| CRYPTO | 6,926 | 39.4% | −0.55% | −0.42% | 0.79 | **KILL** |
+| EQUITY | 956 | 44.8% | −0.04% | **+0.11%** | 1.05 | WEAK |
+| ETF | 590 | 43.0% | −0.10% | −0.01% | 0.99 | WEAK |
+| FOREX | 264 | 36.4% | −0.07% | −0.04% | 0.85 | WEAK |
+| COMMODITY | 50 | 20.0% | −3.57% | −2.96% | 0.15 | **KILL** |
+| BOND | 37 | 43.2% | −0.05% | −0.10% | 0.81 | WEAK |
+| FUTURES | 4 | 50.0% | +1.34% | +1.29% | 1.87 | INSUFFICIENT_N |
+
+### Key achievements / unique value added by this pass
+1. **Cross-source reconciliation** — flagged that `dashboard_data.json` `asset_class_health` is a stale (2026-10-19) snapshot whose cohorts diverge sharply from the ledger (e.g., ETF n=15 vs ledger n=590). Authoritative source = audit3 ledger (canonical resolved view).
+2. **Structural measurement bugs named** — CRYPTO intrabar-vs-daily PF inflation 0.29× (~3.4× overstatement); ETF slippage ≈234% of per-trade PnL (blocks G7); FOREX `fx_prices` stale to 2026-02-09; dual recency panels disagree (trust ledger window).
+3. **Only positive signal isolated** — EQUITY is the single class with positive selection alpha (+0.11%) and hosts the book's only `pre_registered` confirmatory pod (`POD-EQUITY-BREAKOUT`).
+4. **Forward-clock blocker audit** — 6 of 9 registered pods have 0 forward rows (data blockers / winner-stays bug), so they can promote nothing.
+5. **GHA QA framework** — wrote `gha-framework/` (meta-workflow + audit engine). Proof-run against the real fleet: **375 workflows scanned, 7 flagged** (masking-policy-lint & _dynamic-runner-template missing `workflow_dispatch`; deploy-competition-to-site / ci-tests / audit-drift-telemetry broad-glob hazards; _dynamic-runner-template & pod-emission-audit missing concurrency groups).
+
+### COMS
+Findings broadcast on COMS `mentions/all` + `notes/antigravity-review-2026-11-22` on 2026-11-22 (see `18_FINAL_REPORT_COMS.md` / `19_COMS_AUDIT3_HANDOFF_VANILLA.md` lineage).
+
+---
+
 *Not personalized investment advice.*
