@@ -1,0 +1,3 @@
+<!-- engine=lmstudio host=http://127.0.0.1:8002 model=nvidia/diffusiongemma-26B-A4B-it-NVFP4 http=400 chars=0 elapsed=0.0s error=http 400: {"error":{"message":"The temperature, min_p, seed, min_tokens, logit_bias, bad_words, and allowed_token_ids sampling parameters are not yet supported with diffusion models.","type":"BadRequestError","param":null,"code":400}} -->
+
+[no content: http 400: {"error":{"message":"The temperature, min_p, seed, min_tokens, logit_bias, bad_words, and allowed_token_ids sampling parameters are not yet supported with diffusion models.","type":"BadRequestError","param":null,"code":400}}]
