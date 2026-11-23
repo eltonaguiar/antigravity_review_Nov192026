@@ -46,3 +46,12 @@ At **ETF-grade 6.7122 bp** crypto cost instead of 20–52 bp: net-positive crypt
 **1 → 10**. All 12 still fail G3 (DSR 0.004–0.13). So cost is the binding constraint, but buying at ETF-grade rates
 only earns the *right to ask the deflation question* — it is not an edge. Real-dated class mean net/trade:
 COMMODITY −0.208%, CRYPTO −0.511%, FOREX −0.075%, UNKNOWN −0.514%; EQUITY/ETF/BOND have zero real dated trades.
+
+---
+### Revision 2026-11-23T06:31Z — timing test + procurement specs
+**SPY SMA200 timing (real dated data 2021–26):** halves drawdown (−10.3% vs −18.8%) and cuts vol (11.8% vs 16.0%), but
+**does not beat buy-and-hold over its own window** — return 12.8% vs 18.0%, Sharpe 1.09 vs 1.12, paired diff
+−5.24%/yr CI[−15.95, +5.27] includes 0. **Risk control, not alpha** — same verdict freebuff reached for vol-target 60/40.
+**Procurement specs published** (`PROCUREMENT_SPECS.md`): (1) a realized, dated, delisting-aware EQUITY/ETF closed-trade
+series with acceptance criteria; (2) a measured ETF-grade venue fee tier for the 10 crypto G1-passers. These are the two
+data deliverables that unblock the programme; everything else is analysis we have already done.
