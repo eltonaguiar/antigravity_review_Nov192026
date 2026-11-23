@@ -8,27 +8,28 @@ Real data 2021-11-15→2026-11-13 (1,254 daily returns). Tool: `tools/fund_deep_
 - **Sharpe/Sortino are now EXCESS OF CASH** (SGOV daily). The old 0.71/0.73 figures were return/vol, mislabelled — true
   excess Sharpe is ~**0.50**. SGOV is relabelled **n/a** (it *is* cash; its ratio is undefined).
 - **CAGR now carries a block-bootstrap 95% CI** (21-day blocks, 2,000 draws).
-- **Portfolios use true monthly rebalancing** (daily over-stated 60/40 by 0.13 pp/yr).
+- **Portfolios use 21-trading-day rebalancing** (the reset is keyed to bar count, not calendar
+  month start; daily over-stated 60/40 by 0.13 pp/yr).
 - **FXAIX-vs-SPY arithmetic restated honestly** (below) and **CIs added** — the gap is inside the noise.
 - **Sample split** into first ~3y / last ~2y.
 - Futures **out of scope** (needs front-month/roll/yield data, not adjusted closes).
 - Tax drag and minimums stated; BND judged by trailing only (forward YTM is the right forward input — not available here).
 
 ## Measured (excess-of-cash Sharpe)
-| instrument | MER | net CAGR | **CAGR 95% CI** | vol | **Sharpe(rf)** | Sortino(rf) | max DD |
+| instrument | MER | net CAGR | **CAGR 95% CI** | vol | **Sharpe(rf)** | Sortino(rf, ÷n) | max DD |
 |---|---:|---:|---|---:|---:|---:|---:|
-| Fidelity 500 Index (FXAIX) MF | 0.015% | 11.66% | **[0.1, 25.4]** | 17.2% | **0.506** | 0.501 | −24.5% |
-| SPDR S&P 500 (SPY) ETF | 0.0945% | 11.49% | [−0.0, 25.2] | 17.3% | 0.498 | 0.491 | −24.5% |
-| Fidelity ZERO Total Mkt (FZROX) MF | 0.00% | 10.74% | [−0.8, 25.0] | 17.6% | 0.450 | 0.446 | −25.1% |
-| Vanguard Total Mkt (VTI) ETF | 0.03% | 10.50% | [−1.0, 24.8] | 17.7% | 0.438 | 0.431 | −25.4% |
-| Vanguard Total Stock (VTSAX) MF | 0.04% | 10.48% | [−1.0, 24.8] | 17.6% | 0.439 | 0.433 | −25.4% |
-| Vanguard Total Bond (BND) ETF | 0.03% | −0.32% | [−4.6, 4.3] | 6.1% | −0.648 | −0.634 | −17.3% |
+| Fidelity 500 Index (FXAIX) MF | 0.015% | 11.66% | **[0.1, 25.4]** | 17.2% | **0.506** | 0.722 | −24.5% |
+| SPDR S&P 500 (SPY) ETF | 0.0945% | 11.49% | [−0.0, 25.2] | 17.3% | 0.498 | 0.714 | −24.5% |
+| Fidelity ZERO Total Mkt (FZROX) MF | 0.00% | 10.74% | [−0.8, 25.0] | 17.6% | 0.450 | 0.641 | −25.1% |
+| Vanguard Total Mkt (VTI) ETF | 0.03% | 10.50% | [−1.0, 24.8] | 17.7% | 0.438 | 0.625 | −25.4% |
+| Vanguard Total Stock (VTSAX) MF | 0.04% | 10.48% | [−1.0, 24.8] | 17.6% | 0.439 | 0.624 | −25.4% |
+| Vanguard Total Bond (BND) ETF | 0.03% | −0.32% | [−4.6, 4.3] | 6.1% | −0.648 | -0.889 | −17.3% |
 | iShares 0-3mo T-bill (SGOV) ETF | 0.09% | 3.81% | [3.6, 4.3] | 0.2% | n/a (cash) | n/a | −0.03% |
 
 **Read the CIs first: every equity fund's 5-yr CAGR CI spans roughly 0→25%.** They **overlap enormously**, so **no fund
 ranking here is statistically distinguishable** — including FXAIX vs SPY. The fee ordering is *directional*, not proven.
 
-## Portfolios — true monthly rebalance (net)
+## Portfolios — 21-trading-day rebalance (net)
 | portfolio | net CAGR | max DD | Sharpe(rf) | daily-rebal (over-stated) |
 |---|---:|---:|---:|---:|
 | 100% SPY | 11.49% | −24.5% | 0.498 | same |
