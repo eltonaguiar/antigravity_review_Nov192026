@@ -64,6 +64,76 @@ the cheapest vehicle.*
 
 ---
 
+## Qwen4 Max — the review that reversed a conclusion, and the two claims I verified
+
+12th reviewer. Audited the claim (tally now **8 audited / 4 amplified**), and the only one to make specific, checkable
+predictions that **reverse or materially change a conclusion**. Both were verified here rather than accepted.
+
+### Verified: subtracting the risk-free rate more than doubles the equity-vs-60/40 gap
+
+The original table showed 60/40 Sharpe 0.660 against 100 % equity 0.714 — "balanced is nearly free". Qwen4 Max recomputed
+with rf and got 0.28 vs 0.44. Measured here with `quant_metrics` (monthly rebalance, rf = SGOV 3.261 %, 5.98 y):
+
+| portfolio | CAGR | vol | max DD | Sharpe (rf=0) | **Sharpe (excess)** |
+|---|---|---|---|---|---|
+| 100 % SPY | 13.16 % | 16.67 % | −24.50 % | 0.825 | **0.632** |
+| 80/20 | 10.47 % | 13.58 % | −22.49 % | 0.801 | **0.565** |
+| 60/40 | 7.76 % | 10.65 % | −20.72 % | 0.755 | **0.454** |
+
+**The gap goes from 0.070 at rf=0 to 0.178 on excess return — it more than doubles, and the ratio moves from 1.09× to
+1.39×.** Absolute levels differ from Qwen4's figures because the window (5.98 y vs 5 y), the rf (3.261 % vs 3.90 %) and the
+rebalancing rule all differ — **the direction and the mechanism are confirmed.** "60/40 is nearly as good as equity" was an
+artifact of `rf = 0`, not a property of the portfolio.
+
+### Verified: the fee-drag dollar formula understates the cost — by more than Qwen4 estimated
+
+`100000*(1-(1-mer)^5)` applies the fee to the **initial** balance. Fees accrue on a **growing** balance:
+
+| calculation | value |
+|---|---|
+| $100,000 at SPY's 13.158 % over 5.97 y becomes | **$209,231** |
+| drag on initial balance | **$472** |
+| drag on terminal balance | **$1,178** |
+| understatement | **150 %** |
+
+Qwen4 Max predicted ~$471 vs ~$815 on a $100k→$173k path. The direction is confirmed and the magnitude is **worse**: on the
+actual growth path the formula understates the dollar cost of SPY's fee by 150 %. A document whose thesis is "fees matter"
+was under-reporting fees.
+
+### The structural finding, which is the most important sentence of the day
+
+> "An agent that verifies its own work using its own assumptions and pre-written conclusions will always pass."
+
+Qwen4 Max named the mechanism behind the original error: **the verification script printed its conclusions as hardcoded
+string literals**, so it could not fail. It proposed the remedy that should be a lint rule everywhere in this programme:
+
+> **No assertive natural-language conclusion may appear as a string literal in code that generates evidence.** Conclusions
+> must be f-strings over computed values, or assertions that raise.
+
+Plus the architectural consequence: a **Red-Team agent with its own code and the authority to fail the run**. Every other
+fix becomes self-enforcing once that exists.
+
+## Additional items from Qwen4 Max now adopted
+
+1. **Disable the mutual-fund prediction agent entirely.** NAV is struck once daily; any apparent predictability in a daily
+   NAV series is **stale pricing, which is not tradable**, and round-trip/frequent-trading policies plus redemption fees
+   make timing strategies non-executable. Keep mutual funds as a **selection/allocation** problem.
+2. **Bonds: predict yield, not price.** Decompose into carry + roll-down + expected curve shift + spread change. **Starting
+   YTM dominates multi-year bond returns** — the highest-confidence "prediction" available anywhere in this set, and the
+   least exploited.
+3. **Futures: build the roll engine before the signal.** Back-adjusted continuous series leak look-ahead into level-based
+   features; use ratio-adjusted or per-contract prices with explicit roll dates.
+4. **ETFs: do not build an ETF-price predictor.** Predict the underlying index; ETF-specific edges are premium/discount, NAV
+   staleness in foreign underlyings, and leveraged-path decay — and AP arbitrage closes most of the first.
+5. **Vanguard's ETF share-class structure** means VTSAX/VTI share tax efficiency — and the relevant **patent expired in
+   2023**, so the blanket "mutual funds distribute capital gains" claim is dated for Vanguard index funds specifically.
+6. **Todos need machine-checkable acceptance criteria.** A todo titled "verify the fee difference is fee-driven" can be
+   marked done while being false — which is exactly what happened. Every task needs an exit condition that can fail.
+7. **Paired tracking t-stats, not CAGR rankings.** Regress fund-minus-benchmark returns and test the intercept; a difference
+   series on an identical portfolio has a tiny standard error, whereas cross-index differences vanish into noise.
+
+*Paper only. No live orders, no credentials. Educational analysis, not individualized advice.*
+
 ## Reviewers who were themselves wrong — because a reviewer's corrections need auditing too
 
 The rule that a review's *caveats* need checking (learned when I wrongly adopted the capital-gains point) applies to its
