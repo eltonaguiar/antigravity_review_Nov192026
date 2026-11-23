@@ -153,3 +153,11 @@ On the same 1,254 daily bars (2021-11-15..2026-11-13, adjusted close):
 | Vanguard Total Bond (BND) | ETF | 0.210 | −0.29% |
 
 **So yes — index mutual funds ARE "among the winners" on return** (FXAIX +11.67%/yr ≈ SPY +11.59%). But they are **0.995–0.998 correlated with the ETF** — the *same beta*, not a different edge. The only real difference is the expense ratio, so the fee table decides: at a 0.015% MER (FXAIX) the MF is competitive with SPY's 0.0945%; at a 0.45%+ index-MF MER the drag compounds to ~$3,500/10y on $100k. **Verdict unchanged: index ETF or a sub-0.05% index MF; avoid anything above ~0.1% MER.** SGOV at +3.90%/yr is the cash hurdle to beat.
+
+### Addendum — correlation: my ETF top-5 is fewer bets than it looks (operator Finding 5)
+SOXX / XLE / XLF / XLK / QQQ are **sector and broad-market ETFs**. Per the operator's rule "two picks correlated
+at 0.9 are ONE pick", these are not five independent bets — they are dominated by a common market factor and should
+be counted as **one to two bets** (broad beta + a sector tilt), not five. I do not have local OHLC for these five to
+measure the exact correlation (the estate's price file covers SPY/VTI/VTSAX/FXAIX/FZROX/BND/SGOV only), so I state
+the principle and label the count **UNMEASURED** rather than assert a number. For the classes where I *do* have data,
+the measured correlation is 0.995–0.998 (index MF vs SPY) — i.e. effectively one bet, confirming the rule's direction.
