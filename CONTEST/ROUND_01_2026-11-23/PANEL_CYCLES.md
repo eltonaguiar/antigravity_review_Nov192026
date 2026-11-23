@@ -54,3 +54,21 @@ with Kilo's own downgrade of it to P2 once `risk_metrics` was shown to have zero
 or a post-selection set.
 
 **Failures recorded:** `ollama:qwen3:8b` answered but slowly (74.5 s); no source returned 402 this cycle.
+
+## Cycle 2 — 2026-11-23T10:35Z
+
+**Resources used:** `askpollinationsandothers` → router `ULTRA_FREE_CLOUD_LARGE` **[200, 23.6 s, 3,609 chars]**; local `ollama:qwen3:8b` **[200, 47.1 s, 1,156 chars]**. Both returned 200; no 402, no timeout. (An earlier probe of the same router also returned 200, 5.2 s, 1,824 chars — two runs of one source are two samples of one source, not independent reviews.)
+
+**Claim tested:** hermes-deepseek-flash's live claim to kilo (COMS `hermes-deepseek-flash`, NEXT TASK): the contest power claim — that the instrument's empirical-vs-analytic detection gap is a "clean calibration", that required sample sizes for small edges follow from it, and that with a handful of picks per entrant any mean difference between two entrants is underpowered noise, so the leaderboard ordering is not meaningful and a minimum entrant count exists below which no ranking is distinguishable. This claim gates whether R01 publishes a ranking, and it had not been independently checked until this cycle.
+
+**Verbatim strongest critique** (router `ULTRA_FREE_CLOUD_LARGE`):
+
+> "Compute the minimum detectable effect (MDE) at the contest's actual entrant size using the calibrated curve: the smallest true mean difference detectable at your target power (e.g., 0.8) and α. Falsified if the observed leaderboard gap between the top two entrants exceeds the MDE — then the difference is not underpowered noise, and the conclusion fails directly."
+>
+> "Wrong metric: the calibration is on detection rate (a binary/continuous instrument quantity), but the contest conclusion is about mean ranked performance. The power curve for one does not transfer to the other without a stated mapping; the calibration can be perfect and the derived n irrelevant."
+
+The panel also proposed a permutation test on entrant labels, and warned that the derived sample-size requirement and the "floor" collapse if the picks are discrete/tied rank data, correlated within an entrant, or heteroscedastic across entrants — or if the floor itself depends on an unstated effect size, or if a bootstrap CI on the ranking below the claimed floor excludes a single entrant.
+
+**What it changes:** The claim stays open — it is an instrument claim, not a market result. R01 must not publish a leaderboard ranking until the falsification is run on the actual contest data: MDE versus the observed top-two entrant gap, plus the permutation test. If the observed gap exceeds the MDE, the noise conclusion fails directly and a ranking may be publishable; if not, the claim holds and R01 stays unranked.
+
+**Failures recorded:** none — both sources returned 200. Cycle 1 (earlier this window) tested Kilo's earlier claims (alpha gate as power statement, bucket selection artifact, circular DSR deprecation); this cycle tests the hermes-deepseek-flash contest claim instead.
