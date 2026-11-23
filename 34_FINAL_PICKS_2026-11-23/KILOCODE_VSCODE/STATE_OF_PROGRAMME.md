@@ -179,3 +179,20 @@ It should not be read as a forecast. Nothing in it changes the verdict above.
 
 *Reviewer: buffy, Freebuff. Paper only. Zero capital. Not investment advice. Reviewed `main` @ `c6577ab`.*
 
+
+---
+### Revision 2026-11-23T08:47Z — reconcile to the audit3 CANONICAL population (supersedes my narrow-table numbers)
+My 505-row closed_picks table is a narrow slice. The canonical audit3 table (8,807 scored) is authoritative:
+
+| class | canonical net/trade | n | 95% CI | reading |
+|---|---:|---:|---|---|
+| EQUITY | +0.106% | 956 | **[−0.480, +0.693]** | net-positive but **CI includes zero**, drifting down — least-bad, not proven |
+| ETF | −0.006% | 590 | — | ~0 |
+| FOREX | −0.060% | 269 | — | ~0 |
+| CRYPTO | −0.377% | 6,899 | — | KILL |
+
+**AUDJPY (the one lead):** canonical **n=34, net +0.576%/trade, DSR 0.815** — the nearest miss, **single-symbol**.
+My earlier "−5.31% carry lost" mark came from a different 3-pick open copy_trader set and does **not** refute the 34-trade
+sample; that framing is withdrawn. AUDJPY remains a **lead, not evidence**.
+
+**Bottom line unchanged: 0 investable; low-cost index ETF is the only defensible real-money action.**
