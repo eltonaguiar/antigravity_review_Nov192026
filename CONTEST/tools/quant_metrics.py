@@ -62,9 +62,10 @@ def sharpe(px, rf_annual, periods_per_year=TRADING_DAYS):
     var = sum((x - mu) ** 2 for x in ex) / (len(ex) - 1)
     sd = math.sqrt(var)
     if sd < 1e-9:
-        # No measurable excess volatility: the ratio is 0/0 and its value is noise amplification, not skill.
-        # This is the SGOV case - with rf=0 the same series reported Sharpe 13.6 and 1.9e13 in tests.
-        return 0.0
+        # No measurable excess volatility. The ratio is 0/0 and its value is noise amplification, not skill.
+        # Return None, not 0.0: a Sharpe measured against the very asset that IS the cash proxy is UNDEFINED,
+        # and printing 0.0 would claim "no risk-adjusted return" when the truth is "not a meaningful question".
+        return None
     return (mu / sd) * math.sqrt(periods_per_year)
 
 

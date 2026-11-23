@@ -42,7 +42,7 @@ except TypeError:
 # --- a T-bill-like series (constant tiny positive drift, near-zero vol) must show ~0 excess Sharpe
 bill = [100.0 * (1.04 ** (i / 252.0)) for i in range(600)]
 check("T-bill-like series has ~0 excess Sharpe at 4% rf",
-      abs(qm.sharpe(bill, 0.04)) < 0.5, "%.3f" % qm.sharpe(bill, 0.04))
+      qm.sharpe(bill, 0.04) is None, "undefined against itself, as it must be")
 # Demonstrate the ORIGINAL bug with raw arithmetic - the library now refuses to produce it, which is the point.
 _br = qm.returns(bill)
 _mu = sum(_br) / len(_br)
@@ -50,8 +50,8 @@ _sd = math.sqrt(sum((x - _mu) ** 2 for x in _br) / (len(_br) - 1))
 _raw_rf0 = (_mu / _sd) * math.sqrt(252)
 check("raw Sharpe at rf=0 on a T-bill series is absurd (the bug, demonstrated)",
       _raw_rf0 > 5, "%.1f  <- why the guard exists" % _raw_rf0)
-check("the library refuses to return that absurd value", qm.sharpe(bill, 0.0) == 0.0,
-      "%.1f vs raw %.1f" % (qm.sharpe(bill, 0.0), _raw_rf0))
+check("the library reports a Sharpe against itself as UNDEFINED, not 0.0",
+      qm.sharpe(bill, 0.0) is None, "None vs raw %.1f" % _raw_rf0)
 
 
 # --- Sortino must use total observations. A series with few down days must NOT get an inflated downside dev.
@@ -103,6 +103,22 @@ _shift = [p * (1.0 + _rng.gauss(0, 0.004)) for p in px]
 lo2, hi2, pt2 = qm.block_bootstrap_sharpe_diff(px, _shift, 0.03, B=150, block=21, seed=7)
 check("differing-series bootstrap produces a real interval", (hi2 - lo2) > 1e-4,
       "[%.3f, %.3f] width %.4f" % (lo2, hi2, hi2 - lo2))
+
+
+# --- THE DRIFT TEST. A 50/50 book where A doubles must end at weight 2/3, not reset to 1/2 overnight.
+# Constructed so that drift and daily-reset give DIFFERENT answers:
+#   period 1: A +100%, B 0%   -> book 1.50, and A's weight is now 2/3
+#   period 2: A +10%,  B 0%   -> drift gives 1.50*(1 + (2/3)*0.10) = 1.600 ; reset gives 1.50*(1 + 0.5*0.10) = 1.575
+_a = [1.00, 0.10]
+_b = [0.00, 0.00]
+drift_curve = qm.rebalance({"a": _a, "b": _b}, {"a": 0.5, "b": 0.5}, every_n_days=0, cost_bps=0.0)
+reset_curve = qm.rebalance({"a": _a, "b": _b}, {"a": 0.5, "b": 0.5}, every_n_days=1, cost_bps=0.0)
+check("no-rebalance curve lets weights drift (1.600, weight 2/3)", abs(drift_curve[-1] - 1.600) < 1e-9,
+      "%.4f" % drift_curve[-1])
+check("daily-rebalance curve resets weight to 1/2 (1.575)", abs(reset_curve[-1] - 1.575) < 1e-9,
+      "%.4f" % reset_curve[-1])
+check("drift and reset are genuinely different paths", abs(drift_curve[-1] - reset_curve[-1]) > 1e-3,
+      "%.4f vs %.4f" % (drift_curve[-1], reset_curve[-1]))
 
 
 print("\n%d failure(s)" % len(fails))
