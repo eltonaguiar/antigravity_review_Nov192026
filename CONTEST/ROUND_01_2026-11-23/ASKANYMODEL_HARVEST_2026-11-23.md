@@ -22,6 +22,55 @@ That is the most important number in this file. A claim that was **retracted on 
 falsification and a root cause** still came back as a positive finding in half of the fresh reviews, from models that were
 handed the work and not the correction. **A retraction does not travel with the artifact. It only travels with the brief.**
 
+## Double-check of the "Consensus" panel — it contradicts itself and says "High confidence"
+
+AskAnyModel's synthesis layer (credited to *Gemini 3 Flash · on the house*, labelled **"High confidence"**) produced a
+"Where they agree" list containing two bullets that cannot both be true:
+
+> - "FXAIX (Fidelity 500 Index) **outperformed SPY primarily due to lower fees** (0.015 % vs 0.0945 %)."
+> - "Adjusted close prices typically already include dividends and net fund expenses; **manually subtracting MER a second
+>   time results in double-counting** fee drag."
+
+The first bullet is the claim as originally stated. The second is the refutation of the method that produced it. **A
+synthesis cannot list a claim and the invalidation of its arithmetic as points of agreement**, and it certainly cannot do so
+under a high-confidence label.
+
+### What the measurement says, which the synthesis never did
+
+| statement | verdict |
+|---|---|
+| "subtracting MER again double-counts" | **TRUE.** This is the defect; it inflated the reported gap from 8.7 bp to 17 bp |
+| "FXAIX outperformed SPY primarily due to lower fees" | **essentially TRUE, but not on the evidence given.** Corrected: FXAIX − SPY = **+8.7 bp/yr** against a fee gap of **7.95 bp** and a same-fund noise floor of **2.5 bp**, so fees explain ~91 % of a real effect |
+| the 0.17 pp figure the consensus implicitly endorses | **FALSE** — that is the double-counted number |
+
+So the consensus reached a **roughly correct conclusion through a self-contradictory argument, using a number it had just
+declared invalid, and stamped it high-confidence.** That is the most dangerous output shape found today: not a wrong answer,
+which can be checked, but an internally inconsistent one that *looks* resolved.
+
+### The three other claims in that list, checked
+
+- **"FZROX is a top-tier performer but cannot be transferred between brokerages"** — **TRUE** on both halves (Fidelity
+  proprietary; Claude 5.1 adds that FZROX itself has distributed capital gains in some years).
+- **"The 2021–2026 period was uniquely punitive for bonds, so 60/40 looks historically weak; do not extrapolate"** — **TRUE**,
+  and the same point Claude 5.1 and Claude 5.2 made independently.
+- **"SGOV's Sharpe is mathematically inflated due to near-zero volatility"** — **half right, and the half that matters is
+  missing.** The *cause* is `rf = 0`: SGOV's excess return over cash is approximately zero, so a correct Sharpe is
+  approximately zero. Near-zero volatility is the **amplifier** — it is what makes a 3.9 % numerator divided by a 0.24 %
+  denominator explode to 15.9 instead of failing modestly. So the diagnosis names the amplifier and omits the cause, and the
+  remedy it implies (cap Sharpe when vol < 1 %) is a band-aid: the real fix is an excess-return numerator. Both are now in
+  `quant_metrics.py` — the required risk-free rate is the correction, the volatility tolerance is the guard for the case
+  where excess volatility is genuinely too small to divide by.
+
+### The synthesis layer is a new failure surface
+
+Panel aggregation is where a refuted claim gets laundered back into agreement, because a synthesiser optimises for
+*similarity across answers* and "agreement" is its success metric. It has no mechanism to notice that two inputs are
+logically incompatible — and it assigns a confidence label based on how much the answers overlapped, not on whether they
+were coherent.
+
+**Rule adopted: a synthesis is not evidence. It is a hypothesis about the inputs, and it must be checked against the same
+measurements as any single answer.**
+
 ## What is genuinely new and worth adopting
 
 ### 1. Grok: `net CAGR = CAGR − MER` is an upper bound, never exact
