@@ -117,3 +117,24 @@ the money belongs in a low-cost broad index ETF.** The reason is that no strateg
 trial count, the two nearest candidates are unmeasurable, and measured costs plus survivorship bias remove the rest.
 
 *Paper only. Zero capital. Not investment advice.*
+
+## What about our machine-learning algorithms, and reverse-engineering top gainers?
+We have LightGBM/sklearn models across `mercury2/` (ensemble + a dedicated daily top-gainer regressor),
+`ml_gatekeeper/`, `ml_consensus/`, `ml_crypto_predictor/`, and several `baby_strategies/` / `meta_strategy/`
+ensembles. `lightgbm` is not installed in this worktree, but trained artefacts and out-of-sample reports exist.
+
+**The existing top-gainer model already answers the question — and fails.** `mercury2/top_gainer.py` is a
+LightGBM regressor (12 causal features + funding_std, 815,633 rows, 50 symbols). Its own out-of-sample report
+(`mercury2/data/metrics_report.json`, 469 closed trades): economic win rate **40.1%**, **hit-rate@top-3 = 0.0%**,
+**@top-5 = 0.0%**, @top-10 = 20.0%, Spearman IC 0.105. Its harness even flags `low_linear_ic` and
+`weak_top5_hit_rate`. (Caveat: `training_summary.json` reports `DSR 1.0 / pass:true` while `psr_pass:false` and
+`dsr_pvalue:1.0` — that PASS is degenerate and should not be trusted.)
+
+**Independent retest this session** (`tools/top_gainer_backtest.py`, 8 symbols × ~380 daily bars): ranking symbols
+by trailing momentum (7/30-day, and reversal) predicts the forward top-K (1/7/30 days) **at the random baseline** —
+rank IC 0.00–0.07, hit-rate within ±0.03 of random across all 24 combinations, best edge +0.026. 
+
+**Verdict: daily / weekly / monthly top gainers are not predictable from price features.** This matches the
+deflation verdict exactly. A top-gainer strategy is a lottery ticket carrying 52 bp round-trip cost on alts — do
+not fund it. The markets-open vs closed distinction does not change it: we cannot predict them when open, and the
+closed-market backtest says we could not have predicted them either.
