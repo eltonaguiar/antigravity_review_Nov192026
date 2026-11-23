@@ -1,0 +1,105 @@
+--- a/CONTEST/tools/assess_contest.py
++++ b/CONTEST/tools/assess_contest.py
+@@ -35,8 +35,26 @@ COST_BP = {
+     "bond": 0.6144, "etf": 6.7122, "equity": 12.0749, "fund": 0.0,
+     "crypto": 52.0, "fx": 7.533, "commodity": 20.0,
+     "option": 20.0, "futures": 20.0, "prediction": 175.0,
+ }
++
++# R4 (2026-11-23, second peer pass): COST_OF_RECORD splits crypto into a major band (20) and an alt
++# band (52); this table had ONE "crypto" key at 52, so every BTC/ETH pick was charged the alt band --
++# a 2.6x overcharge on the largest-cap picks, in the direction that makes a class look worse.
++CRYPTO_MAJORS = {"BTC", "ETH", "SOL", "BNB", "XRP", "DOGE", "ADA", "AVAX", "LINK", "LTC"}
++
++
++def cost_bp_for(p):
++    """Round-trip cost in bp for one pick, resolved against COST_OF_RECORD's own bands."""
++    cls = p["class"]
++    if cls == "crypto":
++        stem = str(p.get("symbol", "")).upper().replace("-", "")
++        for suffix in ("USDT", "USDC", "USD", "PERP"):
++            if stem.endswith(suffix):
++                stem = stem[: -len(suffix)]
++                break
++        return 20.0 if stem in CRYPTO_MAJORS else COST_BP[cls]
++    return COST_BP[cls]
+ VALID_CLASSES = set(COST_BP)
+ VALID_SIDES = {"long", "short"}
+ VALID_RULES = {"market_at_next_open", "limit", "market_at_timestamp"}
+ VALID_STYLES = {"intraday", "swing", "buy_and_hold"}
+@@ -64,9 +82,16 @@ def clamp_brackets(p):
+     Clamping keeps the entrant's own R multiple (their distance to stop and to target) but re-anchors
+     it at the price that actually traded, so a stale anchor costs real R at the magnitude they chose
+     instead of being laundered into a void.
+     """
++    # R3 (2026-11-23, second peer pass): `entry` is never written by the scorer, and the field the
++    # RULES actually define is `entry_ref_price` -- which was never read. Falling straight to the
++    # bracket MIDPOINT silently symmetrises an asymmetric bracket: tp 730 / sl 675 on a 690 market is
++    # risk 15, reward 40 = 2.67R; its midpoint 702.5 makes it risk 27.5, reward 27.5 = 1.00R. The
++    # clamp therefore rewrites the entrant's own R:R, the one thing it promises to preserve.
+     stated = p.get("entry")
++    if stated is None:
++        stated = p.get("entry_ref_price")
+     if stated is None:
+         stated = (float(p["tp"]) + float(p["sl"])) / 2.0
+     stated = float(stated)
+     risk = abs(stated - float(p["sl"]))
+@@ -213,26 +238,34 @@ def value_pick(p, bars):
+         if hit_tp:
+             exit_px, reason = tp, "tp"
+             break
+     if exit_px is None:
+-        exit_px = float(series[-1]["close"])
++        # R2 (2026-11-23, second peer pass): this still used series[-1], the LAST bar of the whole
++        # panel, so a pick that touches no barrier exited at the end of the FILE rather than the end
++        # of its HORIZON. Measured: QQQ, horizon_hours=2, panel to 2026-12-31 -> exit 945.0 from a
++        # 690 entry, R +2.83, labelled reason="horizon". The fund branch was fixed this way; this
++        # branch was not. Same bug, different branch.
++        within_h = [b for b in series if parse_ts(b["ts"]) <= horizon]
++        if not within_h:
++            return {"status": "VOID", "reason": "no bar inside the horizon"}
++        exit_px = float(within_h[-1]["close"])
+ 
+     risk_px = abs(entry - sl)
+     if risk_px <= 0:
+         return {"status": "VOID", "reason": "zero distance to stop"}
+     gross_r = (exit_px - entry) / risk_px
+     if side == "short":
+         gross_r = -gross_r
+-    cost_r = (COST_BP[p["class"]] / 1e4) * entry / risk_px
++    cost_r = (cost_bp_for(p) / 1e4) * entry / risk_px
+     net_r = gross_r - cost_r
+     direction = 1 if side == "long" else -1
+     usd = direction * (exit_px - entry) / entry * float(p["size_usd"])
+     # DEFECT FIXED (peer review): $ was gross while R was net, so the $ column never paid the cost line
+     # that Finding 10 is about. Both are now net of the same per-class round trip.
+-    usd -= (COST_BP[p["class"]] / 1e4) * float(p["size_usd"])
++    usd -= (cost_bp_for(p) / 1e4) * float(p["size_usd"])
+     return {"status": "OK", "entry": entry, "exit": exit_px, "reason": reason,
+             "R": round(net_r, 4), "usd": round(usd, 2),
+-            "cost_bp": COST_BP[p["class"]]}
++            "cost_bp": cost_bp_for(p)}
+ 
+ 
+ def main():
+     ap = argparse.ArgumentParser()
+@@ -249,10 +282,18 @@ def main():
+                          "(removes the void rule and the two exploits it allows)")
+     a = ap.parse_args()
+ 
+     global FILL_RELATIVE, ROUND_START
++    # R1 (2026-11-23, second peer pass): the round-start fix is guarded by
++    # `if ROUND_START is not None`, so the defect is still live by DEFAULT -- omit the flag and the
++    # fill goes back to the oldest bar in the panel. A scorer whose correct behaviour depends on a
++    # flag the caller may forget is the class of bug that produced R01's stale fills. Make it loud.
++    if not a.round_start:
++        print("ERROR: --round-start is required. Without it the fill is the oldest bar in the "
++              "panel, which scores a months-old price against a live bracket.")
++        return 1
+     FILL_RELATIVE = bool(a.fill_relative)
+-    ROUND_START = parse_ts(a.round_start) if a.round_start else None
++    ROUND_START = parse_ts(a.round_start)
+     sub = json.load(open(a.picks, encoding="utf-8"))
+     bars = json.load(open(a.prices, encoding="utf-8"))
+     errs, total = validate(sub)
+     if errs:

@@ -1,0 +1,65 @@
+--- a/alpha_engine/deflated_sharpe.py
++++ b/alpha_engine/deflated_sharpe.py
+@@ -174,9 +174,21 @@ def expected_max_sharpe(mean_sr: float, var_sr: float, nb_trials: int) -> float:
+ 
+     return mean_sr + std_sr * z
+ 
+ 
+-# DEPRECATED: Use alpha_engine.validation.sharpe_metrics instead (canonical implementation per TESTING_PROTOCOL v4.0)
++# DEPRECATED -- and the reason six DSR values were in circulation on 2026-11-23.
++#
++# This used to say "use alpha_engine.validation.sharpe_metrics (canonical)". That is wrong:
++# sharpe_metrics.deflated_sharpe_ratio takes NO trial count and returns Sharpe/SE -- a t-statistic
++# (31.0548 at N=1 and at N=4987 alike) published under a probability's name. A `dsr >= 0.95` gate
++# pointed at it passes everything.
++#
++# The canonical deflating implementation is:
++#     alpha_engine.statistical_rigor.deflated_sharpe_ratio(returns, n_trials, skewness=None, kurtosis=None)
++# It takes n_trials, uses Fisher-adjusted (excess) kurtosis, and returns a probability in [0, 1].
++# Measured agreement 2026-11-23 at N=121: statistical_rigor 0.4118 / audit3_tribunal 0.4120 /
++# anti_overfit_validator 0.4125 / this module 0.4113 -- four implementations, three decimals.
++# Battery: reports/dsr_conformance_2026-11-23.{json,md}
+ def deflated_sharpe_ratio(
+     estimated_sharpe: float,
+     sr_variance: float,
+     nb_trials: int,
+--- a/alpha_engine/validation/sharpe_metrics.py
++++ b/alpha_engine/validation/sharpe_metrics.py
+@@ -92,9 +92,12 @@ def deflated_sharpe_ratio(
+     different from zero", not "is it different from the best of N tries".
+     DSR > 1.64 implies ~95% confidence that true Sharpe > 0.
+ 
+     For a real deflation across trials use
+-    ``alpha_engine.deflated_sharpe.deflated_sharpe_ratio(nb_trials=...)``.
++    ``alpha_engine.statistical_rigor.deflated_sharpe_ratio(returns, n_trials=...)``, the canonical
++    implementation. ``alpha_engine.deflated_sharpe`` is deprecated and pointed back HERE, so neither
++    of the two ever pointed at the deflating one -- that circular reference is the whole cause of the
++    "6 DSR values, 26.3x spread" dispute recorded in FINAL_PICKS/STATUS.md.
+     """
+     n_per_year = annualise_factor(freq)
+     rf_per_period = (1 + risk_free_rate) ** (1 / n_per_year) - 1
+     excess = returns - rf_per_period
+@@ -192,8 +195,23 @@ def compute_tail_risk_metrics(returns: pd.Series, freq: str = "daily") -> dict:
+         "evt_tail_index": round(evt_tail_index, 4) if evt_tail_index and not np.isnan(evt_tail_index) else None,
+     }
+ 
+ 
++def sharpe_t_stat(
++    returns: pd.Series,
++    risk_free_rate: float = 0.0,
++    freq: str = "daily",
++) -> float:
++    """Explicit name for what ``deflated_sharpe_ratio`` actually returns: a t-statistic.
++
++    Prefer this in new code. The old name stays for compatibility, but a name that says "deflated"
++    on a quantity that never takes a trial count is how a gate ends up reading 31.05 as a
++    probability. For a real deflation use
++    ``alpha_engine.statistical_rigor.deflated_sharpe_ratio(returns, n_trials=...)``.
++    """
++    return deflated_sharpe_ratio(returns, risk_free_rate=risk_free_rate, freq=freq)
++
++
+ if __name__ == "__main__":
+     np.random.seed(42)
+     daily_ret = pd.Series(np.random.normal(0.0005, 0.015, size=252 * 2))
+ 
