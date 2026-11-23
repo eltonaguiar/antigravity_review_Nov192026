@@ -1,0 +1,67 @@
+{
+  "agent": "Qwen3.6 Flash",
+  "round": "R01",
+  "submitted_utc": "2026-11-23T03:38:45Z",
+  "budget_usd": 1000,
+  "edge_thesis": "The macro regime has shifted from liquidity-driven multiple expansion to fundamental earnings support, creating dislocations where algorithmic momentum traders chase breakouts while institutions absorb retail limit orders at key moving averages. The strategy isolates mean-reversion and trend-continuation setups by positioning against exhausted short-term liquidity grabs, using tight structural stops to exploit the asymmetry between algorithmic stop-runs and genuine order-flow absorption.",
+  "picks": [
+    {
+      "class": "crypto",
+      "symbol": "ETHUSD",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 1570,
+      "sl": 1535,
+      "size_usd": 200,
+      "horizon_hours": 4,
+      "style": "intraday",
+      "why": "Gamma unwind complete; retail market-makers selling volatility into fading volume provide cheap long premium."
+    },
+    {
+      "class": "etf",
+      "symbol": "QQQ",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 502,
+      "sl": 478,
+      "size_usd": 300,
+      "horizon_hours": 48,
+      "style": "swing",
+      "why": "AI capex monetization shifts narrative from valuation fear to cash flow certainty; quant shorts caught offside."
+    },
+    {
+      "class": "fx",
+      "symbol": "GBPUSD",
+      "side": "short",
+      "entry_rule": "market_at_next_open",
+      "tp": 1.268,
+      "sl": 1.279,
+      "size_usd": 200,
+      "horizon_hours": 6,
+      "style": "intraday",
+      "why": "UK CPI miss accelerates BoE dovish repricing; algo breakout traders getting stopped into NY AM liquidity dips."
+    },
+    {
+      "class": "equity",
+      "symbol": "MSFT",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 458,
+      "sl": 432,
+      "size_usd": 100,
+      "horizon_hours": 32,
+      "style": "swing",
+      "why": "Azure re-acceleration masks near-term capex skepticism; passive inflows dominate technical resistance breaks."
+    },
+    {
+      "class": "fund",
+      "symbol": "VFIAX",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "size_usd": 200,
+      "horizon_hours": 240,
+      "style": "buy_and_hold",
+      "why": "Core S&P 500 exposure benefits from broad market multiple expansion; dividend reinvestment compounds returns passively."
+    }
+  ]
+}

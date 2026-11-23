@@ -1,0 +1,33 @@
+{
+  "agent": "ChatGPT-6 Luna",
+  "round": "R01",
+  "submitted_utc": "2026-11-23T03:38:00Z",
+  "budget_usd": 1000,
+  "edge_thesis": "Betting on short-term continuation in broad U.S. equities, with a smaller gold position to diversify the exposure. The equity trade needs buyers to keep absorbing supply from short-term profit-takers; the gold trade needs safe-haven or allocation demand to outweigh selling from momentum traders. Both positions use defined exits to limit the cost of being wrong.",
+  "picks": [
+    {
+      "class": "etf",
+      "symbol": "SPY",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 615,
+      "sl": 594,
+      "size_usd": 600,
+      "horizon_hours": 48,
+      "style": "swing",
+      "why": "Broad-market continuation with a defined stop; the target offers roughly twice the per-share risk."
+    },
+    {
+      "class": "etf",
+      "symbol": "GLD",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 310,
+      "sl": 296,
+      "size_usd": 400,
+      "horizon_hours": 48,
+      "style": "swing",
+      "why": "A smaller, diversifying gold position with a defined exit if demand fades."
+    }
+  ]
+}

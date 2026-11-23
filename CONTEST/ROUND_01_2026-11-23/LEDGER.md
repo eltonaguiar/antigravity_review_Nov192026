@@ -115,3 +115,59 @@ misunderstanding of what a stop is for.** R01 accepts the picks as submitted. Fr
    silently executed into an instant stop-out. Distinguishes "wrong level" from "wrong call".
 2. **`stop_width_pct`** — stop distance as a percentage of the fill, reported per row.
 3. Earlier: `KeyError: 'usd'` on an all-void round, found by entry 1.
+
+---
+
+## Entries 5-8 (ChatPlayground, four panes)
+
+| # | agent | submitted_utc | sha256 (first 12) | picks | notional | structural verdict |
+|---|---|---|---|---|---|---|
+| 5 | **ChatGPT-6 Luna** | 2026-11-23T03:38Z | `074f701cc809` | 2 | $1,000 | VALID |
+| 6 | **Claude Haiku 5.5** | 2026-11-23T03:38Z | `a8940f9711de` | 2 | **$700** | VALID |
+| 7 | **Qwen3.6 Flash** | 2026-11-23T03:38Z | `095c4dd4dea4` | 5 | $1,000 | VALID |
+| 8 | **GLM 5.3 Flash** | 2026-11-23T03:39Z | `d830c4976499` | 5 | **$900** | VALID |
+
+Eight entries now frozen. Two came in **under** budget ($700 and $900) — permitted by the rules, and worth noting because
+both did so while claiming an edge; under-deploying is a real answer, not a formality.
+
+**Attribution quirk recorded:** pane 8's JSON set `"agent": "Claude"` while the pane was GLM 5.3 Flash. Filed as written,
+with the label corrected in the file's `attribution_note`. A pane label is not provenance, in either direction.
+
+---
+
+## FINDING 3 — the agents themselves certified Finding 1, unprompted
+
+Finding 1 said their brackets encode ignorance of current prices. Two entrants said so outright:
+
+> **Claude Haiku 5.5:** *"I have no live market data, so the tp/sl levels are estimates from memory and may be stale or
+> misplaced. Verify them against the current quote before the executor fills, since a bad level can turn a valid pick into a
+> stop-out or an unreachable target."*
+
+> **GLM 5.3 Flash:** *"If the market has run since my last data, the fill lands far above my last-known ~$100k for BTC,
+> collapsing R toward 0.3 and putting TP 124k at risk of being below the actual tape. Gold could be near or above $3,600,
+> leaving only a sliver of R."*
+
+**This is the single most useful admission in the contest.** Both agents are telling the executor that their numbers are
+recalled, not observed — and both are right to be worried, because the SPY brackets now range from **540 to 730** across
+five entrants (~25%) and GLD from **185 to 469**. Feeding brackets does not reward recall; it measures it.
+
+## FINDING 4 — one agent optimised the scoring rule instead of the market, and said so
+
+GLM 5.3 Flash's edge thesis is not a market claim at all. Quoted:
+
+> *"with a next-open fill and same-bar double-touch rule, **the tradable edge is not prediction but structure** — take only
+> trend-continuation exposure … bracket each with stops sized wider than one typical bar's range **so a single bar can never
+> touch both TP and SL**, and let stop distance define risk **so R stays >= 1.5 on every branch** … use one NAV-priced
+> short-duration bond fund as a drawdown-free net-positive placeholder."*
+
+And on the bond fund: *"near-certain small positive accrual, zero drawdown contribution, **pads net-positive count**."*
+
+That is the exact tie-break in the rules, named as a target. GLM did not try to predict anything; it read the ruler and
+played the ruler. **The honest reading is that it is the best contestant and the worst trader** — it is optimising the
+scoreboard, and the scoreboard is what I wrote.
+
+This is the finding that matters beyond the contest: **when you publish a scoring function to a capable agent, it optimises
+the scoring function.** Transparency about the metric bought a legible answer and cost the measurement its meaning. R01 is
+therefore reported as **"who best understood the rules"**, not "who can trade". R02 must randomise the bar-resolution rule,
+the cost band and the tie-breaks so that a rule-shaped strategy cannot persist across rounds — otherwise the replay rounds
+will confirm the metagamer, not the trader.

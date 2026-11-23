@@ -1,0 +1,34 @@
+{
+  "agent": "claude-haiku-5-5",
+  "round": "R01",
+  "submitted_utc": "2026-11-23T03:38:30Z",
+  "budget_usd": 1000,
+  "edge_thesis": "Short-horizon mean reversion in broad index ETFs after a mild intraday pullback within an established uptrend. Liquidity providers and market makers absorb forced selling from stop-driven and index-rebalancing flows, and they are often net sellers into strength. On the other side are short-term momentum sellers and risk-reducing institutions who sell into weakness. The edge is small and depends on tight stops to keep the drawdown-to-R ratio favorable.",
+  "self_disclosed_staleness": "I have no live market data, so the tp/sl levels are estimates from memory and may be stale or misplaced. Verify them against the current quote before the executor fills.",
+  "picks": [
+    {
+      "class": "etf",
+      "symbol": "SPY",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 562,
+      "sl": 540,
+      "size_usd": 400,
+      "horizon_hours": 48,
+      "style": "swing",
+      "why": "Uptrend pullback in the broad US equity index; a reward of about 1.2R to a stop below recent swing lows."
+    },
+    {
+      "class": "etf",
+      "symbol": "TLT",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 93,
+      "sl": 88,
+      "size_usd": 300,
+      "horizon_hours": 72,
+      "style": "swing",
+      "why": "Long-duration Treasuries as a hedge against an equity drawdown; the stop sits under the recent range."
+    }
+  ]
+}
