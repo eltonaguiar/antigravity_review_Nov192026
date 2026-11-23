@@ -72,3 +72,15 @@ Buy a low-cost broad index ETF as a **buy decision, not an edge**. Nothing above
 ---
 
 *Sources: `reports/asset_class_risk_reward_ladder_2026-11-23.md`, `reports/dsr_recompute_2026-11-23.json` (C-029), `docs/preregistration/ETF_TREND_FORWARD_2026-11-23.md`, `reports/claim_register.json` (29 claims), `docs/edge_research/23_DEFINITIVE_ANSWER_2026-11-22.md`. Independently reviewed against `notes/asset-class-risk-edge-copilot-20261123`; the two cost figures and the 20-vs-24 ETF universe differ and are flagged above rather than silently reconciled.*
+
+## Revision 2026-11-23T02:31Z
+
+changed:   the ETF row and the ETF entry in the ranked list
+why:       reports/r4b_power_2026-11-23.md shows the frozen CONFIRM gate needs a point estimate of
+           110 bp/month (13.2%/yr) at n=60, because SE = 45.0 bp/month for a 3.49%/month book. Power
+           to confirm a hurdle-sized 36 bp/month edge is 5.0%; 36 bp/month would need 736 months.
+impact:    ETF stays **CANDIDATE**. The expectation that ~60 monthly records produce a verdict is
+           WITHDRAWN. The clock is a refutation instrument (point <= -38 bp/month refutes; 91.6%
+           power at -100 bp/month) plus a point estimate whose interval tightens monthly.
+evidence:  reports/r4b_power_2026-11-23.md;
+           docs/preregistration/ETF_TREND_FORWARD_2026-11-23_AMENDMENT-1_PROPOSED.md (PROPOSED, not in force)

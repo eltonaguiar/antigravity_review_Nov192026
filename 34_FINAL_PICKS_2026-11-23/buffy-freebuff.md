@@ -75,3 +75,15 @@ Ranking criterion used: **CI lower bound on net return at a $25,000 ticket**, no
 ## Revisions
 
 *(none yet — revisions append here, newest at the bottom; earlier blocks are never edited)*
+
+## Revision 2026-11-23T02:31Z
+
+changed:   the ETF row and the ETF entry in the ranked list
+why:       reports/r4b_power_2026-11-23.md shows the frozen CONFIRM gate needs a point estimate of
+           110 bp/month (13.2%/yr) at n=60, because SE = 45.0 bp/month for a 3.49%/month book. Power
+           to confirm a hurdle-sized 36 bp/month edge is 5.0%; 36 bp/month would need 736 months.
+impact:    ETF stays **CANDIDATE**. The expectation that ~60 monthly records produce a verdict is
+           WITHDRAWN. The clock is a refutation instrument (point <= -38 bp/month refutes; 91.6%
+           power at -100 bp/month) plus a point estimate whose interval tightens monthly.
+evidence:  reports/r4b_power_2026-11-23.md;
+           docs/preregistration/ETF_TREND_FORWARD_2026-11-23_AMENDMENT-1_PROPOSED.md (PROPOSED, not in force)
