@@ -62,3 +62,10 @@ James-Stein on real dated trades: shrink factor **22% (strategy) / 46% (symbol)*
 Critically, **0 of 6 shrunk top strategies and 0 of 6 shrunk top symbols are net-positive after class cost** (best shrunk
 cell +0.049%/trade vs a 0.20% commodity round trip). Shrinkage is an honesty fix, not an edge — the binding constraints
 remain cost and data coverage. `tools/shrinkage_estimator.py`, `reports/shrinkage_estimator.json`.
+
+---
+### Revision 2026-11-23T06:55Z — the verdict is now an executable invariant
+"0 investable" is no longer just a sentence — it is a CI guard. `tools/assert_no_investable.py` loads the ranked picks
+and **fails loudly** if any pick ever passes all five gates, or if any gate block is malformed. I proved it fires on a
+synthetic full-pass pick (ALARM, exit 1) and on malformed gates (exit 1). Wired into `audit-surface-gates.yml`.
+So the honest current state (0 passes) can never silently drift to a false claim: a pass must be a reviewed human event.
