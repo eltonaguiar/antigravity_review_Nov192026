@@ -90,6 +90,45 @@ def max_drawdown(px):
     return worst
 
 
+def block_bootstrap_sharpe_diff(px_a, px_b, rf_annual, B=2000, block=21, seed=42, periods_per_year=TRADING_DAYS):
+    """95% interval for sharpe(a) - sharpe(b), using a BLOCK bootstrap.
+
+    IID resampling is wrong for return series: it destroys autocorrelation and understates the interval, which is how
+    overlapping windows produced a t of 48.76 on this programme's first skyrocket run. Blocks of `block` periods keep
+    local structure. Returns (lo, hi, point) and a boolean-free tuple so the caller decides how to describe it.
+    """
+    import random
+    ra, rb = returns(px_a), returns(px_b)
+    n = min(len(ra), len(rb))
+    ra, rb = ra[:n], rb[:n]
+    rf_daily = (1.0 + rf_annual) ** (1.0 / periods_per_year) - 1.0
+
+    def _sharpe(r):
+        ex = [x - rf_daily for x in r]
+        mu = sum(ex) / len(ex)
+        var = sum((x - mu) ** 2 for x in ex) / (len(ex) - 1)
+        sd = var ** 0.5
+        if sd < 1e-12:
+            return 0.0
+        return (mu / sd) * (periods_per_year ** 0.5)
+
+    point = _sharpe(ra) - _sharpe(rb)
+    rng = random.Random(seed)
+    nblocks = max(2, n // block)
+    diffs = []
+    for _ in range(B):
+        starts = [rng.randrange(0, max(1, n - block)) for _ in range(nblocks)]
+        ia, ib = [], []
+        for s in starts:
+            ia.extend(range(s, min(s + block, n)))
+            ib.extend(range(s, min(s + block, n)))
+        diffs.append(_sharpe([ra[i] for i in ia]) - _sharpe([rb[i] for i in ib]))
+    diffs.sort()
+    lo = diffs[int(0.025 * len(diffs))]
+    hi = diffs[int(0.975 * len(diffs)) - 1]
+    return lo, hi, point
+
+
 def rebalance(daily_returns_by_asset, weights, every_n_days=21, cost_bps=0.0):
     """Weighted portfolio that ACTUALLY rebalances every n periods, charging cost_bps on turnover.
 

@@ -89,5 +89,21 @@ except ValueError:
     check("rebalance rejects weights that do not sum to 1", True)
 
 
+# --- block bootstrap: a series against itself must produce an interval containing 0
+lo, hi, pt = qm.block_bootstrap_sharpe_diff(px, [p * 1.0000001 for p in px], 0.03, B=120, block=21, seed=7)
+check("bootstrap point estimate is ~0 for near-identical series", abs(pt) < 1e-3, "%.6f" % pt)
+check("bootstrap interval contains 0 for near-identical series", lo <= 0 <= hi, "[%.3f, %.3f]" % (lo, hi))
+# identical series must collapse to a zero-width interval: no phantom noise may be injected by the resampler
+check("identical-series bootstrap collapses to zero width (no phantom noise)",
+      abs(hi - lo) < 1e-9, "width %.6f" % (hi - lo))
+# a genuinely different series must produce a non-degenerate interval
+import random as _r
+_rng = _r.Random(3)
+_shift = [p * (1.0 + _rng.gauss(0, 0.004)) for p in px]
+lo2, hi2, pt2 = qm.block_bootstrap_sharpe_diff(px, _shift, 0.03, B=150, block=21, seed=7)
+check("differing-series bootstrap produces a real interval", (hi2 - lo2) > 1e-4,
+      "[%.3f, %.3f] width %.4f" % (lo2, hi2, hi2 - lo2))
+
+
 print("\n%d failure(s)" % len(fails))
 sys.exit(1 if fails else 0)
