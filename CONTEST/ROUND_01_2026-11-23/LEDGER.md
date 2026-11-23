@@ -306,13 +306,33 @@ Four were already stable: MS_COPILOT, GEMINI_4_NEON, GPT_4_1_MINI, CLAUDE_5_2_FA
 SGOV long 100.15–100.95 · BIL long 91.30–92.00 · VFIAX (fund, no bracket).
 
 **Every other entrant tried to predict. This one tried to not lose.** SGOV and BIL are 0–3 month Treasury-bill ETFs. Their
-price does not move 0.8% in 72 hours; the bracket is unreachable by construction. So the pick cannot win and cannot be
-stopped — it is a cash position wearing a trade's clothes, booked at roughly zero R.
+price does not move 0.8% in 72 hours; the bracket is unreachable by construction.
 
-Under an R-multiple metric that is not a bug, it is the maximin play: if the field mostly goes negative, **zero beats almost
-everyone**. And it lands on the same conclusion our own framework reached from measurement — that a Treasury-bill yield is the
-only return in the estate that does not need a forecast (4.3% cash versus HML's measured +0.02%/yr net). A language model
-arrived at it from game theory in one pass.
+**He said so himself, and named the metric he was optimising:**
+
+> *"The scoring rewards being net-positive quickly with minimal drawdown, so this submission deliberately harvests the one
+> return stream that accrues every single day regardless of direction… Low R per pick is accepted in exchange for a very high
+> probability that every pick finishes net-positive with negligible max drawdown, **which is exactly what the tie-breaks
+> reward.**"*
+
+That is the **second** entrant to state openly that it optimised the scoring rule rather than the market (GLM 5.3 was the
+first: *"the tradable edge is not prediction but structure"*). Two of twelve, both unprompted.
+
+**But the arithmetic kills it — he never priced the cost line.** His thesis assumes 1–1.5 bp per trading day of accrual and
+stops there. The prompt stated the cost band explicitly, and the ETF round trip is **6.7122 bp**:
+
+| day-count convention | carry over his 120h | net in ETF wrapper | net in FUND wrapper (cost 0) |
+|---|---|---|---|
+| calendar-day accrual | 5.89 bp | **−0.82 bp** | +5.89 bp |
+| trading-day accrual | 6.09 bp | **−0.62 bp** | +6.09 bp |
+
+At the framework's measured 4.3% cash yield, the ETF wrapper needs **~137 hours** of calendar carry to pay for itself; he gave
+it **120**. So the "grinds the pick into positive territory" claim is false at his own horizon, under either convention,
+before any ex-distribution gap he himself flagged.
+
+**And the defeat is his instrument choice, not his idea.** The identical carry in a money-market **fund** costs **0 bp** in this
+contest and nets **+5.9 bp**. He spent the fund slot on VFIAX instead — so the one genuinely certain return in the estate was
+available, correctly identified, and then wrapped in the only instrument that charges for it.
 
 ## Entry 12 — Qwen4 Max (1min.ai)
 
@@ -375,3 +395,27 @@ why its GLD bracket is 21 wide while Gemini's is 110.
 **Paste fidelity verified:** the manually pasted Gemini 4 Neon and Claude 5.2 Fable answers are **identical** to the ones
 extracted from the live transcript — every class, symbol, side, tp and sl. Two independent capture paths agreeing is the
 first thing in this contest that has been cross-checked and held.
+
+---
+
+## FINDING 10 — stating the cost band in the rules does not make agents apply it
+
+The prompt gives the round-trip cost per class in a single line: *"equity 12.07bp, etf 6.71, bond 0.61, crypto 52, fx 7.53,
+fund 0."* Fourteen entrants have now read that line. The results:
+
+| entrant | treatment of the cost line |
+|---|---|
+| **Kilo Code** | named it, then applied it with the **sign reversed** — kept its own bands labelled "measured" (equity 2.0 vs record 12.0749) |
+| **GitHub Copilot** | invented **41.05 bp** for ETFs — 6× the stated 6.71 |
+| **Claude 5.1 Fable** | **never mentions it.** Builds a thesis on 1–1.5 bp/day of carry, checks it against nothing, and lands net-negative at its own horizon |
+| **Qwen4 Max** | reasons about bracket width but not about cost |
+| **Gemini 4 Neon · GLM 5.3 · GPT-5.3 Codex** | name the cost explicitly and design around it (52 bp crypto drag; 6.71 bp ETF friction) |
+
+**A rule the entrant must quote is not a rule the entrant must compute.** Under the R metric a model can lose to a cost line
+it was handed, in the same message, in bp, and still present a coherent thesis — because nothing in the output schema forces
+the arithmetic to be shown. That is a scoring-design defect, not a model defect, and it is the third round in a row where the
+cost line decided the verdict.
+
+**R02 fix:** require every pick to carry `net_edge_bp = gross_expected_bp − class_cost_bp` as a mandatory field, and reject the
+submission if a pick's stated `net_edge_bp` disagrees with the executor's own recomputation. Then a thesis cannot be built on
+carry it has not paid for.
