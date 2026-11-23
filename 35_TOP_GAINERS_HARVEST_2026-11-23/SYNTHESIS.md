@@ -324,6 +324,136 @@ On symbols, it agrees with arena and with our own DSR collapse: *"one symbol giv
 observations at a daily horizon. If you test 500 symbols and pick the 'most predictable' ones, you are selecting noise…
 predictability belongs more to the setup, regime, and asset type than to the ticker."*
 
+### 2.6 The ChatPlayground four — Luna, Claude, Qwen3.6 Flash, GLM 5.3 Flash
+
+Four answers in one capture (full text now saved as `harvest_chatplayground_full.txt`; the earlier 32 KB capture was
+partial and that page has since reset). Individually none beats Fable, but **together they supply the operational
+machinery that "rank the classes" needs**, and they corroborate its two key claims independently.
+
+#### The methodological answer to "which class is more predictable" — three models converge
+
+Fable said *don't rank, measure with an identical pipeline*. **GLM 5.3 Flash and Luna said the same thing and made it
+computable:**
+
+- **GLM:** *"Rank asset classes and (symbol × direction) cells by **OOS ICIR and post-cost expectancy**. That ranking is
+  your answer to 'which is more predictable'."* — and specified **ICIR = IC mean / IC std**, *"not average IC —
+  consistency matters."* **ICIR is the metric nobody else named and it is the right one**: a class with IC 0.05 ± 0.02 beats
+  one with IC 0.08 ± 0.20, because only the first is reliable.
+- **Luna:** *"Raw 'accuracy' across classes isn't comparable because volatility and cost structures differ."* Report on
+  the same risk basis, after costs, over multiple periods and regimes.
+- **Claude:** *"measure each class on the same metrics, after costs, with the same methodology and comparable trade
+  counts."*
+
+**So the question is answered as a procedure, not an opinion: one pipeline, per class, ranked by OOS ICIR and net
+expectancy.** That is now §8 step 1 and it is why the base-rate table comes first — ICIR is meaningless without it.
+
+#### Luna: the cleanest statement of a distinction the others blurred
+
+> *"Predicting the next week's top 10 gainers is a **cross-sectional ranking** problem. Predicting whether one symbol will
+> rise over the next week is a **time-series direction** problem. You may want to test both."*
+
+Those need different models, different baselines and different metrics (rank IC and precision@K for the first; directional
+accuracy against the class's up-rate for the second). Everything downstream depends on picking one deliberately.
+
+Its base-rate warning is the sharpest phrasing of the rule: ***"If top gainers are 1% of observations, a model that's
+'right 60% of the time' may just be predicting 'not a gainer' poorly."*** And it offered the best one-sentence reframing of
+the symbol question: *"for this symbol, **in this direction, over this horizon, under these conditions**, is the expected
+net return positive and sufficiently reliable?"* — four qualifiers, none optional.
+
+It also flagged that gainer lists are *"particularly vulnerable to low-liquidity spikes, stale prices, price limits, and
+bad data"* — a data-quality hazard specific to this dataset, not generic survivorship.
+
+#### Claude (latest): the payoff-arithmetic counterexample, and one caveat nobody else raised
+
+> *"With symmetric TP/SL, a 50% hit rate is breakeven before costs. Your edge can come from payoff asymmetry **or** hit
+> rate, but you must measure the combination. **A 35% hit rate at 3:1 reward/risk can be strong, and a 70% hit rate at
+> 1:3 can be a loser.**"*
+
+That is Fable's `P(TP) ≈ SL/(TP+SL)` arrived at independently, plus the counterexample that makes it intuitive — and it
+explains why Qwen's and Gemini's ATR ratios are not comparable without their implied hit rates.
+
+**The caveat that is unique in ten answers, and matters if this ever becomes a product:**
+
+> *"If you plan to sell signals, providing trading recommendations for compensation can trigger regulatory requirements
+> (e.g., investment adviser registration in the US), and selling performance claims without rigorous verification creates
+> legal and reputational risk. Hypothetical or backtested results must be clearly disclosed as such."*
+
+Nothing in the repo has said this before. **A backtested picks product is a regulated activity in the US**, and every
+document in this folder should be labelled as hypothetical until a live, disclosed track record exists. Applies to this
+site, the picks dossier, and anything published from it.
+
+It also stated the study's purpose better than I had: ***"The most valuable outcome of this process is often knowing
+reliably that a candidate edge is not real. Build the pipeline so that's easy to detect."***
+
+#### Qwen3.6 Flash: the only explicit direction-bias table, and the staging numbers
+
+| Class | Long vs short, its claim |
+|---|---|
+| Large-cap equity | **longs easier** — structural drift and buy-side pressure |
+| Small/mid-cap, thematic | depends on catalyst; momentum works but *"reverses fast post-spike"* |
+| Crypto | **trend-following longs historically stronger**; shorts need a volatility-regime filter |
+| FX majors | roughly symmetric, heavily regime-dependent |
+| Mutual funds | excluded from short-term signal engines |
+
+Its quotable verdict: ***"'Top Gainer' is a mean-reversion trap. Daily winners often fade 2–5 days later."*** — the third
+independent arrival at the MAX/fade hypothesis (Fable's citation, Claude's caveat, Qwen's assertion).
+
+And it is the only answer with **concrete staging thresholds**, which the forward-test protocol needs: paper 2–4 weeks →
+live simulation 1–3 months → small live capital 3–6 months, *"scale only if forward Sharpe > 0.5 and max DD < backtest DD
+× 1.2"*, with gross expectancy needing to clear **1.5× costs** or the idea is discarded. (It also says *"if gross
+expectancy < 0.8, it will fail live"* — two different cost rules in the same answer, a minor internal inconsistency worth
+noting rather than adopting.)
+
+#### GLM 5.3 Flash: three metrics and one warning that are genuinely new
+
+- **ICIR** (above) — the ranking metric.
+- **PR-AUC over ROC-AUC for rare events**: *"PR-AUC (better than ROC-AUC for rare 'big mover' events)."* Correct and
+  important: with a ~1–2% base rate, ROC-AUC looks respectable for a useless model, while precision-recall collapses. **Any
+  top-gainer classifier reported with ROC-AUC is reporting the flattering number.**
+- **Drift monitoring by distribution shift**: *"Population Stability Index / KS-test on feature distributions; alert when
+  the live regime leaves your training regime support."* That is the operational version of "regimes change", and it is
+  implementable as a daily check rather than a monthly review.
+- **MAE/MFE placement rule**, stated more precisely than Fable's: *"the SL belongs just beyond the MAE distribution of
+  winners; TP near the upper quantile of the MFE distribution… 1.5–3× ATR stops and 2–4× ATR targets are common starting
+  points, but let the data set them per symbol/horizon."*
+
+**Its warning is the best line in the whole set about our actual cost problem:**
+
+> *"The slippage on chasing movers is worst exactly when the signal is strongest — pumps are where retail gets filled
+> worst. Your backtest must punish you for this."*
+
+That is the mechanism behind our measured 20–52 bp crypto round trip. The cost is not a constant; it is **highest at the
+moment the signal fires**, which is precisely why a static cost band still flatters the strategy.
+
+#### Where these four are looser than our protocol — recorded, not adopted
+
+| Gate | These four propose | Our adopted v1.0 | Note |
+|---|---|---|---|
+| **PBO** | GLM: **< ~30%** acceptable | **≤ 0.10** | 3× looser; and our noise baseline is 0.51, so 0.30 is barely better than chance |
+| **t-stat on per-trade returns** | GLM/Qwen: **> 2** (ideally > 3) | **3.0 / 3.5 / 4.0** scaled by effective N | the 2.0 floor is the single most common softening across every panel |
+| **OOS/IS Sharpe retention** | GLM: **≥ 50–60%** | WFE **≥ 0.60** | comparable, GLM slightly looser at the bottom |
+| **Forward Sharpe to scale** | Qwen: **> 0.5** | not a gate; the gate is net expectancy vs the 4.32% hurdle | a 0.5 Sharpe is below the hurdle after costs |
+
+They are all *credible* thresholds and none is *decisive* — the same pattern as the sixteen validation-protocol answers:
+**no two sources agree on any single gate, and the loosest value always wins in practice if you let it.**
+
+#### What the ten answers now agree on, and what remains open
+
+**Agreement (unanimous or near):**
+1. Predicting the raw gainer list is a selection trap; the admissible question is predictive and out-of-sample.
+2. Survivorship-free, point-in-time data is the binding constraint — not model choice.
+3. Volatility is more predictable than direction.
+4. Long and short must be modelled separately; direction asymmetry is real.
+5. Per-symbol models mostly overfit; pool, shrink, or condition on characteristics.
+6. Triple-barrier labelling, not "up or down", when the output is a TP/SL trade.
+7. TP/SL does not create edge; it reshapes the distribution — and the implied hit rate must be stated.
+8. Compare against a base rate / naive benchmark, never against zero or 50%.
+9. Report net of measured cost, with confidence intervals.
+10. "Proven" is temporary; edges decay and monitoring is part of the system.
+
+**Still open:** the ranking of classes — genuinely open, and now a *procedure* (identical pipeline, OOS ICIR, net
+expectancy) rather than an argument. Nobody has run it.
+
 ---
 
 ## 3. Symbol, or symbol × direction — the decomposition that matters

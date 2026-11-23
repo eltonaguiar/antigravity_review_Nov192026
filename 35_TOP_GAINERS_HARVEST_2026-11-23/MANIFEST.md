@@ -28,14 +28,15 @@ Verified by distinctive opening phrases, not by memory or label:
 | `harvest_1min_gemini4neon.txt` | **Gemini 4 Neon (Google AI)** | contains *"classic quantitative finance problem"* — unique to its pasted reply (37.4 s, 105,111 credits) |
 | `harvest_1min_r2.txt` | **Qwen4 Max (Alibaba Cloud)** — *operator-identified* | later portion of the same 1min.ai transcript; **neither opening phrase is present**, so this attribution rests on the operator's identification, not on a quote match. Contains the extended data-integrity passage (no backfilled restatements, retroactive split adjustment changing distance-from-52w-high, LULD halts) |
 | `harvest_arena.txt` / `_r2` | arena.ai agent | its own plan step is in the transcript: *"a detailed response plus maybe a workspace scaffold"* |
-| `harvest_chatplayground.txt` | unlabelled ×3 | one pane named **GLM 5.3 Flash**; the other two are not labelled in the capture |
+| `harvest_chatplayground.txt` | **all four panes** (see below) | round-1 capture, partial — page has since reset |
+| `harvest_chatplayground_full.txt` | **Luna (ChatGPT-6), Claude (latest), Qwen3.6 Flash, GLM 5.3 Flash** | operator paste 2026-11-23T03:17Z, 9,762 tokens — the authoritative full text, now replacing the partial capture for citation |
 
 **Attribution correction (recorded because it nearly propagated):** `harvest_1min.txt` was initially logged as
 "1min.ai, model undisclosed". The GPT-4.1 mini paste proved it by exact opening phrase. **The 1min.ai tab contained at
 least two different answers** — GPT-4.1 mini and Gemini 4 Neon — so a single capture of that tab silently mixed sources.
 Any later reader of these files should key on the opening phrase, not the filename.
 
-**Consequence for counting:** the answers are **nine models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
+**Consequence for counting:** the answers are **ten models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
 Gemini 4 Neon, Qwen4 Max, GLM 5.3 Flash and two unlabelled ChatPlayground panes, plus the arena.ai agent. The **1min.ai
 tab is multi-model**, like AskAnyModel, not a single model. No result in `SYNTHESIS.md` depends on the count — it depends
 on which claim came from which model, which the table above fixes.
