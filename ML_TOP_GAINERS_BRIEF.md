@@ -3,6 +3,35 @@
 **Status:** pre-registered brief. Assignable as of 2026-11-23. **No result exists yet** — this file is the question
 and the rules, deliberately written before any model is fitted.
 
+> **Read alongside [`35_TOP_GAINERS_HARVEST_2026-11-23/SYNTHESIS.md`](35_TOP_GAINERS_HARVEST_2026-11-23/SYNTHESIS.md)** —
+> the merged answers from four agents asked the same question on 2026-11-23, plus the power arithmetic that changes the
+> design (synthesis §5: an IC of 0.03 is unprovable — 10,000 observations — while a 2× lift over a 5% base rate needs 150).
+
+## 0.1 The framing the operator actually asked, and why it is better than a plain "predict gainers" brief
+
+The question put to the four agents was sharper than "can you predict gainers". It asked for **four separate
+determinations**, and each one needs its own estimator:
+
+1. **Which asset class is more predictable?** — a *comparative* claim. Requires the same protocol run per class and a
+   ranking of the results, not five independent studies reported separately.
+2. **Is a particular symbol more predictable, or is it symbol × direction?** — the decomposition matters because the long
+   and short sides are different economic problems (ERP drift on one side, borrow and negative skew on the other).
+   **Never pool long and short.**
+3. **What counts as "proven"?** — operational definition in §9 of the synthesis; short version: pre-registered, out-of-
+   sample, net of measured cost, deflated for the trials actually run, then replicated.
+4. **Backtest how, forward-test how, and which metrics?** — §7 and §6 of the synthesis, merged and deduplicated.
+
+**The first deliverable is therefore not a model. It is a base-rate table by class × horizon × direction** — how often a
+random K-name draw from that class contains a top-20 gainer at 1d / 5d / 21d. Without it, no later number is
+interpretable.
+
+## 0.2 Predictability is not tradability — the organising principle
+
+A class can be predictable and unprofitable (FX carry: mechanism known in advance, Sharpe **−0.126** vs the 4.32% hurdle)
+and unpredictable and profitable (index ETF: daily direction near coin-flip, positive over decades at 6.7122 bp/yr of
+cost). **So classes are ranked on net expectancy per unit of cost, with predictability as a screen — never on hit rate.**
+
+
 ---
 
 ## 0. The claim we are and are not testing
