@@ -35,7 +35,7 @@ Verified by distinctive opening phrases, not by memory or label:
 least two different answers** — GPT-4.1 mini and Gemini 4 Neon — so a single capture of that tab silently mixed sources.
 Any later reader of these files should key on the opening phrase, not the filename.
 
-**Consequence for counting:** the answers are **eight models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
+**Consequence for counting:** the answers are **nine models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
 Gemini 4 Neon, Qwen4 Max, GLM 5.3 Flash and two unlabelled ChatPlayground panes, plus the arena.ai agent. The **1min.ai
 tab is multi-model**, like AskAnyModel, not a single model. No result in `SYNTHESIS.md` depends on the count — it depends
 on which claim came from which model, which the table above fixes.
@@ -44,14 +44,16 @@ on which claim came from which model, which the table above fixes.
 
 | Model | Latency | Credits | Verdict at that price |
 |---|---|---|---|
+| **Claude 5.2 Fable** | 71.4 s | **897,257** | **best answer of the set** — reframed the problem to an event study, cited the MAX/lottery effect that argues for *fading* gainers, and supplied the P(TP before SL) = SL/(TP+SL) arithmetic (§2.5) |
 | **Mistral Small** | 25.4 s | **3,471** | **best value per credit** — the only operational predictability battery (Ljung–Box, Hurst, entropy, HMM regimes, naive baseline) plus the smoothing argument against mutual funds (§2.4) |
 | GPT-4.1 mini | 14.1 s | **8,391** | generic syllabus — but it asked the one question we could answer today (§2.3) |
 | Gemini 4 Neon | 37.4 s | **105,111** | the only explicit class ranking and the only complete TP/SL design (§2.1, §2.2) |
 | Qwen4 Max | **277.7 s** | **166,402** | *not yet read in full* — only a partial capture exists (`_r2`), so nothing is claimed from it |
 
-**Mistral Small at 3,471 credits delivered the measurement methodology that Gemini's 105,111-credit answer did not** — a
-30× price difference pointing the opposite way from usefulness. Across this whole set, **price and usefulness were
-uncorrelated.** The only reliable predictor of a good answer was whether it committed to a number or a test.
+**Price did not predict quality — but the extremes were the best answers.** The cheapest (3,471) and the most expensive
+(897,257) were the two that mattered: one supplied the measurement battery, the other supplied the reframing and the
+arithmetic. The mid-priced answers were competent and non-decisive. **The only reliable predictor of a good answer was
+whether it committed to a number or a test** — and whether it was willing to argue against the premise of the question.
 
 ## Final state of the four surfaces (verified ~03:2x UTC, after all four reportedly finished)
 

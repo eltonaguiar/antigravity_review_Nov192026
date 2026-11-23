@@ -210,6 +210,120 @@ series is smoothed, so autocorrelation is manufactured rather than real.
 **Cost note:** at 3,471 credits it delivered the measurement methodology that the 105,111-credit answer did not. **Price
 and usefulness were uncorrelated across this entire set.**
 
+### 2.5 Claude 5.2 Fable — the best answer of the eight, and the one that changes the study's design
+
+**Claude 5.2 Fable** (1min.ai, 71.4 s, **897,257 credits** — the most expensive answer by far). It is the only response
+that (a) refused the question as posed, (b) replaced it with a better one, and (c) supplied the arithmetic that makes the
+TP/SL question decidable.
+
+#### (a) It identified the trap before answering
+
+> *"Studying top gainers to see what they had in common is the classic trap, because it is selection bias. Every pattern
+> you find in winners (volume spike, breakout, news) also appears in thousands of assets that went nowhere or crashed."*
+
+And then restated the question in the only admissible form:
+
+> ***"Given a set of conditions observable before the move, how does the distribution of forward returns differ from the
+> base rate?"***
+
+That is the same rule as §5 and §2.4's naive baseline, arrived at independently — but stated as a *distributional* question
+rather than an accuracy question, which is strictly better: it forces a comparison against the base rate rather than
+against zero.
+
+#### (b) THE REFRAMING THAT MAKES THE STUDY FEASIBLE — trade the event, not the forecast
+
+> *"Predicting gainers before they move. This is very hard, since the moves are mostly driven by news and tail events.
+> **Trading what happens after an asset appears on the list (continuation or reversal). This is much more tractable,
+> because the event is observable and the sample is large.**"*
+
+**This should become the primary research question and it supersedes the brief's current framing.** The distinction:
+
+| Problem | Information required | Sample | Verdict |
+|---|---|---|---|
+| Predict a gainer *before* the move | a forecast from features, against news and tail events | large but noisy; requires IC ≈ 0.05+ to be detectable (§5) | **stretch goal** |
+| Trade *after* the name appears on the list | only the event, which is already observed | **large and clean** — every listed gainer is one observation by definition | **primary study** |
+
+Choosing the second converts an unanswerable forecasting problem into an **event study**, which is why it also makes the
+power arithmetic in §5 tractable: you need hundreds of *events*, not a model with a genuine 0.03 IC.
+
+#### (c) The cited effects that bear directly on "top gainers" — including one that says *fade them*
+
+Fable is the only respondent to cite the **MAX / lottery effect (Bali, Cakici & Whitelaw, 2011)**: *"stocks with extreme
+recent daily gains underperform afterward, **which bears directly on 'top gainers'**."* That is a documented, replicated
+result pointing the opposite way from the premise of this whole exercise — the list may be a *short* candidate set, not a
+long one.
+
+Its other citations, all of which survived this session's citation checks in spirit (real authors, real papers):
+
+| Effect | Citation | Relevance here |
+|---|---|---|
+| Volatility clustering | canonical | *"volatility is far more predictable than direction, which is the basis for TP/SL sizing"* — corroborates §2 item 1 |
+| Cross-sectional momentum, 3–12 months | Jegadeesh & Titman (1993), replicated globally | winners keep winning at *medium* horizons — not daily |
+| Time-series momentum | Moskowitz, Ooi & Pedersen (2012) | across futures and FX |
+| Short-term reversal, 1 wk–1 mo | Jegadeesh (1990); Lehmann (1990) | *"mostly in illiquid names, and costs eat much of it"* |
+| **MAX / lottery** | **Bali, Cakici & Whitelaw (2011)** | **extreme recent gainers underperform afterward** |
+| Post-earnings drift | Bernard & Thomas (1989) | *"gainers with fundamental catalysts drift; those without tend to fade"* |
+| Crypto momentum & attention | Liu & Tsyvinski (2021) | stronger, but only ~10 years of data |
+| FX carry & trend | extensive | works at longer horizons; short-term FX direction ≈ random walk (Meese & Rogoff) |
+| Mutual fund persistence | Carhart (1997) | weak; mostly *bad* funds stay bad because of fees |
+
+Two findings it flagged as *unhelpful to the premise*, and they belong in the record:
+
+- **Sullivan, Timmermann & White (1999)** — classic chart patterns and indicator rules mostly fail after data-snooping
+  corrections. That is the entire "find the footprint" family, written off by a paper from 1999.
+- **Barber & Odean, and Chague et al. (Brazil)** — the large majority of retail day traders lose money.
+
+Its governing insight, which resolves the §2.1 Gemini-vs-Mistral conflict without needing Hurst:
+
+> *"The catalyst matters more than the move. A 20% gain on earnings behaves differently from a 20% gain on no news in a
+> low-float stock."*
+
+**That is the missing conditioning variable.** The large-cap-versus-small-cap argument both models had is probably a proxy
+for *catalyst type and float*, not for size. Split the event study by catalyst and float and the dispute dissolves.
+
+#### (d) The TP/SL arithmetic that corrects the other two answers
+
+> *"TP/SL does not create edge; it only reshapes the return distribution. Under a random walk,
+> **P(hit TP before SL) ≈ SL / (TP + SL)**, so expectancy is zero before costs and negative after. A 2:1 reward-to-risk
+> ratio sounds good but just means you win about 33% of the time unless you have a real directional edge."*
+
+This is decisive, and it invalidates the ATR-ratio proposals from §2.1 and §2.4 as *designs* rather than as arithmetic:
+
+| Proposal | Ratio | Implied hit rate needed to break even (before costs) | Who proposed it |
+|---|---|---|---|
+| SL 1 × ATR, TP 1.5 × ATR | 1.5 : 1 | **40%** | Mistral Small (§2.4) |
+| SL 1.5 × ATR, TP 3 × ATR | 2 : 1 | **33%** | Gemini 4 Neon (§2.1) |
+
+Neither number is wrong; both were presented without the implied hit rate, which is the only number that matters. Its
+formula for the honest version: **breakeven win rate = (SL + costs) / (TP + SL)** — costs in the numerator, always.
+
+And the constructive part, which nobody else offered:
+
+- **Triple-barrier method** (López de Prado): TP, SL and a **time-out** barrier; label each historical signal by which
+  barrier is hit first. That is how you get a supervised learning target out of a trading rule.
+- **MAE/MFE analysis** (maximum adverse / favourable excursion) on historical signals — *place stops and targets
+  empirically instead of choosing a ratio and hoping.*
+- **Conservative intrabar assumption:** *"if TP and SL both fall inside the same bar, assume the SL was hit first."*
+  (Matches our existing `AMBIGUOUS` classification rule.)
+
+#### (e) Two numbers that agree with a different model, independently
+
+- **t-stat ≈ Sharpe × √years** — *"a Sharpe of 1 needs about 4 years to reach t = 2 and about 9 years to reach t = 3."*
+  Our own toolkit produced **6.2 years** for a power-based test and **9.0 years** for t = 3 at SR 1.0. Two independent
+  derivations, same answer.
+- **Expect a 30–50% haircut** on backtest performance when going live. That is the same magnitude as the McLean–Pontiff
+  post-publication decay, arriving from a different direction.
+
+#### (f) Where it agrees with everything else, and refuses to rank
+
+On classes it *declines to rank*, and says why — *"don't assume the ranking; measure it… run the identical pipeline on each
+asset class and compare out-of-sample information coefficient and net-of-cost Sharpe."* Its one structural line is the best
+summary of §2.1's inversion: ***"Inefficiency lives where trading is expensive, capacity is small, or risk is ugly."***
+
+On symbols, it agrees with arena and with our own DSR collapse: *"one symbol gives you perhaps a few hundred independent
+observations at a daily horizon. If you test 500 symbols and pick the 'most predictable' ones, you are selecting noise…
+predictability belongs more to the setup, regime, and asset type than to the ticker."*
+
 ---
 
 ## 3. Symbol, or symbol × direction — the decomposition that matters
@@ -336,6 +450,11 @@ commit**.
 ---
 
 ## 8. What to actually build first
+
+**0. Reframe to the event study (Claude 5.2 Fable, §2.5b).** Stop asking "can we predict tomorrow's gainers" and start
+asking **"what happens after a name appears on the list"** — continuation or reversal, conditioned on catalyst type,
+liquidity and float, and regime. The event is observable, every listed gainer is one observation by definition, and the
+sample is large. **This supersedes the forecasting framing**, and everything below is easier once it is adopted.
 
 1. **A base-rate table, by class × horizon × direction.** No modelling. Just: how often does a random K-name draw from
    this class contain a top-20 gainer at 1d / 5d / 21d? *This is one day of work and it makes every later number

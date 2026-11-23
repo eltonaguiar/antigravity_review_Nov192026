@@ -1,0 +1,142 @@
+laude 5.2 Fable - AWS Bedrock US (71.356s - 897,257 credits)
+
+Thoughts
+Reverse-engineering top gainers into tradable signals
+1. Reframe the problem first
+Studying top gainers to see what they had in common is the classic trap, because it is selection bias. Every pattern you find in winners (volume spike, breakout, news) also appears in thousands of assets that went nowhere or crashed. The real question is:
+
+Given a set of conditions observable before the move, how does the distribution of forward returns differ from the base rate?
+
+There are also two different problems here:
+
+Predicting gainers before they move. This is very hard, since the moves are mostly driven by news and tail events.
+Trading what happens after an asset appears on the list (continuation or reversal). This is much more tractable, because the event is observable and the sample is large.
+2. The research pipeline
+Data. Bad data invalidates everything downstream, so you need:
+
+Survivorship-bias-free history, including delisted stocks and dead coins.
+Point-in-time data, with no restated fundamentals or revised index membership.
+Prices adjusted for splits and dividends.
+Realistic cost data: spreads, fees, borrow rates, and perpetual funding rates for crypto.
+Event study. For every day or week, label the top gainers (say, the top decile), then record features as of the prior close for all assets, not just the winners:
+
+Price and volume: prior returns (1 day, 1 week, 1 month, 12 months), volatility compression or expansion, relative volume, gaps, distance from highs.
+Catalysts: earnings dates, news, listings, token unlocks.
+Structure: market cap, float, short interest, liquidity, sector.
+Crypto-specific: funding rates, open interest, exchange flows, social attention.
+Then measure:
+
+Lift: P(top gainer | feature) versus the base rate.
+Post-event behavior: forward returns at 1, 5, and 20 days after an asset appears on the list, split by liquidity, catalyst type, and market regime.
+Model. Start with simple sorts and logistic regression before any machine learning. If an effect isn't visible in a simple decile sort, a neural network is probably "finding" it by overfitting.
+
+3. What is actually "proven"
+"Proven" in markets means documented across decades, across markets, and out of sample. Even then, effects decay. McLean and Pontiff (2016) found that anomaly returns fall by roughly half after publication.
+
+Effect	Evidence	Relevance
+Volatility clustering	Among the most robust findings in finance	Volatility is far more predictable than direction, which is the basis for TP/SL sizing
+Cross-sectional momentum (3–12 months)	Jegadeesh and Titman (1993), replicated globally	Winners keep winning at medium horizons
+Time-series momentum (trend)	Moskowitz, Ooi, and Pedersen (2012), across futures and FX	Works across asset classes
+Short-term reversal (1 week to 1 month)	Jegadeesh (1990), Lehmann (1990)	Extreme short-term movers tend to mean-revert, mostly in illiquid names, and costs eat much of it
+MAX/lottery effect	Bali, Cakici, and Whitelaw (2011)	Stocks with extreme recent daily gains underperform afterward, which bears directly on "top gainers"
+Post-earnings drift	Bernard and Thomas (1989)	Gainers with fundamental catalysts drift; those without tend to fade
+Crypto momentum and attention	Liu and Tsyvinski (2021)	Momentum appears stronger in crypto, but the history is short
+FX carry and trend	Extensive literature	Works at longer horizons; short-term FX direction is close to a random walk (Meese and Rogoff)
+Mutual fund persistence	Carhart (1997)	Weak; mostly bad funds stay bad because of fees
+Two findings are less encouraging:
+
+Classic chart patterns and indicator rules mostly fail after data-snooping corrections (Sullivan, Timmermann, and White, 1999).
+The large majority of retail day traders lose money (Barber and Odean's studies; Chague et al. on Brazil).
+A key takeaway is that the catalyst matters more than the move. A 20% gain on earnings behaves differently from a 20% gain on no news in a low-float stock.
+
+4. Which asset class is more predictable?
+Predictability and profitability are different things. Inefficiency lives where trading is expensive, capacity is small, or risk is ugly.
+
+FX majors: the most efficient and the hardest for short-term direction. Costs are low, but so is the edge.
+Large-cap equities: very efficient intraday and daily. Factor effects exist at longer horizons.
+Small and micro-cap equities: more predictable statistically, but spreads, slippage, and borrow constraints consume the edge.
+Crypto: probably the strongest raw momentum and attention effects. It also has regime instability, exchange risk, funding costs, and only about ten years of data.
+Mutual funds: they don't fit a TP/SL framework at all, since they are priced once a day at NAV with no intraday execution. Treat them as a separate, slow allocation problem.
+Don't assume the ranking; measure it. Run the identical pipeline on each asset class and compare out-of-sample information coefficient and net-of-cost Sharpe. That gives you an apples-to-apples answer for your horizon and cost structure.
+
+5. Symbol versus symbol plus direction
+Per-symbol models mostly overfit. One symbol gives you perhaps a few hundred independent observations at a daily horizon. If you test 500 symbols and pick the "most predictable" ones, you are selecting noise.
+
+A better approach is to pool across symbols and let characteristics (liquidity, volatility, sector, market cap) explain the differences. Predictability belongs more to the setup, regime, and asset type than to the ticker. To claim that a particular symbol is predictable, you need it to hold out of sample after multiple-testing correction.
+
+Direction asymmetry is real and worth modeling separately:
+
+Equities have positive drift, so longs have a tailwind.
+Shorts face borrow fees, squeezes, and unbounded losses. Fading low-float gainers has statistical support, but the tail risk is brutal and shares are often unborrowable.
+In crypto, funding rates create a measurable cost or subsidy for each side.
+So test in a hierarchy: asset class, then setup type, then direction, then symbol cluster. Require more evidence at each finer level.
+
+6. TP/SL design
+TP/SL does not create edge; it only reshapes the return distribution. Under a random walk, P(hit TP before SL) ≈ SL / (TP + SL), so expectancy is zero before costs and negative after. A 2:1 reward-to-risk ratio sounds good but just means you win about 33% of the time unless you have a real directional edge.
+
+Practical steps:
+
+Scale to volatility. Set levels in ATR or forecast-volatility multiples, not fixed percentages.
+Use the triple-barrier method (López de Prado): TP, SL, and a time-out. Label each historical signal by which barrier is hit first.
+Analyze MAE/MFE (maximum adverse and favorable excursion) on historical signals to see where stops and targets should sit.
+Know your breakeven win rate: (SL + costs) / (TP + SL).
+Be conservative in backtests. If TP and SL both fall inside the same bar, assume the SL was hit first.
+7. Backtesting: yes, but as a filter
+A backtest can reject a bad idea; it cannot prove a good one. The main pitfalls are:
+
+Look-ahead bias, such as using the close to trade at the close.
+Survivorship bias.
+Unrealistic fills, including gaps through stops, halts, and thin liquidity.
+Ignored costs.
+Overfitting through repeated trials, which is the biggest of these.
+The methods that guard against these:
+
+Time-based splits: train, validation, and an untouched final test set that you look at once.
+Walk-forward analysis, or purged k-fold cross-validation with an embargo.
+Trial counting: log every variation you test, then apply the deflated Sharpe ratio or White's Reality Check. Harvey, Liu, and Zhu (2016) suggest requiring a t-statistic above 3, not 2.
+Baselines: compare against random entries with the same TP/SL and holding period, and against buy-and-hold.
+Sensitivity checks: the edge should survive doubled costs and small parameter changes. A sharp peak in parameter space is overfitting; a plateau is a good sign.
+For sample size, t-stat ≈ Sharpe × √years. A Sharpe of 1 needs about 4 years to reach t = 2 and about 9 years to reach t = 3. For trade-based stats, you want hundreds of independent trades.
+
+8. Forward-testing
+Freeze the rules in writing before you start. Any change resets the clock.
+Log signals with timestamps before the outcome is known: entry, TP, SL, and size. An immutable log is your pre-registration.
+Paper trade with realistic fill assumptions for 1 to 3 months or at least 100 signals.
+Go live at small size. This reveals slippage, partial fills, and your own behavior, which paper trading hides.
+Compare live results to the backtest distribution. Expect a 30–50% haircut on backtest performance.
+Predefine kill criteria, such as a drawdown beyond the 95th percentile of backtest simulations, or expectancy statistically below zero after N trades.
+9. Metrics to measure
+Signal quality (prediction level)
+
+Precision@K versus the base rate (lift)
+Information coefficient (rank correlation of forecast with outcome)
+Calibration, such as Brier score (does a "60% probability" happen 60% of the time?)
+Trade level
+
+Expectancy per trade, in R-multiples, net of costs
+Win rate, average win/loss, and profit factor
+TP-hit, SL-hit, and time-out rates
+MAE/MFE and holding time
+Portfolio level
+
+CAGR, volatility, Sharpe, and Sortino
+Maximum drawdown, drawdown duration, and Calmar ratio
+Tail risk (CVaR, skew)
+Alpha and beta versus a benchmark (is it just leveraged market exposure?)
+Turnover and capacity
+Robustness
+
+t-statistic and deflated Sharpe ratio
+Stability across sub-periods and regimes (bull, bear, high and low volatility)
+Cost and slippage sensitivity
+Backtest-to-live degradation and signal decay over time
+Bottom line
+I would not try to predict tomorrow's top gainers directly. I would do this:
+
+Build clean, bias-free data.
+Run event studies on what happens before and after extreme moves, conditioned on catalyst, liquidity, and regime.
+Anchor on documented effects (momentum, reversal, post-earnings drift, volatility clustering) rather than mined patterns.
+Use pooled models with volatility-scaled TP/SL.
+Validate with strict out-of-sample testing and multiple-testing corrections.
+Forward-test with frozen rules and small real money.
+Realistic edges are small: a 52–55% win rate, or a modest expectancy per trade. They come from disciplined process, cost control, and risk sizing rather than a secret pattern. If a backtest shows something spectacular, the most likely explanation is a bug or overfitting.
