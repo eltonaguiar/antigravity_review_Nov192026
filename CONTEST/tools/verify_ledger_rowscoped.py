@@ -63,7 +63,7 @@ def main():
         p = os.path.join(d, slug, "picks.json")
         if not os.path.isfile(p):
             continue
-        actual = hashlib.sha256(open(p, "rb").read()).hexdigest()[:12]
+        actual = hashlib.sha256(open(p, "rb").read().replace(b"\r\n", b"\n")).hexdigest()[:12]
         sk = norm(slug)
         rhash = rec.get(sk) or rec.get(ALIASES.get(sk, ""))
         if rhash is None:  # tolerant fuzzy map (display name vs slug)

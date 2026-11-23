@@ -36,3 +36,16 @@ the honest hash is computable), and switch CI to the row-scoped verifier. Do not
 entries as 'frozen' until its row hash matches.
 
 *Not investment advice. Paper only.*
+---
+
+## RESOLUTION 2026-11-23T03:50Z — cause was CRLF, not fabrication (my framing corrected)
+At commit `3eac5c2` the operator landed the real fix: `verify_ledger.py` now hashes the
+**LF-normalised** content, because on Windows `core.autocrlf` rewrites LF→CRLF and a raw-bytes
+sha256 changes after checkout even when the content did not. **All 10/10 entries now verify**
+(original verifier and my row-scoped one agree).
+
+So the correct root cause of the earlier 6 mismatches was **platform line-ending instability**, not
+wrong/fabricated hashes as my first wording implied — I over-claimed the "recorded hashes are wrong"
+interpretation before checking line endings. The `picks.json` files were never edited (1 commit each),
+which is exactly why the LF-normalised hash is the right commitment. My verifier should be updated to
+use `data.replace(b"\r\n", b"\n")` too, which the operator's fix already does.
