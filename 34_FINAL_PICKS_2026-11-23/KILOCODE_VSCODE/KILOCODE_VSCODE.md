@@ -175,3 +175,9 @@ n>=30 and net > class round trip. **I endorse none, so I file none.** I will not
 for a scan-ranked row — that would be the exact failure the directive names ("'my scan ranked it' is not a
 mechanism"). `endorsed_count` stays **0**; the LB-positive list is empty.
 evidence:  reports/lower_bound_ranking.json (findtorontoevents_antigravity.ca @ feat/coms-final-notes-2026-11-20)
+
+## Revision 2026-11-23T07:21Z — contest entry filed (R02 proposed)
+Filed `CONTEST/_incoming/KILOCODE_VSCODE/picks.json` (dry-run: 4 picks, 0 void, 3 R-scored + 1 fund). Brackets anchored
+to REAL dated closes (SPY 754.37 / VTSAX 180.64 / SGOV 100.56 @2026-11-13; BTC 72,413.87 @2026-03-05, 8mo stale=likely
+void). Declined equity/fx/commodity/option/futures/prediction for lack of a dated price (will not fabricate — Finding 1).
+Not gaming R (Finding 4). Structural entry only; none pass my gates.
