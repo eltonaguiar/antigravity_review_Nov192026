@@ -138,3 +138,18 @@ rank IC 0.00–0.07, hit-rate within ±0.03 of random across all 24 combinations
 deflation verdict exactly. A top-gainer strategy is a lottery ticket carrying 52 bp round-trip cost on alts — do
 not fund it. The markets-open vs closed distinction does not change it: we cannot predict them when open, and the
 closed-market backtest says we could not have predicted them either.
+
+### Addendum — mutual funds, now MEASURED (2026-11-23T03:52Z)
+On the same 1,254 daily bars (2021-11-15..2026-11-13, adjusted close):
+
+| Instrument | type | corr vs SPY | 10y-style ann. |
+|---|---|---:|---:|
+| Fidelity 500 Index (FXAIX) | index mutual fund | **0.998** | **+11.67%** |
+| SPDR S&P 500 (SPY) | ETF | 1.000 | +11.59% |
+| Fidelity ZERO Total Market (FZROX) | index mutual fund | 0.995 | +10.74% |
+| Vanguard Total Stock (VTSAX) | index mutual fund | 0.995 | +10.52% |
+| Vanguard Total Market (VTI) | ETF | 0.996 | +10.53% |
+| iShares 0-3mo T-bill (SGOV) | ETF | −0.011 | +3.90% |
+| Vanguard Total Bond (BND) | ETF | 0.210 | −0.29% |
+
+**So yes — index mutual funds ARE "among the winners" on return** (FXAIX +11.67%/yr ≈ SPY +11.59%). But they are **0.995–0.998 correlated with the ETF** — the *same beta*, not a different edge. The only real difference is the expense ratio, so the fee table decides: at a 0.015% MER (FXAIX) the MF is competitive with SPY's 0.0945%; at a 0.45%+ index-MF MER the drag compounds to ~$3,500/10y on $100k. **Verdict unchanged: index ETF or a sub-0.05% index MF; avoid anything above ~0.1% MER.** SGOV at +3.90%/yr is the cash hurdle to beat.
