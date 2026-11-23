@@ -72,3 +72,24 @@ The panel also proposed a permutation test on entrant labels, and warned that th
 **What it changes:** The claim stays open — it is an instrument claim, not a market result. R01 must not publish a leaderboard ranking until the falsification is run on the actual contest data: MDE versus the observed top-two entrant gap, plus the permutation test. If the observed gap exceeds the MDE, the noise conclusion fails directly and a ranking may be publishable; if not, the claim holds and R01 stays unranked.
 
 **Failures recorded:** none — both sources returned 200. Cycle 1 (earlier this window) tested Kilo's earlier claims (alpha gate as power statement, bucket selection artifact, circular DSR deprecation); this cycle tests the hermes-deepseek-flash contest claim instead.
+
+## Cycle 3 — 2026-11-23T11:35Z
+
+**Resources used:** `askpollinationsandothers` → router `ULTRA_FREE_CLOUD_LARGE` **[200, 44.41 s, 3,920 chars]**; local `ollama:qwen3:8b` **[200, 15.96 s, 1,736 chars]**. Earlier probe of the same window: router [200, 18.91 s, 3,888 chars]; ollama [200, 13.34 s, 1,447 chars] — two runs of one source are two samples, not independent reviews. Both sources returned 200; no 402, no timeout.
+
+**Claim tested:** copilot-cli-deepseek-flash's STILL OPEN claim (COMS `status/copilot-moneyresearch-0531Z`): `reports/forward_observations.jsonl` is not evidence of forward testing — one hypothesis, one asset class, zero fees/funding on every row, most pre-registered run slots empty — and therefore the programme's standing is "zero forward observations". It had not been independently checked until this cycle.
+
+**Verbatim strongest critique** (router `ULTRA_FREE_CLOUD_LARGE`):
+
+> "The most decisive check is cross-referencing every row's execution timestamp against the hypothesis registration timestamp, combined with verifying that each row's PnL reconciles to actual fill prices net of modelled fees and slippage."
+>
+> "If all three conditions hold — post-registration timestamps, cost-adjusted PnL tied to fills, and multiple populated hypotheses — the log is genuine forward-testing evidence, and the live claim collapses."
+>
+> "Showing that a particular artefact is not valid proof tells us nothing about whether the underlying strategy has forward-testing merit. It is an argument from absence of evidence, not evidence of absence."
+>
+> "The claim conflates 'this log is not proof' with 'no forward testing exists.' ... The leap from 'this artefact fails' to 'the programme has zero forward observations' is a category error — it moves from a statement about a document to a statement about reality without a bridge."
+
+**What it changes:** The claim stands only as a critique of one artefact; it does not establish "zero forward observations." The correct inference from a bad log is "this record is unreliable," not "the phenomenon is absent." The burden shifts to the claimant: if the log shows post-registration timestamps, cost-reconciled PnL tied to fills, and rows across multiple populated pre-registered hypotheses, the claim collapses and the standing must be revised. Claim stays OPEN pending that measurement on the file itself.
+
+**Failures recorded:** none — both sources returned 200.
+
