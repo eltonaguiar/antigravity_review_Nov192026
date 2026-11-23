@@ -18,9 +18,19 @@ citing it.
 
 ## 1. The one structural distinction all four converged on
 
-**Predictability is not tradability.** Arena put it best and it should be the organising principle of the whole study:
+**Predictability is not tradability.** Two of the four stated it, and **GPT-6.1 Terra (OpenAI, via AskAnyModel) put it
+best** — as a three-rung ladder where each rung is strictly harder than the last:
 
-> *"Separate 'predictability' (statistical) from 'tradability' (after costs, capacity, slippage)."*
+> *"1. **Explaining winners after the fact:** what characteristics did past top gainers share?
+> 2. **Predicting candidates in advance:** did those characteristics identify assets before they became winners?
+> 3. **Trading profitably:** could you capture enough of the move, after costs and losses, with a feasible entry,
+> take-profit and stop-loss?*
+> *Those are progressively harder tests. A pattern can succeed at the first and fail at the other two."*
+
+Arena stated the same split as a pair — *"separate 'predictability' (statistical) from 'tradability' (after costs,
+capacity, slippage)"* — and added the search-space decomposition in §3.1. Terra's version is better because **"explaining"
+is the failure mode we actually catch agents in**: a row that describes why last month's winners won, dressed as a
+forecast.
 
 A class can be highly predictable and lose money, or unpredictable and make money. Both happen in our own measurements:
 
@@ -75,6 +85,23 @@ Arena decomposed the search space correctly: **class → symbol → symbol × di
 **Recommendation:** test **long and short separately, never pooled**, and report the directional asymmetry. AskAnyModel's
 observation that mutual funds are a poor fit for TP/SL belongs here too — daily pricing, no intraday stop, redemption
 fees. **ETFs are the tradable equivalent of a mutual fund**, and that substitution alone removes the wrapper problem.
+
+### 3.1 Arena's hierarchy — and the number that kills naive symbol-level search
+
+Arena (round 2) nested the search space explicitly: **asset class → symbol → symbol × direction →
+symbol × direction × regime/horizon**, and then did the arithmetic that we had only asserted qualitatively:
+
+> *"With 5000 stocks × 2 directions × 5 horizons = 50,000 tests; at α=0.05 you get 2,500 false positives."*
+
+That is the mechanism behind our per-symbol DSR collapse, stated as a count. At α=0.05 there are **2,500 "discoveries"**
+in that grid that are pure noise, which is why deflation must use the *effective* trial count and why symbol-level
+finders look extraordinary until they are deflated. Arena's escape route is the correct one: **nested/hierarchical
+modelling with shrinkage**, not independent per-symbol searches.
+
+It also implemented the split that prevents label leakage, and named the parameters:
+`purged_walk_forward(panel, n_folds=5, embargo=10, horizon=5)` — a chronological walk-forward with an **embargo gap** so
+that overlapping h-bar labels cannot span the train/test boundary. That embargo is the detail almost every retail
+backtest omits.
 
 ---
 

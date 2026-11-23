@@ -1,0 +1,401 @@
+TITLE: 1min.AI
+URL: https://app.1min.ai/chat-with-ai/70e8483c-c730-40cd-ba56-aaf0d17c335e
+BYTES: 27988
+======================================================================
+E
+E A's Team
+
+Team
+
+Home
+Workspace
+AI Studio
+Shared Zone
+History
+Brand Voice List
+Prompt List
+Tag List
+Asset List
+Connections
+AI PRODUCTS
+Social
+Agents
+AI TOOLS
+Multi AI Chat
+AI for Writing
+Keyword Research
+Content Generator
+Rewriter
+Content Expander
+Content Shortener
+Content Translator
+Content Detector
+Paraphraser
+Summarizer
+Grammar Checker
+AI for Image
+Image Generator
+Image to Prompt
+Image Analysis
+Image Variator
+Image Upscaler
+Image Extender
+Background Remover
+Background Replacer
+Text Remover
+Object Remover
+Search and Replace
+Image Mask Editor
+Image Text Editor
+Face Swapper
+3D Image Generator
+Sketch to Image
+AI for Document
+Document Translator
+Presentation Generator
+AI for Audio
+Text to Speech
+Text to Sound
+Music Generator
+Speech to Text
+Voice Changer
+Voice Cloning
+Voice Design
+Voice Isolator
+Audio Generation
+Audio Inpaint
+Audio Translator
+AI for Video
+Text to Video
+Image to Video
+Youtube Summarizer
+YouTube Transcriber
+Youtube Translator
+Captions Generator
+Video Face Swap
+AI for Code
+Code Generator
+Help Center
+(1.5.4)
+
+1MIN AI
+
+EASY - QUICK - EFFICIENT
+
+1min.AI
+23,685K
+Magic Notebook
+K
+17
+Chats
+New Chat
+Chats
+If you were tasked to reverse engineer the daily or weekly top gainers for stocks ,crypto mutual funds etc, how would you go about ? i.e. you want to be able to give signals including a TP/SL
+List the trading strategies with the strongest documented out-of-sample evidence across asset classes: risk premia, time-series momentum, cross-sectional momentum, trend following, mean rever
+Give a rigorous methodology for proving a stock trading strategy actually works: (1) candidate discovery without self-deception, including pre-registration and trial accounting; (2) backtest
+OUR TRADING CHALLENGE proceed on next steps, continue to iterate. and plan a series of 200 rounds of extensive deveopment, with an end-goal to ultimately find one or more profitable asset cla
+Been struggling to find a job in Toronto, Ontario for Salesforce or ServiceNow developer/admin generate me a prompt to find jobs that match these, do a scan of servicenow jobs and drop a .MD
+Been struggling to find a job in Toronto, Ontario for Salesforce or ServiceNow developer/admin generate me a prompt to find jobs that match these, do a scan of servicenow jobs and drop a .MD
+If you were tasked to reverse engineer the daily or weekly top gainers for stocks ,crypto mutual funds etc, how would you go about ? i.e. you want to be able to give signals including a TP/SL
+
+If you were tasked to reverse engineer the daily or weekly top gainers for stocks ,crypto mutual funds etc, how would you go about ? i.e. you want to be able to give signals including a TP/SL for stocks/crypto, maybe forex, and determine first of all which asset class is  more predictable.. is a particular "symbol" more predictable, or a symbol and a direction like long vs short, ? what is "proven" , would you back-test, and how can you forward-test, and which metrics would you need to measure
+
+Qwen4 Max - Alibaba Cloud (0s - 0 credits)
+Thinking…
+
+The user is asking a deep, technical question about reverse-engineering "top gainers" lists (daily/weekly) across asset classes, building signals with TP/SL, determining predictability by asset class, symbol, direction, what's "proven," backtesting, forward-testing, and metrics.
+
+This is a legitimate quant research design question. I should give a thorough, structured, technically rigorous answer. Let me think about what a genuinely expert answer looks like.
+
+Key conceptual reframing: "reverse engineering top gainers" is fundamentally a conditional distribution / ranking problem, and it has a severe selection bias trap — the gainers list is a post-hoc, survivorship-and-selection-conditioned sample. Studying only winners gives you P(features | big move) not P(big move | features). You need the full cross-section including the losers and the flat ones to get the base rate. That's the single most important insight.
+
+Let me lay out a full research program:
+
+Define the target precisely — what does "predict top gainers" mean operationally? Options:
+
+Cross-sectional ranking: rank universe by forward return over horizon h; target top decile/top-N.
+Binary event: P(forward return > threshold) — e.g., >2σ, or >X% in h days.
+Triple-barrier labeling (López de Prado): TP hit before SL before time limit. This directly encodes the TP/SL into the label, which is what the user wants.
+Path-dependent labels: MFE/MAE (max favorable excursion / max adverse excursion) — this is the key to calibrating TP/SL.
+Meta-labeling: primary model gives direction, secondary model gives "should I take this trade / size".
+
+The base rate problem / selection bias: gainers lists are conditioned on outcome. Need point-in-time universe, delisted names, etc.
+
+Data & infrastructure: PIT universe, corporate actions, survivorship bias, look-ahead in fundamentals (lag), crypto exchange-level data (funding, OI, liquidations, order book), FX (no consolidated volume, broker-dependent, session effects), mutual funds (NAV struck once daily, stale pricing, no intraday, autocorrelation artifacts, non-tradable intraday, forward pricing — you can't actually trade a mutual fund at the price you see; that's a killer. ETFs as tradable proxy).
+
+Predictability decomposition — this is the meat of the question. Need to define predictability rigorously:
+
+Signal-to-noise: variance ratio, Hurst exponent, autocorrelation of returns at various horizons
+Entropy / compressibility of return series
+Cross-sectional dispersion (opportunity set) vs. persistence
+R² of a simple model, out-of-sample, per symbol/horizon
+Information coefficient (IC) — Spearman rank correlation between predicted and realized
+Directional accuracy conditional on volatility
+Hit rate vs. base rate (skill = accuracy above naive base rate)
+Mutual information between features and labels
+Deflated Sharpe, PBO (probability of backtest overfitting)
+"Predictable" is not a property of the symbol alone — it's a property of (symbol, horizon, feature set, label, cost structure, regime). Must emphasize this.
+
+Is a symbol more predictable, or symbol×direction? — Genuinely good question. Answer: asymmetry is real and structural.
+
+Equity: leverage effect (vol rises when price falls), short-term reversal stronger after down moves, drift positive, borrow constraints, short-sale restrictions, uptick rules, earnings drift asymmetry, downside gaps. Long side has positive risk premium baseline; short side has higher vol and faster moves (so shorter optimal holding periods and tighter TP relative to ATR).
+Crypto: funding-rate asymmetry, long squeezes vs. liquidation cascades — downside moves are faster and more clustered (liquidation cascades), upside more gradual except for alt pumps. Perp funding skew.
+FX: carry asymmetry, "up the stairs, down the elevator" in risk currencies; G10 vs EM; central bank asymmetry (interventions), peg breaks (one-sided).
+Statistically: test with separate models per direction, or interact direction with features; measure conditional calibration separately. Also note the label imbalance and that P(up) and P(down) are not complementary once you condition on barriers (because vol asymmetry).
+Practical: fit a single model with direction indicator + interactions first (more data), then split if there's evidence of parameter instability (Chow test / likelihood ratio / different IC by side). Sample-size penalty for splitting.
+
+What is "proven"? — hierarchy of evidence:
+
+Tier 0: anecdotes/screenshots
+Tier 1: in-sample backtest (nearly worthless)
+Tier 2: OOS/walk-forward with proper purging/embargo
+Tier 3: multiple-testing-corrected (Deflated Sharpe, White's Reality Check / Hansen SPA, Bonferroni/BH on trials)
+Tier 4: paper trading live with real-time data feed (catches look-ahead, latency, data revisions)
+Tier 5: small real capital (catches slippage, market impact, fills, borrow, funding)
+Tier 6: scaled with capacity analysis, stability across regimes
+Economic rationale prior: risk premium, behavioral bias, structural/institutional constraint, information diffusion. Without a mechanism, prior probability of true edge is low.
+Established anomalies that survive: time-series momentum (12m), cross-sectional momentum (with crashes), short-term reversal, post-earnings-announcement drift, low-vol/betting-against-beta, carry (FX), value, calendar/turn-of-month, index rebalance effects, crypto funding carry / basis, momentum in crypto. Note decay after publication (McLean & Pontiff ~58% decay post-publication).
+
+Backtest methodology:
+
+Event-driven vs. vectorized; realistic fill models; costs (spread, commission, slippage as function of ADV/volatility, market impact ~ square-root law), borrow fees for shorts, funding for perps, financing.
+Purged K-fold CV with embargo (overlapping labels leak).
+Combinatorial Purged CV (CPCV) → distribution of Sharpe, PBO.
+Walk-forward anchored/rolling, parameter stability surface.
+Regime slicing: vol regimes, trend/range, bull/bear, liquidity regimes, pre/post 2020, rate regimes.
+Sensitivity: parameter perturbation, cost stress (2×, 3× costs), execution delay, removal of best days/trades, bootstrap.
+Multiple testing accounting: count ALL trials, including feature engineering iterations.
+Deflated Sharpe Ratio formula; PBO via CSCV.
+Sample size: minimum track record length, MinTRL.
+Non-IID returns → block bootstrap / stationary bootstrap for CIs.
+
+Forward testing:
+
+Paper trading with a frozen model artifact + hash, timestamped predictions written to append-only log BEFORE outcome. Cryptographic commitment (hash the predictions file, publish hash) — makes it impossible to retro-fit.
+Pre-registration: hypothesis, universe, horizon, TP/SL rules, sample size, stopping rule, primary metric, MDE. Like a clinical trial.
+Sequential testing: SPRT, always-valid p-values, e-values, alpha-spending (O'Brien-Fleming) to avoid peeking bias.
+Shadow mode alongside live; reconciliation of predicted vs. actual fills.
+Live-vs-backtest divergence monitoring: IC decay, calibration drift, PSI/KS on feature distributions, slippage attribution.
+Kill switches, drift detection (ADWIN, Page-Hinkley, CUSUM).
+Ramp: 1x → small size → scale with capacity curve.
+
+Metrics — need a big taxonomy:
+
+Prediction/statistical: IC (Spearman), IC IR, hit rate vs base rate, precision@K (crucial for "top gainers" — you only need the top N), recall, lift over base rate, AUC/PR-AUC (PR better with imbalance), Brier score, log loss, calibration curves & ECE, MAFE.
+For ranking specifically: NDCG@K, precision@K, top-decile spread, quantile monotonicity.
+Trade-level: expectancy (in R), profit factor, payoff ratio, win rate, MAE/MFE distributions, time-in-trade, R-multiple distribution, tail ratios.
+Portfolio: CAGR, vol, Sharpe, Sortino, Calmar/MAR, max DD, DD duration, Ulcer index, Omega, tail ratio, skew/kurtosis, beta/alpha to benchmarks, exposure, turnover, capacity.
+Risk-adjusted with corrections: Deflated Sharpe, Probabilistic Sharpe Ratio (PSR), MinTRL, PBO, HAC-robust t-stats (Newey-West), bootstrap CIs.
+Execution: implementation shortfall, slippage bps, fill rate, adverse selection, participation rate, cost as % of gross alpha.
+Stability: rolling IC, parameter drift, per-regime performance, decay half-life.
+Operational: uptime, data staleness, signal-to-order latency.
+
+TP/SL determination — this deserves its own section since the user explicitly asked:
+
+Don't guess; derive from MFE/MAE conditional distributions.
+Volatility-normalize (ATR or σ_forecast). Fixed % is wrong across symbols/regimes.
+Estimate E[R] surface over (TP/ATR, SL/ATR, time limit) grid, but beware massive multiple testing → use smooth parametric fit / Gaussian process over the surface, and require plateau not peak.
+First-passage probabilities: for driftless GBM, P(hit TP before SL) analytic; with drift μ. Barrier hitting via reflection principle; use it as null model — your edge must beat the martingale null which says E[PnL]=0 before costs for ANY barrier pair. Key insight: TP/SL alone cannot create edge; edge comes from conditional drift or from path structure (mean reversion / vol clustering). Very important to state.
+Actually more precise: for a martingale, any bounded stopping strategy has zero expectation (optional stopping theorem). So TP/SL geometry only reshapes the distribution (win rate vs payoff), not the mean. Edge must come from (a) conditional expected return, (b) non-martingale path structure e.g. autocorrelation, (c) risk premium compensation, (d) convexity/optionality. This is a crucial "what is proven" point that many retail systems get wrong.
+Time stops, trailing stops (chandelier), partial scale-outs, breakeven moves — each adds parameters → overfitting risk. Test them as a factorial design with proper correction.
+Barrier labels → triple barrier method → meta-labeling for sizing.
+Position sizing: fractional Kelly (¼ to ½), vol targeting, risk parity across signals, cap per-name and per-sector, correlation-aware.
+Expectancy math: E = p·W − (1−p)·L − costs; breakeven p for given R.
+Asset class comparison — give an honest prior ranking with reasoning, not false precision:
+Dimensions: data quality, tradability, cost, leverage, shorting availability, dispersion, participant sophistication, structural inefficiencies, regime stability, capacity.
+Mutual funds: essentially not tradable short-term (forward pricing, NAV staleness, redemption fees, no intraday). Predictability of NAV is partly artificial (stale prices → serial correlation). Convert to ETFs. Rank last for this use case.
+FX majors: lowest costs, deepest liquidity, most efficient at short horizons, but carry + trend at longer horizons; low dispersion → small moves → leverage needed; broker-dependent data; no consolidated tape; weekend gaps; central bank tails.
+Large-cap equities: efficient, but rich anomaly literature, good data, shorting possible w/ borrow, PDT/settlement issues, earnings catalysts, index events.
+Small/micro-cap equities: highest raw dispersion & "top gainers" magnitude, but worst survivorship/liquidity/halt/borrow problems, highest slippage, pump-and-dump contamination. Highest apparent predictability, lowest realizable.
+Crypto: 24/7 (no gap risk except exchange outages), high dispersion, retail-dominated flow in alts, perp funding/OI/liquidation data = genuinely informative and free, no borrow constraint (perps), high fees on alts, exchange/counterparty risk, wash trading in reported volume, delisting survivorship, stablecoin depegs. Probably best "top gainers" hunting ground for a small account, but data hygiene is the hard part.
+Conclusion: predictability ranking is horizon- and universe-dependent; must measure empirically with the same pipeline and compare apples-to-apples using cost-adjusted, capacity-adjusted, risk-adjusted OOS metrics. Provide a concrete experiment design to answer it.
+Feature ideas by asset class — for "top gainers" specifically:
+Cross-sectional relative strength / residual momentum
+Volume shock, dollar volume, turnover, ADV ratio
+Volatility compression → expansion (NR7, BB squeeze, realized vol percentile)
+Distance from highs, base length, consolidation tightness
+Gap statistics, opening range
+Float, market cap, short interest, days-to-cover, borrow fee
+Options: IV skew, unusual volume, gamma exposure
+Catalysts: earnings dates, FDA/PDUFA, index add/delete, lockup expiry, halts
+News/sentiment velocity, social mentions (careful: bots)
+Crypto: funding, OI change, basis, liquidation clusters, exchange netflow, stablecoin flows, unlock schedules, listing announcements, perp-spot divergence, CVD, order book imbalance
+FX: rate differentials, carry, COT positioning, session ranges, option expiries, fixing flows
+Microstructure: order flow imbalance, queue dynamics, trade sign autocorrelation, VPIN
+Cross-asset: sector/beta lead-lag, BTC→alts, SPX→high-beta, DXY→EM
+Pitfalls list — the classic ones plus subtle ones:
+Look-ahead in features (using day's close to trade at that close is fine only if you model MOC execution realistically)
+Timestamp alignment across sources, timezone, exchange calendars
+Adjusted prices backfilled (dividend/split adjustments change historical values → look-ahead in "distance from 52w high")
+Survivorship in crypto (dead coins), delisting returns
+Point-in-time fundamentals
+Overlapping labels → inflated t-stats
+Selection on the gainers list itself
+Data snooping across the whole research process
+Non-stationarity / regime breaks
+Ignoring borrow/funding/financing
+Assuming fills at the extreme of a bar (high/low) — huge for TP/SL backtests! If both TP and SL are inside the same bar, you can't know which came first → must use lower timeframe data or assume worst case. This is THE most common TP/SL backtest bug.
+Slippage on stop orders in fast markets (stops fill worse than stop price)
+Gaps through stops
+Halts (LULD) in small caps
+Crypto exchange outages during the exact moves you're modeling
+Latency and queue position
+Weekend/holiday effects
+
+Concrete phased plan with timeline and deliverables.
+
+Realistic expectations — what "good" looks like: IC 0.02–0.05 daily cross-sectional is real; hit rates 52–56%; Sharpe 1–2 net for a decent retail-scale strategy; anything >3 OOS with high win rate on tiny samples is suspicious. Precision@10 for top gainers maybe 15–25% vs 2% base rate = huge lift, and that's enough.
+
+Also mention: the fundamental asymmetry between "predicting the top gainers list" (a ranking/classification task, evaluated with precision@K) vs "making money" (a portfolio task with costs, sizing, correlation). They're not the same and you should measure both.
+
+Let me also include some formulas:
+
+Deflated Sharpe Ratio
+PSR
+IC and ICIR
+Expectancy
+Kelly
+Square-root impact
+MFE/MAE
+Triple barrier
+PBO
+Variance ratio / Hurst
+
+I should format with headers, tables where useful, some code sketches maybe. The user is clearly technical/quant-curious. A long, well-organized answer is appropriate. But not absurdly long — aim for comprehensive but readable. Maybe 3000-4500 words equivalent with tables. Actually given the breadth of the question (6-7 sub-questions), a thorough treatment is warranted. Let me aim for something substantial but tightly written — maybe 3500-5000 words. Use headers, tables, bullet lists, a few formulas.
+
+Let me be careful about honesty: I should be clear that most retail "top gainer prediction" efforts fail, that TP/SL cannot manufacture edge from a martingale, and that "proven" is a high bar. Also note I'm not giving financial advice per se but a research methodology — that's fine, no need for heavy disclaimers, maybe one light line.
+
+Let me structure:
+
+Reframe the problem (the selection-bias trap + what target to actually predict)
+Label design (this is where TP/SL enters) — triple barrier, MFE/MAE
+Data & universe hygiene per asset class
+Measuring "predictability" — a hierarchy: asset class → symbol → symbol×direction → regime; with concrete statistics
+The direction question specifically
+The martingale theorem about TP/SL (crucial)
+Choosing TP/SL empirically
+What counts as "proven" — evidence ladder + what actually survives in literature
+Backtesting protocol (purged CPCV, costs, stress)
+Forward testing protocol (pre-registration, hash commitment, sequential tests, shadow → live ramp)
+Metrics dashboard (tables)
+Answering "which asset class" — a designed experiment + honest priors table
+Failure modes checklist
+Phased build plan
+Realistic benchmarks
+
+That's a lot of sections but each can be tight. Let me write it.
+
+I'll include a couple of small code/pseudocode snippets for the labeling and the CPCV maybe. Keep it lean.
+
+Let me write now.
+
+Some specific numbers to be careful with:
+
+McLean & Pontiff (2016): anomaly returns decay ~26% out-of-sample and ~58% post-publication. Correct.
+López de Prado: purged K-fold, embargo, CPCV, PBO, DSR, meta-labeling, triple barrier. Correct.
+Square-root market impact: I ≈ Y·σ·√(Q/V). Correct form.
+PSR uses skew and kurtosis of returns; DSR deflates by number of trials and variance of trial Sharpes. Correct.
+Newey-West HAC for overlapping returns.
+Variance ratio VR(q) = Var(q-period return)/(q·Var(1-period)). >1 trending, <1 mean-reverting. Lo-MacKinlay.
+Hurst via DFA or R/S; note estimator bias.
+Optional stopping theorem: for a martingale with bounded stopping time, E[X_τ] = X_0. Requires integrability/boundedness conditions — with TP/SL both bounded and a time limit, conditions hold. Good. Note that with drift or autocorrelation, not a martingale. Also note: risk premium means positive drift is compensation for risk, not free lunch.
+Kelly f* = (p·b − q)/b for binary; continuous approx μ/σ².
+Precision@K lift.
+Minimum track record length: MinTRL ≈ 1 + (1 − γ₃·SR + (γ₄−1)/4·SR²)·(Z_α/(SR − SR*))² ... I'd rather not write exact formula wrong. I'll describe conceptually.
+
+Actually the MinTRL formula from Bailey & López de Prado:
+MinTRL = 1 + [1 − γ₃·ŜR + ((γ₄−1)/4)·ŜR²] · (Z_α / (ŜR − SR*))²
+where ŜR is in the same frequency units. I'll just describe it qualitatively to avoid error, or present it with a caveat. I'll describe conceptually — safer.
+
+DSR = PSR with SR* threshold = expected max Sharpe under null given N trials:
+SR* ≈ √(V[{SR_n}]) · [(1−γ)·Z⁻¹(1 − 1/N) + γ·Z⁻¹(1 − 1/(N·e))]
+where γ is Euler-Mascheroni ≈ 0.5772. I can state this. It's right.
+
+Let me include it but keep it compact.
+
+Also worth noting: for "top gainers," precision@K with K=5-20 and universe of 500-2000 is the right primary metric, and the base rate is K/N. Lift = precision@K / (K/N). And you should evaluate the conditional forward return distribution of your picks vs. the universe, not just hit rate.
+
+Also: "reverse engineering" could mean literally taking historical gainers lists and finding common antecedents. I should address that directly: it's a case-control study. Do it properly — matched controls, and compute odds ratios / lift, not just "80% of gainers had a volume spike" (because 60% of non-gainers might too). This is a great, concrete framing. Case-control design with matched controls on (market cap, sector, volatility, price level, date) → conditional logistic regression. That's a genuinely useful and rigorous answer to "how would you reverse engineer."
+
+Yes — I'll lead with that. Case-control → then convert to cohort study for base rates → then prospective.
+
+Good. Let me write.
+
+Length: I'll target ~4000-4800 words. Tables help compress.
+
+Reverse‑Engineering "Top Gainers": A Research Protocol
+
+This is a well‑posed question, but it contains a trap that kills ~90% of attempts before any modeling happens. Let me start there, then build the full protocol.
+
+1. The Core Trap: Gainers Lists Are Conditioned on the Outcome
+
+A "top gainers" list is a sample drawn on the dependent variable. If you collect 5,000 historical gainers and find that 78% had a volume spike, a tight consolidation, and a low float — you have learned P(features | big move), not P(big move | features). Those are different by a factor of the base rate, which is usually brutal.
+
+If 1,500 of 3,000 names had a volume spike but only 200 became gainers, your "78% pattern" has a ~13% hit rate against a ~2% base rate. That's a real 6× lift — but it is not a 78% system, and the difference determines whether your TP/SL geometry is survivable.
+
+So do it as a proper case‑control study first, then a cohort study:
+
+Stage	Design	Output
+Reverse‑engineering	Cases = historical top‑N gainers. Controls = matched non‑gainers (match on date, market cap bucket, sector, price level, trailing vol, liquidity).	Conditional logistic regression → odds ratios per antecedent feature. Tells you what discriminates.
+Cohort / prospective	Full point‑in‑time universe, every day, including losers and flat names. Label everything.	Base rates, precision@K, lift, calibration. Tells you how often you're right.
+Trading	Add costs, path, sizing, correlation.	Tells you whether it's worth doing.
+
+Matching controls is the step everyone skips. Without it, you'll "discover" that gainers are volatile small caps — which is a description of the universe, not an edge.
+
+2. Define the Target Precisely (This Is Where TP/SL Enters)
+
+"Predict top gainers" is ambiguous. Pick one — they need different models and different metrics:
+
+Cross‑sectional ranking — rank the universe by forward return over horizon h; you care about the top decile or top‑K. Metric: IC, precision@K, NDCG@K.
+Event classification — P(return > threshold within h). Threshold should be volatility‑normalized (e.g., > 2.5σ), not a fixed 10%, or you'll just be predicting "which assets are volatile."
+Path‑dependent / triple‑barrier — does price hit +TP before −SL before time limit T? This is the label that matches your actual trade, and it's what you want if you're issuing TP/SL signals.
+Meta‑labeling — a primary model picks direction; a secondary model predicts P(that primary signal is profitable). The secondary model is a binary classifier and is far easier to fit and calibrate. This is usually the highest‑ROI architecture for signal generation.
+
+Critical: collect MFE/MAE for every candidate entry, not just the terminal return:
+
+MFE (Maximum Favorable Excursion) = max unrealized profit over the holding window
+MAE (Maximum Adverse Excursion) = max unrealized drawdown over the window
+
+The joint distribution of (MFE, MAE, time‑to‑MFE, time‑to‑MAE), conditioned on your signal, is your TP/SL calibration data. Everything about barrier placement falls out of it. Terminal returns alone throw away the path, and the path is what stops you out.
+
+1# label skeleton — use intraday bars, not daily OHLC
+
+2def triple_barrier(px, entry_t, tp_mult, sl_mult, sigma, max_bars):
+
+3    up   = entry_px * (1 + tp_mult * sigma)
+
+4    dn   = entry_px * (1 - sl_mult * sigma)
+
+5    for t in range(entry_t+1, entry_t+max_bars+1):
+
+6        # if BOTH barriers inside one bar -> ambiguous, resolve with sub-bars
+
+7        hit_up, hit_dn = bar.high >= up, bar.low <= dn
+
+8        if hit_up and hit_dn: return resolve_with_lower_timeframe(...)
+
+9        if hit_dn: return -1, t-entry_t   # check SL first (conservative)
+
+10        if hit_up: return +1, t-entry_t
+
+11    return sign(px[T]-entry_px), max_bars
+3. The Uncomfortable Theorem About TP/SL
+
+For a driftless martingale, no combination of TP, SL, trailing stop, or breakeven move produces positive expectancy. Optional stopping theorem: with bounded barriers and a time limit, E[P&L at stop] = 0, minus costs. Barriers reshape the distribution — they trade win rate against payoff ratio — they do not create edge.
+
+This means:
+
+A 90% win rate with TP=0.5 ATR / SL=5 ATR is not a strategy; it's a short‑volatility position with a hidden tail.
+Every "TP/SL optimizer" that shows a profitable grid on random‑walk data is overfitting or leaking.
+Your edge must come from one of four places: (a) conditional drift — the signal genuinely shifts E[r]; (b) non‑martingale path structure — autocorrelation, vol clustering, mean reversion; (c) a risk premium you're being paid to bear; (d) genuine convexity/optionality.
+
+Practical test: run your entire TP/SL optimization pipeline on (i) bootstrapped/shuffled returns preserving vol clustering, and (ii) synthetic GBM matched to each symbol's σ. Whatever "edge" appears there is your overfitting floor. Subtract it. This single control experiment is worth more than most indicator libraries.
+
+Also: risk premia are not free. If your long signal earns the equity risk premium, you must benchmark against buy‑and‑hold, not against zero.
+
+4. Data & Universe Hygiene (Differs Wildly by Asset Class)
+Asset class	Killers you must handle
+US equities	Survivorship (delisted names, including delisting returns), point‑in‑time fundamentals (no backfilled restatements), retroactively adjusted price histories (split/dividend adjustments silently change "distance from 52w high" as computed years ago), LULD hal
+Input: 678 tokens | Estimated: 4,297,965 credits
+Drop files or images here to upload
++3
