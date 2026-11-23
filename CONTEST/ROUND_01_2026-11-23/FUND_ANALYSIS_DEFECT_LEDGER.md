@@ -8,16 +8,23 @@ still missing. Nothing here is marked fixed because someone said so.
 
 **The decisive measurement nobody proposed but GLM 5.3 pointed at: VTSAX and VTI are share classes of ONE fund, so their
 measured difference is the noise floor for any vehicle comparison.** Over the aligned window they differ by **−2.5 bp/yr**
-(12.2820 % vs 12.3073 %), Sharpe difference **−0.0005, CI [−0.0127, +0.0119]**. Set against that floor:
+(12.2820 % vs 12.3073 %), Sharpe difference **−0.0005, CI [−0.0127, +0.0119]**.
 
-- **FXAIX − SPY = +8.7 bp/yr = 3.5× the noise floor**, and the fee gap is 7.95 bp — so on **CAGR the fee effect is real and
-  measurable**, not noise.
-- On **Sharpe** every pairwise difference remains indistinguishable (all CIs span zero), because Sharpe differences are far
-  noisier than return differences.
-- And **VOO beats FXAIX**, so the winner is the **cheapest share class**, not the wrapper.
-
-That is the sharper version of the answer: *the fee gap is real and measurable at ~8 bp/yr; the wrapper is irrelevant; buy
-the cheapest vehicle.*
+> **⚠️ SUPERSEDED — read `TRACKING_ERROR_CORRECTION.md`.** I treated that 2.5 bp difference as a noise *floor* and concluded
+> the 8.7 bp FXAIX−SPY gap was "3.5× noise, therefore real and measurable". **That was wrong**: two point estimates
+> subtracted from each other are not a floor, because each carries its own standard error.
+>
+> The correct test is tracking difference over tracking error. Measured: **TE ≈ 1.07 %/yr for VTSAX−VTI and 0.95 %/yr for
+> FXAIX−SPY**, giving SE(TD) ≈ 38 bp/yr and **t ≈ 0.1 for every pair**. Establishing an 8 bp difference at t = 2 would need
+> **546 years of data**.
+>
+> **The control is the finding: two share classes of one fund have MORE tracking error than two different vehicles do** —
+> so the ~1 %/yr is NAV/dividend timing noise, ~5× larger than the largest fee gap. **Every pairwise difference here is
+> inside noise, including the ones I called real.**
+>
+> What survives is stronger: **the fee gap is contractual, not measured.** Expense ratios are published terms; they need no
+> backtest and cannot be refuted by one. Buy the cheapest share class because the fee is a certain compounding cost — not
+> because six years of returns demonstrated anything.
 
 ---
 
