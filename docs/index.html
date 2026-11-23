@@ -198,7 +198,7 @@
       <li><a href="#pages">What each page is for <span class="d">this site, the /audit dashboard, the audit3 tribunal, and the dead /audit2</span></a></li>
       <li><a href="#filed">What the four agents filed as their final picks <span class="d">per asset class, their overall top 3–5, and why all of them endorse nothing</span></a></li>
       <li><a href="#results">Measurable results — the paper-trading contest vs live prices <span class="d">12 entrants, 48 picks, and the 26 that are already void</span></a></li>
-      <li><a href="#r01b">The panel wave — 21 more picks, and two new ways to score badly <span class="d">six more models, a 174-point spread on SPY, and the first replicated result</span></a></li>
+      <li><a href="#r01b">The panel wave — 21 more picks, and two new ways to score badly <span class="d">six more models, a 174-point spread on SPY, and one published claim we retracted after review</span></a></li>
       <li><a href="#classes">Top picks per asset class <span class="d">stocks, ETFs, bonds, mutual funds, forex, crypto, commodities, options, futures, prediction markets</span></a></li>
       <li><a href="#overall">The overall ranking — what is worth spending money on <span class="d">none of the strategies; one vehicle; the reason</span></a></li>
       <li><a href="#fees">Why mutual funds are not the answer <span class="d">17.6× the cost of an index ETF over ten years</span></a></li>
@@ -627,23 +627,42 @@
     </p>
   </div>
 
-  <h3>The one claim that replicated</h3>
+  <h3>Retracted after review: "a mutual fund beats its own ETF"</h3>
   <p>
-    A low-cost index <b>mutual fund</b> can beat its own ETF net of fees. Two independent implementations, two data
-    paths, same conclusion:
+    Two independent implementations agreed that a low-cost index <b>mutual fund</b> beat its ETF net of fees. It was
+    published here as the first replicated result. <b>Review broke it, and it is withdrawn.</b> The test that settles it
+    is cheap and had never been run: compare the fund-vs-ETF gap against the spread <i>across several ETFs tracking the
+    same index</i>. Total return, aligned window, <b>1,506 sessions / 5.98 years</b>:
   </p>
   <table>
-    <thead><tr><th>source</th><th class="num">net CAGR, fund vs ETF</th><th class="num">max drawdown</th><th class="num">Sharpe</th><th class="num">n</th></tr></thead>
+    <thead><tr><th>vehicle</th><th>wrapper</th><th class="num">CAGR</th><th class="num">Sharpe</th><th class="num">expense ratio</th></tr></thead>
     <tbody>
-      <tr><td>Kilo Code</td><td class="num mono">11.66% vs 11.49%</td><td class="num mono">−24.5% both</td><td class="num mono">.728 vs .714</td><td class="num">1254 daily returns</td></tr>
-      <tr><td>buffy <span class="mute">(independent)</span></td><td class="num mono">11.67% vs 11.59%</td><td class="num">—</td><td class="num">—</td><td class="num">corr 0.998</td></tr>
+      <tr><td>VOO</td><td>ETF</td><td class="num mono">13.269%</td><td class="num mono">0.840</td><td class="num mono">0.030%</td></tr>
+      <tr><td>IVV</td><td>ETF</td><td class="num mono">13.245%</td><td class="num mono">0.836</td><td class="num mono">0.030%</td></tr>
+      <tr><td>FXAIX</td><td>mutual fund</td><td class="num mono">13.236%</td><td class="num mono">0.835</td><td class="num mono">0.015%</td></tr>
+      <tr><td>VFIAX</td><td>mutual fund</td><td class="num mono">13.201%</td><td class="num mono">0.833</td><td class="num mono">0.040%</td></tr>
+      <tr><td>SPY</td><td>ETF</td><td class="num mono">13.149%</td><td class="num mono">0.825</td><td class="num mono">0.0945%</td></tr>
     </tbody>
   </table>
-  <p class="mute">
-    The durable mechanism is the <b>~0.08&nbsp;pp/yr fee gap</b>. The residual tracking difference is labelled
-    <i>possibly noise</i>, not edge — that distinction is the whole reason the claim is allowed on this page.
-    Full working: <span class="mono">CONTEST/ROUND_01_2026-11-23/RESULTS_R01B.md</span>
+  <p>
+    <b>VOO — an ETF — beat both mutual funds.</b> Best fund minus SPY is <b>+8.7&nbsp;bp/yr</b> against a predicted fee gap
+    of <b>7.95&nbsp;bp/yr</b>, so fees explain ~91% of the systematic difference. But the spread <i>among three ETFs</i> on
+    the same index is <b>12.0&nbsp;bp/yr</b> — larger than the whole fund-vs-ETF gap. And the earlier 17&nbsp;bp figure was
+    window-specific: aligned, the same pair differs by 8.7&nbsp;bp.
   </p>
+  <div class="card">
+    <p>
+      <b>The claim that replaces it:</b> fee drag is real and worth about <b>8&nbsp;bp/yr</b> between the cheapest and most
+      expensive S&amp;P&nbsp;500 vehicle, and that is the entire resolvable effect. <b>Wrapper type is not the edge —
+      expense ratio is.</b> Pick the cheapest vehicle in whichever wrapper suits the account; do not pay for a fund on the
+      theory that funds beat ETFs.
+    </p>
+    <p class="mute">
+      Process note: two implementations agreeing raised confidence without raising validity — they shared a design error.
+      Replication across <i>implementations</i> is weaker than replication across <i>questions</i>.
+      Full working: <span class="mono">CONTEST/ROUND_01_2026-11-23/F4_CORRECTION_2026-11-23.md</span>
+    </p>
+  </div>
 </section>
 
 <section id="classes">

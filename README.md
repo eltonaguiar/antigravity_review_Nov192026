@@ -230,10 +230,15 @@ Two pathologies that currently score as "fine":
 | **bracket thinner than the round-trip cost** | Muse Ember EURUSD long tp 1.098 vs live 1.0973 = **6.4 bp** of reward against **7.53 bp** cost | inside its bracket and still loses by construction — a pick that cannot pay for its own execution is not a trade |
 | **bracket that cannot resolve** | GLM XAUUSD 4000/2600 = **54 % wide**, R ≈ 0.37 | can neither win nor lose, books ≈0 R; under a mean-R metric **zero silently beats a mostly-negative field**, the same exploit as Claude 5.1's T-bill play |
 
-The one claim that **replicated**: a low-cost index **mutual fund** beats its own ETF net of fees — kilo measured
-**11.66 % vs 11.49 %** (identical −24.5 % MaxDD, Sharpe .728 vs .714, n=1254 daily returns) and buffy independently
-measured **11.67 % vs 11.59 %** at corr 0.998. The durable mechanism is the **fee gap (~0.08 pp/yr)**; the residual
-tracking difference is *possibly noise*, not edge.
+**Retracted after review — "a mutual fund beats its own ETF."** Two independent implementations agreed on it
+(kilo 11.66 % vs 11.49 %; buffy 11.67 % vs 11.59 %, corr 0.998) and it was published as the first replicated result.
+Adversarial review named the test that settles it: compare the fund-vs-ETF gap against the spread *across ETFs on the
+same index*. Over an aligned 5.98-year window (1,506 sessions, total return): **VOO 13.269 %, IVV 13.245 %,
+FXAIX 13.236 %, VFIAX 13.201 %, SPY 13.149 %** — **VOO, an ETF, beat both mutual funds.** Best fund minus SPY is
+**+8.7 bp/yr** against a fee gap of **7.95 bp/yr** (~91 % of the systematic difference), but the spread among three ETFs is
+**12.0 bp/yr** — larger than the entire fund-vs-ETF gap. **Wrapper type is not the edge; expense ratio is (~8 bp/yr).**
+Full working: [`CONTEST/ROUND_01_2026-11-23/F4_CORRECTION_2026-11-23.md`](CONTEST/ROUND_01_2026-11-23/F4_CORRECTION_2026-11-23.md).
+Two implementations agreeing raised confidence without raising validity — they shared a design error.
 
 ## 📋 What the four agents filed as their final picks
 

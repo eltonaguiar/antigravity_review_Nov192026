@@ -73,18 +73,25 @@ mostly negative** — the identical exploit as Claude 5.1 Fable's T-bill play. T
 strategy, and R02 must close it by requiring the bracket to be reachable **and** to exceed round-trip cost by
 a stated multiple.
 
-## The one result that replicated
+## The result that replicated — and then failed review
 
-A low-cost index **mutual fund** can beat its own ETF net of fees:
+**RETRACTED.** Two independent implementations agreed that a low-cost index **mutual fund** beat its ETF net of fees
+(11.66% vs 11.49%; independently 11.67% vs 11.59% at corr 0.998), and it was published here as the first replicated
+result. Adversarial review named the settling test — compare the fund-vs-ETF gap against the spread **across ETFs on the
+same index** — and that test falsified the claim. Aligned window, 1,506 sessions, total return:
 
-| source | fund vs ETF, net CAGR | MaxDD | Sharpe | n |
+| vehicle | wrapper | CAGR | Sharpe | expense ratio |
 |---|---|---|---|---|
-| kilo | **11.66% vs 11.49%** | identical −24.5% | .728 vs .714 | 1254 daily returns |
-| buffy (independent) | **11.67% vs 11.59%** (corr 0.998) | — | — | — |
+| VOO | ETF | **13.269%** | 0.840 | 0.030% |
+| IVV | ETF | 13.245% | 0.836 | 0.030% |
+| FXAIX | mutual fund | 13.236% | 0.835 | 0.015% |
+| VFIAX | mutual fund | 13.201% | 0.833 | 0.040% |
+| SPY | ETF | 13.149% | 0.825 | 0.0945% |
 
-Two implementations, two data paths, same conclusion. The durable mechanism is the **fee gap (~0.08pp/yr)**;
-the residual tracking difference should be labelled *possibly noise*, not edge. First claim in this programme
-to survive independent replication.
+**An ETF beat both mutual funds.** Best fund minus SPY is **+8.7 bp/yr** against a predicted fee gap of **7.95 bp/yr**
+(~91% of the systematic difference), but the spread among three ETFs is **12.0 bp/yr** — larger than the entire
+fund-vs-ETF gap. What survives: **fee drag is real and worth ~8 bp/yr; wrapper type is not the edge, expense ratio is.**
+Full working: `F4_CORRECTION_2026-11-23.md`.
 
 ## Filed artefacts
 
