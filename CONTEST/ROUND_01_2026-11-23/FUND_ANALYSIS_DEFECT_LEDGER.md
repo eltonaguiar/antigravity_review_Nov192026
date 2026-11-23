@@ -132,7 +132,40 @@ fix becomes self-enforcing once that exists.
 7. **Paired tracking t-stats, not CAGR rankings.** Regress fund-minus-benchmark returns and test the intercept; a difference
    series on an identical portfolio has a tiny standard error, whereas cross-index differences vanish into noise.
 
-*Paper only. No live orders, no credentials. Educational analysis, not individualized advice.*
+## 13th reviewer — arena.ai agent mode: the first to audit the *messaging*, and the best-behaved opening
+
+Audited the claim (tally now **9 audited / 4 amplified**). Two things make it distinctive.
+
+**1. It opened by declaring its own limits**, which no other reviewer did:
+
+> "Your workspace here is empty — I don't have the actual agent repo or the COMS skill file, only the transcript you pasted.
+> … I'll review what's visible in that transcript, flag where I can't verify…"
+
+Across thirteen reviewers that is the single best-behaved opening. It made its own blind spots auditable instead of filling
+them with confidence — the exact opposite of the amplifier pattern.
+
+**2. It reviewed the COMS messaging, which is what the task was actually titled.** It found leaked internal narration
+("Let me do it…"), UI and cost noise (`$1.19`, `59%`, `Auto-approved … matched bash rule *`), overconfident claims
+("REAL, measured", "beat") carrying no confidence interval or period caveat, and raw tool output in place of a structured
+summary. Its proposed template is adopted in full: `COMS_MESSAGE_TEMPLATE.md`.
+
+### It also exposed an inconsistency between the reviewers' own statistics
+
+Three figures for "the standard error of that Sharpe difference" were offered today, and they differ by an order of
+magnitude — **0.03, 0.05–0.07, and 0.5**. They are not competing estimates of one thing; they are estimates of **three
+different quantities**:
+
+| estimand | formula | value here |
+|---|---|---|
+| SE of a single **annualised Sharpe level**, T years | √((1 + SR²/2)/T) | ≈ **0.50** over 5 years |
+| SE treating **daily observations as independent** | √((1 + SR²/2)/n_days) | ≈ 0.03 |
+| SE of the **paired difference** between two ~0.998-correlated series | bootstrap | **measured half-width 0.015–0.03** |
+
+Only the third answers "is A better than B", and it is tight precisely because the two series move together. So the correct
+statement is not "SE ≈ 0.5, therefore noise" — it is **"the difference is bounded inside ±0.03 Sharpe, therefore they are the
+same instrument with different fees."** The reviews that quoted 0.5 were answering a question nobody asked.
+
+*Paper only. No live orders, no credentials. Not investment advice.*
 
 ## Reviewers who were themselves wrong — because a reviewer's corrections need auditing too
 
