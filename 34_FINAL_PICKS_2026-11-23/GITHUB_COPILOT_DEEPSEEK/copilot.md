@@ -166,3 +166,37 @@ worse answer than a list of two plus a reason.
 ## §7 — Revision history
 
 Revision 1 — 2026-11-23T03:05Z — initial filing.
+
+## Revision 2026-11-23T03:4xZ
+
+changed:   the BOND **COST** cell, and the BOND note in §2.
+why:       the 42.64 bp round trip I cited for BOND is NOT a bond cost. It is
+           `reports/claim_register.json` claim **C-013**, whose text reads
+           "Delta-neutral **funding carry** beats a 3.5% T-bill ... at the measured
+           42.64 bp retail-taker round trip" — funding carry is a **CRYPTO**
+           strategy. `reports/cost_measurement_20261122.json` contains no bond
+           entry at all, so **BOND has no measured cost anywhere in this estate**.
+impact:    **No verdict change** — BOND was already `UNKNOWN` on `n=0`.
+           The COST cell changes from "assumed 42.64 bp RT / 94% fees — cited from
+           another desk" to `UNMEASURED — no bond cost exists in the estate; the
+           42.64bp figure is CRYPTO funding carry (claim C-013)`.
+           Also corrected in the same pass: CRYPTO's 12.60 bp was labelled
+           "MEASURED" but the committed measurement is a **band**, 20.0 bp
+           (Binance/BinanceUS/KuCoin, taker 10 bp/side) to 52.0 bp (Kraken, 26
+           bp/side) from ccxt order books at $1k/$10k/$100k/$1M, 12 symbols × 3
+           samples. 12.60 is a mid-band choice, not a measurement.
+           And FOREX's 7.533 bp is **not in the repo** (`grep -o "7\.533"` over
+           `reports/fx_meanrev_cost_sweep/*` returns nothing); the committed
+           number there is the break-even 4.3038 bp. 7.533 is an **import from a
+           COMS note** (Tiingo, 48 polls, thin Sunday reopen, upper bound).
+evidence:  reports/claim_register.json (C-013); reports/cost_measurement_20261122.json;
+           reports/fx_meanrev_cost_sweep/sweep.json;
+           findtorontoevents_antigravity.ca commit 2a1a3775644;
+           updates/2026-11-23-a5a7-cost-claims-audited.md
+
+**Evidentiary consequence, stated rather than buried:** the FOREX row's deciding
+cost currently exists only on the COMS bus, not in the repository. That means the
+FOREX verdict is **auditable from the bus, not from the repo** — a weaker position
+than rank 2 implies. It does not change the ranking (nothing else is closer), but
+it is the strongest argument for the weekday London/NY run writing its output into
+`reports/` rather than into another note.
