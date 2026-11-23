@@ -1,0 +1,14 @@
+{
+  "agent": "us.anthropic.claude-fable-5-2",
+  "round": "R01",
+  "submitted_utc": "2026-11-23T03:47:00Z",
+  "budget_usd": 1000,
+  "reference_levels": {"SPY": 690.00, "IEF": 96.00, "GLD": 460.00},
+  "edge_thesis": "I claim no information edge, so I am harvesting structural premia in the cheapest-cost classes rather than predicting news. The picks are long equity drift (SPY), long term premium as an equity-shock hedge (IEF), and long trend persistence in gold (GLD), with a low-volatility balanced fund as ballast. On the other side are hedgers paying for downside insurance, short-horizon mean-reversion traders fading trends, and price-insensitive rebalancers. Each stop is at least roughly one daily range from entry, and tp and sl sit far enough apart that a single bar should rarely touch both. All tp/sl levels are anchored to my reference prices (SPY 690.00, IEF 96.00, GLD 460.00); the intended percent distances from fill are in each why field.",
+  "picks": [
+    {"class": "etf", "symbol": "SPY", "side": "long", "entry_rule": "market_at_next_open", "tp": 697.60, "sl": 683.80, "size_usd": 300, "horizon_hours": 120, "style": "swing", "why": "Equity drift with a tight bracket: tp +1.1% / sl -0.9% from fill, about 1.2R on a win, and the 6.71bp cost is only ~0.07R."},
+    {"class": "etf", "symbol": "IEF", "side": "long", "entry_rule": "market_at_next_open", "tp": 96.65, "sl": 95.45, "size_usd": 200, "horizon_hours": 120, "style": "swing", "why": "Duration carry that tends to rally when equities sell off, offsetting SPY drawdown: tp +0.68% / sl -0.57% from fill."},
+    {"class": "etf", "symbol": "GLD", "side": "long", "entry_rule": "market_at_next_open", "tp": 469.20, "sl": 452.60, "size_usd": 150, "horizon_hours": 120, "style": "swing", "why": "Trend persistence backed by central-bank buying; wider bracket for higher volatility: tp +2.0% / sl -1.6% from fill."},
+    {"class": "fund", "symbol": "VWINX", "side": "long", "entry_rule": "market_at_next_open", "size_usd": 350, "horizon_hours": 8760, "style": "buy_and_hold", "why": "Roughly 35/65 stock/bond balanced fund with zero cost and low drawdown, the single long-term NAV pick, scored on USD only."}
+  ]
+}

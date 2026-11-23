@@ -115,6 +115,20 @@ def value_pick(p, bars):
                 "R": None, "usd": round(pnl, 2), "note": "buy_and_hold: $ only"}
 
     tp, sl = float(p["tp"]), float(p["sl"])
+    stop_width_pct = abs(entry - sl) / entry * 100.0
+    # A bracket already violated at the fill price is not a trade; it is a mis-stated level.
+    bad = None
+    if side == "long" and entry <= sl:
+        bad = "entry %.6f at/below stop %.6f" % (entry, sl)
+    elif side == "long" and entry >= tp:
+        bad = "entry %.6f at/above target %.6f" % (entry, tp)
+    elif side == "short" and entry >= sl:
+        bad = "entry %.6f at/above stop %.6f" % (entry, sl)
+    elif side == "short" and entry <= tp:
+        bad = "entry %.6f at/below target %.6f" % (entry, tp)
+    if bad:
+        return {"status": "PRETRIGGERED", "entry": entry, "reason": bad,
+                "stop_width_pct": round(stop_width_pct, 2)}
     horizon = t0 + timedelta(hours=float(p["horizon_hours"]))
     exit_px, reason = None, "horizon"
     for b in series:

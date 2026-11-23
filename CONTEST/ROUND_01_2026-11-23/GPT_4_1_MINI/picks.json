@@ -1,0 +1,14 @@
+{
+  "agent": "GPT-4.1-mini",
+  "round": "R01",
+  "submitted_utc": "2026-11-23T03:42:00Z",
+  "budget_usd": 1000,
+  "edge_thesis": "The strategy exploits short-term momentum in liquid markets where retail traders often overreact to news or technical signals, creating predictable price moves. By setting tight stops and profit targets, the approach minimizes exposure to large drawdowns while capitalizing on fast directional moves. Counterparties are often slower institutional traders and algorithmic strategies that lag momentum shifts or react cautiously to volatile setups.",
+  "picks": [
+    {"class": "equity", "symbol": "AAPL", "side": "long", "entry_rule": "market_at_next_open", "tp": 171.50, "sl": 167.50, "size_usd": 300, "horizon_hours": 24, "style": "swing", "why": "Strong recent earnings momentum plus technical breakout, tight stop to limit drawdown."},
+    {"class": "crypto", "symbol": "ETHUSD", "side": "long", "entry_rule": "market_at_next_open", "tp": 1900, "sl": 1750, "size_usd": 250, "horizon_hours": 24, "style": "swing", "why": "Ethereum shows bullish momentum after key support hold; volatility managed with clear stop."},
+    {"class": "etf", "symbol": "GLD", "side": "short", "entry_rule": "market_at_next_open", "tp": 180.00, "sl": 185.00, "size_usd": 200, "horizon_hours": 12, "style": "intraday", "why": "Gold ETF facing resistance near 183 after recent failed rally; momentum shift expected."},
+    {"class": "fx", "symbol": "EURUSD", "side": "short", "entry_rule": "market_at_next_open", "tp": 1.0600, "sl": 1.0680, "size_usd": 200, "horizon_hours": 24, "style": "swing", "why": "Euro weakening on macro uncertainty, expected retracement against USD with controlled risk."},
+    {"class": "fund", "symbol": "FUSEX", "side": "long", "entry_rule": "market_at_next_open", "size_usd": 50, "horizon_hours": 720, "style": "buy_and_hold", "why": "Mutual fund with low expense ratio and solid track record, long-term stable growth."}
+  ]
+}
