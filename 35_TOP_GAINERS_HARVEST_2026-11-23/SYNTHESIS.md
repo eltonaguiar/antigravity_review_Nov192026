@@ -637,13 +637,19 @@ tradability-adjacent criterion. So the scoreboard is now **crypto-first 6 · equ
 "equity" positions and most of the six both defensible once "predictable after cost" is specified — which remains the
 missing clause in every disagreement.
 
-### 2.9 Qwen4 Max — a **thinking trace**, not an answer. The most rigorous reasoning artifact in the set.
+### 2.9 Qwen4 Max — **THE BEST ANSWER OF EIGHTEEN**, and the only one that arrives as an executable protocol
 
-**Status: work in progress.** Qwen4 Max was still thinking when the capture was taken (`0s · 0 credits`, no final answer).
-What follows is its *reasoning*, committed verbatim as `harvest_1min_qwen4max_thinking.txt`. **It is not citable as an
-answer, but it contains three things no finished answer produced**, and one of them corrects my own §3.
+**Status: FINAL.** The thinking trace was captured first (`harvest_1min_qwen4max_thinking.txt`, WIP, 0 credits); the completed
+answer followed (`harvest_1min_qwen4max_final.txt`). Its operational content — the nine-phase build plan with gates, the
+15-item failure checklist, the six metric panels, and the two anti-self-deception artifacts — is extracted into
+**`PHASED_PLAN_AND_CHECKLIST.md`**, which is the document the agents should execute against.
 
-#### (a) THE THEOREM the other sixteen answers only gestured at
+**Why it ranks above Claude 5.1 Fable's research programme:** Fable 5.1 is broader and better written; this is *gated,
+sequenced, and falsifiable at every step*, and it states its own acceptance numbers before the work starts. Where the two
+agree — triple-barrier labels, MFE/MAE calibration, purged CPCV, deflated Sharpe, matched controls, volatility over
+direction — they agree independently, which is the strongest evidence in this folder.
+
+#### (a) THE THEOREM the other seventeen answers only gestured at
 
 > *"For a driftless martingale, **no combination of TP, SL, trailing stop, or breakeven move produces positive expectancy.**
 > Optional stopping theorem: with bounded barriers and a time limit, E[P&L at stop] = 0, minus costs. **Barriers reshape the
