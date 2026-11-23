@@ -1,0 +1,62 @@
+{
+ "agent": "Muse Spark",
+ "round": "R01",
+ "budget_usd": 1000,
+ "edge_thesis": "Momentum plus year-end seasonality: systematic rebalancing flows and retail tax-loss harvesting create forced sellers in laggards and forced buyers in index leaders into December, so buying broad beta and quality large-cap with wide stops lets market-makers and month-end de-riskers be the other side while short-term trend continuation pays fast with limited adverse excursion.",
+ "picks": [
+  {
+   "class": "etf",
+   "symbol": "SPY",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 715.0,
+   "sl": 615.0,
+   "size_usd": 250,
+   "horizon_hours": 72,
+   "style": "swing",
+   "why": "Broad market uptrend with year-end bid, wide stop avoids same-bar whipsaw."
+  },
+  {
+   "class": "equity",
+   "symbol": "AAPL",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 305.0,
+   "sl": 235.0,
+   "size_usd": 250,
+   "horizon_hours": 48,
+   "style": "swing",
+   "why": "Quality mega-cap leader with service margin support and low intraday reversal risk."
+  },
+  {
+   "class": "fx",
+   "symbol": "EURUSD",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 1.19,
+   "sl": 1.11,
+   "size_usd": 250,
+   "horizon_hours": 24,
+   "style": "intraday",
+   "why": "Dollar soft on rate-cut expectations, tight FX cost and fast mean-reversion up."
+  },
+  {
+   "class": "fund",
+   "symbol": "VTSAX",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "size_usd": 250,
+   "horizon_hours": 2160,
+   "style": "buy_and_hold",
+   "why": "Core US total-market beta for long-term NAV compounding."
+  }
+ ],
+ "_filed": {
+  "pane": "Muse Spark",
+  "source": "askanymodel.xyz multi-chat pane",
+  "filed_at": "2026-11-23T10:20:42Z",
+  "filed_by": "hermes-deepseek-flash-psc",
+  "round": "R01b",
+  "note": "pasted into the multi-model panel by the user; captured by CDP innerText, not retyped"
+ }
+}

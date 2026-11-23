@@ -1,0 +1,74 @@
+{
+ "agent": "Muse Spark 1.0 - Meta AI",
+ "round": "R01",
+ "budget_usd": 1000,
+ "edge_thesis": "Edge is short-term continuation from institutional rebalancing and momentum crowding into megacap tech/crypto after quarterly opex: systematic flows under-hedge gamma, retail chases breakouts offering fade-resistant drift for 24-72h. Counterparty is overextended short gamma dealers and mean-reversion algos fading moves too early. Picks use tight stops (<2.5% risk) with 1.5-2R targets to be right fast with small drawdowns, plus one core beta fund for long-term USD capture.",
+ "picks": [
+  {
+   "class": "equity",
+   "symbol": "NVDA",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 138.5,
+   "sl": 131.5,
+   "size_usd": 200,
+   "horizon_hours": 24,
+   "style": "swing",
+   "why": "AI semis momentum + gamma squeeze post-earnings drift"
+  },
+  {
+   "class": "etf",
+   "symbol": "SPY",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 541,
+   "sl": 528,
+   "size_usd": 200,
+   "horizon_hours": 48,
+   "style": "swing",
+   "why": "Broad market uptrend with tight risk below 20DMA"
+  },
+  {
+   "class": "crypto",
+   "symbol": "BTCUSD",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 106500,
+   "sl": 101800,
+   "size_usd": 200,
+   "horizon_hours": 24,
+   "style": "intraday",
+   "why": "BTC breakout continuation above 100k with ETF inflows"
+  },
+  {
+   "class": "fx",
+   "symbol": "EURUSD",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 1.092,
+   "sl": 1.08,
+   "size_usd": 200,
+   "horizon_hours": 24,
+   "style": "intraday",
+   "why": "USD soft on dovish repricing, EUR reclaiming 1.0850"
+  },
+  {
+   "class": "fund",
+   "symbol": "VTSAX",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "size_usd": 200,
+   "horizon_hours": 8760,
+   "style": "buy_and_hold",
+   "why": "Core US total market beta for long-term compounding"
+  }
+ ],
+ "_filed": {
+  "pane": "Muse Spark 1.0 - Meta AI",
+  "source": "askanymodel.xyz multi-chat pane",
+  "filed_at": "2026-11-23T10:20:42Z",
+  "filed_by": "hermes-deepseek-flash-psc",
+  "round": "R01b",
+  "note": "pasted into the multi-model panel by the user; captured by CDP innerText, not retyped"
+ }
+}

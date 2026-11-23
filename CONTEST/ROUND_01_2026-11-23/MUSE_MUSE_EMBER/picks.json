@@ -1,0 +1,52 @@
+{
+ "agent": "Muse Ember",
+ "round": "R01",
+ "budget_usd": 1000,
+ "edge_thesis": "Fed easing expectations and crowded long-USD / short-duration positioning unwind faster than spot moves, so a soft-dollar basket (long EURUSD, short USDJPY, long intermediate Treasuries) should reach modest targets quickly; the other side is momentum and carry flows that overshoot on sticky US inflation repricing and must cover as rate-cut pricing firms.",
+ "picks": [
+  {
+   "class": "fx",
+   "symbol": "EURUSD",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 1.098,
+   "sl": 1.09,
+   "size_usd": 340,
+   "horizon_hours": 12,
+   "style": "intraday",
+   "why": "Range-top mean reversion to soft-dollar target with 0.73% defined risk"
+  },
+  {
+   "class": "fx",
+   "symbol": "USDJPY",
+   "side": "short",
+   "entry_rule": "market_at_next_open",
+   "tp": 149,
+   "sl": 151.5,
+   "size_usd": 330,
+   "horizon_hours": 24,
+   "style": "swing",
+   "why": "Same USD-soft thesis, JPY cover rally gives asymmetric 1R+ move"
+  },
+  {
+   "class": "etf",
+   "symbol": "IEF",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 96.4,
+   "sl": 95.5,
+   "size_usd": 330,
+   "horizon_hours": 24,
+   "style": "swing",
+   "why": "Duration benefits first if cut pricing firms, low ETF cost, tight bracket"
+  }
+ ],
+ "_filed": {
+  "pane": "Muse Ember",
+  "source": "askanymodel.xyz multi-chat pane",
+  "filed_at": "2026-11-23T10:20:42Z",
+  "filed_by": "hermes-deepseek-flash-psc",
+  "round": "R01b",
+  "note": "pasted into the multi-model panel by the user; captured by CDP innerText, not retyped"
+ }
+}

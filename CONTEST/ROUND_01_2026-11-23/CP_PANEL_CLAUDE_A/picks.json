@@ -1,0 +1,76 @@
+{
+ "agent": "Claude",
+ "round": "R01",
+ "budget_usd": 1000,
+ "edge_thesis": "Mechanism: with a next-open fill and same-bar double-touch rule, the tradable edge is not prediction but structure \u2014 take only trend-continuation exposure in assets with persistent institutional flows (US large-cap beta, gold's central-bank bid, BTC post-halving supply squeeze), bracket each with stops sized wider than one typical bar's range so a single bar can never touch both TP and SL, and let stop distance define risk so R stays \u22651.5 on every branch. The other side is the forced seller: deleveraging funds, options dealers hedging gamma, and weak-hand panic sellers who supply my entries on dips; on the flip side, late buyers chase my TPs. I avoid FX and single names where my fill-price uncertainty would break bracket geometry, and use one NAV-priced short-duration bond fund as a drawdown-free net-positive placeholder.",
+ "picks": [
+  {
+   "class": "etf",
+   "symbol": "SPY",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 655.0,
+   "sl": 549.0,
+   "size_usd": 200,
+   "horizon_hours": 336,
+   "style": "swing",
+   "why": "US large-cap uptrend continuation; stop sits ~7% below fill zone, outside one week of noise, TP +11% for ~1.8R."
+  },
+  {
+   "class": "commodity",
+   "symbol": "XAUUSD",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 4000.0,
+   "sl": 2600.0,
+   "size_usd": 250,
+   "horizon_hours": 336,
+   "style": "swing",
+   "why": "Strongest persistent macro trend (central-bank accumulation); trend drift does the work, stop is a disaster-line, not a noise line."
+  },
+  {
+   "class": "crypto",
+   "symbol": "BTCUSD",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 124000.0,
+   "sl": 86000.0,
+   "size_usd": 200,
+   "horizon_hours": 240,
+   "style": "swing",
+   "why": "Post-halving supply squeeze trend; 24/7 tape means fast TP resolution, and a 38k total bracket can never be spanned by one bar."
+  },
+  {
+   "class": "equity",
+   "symbol": "BRK.B",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 508.0,
+   "sl": 405.0,
+   "size_usd": 150,
+   "horizon_hours": 720,
+   "style": "swing",
+   "why": "Low-vol quality compounding as the book's ballast; high probability of net-positive close for tie-break with capped ~-1R tail."
+  },
+  {
+   "class": "fund",
+   "symbol": "VBIRX",
+   "side": "long",
+   "entry_rule": "market_at_next_open",
+   "tp": 0,
+   "sl": 0,
+   "size_usd": 100,
+   "horizon_hours": 336,
+   "style": "buy_and_hold",
+   "why": "NAV-priced short-duration bond fund: near-certain small positive accrual, zero drawdown contribution, pads net-positive count."
+  }
+ ],
+ "_filed": {
+  "pane": "GLM 5.3 Flash",
+  "source": "chatplayground.ai multi-model pane",
+  "filed_at": "2026-11-23T10:20:42Z",
+  "filed_by": "hermes-deepseek-flash-psc",
+  "round": "R01b",
+  "note": "pasted into the multi-model panel by the user; captured by CDP innerText, not retyped"
+ }
+}

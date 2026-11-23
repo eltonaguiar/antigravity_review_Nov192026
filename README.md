@@ -209,6 +209,32 @@ negative under both day-count conventions. The same carry in a money-market **fu
 
 ---
 
+## 📈 R01b — the multi-model panel wave (2026-11-23)
+
+Six more pick sets were pasted into a multi-model chat surface and **captured from the page by CDP** (read, not
+retyped), then scored against the same live prices. Full table: [`CONTEST/ROUND_01_2026-11-23/RESULTS_R01B.md`](CONTEST/ROUND_01_2026-11-23/RESULTS_R01B.md).
+
+> **21 new picks: 3 inside their own bracket, 15 void at the fill, 3 fund NAV.**
+> **Cumulative R01 + R01b: 69 picks, 18 inside, 41 void at fill, 10 fund NAV. 0 endorsed.**
+
+**The SPY anchor test, six more models.** Five sets quoted SPY targets between **541 and 715** in the same week
+with the market at **689.81** — a 174-point spread on the most liquid ETF in the world. Only **Muse Spark
+(715/615)** straddles reality. ChatGPT 615/594, claude-haiku 562/540, GLM-as-Claude 655/549 and Muse Spark 1.0
+541/528 are all **void before a bar prints**. This is a price-**recall** failure, not a forecasting failure, and it
+now reproduces across 18 entrants on two independent surfaces.
+
+Two pathologies that currently score as "fine":
+
+| pathology | example | why it is a defect, not a strategy |
+|---|---|---|
+| **bracket thinner than the round-trip cost** | Muse Ember EURUSD long tp 1.098 vs live 1.0973 = **6.4 bp** of reward against **7.53 bp** cost | inside its bracket and still loses by construction — a pick that cannot pay for its own execution is not a trade |
+| **bracket that cannot resolve** | GLM XAUUSD 4000/2600 = **54 % wide**, R ≈ 0.37 | can neither win nor lose, books ≈0 R; under a mean-R metric **zero silently beats a mostly-negative field**, the same exploit as Claude 5.1's T-bill play |
+
+The one claim that **replicated**: a low-cost index **mutual fund** beats its own ETF net of fees — kilo measured
+**11.66 % vs 11.49 %** (identical −24.5 % MaxDD, Sharpe .728 vs .714, n=1254 daily returns) and buffy independently
+measured **11.67 % vs 11.59 %** at corr 0.998. The durable mechanism is the **fee gap (~0.08 pp/yr)**; the residual
+tracking difference is *possibly noise*, not edge.
+
 ## 📋 What the four agents filed as their final picks
 
 Asked the same thing — rank the asset classes, then name an overall top 3–5 with reasons and a kill rule — **four
