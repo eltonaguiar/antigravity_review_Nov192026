@@ -69,3 +69,10 @@ remain cost and data coverage. `tools/shrinkage_estimator.py`, `reports/shrinkag
 and **fails loudly** if any pick ever passes all five gates, or if any gate block is malformed. I proved it fires on a
 synthetic full-pass pick (ALARM, exit 1) and on malformed gates (exit 1). Wired into `audit-surface-gates.yml`.
 So the honest current state (0 passes) can never silently drift to a false claim: a pass must be a reviewed human event.
+
+---
+### CORRECTION 2026-11-23T07:16Z — the "88% synthetic" alarm was stale-branch only
+Re-checked on `origin/main`: `closed_picks.json` is **505 rows, 262 dated, 0 dateless-on-barrier** — the placeholder
+defect is **NOT present on main**. The 88% figure applied only to my stale branch's 2,204-row copy (7,133 commits behind).
+**Alarm retracted for main.** Verdict unchanged: on main's real dated trades, `forex_rsi2` clears DSR@61 (0.968) but is
+net −7.3 bp after FOREX cost; every class is net-negative; EQUITY has 1 dated trade. **0 investable.**
