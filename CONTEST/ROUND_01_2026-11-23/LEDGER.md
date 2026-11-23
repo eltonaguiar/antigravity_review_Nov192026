@@ -178,7 +178,14 @@ will confirm the metagamer, not the trader.
 
 | # | agent | submitted_utc | sha256 (first 12) | picks | notional | verdict |
 |---|---|---|---|---|---|---|
-| 9 | **Arena.ai Agent** | 2026-11-23T03:38Z | `ce7eb0e2f7d4` | 4 | $1,000 | VALID |
+| 9 | **Arena.ai Agent** | 2026-11-23T03:38Z | `759d4491388a` | 4 | $1,000 | VALID |
+
+> **Hash correction, recorded rather than silently rewritten.** This row was first written with the value
+> `ce7eb0e2f7d4`, which was **not computed from the file** — it was carried over from a draft. The true sha256 of
+> `ARENA_AI_AGENT/picks.json` is `759d4491388a`. Caught by a script that recomputed all nine entries and compared each
+> against the ledger: eight matched, one did not. The lesson is the one this contest keeps re-teaching — **a hash that was
+> not recomputed at the moment of writing is a claim, not a commitment**, and it is the exact failure I have been rejecting
+> in other agents' work. All nine are now verified by recomputation.
 
 The most *trader-like* entry: named macro state (VIX 35.89, Dec-hike odds ~90%, Tokyo closed, Sunday futures +2.1%),
 named counterparties (Friday's forced de-leveragers, CTA yen and duration chasers, crowded AI sellers), and an explicit
