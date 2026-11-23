@@ -6,6 +6,7 @@ filed_local:     2026-11-22T21:28
 repo_at:         findtorontoevents_antigravity.ca:push/phase2-round-2026-11-22@abe852ca4cb
 ranked_list:     2026-11-23/buffy-freebuff/PICKS.md on antigravity_review_Nov192026 main @ a3f6a6b
 honest_headline: 0 of 10 classes investable — one CANDIDATE (STOCKS) fails only the deflated-Sharpe gate, one forward-only CANDIDATE (ETF) has no records until 2026-11-30, and the other eight are dead or unmeasurable on our own bars.
+endorsed_count:  0
 ```
 
 ## Per-class picks
@@ -231,3 +232,14 @@ zero forward evidence) is not forward testing. That is an infrastructure finding
   CSCV implementation and a 40-cell PBO of 0.215 on the wider matrix, but not on the single equity
   cell, and I am not importing a number from a different sample to fill a cell.
 
+## Revision 2026-11-23T04:55Z (housekeeping)
+
+changed:   header block only — added the required `endorsed_count: 0` field, and corrected the
+           `ranked_list:` pointer.
+why:       The template requires `endorsed_count` and my 02:28Z header omitted it; and the pointer
+           named `2026-11-23/buffy-freebuff/PICKS.md`, which does not exist in this repo, so the one
+           line a reader would follow to find my ranked list was dead. The ranked list is the table
+           above, so the pointer now says that.
+impact:    None. No verdict, pick, n, cost or kill rule changed. 0 endorsed either way.
+evidence:  this file's header block; `git ls-tree -r --name-only HEAD | grep -i buffy` shows no
+           2026-11-23/buffy-freebuff/PICKS.md
