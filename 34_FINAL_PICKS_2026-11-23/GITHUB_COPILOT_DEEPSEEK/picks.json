@@ -1,0 +1,127 @@
+{
+  "agent": "GITHUB COPILOT_DEEPSEEK",
+  "agent_slug": "github-copilot-deepseek",
+  "filed_utc": "2026-11-23T03:05Z",
+  "canonical_md": "34_FINAL_PICKS_2026-11-23/GITHUB_COPILOT_DEEPSEEK/copilot.md",
+  "repo_at": "eltonaguiar/findtorontoevents_antigravity.ca : push/phase2-round-2026-11-22 @ 9ce382ebb5b (LOCAL ONLY, not on main)",
+  "ticket_usd": 25000,
+  "ranking_criterion": "distance-to-investable, then risk-adjusted net return on committed capital ranked on the 95% LOWER BOUND (not the point estimate). Tie-breaks named in advance: margin over the 2x measured cost gate, turnover at measured cost, deflated Sharpe at honest N.",
+  "honest_headline": "0 of 10 classes are investable as an EDGE. 1 actionable VEHICLE (broad-market index ETF buy-and-hold), 1 unresolved (FOREX, sign undetermined at -0.68bp), 8 DEAD/UNKNOWN/REJECT.",
+  "trial_count_used_for_dsr": {
+    "value": 90,
+    "settled": false,
+    "in_circulation": [120, 154, 122, 362, 658, 25],
+    "note": "disputed. Per README 5.3 the fallback convention is N unknown -> deflated at N=1000, and NOTHING below survives at N=1000 either, so verdicts are robust to the choice.",
+    "evidence": "reports/TRIAL_N_RECONCILIATION_2026-11-23.md"
+  },
+  "pbo_noise_baseline": 0.51,
+  "per_class": {
+    "ETF": {
+      "verdict": "CANDIDATE",
+      "pick": "none (vehicle only: broad-market index ETF, buy-and-hold, no TP/SL)",
+      "n": 20,
+      "n_unit": "ETFs x 5y monthly",
+      "edge": "-0.40 bp/cycle net on breakout (4.70 gross - 5.10 cost); buy-and-hold pays 6.7122 bp/yr once",
+      "dsr": 0.3191, "dsr_at_N": 90, "dsr_at_N15": 0.9543,
+      "pbo": 0.443, "pbo_vs_baseline": "BETTER than 0.51 noise",
+      "cost": {"value_bp": 6.7122, "basis": "measured", "source": "JUSTIFICATION_RULES C, 1-min upper bound"},
+      "exec": "BUY AND HOLD", "turnover_drag_bp_per_yr": 0.99,
+      "kill_rule": "net <= 4.32%/yr on committed capital OR beta-adjusted alpha CI contains 0",
+      "evidence": ["reports/cost_of_record_2026-11-23.json", "tools/etf_trend_forward_clock.py", "cd44a8cab33"]
+    },
+    "FOREX": {
+      "verdict": "CANDIDATE",
+      "pick": "none - watch only, no position",
+      "n": 48, "n_unit": "top-of-book polls, 6 USD majors",
+      "edge": "-0.68 bp/trade at 4.98bp cost of record; -3.23 bp at 7.533bp house band",
+      "dsr": 0.0085, "dsr_at_N": 90,
+      "pbo": 0.729, "pbo_vs_baseline": "WORSE than 0.51 noise",
+      "cost": {"value_bp": 7.533, "basis": "measured but UPPER BOUND (thin Sunday reopen)", "alt_bp": 4.98, "alt_basis": "my cost-of-record floor"},
+      "exec": "ENTRY + TP/SL", "turnover_drag_bp_per_yr": 56.93,
+      "kill_rule": "weekday London/NY RT >= 4.3038 bp -> DEAD permanently; below -> re-open with new prereg",
+      "evidence": ["reports/fx_meanrev_cost_sweep/sweep.json", "reports/cost_of_record_2026-11-23.json", "0d7b1481966"]
+    },
+    "STOCKS": {
+      "verdict": "DEAD",
+      "pick": "none",
+      "n": 191, "n_unit": "names for cost; 186 names / 44 monthly rebalances for HML",
+      "edge": "breakout PF 0.9917 @25bp/side; HML gross +0.11%, net +0.02%, SE 6.65%, 95%UB +10.96% vs 4.32% hurdle",
+      "dsr": 0.1139, "dsr_at_N": 90,
+      "pbo": 0.600, "pbo_vs_baseline": "WORSE than 0.51 noise",
+      "cost": {"value_bp": 4.98, "basis": "measured, LOWER bound (spread only, commission=0 by construction)", "house_bp": 12.0749, "disagreement": "floor vs ceiling, not two estimates of the same quantity"},
+      "exec": "ENTRY + TP/SL", "turnover_drag_bp_per_yr": 2.98,
+      "kill_rule": "HML net<=4.32% or 95%UB<=4.32% -> KILL (fired). breakout PF CI-LB<=1.0 -> KILL (fired).",
+      "evidence": ["docs/preregistration/HML_VALUE_TEST_2026-11-22.md", "0b63ddb4b49"]
+    },
+    "CRYPTO": {
+      "verdict": "DEAD",
+      "pick": "none",
+      "n": 4235, "n_unit": "funding-carry intervals over 218 days (5 symbols)",
+      "edge": "carry net 3.07% (gross 3.57% - 0.50% cost) vs 4.32% hurdle",
+      "dsr": 0.0423, "dsr_at_N": 90,
+      "pbo": 0.771, "pbo_vs_baseline": "WORSE than 0.51 noise",
+      "cost": {"value_bp": 12.60, "band_bp": [20, 52], "basis": "measured band (house)"},
+      "exec": "BUY AND HOLD would be 10.46 bp/yr but vol 68.5% / MDD -87.8%",
+      "kill_rule": "net <= 4.32% on committed capital -> KILL (fired). Ledger integrity: 1,864 duplicate signal-ts groups.",
+      "evidence": ["reports/funding_carry_opportunity_frequency_20261122.json", "0481cf081bc"]
+    },
+    "BONDS": {
+      "verdict": "UNKNOWN",
+      "pick": "none",
+      "n": 0,
+      "edge": "UNMEASURED",
+      "dsr": 0.0006, "dsr_at_N": 90,
+      "pbo": 0.614, "pbo_vs_baseline": "WORSE than 0.51 noise",
+      "cost": {"value_bp": 42.64, "basis": "ASSUMED - cited from another desk, NOT reproduced by me"},
+      "exec": "BUY AND HOLD",
+      "kill_rule": "cannot state a kill rule without my own break-even measurement",
+      "evidence": []
+    },
+    "COMMODITY": {
+      "verdict": "DEAD",
+      "pick": "none",
+      "n": 40, "n_unit": "observations (selection alpha)",
+      "edge": "PF 0.757 at ZERO cost - fails with cost set to zero",
+      "dsr": 0.2423, "dsr_at_N": 90,
+      "pbo": 0.586, "pbo_vs_baseline": "WORSE than 0.51 noise",
+      "cost": {"value_bp": 10.0, "basis": "ASSUMED per side (house, explicitly not measured at size)"},
+      "exec": "n/a",
+      "kill_rule": "cost-independent failure already fired",
+      "evidence": ["reports/programme_scoreboard_20261122.json"]
+    },
+    "MUTUAL_FUND": {
+      "verdict": "DEAD",
+      "pick": "none",
+      "n": 0, "n_unit": "no strategy; fee arithmetic only",
+      "edge": "active MF 18,520 USD vs index ETF 1,050 USD per 100k/10yr = 17.6x; index MF 4,520 USD",
+      "dsr": null, "dsr_at_N": null,
+      "pbo": null,
+      "cost": {"basis": "measured (published expense ratios, not spread)"},
+      "exec": "BUY AND HOLD only, index variant only",
+      "kill_rule": "any load or expense ratio > ~10 bp/yr -> REJECT",
+      "evidence": ["updates/2026-11-23-cost-of-record-reconciled.md"]
+    },
+    "OPTIONS": {"verdict": "UNKNOWN", "pick": "none", "n": 0, "edge": "UNMEASURED", "dsr": null, "pbo": null, "cost": {"basis": "UNMEASURED"}, "exec": "n/a", "kill_rule": "no cost -> no kill rule possible", "evidence": []},
+    "PREDICTION_MARKET": {"verdict": "UNKNOWN", "pick": "none", "n": 0, "edge": "UNMEASURED", "dsr": null, "pbo": null, "cost": {"basis": "UNMEASURED"}, "exec": "n/a", "kill_rule": "no cost -> no kill rule possible", "evidence": []},
+    "PRIVATE_CREDIT": {"verdict": "UNKNOWN", "pick": "none", "n": 0, "edge": "UNMEASURED - no data exists in the estate", "dsr": null, "pbo": null, "cost": {"basis": "UNMEASURED"}, "exec": "n/a", "kill_rule": "n/a", "evidence": []}
+  },
+  "top_picks": [
+    {"rank": 1, "pick": "Broad-market index ETF, buy and hold (no TP/SL)", "action": "TAKE - as a VEHICLE, not an edge", "why": "lowest measured cost 6.7122bp, lowest turnover drag 0.99bp/yr, only PBO below the 0.51 noise baseline (0.443). Beta by construction; fails G3 as a signal, passes only as a fee decision."},
+    {"rank": 2, "pick": "FOREX mean-reversion, USD majors", "action": "HOLD FOR EVIDENCE - no position", "why": "only class whose sign is undetermined: -0.68bp at my floor vs -3.23bp at the house band. One weekday London/NY spread run decides it."},
+    {"rank": 3, "pick": "nothing in STOCKS / CRYPTO / BONDS / COMMODITY / OPTIONS / PREDICTION_MARKET / MUTUAL_FUND / PRIVATE_CREDIT", "action": "REJECT", "why": "each has a numeric killer; two are killed at ZERO cost (COMMODITY PF 0.757; CRYPTO carry 3.07% < 4.32%), which no cost assumption can rescue."}
+  ],
+  "no_4th_or_5th_pick_reason": "JUSTIFICATION_RULES D: 'a pick that cannot be vetted is not ranked lower - it is not ranked'. Padding to five would violate the folder's own rule.",
+  "harnesses": {
+    "tools/equity_cost_hml.py": "EQUITY round trip, 191 names, 238,810 daily + 356,271 1-min bars -> CS median 0.77bp (65/191 usable), Roll 4.77bp (148/191)",
+    "tools/hml_pit_backtest.py": "value HML, 186 usable names, 44 monthly rebalances -> gross +0.11%, net +0.02%, 95%UB +10.96% vs 4.32% => KILL",
+    "tools/edgar_pit_fundamentals.py + tools/pit_lookahead_audit.py": "PIT safety, 480 tickers / 32,049 periods / 30,332 usable -> median lag 35d, 0 exclusion + 0 visibility violations",
+    "tools/cross_class_momentum_backtest.py": "per-class momentum, identical entry criteria, 15-config grid, IS 70%",
+    "tools/quant_metrics_dsr_pbo.py": "DSR at N=15 and N=90; CSCV 8 blocks all 70 splits -> ETF 0.9543@N15 -> 0.3191@N90; 0 of 6 survive",
+    "tools/paired_bootstrap_vs_benchmark.py": "alpha beyond beta, 13 tests; found a 1.5x index fund passes a raw paired-difference hurdle => Jensen alpha + zero-variance guard",
+    "tools/cost_of_record.py": "cost reconciliation, 5 costs 4.98 -> 50.00bp = 10.04x; no class flips",
+    "tools/trial_debt_audit.py": "trial denominator, 166 rows / 154 distinct / 7 registry copies holding 99-120",
+    "tools/etf_trend_forward_clock.py": "forward-only clock frozen from 2026-11-23, n_records 0 - a clock, not a claim"
+  },
+  "not_tested": ["live fills", "broker statements", "capacity coefficient k", "options data", "prediction-market data", "private-credit data"],
+  "revision": 1
+}
