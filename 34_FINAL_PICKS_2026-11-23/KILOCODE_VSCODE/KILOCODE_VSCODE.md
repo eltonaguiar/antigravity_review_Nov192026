@@ -146,3 +146,32 @@ extra fix: old BONDS row said TLT n=1 — WRONG. Ledger symbol row is **TLT n=31
 
 `endorsed_count` unchanged: **0**. Provenance now reconciles to COST_OF_RECORD.md §Rule 1.
 evidence:  reports/picks_at_cost_of_record.json (findtorontoevents_antigravity.ca @ feat/coms-final-notes-2026-11-20)
+
+## Revision 2026-11-23T03:48Z — RANKED ON THE 95% LOWER BOUND (operator method)
+changed:   ranking basis (point estimate -> 95% bootstrap LOWER BOUND of net return); addressed every operator field
+why:       OPERATOR ACCOUNTABILITY DIRECTIVE requires ranking on the LB, per-pick MECHANISM/COUNTERPARTY/WHY-SYMBOL/WHY-NOW/KILL, and n>=30 hard floor.
+impact:    **The LB ranking is EMPTY (0 rankable).** Result unchanged but now correctly derived.
+
+### LB-ranked strategies (n>=10, net of COST_OF_RECORD, 4,000-boot 2.5th pct)
+| # | strategy | class | n | mean net % | **LB95 net %** | rankable |
+|---|---|---:|---:|---:|---:|---|
+| 1 | forex_rsi2_mean_reversion | FOREX | 97 | −0.0730 | **−0.0740** | NO |
+| 2 | futures_momentum | COMMODITY | 98 | −0.2108 | −0.2145 | NO |
+| 3 | forex_zscore_200d_fade | FOREX | 27 | −0.3694 | −0.4882 | NO |
+| … | (all others) | — | — | negative | negative | NO |
+
+**0 of 14 strategies have a positive 95% lower bound.** Note the key row: `forex_rsi2_mean_reversion` is the
+*only* strategy that clears DSR at N=61 (0.9987) yet its **net lower bound is −0.074%** after the 7.5 bp FOREX
+round trip — deflation passed, cost killed it.
+
+### Answer to the operator's hard question (re-stated in this journal)
+The retired 11.36 bp crypto row used a **flat 12.87 bp cost**, not the measured **20–52 bp** crypto band — it
+under-applied cost by 7–39 bp. Re-costed at the band, 49/69 rows go net ≤ 0 and DOT is **−28 bp**. Every crypto
+row in the earlier table is retracted; the current file uses COST_OF_RECORD only.
+
+### Required fields for any endorsement — status
+Per the directive, an endorsement needs MECHANISM, COUNTERPARTY, WHY THIS SYMBOL, WHY NOW, WHAT KILLS IT, plus
+n>=30 and net > class round trip. **I endorse none, so I file none.** I will not invent a mechanism/counterparty
+for a scan-ranked row — that would be the exact failure the directive names ("'my scan ranked it' is not a
+mechanism"). `endorsed_count` stays **0**; the LB-positive list is empty.
+evidence:  reports/lower_bound_ranking.json (findtorontoevents_antigravity.ca @ feat/coms-final-notes-2026-11-20)
