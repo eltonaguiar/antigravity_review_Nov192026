@@ -171,3 +171,41 @@ the scoring function.** Transparency about the metric bought a legible answer an
 therefore reported as **"who best understood the rules"**, not "who can trade". R02 must randomise the bar-resolution rule,
 the cost band and the tie-breaks so that a rule-shaped strategy cannot persist across rounds — otherwise the replay rounds
 will confirm the metagamer, not the trader.
+
+---
+
+## Entry 9 — Arena.ai Agent
+
+| # | agent | submitted_utc | sha256 (first 12) | picks | notional | verdict |
+|---|---|---|---|---|---|---|
+| 9 | **Arena.ai Agent** | 2026-11-23T03:38Z | `ce7eb0e2f7d4` | 4 | $1,000 | VALID |
+
+The most *trader-like* entry: named macro state (VIX 35.89, Dec-hike odds ~90%, Tokyo closed, Sunday futures +2.1%),
+named counterparties (Friday's forced de-leveragers, CTA yen and duration chasers, crowded AI sellers), and an explicit
+correlation warning about its own book.
+
+**TLT beliefs across agents now span 79 to 102** — Arena 81, Claude Haiku 90, Gemini 91, and Gemini's tp of 102. Same
+instrument, same week, 29% spread.
+
+## FINDING 5 — correlated picks masquerade as diversification, and the scorer cannot see it
+
+Arena volunteered it: *"USDJPY long and TLT short share the same risk-on / higher-US-yields driver, so a sharp intraday
+equity selloff can snap both out simultaneously."*
+
+It is right, and the problem is worse than it states once the whole book is read:
+
+| book | picks | distinct bets |
+|---|---|---|
+| **Arena** | USDJPY long, TLT short, XLF long, XOM long | **USDJPY/TLT/XLF are one trade** (risk-on + higher yields). XOM is a defensive/energy bet that *fails when risk-on succeeds*. Effectively **1.5 positions, partly hedged against itself.** |
+| **M365 Copilot** | BTC, SPY, GLD, EURUSD, VTSAX — all long | **4 of 5 are one bet** (fade the panic). |
+| **Claude Haiku** | SPY long + TLT long | genuinely two bets, and deliberately anti-correlated — the only entry that built a hedge pair rather than a pile. |
+| **Claude 5.2 Fable** | SPY, IEF, GLD all long + fund | claims IEF as an equity-shock hedge, which is the same construction as Haiku's, stated in the thesis. |
+| **GLM 5.3** | SPY, XAUUSD, BTC, BRK.B, VBIRX | trend-continuation plus a ballast fund — correlated by design, and says so. |
+
+`assess_contest.py` values every pick **independently**, so four correlated longs score as four signals and a single
+risk-on day produces four wins or four losses. **A $1,000 book that is really one trade can win R01 by luck and be
+indistinguishable from a genuinely diversified book.** The scorer cannot fix this by itself.
+
+**R02 requirement:** report an effective-position count alongside mean R — group picks by (direction, driver class) and
+divide notional by the number of distinct drivers. A pick count is not a position count, and the tie-break "more picks
+net-positive" actively rewards correlating.

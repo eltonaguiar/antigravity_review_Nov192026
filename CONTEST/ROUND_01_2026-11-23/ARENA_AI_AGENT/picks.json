@@ -1,0 +1,58 @@
+{
+  "agent": "Arena.ai Agent",
+  "round": "R01",
+  "submitted_utc": "2026-11-23T03:38:00Z",
+  "budget_usd": 1000,
+  "edge_thesis": "Friday AI-led equity rout pushed VIX to 35.89 and drove panic safe-haven flows into Treasuries and the yen, even as December Fed hike odds sit near 90% and Middle East shipping risks simmer. Sunday evening US equity futures (+2.1% S&P, +2.75% Nasdaq) and falling 10-year Treasury futures (+4bps yield) signal an unwinding of that panic safety bid into a thin Thanksgiving week with Tokyo closed Monday. On the other side are Friday forced de-leveragers, CTA/momentum yen and duration chasers who bought Treasuries at 5% yields into an impending Fed hike, and crowded tech/AI sellers rotating into lower-beta financials and cash-generative energy.",
+  "picks": [
+    {
+      "class": "fx",
+      "symbol": "USDJPY",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 160.35,
+      "sl": 158.15,
+      "size_usd": 300,
+      "horizon_hours": 48,
+      "style": "swing",
+      "why": "Haven yen bid unwinds as US futures rebound, 10Y yields tick up, Tokyo closed for Labor Thanksgiving, and 275bp US-Japan carry favors USD."
+    },
+    {
+      "class": "etf",
+      "symbol": "TLT",
+      "side": "short",
+      "entry_rule": "market_at_next_open",
+      "tp": 79.15,
+      "sl": 81.9,
+      "size_usd": 250,
+      "horizon_hours": 48,
+      "style": "swing",
+      "why": "Friday +1.37% equity-panic flight-to-safety pop reverses as Treasury futures drop Sunday night ahead of Wednesday PCE and 90%-priced Dec hike."
+    },
+    {
+      "class": "etf",
+      "symbol": "XLF",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 57.3,
+      "sl": 54.15,
+      "size_usd": 250,
+      "horizon_hours": 48,
+      "style": "swing",
+      "why": "Oversold financials (14.4x fwd P/E, -7% last week) rebound on VIX 35.89 vol compression and higher yields without AI capex or SEC-probe headline risk."
+    },
+    {
+      "class": "equity",
+      "symbol": "XOM",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 165.6,
+      "sl": 157.8,
+      "size_usd": 200,
+      "horizon_hours": 72,
+      "style": "swing",
+      "why": "Low-beta (0.20) relative-strength leader held green during Friday crash and captures Hormuz tanker-risk premium plus +8.6% European gas tailwinds."
+    }
+  ],
+  "self_disclosed_correlation": "USDJPY long and TLT short share the same risk-on / higher-US-yields driver, so a sharp intraday equity selloff can snap both out simultaneously; XOM is the highest failure risk if risk-on fades oil."
+}
