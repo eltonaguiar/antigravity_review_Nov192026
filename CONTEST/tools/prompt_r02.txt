@@ -1,0 +1,16 @@
+DESIGN TASK — round 2 scoring rule for a paper-trading contest.
+
+MEASURED CONTEXT from round 1 (not assumed): entrants each submit 2-5 picks. A pick is a symbol, a side, a take-profit, a stop-loss, and a size in USD, total size capped at 1000. Official scoring is the R-multiple: profit divided by the distance to the stop. Three failure modes were measured:
+(a) VOID AT FILL — a majority of picks were dead before any bar printed, because the entrant's recalled anchor price sat outside its own bracket, so the real fill had already passed the target or breached the stop.
+(b) TARGET THINNER THAN COST — some picks had a target closer to the live price than that asset class's round-trip transaction cost, so even a winning pick nets a loss.
+(c) BRACKET THAT CANNOT RESOLVE — some picks set a bracket far wider than the instrument's three-day range. Such a pick can neither win nor lose; it books approximately zero R. Under a mean-R metric, zero silently beats a field that is mostly negative, so this is a scoring exploit rather than a strategy.
+
+YOUR TASK. Write the minimum set of scoring rules that:
+1. still rewards genuine forecasting skill rather than luck across a 3-day horizon;
+2. cannot be gamed by a maximin entrant that parks in an ultra-wide bracket or a cash-like instrument to bank zero R while the field goes negative;
+3. nullifies or penalises the three failure modes above instead of scoring them as neutral;
+4. is cheap to compute from daily bars only, with no intraday data and no human judgement.
+
+For EACH rule you propose, state: the exact formula or numeric threshold, the specific exploit it closes, and the specific exploit it OPENS. Then name one rule you would deliberately refuse to add, and why. Then give the single statistic the leaderboard should show to a reader who will not read the rules.
+
+Be concrete and adversarial. Do not give generic advice about risk management, diversification, or position sizing.
