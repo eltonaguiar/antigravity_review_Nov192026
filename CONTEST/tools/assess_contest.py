@@ -28,6 +28,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 # round-trip cost in basis points, per class -- mirrors COST_OF_RECORD.md
+ROUND_START = None         # datetime: the fill is the first bar at/after this
 FILL_RELATIVE = False   # set by --fill-relative: clamp bracket geometry to the fill
 
 COST_BP = {
@@ -139,6 +140,14 @@ def value_pick(p, bars):
         raise_ = "limit entry requires an explicit fill rule -- not implemented in R01"
         return {"status": "VOID", "reason": raise_}
 
+    # DEFECT FIXED (found by a peer review, 2026-11-23): the fill was series[0].open, i.e. the OLDEST
+    # bar in whatever file was passed. With a 3-month panel that turns a valid bracket into a spurious
+    # PRETRIGGERED void against a months-old price. The fill must be the first bar at or after the round
+    # start, and there must be one.
+    if ROUND_START is not None:
+        series = [b for b in series if parse_ts(b["ts"]) >= ROUND_START]
+        if not series:
+            return {"status": "VOID", "reason": "no bar at or after the round start"}
     t0 = parse_ts(series[0]["ts"])
     entry = float(series[0]["open"])
     if entry <= 0:
@@ -146,10 +155,17 @@ def value_pick(p, bars):
 
     fund_long = (p["class"] == "fund" and p["style"] == "buy_and_hold")
     if fund_long:
-        last = float(series[-1]["close"])
-        pnl = (last - entry) / entry * float(p["size_usd"])
+        # DEFECT FIXED (peer review): this exited at series[-1] regardless of horizon_hours, so an 8h
+        # fund pick scored the whole file. It now exits at the last bar AT OR BEFORE the declared
+        # horizon, falling back to the last available bar only if the horizon is beyond the panel.
+        horizon = t0 + timedelta(hours=float(p["horizon_hours"]))
+        within = [b for b in series if parse_ts(b["ts"]) <= horizon]
+        last = float((within or series)[-1]["close"])
+        gross = (last - entry) / entry * float(p["size_usd"])
+        cost = (COST_BP.get(p["class"], 0.0) / 1e4) * float(p["size_usd"])
         return {"status": "OK", "entry": entry, "exit": last, "reason": "horizon",
-                "R": None, "usd": round(pnl, 2), "note": "buy_and_hold: $ only"}
+                "R": None, "usd": round(gross - cost, 2),
+                "note": "buy_and_hold: $ only, exit capped at horizon_hours"}
 
     tp, sl = float(p["tp"]), float(p["sl"])
     if FILL_RELATIVE:
@@ -210,6 +226,9 @@ def value_pick(p, bars):
     net_r = gross_r - cost_r
     direction = 1 if side == "long" else -1
     usd = direction * (exit_px - entry) / entry * float(p["size_usd"])
+    # DEFECT FIXED (peer review): $ was gross while R was net, so the $ column never paid the cost line
+    # that Finding 10 is about. Both are now net of the same per-class round trip.
+    usd -= (COST_BP[p["class"]] / 1e4) * float(p["size_usd"])
     return {"status": "OK", "entry": entry, "exit": exit_px, "reason": reason,
             "R": round(net_r, 4), "usd": round(usd, 2),
             "cost_bp": COST_BP[p["class"]]}
@@ -221,13 +240,18 @@ def main():
     ap.add_argument("--prices", required=True)
     ap.add_argument("--out")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--round-start", metavar="TS",
+                    help="ISO-8601 or epoch; the fill is the first bar at or after this. "
+                         "Without it the fill is the oldest bar in the panel, which is wrong "
+                         "whenever the panel spans more than the round.")
     ap.add_argument("--fill-relative", action="store_true",
                     help="re-anchor each bracket onto the fill, preserving the entrant's R geometry "
                          "(removes the void rule and the two exploits it allows)")
     a = ap.parse_args()
 
-    global FILL_RELATIVE
+    global FILL_RELATIVE, ROUND_START
     FILL_RELATIVE = bool(a.fill_relative)
+    ROUND_START = parse_ts(a.round_start) if a.round_start else None
     sub = json.load(open(a.picks, encoding="utf-8"))
     bars = json.load(open(a.prices, encoding="utf-8"))
     errs, total = validate(sub)

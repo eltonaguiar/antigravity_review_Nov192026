@@ -55,22 +55,47 @@ Implemented as `assess_contest.py --fill-relative`. **R01 is NOT retro-scored.**
 entries were frozen against them; changing the rule now would be moving the goalposts. R01 will be reported under
 both, as a sensitivity, with the rule that was in force labelled on every number.
 
-### Demonstration on one entry (stale panel — NOT a contest result)
+### Demonstration — CORRECTED after a peer review caught my method
 
-Arena.ai's four picks, same price panel, both rules. The panel here is the 3-month series, so the fills are old
-bars; this tests the *rule*, not the entrant.
+My first version of this section compared the two rules on a 3-month panel, where the "fill" is the *oldest bar in the
+file* rather than the first bar of the round. That measured **the fill bug, not the void rule**, and the reviewer was right
+to make me withdraw the number. `assess_contest.py` now takes `--round-start` and fills at the first bar at or after it;
+the whole field is re-run below on a declared round start of **2026-11-20T00:00Z** (the last completed session).
 
-| pick | void rule | clamped rule |
+**Withdrawn:** "the void rule flatters this entry by ~0.57 R per pick." That figure came from bad fills. On a correct fill
+Arena has **zero voids under both rules**, so the void rule flattered it by nothing.
+
+**What the void rule actually does** — at a correct fill, per entry (void / scored / mean R):
+
+| entry | void rule | clamped |
 |---|---|---|
-| USDJPY long | −0.0149 R | −0.0097 R |
-| TLT short | **VOID** | +0.4835 R |
-| XLF long | **VOID** | −1.7705 R |
-| XOM long | **VOID** | −1.0516 R |
-| **mean R** | **−0.0149** | **−0.5871** |
+| ARENA_AI_AGENT | 0 / 4 / −0.2546 | 0 / 4 / −0.5363 |
+| GEMINI_4_NEON | 0 / 4 / −0.0792 | 0 / 4 / −0.0099 |
+| CLAUDE_5_1_FABLE | 0 / 2 / −0.1659 | 0 / 2 / −0.1598 |
+| MS_COPILOT | 1 / 3 / −0.7526 | 0 / 4 / −0.5992 |
+| GLM_5_3_FLASH | 3 / 1 / −0.0363 | 0 / 4 / −0.1593 |
+| GPT_4_1_MINI | 4 / 1 / −2.2501 | 1 / 4 / −0.5014 |
+| CHATGPT_6_LUNA | 2 / 0 / **none** | 0 / 2 / −0.8321 |
+| CLAUDE_5_2_FABLE | 3 / 0 / **none** | 0 / 3 / −0.3199 |
+| CLAUDE_HAIKU_5_5 | 2 / 0 / **none** | 0 / 2 / −0.3906 |
+| GPT_5_3_CODEX | 4 / 0 / **none** | 0 / 4 / −0.4358 |
+| QWEN4_MAX | 4 / 0 / **none** | 0 / 4 / −0.5405 |
+| QWEN_3_6_FLASH | 4 / 0 / **none** | 0 / 4 / −0.9705 |
 
-**The void rule flatters this entry by ~0.57 R per pick.** That is the size of the hole.
+**Six of twelve entries have NO scored pick at all under the void rule, and the other six are ranked on a partial book of
+one to four picks.** The distortion is not a constant offset — it is a **sample-size distortion**: one entrant's mean R is
+computed from a single surviving pick (GPT-4.1 mini, −2.2501 from 1 of 5) while another's comes from four. A leaderboard
+that silently compares a 1-pick average with a 4-pick average, and drops half the field, is not measuring what it claims.
+
+Clamping scores all twelve on their full book with zero voids. That is the reason to adopt it — not a shift in a headline
+number, which at a correct fill turns out to be small and sometimes goes the other way (Gemini: −0.0792 void vs −0.0099
+clamped, i.e. clamping is *kinder* there).
 
 ### What the void rule was hiding across the field
+
+*Note: this section is a LIVE-QUOTE screen taken at 04:00Z, not a fill result — it says which picks are outside their
+bracket at the current price, which is a prediction about the fill, not the fill itself. Price can return inside before
+Monday's open. The corrected per-entry table above is the fill-based statement.*
 
 Of the 26 picks it voided, **15 were already past their stop and 11 already past their target** — i.e. the
 field's anchors were biased in both directions, with a majority too high:
