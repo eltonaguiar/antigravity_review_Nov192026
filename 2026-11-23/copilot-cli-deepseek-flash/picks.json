@@ -1,0 +1,130 @@
+{
+  "agent": "copilot-cli-deepseek-flash",
+  "generated_at": "2026-11-23T02:45Z",
+  "ticket_usd": 25000,
+  "method": "per-asset-class two-hurdle gate: (1) annualised net > 4.32% T-bill on committed capital, AND (2) beta-adjusted Jensen-alpha bootstrap CI excludes 0 (NOT a raw paired difference, which passes leveraged beta). Costs at measured round-trip where available, UNMEASURED flagged otherwise. Deflation at programme-level trial count, not per-class.",
+  "gates": {
+    "G1": "gross > 2x measured round-trip cost",
+    "G2": "holding >= 1 day",
+    "G3": "deflated Sharpe >= 0.95 at programme-level N",
+    "G4": "net annualised > 4.32% T-bill on committed capital incl. cash collateral",
+    "G5": "recorded before outcome (pre-registered)"
+  },
+  "VERDICT": "0 picks pass all five gates. picks[] is empty by decision, not by omission. No entry below was promoted to a pick; every class carries its verdict and deciding number.",
+  "picks": [],
+  "picks_count": 0,
+  "per_class": {
+    "EQUITY": {
+      "verdict": "DEAD",
+      "deciding_number": "breakout PF 0.9917 at 25bp/side",
+      "detail": "PF < 1 survives any cost reduction -> signal failure, not cost failure. Value HML killed on GROSS: +0.11% gross, +0.02% net, SE 6.65%, 95%UB +10.96% vs 4.32% hurdle.",
+      "gates": {"G1": null, "G2": null, "G3": false, "G4": false, "G5": true},
+      "gates_passed": "G5 only",
+      "FAILS": "G3G4",
+      "pick": null
+    },
+    "ETF": {
+      "verdict": "NOT_AN_EDGE",
+      "deciding_number": "breakout 4.7bp gross vs 5.1bp cost = 0.4bp margin",
+      "detail": "SR 0.44 is the ASSET's risk-adjusted return (beta), not a signal. 0.4bp margin is inside cost-measurement error. DSR 0.9543 at N=15 collapses to 0.3191 at N=90.",
+      "gates": {"G1": false, "G2": true, "G3": false, "G4": false, "G5": true},
+      "gates_passed": "G2G5",
+      "FAILS": "G1G3G4",
+      "pick": null
+    },
+    "BOND": {
+      "verdict": "NOT_INVESTABLE",
+      "deciding_number": "break-even 0bp/side; Sharpe -0.550",
+      "detail": "Claimed 42.64bp RT with 94% fees. UNMEASURED by this agent - not reproduced.",
+      "gates": {"G1": null, "G2": null, "G3": false, "G4": false, "G5": true},
+      "gates_passed": "G5 only",
+      "FAILS": "G3G4",
+      "pick": null
+    },
+    "CRYPTO": {
+      "verdict": "DEAD",
+      "deciding_number": "carry net 3.07% vs 4.32% hurdle; DSR 0.0423 at N=90",
+      "detail": "Vol 68.5%, MDD -87.8% over 5y. Carry measured across 4,235 intervals. Ledger has 1,864 duplicate signal-ts groups and EXPIRED->WON mislabels, so win rates are not a measurement.",
+      "gates": {"G1": false, "G2": true, "G3": false, "G4": false, "G5": true},
+      "gates_passed": "G2G5",
+      "FAILS": "G1G3G4",
+      "pick": null
+    },
+    "FOREX": {
+      "verdict": "CANDIDATE_CONDITIONAL",
+      "deciding_number": "net -0.68bp at 4.98bp cost of record; -3.23bp at 7.53bp upper bound",
+      "detail": "Mean-rev gross 4.3038bp. Both costs leave it negative but -0.68bp is inside noise, so the SIGN is undetermined. Deciding measurement: one weekday London/NY top-of-book run. Not dead, not alive.",
+      "gates": {"G1": false, "G2": null, "G3": false, "G4": false, "G5": true},
+      "gates_passed": "G5 only",
+      "FAILS": "G1G3G4",
+      "pick": null
+    },
+    "COMMODITY": {
+      "verdict": "DEAD",
+      "deciding_number": "PF 0.757 at ZERO cost",
+      "detail": "Fails with cost set to zero, therefore cost-independent and unrecoverable. Round-trip cost is a 4.97bp PROXY inherited from EQUITY, not measured.",
+      "gates": {"G1": null, "G2": null, "G3": false, "G4": false, "G5": true},
+      "gates_passed": "G5 only",
+      "FAILS": "G3G4",
+      "pick": null
+    },
+    "OPTIONS": {
+      "verdict": "UNMEASURED",
+      "deciding_number": null,
+      "detail": "No measured cost and no backtest in this repo. Premium selling is short-vol beta by construction.",
+      "gates": {"G1": null, "G2": null, "G3": null, "G4": null, "G5": null},
+      "gates_passed": "0/5",
+      "FAILS": "UNMEASURED",
+      "pick": null
+    },
+    "PREDICTION_MARKETS": {
+      "verdict": "UNMEASURED",
+      "deciding_number": null,
+      "detail": "Best calibration harness in the estate; zero strategies measured end-to-end.",
+      "gates": {"G1": null, "G2": null, "G3": null, "G4": null, "G5": null},
+      "gates_passed": "0/5",
+      "FAILS": "UNMEASURED",
+      "pick": null
+    },
+    "MEME_PENNY": {
+      "verdict": "KILLED",
+      "deciding_number": "1 of 3 names quotable (rule needs 2); 0 penny instruments",
+      "detail": "MEME cost unmeasurable: SHIB showed 84.3% zero-range bars across 7,135 bars.",
+      "gates": {"G1": null, "G2": null, "G3": false, "G4": false, "G5": true},
+      "gates_passed": "G5 only",
+      "FAILS": "G3G4",
+      "pick": null
+    },
+    "MUTUAL_FUNDS_PRIVATE_CREDIT": {
+      "verdict": "FEES_DOMINATE_OR_NO_DATA",
+      "deciding_number": "active MF 18,520 USD vs index ETF 1,050 USD per 100k over 10yr",
+      "detail": "Active fund costs 17.6x the ETF. Private credit: no data exists.",
+      "gates": {"G1": null, "G2": null, "G3": null, "G4": false, "G5": true},
+      "gates_passed": "G5 only",
+      "FAILS": "G4",
+      "pick": null
+    }
+  },
+  "excluded_from_picks_deliberately": [
+    {
+      "recommendation": "Buy-and-hold low-cost broad-market index ETF",
+      "why_not_a_pick": "It is a vehicle/fee decision with NO signal. Including it would trivially fail G3 and would misrepresent beta as edge. It is beta by construction, which is exactly why it is not in picks[].",
+      "measured_basis": "100k over 10yr: direct ~50 USD, index ETF ~1,050 USD, index MF ~4,520 USD, active MF ~18,520 USD"
+    }
+  ],
+  "unmeasured_declared": {
+    "commission": "UNMEASURED - needs >=3 months broker statements; 4.98bp is a LOWER BOUND (spread only)",
+    "capacity_k": "UNMEASURED - needs our own fills; live not sanctioned",
+    "pit_universe_survivorship": "UNMEASURED - needs external constituent history",
+    "bond_42_64bp_94pct_fees": "UNMEASURED - cited not reproduced by this agent",
+    "sigma_sr_scale": "UNRESOLVED - 1.259 from pooled sigma_SR 0.031848 vs 1.6176@N90 from sigma_sr 0.6488; not comparable at equal N"
+  },
+  "cost_of_record_bp": {
+    "value": 4.98,
+    "basis": "MEASURED spread only, n=191 names, 238,810 daily + 356,271 minute bars",
+    "caveat": "LOWER BOUND - commission/ECN/exchange fields are 0 by construction",
+    "two_x_stress_bp": 9.96,
+    "note": "production default engine.py:115 uses interactive_brokers() = 16.52bp, 4/7 fields assumed with no cited source; questrade_canada() = 4.98bp has zero call sites"
+  },
+  "revision": 1
+}
