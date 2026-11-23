@@ -39,11 +39,31 @@ correction — and it will do so fluently, in one line, with a checkmark.
 ## The second method failure, same run
 
 `Qwen3.6-35B-A3B-NVFP4` on vLLM returned **[reasoning-only, raise max_tokens]** — 3,042 chars of thinking, **no answer**. Same
-shape as `glm-5.3-flash:cloud` burning 9,431 chars of reasoning on 0 chars of content.
+shape as `glm-5.3-flash:cloud`.
 
-**Operational rule, now confirmed on two different backends:** these free reasoning models need **≈6k output tokens** before they
-emit a single character of content. At a 2–3k budget they return pure reasoning and look broken. Any harness calling them must
-raise `max_tokens` or it will record a false failure.
+**Correction to my own note, made the same day:** I first wrote that these models need "≈6k output tokens." A direct test at
+`num_predict: 6000` **still returned zero content**:
+
+```
+glm-5.3-flash:cloud @ num_predict 6000
+  thinking chars : 22,041
+  eval_count     : 6000
+  done_reason    : length
+  content chars  : 0
+```
+
+**6,000 was not enough — it consumed the entire budget on reasoning and hit the cap with nothing emitted.** So "≈6k" was a
+guess dressed as a rule, tested once, and it was wrong.
+
+The reliable signature is not a token count, it is the triple:
+
+> **`done_reason: "length"` + `content: ""` + large `thinking` ⇒ budget exhausted on reasoning.**
+> That is a **harness** outcome, not a model failure, and it must be recorded as `UNUSABLE AT BUDGET`, never as "the model got it
+> wrong."
+
+Practical menu, in order of preference: use a **non-reasoning** model for structured output (a local `qwen2.5-coder:14b` answered
+the same kind of prompt reliably where both cloud reasoning models returned nothing); otherwise raise the budget until `done_reason`
+is `stop`, or read the answer out of the thinking field deliberately. **Never score an empty `content` as an incorrect answer.**
 
 ## The rule this produces
 
