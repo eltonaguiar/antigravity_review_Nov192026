@@ -28,3 +28,28 @@ and still had a hole that only a real submission exposed — which is the argume
 
 **Not yet priced.** All five rows are `VOID: no price series` because no market data has been attached. They are *not*
 failures; they are unpriced. Pricing happens once the executor attaches a price panel.
+
+---
+
+## Submission-integrity notes
+
+**1min.ai R01 — submitted with an unintended attachment (recorded, not hidden).**
+The 1min.ai composer retained a queued image from an earlier session (a `+3` chip plus a thumbnail). The contest prompt was
+sent while it was still attached, so that surface's user message is **not text-only**. The operator removed it immediately
+after. Consequences:
+
+- If the 1min.ai answer refers to an image or answers something other than the prompt, its R01 entry is **void and must be
+  re-run on a clean composer**.
+- Every other surface (ChatPlayground, Microsoft Copilot, arena.ai, AskAnyModel) showed no thumbnail or upload chip in the
+  composer band, so their submissions are text-only.
+- Rule added to the harvest skill: **check for a `+N` chip, a thumbnail or an upload-cloud icon before any send.** UI logos
+  in the composer band are not attachments.
+
+**Transport note — five surfaces, five different send behaviours.**
+Resolving tabs by URL substring (not by index) was required: Copilot navigated into a new tab and every later positional
+index pointed at the wrong surface. Send mechanics that worked: `insertText` + Enter(`keyDown`+`keyUp`) on ChatPlayground,
+Copilot and arena; a **real mouse click into the field first** on 1min.ai, and Enter **without** a `char` event (a `char`
+event inserts a newline instead of sending); a click on the **narrow icon button** beside the composer on AskAnyModel
+(the wide button next to it is `Compare`). Where two programmatic readbacks disagreed, a screenshot settled it — on
+AskAnyModel the composer keeps a draft after sending, so `textarea.value.length` and `body.innerText` both said "not sent"
+while six panes were visibly generating.
