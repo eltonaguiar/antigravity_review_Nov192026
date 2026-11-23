@@ -1,0 +1,216 @@
+{
+  "agent": "KILOCODE_VSCODE",
+  "filed_utc": "2026-11-23T02:33Z",
+  "endorsed_count": 0,
+  "honest_headline": "0/10 classes investable; 0/69 pass all gates; only defensible action is low-cost index ETF",
+  "operator_answer": "old 11.36bp crypto net used flat 12.87bp; re-costed at 20-52bp -> DOT -28bp, 49/69 net<=0",
+  "per_class_top": {
+    "EQUITY": [
+      {
+        "symbol": "CVX",
+        "n": 35,
+        "net_bp": 178.6,
+        "dsr": 0.318,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "AMD",
+        "n": 83,
+        "net_bp": 118.8,
+        "dsr": 0.033,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "AMC",
+        "n": 22,
+        "net_bp": 84.0,
+        "dsr": 0.004,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "AAPL",
+        "n": 81,
+        "net_bp": 58.7,
+        "dsr": 0.106,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "BAC",
+        "n": 25,
+        "net_bp": 51.9,
+        "dsr": 0.02,
+        "fails": "G2G3G4G5"
+      }
+    ],
+    "CRYPTO": [
+      {
+        "symbol": "ENJ",
+        "n": 30,
+        "net_bp": 125.3,
+        "dsr": 0.004,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "WIF",
+        "n": 146,
+        "net_bp": 45.4,
+        "dsr": 0.067,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "ETH",
+        "n": 155,
+        "net_bp": 29.2,
+        "dsr": 0.064,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "NEAR",
+        "n": 219,
+        "net_bp": 29.1,
+        "dsr": 0.013,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "JUP",
+        "n": 162,
+        "net_bp": 27.4,
+        "dsr": 0.026,
+        "fails": "G2G3G4G5"
+      }
+    ],
+    "FOREX": [
+      {
+        "symbol": "AUDJPY",
+        "n": 34,
+        "net_bp": 61.0,
+        "dsr": 0.815,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "EURUSDT",
+        "n": 20,
+        "net_bp": -161.2,
+        "dsr": 0.001,
+        "fails": "G1G2G3G4G5"
+      }
+    ],
+    "ETF": [
+      {
+        "symbol": "SOXX",
+        "n": 37,
+        "net_bp": 34.0,
+        "dsr": 0.004,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "XLE",
+        "n": 61,
+        "net_bp": 28.0,
+        "dsr": 0.007,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "XLF",
+        "n": 48,
+        "net_bp": 21.9,
+        "dsr": 0.01,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "XLK",
+        "n": 64,
+        "net_bp": 13.1,
+        "dsr": 0.002,
+        "fails": "G2G3G4G5"
+      },
+      {
+        "symbol": "QQQ",
+        "n": 81,
+        "net_bp": 11.1,
+        "dsr": 0.003,
+        "fails": "G2G3G4G5"
+      }
+    ],
+    "BOND": [
+      {
+        "symbol": "TLT",
+        "n": 31,
+        "net_bp": -22.0,
+        "dsr": 0.0,
+        "fails": "G1G2G3G4G5"
+      }
+    ]
+  },
+  "overall_top5_by_net": [
+    {
+      "sym": "CVX",
+      "bucket": "EQUITY",
+      "gross_bp": 180.9,
+      "cost_bp": 2.0,
+      "net_bp": 178.9,
+      "G1": true
+    },
+    {
+      "sym": "AMD",
+      "bucket": "EQUITY",
+      "gross_bp": 121.1,
+      "cost_bp": 2.0,
+      "net_bp": 119.1,
+      "G1": true
+    },
+    {
+      "sym": "ENJ",
+      "bucket": "CRYPTO_ALT",
+      "gross_bp": 141.1,
+      "cost_bp": 52.0,
+      "net_bp": 89.1,
+      "G1": true
+    },
+    {
+      "sym": "AMC",
+      "bucket": "EQUITY",
+      "gross_bp": 86.3,
+      "cost_bp": 2.0,
+      "net_bp": 84.3,
+      "G1": true
+    },
+    {
+      "sym": "AUDJPY",
+      "bucket": "FOREX",
+      "gross_bp": 62.6,
+      "cost_bp": 1.0,
+      "net_bp": 61.6,
+      "G1": true
+    }
+  ],
+  "g3_shortlist": [
+    {
+      "sym": "AUDJPY",
+      "class": "FOREX",
+      "n": 34,
+      "sharpe": 0.724,
+      "dsr_now": 0.83,
+      "needed_n": 48,
+      "extra_trades": 14
+    },
+    {
+      "sym": "CVX",
+      "class": "EQUITY",
+      "n": 35,
+      "sharpe": 0.449,
+      "dsr_now": 0.328,
+      "needed_n": 118,
+      "extra_trades": 83
+    },
+    {
+      "sym": "AAPL",
+      "class": "EQUITY",
+      "n": 81,
+      "sharpe": 0.207,
+      "dsr_now": 0.106,
+      "needed_n": 538,
+      "extra_trades": 457
+    }
+  ]
+}
