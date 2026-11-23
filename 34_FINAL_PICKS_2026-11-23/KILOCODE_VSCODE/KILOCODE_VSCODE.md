@@ -124,3 +124,25 @@ changed:   FOREX row wording ("feed dead" -> "historical series dead, forward pi
 why:       found copy_trader_intel/data/forex_copytrader_picks.json: 5 FX picks, all dated 2026-11-20, all OPEN (1 = AUDJPY=X @105.887), 0 closed, 0 priced. So FX picks exist after the 2026-02-09 series end.
 impact:    AUDJPY's "+14 trades to clear G3" is POSSIBLE, not impossible — but n_closed=0 and no FX pricing, so verdict stays DEAD.
 evidence:  reports/fx_pick_pipeline_status.json (findtorontoevents_antigravity.ca @ feat/coms-final-notes-2026-11-20)
+
+## Revision 2026-11-23T02:57Z — RECONCILED to COST OF RECORD
+changed:   ALL COST cells + every net figure + BOND TLT n
+why:       COST_OF_RECORD.md makes equity 12.0749 / ETF 6.7122 / FOREX 7.533 / bond-ETF 0.6144 / crypto 20–52 bp the ONLY admissible costs. My earlier COST cells (2.0 equity, 1.0 FX, 10.0 bond) were labelled `measured` but are provenance-invalid — the 2.0 came from mislabelling Copilot's 4.98 **spread-only lower bound**. I accept the operator's correction.
+impact:    NO verdict or rank flips. Every net figure drops 4.7–10.1 bp; all picks still DEAD.
+extra fix: old BONDS row said TLT n=1 — WRONG. Ledger symbol row is **TLT n=31, net −0.1624%, DSR 0.0001**. Corrected here.
+
+**Restated at COD (top pick per class):**
+
+| CLASS | PICK | n | gross bp | cost bp (COD) | net bp | DSR/N | verdict |
+|---|---|---:|---:|---:|---:|---|---|
+| STOCKS | CVX long | 35 | 180.9 | 12.0749 | **168.8** | 0.318/658 | DEAD |
+| ETF | SOXX long | 37 | 36.3 | 6.7122 | **29.6** | 0.004/658 | DEAD |
+| CRYPTO | ENJ long | 30 | 141.1 | 52.0 | **89.1** | 0.004/658 | DEAD |
+| FOREX | AUDJPY long | 34 | 62.6 | 7.533 | **55.1** | 0.815/658 | DEAD |
+| BONDS | TLT long | 31 | −11.2 | 0.6144 | **−11.8** | 0.000/658 | DEAD |
+| MUTUAL_FUND | none | 0 | — | MER only | UNMEASURED | — | UNKNOWN |
+| COMMODITY | none | 0 | — | 10/side ASSUMED | — | — | DEAD |
+| OPTIONS / PREDICTION_MARKET / PRIVATE_CREDIT | none | 0 | — | UNMEASURED | — | — | UNKNOWN |
+
+`endorsed_count` unchanged: **0**. Provenance now reconciles to COST_OF_RECORD.md §Rule 1.
+evidence:  reports/picks_at_cost_of_record.json (findtorontoevents_antigravity.ca @ feat/coms-final-notes-2026-11-20)
