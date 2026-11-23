@@ -28,6 +28,8 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 # round-trip cost in basis points, per class -- mirrors COST_OF_RECORD.md
+FILL_RELATIVE = False   # set by --fill-relative: clamp bracket geometry to the fill
+
 COST_BP = {
     "bond": 0.6144, "etf": 6.7122, "equity": 12.0749, "fund": 0.0,
     "crypto": 52.0, "fx": 7.533, "commodity": 20.0,
@@ -49,8 +51,43 @@ def sha256_of(path):
     return h.hexdigest()
 
 
+def clamp_brackets(p):
+    """Re-anchor the entrant's INTENDED risk geometry onto the actual fill.
+
+    The defect this fixes (found by two independent models in a design review): voiding a pick whose
+    fill already sits outside its bracket removes the only penalty for submitting an untradeable
+    bracket, and it is exploitable in both directions — a near-zero-width bracket is almost always
+    'inside' and is decided by the first tick, while a very wide bracket is never voided and is scored
+    on the horizon-end price alone, i.e. a free one-shot directional option on every pick.
+
+    Clamping keeps the entrant's own R multiple (their distance to stop and to target) but re-anchors
+    it at the price that actually traded, so a stale anchor costs real R at the magnitude they chose
+    instead of being laundered into a void.
+    """
+    stated = p.get("entry")
+    if stated is None:
+        stated = (float(p["tp"]) + float(p["sl"])) / 2.0
+    stated = float(stated)
+    risk = abs(stated - float(p["sl"]))
+    reward = abs(float(p["tp"]) - stated)
+    if risk <= 0 or reward <= 0:
+        return None
+    return risk, reward
+
+
 def parse_ts(s):
-    return datetime.fromisoformat(s.replace("Z", "+00:00"))
+    """Accept ISO-8601 strings, epoch seconds, or epoch milliseconds.
+
+    Market feeds hand back all three: Yahoo and Binance give epoch numbers, a hand-written
+    price file usually gives ISO. A scorer that only accepts one of them is a scorer that
+    silently fails on the feed you actually have.
+    """
+    if isinstance(s, (int, float)):
+        v = float(s)
+        if v > 1e11:            # milliseconds
+            v /= 1000.0
+        return datetime.fromtimestamp(v, tz=timezone.utc)
+    return datetime.fromisoformat(str(s).replace("Z", "+00:00"))
 
 
 def validate(sub):
@@ -115,6 +152,15 @@ def value_pick(p, bars):
                 "R": None, "usd": round(pnl, 2), "note": "buy_and_hold: $ only"}
 
     tp, sl = float(p["tp"]), float(p["sl"])
+    if FILL_RELATIVE:
+        c = clamp_brackets(p)
+        if c is None:
+            return {"status": "VOID", "reason": "zero-width intended bracket"}
+        risk, reward = c
+        if side == "long":
+            sl, tp = entry - risk, entry + reward
+        else:
+            sl, tp = entry + risk, entry - reward
     stop_width_pct = abs(entry - sl) / entry * 100.0
     # A bracket already violated at the fill price is not a trade; it is a mis-stated level.
     bad = None
@@ -175,8 +221,13 @@ def main():
     ap.add_argument("--prices", required=True)
     ap.add_argument("--out")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--fill-relative", action="store_true",
+                    help="re-anchor each bracket onto the fill, preserving the entrant's R geometry "
+                         "(removes the void rule and the two exploits it allows)")
     a = ap.parse_args()
 
+    global FILL_RELATIVE
+    FILL_RELATIVE = bool(a.fill_relative)
     sub = json.load(open(a.picks, encoding="utf-8"))
     bars = json.load(open(a.prices, encoding="utf-8"))
     errs, total = validate(sub)

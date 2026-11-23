@@ -444,3 +444,32 @@ lost $0.00 while being 6.9 R wrong. That is a design win hiding inside a total l
 **R02 implication:** require each entrant to state the **price it believes the instrument is at** and to be
 scored on that estimate separately from its picks — an anchor-accuracy column. Then a stale memory is measured
 as a stale memory instead of being laundered through a bracket.
+
+---
+
+## FINDING 12 — my own scoring rule was exploitable, and two independent models found it
+
+The R01 rule voids any pick whose fill price already sits outside its own [stop, target] bracket. A design review
+(`ask4ais` × 4 panels + `askpollinationsandothers` × 2 runs) found this is not a safety valve but an exploit, in
+two opposite directions:
+
+- **degenerate bracket** — target one tick above fill, stop one tick below: the fill is almost always "inside", so
+  the pick is always scored, and the first tick decides it;
+- **free option** — stop 50% away, target 50% away: never voided and never stopped inside the horizon, so it is
+  scored on horizon-end price alone, i.e. a one-shot directional option at zero cost.
+
+Either way the score is set by bracket geometry, not by forecasting. On one entry the void rule flatters mean R by
+~0.57 R per pick (Arena, same panel: −0.0149 void vs −0.5871 clamped).
+
+**Fix adopted:** clamp the entrant's intended risk geometry onto the fill (`--fill-relative`), rather than voiding
+or scoring the void as a win/loss. Full review: `DESIGN_REVIEW_2026-11-23.md`.
+
+**R01 is not retro-scored** — its rules were published and its entries frozen against them, so changing the rule
+now would be moving the goalposts. It will be reported under both rules with the rule in force labelled.
+
+## FINDING 12b — what the void rule was hiding
+
+Of the 26 picks it voided, **15 were already past their stop and 11 already past their target**. The field's
+anchors were biased in both directions with a majority too high: Qwen4 Max 4-for-4 past its stop, Codex and
+GPT-4.1 mini 3 each; Qwen3.6 Flash and Luna leaned the other way (3 and 2 past target). That split is the only
+measurable statement the contest has produced so far that is about the entrants rather than about the clock.
