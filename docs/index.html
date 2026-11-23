@@ -309,6 +309,36 @@
       bootstrap on net P&amp;L is what decides.
     </p>
   </div>
+  <div class="callout blue" style="border-left:3px solid #2f6fb4;background:rgba(47,111,180,.08)">
+    <p><b>The missing measurement — a power statement.</b> Three reviewers asked for the same number, and it turns the headline
+    around. From <span class="mono">SE = vol / √T</span>, every figure below printed by
+    <span class="mono">CONTEST/tools/power_analysis.py</span>:</p>
+    <table>
+      <tr><th>sample</th><th>smallest effect detectable at t=2</th><th>what that means</th></tr>
+      <tr><td>2 y at 10% vol</td><td><b>14.1%/yr</b></td><td>nothing real clears this</td></tr>
+      <tr><td>3 y</td><td>11.5%/yr</td><td>—</td></tr>
+      <tr><td><b>5 y</b></td><td><b>8.9%/yr</b></td><td>a genuine 3% premium is invisible</td></tr>
+      <tr><td>10 y</td><td>6.3%/yr</td><td>still blind to most premia</td></tr>
+      <tr><td>44 y</td><td>3.0%/yr</td><td>what HML would actually need</td></tr>
+    </table>
+    <p>
+      And the interval on the value result: at 10% vol over 10 years, +0.11% carries a 95% CI of <b>[−6.1%, +6.3%]</b> — twelve
+      percentage points wide, straddling zero. <b>"Every strategy failed" was close to guaranteed before the study began</b> —
+      by sample length, not by bias.
+    </p>
+    <p>
+      <b>And the deeper problem: there is no positive control.</b> A long/short value book earning +0.11% gross is an
+      <i>anomalous</i> result, not a null — academic HML is 3–5%/yr. When a pipeline cannot reproduce a known,
+      heavily-documented effect, the correct inference is <b>"the apparatus may be broken,"</b> not "the effect is absent."
+      First thing to check: <b>price-return vs total-return series</b> — value tilts into high-dividend names, and a price-only
+      feed erases 2–3%/yr specifically from the value leg. Until a synthetic-alpha injection and a known anomaly are recovered,
+      the other nine nulls are provisional.
+    </p>
+    <p class="mute">
+      Full tables and the turnover check (the 9 bp gross→net gap implies <b>1,800% annual turnover</b> at 1 bp — which is not a
+      value strategy): <span class="mono">CONTEST/ROUND_01_2026-11-23/POWER_ANALYSIS.md</span>
+    </p>
+  </div>
 </section>
 
 <!-- ============ THE ANSWER ============ -->
