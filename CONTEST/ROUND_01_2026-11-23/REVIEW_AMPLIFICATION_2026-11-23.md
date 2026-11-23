@@ -1,7 +1,12 @@
 # How a fluent review re-blessed a retracted claim
 
-**Date:** 2026-11-23 · **Artifact:** a structured, seven-section review of the fund deep-dive, produced by a model panel.
+**Date:** 2026-11-23 · **Artifact:** a structured, seven-section review of the fund deep-dive.
+**Produced by:** **GPT-4.1 mini (OpenAI)** — 20.796 s, 14,720 credits, via the 1min.ai multi-model surface.
 **Status of the claim it endorses:** **RETRACTED and falsified three hours earlier** (see `F4_CORRECTION_2026-11-23.md`).
+
+For contrast, the review that **falsified** the claim was produced by a different model in the same session —
+**Gemini 4 Neon (Google AI)**, 28.291 s, 110,052 credits. Same work, same panel, same hour. One model audited the script and
+destroyed the claim with arithmetic; the other wrote headings around it and turned it into a purchase recommendation.
 
 This document exists because the review is more instructive than the claim was. It is well organised, it uses headings and
 tables, it names real limitations, it proposes a sensible to-do list — and its headline conclusion is **false**, stated as
@@ -57,12 +62,18 @@ the evidence behind them was already withdrawn.
 
 ## The same panel produced a genuinely excellent review an hour earlier
 
-The other review of the same work — the one that audited the *script* — found four real defects, identified the
-double-counted MER, and named the test that falsified the claim. It was right about all three findings that can be
-checked and honestly separated the one it could not verify.
+The other review of the same work — the one that audited the *script* — came from **Gemini 4 Neon (Google AI)**
+(28.291 s, 110,052 credits). It found four real defects, identified the double-counted MER, and named the test that
+falsified the claim. It was right about all three findings that can be checked and honestly separated the one it could not
+verify. The endorsement above came from **GPT-4.1 mini (OpenAI)** (20.796 s, 14,720 credits).
 
-**Same panel. Same underlying work. Opposite quality.** One review destroyed the claim with arithmetic; the other
-re-blessed it with headings.
+**Two different models, same panel, same hour, opposite quality.** One review destroyed the claim with arithmetic; the
+other re-blessed it with headings. This is not one model contradicting itself — it is the same input producing a falsifier
+and an amplifier, which makes averaging or counting votes worse than useless.
+
+One observation, logged without generalising: the model that cost **7.5× more credits** produced the audit; the cheaper,
+faster one produced the endorsement. A single instance proves nothing about a model, but it is exactly the kind of datum
+that argues for choosing reviewers per task rather than per price — and for scoring them on recomputation, not fluency.
 
 ## What this changes about the process
 
