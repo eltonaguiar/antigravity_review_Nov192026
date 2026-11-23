@@ -9,11 +9,15 @@ and 69 ranked instruments, **0 pass the five gates and 0 have a positive 95% low
 ## Why — the three independent reasons
 1. **No edge survives deflation.** Best credible DSR is 0.815 (AUDJPY, n=34) and 0.318 (CVX, n=35) against a 0.95 gate;
    everything else < 0.13. Even `forex_rsi2_mean_reversion` (the only DSR pass at N=61) fails at the honest N=4,987.
-2. **Cost eats the rest.** At COST_OF_RECORD, **49/69 picks go net ≤ 0**. Real dated data by class (n=290 of 2,204 —
-   the rest are synthetic placeholders): COMMODITY −0.208%/trade, CRYPTO −0.511%, FOREX −0.075%, UNKNOWN −0.514%.
-   EQUITY/ETF/BOND have **zero real dated trades**.
-3. **The data is thinner and more synthetic than advertised.** 88% of `closed_picks.json` is dateless TP/SL
-   placeholders; the EQUITY/ETF universe is survivorship-biased (0 delisted names).
+2. **Cost eats the rest.** At COST_OF_RECORD, **49/69 picks go net ≤ 0**. Real dated data by class — **re-stated on
+   `origin/main` per the 07:16Z correction (505 rows, 262 dated); the older "n=290 of 2,204" figure was from a branch
+   7,133 commits behind and is withdrawn**: COMMODITY −0.208%/trade, CRYPTO −0.511%, FOREX −0.075%, UNKNOWN −0.514%.
+   EQUITY/ETF/BOND have **effectively no real dated trades** (EQUITY: 1).
+3. **The data is thinner than advertised — but the "88%" figure is RETRACTED for `main`.** ~~88% of `closed_picks.json`
+   is dateless TP/SL placeholders~~ — **withdrawn 2026-11-23T07:16Z**: on `origin/main`, `closed_picks.json` is
+   **505 rows, 262 dated, 0 dateless-on-barrier**, so the placeholder defect is **not present on main**; the 88% applied
+   only to a branch 7,133 commits behind (see the correction at the foot of this page). What survives, and is still a
+   real limitation: **EQUITY has 1 dated trade** and the EQUITY/ETF universe is survivorship-biased (0 delisted names).
 
 ## What is actually defensible (measured)
 | Vehicle | 10y cost / $100k | ann. return (2021–26) | corr vs SPY |
