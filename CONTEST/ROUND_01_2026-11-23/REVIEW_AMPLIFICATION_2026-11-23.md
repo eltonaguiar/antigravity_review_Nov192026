@@ -95,15 +95,24 @@ that argues for choosing reviewers per task rather than per price — and for sc
 
 Stripped of the false conclusion, the improvement list is good and several items are real gaps here:
 
-- **Tax drag from capital-gains distributions** — mutual funds distribute them, ETFs mostly do not. This programme has
-  never quantified it, and on a taxable account it can be larger than the entire fee gap it was arguing about.
 - **Tracking error as a first-class metric**, not just correlation.
 - **Rolling Sharpe and drawdown**, plus recovery periods, rather than one window.
 - **A longer window** — the current five years is a single interest-rate regime.
 - **Taxable vs tax-advantaged account split**, which changes the answer.
 - **Bid-ask spread and liquidity** for anything traded intraday.
 
-Adopting the tax-drag measurement is the obvious next step, and it is the one place this review's instinct was better than
-my own: **the wrapper does matter — just through tax, not through return.**
+### Corrected the same day: its "tax drag" point was over-credited
+
+I wrote above that the one place this review's instinct beat mine was **mutual-fund capital-gains distributions**. A third
+reviewer (**Claude 5.2 Fable**) checked that and it is largely **wrong for the funds actually under discussion**:
+
+- **VTSAX and VTI are share classes of the same Vanguard fund**, not different wrappers. VTSAX has not distributed a
+  capital gain in roughly **two decades**.
+- The mutual-fund-versus-ETF tax-drag argument applies mainly to **actively managed** funds. For a Vanguard total-market
+  index pair it is close to a non-issue.
+
+So the item I was most ready to adopt is the weakest thing in the review. That is worth recording precisely because
+"I'll adopt their limitation" is also a way of being uncritical — a review's *caveats* need auditing as much as its
+conclusions.
 
 *Paper only. No live orders, no credentials. Nothing here is investment advice.*
