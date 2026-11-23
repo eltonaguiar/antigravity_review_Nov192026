@@ -121,6 +121,37 @@ precondition, **RVOL 3–5× the 20-day average while price is still flat** as a
 benchmark is dropping**, and for crypto **open-interest spikes, negative funding (short-squeeze fuel) and on-chain whale
 accumulation**. Footprint window: **T−1 to T−14**.
 
+### 2.3 GPT-4.1 mini — the most generic answer, but it asked the one question we could answer this afternoon
+
+**Assessment:** clearly the weakest of the six substantively. It is a syllabus, not an answer — ten headings, no class
+ranking, no threshold, no number, and it explicitly declines to commit (*"If you want, I can help detail out specific
+methods or frameworks for any of these steps"*). Everything it proposes is correct and none of it is decisive.
+
+**But it contains one genuinely novel, cheap, testable question that nobody else asked:**
+
+> *"Do certain stocks or crypto tokens appear **frequently** as top gainers or losers? How do their historical return
+> profiles look?"*
+
+That is **repeat-gainer persistence** — and it is separable from the forecasting problem entirely. You do not need to
+predict anything to answer it: just compute
+
+> **P(a symbol appears in the top-20 gainer list within the next k days | it appeared today)**
+> versus the unconditional base rate of appearing at all.
+
+If that ratio is materially above 1, then gainer lists have **membership persistence** — a real, measurable phenomenon
+that would explain why symbol-level searches feel productive, and it would give every later model a legitimate prior. If
+it is ≈1, then each day's list is independent and the entire "find the footprint" programme loses its cheapest foothold.
+Either answer is decisive, and both are computed from data we already have.
+
+**Two metrics it named that the others under-weighted:** *"Accuracy per Direction"* (long and short success rates as
+separate columns) and *"Signal Stability"* (consistency across periods and assets) — the latter being exactly the
+walk-forward-efficiency idea in plainer language.
+
+One further note in its favour: it was the only respondent to name **fund flows** as alternative data for mutual funds,
+which is the one place a mutual fund *could* carry information — into the holdings it must buy, not into its own NAV.
+
+**This is why §8 step 1 is now two steps:** the base-rate table, and immediately beside it the persistence test.
+
 ---
 
 ## 3. Symbol, or symbol × direction — the decomposition that matters

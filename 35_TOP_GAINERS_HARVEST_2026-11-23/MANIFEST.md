@@ -19,15 +19,39 @@
 
 ## Attribution
 
-- **AskAnyModel → GPT-6.1 Terra (OpenAI)**, per operator identification. The pane carries OpenAI-house framing
-  ("volatility is much more predictable than direction") and is the source attributed throughout `SYNTHESIS.md`.
-- **1min.ai → Gemini 4 Neon (Google AI)**, per operator identification of the reply pasted at 2026-11-23T03:16Z
-  (105,111 credits, 37.4 s). Saved as `harvest_1min_gemini4neon.txt`. **This is the only respondent that ranked the
-  classes explicitly, and the only one that specified a complete TP/SL construction** — see synthesis §2.1 and §2.2.
-- arena.ai's own transcript records its plan step verbatim: *"a detailed response plus maybe a workspace scaffold"* — it
-  chose to build, not just describe.
-- ChatPlayground pane timings name **GLM 5.3 Flash** as one of the responding models; the other two panes are unlabelled
-  in the capture.
+Verified by distinctive opening phrases, not by memory or label:
+
+| File | Model | Evidence |
+|---|---|---|
+| `harvest_askanymodel.txt` / `_r2` | **GPT-6.1 Terra (OpenAI)** | operator identification; contains *"research and trading-system design problem"* at offset 26,847, in no other file |
+| `harvest_1min.txt` | **GPT-4.1 mini (OpenAI)** | contains *"can be a complex but systematic endeavor"* — the phrase unique to its pasted reply (14.1 s, 8,391 credits) |
+| `harvest_1min_gemini4neon.txt` | **Gemini 4 Neon (Google AI)** | contains *"classic quantitative finance problem"* — unique to its pasted reply (37.4 s, 105,111 credits) |
+| `harvest_1min_r2.txt` | **Qwen4 Max (Alibaba Cloud)** — *operator-identified* | later portion of the same 1min.ai transcript; **neither opening phrase is present**, so this attribution rests on the operator's identification, not on a quote match. Contains the extended data-integrity passage (no backfilled restatements, retroactive split adjustment changing distance-from-52w-high, LULD halts) |
+| `harvest_arena.txt` / `_r2` | arena.ai agent | its own plan step is in the transcript: *"a detailed response plus maybe a workspace scaffold"* |
+| `harvest_chatplayground.txt` | unlabelled ×3 | one pane named **GLM 5.3 Flash**; the other two are not labelled in the capture |
+
+**Attribution correction (recorded because it nearly propagated):** `harvest_1min.txt` was initially logged as
+"1min.ai, model undisclosed". The GPT-4.1 mini paste proved it by exact opening phrase. **The 1min.ai tab contained at
+least two different answers** — GPT-4.1 mini and Gemini 4 Neon — so a single capture of that tab silently mixed sources.
+Any later reader of these files should key on the opening phrase, not the filename.
+
+**Consequence for counting:** the answers are **seven models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
+Gemini 4 Neon, Qwen4 Max, GLM 5.3 Flash and two unlabelled ChatPlayground panes, plus the arena.ai agent. The **1min.ai
+tab is multi-model**, like AskAnyModel, not a single model. No result in `SYNTHESIS.md` depends on the count — it depends
+on which claim came from which model, which the table above fixes.
+
+**Cost per answer on 1min.ai**, which is the pricing lesson of this exercise:
+
+| Model | Latency | Credits | Verdict at that price |
+|---|---|---|---|
+| GPT-4.1 mini | 14.1 s | **8,391** | generic syllabus — but it asked the one question we could answer today (§2.3) |
+| Gemini 4 Neon | 37.4 s | **105,111** | the only explicit class ranking and the only complete TP/SL design (§2.1, §2.2) |
+| Qwen4 Max | **277.7 s** | **166,402** | *not yet read in full* — only a partial capture exists (`_r2`), so nothing is claimed from it |
+
+**Gemini 4 Neon at 105K credits was the best value in this set by a wide margin** — 12.5× the price of GPT-4.1 mini for
+the only two artefacts (a class ranking and a TP/SL construction) that can be implemented. Qwen4 Max cost 1.6× Gemini and
+58× GPT-4.1 mini, and produced a longer answer whose distinctive content is currently unverified because the capture is
+partial. **A paste of the Qwen4 Max opening line would let it be verified like the other two and added to §2.**
 
 ## Round 2 capture (`*_r2.txt`) — same evening, re-harvested
 
