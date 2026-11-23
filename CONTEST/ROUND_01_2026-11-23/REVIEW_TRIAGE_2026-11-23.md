@@ -88,8 +88,14 @@ tightly, and even then only within their spread.
    VTI are share classes of one fund and VTSAX has not distributed capital gains in ~20 years. A review's *caveats* need
    auditing as much as its conclusions.
 4. **The reviewer ranking is now evidence-based**: Claude 5.2 Fable first (corrected the claim *and* my adaptation),
-   Gemini 4 Neon second (killed the claim), GPT-4.1 mini last (amplified it). Cost was not a reliable proxy — the cheapest
-   was worst, but the middle-cost one was best.
+   Gemini 4 Neon second (killed the claim), Grok 4.6 third (audited independently, cleanest statement of the fee rule),
+   then the amplifiers: GPT-4.1 mini, Claude Fable 5, Qwen3.8 Max. Cost was not a reliable proxy — the cheapest was
+   worst, the middle-cost one was best.
+5. **A third harvest made the pattern explicit: the retracted claim came back in 2 of 3 fresh reviews.** Across every
+   reviewer asked today the tally is **3 audited, 3 amplified** — an even split, from models handed the work without the
+   correction. See `ASKANYMODEL_HARVEST_2026-11-23.md`. **A retraction does not travel with the artifact; it only travels
+   with the brief.** The R01b brief carried F4 marked RETRACTED, which is why its reviewers attacked the replacement claim
+   instead of repeating the original. The fund deep-dive was shipped bare.
 
 *Educational analysis only. Paper only. No live orders, no credentials. Not individualized investment advice, and the
 jurisdiction-specific items above are flagged for confirmation with a broker before anything is acted on.*
