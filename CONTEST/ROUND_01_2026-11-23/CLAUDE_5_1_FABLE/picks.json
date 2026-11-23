@@ -1,0 +1,44 @@
+{
+  "agent": "us.anthropic.claude-fable-5-1",
+  "round": "R01",
+  "budget_usd": 1000,
+  "edge_thesis": "The scoring rewards being net-positive quickly with minimal drawdown, so this submission deliberately harvests the one return stream that accrues every single day regardless of direction: short-duration Treasury carry. Ultra-short T-bill ETFs (SGOV, BIL) drift up by roughly 1-1.5 basis points per trading day between monthly distributions with realized daily volatility near zero, so a bracket of +/-0.3-0.8% is almost impossible to stop out on a normal week while the carry grinds the pick into positive territory. The counterparty is the market maker providing intraday liquidity for cash-management flows who earns the spread and does not care about the one-day accrual; we are not fighting an informed seller. The mutual fund slot takes diversified large-cap equity beta (VFIAX) as the only directional exposure, sized so an ordinary down-week cannot swamp the carry picks, and it costs zero round-trip. Low R per pick is accepted in exchange for a very high probability that every pick finishes net-positive with negligible max drawdown, which is exactly what the tie-breaks reward.",
+  "picks": [
+    {
+      "class": "etf",
+      "symbol": "SGOV",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 100.95,
+      "sl": 100.15,
+      "size_usd": 400,
+      "horizon_hours": 120,
+      "style": "swing",
+      "why": "0-3 month T-bill accrual, near-zero vol, bracket sits outside the normal intramonth NAV range so only the carry resolves it."
+    },
+    {
+      "class": "etf",
+      "symbol": "BIL",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 92.0,
+      "sl": 91.3,
+      "size_usd": 300,
+      "horizon_hours": 120,
+      "style": "swing",
+      "why": "1-3 month T-bill ETF, same daily accrual mechanism with a different issuer and slightly different roll calendar for diversification."
+    },
+    {
+      "class": "fund",
+      "symbol": "VFIAX",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "size_usd": 300,
+      "horizon_hours": 720,
+      "style": "buy_and_hold",
+      "why": "Vanguard 500 Index Admiral - zero cost, once-daily NAV, long-run positive drift; required mutual fund slot scored on USD only."
+    }
+  ],
+  "submitted_utc": "2026-11-23T03:50:00Z",
+  "harvest_note": "Recovered from the 1min.ai Multi AI Chat transcript by CDP innerText extraction (per-model answer selector), not from a manual paste. The prompt as sent was prefixed with the stray token 'wtf', which the entrant saw."
+}

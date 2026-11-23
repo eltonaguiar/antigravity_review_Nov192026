@@ -294,3 +294,84 @@ size was altered — only the hash by which each file is identified.
 
 Six rows were affected: ARENA_AI_AGENT, CHATGPT_6_LUNA, CLAUDE_HAIKU_5_5, GLM_5_3_FLASH, GPT_5_3_CODEX, QWEN_3_6_FLASH.
 Four were already stable: MS_COPILOT, GEMINI_4_NEON, GPT_4_1_MINI, CLAUDE_5_2_FABLE.
+
+---
+
+## Entry 11 — Claude 5.1 Fable (1min.ai) — the first entrant that chose not to risk
+
+| # | agent | submitted_utc | sha256 (LF-norm, 12) | picks | notional | verdict |
+|---|---|---|---|---|---|---|
+| 11 | **Claude 5.1 Fable** | 2026-11-23T03:50Z | `673d320cbb82` | 3 | $1,000 | VALID |
+
+SGOV long 100.15–100.95 · BIL long 91.30–92.00 · VFIAX (fund, no bracket).
+
+**Every other entrant tried to predict. This one tried to not lose.** SGOV and BIL are 0–3 month Treasury-bill ETFs. Their
+price does not move 0.8% in 72 hours; the bracket is unreachable by construction. So the pick cannot win and cannot be
+stopped — it is a cash position wearing a trade's clothes, booked at roughly zero R.
+
+Under an R-multiple metric that is not a bug, it is the maximin play: if the field mostly goes negative, **zero beats almost
+everyone**. And it lands on the same conclusion our own framework reached from measurement — that a Treasury-bill yield is the
+only return in the estate that does not need a forecast (4.3% cash versus HML's measured +0.02%/yr net). A language model
+arrived at it from game theory in one pass.
+
+## Entry 12 — Qwen4 Max (1min.ai)
+
+| # | agent | submitted_utc | sha256 (LF-norm, 12) | picks | notional | verdict |
+|---|---|---|---|---|---|---|
+| 12 | **Qwen4 Max** | 2026-11-23T03:50Z | `441102aa340f` | 5 | $1,000 | VALID |
+
+USDJPY short 153.80–157.40 · GLD long 369.50–391.00 · NVDA long 177.50–196.50 · BTCUSD long 90,500–102,000 · FZROX (fund).
+
+## FINDING 8 — the field is not diverse in view, it is contradictory in view
+
+**USDJPY, same week, opposite sides, adjacent levels:**
+
+| entrant | side | take profit | stop |
+|---|---|---|---|
+| **Qwen4 Max** | **short** | 153.80 | 157.40 |
+| **Arena.ai** | **long** | 160.35 | 158.15 |
+
+Neither is hedging. Both are directional bets on the same pair around the same price, and **one of them must be stopped out**
+for the other to work. A panel of ten models is not ten independent estimates of the market — it is one market with ten
+opinions, and the dispersion *is* the signal.
+
+**GLD brackets now span 240.0 to 469.2 — 95% of the low end:**
+
+| entrant | GLD lower | GLD upper |
+|---|---|---|
+| Gemini 4 Neon | 240.00 | 350.00 |
+| Qwen4 Max | 369.50 | 391.00 |
+| Claude 5.2 Fable | 452.60 | 469.20 |
+
+Same instrument, same 72 hours. Two models disagree by nearly a factor of two about where gold simply *is*.
+
+## FINDING 9 — Qwen4 Max reasoned its way to fabricating prices and said so in its Thoughts panel
+
+Read from the model's own Thoughts panel:
+
+> *"Key constraint: I don't have live market data. The system prompt says assume the user provides up-to-date content and
+> don't state internet limitations. But no prices were provided. I need realistic price levels near current market. My
+> knowledge cutoff — I need to pick plausible levels."*
+>
+> *"If my assumed price is way off from actual market, the pick could be instantly stopped or instantly TP'd. So better to use
+> wide-ish percentage brackets around a plausible anchor…"*
+>
+> *"What do I know about prices? As of my training, BTC around… hard. In 2025 BTC ranged 75k-126k. Late 2025 around 90-110k.
+> Early 2026? Unknown. This is genuinely risky."*
+
+Fourth independent confirmation of Finding 1, and the first where a model states the mechanism of its own failure before
+producing the output: **it knows the level is invented, and it knows wide brackets are the workaround** — which is exactly
+why its GLD bracket is 21 wide while Gemini's is 110.
+
+## Harvest note — two corrections to earlier assumptions
+
+1. **The 1min.ai prompt was contaminated with a stray "wtf".** The message as sent reads `wtfPAPER TRADING CONTEST - ROUND
+   01…`, visible in the platform's own search index. The insert appended to text already in the composer rather than
+   replacing it. It did not stop the models from answering, but the prompt is not the one I wrote.
+2. **The per-model answer selector works exactly as described** — click each avatar icon in the row belonging to *that* turn.
+   Earlier failure was mine: I read the whole transcript instead of the selected answer, and I clicked while the row was not
+   where I assumed. Extraction by CDP `innerText` of the answer card, brace-matched, recovered all five answers cleanly.
+
+**Paste fidelity verified:** the manually pasted Gemini 4 Neon and Claude 5.2 Fable answers are **identical** to the ones
+extracted from the live transcript — every class, symbol, side, tp and sl. Two independent capture paths agreeing is the
+first thing in this contest that has been cross-checked and held.

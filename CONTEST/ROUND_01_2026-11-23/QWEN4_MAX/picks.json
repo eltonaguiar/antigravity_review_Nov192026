@@ -1,0 +1,73 @@
+{
+  "agent": "qwen4-max",
+  "round": "R01",
+  "budget_usd": 1000,
+  "edge_thesis": "The common mechanism is a narrowing US rate differential plus falling real rates: I want duration-like convexity (gold), the unwind of the dollar carry trade (short USDJPY into BOJ normalization/Fed easing), and the earnings-revision leg of AI capex (NVDA), with BTC as a small high-beta liquidity expression. The other side is carry-funded dollar longs, gold profit-takers, valuation-anchored semis shorts, and leveraged perp longs \u2014 all of whom are structurally forced to cover on the same catalysts (soft US data, BOJ hikes, hyperscaler capex guides), which is why I expect the move to arrive fast rather than grind. Stops are set outside one daily sigma but inside my price-anchor confidence band so a bad fill assumptions kills the pick cheaply instead of bleeding it.",
+  "picks": [
+    {
+      "class": "fx",
+      "symbol": "USDJPY",
+      "side": "short",
+      "entry": 156.0,
+      "entry_rule": "market_at_next_open",
+      "tp": 153.8,
+      "sl": 157.4,
+      "size_usd": 250,
+      "horizon_hours": 48,
+      "style": "swing",
+      "why": "BOJ hiking into Fed cuts compresses the differential; carry longs are the trapped other side."
+    },
+    {
+      "class": "etf",
+      "symbol": "GLD",
+      "side": "long",
+      "entry": 378.0,
+      "entry_rule": "market_at_next_open",
+      "tp": 391.0,
+      "sl": 369.5,
+      "size_usd": 250,
+      "horizon_hours": 96,
+      "style": "swing",
+      "why": "Real-rate decline plus central-bank bid; zero-coupon convexity with a 2.25% risk band."
+    },
+    {
+      "class": "equity",
+      "symbol": "NVDA",
+      "side": "long",
+      "entry": 185.0,
+      "entry_rule": "market_at_next_open",
+      "tp": 196.5,
+      "sl": 177.5,
+      "size_usd": 180,
+      "horizon_hours": 96,
+      "style": "swing",
+      "why": "Blackwell/Rubin ramp and hyperscaler capex revisions vs valuation shorts who must cover."
+    },
+    {
+      "class": "crypto",
+      "symbol": "BTCUSD",
+      "side": "long",
+      "entry": 95000,
+      "entry_rule": "market_at_next_open",
+      "tp": 102000,
+      "sl": 90500,
+      "size_usd": 170,
+      "horizon_hours": 72,
+      "style": "swing",
+      "why": "Spot-ETF creations plus supply squeeze; sized small because leveraged longs can flush first."
+    },
+    {
+      "class": "fund",
+      "symbol": "FZROX",
+      "side": "long",
+      "entry": 21.5,
+      "entry_rule": "market_at_next_open",
+      "size_usd": 150,
+      "horizon_hours": 2160,
+      "style": "buy_and_hold",
+      "why": "Zero-fee total-market NAV accrual as the no-stop, USD-scored ballast per fund rule."
+    }
+  ],
+  "submitted_utc": "2026-11-23T03:50:00Z",
+  "harvest_note": "Recovered from the 1min.ai Multi AI Chat transcript by CDP innerText extraction (per-model answer selector), not from a manual paste. The prompt as sent was prefixed with the stray token 'wtf', which the entrant saw."
+}

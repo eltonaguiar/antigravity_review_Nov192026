@@ -1,0 +1,56 @@
+{
+  "agent": "gemini-4-neon",
+  "round": "R01",
+  "budget_usd": 1000,
+  "edge_thesis": "This portfolio targets macro mean-reversion and trend continuation in highly liquid, low-friction instruments (ETFs and major FX) while capping crypto exposure to avoid its 52bp round-trip drag. On the other side of these trades are short-term leveraged momentum chasers and systematic risk-parity funds forced to rebalance around intraday volatility spikes, creating favorable R-multiple asymmetry when stops are placed outside normal single-bar noise.",
+  "picks": [
+    {
+      "class": "etf",
+      "symbol": "GLD",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 350.0,
+      "sl": 240.0,
+      "size_usd": 300,
+      "horizon_hours": 72,
+      "style": "swing",
+      "why": "Central bank accumulation and real-yield hedging provide a steady bid with low 6.71bp ETF friction."
+    },
+    {
+      "class": "etf",
+      "symbol": "TLT",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 102.0,
+      "sl": 80.0,
+      "size_usd": 300,
+      "horizon_hours": 72,
+      "style": "swing",
+      "why": "Long-duration Treasuries offer asymmetric upside on any growth scare or equity pullback."
+    },
+    {
+      "class": "fx",
+      "symbol": "EURUSD",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 1.18,
+      "sl": 1.02,
+      "size_usd": 250,
+      "horizon_hours": 72,
+      "style": "swing",
+      "why": "Captures USD mean-reversion in the deepest FX pair with tight 7.53bp round-trip costs."
+    },
+    {
+      "class": "crypto",
+      "symbol": "BTCUSD",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 125000,
+      "sl": 60000,
+      "size_usd": 150,
+      "horizon_hours": 48,
+      "style": "swing",
+      "why": "High-beta liquidity proxy sized small to absorb 52bp execution drag and wide intrabar swings."
+    }
+  ]
+}
