@@ -38,7 +38,7 @@ Class aggregates:
 
 | Class | Verdict | n | Net/trade | 95% CI | required_n |
 |---|---|---:|---:|---|---:|
-| **EQUITY** | WEAK | 939 | **+0.184%** | [−0.395, +0.747] | 7,389 |
+| **EQUITY** | WEAK | 956 | **+0.106%** | [−0.480, +0.693] | (re-measure) |
 | ETF | WEAK | 586 | +0.006% | [−0.424, +0.480] | 1,745,345 |
 | FOREX | WEAK | 258 | −0.024% | [−0.164, +0.119] | 8,734 |
 | BOND | WEAK | 35 | −0.184% | [−0.384, +0.035] | 214 |
@@ -88,6 +88,20 @@ is ~0 (+0.006%), so it is a worse *class* answer and a better *experiment*.
 **Neither justifies real money today.** The AUDJPY symbol candidate is the closest thing to
 a positive measurement on either surface, but one symbol at n=33 is a hypothesis, not an edge. No class meets Tier-2 (n≥100 clean, WR≥50%,
 PF≥1.5, MDD<20); no pod has forward rows; every confirmatory cell fails the 2× cost gate.
+
+## 4b. Reconciliation (2026-11-23): EQUITY has narrowed, and a second table disagrees
+
+| Source | Population | EQUITY | ETF | FOREX | CRYPTO |
+|---|---|---|---|---|---|
+| audit3 canonical (8,807 scored) | all resolved, class slippage | **+0.106%/trade, n=956**, CI [−0.480, +0.693] | −0.006%, n=590 | −0.060%, n=269 | −0.377%, n=6,899 (KILL) |
+| peer "corrected" table (505 rows, COD cost) | narrow slice | −0.148%, **n=8** | −0.047%, n=16 | −0.131%, n=169 | −0.515%, n=140 |
+
+Both agree on the decision: **no class is investable.** EQUITY drifted from **+0.184 (n=939) on 11-19 to
++0.106 (n=956) on 11-23**, CI roughly ±0.5. The peer table's n=8 cannot override the canonical
+population, but it correctly warns that EQUITY's positivity is not robust.
+
+Precisely: **EQUITY is least-bad, not proven.** Any recommendation to work it must carry the CI and the
+drift; it is not a reason to fund anything.
 
 ## 5. The blocking fact: the forward clock is empty for this pod
 
