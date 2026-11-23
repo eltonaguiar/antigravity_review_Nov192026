@@ -119,3 +119,8 @@ DOT/META/JUP rows were inadmissible (n=0); all rows here are re-costed at the cl
 
 
 *Paper only. Zero capital. Not investment advice.*
+## Revision 2026-11-23T02:54Z
+changed:   FOREX row wording ("feed dead" -> "historical series dead, forward pick pipeline LIVE")
+why:       found copy_trader_intel/data/forex_copytrader_picks.json: 5 FX picks, all dated 2026-11-20, all OPEN (1 = AUDJPY=X @105.887), 0 closed, 0 priced. So FX picks exist after the 2026-02-09 series end.
+impact:    AUDJPY's "+14 trades to clear G3" is POSSIBLE, not impossible — but n_closed=0 and no FX pricing, so verdict stays DEAD.
+evidence:  reports/fx_pick_pipeline_status.json (findtorontoevents_antigravity.ca @ feat/coms-final-notes-2026-11-20)
