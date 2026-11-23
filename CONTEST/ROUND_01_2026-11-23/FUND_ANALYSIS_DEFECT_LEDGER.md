@@ -172,6 +172,56 @@ Only the third answers "is A better than B", and it is tight precisely because t
 statement is not "SE ≈ 0.5, therefore noise" — it is **"the difference is bounded inside ±0.03 Sharpe, therefore they are the
 same instrument with different fees."** The reviews that quoted 0.5 were answering a question nobody asked.
 
+## 15th reviewer — subq.ai deep research: the two new points are about transcript integrity, and it repeats a dated claim
+
+Audited the claim (tally **12 audited / 4 amplified**). Its maths review is largely a restatement of what nine other
+reviewers said, but two of its twelve items are new, and both concern **whether the artefact can be trusted at all**:
+
+### 1. The verification command was truncated mid-print — so the claim was never confirmed end to end
+
+> "The final verification command is truncated — output ends at 'FXAIX net CA' — the claim was never actually confirmed.
+> Re-run to completion."
+
+That is correct and I had not registered it. The transcript's "verification" step **never finished printing**. So the
+number that later became a published claim was never attested by a completed run in the artefact anyone was given. A
+truncated output is not a null result — it is an absent one, and it should have blocked publication rather than being read as
+"more output than fits".
+
+### 2. The pasted code is markdown-mangled — so the numbers may not come from the code on display
+
+> "`muann`, `sdmath.sqrt(ann)`, `0.80.000945`, `import("datetime")`, `if name=="main"`. If that is just rendering, fine; if
+> it is the file, it cannot run. Paste the file verbatim or confirm it executes."
+
+This is the sharpest integrity question anyone asked. If those are rendering artefacts, the review is of a transcript. If
+they are in the file, the script **cannot execute** — which would mean every number in the report came from a version nobody
+has seen. Neither of us can tell from a paste, and that is precisely the problem: **a pasted transcript is not evidence that
+the code ran.**
+
+### The principle worth keeping
+
+> "A schema or a metric name constrains **representation**, not truth. Calling a ratio 'Sharpe' doesn't make it Sharpe, and a
+> JSON-shaped output isn't a validated one until you re-check it."
+
+That generalises every error found today: the double-counted MER was named `net_cagr`, the rf=0 ratio was named `sharpe`, the
+hardcoded assertions were named `verification`, and the echo of a retracted claim was named `consensus`. **The label did the
+persuading while the arithmetic did something else.**
+
+### Where it is wrong, and this one is checkable
+
+It repeats the dated tax claim:
+
+> "VTSAX and VTI hold the same portfolio but mutual funds can distribute capital gains while ETFs rarely do… the classic
+> reason to prefer one."
+
+**Three reviewers corrected exactly this** (Claude 5.1, Claude 5.2, Qwen4 Max): VTSAX and VTI are **share classes of one
+fund**, Vanguard's dual-class structure flushes gains through the ETF class, the relevant **patent expired in 2023**, and
+VTSAX has not distributed a capital gain in roughly **twenty years**. So the fifteenth reviewer is repeating a claim the
+third, fourth and twelfth had already falsified — on a fact that takes one lookup.
+
+That is the clearest demonstration yet that **review volume is not review quality**, and that a claim contradicted by three
+prior reviewers still travels if the brief does not carry the correction. It is the same mechanism as the retracted MER
+claim, on a different fact.
+
 *Paper only. No live orders, no credentials. Not investment advice.*
 
 ## Reviewers who were themselves wrong — because a reviewer's corrections need auditing too
