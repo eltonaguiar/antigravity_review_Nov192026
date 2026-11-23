@@ -49,6 +49,32 @@ Any candidate must beat that **after measured costs**, on the same universe, sam
 Two supporting rules from the same panel: **keep the full ranked list, not just the top 10**, so the whole distribution is
 inspectable; and **include a "do-nothing" class**, because *"most days the correct action is to sit out."*
 
+## 0.4 Three tasks, built in this order (Claude 5.1 Fable, synthesis §2.8)
+
+Do not build the direction model first. Build **A**, label with **C**, and treat **B** as derived:
+
+| Task | Question | Type | Difficulty | Build |
+|---|---|---|---|---|
+| **A. Selection** | which symbols are in the next period's top-N movers? | cross-sectional ranking / rare-event classification | **moderate** | **first** |
+| **B. Direction** | will symbol X rise or fall over horizon H? | per-symbol binary/ternary | hard | last, if at all |
+| **C. Path** | given an entry, does price hit +TP before −SL within H bars? | barrier / survival | hard but tradeable | **as the label** |
+
+The reason A is tractable is the **Fundamental Law of Active Management: IR ≈ IC × √breadth** — 50 independent cross-sectional
+bets a day accumulate evidence far faster than 50 a year, which resolves §5's power problem by design rather than by waiting.
+
+**Mandatory for any crypto result: strip BTC beta first.** *"Correlation to BTC is so high that most alt predictability is
+just BTC beta — strip it out before you claim anything."* Every crypto row reports its **BTC-residual** number, not its raw
+return. A raw crypto figure is unattributed until that regression is shown.
+
+**And split the event study by size × catalyst, not by size and catalyst as an argument:**
+
+| | Fundamental catalyst | No news |
+|---|---|---|
+| **Large cap** | **drift continues** (post-earnings drift) | thin evidence — report as UNMEASURED |
+| **Small cap** | event-driven; report separately | **mean-reverts with high probability** |
+
+That 2×2 is what the contradictory "large-cap vs small-cap predictability" claims were each half of.
+
 
 ---
 

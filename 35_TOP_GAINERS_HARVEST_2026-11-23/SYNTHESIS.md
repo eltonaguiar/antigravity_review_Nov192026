@@ -541,6 +541,102 @@ different questions because nobody specified "predictable after cost".** That is
   short squeeze via borrow cost and float %, crypto airdrop/liquidity) is the same conditioning Fable demanded, but easier
   to compute from data we hold.
 
+### 2.8 Claude 5.1 Fable — the most expensive answer (1,511,466 credits) and the most complete research programme
+
+Its thesis in three clauses, which is the best one-sentence framing in sixteen answers:
+
+> *"Direction is weakly predictable, **volatility is strongly predictable**, and **the ranking of assets relative to each
+> other is more predictable than the absolute path of any one asset**. Nearly everything below follows from that."*
+
+#### (a) Three tasks, not two — and an explicit build order
+
+Fable 5.2 split the problem in two (predict before the move / trade after the list). This split resolves it into three and
+ranks them by difficulty — which is strictly more useful, because it tells you what to build *first*:
+
+| Task | Question | Type | Difficulty |
+|---|---|---|---|
+| **A. Selection** | which symbols are in the next period's top-N movers? | cross-sectional ranking / rare-event classification | **moderate** |
+| **B. Direction** | will symbol X go up or down over horizon H? | binary/ternary per symbol | hard |
+| **C. Path** | given a long entry, does price hit +TP before −SL within H bars? | barrier / survival | hard, but tradeable |
+
+> *"Most people jump straight to B. **You should build A first (it's where the real edge in 'top gainers' lives)**, use C as
+> your label definition, and treat B as a derived quantity."*
+
+And the reason A is more tractable is stated as a formula — the **Fundamental Law of Active Management, IR ≈ IC × √breadth**.
+A cross-sectional strategy making 50 independent trades a day accumulates statistical evidence far faster than one making 50
+a year, which is exactly the power problem in §5 dissolved by design rather than by patience.
+
+#### (b) IT EXPOSES A DEFECT IN OUR OWN CRYPTO NUMBERS — BTC beta
+
+> *"Correlation to BTC is so high that **most alt 'predictability' is just BTC beta — strip it out before you claim
+> anything.**"*
+
+**Our crypto rows never did this.** ENJ at +89.1 bp, WIF at +45.4, ETH at +29.2, NEAR at +29.1, JUP at +27.4 — measured
+across the same window in which BTC moved. Any of those numbers may be **BTC beta with a symbol attached**, not an edge in
+the symbol. The honest status of every crypto figure in `34_FINAL_PICKS_2026-11-23/` is therefore **unattributed until each
+row is regressed against BTC and the residual is reported.**
+
+This is the same class of error as the 175 bp FX defect and the "measured" cost bands: a number that looks like a
+measurement of one thing and is actually a measurement of another. **It is now the top outstanding audit item in the estate**
+and it does not require new data — only a re-run with BTC as a regressor.
+
+#### (c) The 2×2 that settles the large-cap dispute
+
+> *"**Small-cap 'top gainers' on no fundamental news mean-revert with high probability** — this is one of the most robust
+> findings and is directly relevant to your target. **Large-cap gainers on earnings beats tend to drift further.**"*
+
+That is the answer §2.1 and §2.4 were arguing around. The dispute was never large-cap versus small-cap; it is
+**size × catalyst**, and both camps had one cell each:
+
+| | Fundamental catalyst | No news |
+|---|---|---|
+| **Large cap** | **drift continues** (PEAD) | (unstated — thin evidence) |
+| **Small cap** | (unstated — event-driven, capeable) | **mean-reverts with high probability** |
+
+Gemini 4 Neon's "small/mid-cap predictable around events" and Mistral's "large caps more predictable" are **the same table
+read from two different cells.** The event study must be split **size × catalyst** and report four cells, not two.
+
+#### (d) The two numbers that agree — now independently confirmed twice
+
+- **IC 0.02–0.05 realistic, 0.10+ suspicious** — identical to Claude Opus 5.5 (§2.7), from a different lab and a different
+  platform. Two independent models, same calibration. That is settled.
+- **ICIR = mean IC / std IC** — identical to GLM 5.3 Flash (§2.6). *"Tells you how stable the edge is, which matters more
+  than its average."* Two independent models, same metric. Also settled.
+- **Breakeven hit rate** `p* = (SL + costs)/(TP + SL)`: *"a 2:1 reward/risk needs ~34% wins plus costs; 1:2 needs ~67%."*
+  Third independent derivation of §2.5's arithmetic (33.3% before costs, 34% with).
+
+#### (e) Hurst is now settled as a diagnostic, not a signal — three models agree
+
+*"Hurst exponent (rolling): ~0.5 random, >0.5 persistent, <0.5 anti-persistent. **Noisy on short windows; use it as a regime
+descriptor, not a signal.**"* That is Opus 5.5's caution (*"it's noisy"*) and this module's, independently. §2.4's
+Hurst-first framing is amended: **variance ratio (Lo–MacKinlay) is the primary test; Hurst is a regime descriptor.**
+
+And it names the models that actually work on volatility, which is the achievable half of the task: *"autocorrelation of
+absolute or squared returns… this is why **GARCH-family and HAR-RV** models work and directional models mostly don't."*
+
+#### (f) Four operational rules we did not have
+
+- **Reconstruct the gainer lists yourself from point-in-time OHLCV — do not scrape published lists.** *"They're
+  inconsistent and incomplete."* This changes the data layer: the list is an *output to be computed*, not an input to be
+  fetched.
+- **Survivorship bias alone will fabricate a 2–4%/yr edge** — a magnitude for the defect that Gate 1 is red about.
+- **Trailing stops must be measured, not assumed:** *"they often lower hit rate and raise payoff ratio, and the net effect
+  is strategy-specific."* Directly contradicts the trailing-stop advice in §2.1 and §2.4, which were offered as
+  improvements rather than hypotheses.
+- **Cost ratio as a fragility test:** *"total costs / gross P&L — if above ~50%, the strategy is fragile."* And its sharper
+  form of the baseline rule: *"if your model doesn't beat random entries with the same exit logic, your 'edge' is in the
+  exits or in the asset's drift, not in the signal."*
+
+#### (g) Its own class ranking — a third position
+
+*"My honest ranking of practical directional-signal tractability for a solo/small team: **equities cross-section > crypto >
+  FX > mutual funds**. For volatility prediction, all of the first three are good."*
+
+Note what it ranked: **equities cross-section**, not large-cap specifically — and *tractability for a small team*, which is a
+tradability-adjacent criterion. So the scoreboard is now **crypto-first 6 · equity-first 3 · abstain 3**, with the two
+"equity" positions and most of the six both defensible once "predictable after cost" is specified — which remains the
+missing clause in every disagreement.
+
 ---
 
 ## 3. Symbol, or symbol × direction — the decomposition that matters

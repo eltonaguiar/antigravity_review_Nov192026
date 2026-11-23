@@ -37,7 +37,7 @@ Verified by distinctive opening phrases, not by memory or label:
 least two different answers** — GPT-4.1 mini and Gemini 4 Neon — so a single capture of that tab silently mixed sources.
 Any later reader of these files should key on the opening phrase, not the filename.
 
-**Consequence for counting:** the answers are **fifteen models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
+**Consequence for counting:** the answers are **sixteen models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
 Gemini 4 Neon, Qwen4 Max, GLM 5.3 Flash and two unlabelled ChatPlayground panes, plus the arena.ai agent. The **1min.ai
 tab is multi-model**, like AskAnyModel, not a single model. No result in `SYNTHESIS.md` depends on the count — it depends
 on which claim came from which model, which the table above fixes.
@@ -46,6 +46,7 @@ on which claim came from which model, which the table above fixes.
 
 | Model | Latency | Credits | Verdict at that price |
 |---|---|---|---|
+| **Claude 5.1 Fable** | 151.7 s | **1,511,466** | **most complete research programme of the sixteen** — three-task A/B/C build order, BTC-beta stripping, the size-x-catalyst 2x2, and Lo-MacKinlay variance ratio over Hurst (§2.8) |
 | **Claude 5.2 Fable** | 71.4 s | **897,257** | **best answer of the set** — reframed the problem to an event study, cited the MAX/lottery effect that argues for *fading* gainers, and supplied the P(TP before SL) = SL/(TP+SL) arithmetic (§2.5) |
 | **Mistral Small** | 25.4 s | **3,471** | **best value per credit** — the only operational predictability battery (Ljung–Box, Hurst, entropy, HMM regimes, naive baseline) plus the smoothing argument against mutual funds (§2.4) |
 | GPT-4.1 mini | 14.1 s | **8,391** | generic syllabus — but it asked the one question we could answer today (§2.3) |
