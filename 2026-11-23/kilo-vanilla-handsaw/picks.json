@@ -684,5 +684,7 @@
     "cost_model": "per class @ $25k: EQUITY 2.3bp RT, ETF 2.3bp, CRYPTO_MAJOR 4.8bp, CRYPTO_ALT 15.8bp, FOREX 1.6bp",
     "g3_shortlist": "AUDJPY(+14 trades), CVX(+83) nearest G3 but both unmeasurable (FOREX dead feed; EQUITY no hold-times)",
     "recommendation": "Nothing real-money-ready. Only defensible real-money action = low-cost broad index ETF (buy decision, not edge)."
-  }
+  },
+  "SUPERSEDED_BY": "34_FINAL_PICKS_2026-11-23/KILOCODE_VSCODE/KILOCODE_VSCODE.md",
+  "CORRECTION": "This file predates the COST_OF_RECORD reconciliation. Its net_bp figures use pre-COD class costs and are NOT admissible; the corrected, re-costed table is in the SUPERSEDED_BY file. Retained for history per the folder's append-only rule."
 }
