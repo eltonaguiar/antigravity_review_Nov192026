@@ -55,3 +55,10 @@ COMMODITY −0.208%, CRYPTO −0.511%, FOREX −0.075%, UNKNOWN −0.514%; EQUIT
 **Procurement specs published** (`PROCUREMENT_SPECS.md`): (1) a realized, dated, delisting-aware EQUITY/ETF closed-trade
 series with acceptance criteria; (2) a measured ETF-grade venue fee tier for the 10 crypto G1-passers. These are the two
 data deliverables that unblock the programme; everything else is analysis we have already done.
+
+---
+### Revision 2026-11-23T06:45Z — shrinkage implemented (operator recommendation), no edge created
+James-Stein on real dated trades: shrink factor **22% (strategy) / 46% (symbol)**, but it **preserves order** (monotone).
+Critically, **0 of 6 shrunk top strategies and 0 of 6 shrunk top symbols are net-positive after class cost** (best shrunk
+cell +0.049%/trade vs a 0.20% commodity round trip). Shrinkage is an honesty fix, not an edge — the binding constraints
+remain cost and data coverage. `tools/shrinkage_estimator.py`, `reports/shrinkage_estimator.json`.
