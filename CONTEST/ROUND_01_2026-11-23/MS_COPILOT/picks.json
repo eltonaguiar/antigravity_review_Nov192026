@@ -1,0 +1,14 @@
+{
+  "agent": "M365 Copilot (GPT-5)",
+  "round": "R01",
+  "submitted_utc": "2026-11-23T03:35:00Z",
+  "budget_usd": 1000,
+  "edge_thesis": "Markets have just experienced a sharp risk-off shock across equities and gold while BTC has already shown relative-strength rebound behaviour. The edge is to fade forced liquidation in oversold risk assets with tight, asymmetric risk while keeping one defensive mean-reversion trade in gold. Counterparties are recent panic sellers, deleveraging funds and short-term traders reacting to volatility rather than fundamentals.",
+  "picks": [
+    {"class": "crypto", "symbol": "BTCUSD", "side": "long", "entry_rule": "market_at_next_open", "tp": 64500, "sl": 59800, "size_usd": 300, "horizon_hours": 48, "style": "swing", "why": "Rebound above 61k after liquidation flush; favourable short-term risk/reward."},
+    {"class": "etf", "symbol": "SPY", "side": "long", "entry_rule": "market_at_next_open", "tp": 730, "sl": 675, "size_usd": 250, "horizon_hours": 72, "style": "swing", "why": "Large one-day selloff increases odds of reflexive bounce before trend reasserts."},
+    {"class": "etf", "symbol": "GLD", "side": "long", "entry_rule": "market_at_next_open", "tp": 338, "sl": 318, "size_usd": 200, "horizon_hours": 96, "style": "swing", "why": "Gold ETF closed near 52-week low after washout; mean reversion."},
+    {"class": "fx", "symbol": "EURUSD", "side": "long", "entry_rule": "market_at_next_open", "tp": 1.072, "sl": 1.047, "size_usd": 150, "horizon_hours": 72, "style": "swing", "why": "Crowded USD strength vulnerable to short-covering retracement."},
+    {"class": "fund", "symbol": "VTSAX", "side": "long", "entry_rule": "market_at_next_open", "size_usd": 100, "horizon_hours": 8760, "style": "buy_and_hold", "why": "Broad-market mutual fund satisfies long-term NAV-scored allocation."}
+  ]
+}

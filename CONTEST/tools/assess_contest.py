@@ -186,7 +186,7 @@ def main():
         "void": sum(1 for r in rows if r["status"] != "OK"),
         "scored_in_R": len(scored),
         "mean_R": round(sum(rs) / len(rs), 4) if rs else None,
-        "total_usd": round(sum(r["usd"] for r in rows), 2),
+        "total_usd": round(sum(r.get("usd", 0.0) for r in rows), 2),
         "notional": total,
         "hits": sum(1 for r in scored if r["R"] > 0),
     }
