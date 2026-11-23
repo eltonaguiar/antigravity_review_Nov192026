@@ -152,6 +152,7 @@
       <a href="#filed">Filed picks</a>
       <a href="#results">Live results</a>
       <a href="#leaderboard">Leaderboard</a>
+      <a href="#integrity">Data integrity</a>
       <a href="#horizons">Horizons</a>
       <a href="#classes">Per class</a>
       <a href="#overall">Overall</a>
@@ -940,6 +941,86 @@
       That is a <i>result</i>, not a gap — and because it follows from the design it survives any outcome, which is exactly
       why it was worth publishing <b>before</b> the fills printed. Tool:
       <span class="mono">CONTEST/tools/contest_mde.py</span> · binding rule: <span class="mono">RULES.md §7</span>.
+    </p>
+  </div>
+</section>
+
+<section id="integrity">
+  <div class="kicker">SENT THE AGENTS TO CHECK · THREE FINDINGS THAT CHANGE THE ANSWER</div>
+  <h2>"Every strategy failed" was partly a broken instrument</h2>
+  <p class="lede">
+    Reviewers said bad data cuts both ways: if the inputs were corrupt, a null result is as suspect as a positive one. So three
+    specific checks were dispatched to the agents. All three came back, and two of them moved the finding.
+  </p>
+
+  <h3>1. The price feed was price-return, not total-return — and that alone erases a value premium</h3>
+  <p>
+    Audited every price fetch in the value pipeline. Across <b>24 symbols and 1,613 bars</b>: bars with a
+    <span class="mono">close</span> field <b>1,613</b>; bars with an <span class="mono">adjclose</span> field <b>0</b>;
+    bars with any adjusted or total-return field <b>0</b>. Every instrument is scored on raw close.
+  </p>
+  <table>
+    <thead><tr><th>instrument</th><th class="num">years</th><th class="num">price CAGR</th><th class="num">total-return CAGR</th><th class="num">dividend drag</th></tr></thead>
+    <tbody>
+      <tr><td>SPY (S&amp;P 500)</td><td class="num">33.9</td><td class="num">8.46%</td><td class="num">10.40%</td><td class="num">+1.94%/yr</td></tr>
+      <tr><td><b>VTV (value)</b></td><td class="num">22.9</td><td class="num">6.63%</td><td class="num">9.40%</td><td class="num"><b>+2.78%/yr</b></td></tr>
+      <tr><td><b>DVY (high-div value)</b></td><td class="num">23.1</td><td class="num">4.92%</td><td class="num">8.70%</td><td class="num"><b>+3.78%/yr</b></td></tr>
+      <tr><td><b>VBR (small value)</b></td><td class="num">22.9</td><td class="num">6.99%</td><td class="num">9.22%</td><td class="num">+2.23%/yr</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <b>Value median dividend drag: +2.78%/yr — roughly 25× the reported +0.11% gross.</b> Corrected to total return the
+    value result is <b>+2.89%</b> (range +2.89% to +3.89%). That is still below the <b>5.08%/yr</b> minimum detectable effect,
+    so it is <b>not</b> significant — but the finding moves from <b>"the effect was not there"</b> to
+    <b>"the effect was being erased by the price feed."</b> This was the first suspect named in the power analysis, and it
+    confirmed.
+  </p>
+
+  <h3>2. The ghost rows reached the backtest inputs — this is the bad answer</h3>
+  <p>
+    The open question was whether the 22,947 ghost rows were a dashboard cosmetic or whether they contaminated the tests.
+    <b>They contaminated the tests:</b>
+  </p>
+  <table>
+    <thead><tr><th>check</th><th class="num">value</th><th>reading</th></tr></thead>
+    <tbody>
+      <tr><td><span class="mono">trading_picks</span> open_count</td><td class="num">92,985</td><td>vs an information-schema estimate of 46,150, and an active_count of <b>21</b></td></tr>
+      <tr><td><span class="mono">bt_backtest_trades</span> open / total</td><td class="num">29,247,197 / 32,441,049</td><td><b>~90% of backtest trades were never closed</b></td></tr>
+      <tr><td><span class="mono">bt_backtest_runs</span></td><td class="num">frozen since 2026-03-06</td><td>no new runs recorded, yet 32.4M trade rows exist</td></tr>
+      <tr><td>PnL magnitude mismatch</td><td class="num">27.05%</td><td>sampled 24,158 rows; sign mismatch 0.54%</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <b>Consequence:</b> any backtest metric derived from <span class="mono">bt_backtest_trades</span> or
+    <span class="mono">trading_picks</span> after the ghost-row inflection point is <b>unreliable</b>, and the inputs cannot be
+    reconciled to any validated run. A null result computed on a contaminated trade table is not evidence about markets.
+  </p>
+
+  <h3>3. The contest ranking is not distinguishable — settled by resampling, not by opinion</h3>
+  <p>
+    Resampled the 18 entrants' picks with replacement <b>2,000 times</b>, tie-aware. Result:
+    <b>0 of 2,000 replicates produced a unique winner.</b> Three entrants sit at a perfect 100% bracket-fit in every
+    replicate and a leaderboard would be ranking an arbitrary tie-break.
+  </p>
+  <p class="mute">
+    The agent also caught itself: its first pass reported ARENA as a 100% winner, which was an <b>alphabetical tie-break</b>
+    silently deciding among the three perfect entrants. It removed the tie-break and made the bootstrap tie-aware. It then
+    tested a continuous "bracket-fit margin" metric, which <b>rewards badly-missed brackets</b> — an entrant leads purely
+    because its SPY target sat 75 points <i>below</i> live price, a near-total miss scored as a win. That is the metrics
+    attack surface the rules warn about, and the reason the metric must be fixed before the contest, not after.
+  </p>
+
+  <div class="callout" style="border-left:3px solid #d9534f;background:rgba(217,83,79,.08)">
+    <p>
+      <b>So the honest headline is not "every strategy failed." It is:</b> the harness was blind to effects under ~5%/yr,
+      the value test was being erased by a price-only feed, the backtest trade table was contaminated by ghost rows, and four
+      picks per entrant cannot rank anyone. <b>Four defects, each of which could manufacture a null on its own.</b>
+    </p>
+    <p class="mute">
+      Working: <span class="mono">VALUE_TOTALRETURN_CHECK.md</span> ·
+      <span class="mono">GHOST_ROW_PROVENANCE.md</span> ·
+      <span class="mono">BOOTSTRAP_WINNER.md</span> ·
+      <span class="mono">POSITIVE_CONTROL.md</span>
     </p>
   </div>
 </section>
