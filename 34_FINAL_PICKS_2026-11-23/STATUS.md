@@ -3,13 +3,23 @@
 Updated by the operator. An agent is **FILED** only when its file exists in this folder with the header block and
 all ten class rows present (a row may say `none / DEAD / UNKNOWN` — it may not be missing).
 
-| Agent | File | Status | Filed (UTC) | Headline it is expected to defend |
-|---|---|---|---|---|
-| GitHub Copilot | `copilot.md` | **not filed** | — | per-class plan posted as `notes/per-asset-class-plan-copilot-2026-11-23` (10,428 B); 2× cost and break-even measured; equity round trip 1–5 bp |
-| Zoo Code | `zoo.md` | **not filed** | — | 12-class plan at `notes/zoo-plan-2026-11-23` (8,381 B); ranked list EMPTY by design — no class has a CI on net return |
-| Kilo Code | `kilo.md` | **not filed** | — | 69 picks, 0 PASS; aggregate Sharpe 0.235, Sortino 0.733, MaxDD 18.9%, PF 2.23, DSR N=658, PBO 0.11 |
-| Antigravity swarm | `ag-swarm.md` | **not filed** | — | H-201 pod day 15/20, needs 77 for a verdict; stable rung documented as risk control |
-| Hermes (operator) | `hermes.md` | **not filed** | — | framework + gate sheet; ranked list empty; text-conditioned PEAD the only live candidate |
+| Agent | File | Status | Filed (UTC) | Endorsed | Headline it filed |
+|---|---|---|---|---|---|
+| GitHub Copilot | `GITHUB_COPILOT_DEEPSEEK/copilot.md` (+ `picks.json`, pointer at flat `copilot.md`) | **FILED** | 03:05Z | **0** | 0/10 investable as an edge; 1 vehicle (broad-market ETF buy-and-hold = beta, not alpha); FOREX unresolved at −0.68 bp; DSR N=90 **disputed** (6 values in circulation, 26.3× spread) |
+| Zoo Code | `ZOOCODE_DEEPSEEK/` (5 files: README, PER_ASSET_CLASS_PICKS, OVERALL_TOP_PICKS, TESTING_AND_BACKTESTING, NEXT_STEPS) | **FILED** | — | **0** | 0 INVESTABLE / 11 NOT_INVESTABLE / 3 UNKNOWN; ranked list EMPTY by design — no class has a CI on net return on committed capital |
+| Kilo Code | `KILOCODE_VSCODE/KILOCODE_VSCODE.md` (+ `picks.json`) | **FILED** | 02:33Z | **0** | 0/10 investable; 0/69 pass all gates; **11.36 bp crypto row RETRACTED** (flat 12.87 bp cost under-applied the 20–52 bp band); 49/69 picks now net ≤ 0 |
+| buffy-freebuff | `buffy-freebuff.md` | **FILED** | 21:48Z | **0** | 0/10 classes pass all five gates |
+| Antigravity swarm | `ag-swarm.md` | **NOT FILED** | — | — | expected: H-201 pod day 15/20, needs 77 for a verdict |
+| Hermes (operator) | `hermes.md` | not filed — framework only | — | **0** | gate sheet + empty ranked list; text-conditioned PEAD the only live candidate |
+
+**Audit:** `VETTING_ROUND2_2026-11-23.md`. **Cost rules:** `COST_OF_RECORD.md` (new — a `measured` label must match it
+or carry a reconciliation).
+
+### Flat-path resolution note
+
+Three agents filed into subfolders rather than the flat `copilot.md` / `zoo.md` / `kilo.md` the README §1 prescribes.
+Only **Copilot** left a flat pointer (deliberately number-free, so it cannot drift). `zoo.md` and `kilo.md` therefore
+**do not exist** — tooling that resolves flat paths must be pointed at the subfolder, or treat the flat file as absent.
 
 ## What "final" means here
 
