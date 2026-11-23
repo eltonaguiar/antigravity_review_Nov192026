@@ -119,6 +119,21 @@ scanner's denylist. Full path in `04_RECOMMENDATIONS/forward_path.md`.
 
 ---
 
+## 🗺️ What each page is for (ELI5)
+
+Four surfaces, four jobs — they are not interchangeable. The expanded version, with what each can and cannot do,
+is collapsed by default on the site under [**"What each page is for"**](https://eltonaguiar.github.io/antigravity_review_Nov192026/#pages).
+
+- **This site** — the **referee's notebook**. What AI agents claimed, what we checked, what survived. Nothing here
+  is a recommendation to trade.
+- **`findtorontoevents.ca/audit`** — the **scoreboard** of the live trading system. It *reports*; it does not judge.
+  Several tiles are stale, and it once showed a hardcoded GREEN over 21% row coverage.
+- **`findtorontoevents.ca/audit3`** — the **judge**. Wilson CIs, bootstrap net-expectancy after slippage, BH-FDR,
+  split-half, and a kill rule. The only surface engineered to say no, and it does: **0 PROVEN / 1 CANDIDATE**.
+- **`/audit2`** — a **dead link**. 404, and no `audit2.html` exists anywhere in git history. Citing it cites nothing.
+
+---
+
 ## 📈 Measurable results — live prices, 2026-11-23
 
 Everything below is computed from **fetched market data**, not from anything an agent said about itself.
@@ -191,6 +206,30 @@ negative under both day-count conventions. The same carry in a money-market **fu
   restating the claim.
 
 *Paper only. $1,000 notional per entrant. Zero real capital. Not investment advice.*
+
+---
+
+## 📋 What the four agents filed as their final picks
+
+Asked the same thing — rank the asset classes, then name an overall top 3–5 with reasons and a kill rule — **four
+filed, one did not, and all four independently concluded nothing in the estate is investable.** Each ranked the same
+emptiness by a different rule. Full detail, collapsed by default, on the site under
+[**"What the four agents actually filed"**](https://eltonaguiar.github.io/antigravity_review_Nov192026/#filed).
+
+| agent | ranking key (stated before the list) | classes | overall list | endorsed |
+|---|---|---|---|---|
+| **GitHub Copilot** | its own §1 criterion, declared up front | 10 | **3 rows, not 5** — 1 vehicle (index ETF, beta not alpha), 1 open question (FOREX at −0.68 bp), 1 blanket reject | **0** |
+| **Zoo Code** | CI lower bound on net return; refuses to rank without one | 12 | 5 items explicitly labelled a **watchlist** — FX carry, FX mean-rev, equity breakout/value, bond momentum, crypto VWAP pod | **0** |
+| **Kilo Code** | gates passed → net bp at $25k, plus a "closest to DSR" ordering | 9 | 2 orderings; its stated top 3–5 are **AUDJPY, CVX, ENJ, ETH, WIF** — and it endorses none | **0** |
+| **buffy / freebuff** | CI lower bound at $25k; tie-breaks on break-even multiple, trials, drawdown | 9 | **XLV, KO, MSFT**, R4b basket, and **T-bills at 4.32% as "the bar, not a pick"** | **0** |
+| **Antigravity swarm** | — | — | **NOT FILED** — `ag-swarm.md` does not exist | — |
+
+**Where they disagree:** the ranking key (gates-then-net-bp vs CI lower bound), the cost basis (1–5 bp measured vs
+8–12 bp assumed vs 12.0749 bp house), and the trial count **N** — six values in circulation (120, 154, 122, 362, 658,
+25), a **26.3× spread**.
+
+**Where they agree:** every family measured on our own bars fails net of cost, and the ranked list is legitimately
+empty. Filing audit: [`34_FINAL_PICKS_2026-11-23/STATUS.md`](34_FINAL_PICKS_2026-11-23/STATUS.md).
 
 ---
 

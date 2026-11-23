@@ -123,6 +123,20 @@
   @media(max-width:640px){.agent{grid-template-columns:1fr}.toc .d{display:none}}
   footer{padding:34px 0 60px;color:var(--dim2);font-size:13.5px}
   footer p{max-width:88ch}
+  /* collapsed detail blocks */
+  details.exp{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:0;margin:14px 0;overflow:hidden}
+  details.exp>summary{cursor:pointer;padding:13px 16px;font-weight:600;color:var(--ink);
+    list-style:none;display:flex;align-items:center;gap:9px;user-select:none}
+  details.exp>summary::-webkit-details-marker{display:none}
+  details.exp>summary::before{content:"▸";color:var(--blue);font-size:13px;line-height:1}
+  details.exp[open]>summary::before{content:"▾"}
+  details.exp>summary:hover{background:var(--panel2)}
+  details.exp .body{padding:2px 18px 16px;border-top:1px solid var(--line);color:var(--dim)}
+  details.exp .body h4{color:var(--ink);margin:16px 0 6px;font-size:14.5px;letter-spacing:.2px}
+  details.exp .body p{margin:8px 0}
+  details.exp .body ul{margin:8px 0 8px 18px;padding:0}
+  details.exp .body li{margin:5px 0}
 </style>
 </head>
 <body>
@@ -133,6 +147,8 @@
     <nav>
       <a href="#eli5">ELI5</a>
       <a href="#answer">The answer</a>
+      <a href="#pages">What each page is</a>
+      <a href="#filed">Filed picks</a>
       <a href="#results">Live results</a>
       <a href="#classes">Per class</a>
       <a href="#overall">Overall</a>
@@ -179,6 +195,8 @@
     <ol>
       <li><a href="#eli5">The whole thing in plain English <span class="d">lemonade stand analogy, no jargon</span></a></li>
       <li><a href="#answer">The answer in one sentence <span class="d">what we would actually buy, and why the answer is "index fund"</span></a></li>
+      <li><a href="#pages">What each page is for <span class="d">this site, the /audit dashboard, the audit3 tribunal, and the dead /audit2</span></a></li>
+      <li><a href="#filed">What the four agents filed as their final picks <span class="d">per asset class, their overall top 3–5, and why all of them endorse nothing</span></a></li>
       <li><a href="#results">Measurable results — the paper-trading contest vs live prices <span class="d">12 entrants, 48 picks, and the 26 that are already void</span></a></li>
       <li><a href="#classes">Top picks per asset class <span class="d">stocks, ETFs, bonds, mutual funds, forex, crypto, commodities, options, futures, prediction markets</span></a></li>
       <li><a href="#overall">The overall ranking — what is worth spending money on <span class="d">none of the strategies; one vehicle; the reason</span></a></li>
@@ -282,6 +300,185 @@
 </section>
 
 <!-- ============ PER CLASS ============ -->
+<section id="pages">
+  <div class="kicker">WHAT EACH PAGE IS FOR</div>
+  <h2>Four pages, four different jobs</h2>
+  <p class="lede">
+    There are several places to look, and they are not interchangeable. One is a referee's notebook, one is a
+    scoreboard, one is a judge, and one does not exist.
+  </p>
+
+  <div class="card">
+    <p><b>The plain-English version.</b></p>
+    <ul>
+      <li><b>This site</b> (<span class="mono">antigravity_review</span>) is the <b>referee's notebook</b>. It records
+          what AI agents claimed, what we checked against real data, and what survived. Nothing on it is a
+          recommendation to trade.</li>
+      <li><b><span class="mono">findtorontoevents.ca/audit</span></b> is the <b>scoreboard</b> of the live trading
+          system. It <i>reports</i>. It does not judge.</li>
+      <li><b><span class="mono">findtorontoevents.ca/audit3</span></b> is the <b>judge</b>. Same trades, but with real
+          statistics attached and a kill rule: a strategy whose net return is provably below zero gets killed.</li>
+      <li><b><span class="mono">/audit2</span></b> is a <b>dead link</b>. There is no page there and no file for it
+          anywhere in git history. If anyone cites it, they are citing nothing.</li>
+    </ul>
+    <p class="mute">One line: the dashboard is where the system <i>reports</i>, audit3 is where it is <i>judged</i>,
+      and this site is where the <i>agents themselves</i> are judged.</p>
+  </div>
+
+  <details class="exp">
+    <summary>The long version — what each page serves, what it can and cannot do</summary>
+    <div class="body">
+      <h4>1. This site — <span class="mono">eltonaguiar.github.io/antigravity_review_Nov192026</span></h4>
+      <p><b>Purpose:</b> to hold the agents themselves accountable, in public, with numbers that were recomputed
+        rather than accepted. It is the audit of the audit: what Kilo Code, Zoo Code, GitHub Copilot, buffy/freebuff
+        and a field of twelve language models said about markets, and what happened when each claim was checked
+        against fetched prices and the file system.</p>
+      <p><b>What it can do:</b> show, for any claim, whether it is observed (measured here), derived (computed from
+        measurements) or assumed (nobody checked). Record failures as results — including its own. Publish the cost of
+        record each number was judged against.</p>
+      <p><b>What it cannot do:</b> tell you what to buy. Every pick on this site is paper. No position here has real
+        capital behind it, and the site exists partly to explain why: nothing in the estate clears the gate sheet.</p>
+      <p><b>Its two data sections:</b> <a href="#results">§ Live results</a> is the twelve-model paper-trading
+        contest, scored against fetched prices. <a href="#filed">§ Final picks per asset class</a> is what each
+        engineering agent filed as its final answer, and how the four of them disagree.</p>
+
+      <h4>2. <span class="mono">findtorontoevents.ca/audit</span> — the dashboard (live, 1.4 MB)</h4>
+      <p><b>Purpose:</b> the operational face of the trading system. Summary cards, a kill-switch card,
+        tournament/leaderboard framing, a money-ready bridge, the theory tracker (H-020…H-025), per-class
+        profit-factor / win-rate panels and freshness indicators.</p>
+      <p><b>What it can do:</b> show at a glance what the scanners think they found and how fresh it is.</p>
+      <p><b>What it cannot do:</b> be trusted tile-by-tile. Several tiles are stale or misleading (documented in
+        <span class="mono">02_FINDINGS/data_quality_resolver.md</span>), and the site has historically shown a
+        hardcoded GREEN while 21% of rows were covered and 22,947 rows were ghosts. <b>It reports; it does not
+        judge.</b> Treat every number here as a claim awaiting audit3.</p>
+
+      <h4>3. <span class="mono">findtorontoevents.ca/audit3</span> — the strict ledger (live, 36 KB)</h4>
+      <p><b>Purpose:</b> the "Quant Kill Tribunal". The same trades as the dashboard, but put through a design that
+        can actually say no: Wilson confidence intervals, a one-sided binomial test against a 50% win rate,
+        2,000-resample bootstrap confidence intervals on net expectancy <i>after</i> per-class slippage, Benjamini-
+        Hochberg FDR control across the family, split-half stability, concentration caps, and an explicit kill rule
+        (net-CI entirely below zero <i>and</i> BH harm q ≤ 0.10).</p>
+      <p><b>What it can do:</b> kill things. This is the best artifact in the estate — the only surface engineered
+        to produce a negative verdict, and it does: <b>0 PROVEN / 1 CANDIDATE</b>.</p>
+      <p><b>What it cannot do:</b> rescue the data underneath it. It inherits the resolver's coverage and the
+        survivor-conditioned universe, so a PASS here still is not a licence to trade.</p>
+
+      <h4>4. <span class="mono">/audit2</span> — 404, and it should stay that way</h4>
+      <p><b>Purpose:</b> none. Probed 2026-11-19: HTTP 404, 992 B. No <span class="mono">audit2.html</span> exists
+        anywhere in git history; the only surviving artifacts are helper scripts (<span class="mono">score_audit2.py</span>,
+        <span class="mono">tmp/check_audit2.py</span>, <span class="mono">tmp/db_audit2.py</span>). The audit2 effort
+        was superseded by audit3 under a stricter statistical design.</p>
+      <p><b>Also dead:</b> <span class="mono">audit_page.html</span> — a stale May 25 page with two tabs (one empty,
+        one "Grok picks") pointing at <span class="mono">data/grok_top_picks.json</span>. Orphaned. It is a different
+        page from the live <span class="mono">/audit</span> and should not be cited as it.</p>
+
+      <h4>Why this page bothers to say all that</h4>
+      <p>Because the most common failure in this project was never a bad prediction — it was a <b>page, file or
+        number that nobody had checked</b>, quoted onwards as if it had been. A dashboard that reports a GREEN
+        light, a ledger row with no <i>n</i>, a hash taken before git rewrote the line endings, an agent calling
+        itself finished while a pick was already outside its own stop. Naming what each surface can and cannot do
+        is the cheapest defence against all four.</p>
+    </div>
+  </details>
+</section>
+
+<section id="filed">
+  <div class="kicker">FINAL PICKS PER ASSET CLASS · 2026-11-23</div>
+  <h2>What the four agents actually filed</h2>
+  <p class="lede">
+    Every agent was asked the same thing: rank the asset classes, then name your overall top three to five picks
+    with a reason and a kill rule. Four filed. One did not. All four independently concluded that
+    <b>nothing in the estate is investable</b> — and each ranked the same emptiness by a different rule, which is
+    the part worth reading.
+  </p>
+
+  <table>
+    <thead><tr><th>agent</th><th>ranking key <span class="mute">(stated before the list)</span></th><th class="num">classes</th><th>overall list</th><th class="num">endorsed</th></tr></thead>
+    <tbody>
+      <tr><td><b>GitHub Copilot</b></td><td class="wrap-cell">its own §1 criterion, declared up front</td><td class="num">10</td>
+          <td class="wrap-cell"><b>3 rows, not 5</b> — 1 vehicle, 1 open question, 1 blanket reject. Padding to five would break the folder's own rule.</td><td class="num">0</td></tr>
+      <tr><td><b>Zoo Code</b></td><td class="wrap-cell">CI lower bound on net return — refuses to rank without one</td><td class="num">12</td>
+          <td class="wrap-cell">5 items, explicitly labelled a <b>watchlist</b>, not a ranked list</td><td class="num">0</td></tr>
+      <tr><td><b>Kilo Code</b></td><td class="wrap-cell">gates passed, then net bp at a $25k ticket; plus a second "closest to DSR" ordering</td><td class="num">9</td>
+          <td class="wrap-cell">2 orderings given; overall top 3–5 named and all <b>fail</b> — AUDJPY, CVX, ENJ, ETH, WIF</td><td class="num">0</td></tr>
+      <tr><td><b>buffy / freebuff</b></td><td class="wrap-cell">CI lower bound at $25k; tie-break on break-even multiple, trials used, drawdown</td><td class="num">9</td>
+          <td class="wrap-cell">top 5 given: XLV, KO, MSFT, R4b basket, and T-bills at 4.32% as <i>the bar, not a pick</i></td><td class="num">0</td></tr>
+      <tr><td><b>Antigravity swarm</b></td><td class="wrap-cell">—</td><td class="num">—</td>
+          <td class="wrap-cell"><b>NOT FILED</b> — <span class="mono">ag-swarm.md</span> does not exist. That is the finding, not a gap to be filled in for it.</td><td class="num">—</td></tr>
+    </tbody>
+  </table>
+
+  <details class="exp">
+    <summary>What each agent's top picks actually were, and why they still endorse none</summary>
+    <div class="body">
+      <h4>GitHub Copilot — "1 actionable vehicle, 1 open question, 0 edges"</h4>
+      <ul>
+        <li><b>1. Broad-market index ETF, buy and hold</b> — TAKE <i>as a vehicle, not an edge</i>. Lowest measured
+            cost (6.7122&nbsp;bp), lowest turnover drag (0.99&nbsp;bp/yr), the only PBO below the 0.51 noise baseline
+            (0.443). It fails G3 as a signal and passes only as a fee decision, and it says so.</li>
+        <li><b>2. FOREX mean-reversion, USD majors</b> — HOLD FOR EVIDENCE, no position. The only class whose sign is
+            genuinely undetermined: −0.68&nbsp;bp at its floor vs −3.23&nbsp;bp at the house band. One weekday
+            London/NY spread run decides it.</li>
+        <li><b>3. Everything else</b> — REJECT. Two are killed at <i>zero</i> cost (commodity PF 0.757; crypto carry
+            3.07% against a 4.32% bar), which no cost assumption can rescue.</li>
+      </ul>
+
+      <h4>Zoo Code — a watchlist of five, and no CI to stand on</h4>
+      <ul>
+        <li>1. FX carry quintile · 2. FX mean-reversion 5d/5d · 3. Equity breakout / value family ·
+            4. Bond momentum → bond-ETF universe (JNK … TLT) · 5. Crypto VWAP-reversion paper pod + bollinger_mr sibling.</li>
+        <li>It ranks on the <b>lower bound</b> of a confidence interval and therefore refuses to produce a ranked list
+            at all: no class has a CI on net return on committed capital. Its published breakout family also
+            discloses an unreproduced PF — <b>1.479 published vs ≈1.00 measured</b>. Its 12-class taxonomy is its own
+            (it adds INDEX, MEME, PENNY_STOCK, SPORTS).</li>
+      </ul>
+
+      <h4>Kilo Code — two orderings, both of failing picks</h4>
+      <ul>
+        <li><b>Criterion A (return leaders, all fail DSR):</b> CVX +178.9&nbsp;bp, AMD +119.1, ENJ +89.1, AMC +84.3,
+            AUDJPY +61.6 — at a $25k ticket, net of the cost of record.</li>
+        <li><b>Criterion B (closest to clearing DSR ≥ 0.95):</b> AUDJPY (n=34, DSR 0.815, 14 trades short — but the
+            FOREX feed has been dead since 2026-02-09, so it is <b>unmeasurable</b>, not close), CVX (DSR 0.328),
+            AAPL (DSR 0.106).</li>
+        <li><b>Its own overall top 3–5, stated plainly: none are investable.</b> Forced to order the least-bad:
+            AUDJPY, CVX, ENJ, ETH, WIF. It endorses none of them.</li>
+        <li>It also retracted its own 11.36&nbsp;bp crypto row: a flat 12.87&nbsp;bp cost under-applied the measured
+            20–52&nbsp;bp band. Re-costed, <b>49 of 69 picks go net ≤ 0</b>.</li>
+      </ul>
+
+      <h4>buffy / freebuff — the only agent that named the bar as a pick</h4>
+      <ul>
+        <li><b>1.</b> XLV long · <b>2.</b> KO long · <b>3.</b> MSFT long — all 4-of-5 gates, only G3 failing,
+            +10.95&nbsp;bp/day in backtest, cost irrelevant to that cell (k* = 50.9).</li>
+        <li><b>4.</b> R4b basket (XLE, XLV, XLK, IWM, EFA longs) — pre-registered, trial count 1, cheapest measured
+            cost, but <b>zero records</b>, so it cannot rank above a measured backtest.</li>
+        <li><b>5. T-bills at 4.32%</b> — listed deliberately as "the bar, not a pick", so every net number above has
+            its reference on the same page. That is the most honest row anyone filed.</li>
+      </ul>
+
+      <h4>Where the four actually disagree</h4>
+      <ul>
+        <li><b>The ranking key.</b> Kilo ranks gates-then-net-bp; Zoo and buffy rank on a CI lower bound. Different
+            orderings of the same rejects. Both are documented; neither is "the" answer.</li>
+        <li><b>The cost basis.</b> Copilot measures equity round trip at 1–5&nbsp;bp; the protocol's assumption table
+            says 8–12&nbsp;bp. The house number is 12.0749&nbsp;bp, and every row must say which it used.</li>
+        <li><b>The trial count.</b> Six values are in circulation for N (120, 154, 122, 362, 658, 25) — a 26.3×
+            spread, which is why the deflation dispute exists at all.</li>
+      </ul>
+      <p class="mute">Agreement, all four: every family measured on our own bars fails net of cost, and the ranked
+        list is legitimately empty. A rejection can only be contested with the missing number — never by restating
+        the claim.</p>
+    </div>
+  </details>
+
+  <p class="mute">
+    Source files: <span class="mono">34_FINAL_PICKS_2026-11-23/</span> — <span class="mono">STATUS.md</span> (filing
+    audit), <span class="mono">GITHUB_COPILOT_DEEPSEEK/</span>, <span class="mono">ZOOCODE_DEEPSEEK/</span>,
+    <span class="mono">KILOCODE_VSCODE/</span>, <span class="mono">buffy-freebuff.md</span>. Paper only. Not investment
+    advice.
+  </p>
+</section>
+
 <section id="results">
   <div class="kicker">LIVE RESULTS · PAPER ONLY · $1,000 NOTIONAL PER ENTRANT</div>
   <h2>Measurable results — 48 picks, scored against fetched prices</h2>
