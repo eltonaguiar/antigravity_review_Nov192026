@@ -59,6 +59,39 @@ Same model (`qwen2.5-coder:14b`, local, GPU), same rules, same symbols (SPY, BTC
 The correct next test is the one already logged: run the stamped arm over several models and score the brackets **out of
 sample** — do they resolve at target or stop, net of cost? That is a forecasting test. This was a well-posedness test.
 
+## The warning I ignored for three hours
+
+Before any large model reviewed it, I ran F1 past three local endpoints as separate subprocesses. I recorded the run as a
+**reviewer collapse** — and I was right about that, but I understated it and then used it to throw the content away.
+
+All three headers, from the saved outputs:
+
+```
+review_pollinations.txt  --- ollama:qwen3:8b [200] 58.15s 1543 chars
+review_router_local.txt  --- ollama:qwen3:8b [200] 100.16s 1799 chars
+review_vllm_local.txt    --- ollama:qwen3:8b [200] 87.6s 1731 chars
+```
+
+**The vLLM arm was also `ollama:qwen3:8b`** — not `Qwen3.6-35B-A3B-NVFP4` as intended. My earlier note said "one model
+reported twice." It was **one model, three times.** The corroboration problem was total, not partial.
+
+But look at what that one model actually said — all three times, unprompted, in the same words:
+
+> **F1: OVERSTATED** — *"Void picks may reflect bracket timing, not forecasting failure; the test doesn't isolate forecasting
+> ability."*
+
+That is **exactly the objection** that later killed F1. A local 8B model reached it in 58 seconds, for free, and I had it in a
+file on disk for three hours.
+
+**So the reviewer who killed F1 was not Claude. It was `qwen3:8b`, and I dismissed it on provenance.**
+
+The reasoning I used was: *three identical model names means no corroboration, therefore discard the round.* The first half is
+true. The second half is a **non sequitur** — a provenance defect invalidates **corroboration**, not **content**. Right rule:
+
+> **Duplicate provenance tells you not to count the answer as n=3. It does not tell you the answer is wrong.**
+
+I had one well-reasoned objection and threw it out for failing to be three objections.
+
 ## Why this one is worth the damage
 
 F1 was the claim I liked most: it was vivid, it reproduced, and it made the models look worse than the referee. It was also
