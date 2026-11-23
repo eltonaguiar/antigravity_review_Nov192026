@@ -68,6 +68,59 @@ What we can say, in order of confidence:
 **Verdict: the question "which class is most predictable" has no admissible answer in this estate yet.** What it has is a
 testable *prior* (monthly momentum, vol over direction) and a measurement gap that the base-rate-first protocol closes.
 
+### 2.1 The one answer that actually ranked the classes — and the tension it creates
+
+**Gemini 4 Neon** (1min.ai) was the only respondent to commit to an explicit ordering, and it is the most useful single
+paragraph in the five answers:
+
+| Rank | Class | Its reasoning |
+|---|---|---|
+| **1** | **Crypto** | 24/7, retail-driven, structurally less efficient; narratives, liquidity rotation and momentum anomalies strongest here |
+| **2** | **Small/mid-cap equities** | prone to retail frenzy, short squeezes and catalyst moves (earnings, FDA); predictable *around events*, high overnight gap risk |
+| 3 | **Large-cap equities** | heavily efficient |
+| 4 | **FX** | most liquid and efficient in the world, central-bank dominated; rarely produces explosive percentage moves, and mean-reverts rather than trends parabolically |
+| — | **Mutual funds** | *"eliminate immediately"* — NAV prices once daily after the close, no viable intraday/weekly edge |
+
+**And now the tension, which is the most instructive thing in this document.** If you rank the same classes by **net edge
+after measured cost in our own estate**, the order inverts:
+
+| Class | Gemini's predictability rank | Our measured net-edge rank |
+|---|---|---|
+| Crypto | **1st** | **last** — 20–52 bp round trip; **49 of 69** crypto picks go net ≤ 0 at the measured band |
+| Small/mid-cap equity | 2nd | poor — smallest caps carry the highest measured friction |
+| FX | 4th | 3rd — 7.533 bp upper-bound cost, and its best row (AUDJPY, DSR 0.815) is the nearest miss in the estate |
+| Mutual funds | eliminated | eliminated — same verdict, for wrapper reasons (17.6× the index ETF) |
+
+**Both rankings are correct, and they measure different things.** Crypto is genuinely the most *predictable* — and it is
+also the most *expensive* to trade, which is exactly why our 69 picks died. This is the predictability-vs-tradability
+split from §1, demonstrated on a single class: **being right more often is worthless if you pay 20–52 bp to be right.**
+
+The practical consequence: **a predictable-and-expensive class is where a cost breakthrough converts a null into an edge.**
+If crypto round trips can be brought from 20–52 bp to the 6.7 bp the ETF wrapper achieves, the crypto rows re-open. That
+is a *measurable, testable* path — unlike hoping a signal improves.
+
+### 2.2 The only concrete TP/SL design offered (Gemini 4 Neon)
+
+Nobody else specified a trade construction. This one is complete enough to implement, and it rejects the naive version:
+
+- **Never fixed percentages across assets** — *"a 5% move is normal daily noise for a memecoin, but a massive crash for a
+  blue-chip stock."*
+- **Volatility-scaled levels:** stop at **1.5 × ATR** below entry, target at **3 × ATR** above — a 2:1 structural ratio
+  that adapts per instrument.
+- **Trailing rather than fixed targets**, because the whole point is hunting outliers: take ~50% at a fixed target, then
+  trail the remainder with a Chandelier Exit or a 10-day EMA close.
+- **Time stops:** *"if an asset hasn't moved in your favour within X days, exit"* — dead capital carries opportunity cost.
+
+**The requirement that makes this admissible under our protocol:** Gemini also demanded the modelling compare the setup
+against **false positives** — *"assets that had the exact same footprint but dumped instead."* That is a base rate by
+another name, and it is the same rule as §5. A TP/SL backtest that reports winners without the counter-example set is
+reporting the survivors of its own selection.
+
+Its feature set is also the most specific of the five: **volatility contraction** (tight Bollinger bands / low ATR) as the
+precondition, **RVOL 3–5× the 20-day average while price is still flat** as accumulation, **relative strength while the
+benchmark is dropping**, and for crypto **open-interest spikes, negative funding (short-squeeze fuel) and on-chain whale
+accumulation**. Footprint window: **T−1 to T−14**.
+
 ---
 
 ## 3. Symbol, or symbol × direction — the decomposition that matters

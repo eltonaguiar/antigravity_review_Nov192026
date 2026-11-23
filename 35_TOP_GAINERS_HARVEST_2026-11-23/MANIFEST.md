@@ -21,11 +21,13 @@
 
 - **AskAnyModel → GPT-6.1 Terra (OpenAI)**, per operator identification. The pane carries OpenAI-house framing
   ("volatility is much more predictable than direction") and is the source attributed throughout `SYNTHESIS.md`.
+- **1min.ai → Gemini 4 Neon (Google AI)**, per operator identification of the reply pasted at 2026-11-23T03:16Z
+  (105,111 credits, 37.4 s). Saved as `harvest_1min_gemini4neon.txt`. **This is the only respondent that ranked the
+  classes explicitly, and the only one that specified a complete TP/SL construction** — see synthesis §2.1 and §2.2.
 - arena.ai's own transcript records its plan step verbatim: *"a detailed response plus maybe a workspace scaffold"* — it
   chose to build, not just describe.
 - ChatPlayground pane timings name **GLM 5.3 Flash** as one of the responding models; the other two panes are unlabelled
   in the capture.
-- 1min.ai did not disclose a model in the captured text.
 
 ## Round 2 capture (`*_r2.txt`) — same evening, re-harvested
 
