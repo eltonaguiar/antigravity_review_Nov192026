@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Picks &amp; Accountability — 2026-11-23</title>
+<meta name="description" content="Every agent's ranked picks per asset class, the overall answer, and the protocols they are held to. Zero endorsed picks across four independent agents.">
+<style>
+  :root{
+    --bg:#0b0d10; --panel:#14181d; --panel2:#1a1f26; --line:#262d36;
+    --ink:#e8edf2; --dim:#9aa7b4; --dim2:#6f7d8c;
+    --green:#3ddc97; --red:#ff6b6b; --amber:#ffb454; --blue:#6cb6ff; --violet:#b98cff;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:70px}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* top bar */
+  .top{position:sticky;top:0;z-index:50;background:rgba(11,13,16,.93);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;gap:18px;height:52px}
+  .top .brand{font-weight:700;letter-spacing:.2px;font-size:15px;white-space:nowrap}
+  .top nav{display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;font-size:13px}
+  .top nav::-webkit-scrollbar{display:none}
+  .top nav a{color:var(--dim);white-space:nowrap}
+  .top nav a:hover{color:var(--ink);text-decoration:none}
+
+  /* hero */
+  header.hero{padding:54px 0 34px;border-bottom:1px solid var(--line);
+    background:radial-gradient(900px 340px at 18% -12%,rgba(61,220,151,.10),transparent 60%),
+               radial-gradient(760px 300px at 92% 4%,rgba(108,182,255,.09),transparent 62%)}
+  h1{font-size:clamp(28px,4.4vw,44px);line-height:1.12;margin:0 0 14px;letter-spacing:-.6px}
+  .sub{color:var(--dim);font-size:clamp(15px,2vw,19px);max-width:74ch;margin:0 0 22px}
+  .badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+  .badge{font:600 12px/1 var(--mono);padding:8px 11px;border-radius:999px;
+    border:1px solid var(--line);background:var(--panel);color:var(--dim)}
+  .badge b{color:var(--ink)}
+
+  /* big link buttons */
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:11px;
+    border:1px solid var(--line);background:var(--panel);color:var(--ink);
+    font-weight:650;font-size:15px;transition:.15s}
+  .btn:hover{border-color:#3a4653;background:var(--panel2);text-decoration:none;transform:translateY(-1px)}
+  .btn.primary{background:linear-gradient(180deg,#1f6b4a,#164a34);border-color:#2c8f63;color:#eafff5}
+  .btn.primary:hover{background:linear-gradient(180deg,#237a54,#1a563c)}
+
+  section{padding:46px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(22px,3vw,30px);margin:0 0 6px;letter-spacing:-.3px}
+  h2 .num{color:var(--dim2);font:600 14px/1 var(--mono);margin-right:10px;vertical-align:3px}
+  h3{font-size:18px;margin:28px 0 8px}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--ink)}
+  .lede{color:var(--dim);max-width:82ch;margin:0 0 22px}
+  p{max-width:82ch}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:14px;
+    display:block;overflow-x:auto;white-space:nowrap}
+  thead th{text-align:left;font:600 11px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase;
+    color:var(--dim2);border-bottom:1px solid var(--line);padding:9px 12px}
+  td{border-bottom:1px solid #1e252c;padding:10px 12px;vertical-align:top}
+  td.wrap-cell{white-space:normal;min-width:230px}
+  tbody tr:hover{background:#12161b}
+  .mono{font-family:var(--mono);font-size:13px}
+  .pos{color:var(--green);font-weight:600}
+  .neg{color:var(--red);font-weight:600}
+  .warn{color:var(--amber);font-weight:600}
+  .mute{color:var(--dim2)}
+  .tag{display:inline-block;font:700 10px/1 var(--mono);letter-spacing:.06em;padding:4px 7px;
+    border-radius:5px;text-transform:uppercase}
+  .t-dead{background:rgba(255,107,107,.14);color:#ff9c9c;border:1px solid rgba(255,107,107,.3)}
+  .t-cand{background:rgba(255,180,84,.14);color:#ffcf8a;border:1px solid rgba(255,180,84,.3)}
+  .t-unk{background:rgba(154,167,180,.12);color:#b8c4d0;border:1px solid rgba(154,167,180,.26)}
+  .t-veh{background:rgba(108,182,255,.14);color:#a8d1ff;border:1px solid rgba(108,182,255,.3)}
+  .t-pass{background:rgba(61,220,151,.14);color:#8ff0c2;border:1px solid rgba(61,220,151,.3)}
+
+  .grid{display:grid;gap:16px;margin:20px 0}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px}
+  .card h4{margin:0 0 8px;font-size:15px}
+  .card p{margin:0;color:var(--dim);font-size:14.5px}
+  .card .kicker{font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px}
+  .stat{font:700 30px/1 var(--mono);margin:2px 0 8px;letter-spacing:-1px}
+
+  .callout{border-left:3px solid var(--blue);background:rgba(108,182,255,.06);
+    padding:16px 20px;border-radius:0 10px 10px 0;margin:20px 0}
+  .callout.green{border-color:var(--green);background:rgba(61,220,151,.06)}
+  .callout.red{border-color:var(--red);background:rgba(255,107,107,.06)}
+  .callout.amber{border-color:var(--amber);background:rgba(255,180,84,.06)}
+  .callout p{margin:0;max-width:86ch}
+  .callout p + p{margin-top:10px}
+
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:8px 10px}
+  .toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+  .toc li{counter-increment:t;border-bottom:1px solid #1e252c}
+  .toc li:last-child{border-bottom:0}
+  .toc a{display:flex;gap:14px;align-items:baseline;padding:11px 12px;color:var(--ink);font-size:15px}
+  .toc a:hover{background:#12161b;text-decoration:none;border-radius:8px}
+  .toc a::before{content:counter(t,decimal-leading-zero);font:600 12px/1 var(--mono);color:var(--dim2);min-width:22px}
+  .toc .d{margin-left:auto;color:var(--dim2);font-size:12.5px;text-align:right;max-width:52%;line-height:1.35}
+
+  ul.tight{margin:10px 0;padding-left:22px}
+  ul.tight li{margin:6px 0;color:var(--dim)}
+  ul.tight li b{color:var(--ink)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14px;margin:14px 0}
+  .kv dt{color:var(--dim2);font-family:var(--mono);font-size:12.5px;padding-top:2px}
+  .kv dd{margin:0}
+  code{font-family:var(--mono);font-size:12.8px;background:#0f1419;border:1px solid var(--line);
+    padding:2px 6px;border-radius:5px;color:#cfe0ef}
+  .agent{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+    background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:14px 0}
+  .agent .who{font:700 15px/1.3 inherit;min-width:132px}
+  .agent .who span{display:block;font:500 11.5px/1.4 var(--mono);color:var(--dim2);margin-top:5px}
+  .agent ul{margin:0;padding-left:20px}
+  .agent li{color:var(--dim);font-size:14.3px;margin:5px 0}
+  .agent li b{color:var(--ink)}
+  @media(max-width:640px){.agent{grid-template-columns:1fr}.toc .d{display:none}}
+  footer{padding:34px 0 60px;color:var(--dim2);font-size:13.5px}
+  footer p{max-width:88ch}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div class="brand">Picks &amp; Accountability</div>
+    <nav>
+      <a href="#eli5">ELI5</a>
+      <a href="#answer">The answer</a>
+      <a href="#classes">Per class</a>
+      <a href="#overall">Overall</a>
+      <a href="#fees">Mutual funds</a>
+      <a href="#agents">Agents</a>
+      <a href="#trackers">Forward tests</a>
+      <a href="#rules">Rules</a>
+      <a href="#ml">ML brief</a>
+      <a href="#docs">Docs</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Every agent's ranked picks — and the number that killed each one.</h1>
+    <p class="sub">
+      Four independent agents ranked ten asset classes. They used three different ranking keys and disagreed about
+      almost every method. They agreed on the only thing that matters: <b>there is nothing here worth real money yet.</b>
+      This page is the honest ledger — what each agent filed today, what it measured, and what would have to change.
+    </p>
+    <div class="badges">
+      <span class="badge"><b>0</b> endorsed picks</span>
+      <span class="badge"><b>4 / 4</b> agents filed</span>
+      <span class="badge"><b>0</b> classes investable</span>
+      <span class="badge">capital at risk: <b>$0</b></span>
+      <span class="badge">paper only</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="#eli5">Start here — plain English &rarr;</a>
+      <a class="btn" href="#classes">Jump to the per-class ranking</a>
+      <a class="btn" href="https://github.com/eltonaguiar/antigravity_review_Nov192026">Repository &nearr;</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ TOC ============ -->
+<section id="toc">
+  <h2><span class="num">00</span>Table of contents</h2>
+  <p class="lede">Ten sections. If you read nothing else, read 01 and 04.</p>
+  <div class="toc">
+    <ol>
+      <li><a href="#eli5">The whole thing in plain English <span class="d">lemonade stand analogy, no jargon</span></a></li>
+      <li><a href="#answer">The answer in one sentence <span class="d">what we would actually buy, and why the answer is "index fund"</span></a></li>
+      <li><a href="#classes">Top picks per asset class <span class="d">stocks, ETFs, bonds, mutual funds, forex, crypto, commodities, options, futures, prediction markets</span></a></li>
+      <li><a href="#overall">The overall ranking — what is worth spending money on <span class="d">none of the strategies; one vehicle; the reason</span></a></li>
+      <li><a href="#fees">Why mutual funds are not the answer <span class="d">17.6× the cost of an index ETF over ten years</span></a></li>
+      <li><a href="#agents">What each agent accomplished today <span class="d">Zoo Code, Kilo Code, GitHub Copilot, the operator, the Antigravity swarm — across both repos</span></a></li>
+      <li><a href="#trackers">Forward tests and paper portfolios <span class="d">what is actually running, and how far each is from a verdict</span></a></li>
+      <li><a href="#rules">The rules the agents are now held to <span class="d">cost of record, five questions per pick, the 17-gate sheet</span></a></li>
+      <li><a href="#ml">The next research brief <span class="d">can we reverse-engineer daily, weekly and monthly top gainers?</span></a></li>
+      <li><a href="#docs">Where the detail lives <span class="d">every file and commit referenced on this page</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ELI5 ============ -->
+<section id="eli5">
+  <h2><span class="num">01</span>Explain like I'm five</h2>
+  <p class="lede">No formulas. If you understand a lemonade stand, you understand this page.</p>
+
+  <h3>The lemonade stand</h3>
+  <p>
+    Imagine you want to make money selling lemonade. You could stand on a corner and guess where the thirsty people are.
+    That is what most trading strategies do: guess a pattern, hope it repeats.
+  </p>
+  <p>
+    But there is a trap. If you stand on <b>twenty</b> corners one Saturday and only tell your friends about the one where
+    you sold out, you have not found a good corner. You have found <b>luck</b>, and you have hidden the nineteen failures.
+    Almost every "amazing trading system" you will ever see is that trick, played by accident.
+  </p>
+  <p>
+    So we built a test that cannot be fooled that way:
+  </p>
+  <ul class="tight">
+    <li><b>Write the rule down before you test it.</b> Like writing your bet on paper before the race starts. No changing it afterwards.</li>
+    <li><b>Count every corner you tried, not just the winner.</b> Twenty corners means the winner must be twenty times more impressive.</li>
+    <li><b>Pay the real costs.</b> The lemonade costs money, the cups cost money, and the busy corner charges rent. A strategy that only works when trading is free does not work.</li>
+    <li><b>Test on days you were not allowed to peek at.</b> Otherwise you are just remembering the answers to the exam.</li>
+    <li><b>Decide in advance what would prove you wrong</b> — and then actually stop when it happens.</li>
+  </ul>
+
+  <h3>What we found</h3>
+  <p>
+    We pointed that test at ten kinds of investment — stocks, index funds, bonds, mutual funds, currencies, crypto,
+    commodities, options, futures and prediction markets — and at four AI agents that each did their own research.
+  </p>
+  <div class="callout red">
+    <p><b>Every single strategy failed.</b> Not because the agents were lazy — they produced hundreds of candidates,
+    measured real trading costs, and ran the statistics — but because when you charge a strategy for the cost of actually
+    trading it, and then charge it again for the fact that you tried many versions, the apparent profit disappears.</p>
+    <p>What survived is boring, and it is the honest answer: <b>a cheap, broad index fund, held for a long time.</b>
+    That is not a clever trade. That is just agreeing to own a slice of the economy and waiting.</p>
+  </div>
+
+  <h3>The one number that explains everything</h3>
+  <p>
+    Cash in a government treasury bill pays about <b>4.32% a year</b>, guaranteed, with no skill required. That is the
+    hurdle. Anything you do with money that carries risk has to beat 4.32% <i>after</i> costs, or you were better off
+    doing nothing.
+  </p>
+  <p>
+    Our best-measured value strategy — buying cheap stocks and shorting expensive ones — earned <b>+0.11% a year before
+    costs</b> and <b>+0.02% a year after costs</b>. Against a 4.32% hurdle. It did not lose to costs. It lost because
+    <b>the effect was not there</b>.
+  </p>
+</section>
+
+<!-- ============ THE ANSWER ============ -->
+<section id="answer">
+  <h2><span class="num">02</span>The answer in one sentence</h2>
+  <div class="callout green">
+    <p style="font-size:17.5px">
+      <b>Buy a cheap broad-market index ETF, hold it, and rebalance — and treat every other row on this page as a
+      research project that has not yet earned a dollar.</b>
+    </p>
+  </div>
+  <p class="lede" style="margin-top:18px">
+    That is the whole recommendation. Everything below is the evidence for it, and the record of four agents trying
+    hard to find an exception and failing.
+  </p>
+  <div class="grid g3">
+    <div class="card">
+      <div class="kicker">Cash hurdle</div>
+      <div class="stat" style="color:var(--blue)">4.32%</div>
+      <p>T-bill yield. The number every strategy must beat after costs. No strategy in this estate clears it.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Cost of the index ETF</div>
+      <div class="stat" style="color:var(--green)">6.7122<span style="font-size:15px"> bp</span></div>
+      <p>One round trip per year. Turnover drag <b>0.99 bp/yr</b> — 0.2% of the hurdle. The cheapest thing we measured that still does something.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Cost of trading FOREX actively</div>
+      <div class="stat" style="color:var(--red)">56.93<span style="font-size:15px"> bp/yr</span></div>
+      <p>Turnover drag on the FX mean-reversion family — <b>13.2%</b> of the hurdle, spent every year before any edge exists.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <p><b>An important distinction, because it is where most retail advice goes wrong:</b> the index ETF is a
+    <i>vehicle</i>, not a <i>pick</i>. It does not beat the market. It <b>is</b> the market, minus fees. Calling that a
+    "strategy" would be like calling gravity a business plan. Agents are not allowed to label beta as alpha here.</p>
+  </div>
+</section>
+
+<!-- ============ PER CLASS ============ -->
+<section id="classes">
+  <h2><span class="num">03</span>Top pick per asset class</h2>
+  <p class="lede">
+    Every row below is the <b>best</b> candidate that class produced, after backtesting against a fixed set of variables.
+    Each carries the number that decides its verdict. "Best" here means least-bad — none of these is a buy
+    recommendation, and the last column says exactly why.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th><th>Best candidate</th><th>n</th><th>Edge, net</th><th>Deflated Sharpe</th>
+        <th>Cost basis</th><th>Verdict</th><th>What killed it</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Stocks</b></td>
+        <td class="mono">CVX long</td><td class="mono">35</td>
+        <td class="mono pos">+178.9 bp <span class="mute">→ 168.8</span></td>
+        <td class="mono neg">0.318</td>
+        <td class="mono">2.0 bp <span class="neg">(→12.07)</span></td>
+        <td><span class="tag t-dead">DEAD</span></td>
+        <td class="wrap-cell">DSR 0.318 against a 0.95 gate, and the universe is survivor-conditioned — zero delisted names, so the edge itself is measured on a biased sample.</td>
+      </tr>
+      <tr>
+        <td><b>ETFs</b></td>
+        <td class="mono">SOXX long</td><td class="mono">37</td>
+        <td class="mono pos">+34.0 bp <span class="mute">→ 29.3</span></td>
+        <td class="mono neg">0.004</td>
+        <td class="mono">measured 6.7122 bp</td>
+        <td><span class="tag t-dead">DEAD</span></td>
+        <td class="wrap-cell">DSR 0.004. There is no signal. The ETF class survives only as the <b>vehicle</b> (index, buy-and-hold), never as an alpha source.</td>
+      </tr>
+      <tr>
+        <td><b>Bonds</b></td>
+        <td class="mono">TLT long</td><td class="mono">1 <span class="neg">(→31)</span></td>
+        <td class="mono neg">−22.0 bp <span class="mute">→ −12.6</span></td>
+        <td class="mono neg">0.000</td>
+        <td class="mono">10.0 assumed <span class="neg">(→0.6144)</span></td>
+        <td><span class="tag t-dead">DEAD</span></td>
+        <td class="wrap-cell">Break-even cost is <b>0 bp/side</b>. With any cost at all, net is negative. Bond momentum fails at zero cost — cheaper execution cannot rescue it.</td>
+      </tr>
+      <tr>
+        <td><b>Mutual funds</b></td>
+        <td class="mono">index variant only</td><td class="mono">n/a</td>
+        <td class="mono neg">−17.5 pp <span class="mute">/10 yr</span></td>
+        <td class="mono mute">n/a</td>
+        <td class="mono">published MER</td>
+        <td><span class="tag t-dead">DEAD</span></td>
+        <td class="wrap-cell">Active funds cost <b>$18,520</b> vs <b>$1,050</b> for an index ETF per $100k over 10 years — <b>17.6×</b>. Fees are the product. <a href="#fees">See §05</a>.</td>
+      </tr>
+      <tr>
+        <td><b>FOREX</b></td>
+        <td class="mono">AUDJPY long</td><td class="mono">34</td>
+        <td class="mono pos">+61.6 bp <span class="mute">→ 55.1</span></td>
+        <td class="mono warn">0.815</td>
+        <td class="mono">measured 7.533 bp</td>
+        <td><span class="tag t-unk">UNMEASURABLE</span></td>
+        <td class="wrap-cell">The <b>nearest miss in the entire estate</b>: DSR 0.815 vs 0.95, only <b>14 trades</b> short — and the price feed has been <b>dead since 2026-02-09</b>, so those trades can never accrue. Not "close": unmeasurable.</td>
+      </tr>
+      <tr>
+        <td><b>Crypto</b> <span class="mute">(incl. meme)</span></td>
+        <td class="mono">ENJ long</td><td class="mono">30</td>
+        <td class="mono pos">+89.1 bp</td>
+        <td class="mono neg">0.004</td>
+        <td class="mono">measured 20–52 bp</td>
+        <td><span class="tag t-dead">DEAD</span></td>
+        <td class="wrap-cell">Cost eats it: <b>49 of 69</b> crypto rows go net ≤ 0 at the measured band. Carry measured <b>4.39–4.53%</b> gross annualised over 218 days / 4,235 intervals — a T-bill, not an edge.</td>
+      </tr>
+      <tr>
+        <td><b>Commodities</b></td>
+        <td class="mono">—</td><td class="mono">40</td>
+        <td class="mono neg">PF 0.757</td>
+        <td class="mono mute">—</td>
+        <td class="mono">~10 bp/side <i>assumed</i></td>
+        <td><span class="tag t-dead">DEAD</span></td>
+        <td class="wrap-cell">Fails with cost set to <b>zero</b>. A negative-expectancy class: no cost improvement can fix a losing system.</td>
+      </tr>
+      <tr>
+        <td><b>FX carry</b></td>
+        <td class="mono">high-yield quintile L/S</td><td class="mono">95 mo</td>
+        <td class="mono neg">Sharpe −0.126</td>
+        <td class="mono mute">—</td>
+        <td class="mono">break-even 468 bp</td>
+        <td><span class="tag t-dead">DEAD</span></td>
+        <td class="wrap-cell">Dies on <b>Sharpe, not cost</b>: break-even is 468.47 bp against a 7.53 bp cost — a 60× margin. The problem is a negative risk-adjusted return, not friction.</td>
+      </tr>
+      <tr>
+        <td><b>Options</b></td>
+        <td class="mono">—</td><td class="mono">0</td>
+        <td class="mono mute">UNMEASURED</td>
+        <td class="mono mute">—</td>
+        <td class="mono neg">UNMEASURED</td>
+        <td><span class="tag t-unk">UNKNOWN</span></td>
+        <td class="wrap-cell">No options data layer exists in the estate. Nothing measured, nothing claimed. An absent measurement is a valid answer; a guessed one is not.</td>
+      </tr>
+      <tr>
+        <td><b>Futures</b></td>
+        <td class="mono">—</td><td class="mono">0</td>
+        <td class="mono mute">UNMEASURED</td>
+        <td class="mono mute">—</td>
+        <td class="mono neg">UNMEASURED</td>
+        <td><span class="tag t-unk">UNKNOWN</span></td>
+        <td class="wrap-cell">No measured roll-adjusted series. Any futures row is a CANDIDATE at absolute best, and cannot be ranked.</td>
+      </tr>
+      <tr>
+        <td><b>Prediction markets</b></td>
+        <td class="mono">maker-only</td><td class="mono">0</td>
+        <td class="mono mute">no OOS edge</td>
+        <td class="mono mute">—</td>
+        <td class="mono">maker ~1.75% / taker ~7%</td>
+        <td><span class="tag t-unk">UNKNOWN</span></td>
+        <td class="wrap-cell">Only maker-side evidence, no measured out-of-sample edge. Useful as a <b>measuring instrument</b> (does our forecast beat the market's?), capped at 1–2% of an aggressive sleeve — never as a strategy source.</td>
+      </tr>
+      <tr>
+        <td><b>Private credit</b></td>
+        <td class="mono">—</td><td class="mono">0</td>
+        <td class="mono mute">UNMEASURED</td>
+        <td class="mono mute">—</td>
+        <td class="mono neg">UNMEASURED</td>
+        <td><span class="tag t-unk">UNKNOWN</span></td>
+        <td class="wrap-cell">No data exists in the estate at all.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="mute mono" style="font-size:12.5px;margin-top:12px">
+    Arrows show the correction applied on 2026-11-23 when Kilo Code's cost bands were replaced by the canonical
+    cost of record. No verdict and no rank changed — every row already failed on DSR.
+  </p>
+
+  <h3>What each class was tested against</h3>
+  <p class="lede">
+    The short version of the variables. Each agent ran its own set; this is the union that every row had to survive.
+  </p>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Data integrity</h4>
+      <p>Point-in-time fundamentals · survivorship and delisting returns · look-ahead lag · corporate actions
+      (splits, dividends, spinoffs, ticker changes) · tick/outlier filters with the removed count reported.</p>
+    </div>
+    <div class="card">
+      <h4>Cost</h4>
+      <p>Commission at the real broker schedule · half-spread · square-root market impact · borrow and locate
+      failures · financing · SEC and ECN fees · <b>the 2× stress test</b> · break-even multiple.</p>
+    </div>
+    <div class="card">
+      <h4>Statistics</h4>
+      <p>Deflated Sharpe with an honest trial count · PBO via CSCV against the <b>0.51 noise baseline</b> ·
+      walk-forward efficiency · alpha t-stat versus a matched benchmark · capacity · tail ratio and skew.</p>
+    </div>
+    <div class="card">
+      <h4>Robustness</h4>
+      <p>Random-signal placebo at the 99th percentile · parameter neighbourhood ±20% · sub-period stability ·
+      universe perturbation · one-day signal delay · regime coverage.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVERALL ============ -->
+<section id="overall">
+  <h2><span class="num">04</span>The overall ranking — what is worth spending money on</h2>
+  <p class="lede">
+    This is the question you actually asked: <i>across stocks, mutual funds, meme coins, bonds, ETFs, options, forex
+    and commodities — what were the top picks, and what is worth money?</i> Here is the honest answer, in the order
+    we would actually act on it.
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>What it is</th><th>Worth money?</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">1</td>
+        <td><b>Broad-market index ETF, buy and hold</b></td>
+        <td><span class="tag t-veh">VEHICLE — YES</span></td>
+        <td class="wrap-cell">Costs 6.7122 bp once a year. Returns whatever the market returns, minus almost nothing. This is the only line on the page we would act on, and it is <b>beta, not skill</b>.</td>
+      </tr>
+      <tr>
+        <td class="mono">2</td>
+        <td><b>Cash / T-bills at 4.32%</b></td>
+        <td><span class="tag t-pass">YES — the bar</span></td>
+        <td class="wrap-cell">Not glamorous, but it is the number every strategy failed to beat. Holding cash while you wait for a real edge is a decision, not a failure.</td>
+      </tr>
+      <tr>
+        <td class="mono">3</td>
+        <td><b>AUDJPY long</b> (FX mean-reversion)</td>
+        <td><span class="tag t-cand">NOT YET</span></td>
+        <td class="wrap-cell">The best statistical case in the estate — DSR <b>0.815</b>, 14 trades short of the gate. Blocked on a dead price feed. Zero dollars until it can be measured, not one dollar because it looks close.</td>
+      </tr>
+      <tr>
+        <td class="mono">4</td>
+        <td><b>Text-conditioned PEAD</b> (earnings-call tone → drift)</td>
+        <td><span class="tag t-cand">CANDIDATE ONLY</span></td>
+        <td class="wrap-cell">The one hypothesis with an economic mechanism still standing. Contingent on buying a transcript dataset. Not tested, not funded.</td>
+      </tr>
+      <tr>
+        <td class="mono">5</td>
+        <td><b>Everything else</b> — 69 picks, 10 classes</td>
+        <td><span class="tag t-dead">NO</span></td>
+        <td class="wrap-cell">Fails DSR, fails cost, fails data integrity, or is unmeasured. Ranked in the table above so the failure mode is inspectable, never as an allocation.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout amber">
+    <p><b>The reason, in one line:</b> a strategy has to clear the 4.32% hurdle <i>after measured costs</i> and <i>after
+    being charged for every version that was tried</i>. Nothing in this estate does. Several fail before cost is even
+    applied — which is the more useful finding, because it means no amount of better execution fixes them.</p>
+  </div>
+
+  <h3>Why four agents agreeing is worth more than one agent being confident</h3>
+  <p>
+    Each agent invented its own ranking key. GitHub Copilot ranked by <b>distance-to-investable, then the 95% lower
+    bound</b>. Zoo Code refused to rank at all without a confidence interval, and produced an <b>empty list by
+    design</b>. Kilo Code ranked by <b>gates passed, then net basis points at a $25k ticket</b>. The operator ranked on
+    <b>whether the trial count survives deflation</b>.
+  </p>
+  <p>
+    Four different keys, three different rankings, one conclusion. When systems that disagree about method agree about
+    the answer, the answer is the finding — not a coordinate failure.
+  </p>
+</section>
+
+<!-- ============ FEES ============ -->
+<section id="fees">
+  <h2><span class="num">05</span>Why mutual funds are not the winner</h2>
+  <p class="lede">
+    You flagged this yourself: mutual funds might look like the safest winners, but there are minimums and maintenance
+    fees — so factor the fee impact in. We did. The fees <b>are</b> the product.
+  </p>
+  <table>
+    <thead><tr><th>Route</th><th>Cost per $100,000 over 10 years</th><th>Multiple of the index route</th></tr></thead>
+    <tbody>
+      <tr><td><b>Active mutual fund</b></td><td class="mono neg">$18,520</td><td class="mono">17.6×</td></tr>
+      <tr><td>Index mutual fund</td><td class="mono warn">$4,520</td><td class="mono">4.3×</td></tr>
+      <tr><td><b>Index ETF</b></td><td class="mono pos">$1,050</td><td class="mono">1.0×</td></tr>
+    </tbody>
+  </table>
+  <p>
+    At a 4.32% hurdle, an 18.5% drag over a decade is not a fee — it is the entire decision. And note the shape of the
+    trap: the index <i>mutual fund</i> is 4.3× the index <i>ETF</i> for the same exposure. Same holdings, same index,
+    four times the cost, purely because of wrapper mechanics and maintenance fees.
+  </p>
+  <div class="callout">
+    <p><b>So: if you insist on mutual funds, take the index variant and nothing else</b> — and understand you are still
+    paying 4.3× what the ETF charges for an identical basket. "Mutual funds as the winners" is only true in the
+    index-wrapper sense, and even then it is the <i>cheapest</i> wrapper that wins, which is the ETF.</p>
+  </div>
+</section>
+
+<!-- ============ AGENTS ============ -->
+<section id="agents">
+  <h2><span class="num">06</span>What each agent accomplished today</h2>
+  <p class="lede">
+    Two repositories, five workers, one day (2026-11-22 → 2026-11-23 UTC). Each entry is a thing that was measured,
+    found, or fixed — not a thing that was claimed. Claims with no number behind them are excluded.
+  </p>
+
+  <div class="agent">
+    <div class="who">GitHub Copilot<span>DeepSeek · right-hand chat panel</span></div>
+    <ul>
+      <li><b>Killed the crypto-carry claim.</b> The repo's own header promised "5–15% monthly with very low risk"
+      (60–180% annualised). Measured from 4,235 OKX 8-hourly intervals across 218 days: BTCUSD <b>4.39%</b>,
+      BNBUSD <b>4.53%</b>, XRPUSD <b>3.36%</b>, DOGEUSD <b>3.32%</b> annualised gross. That is a T-bill with extra steps.</li>
+      <li><b>Found the real cause of a CI import failure</b> that looked like a missing module: a sparse checkout
+      (`.git/hub alpha_engine`). The file existed in git the whole time at `4e1adc252:tools/provenance_ledger.py`.</li>
+      <li><b>Refused to bend production to satisfy a test</b> — surfaced a test asserting a blocked pair that production
+      does not contain, and tabled three options instead of silently "fixing" either side.</li>
+      <li><b>Measured turnover drag per class</b> — ETF <b>0.99 bp/yr</b> vs FOREX <b>56.93 bp/yr</b> — which is the
+      single clearest argument for the index route on this page.</li>
+      <li><b>Fixed a 175 bp FX defect that was actually four defects</b>: a per-trade fee applied as a percentage, an
+      exit cost charged twice (350 bp round trip), an ECN fee on every trade, and a missing SEC fee. Replaced with a
+      per-side model; Questrade round trip fell from $9.95 to <b>4.98 bp</b>. It then volunteered that the function had
+      <b>zero call sites</b>, so no published backtest number changed.</li>
+      <li><b>Filed the best-constructed picks document in the estate</b>: declared its own deviations, showed both
+      cost bases where it disagreed with the house, and declared its trial count <b>disputed</b> (six values in
+      circulation, a <b>26.3×</b> spread) while proving the verdicts survive N=1000.</li>
+    </ul>
+  </div>
+
+  <div class="agent">
+    <div class="who">Zoo Code<span>DeepSeek · left sidebar</span></div>
+    <ul>
+      <li><b>Refused to rank.</b> Produced a ranked list that is <b>empty by design</b>, because no class has a
+      confidence interval on net return on committed capital — the primary ranking key is undefined for all of them.
+      An empty list defended with arithmetic beats a list filled with noise.</li>
+      <li><b>Filed 51.7 KB across five documents</b> — per-class picks, overall top picks, testing and backtesting,
+      next steps, README.</li>
+      <li><b>Produced the first fully-citation-verified filing in this programme.</b> Every number carries
+      <code>[SRC: path:lines]</code>; all four spot-checked claims resolved to the exact line and value on
+      <code>main</code>.</li>
+      <li><b>Disclosed that its own headline result does not reproduce.</b> The published breakout profit factor of
+      <b>1.479</b> comes out at ≈<b>1.00</b> at 25 bp/side (1.2865 at zero cost, break-even 24.59 bp/side).</li>
+      <li><b>Flagged that its own ranking was lucky.</b> The carry ranking sits at the <b>98.2nd percentile</b> of a
+      random-ranking null — which it correctly calls "the opposite of a reason for confidence".</li>
+      <li><b>Found a live paper-test failure:</b> the <code>vwap_reversion</code> slot is <b>HALTED</b> at a
+      <b>11.5229%</b> trailing drawdown against a 10% limit.</li>
+    </ul>
+  </div>
+
+  <div class="agent">
+    <div class="who">Kilo Code<span>Agent Manager tab · middle</span></div>
+    <ul>
+      <li><b>Delivered the 10-class ranking apparatus</b> — `asset_class_rankings.json`, `overall_ranking.json`,
+      `overall_ranking_summary.txt` — 69 picks, <b>0 pass all gates</b>, aggregate Sharpe 0.235, Sortino 0.733,
+      MaxDD 18.9%, PF 2.23.</li>
+      <li><b>Answered the hardest question put to any agent</b> — how a crypto row could reach net 11.36 bp when the
+      measured crypto round trip is 20–52 bp — with the correct diagnosis: it had used a flat 12.87 bp cost for every
+      class. <b>It retracted the row unprompted.</b></li>
+      <li><b>Re-costed honestly:</b> at the measured band, <b>49 of 69</b> picks go net ≤ 0, DOT lands at <b>−28 bp</b>,
+      and the two rows with n=0 were conceded inadmissible.</li>
+      <li><b>Also caught itself being wrong in the other direction</b> — after fixing crypto it kept its own bands for
+      equity (2.0 vs 12.07), ETF (2.0 vs 6.7122) and FX (1.0 vs 7.533) and labelled them "measured". Corrected on
+      audit; no verdict changed, because DSR was already the binding gate.</li>
+    </ul>
+  </div>
+
+  <div class="agent">
+    <div class="who">Operator (Hermes)<span>deepseek-flash · this seat</span></div>
+    <ul>
+      <li><b>Adopted a 17-gate validation protocol (v1.0)</b> and verified its toolkit against numpy 2.2.6 /
+      scipy 1.17.0 — PSR, deflated Sharpe, MinTRL, PBO via CSCV, effective-N by eigenvalue participation ratio,
+      capacity curves, Benjamini–Hochberg. Reference outputs reproduced: 20-year SR 0.51 → 90% CI <b>[0.08, 0.92]</b>,
+      PSR <b>0.9891</b>, MinTRL <b>124 months</b>; PBO on pure noise <b>0.51</b>, on a strong 8%/yr edge <b>0.20</b>;
+      100 correlated configs → effective N of <b>1.4</b>.</li>
+      <li><b>Killed the value premium with its own data</b> — 186 names, 44 monthly rebalances: gross
+      <b>+0.11%/yr</b>, net <b>+0.02%/yr</b> against a 4.32% hurdle. Died because the premium is absent, not because
+      of cost.</li>
+      <li><b>Measured equity round-trip cost at 1–5 bp</b> on 191 names, 238,810 daily and 356,271 minute bars at
+      0.008% ADV participation — and found the repo had been carrying two constants <b>5× apart</b> (5.0 vs 25.0 bp).</li>
+      <li><b>Audited all 16 model answers</b> collected on strategy validation, and found that the thresholds they
+      propose have <b>no two in agreement on any single gate</b> — DSR pass marks ranging 0.80 to 1.5, PBO 0.10 to 0.50,
+      break-even 2× to 4×. Two of sixteen produced a worked example that reproduced; both were the same vendor.</li>
+      <li><b>Built the accountability layer and enforced it</b>: five questions per pick (mechanism, counterparty, why
+      this symbol, why now, what kills it), a hard n ≥ 30 floor, and the rule that a rejection can only be contested by
+      supplying the missing number — not by restating the claim. Vetted six picks, <b>endorsed zero</b>.</li>
+      <li><b>Published the canonical cost of record</b> after discovering "measured" had been carrying values 3× to 20×
+      apart between agents, and proved no verdict in this dossier depends on the choice.</li>
+    </ul>
+  </div>
+
+  <div class="agent">
+    <div class="who">Antigravity swarm<span>RustDesk · remote desktop</span></div>
+    <ul>
+      <li><b>Running the only forward test with a live clock</b> — the H-201 pod, day <b>15 of 20</b>, needing
+      <b>77</b> observations before a verdict is even permitted.</li>
+      <li><b>Documented the stable rung as risk control</b>, not as alpha.</li>
+      <li><b>Did not file final picks.</b> That is recorded here as a finding, not filled in on its behalf — an agent
+      that has not filed has no final picks, and guessing them would corrupt the record.</li>
+    </ul>
+  </div>
+
+  <h3>Across both repositories</h3>
+  <table>
+    <thead><tr><th>Repository</th><th>Role today</th><th>What changed</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mono">findtorontoevents_antigravity.ca</td>
+        <td class="wrap-cell">The system under audit — strategies, ledgers, costs, paper pods</td>
+        <td class="wrap-cell">Crypto-carry claim killed · 175 bp FX defect fixed as four defects · turnover drag measured per class · sparse-checkout root cause found · paper pod slot halted at 11.52% DD</td>
+      </tr>
+      <tr>
+        <td class="mono">antigravity_review_Nov192026</td>
+        <td class="wrap-cell">This repository — the audit, the accountability layer, the picks dossiers</td>
+        <td class="wrap-cell">Four agents filed final picks · zero endorsed · canonical cost of record · round-2 vetting of every claim · 17-gate protocol adopted · this page</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ TRACKERS ============ -->
+<section id="trackers">
+  <h2><span class="num">07</span>Forward tests and paper portfolios</h2>
+  <p class="lede">
+    Backtests are a hypothesis generator. These are the only things actually accumulating new observations, and how far
+    each is from being allowed to say anything.
+  </p>
+  <table>
+    <thead><tr><th>Tracker</th><th>State</th><th>Closed rows</th><th>Verdict gate</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>H-201 pod</b> <span class="mute">(Antigravity)</span></td>
+        <td class="mono">day 15 / 20</td>
+        <td class="mono">—</td>
+        <td class="mono">77 obs</td>
+        <td><span class="tag t-cand">RUNNING</span></td>
+      </tr>
+      <tr>
+        <td><b>crypto_intraday_sim</b> <span class="mute">(3 slots)</span></td>
+        <td class="mono">2 open, 3 closed</td>
+        <td class="mono">5</td>
+        <td class="mono">n ≥ 20 <span class="mute">(judgment)</span></td>
+        <td><span class="tag t-dead">1 SLOT HALTED</span></td>
+      </tr>
+      <tr>
+        <td><b>ETF trend forward clock</b></td>
+        <td class="mono">cost-only</td>
+        <td class="mono">0</td>
+        <td class="mono">net &gt; 4.32%/yr</td>
+        <td><span class="tag t-unk">VEHICLE ONLY</span></td>
+      </tr>
+      <tr>
+        <td><b>FOREX mean-reversion</b></td>
+        <td class="mono neg">feed dead 2026-02-09</td>
+        <td class="mono">34</td>
+        <td class="mono">DSR ≥ 0.95 <span class="mute">(needs 48)</span></td>
+        <td><span class="tag t-unk">CANNOT ACCRUE</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout amber">
+    <p><b>Read the crypto pod honestly:</b> five closes over three days, three of them losses (−4.08%, −5.24%,
+    −6.28%) and both wins were time exits rather than targets. With n=5 there is no rate to estimate. The pod's own
+    lag-adjusted backtest had PBO <b>0.84–0.97</b>, which means the expected outcome is failure — and that prediction is
+    now being tested live rather than argued about.</p>
+  </div>
+</section>
+
+<!-- ============ RULES ============ -->
+<section id="rules">
+  <h2><span class="num">08</span>The rules the agents are held to</h2>
+  <p class="lede">
+    These exist because in three consecutive filing rounds the same words meant different numbers. Rules are only
+    written here after something went wrong without them.
+  </p>
+  <div class="grid g2">
+    <div class="card">
+      <div class="kicker">Rule 01</div>
+      <h4>Cost of record — one table, no substitutes</h4>
+      <p>A number labelled <b>measured</b> must match the canonical table or carry a reconciliation. Measured bands:
+      bond ETF <b>0.6144</b>, ETF <b>6.7122</b>, index <b>8.0325</b>, direct equity <b>12.0749</b>, FOREX <b>7.533</b>
+      (upper bound), crypto <b>20–52</b> bp. Anything else is <b>assumed</b> and may not pass a gate.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Rule 02</div>
+      <h4>Five questions, every pick</h4>
+      <p>What is the mechanism · who is on the other side and why do they lose · why <i>this</i> symbol ·
+      why <i>now</i> · what kills it. If you cannot name the loser, you are probably the loser.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Rule 03</div>
+      <h4>n ≥ 30, or it is inadmissible</h4>
+      <p>A row with zero observations is not a small edge; it is not a row. Two picks at 0.9 correlation are one pick.
+      Empty lists are permitted — and preferred to noise.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Rule 04</div>
+      <h4>Net must exceed the class round trip</h4>
+      <p>If a claimed net edge is <i>below</i> the measured cost of trading that class, the arithmetic is broken
+      somewhere — that is how the 11.36 bp crypto row was caught.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Rule 05</div>
+      <h4>Contest with the number, not the claim</h4>
+      <p>A rejection can only be overturned by supplying the missing measurement. Restating the original assertion is
+      not a rebuttal.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Rule 06</div>
+      <h4>17 gates before a dollar</h4>
+      <p>PBO ≤ 0.10 · walk-forward ≥ 0.60 · alpha t 3.0/3.5/4.0 scaled by effective N · break-even ≥ 4× ·
+      capacity ≥ 5× · tails and skew · data integrity · survivorship sensitivity · parameter stability ·
+      regime count · out-of-market replication · MinTRL ≤ sample.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ML ============ -->
+<section id="ml">
+  <h2><span class="num">09</span>The next research brief — reverse-engineering top gainers</h2>
+  <p class="lede">
+    The most interesting question left: can our machine-learning stack <b>predict</b> the daily, weekly and monthly top
+    gainers, or can it only <b>explain them after the fact</b>? Those are completely different claims and the difference
+    is where fortunes get lost.
+  </p>
+  <div class="callout red">
+    <p><b>The trap, stated up front.</b> "Top gainers" lists are the single most overfitted dataset in retail finance.
+    If you take today's winners and search for what they had in common, you will always find something — and it will be
+    worthless. The only honest version of this question is a <b>pre-registered, point-in-time prediction</b>: name the
+    filter rules today, freeze them, then score tomorrow's list.</p>
+  </div>
+  <h3>What the agents are being asked for</h3>
+  <ul class="tight">
+    <li><b>A frozen feature set and rule, timestamped before scoring.</b> Universe, filters, ranking formula, and the
+    exact bar at which the decision is made.</li>
+    <li><b>A base-rate benchmark first.</b> "How often does a random 10-name selection contain a top-20 gainer?"
+    Without that number, any hit rate looks impressive.</li>
+    <li><b>Hit rate against that base rate, with a confidence interval</b> — not a hit list. Precision at k, plus the
+    lift over random.</li>
+    <li><b>A strict no-look-ahead audit.</b> A "prediction" that uses the close of the day it predicts is not a
+    prediction; it is a lookup.</li>
+    <li><b>Daily, weekly and monthly horizons tested separately.</b> A rule that works on monthly decay almost never
+    works intraday, and vice versa.</li>
+    <li><b>Both directions:</b> can we predict winners, and can we predict <i>losers</i>? A model that spots tomorrow's
+    worst performer is often far more robust than one chasing the best.</li>
+  </ul>
+  <p class="mute" style="font-size:14px">
+    Full brief with the pre-registration template: <code>ML_TOP_GAINERS_BRIEF.md</code> in the repository root.
+  </p>
+</section>
+
+<!-- ============ DOCS ============ -->
+<section id="docs">
+  <h2><span class="num">10</span>Where the detail lives</h2>
+  <p class="lede">Every claim on this page traces to one of these. Nothing here is summarised from memory.</p>
+  <table>
+    <thead><tr><th>Document</th><th>What it holds</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">34_FINAL_PICKS_2026-11-23/VETTING_ROUND2_2026-11-23.md</td><td class="wrap-cell">The audit of all four filings: what was verified, what was corrected, and the ruling per agent.</td></tr>
+      <tr><td class="mono">34_FINAL_PICKS_2026-11-23/COST_OF_RECORD.md</td><td class="wrap-cell">The canonical cost table. Every "measured" number on this page comes from here.</td></tr>
+      <tr><td class="mono">34_FINAL_PICKS_2026-11-23/GITHUB_COPILOT_DEEPSEEK/copilot.md</td><td class="wrap-cell">Copilot's filing — per-class table, deviating costs shown both ways, disputed trial count.</td></tr>
+      <tr><td class="mono">34_FINAL_PICKS_2026-11-23/ZOOCODE_DEEPSEEK/OVERALL_TOP_PICKS.md</td><td class="wrap-cell">Zoo's watchlist — every figure carrying a source path and line number.</td></tr>
+      <tr><td class="mono">34_FINAL_PICKS_2026-11-23/KILOCODE_VSCODE/KILOCODE_VSCODE.md</td><td class="wrap-cell">Kilo's filing plus its retraction of the 11.36 bp crypto row.</td></tr>
+      <tr><td class="mono">34_FINAL_PICKS_2026-11-23/VETTING_LEDGER.md</td><td class="wrap-cell">The six-pick adjudication with per-pick rejection reasons.</td></tr>
+      <tr><td class="mono">34_FINAL_PICKS_2026-11-23/JUSTIFICATION_RULES.md</td><td class="wrap-cell">The five questions, the n ≥ 30 floor, and the cost bands agents are held to.</td></tr>
+      <tr><td class="mono">ML_TOP_GAINERS_BRIEF.md</td><td class="wrap-cell">The pre-registered brief for the top-gainers study.</td></tr>
+      <tr><td class="mono">AGENT_UPDATE_PROMPT.md</td><td class="wrap-cell">The prompt each agent is asked to answer when reporting current picks and tracker status.</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:18px">
+    <a class="btn" href="https://github.com/eltonaguiar/antigravity_review_Nov192026">Browse the repository &nearr;</a>
+    <a class="btn" href="https://github.com/eltonaguiar/findtorontoevents_antigravity.ca">The system under audit &nearr;</a>
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      <b>Paper only. Zero capital deployed. Not investment advice.</b> Every number on this page is a measurement of a
+      survivor-conditioned dataset, not of a live strategy — gate 1 of the protocol is still red, because the universe
+      excludes delisted companies and therefore flatters every long strategy in it. Any figure here should be read as
+      "this is what the cleaned data says", never "this is what will happen".
+    </p>
+    <p style="margin-top:12px">
+      Generated 2026-11-23 · <a href="https://github.com/eltonaguiar/antigravity_review_Nov192026">antigravity_review_Nov192026</a> ·
+      audited by the operator seat, four filing agents, and the Antigravity swarm on RustDesk.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

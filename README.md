@@ -1,5 +1,66 @@
 # antigravity_review_Nov192026
 
+<table>
+<tr><td>
+
+# 📊 [**OPEN THE SUMMARY SITE →**](https://eltonaguiar.github.io/antigravity_review_Nov192026/)
+
+### **https://eltonaguiar.github.io/antigravity_review_Nov192026/**
+
+**One page. Everything.** Plain-English explanation · top pick per asset class · the overall ranking and why nothing is
+worth money yet · what each agent accomplished today · forward-test status · the rules agents are now held to.
+
+</td></tr>
+</table>
+
+---
+
+## Start here
+
+| If you want… | Go to |
+|---|---|
+| **The short version, in plain English** | [**The summary site**](https://eltonaguiar.github.io/antigravity_review_Nov192026/) — §01 Explain like I'm five |
+| **This week's picks and the verdict on each** | [`34_FINAL_PICKS_2026-11-23/`](34_FINAL_PICKS_2026-11-23/) — four agents, **0 endorsed picks** |
+| **The audit of those picks** | [`34_FINAL_PICKS_2026-11-23/VETTING_ROUND2_2026-11-23.md`](34_FINAL_PICKS_2026-11-23/VETTING_ROUND2_2026-11-23.md) |
+| **The cost numbers every agent must use** | [`34_FINAL_PICKS_2026-11-23/COST_OF_RECORD.md`](34_FINAL_PICKS_2026-11-23/COST_OF_RECORD.md) |
+| **The question to ask each agent** | [`AGENT_UPDATE_PROMPT.md`](AGENT_UPDATE_PROMPT.md) |
+| **The next research brief** (can we predict top gainers?) | [`ML_TOP_GAINERS_BRIEF.md`](ML_TOP_GAINERS_BRIEF.md) |
+
+**Bottom line as of 2026-11-23:** four independent agents, three different ranking keys, one conclusion — **no strategy in
+this estate clears its cost and deflation gates.** One vehicle survives (broad-market index ETF, buy-and-hold), and it is
+**beta, not alpha**. Capital deployed: **$0**. Gate 1 (point-in-time, delisting-aware universe) is still **RED**, so every
+number below measures the data, not a strategy.
+
+<details>
+<summary><b>Table of contents for this file</b> (chronological review log, newest work first)</summary>
+
+- [TL;DR](#tldr) — current state of the programme
+- [Layout](#layout) — what lives where
+- **2026-11-23** → [`34_FINAL_PICKS_2026-11-23/`](34_FINAL_PICKS_2026-11-23/): the accountability layer, four filed dossiers, the cost of record, round-2 vetting
+- **2026-11-22 reviews** (`githubcopilot-mercury3AI`), in order:
+  1. [Per-class deep-dive](#2026-11-22--per-class-deep-dive-review--githubcopilot-mercury3ai)
+  2. [Extended Look Part 2](#2026-11-22--extended-look-part-2--githubcopilot-mercury3ai)
+  3. [Extended Look Part 3](#2026-11-22--extended-look-part-3--githubcopilot-mercury3ai)
+  4. [Part 4: Risk-Worthiness + Backtests](#2026-11-22--part-4-risk-worthiness--backtests--githubcopilot-mercury3ai)
+  5. [Part 4 follow-ups](#2026-11-22--part-4-follow-ups--githubcopilot-mercury3ai)
+  6. [Part 5: Hedge-Fund-Grade Edge-Proof plan](#2026-11-22--part-5-hedge-fund-grade-edge-proof-project-plan--githubcopilot-mercury3ai)
+  7. [Part 5 P0–P3: two claims downgraded](#2026-11-22--part-5-p0p3-two-claims-downgraded--githubcopilot-mercury3ai)
+  8. [Part 6: "Worth The Money"](#2026-11-22--part-6-worth-the-money--etf-edge-program--delegated-ai-review--githubcopilot-mercury3ai)
+  9. [Part 7–8: proof methodology + one phase per asset class](#2026-11-22--part-78-proof-methodology--one-phase-per-asset-class-10-classes--githubcopilot-mercury3ai)
+  10. [Part 8 Round 1: the detector was broken](#2026-11-22--part-8-round-1-the-detector-was-broken-the-trend-overlay-survives-honest-execution--githubcopilot-mercury3ai)
+  11. [Part 9: The Money Verdict](#2026-11-22--part-9-the-money-verdict--what-to-actually-do-with-the-capital--githubcopilot-mercury3ai)
+  12. [Part 10 Round 2: 93 years, four eras](#2026-11-22--part-10-round-2-93-years-four-eras-and-a-bug-i-caught-in-my-own-code--githubcopilot-mercury3ai)
+  13. [Part 11: peer review response — TWO RETRACTIONS](#2026-11-22--part-11-peer-review-response--two-retractions--githubcopilot-mercury3ai)
+  14. [Part 12: commodity rebuilt clean](#2026-11-22--part-12-commodity-rebuilt-clean--kill--candidate-and-the-professional-benchmark--githubcopilot-mercury3ai)
+  15. [Part 13: the 200-round program + REALTIMECHALLENGE prototype](#part-13--the-200-round-program--realtimechallenge-prototype-2026-11-22-0359-est)
+  16. [Part 15 + R1: cost-horizon ladder, a doctrine claim refuted](#part-15--r1--cost-horizon-ladder-a-doctrine-claim-refuted-etf-reconciliation-2026-11-22-0505-est)
+  17. [GROUNDBREAKING: audit3's only pre_registered pod does not reproduce](#__groundbreaking--audit3s-only-pre_registered-pod-does-not-reproduce-2026-11-22-0502-est)
+  18. [THE DECISION: top candidates per class + a tracked, falsifiable pick](#the-decision--top-candidates-per-class--a-tracked-falsifiable-pick-2026-11-22-0635-est)
+
+</details>
+
+---
+
 Independent review of the financial-prediction system on
 [`findtorontoevents_antigravity.ca`](https://github.com/eltonaguiar/findtorontoevents_antigravity.ca)
 — covering `/audit`, `/audit2`, `/audit3`, the database schemas, and the strategy /
