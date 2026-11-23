@@ -150,6 +150,7 @@
       <a href="#pages">What each page is</a>
       <a href="#filed">Filed picks</a>
       <a href="#results">Live results</a>
+      <a href="#horizons">Horizons</a>
       <a href="#classes">Per class</a>
       <a href="#overall">Overall</a>
       <a href="#fees">Mutual funds</a>
@@ -243,7 +244,8 @@
     commodities, options, futures and prediction markets — and at four AI agents that each did their own research.
   </p>
   <div class="callout red">
-    <p><b>Every single strategy failed.</b> Not because the agents were lazy — they produced hundreds of candidates,
+    <p><b>Every <i>measured</i> strategy failed — and four classes were never measured at all.</b> Not because the agents
+    were lazy — they produced hundreds of candidates,
     measured real trading costs, and ran the statistics — but because when you charge a strategy for the cost of actually
     trading it, and then charge it again for the fact that you tried many versions, the apparent profit disappears.</p>
     <p>What survived is boring, and it is the honest answer: <b>a cheap, broad index fund, held for a long time.</b>
@@ -252,10 +254,22 @@
 
   <h3>The one number that explains everything</h3>
   <p>
-    Cash in a government treasury bill pays about <b>4.32% a year</b>, guaranteed, with no skill required. That is the
-    hurdle. Anything you do with money that carries risk has to beat 4.32% <i>after</i> costs, or you were better off
-    doing nothing.
+    Cash in a government treasury bill pays about <b>4.32% a year</b> at the time of writing. That is the hurdle. Anything
+    you do with money that carries risk has to beat it <i>after</i> costs, or you were better off doing nothing.
   </p>
+  <div class="callout" style="border-left:3px solid #d9534f;background:rgba(217,83,79,.08)">
+    <p>
+      <b>Two corrections to how that number was originally written here.</b> First, <b>4.32% is not fixed</b> — T-bill
+      yields move constantly (13-week bills were 4.13% on 30 Sept 2026, 4-week bills 4.23% in July, and 3.6–3.7% in April).
+      Any "fails to clear the bar" verdict expires as the bar moves, so the hurdle must be stamped with a date and a series.
+    </p>
+    <p>
+      Second, calling cash <b>"guaranteed, with no skill required"</b> overstated it. Over 1928–2025 T-bills returned
+      <b>3.37%/yr</b> against <b>3.04%</b> inflation — about <b>+0.33% real before tax</b>, and roughly <b>−0.39%/yr after a
+      22% federal rate</b>. Cash is guaranteed <i>nominal</i>, near-zero <i>real</i>, and negative real after tax for most
+      brackets. It is still the correct hurdle; it is not a free lunch.
+    </p>
+  </div>
   <p>
     Our best-measured value strategy — buying cheap stocks and shorting expensive ones — earned <b>+0.11% a year before
     costs</b> and <b>+0.02% a year after costs</b>. Against a 4.32% hurdle. It did not lose to costs. It lost because
@@ -679,6 +693,96 @@
       Full working: <span class="mono">CONTEST/ROUND_01_2026-11-23/F4_CORRECTION_2026-11-23.md</span>
     </p>
   </div>
+</section>
+
+<section id="horizons">
+  <div class="kicker">FOUR HORIZONS · ONE EQUATION · MEASURED COSTS</div>
+  <h2>What to actually do — long-term, daytrading, scalping, and a crypto signal</h2>
+  <p class="lede">
+    Everything below follows from one relation:
+    <b>annual P&amp;L ≈ (gross edge per trade − round-trip cost) × trades per year</b>.
+    Three of these four questions are therefore questions about <b>frequency versus cost</b>, not about prediction.
+  </p>
+
+  <div class="card">
+    <div class="num">151%</div>
+    <p>
+      the annual cost load of daytrading five round trips a day, as a percentage of the capital you trade — at this
+      programme's <b>measured</b> 12.07&nbsp;bp equity round trip. Scalping fifty times a day is <b>1,509%</b>.
+    </p>
+    <p class="mute">
+      Measured round-trip costs: equity <b>12.07 bp</b> · ETF <b>6.71 bp</b> · crypto <b>52.0 bp</b> · FX <b>7.53 bp</b> ·
+      bond <b>0.61 bp</b>. Not assumed — measured on this estate's own bars.
+    </p>
+  </div>
+
+  <h3>The same signal is fine at 4 trades a year and fatal at 1,250</h3>
+  <table>
+    <thead><tr><th>horizon</th><th class="num">trades/yr</th><th class="num">cost load</th><th class="num">P&amp;L at 1 bp edge</th><th class="num">at 3 bp</th><th class="num">at 10 bp</th></tr></thead>
+    <tbody>
+      <tr><td><b>long-term stocks</b></td><td class="num">4</td><td class="num">0.5%</td><td class="num">−0.4%</td><td class="num">−0.4%</td><td class="num">−0.4%</td></tr>
+      <tr><td>swing</td><td class="num">50</td><td class="num">6.0%</td><td class="num">−6%</td><td class="num">−5%</td><td class="num">−1%</td></tr>
+      <tr><td><b>daytrading</b> 5/day</td><td class="num">1,250</td><td class="num neg">151%</td><td class="num">−138%</td><td class="num neg">−113%</td><td class="num">−26%</td></tr>
+      <tr><td>daytrading 20/day</td><td class="num">5,000</td><td class="num neg">604%</td><td class="num">−554%</td><td class="num neg">−454%</td><td class="num">−104%</td></tr>
+      <tr><td><b>scalping</b> 50/day</td><td class="num">12,500</td><td class="num neg">1,509%</td><td class="num neg">−1,384%</td><td class="num neg">−1,134%</td><td class="num neg">−259%</td></tr>
+      <tr><td><b>crypto daytrading</b></td><td class="num">1,250</td><td class="num neg">650%</td><td class="num neg">−638%</td><td class="num neg">−612%</td><td class="num neg">−525%</td></tr>
+    </tbody>
+  </table>
+  <p class="mute">
+    A genuine <b>3 bp</b> gross edge per trade — better than most retail signals achieve — loses ~0.4%/yr at long-term
+    frequency and <b>113%/yr</b> daytrading. The signal did not change. The frequency did.
+  </p>
+
+  <h3>The four answers</h3>
+  <div class="grid g2">
+    <div class="card">
+      <div class="kicker">1 · long-term stocks</div>
+      <p>
+        Cost is a rounding error here, so this is the one horizon with a structural answer. Own the cheapest broad index the
+        account supports; <b>choose on fee and fit, never on trailing return</b> (vehicle differences are contractual at
+        ~8 bp/yr and statistically undetectable — tracking noise is ~1%/yr, so ~546 years of data would be needed to prove
+        one). Rebalance <b>on a rule</b> — annually or a 5% band. Individual stocks only as a deliberate concentration bet,
+        sized so being wrong is survivable; ~92% of large-cap active funds trail over 20 years.
+      </p>
+    </div>
+    <div class="card">
+      <div class="kicker">2 · daytrading</div>
+      <p>
+        <b>I would not, and it is arithmetic rather than opinion.</b> Five round trips a day costs <b>151% of traded capital
+        per year</b>; break-even needs <b>&gt;12.07 bp of gross edge on every trade, forever</b>. Realistic retail edge is
+        1–3 bp, which loses ~113%/yr. It works only if you are <b>paid to provide liquidity</b> (rebates) or hold a
+        seconds-level information edge. Our own contest could not get a <em>price</em> right — 41 of 69 picks were void at
+        the fill.
+      </p>
+    </div>
+    <div class="card">
+      <div class="kicker">3 · scalping</div>
+      <p>
+        <b>Structurally impossible as a directional retail activity, and not close.</b> Fifty trades a day costs
+        <b>1,509%/yr</b>; beating cash plus 10% would need <b>&gt;20 bp gross per trade, sustained</b>, against 1–3 bp
+        available — a <b>17 bp gap per trade</b> that better indicators do not close. Scalping pays only participants who
+        <b>capture the spread instead of paying it</b>: market makers and fee-tier firms. A directional scalper pays it twice.
+      </p>
+    </div>
+    <div class="card">
+      <div class="kicker">4 · a rare crypto signal</div>
+      <p>
+        Crypto costs <b>52 bp</b> round trip — 6× equity — so any signal must clear that first. The genuinely high-certainty
+        crypto edges are <b>structural, not predictive</b>: funding-rate carry, spot–perp basis, credible stablecoin peg
+        restoration, listing effects, unlock supply shocks. All are <b>capacity-limited</b>, several are arbitrage rather
+        than forecast, and <b>custody risk dwarfs the 52 bp</b>. If a signal predicts direction with high certainty it is
+        not certain, is dust-sized, or is front-running you.
+      </p>
+    </div>
+  </div>
+
+  <h3>What would change these answers</h3>
+  <p class="mute">
+    A documented, cost-inclusive, out-of-sample record showing <b>&gt;12 bp gross per trade</b> at high frequency; or
+    evidence you are on the <b>receiving</b> side of the spread (rebates, maker fees, liquidity-provider tier). Absent
+    either, the burden is on the strategy, not on the skeptic. Full working:
+    <span class="mono">CONTEST/ROUND_01_2026-11-23/ANSWERS_BY_HORIZON.md</span>
+  </p>
 </section>
 
 <section id="classes">
