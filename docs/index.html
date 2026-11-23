@@ -147,15 +147,18 @@
     <nav>
       <a href="#eli5">ELI5</a>
       <a href="#answer">The answer</a>
+      <a href="#retractions">Retractions</a>
       <a href="#pages">What each page is</a>
       <a href="#filed">Filed picks</a>
       <a href="#results">Live results</a>
+      <a href="#leaderboard">Leaderboard</a>
       <a href="#horizons">Horizons</a>
       <a href="#classes">Per class</a>
       <a href="#overall">Overall</a>
       <a href="#fees">Mutual funds</a>
       <a href="#agents">Agents</a>
       <a href="#trackers">Forward tests</a>
+      <a href="#glossary">Glossary</a>
       <a href="#rules">Rules</a>
       <a href="#ml">ML brief</a>
       <a href="#docs">Docs</a>
@@ -395,6 +398,107 @@
 </section>
 
 <!-- ============ PER CLASS ============ -->
+<section id="retractions">
+  <div class="kicker">THE REGISTER · WHAT DIED AND WHAT KILLED IT</div>
+  <h2>Every claim this programme retracted — and the specific thing that killed it</h2>
+  <p class="lede">
+    A ledger that only lists surviving claims is a sales deck. This is the other page: nine findings that were published,
+    argued for, and then falsified by a reviewer, a control, or arithmetic. Each one names the exact defect that killed it,
+    because the defect is the useful part.
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>claim, as published</th><th>why it looked solid</th><th>what killed it</th><th>what replaced it</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>A mutual fund beat its ETF</b></td>
+        <td>11.66% vs 11.49% over five years — a 17.0&nbsp;bp/yr gap, computed from adjusted closes with each fund's own MER</td>
+        <td><b>MER counted twice.</b> Adjusted close is already net of the expense ratio, so <span class="mono">cagr − mer</span>
+          subtracted the fee again. Predicted by double-count <b>+16.6 bp</b>; reported <b>+17.0 bp</b>; error <b>−0.4 bp</b></td>
+        <td>The fee gap is <b>contractual, ~8 bp/yr</b>, against a <b>2.5 bp</b> noise floor. Buy the <b>cheapest share
+          class</b> — VOO beats FXAIX</td>
+      </tr>
+      <tr>
+        <td><b>FXAIX−SPY at 8.7 bp is 3.5× the noise floor, therefore measurable</b></td>
+        <td>Three times the measured VTSAX-vs-VTI noise, with a bootstrap interval that excluded zero on one side</td>
+        <td><b>Tracking error was never computed.</b> At ~1%/yr tracking noise, proving a gap that small needs roughly
+          <b>546 years</b> of data</td>
+        <td>The ranking is undetectable. Vehicle choice is a <b>contract</b> decision, not a backtest decision</td>
+      </tr>
+      <tr>
+        <td><b>Price recall is what the field fails first</b> — 41 of 69 picks void at the fill, "reproduced across 18
+          entrants"</td>
+        <td>It reproduced on two surfaces and eighteen entrants. It was called the most robust finding in the programme</td>
+        <td><b>The arm I never ran: a prompt with the quote supplied.</b> Same model, same rules, one variable changed →
+          <b>0/3 inside → 3/3 inside</b></td>
+        <td>The void rate measured <b>my prompt</b>. Eighteen "entrants" were shared priors answering one malformed
+          question. The contest is a <b>bracket-calibration test</b></td>
+      </tr>
+      <tr>
+        <td><b>Every single strategy failed</b></td>
+        <td>Costs and a multiple-testing penalty were charged to hundreds of candidates, and everything came back null</td>
+        <td><b>Power.</b> At 5 years and 10% vol the gate can only resolve an effect above <b>8.9%/yr</b>. And there is
+          <b>no positive control</b>: a known 3–5%/yr premium came out at +0.11%</td>
+        <td><b>"No effect was detectable at this sample size."</b> All ten nulls are now labelled <b>provisional</b></td>
+      </tr>
+      <tr>
+        <td><b>The 4.32% cash hurdle applies to everything</b></td>
+        <td>It is the right opportunity cost for money that would otherwise sit in T-bills</td>
+        <td><b>Misapplied to market-neutral books.</b> A long/short book's collateral <i>already earns</i> the T-bill rate, so
+          its return is an excess return. Same for unfunded futures</td>
+        <td>Funded long-only → <b>cash hurdle</b>; market-neutral and futures → <b>zero-excess hurdle</b>, plus costs</td>
+      </tr>
+      <tr>
+        <td><b>Cash returns 4.32%, guaranteed</b></td>
+        <td>It is a real T-bill yield, and a genuinely useful bar to clear</td>
+        <td><b>Nominal, pre-tax, and moving.</b> 13-week bills were 4.13% on 30 Sept 2026, 4.23% in July, 3.6–3.7% in April.
+          And the long run is 3.37%/yr vs 3.04% inflation</td>
+        <td><b>+0.33%/yr real before tax, ≈ −0.39%/yr after a 22% federal rate.</b> Cash is guaranteed <i>nominal</i>,
+          near-zero real, negative after tax</td>
+      </tr>
+      <tr>
+        <td><b>High-volatility names hit +30% at 5.28× the base rate</b></td>
+        <td>A five-fold lift on a 62,583-row panel, with a median forward return of +3.06%</td>
+        <td><b>No market baseline.</b> Measured against the cross-sectional mean for the same date: excess mean +1.26% but
+          <b>median −0.25%</b> and <b>49.0% up-rate</b> — right-tail variance in a rising market</td>
+        <td>Seven of sixteen screen rows go <b>negative</b> against peers. <span class="mono">vol20</span> and
+          <span class="mono">max5</span> are <b>variance filters, not forecasts</b></td>
+      </tr>
+      <tr>
+        <td><b>Gap-ups continue: +4.57% over 63 days, t = 48.76</b></td>
+        <td>t = 48.76 is not a weak signal; it looked like the strongest result in the study</td>
+        <td><b>No baseline.</b> Against the same stock's own non-event days the drift is <b>+4.16%</b>, so the excess is
+          <b>+0.41%</b> — and <b>negative</b> at 5d (−0.17%) and 21d (−0.12%)</td>
+        <td>The "edge" was ordinary market drift. Overlapping windows also inflated t by <b>1.81×</b>, not the √overlap
+          assumed</td>
+      </tr>
+      <tr>
+        <td><b>Dollar-cost averaging is proven by history</b> <span class="mute">(an external claim, audited here)</span></td>
+        <td>It is in every model's answer to "what should I invest in", and every advisor says it</td>
+        <td><b>Measured on SPY 1993–2026:</b> lump-sum wins <b>~80%</b> of the time. 36-month DCA over 30 years won
+          <b>0 of 46</b> start dates and ended with 27% less money</td>
+        <td>DCA is a <b>behavioural device</b>, not a return strategy — right for someone without the lump sum, or who
+          would otherwise panic</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="border-left:3px solid #d9534f;background:rgba(217,83,79,.08)">
+    <p><b>The pattern, in one line each:</b></p>
+    <p>
+      Six of the nine died to <b>a missing baseline</b> — the noise floor, the stamped-price arm, the power statement, the
+      cross-sectional mean, the stock's own drift, the lump-sum comparison. <b>None of them died to more data.</b> In every
+      case the data to run the control was already on disk when the claim was published.
+    </p>
+    <p class="mute">
+      The uncomfortable version: the most quotable findings were the least load-bearing ones. The number was rarely noisy —
+      it was <b>precisely wrong</b>. t = 48.76 is not a weak signal; it is a confident measurement of the wrong quantity.
+    </p>
+  </div>
+</section>
+
 <section id="pages">
   <div class="kicker">WHAT EACH PAGE IS FOR</div>
   <h2>Four pages, four different jobs</h2>
@@ -773,6 +877,69 @@
       Process note: two implementations agreeing raised confidence without raising validity — they shared a design error.
       Replication across <i>implementations</i> is weaker than replication across <i>questions</i>.
       Full working: <span class="mono">CONTEST/ROUND_01_2026-11-23/F4_CORRECTION_2026-11-23.md</span>
+    </p>
+  </div>
+</section>
+
+<section id="leaderboard">
+  <div class="kicker">THE LEADERBOARD THAT DOESN'T EXIST</div>
+  <h2>Why there is no ranking — and it is arithmetic, not modesty</h2>
+  <p class="lede">
+    Eighteen entrants filed picks. Every one of them is listed below at the same rank, because the contest cannot tell them
+    apart — and that conclusion is fixed by the <b>design</b>, not by how the results happen to land.
+  </p>
+
+  <p>
+    For two entrants with <span class="mono">n</span> picks each and per-pick volatility
+    <span class="mono">σ</span>, the standard error of the difference in mean return is
+    <span class="mono">σ·√(2/n)</span>, so the smallest difference distinguishable at t&nbsp;=&nbsp;2 is
+    <span class="mono">2·σ·√(2/n)</span>.
+  </p>
+
+  <table>
+    <thead><tr><th>per-pick volatility</th><th class="num">n = 4 picks</th><th class="num">n = 10</th><th class="num">n = 30</th></tr></thead>
+    <tbody>
+      <tr><td>2%</td><td class="num">2.8 pp</td><td class="num">1.8 pp</td><td class="num">1.0 pp</td></tr>
+      <tr><td>5%</td><td class="num"><b>7.1 pp</b></td><td class="num">4.5 pp</td><td class="num">2.6 pp</td></tr>
+      <tr><td>10%</td><td class="num"><b>14.1 pp</b></td><td class="num">8.9 pp</td><td class="num">5.2 pp</td></tr>
+      <tr><td>20%</td><td class="num">28.3 pp</td><td class="num">17.9 pp</td><td class="num">10.3 pp</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <b>Every entrant filed four picks.</b> At normal single-name volatility two entrants must differ by
+    <b>7–14 percentage points in mean return</b> before the gap carries information. A four-pick book over one week cannot
+    produce that except by luck. Separating a genuine <b>2 pp</b> edge at 10% vol needs about
+    <b>200 picks per entrant</b> — the contest has 4, <b>a factor of 50 short</b>.
+  </p>
+
+  <table>
+    <thead><tr><th>what the contest may publish</th><th>what it may not</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>
+          • per-pick bracket validity — inside / void / fund NAV<br>
+          • the aggregate void rate and its cause<br>
+          • the SPY anchor spread across entrants (a real price-accuracy test)
+        </td>
+        <td>
+          • a ranking of entrants by return<br>
+          • "entrant X beat entrant Y"<br>
+          • a winner<br>
+          • any ordering at all, however hedged
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="border-left:3px solid #b8860b;background:rgba(184,134,11,.08)">
+    <p>
+      <b>The honest leaderboard has 18 rows and one column: "not distinguishable."</b>
+    </p>
+    <p class="mute">
+      That is a <i>result</i>, not a gap — and because it follows from the design it survives any outcome, which is exactly
+      why it was worth publishing <b>before</b> the fills printed. Tool:
+      <span class="mono">CONTEST/tools/contest_mde.py</span> · binding rule: <span class="mono">RULES.md §7</span>.
     </p>
   </div>
 </section>
@@ -1316,6 +1483,54 @@
 </section>
 
 <!-- ============ RULES ============ -->
+<section id="glossary">
+  <div class="kicker">GLOSSARY · THE JARGON, DEFINED ONCE</div>
+  <h2>Every term this page uses without explaining</h2>
+  <p class="lede">
+    Reviewers asked for this, reasonably: an outside reader should not need to reconstruct <span class="mono">gate sheet</span>
+    or <span class="mono">ghost rows</span> from context. One line each.
+  </p>
+
+  <table>
+    <thead><tr><th style="width:22%">term</th><th>what it means here</th></tr></thead>
+    <tbody>
+      <tr><td><b>estate</b></td><td>Everything this programme runs: the two repositories, the dashboard, the audit ledger, the
+        agent swarm, and the paper contest. "Nothing in the estate" = nothing across all of it.</td></tr>
+      <tr><td><b>gate sheet</b></td><td>The 17 pre-committed tests a strategy must pass before any capital is allocated —
+        PBO, walk-forward efficiency, alpha t-stat, break-even multiple, capacity, tails, minimum track record. Written before
+        the candidates were tested, so it cannot be tuned afterwards.</td></tr>
+      <tr><td><b>bracket</b></td><td>A take-profit and a stop-loss placed either side of an entry. "Bracketing the market"
+        means the target is above the current price and the stop below it (reversed for a short).</td></tr>
+      <tr><td><b>inside / void</b></td><td><b>Inside</b> = the bracket still straddles the price at the moment of the fill, so
+        the trade can actually happen. <b>Void</b> = the bracket had already been passed before a bar printed, so the pick was
+        never tradeable.</td></tr>
+      <tr><td><b>MDE</b></td><td><b>Minimum detectable effect</b> — the smallest true effect a sample can distinguish from zero
+        at a given confidence. A null result without an MDE is not a null, it is a blind spot.</td></tr>
+      <tr><td><b>IC</b></td><td><b>Information coefficient</b> — the cross-sectional rank correlation between a signal and the
+        subsequent return. Far more statistical power than one portfolio's annual return, because it uses every name on every
+        day.</td></tr>
+      <tr><td><b>PBO</b></td><td><b>Probability of backtest overfitting</b> — the chance that the configuration chosen in-sample
+        underperforms the median out-of-sample. Gate: ≤0.10 pass, &gt;0.25 fail.</td></tr>
+      <tr><td><b>DSR</b></td><td><b>Deflated Sharpe ratio</b> — a Sharpe ratio corrected for how many strategies were tried.
+        A 1.0 Sharpe from 1,000 attempts is not the same evidence as a 1.0 from one.</td></tr>
+      <tr><td><b>alpha / beta</b></td><td><b>Beta</b> is the market's own return — you get it by owning an index.
+        <b>Alpha</b> is return that is not beta. Most "AI strategy" claims are beta in a costume.</td></tr>
+      <tr><td><b>observed / derived / assumed</b></td><td>This page's provenance taxonomy. <b>Observed</b> = measured here.
+        <b>Derived</b> = computed from measurements. <b>Assumed</b> = not checked. A number without a tag is not evidence.</td></tr>
+      <tr><td><b>ghost rows</b></td><td>22,947 rows that appeared in the operational dashboard's totals but referred to
+        nothing real — a coverage illusion that once showed a hardcoded GREEN status.</td></tr>
+      <tr><td><b>echo</b></td><td>A number in a model's answer that also appeared in the prompt. It is not evidence until
+        independently recomputed; echo-suspect answers are excluded.</td></tr>
+      <tr><td><b>pseudoreplication</b></td><td>Counting the same observation twice. Three panels that silently fell back to
+        the same model are one observation, not three — and agreement under shared assumptions is the assumptions talking.</td></tr>
+      <tr><td><b>block bootstrap</b></td><td>Resampling in contiguous blocks rather than single observations, so serial
+        dependence survives. An i.i.d. bootstrap on autocorrelated returns understates uncertainty.</td></tr>
+      <tr><td><b>positive control</b></td><td>Injecting a known effect to prove the harness can detect one. Without it, "every
+        strategy failed" is indistinguishable from "the measurement apparatus is broken."</td></tr>
+    </tbody>
+  </table>
+</section>
+
 <section id="rules">
   <h2><span class="num">08</span>The rules the agents are held to</h2>
   <p class="lede">
