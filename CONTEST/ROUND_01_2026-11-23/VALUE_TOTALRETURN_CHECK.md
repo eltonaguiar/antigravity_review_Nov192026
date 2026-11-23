@@ -54,3 +54,20 @@ The drag (**2.78%/yr**) is **~25×** the reported +0.11% gross. This is exactly 
 Change the price feed in `assess_contest.py` (or the upstream generator of `_prices_live.json`) to fetch Yahoo `adjclose` instead of `close`, and re-run the scorer. Until then, every value-class result in this round is understated by the dividend drag and cannot be compared to academic HML (3–5%/yr).
 
 *Paper only. No live orders, no credentials. Not investment advice.*
+
+---
+
+## CORRECTION 2026-11-23T21:37Z — does the pipeline actually use raw Close? Partly only
+I re-verified the toolchain: **yfinance 1.3.0 `Ticker.history()` defaults to `auto_adjust=None` → True**, so
+`history()["Close"]` is **ALREADY adjusted** (VTV first close 27.32 adjusted vs 49.25 raw). The value pipeline's fetch
+used `history(period="5d")` with the default → **it was already total-return**, not price-only.
+
+**So this changes the headline:**
+- **Still true:** the measured dividend drag on a genuinely raw feed is **+2.78%/yr** (value universe), and there ARE
+  **62 repo files** that explicitly use raw prices (`auto_adjust=False` / raw Stooq/chart-API Close) where it bites.
+- **Retracted:** the specific **+0.11% → +2.89%** correction — it is valid **only if** the value *backtest* fetched raw
+  prices. The pipeline's yfinance path did not. I cannot confirm the backtest's exact source, so the +2.89% is **unconfirmed**.
+- The Stooq CSV path in `equity_price_failover` (raw `row["Close"]`) remains the genuine price-only route in that module.
+
+Net: the dividend-drag arithmetic is correct and material, but my application of it to the +0.11% result **assumed a raw
+feed the yfinance default does not use.** Corrected before it propagated.
