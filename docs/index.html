@@ -272,9 +272,43 @@
   </div>
   <p>
     Our best-measured value strategy — buying cheap stocks and shorting expensive ones — earned <b>+0.11% a year before
-    costs</b> and <b>+0.02% a year after costs</b>. Against a 4.32% hurdle. It did not lose to costs. It lost because
-    <b>the effect was not there</b>.
+    costs</b> and <b>+0.02% a year after costs</b>. It did not lose to costs. <b>No effect was detectable at this sample
+    size</b> — which is a weaker and more honest statement than "the effect was not there," and the distinction matters
+    (see below).
   </p>
+  <div class="callout" style="border-left:3px solid #d9534f;background:rgba(217,83,79,.08)">
+    <p><b>Three corrections to how the hurdle was applied — all three found by external reviewers, all three conceded.</b></p>
+    <p>
+      <b>1. The hurdle was misapplied to market-neutral strategies.</b> A long/short book is roughly self-financing, and its
+      collateral still earns the T-bill rate — so <b>+0.11% is already an excess return</b>, and comparing it to 4.32% is
+      apples to oranges. The right question for that strategy is whether +0.11% is distinguishable from <b>zero</b>. It is
+      not, so the conclusion survives — but the framing was wrong, and applied across ten classes it overstated how badly the
+      market-neutral candidates failed. The same applies to <b>futures</b>, which are unfunded and whose collateral also
+      earns cash. <b>Correct rule: funded long-only positions face the cash hurdle; market-neutral and futures positions face
+      a zero-excess hurdle, plus costs.</b>
+    </p>
+    <p>
+      <b>2. The one recommendation does not pass the page's own test.</b> If everything risky must beat cash after costs, then
+      an equity index — which is risky — must too, and by that logic the answer would be T-bills. The index case rests on the
+      <b>equity risk premium</b>, which this project <b>assumed rather than measured</b>. That is now labelled as assumed,
+      using the page's own taxonomy: <b>beta is exempt from the alpha gate because it does not claim alpha, and the premium is
+      an assumption with a long historical basis, not a result of this work.</b>
+    </p>
+    <p>
+      <b>3. "Every strategy failed" is a statement about this search, not about markets.</b> Once you charge for costs and
+      apply a multiple-testing penalty, <b>statistical power collapses</b> — a real edge of 1–2%/yr would also fail this gate
+      on a sample this short. So the honest sentence is <b>"no effect was detectable at this sample size,"</b> not "the
+      effect does not exist." The missing measurement is a <b>power statement</b>: an effect of X%/yr would have had a Y%
+      chance of clearing this gate. That number would turn the headline from a verdict into a measurement.
+    </p>
+    <p class="mute">
+      Two further specifics reviewers asked for, now stated: the multiple-testing correction used is
+      <b>Benjamini–Hochberg FDR</b> (not Bonferroni, which over correlated candidates would produce an all-null result by
+      construction); and the <b>win-rate-vs-50% binomial test is a diagnostic, not the gate</b> — win rate is nearly
+      orthogonal to profitability (trend systems win ~35–40% and make money; option-selling wins ~85% and blows up), so the
+      bootstrap on net P&amp;L is what decides.
+    </p>
+  </div>
 </section>
 
 <!-- ============ THE ANSWER ============ -->
