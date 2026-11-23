@@ -123,3 +123,30 @@ With: **"No effect was detectable at this sample size — and here is the smalle
 That is a weaker sentence. It is also the true one.
 
 *Paper only. No live orders, no credentials. Not investment advice.*
+
+---
+
+## 7. Per-class MDE table (t = 2)
+
+Each class below is evaluated at the same sample length as the SPY positive control (33.8 years) so the MDEs are directly comparable. Volatilities are representative assumptions, not measured from class-specific return series — where a class has no return history, the MDE is a lower-bound estimate.
+
+| Class | Vol (assumed) | Sample length | MDE at t=2 | Meaning |
+|---|---|---|---|---|
+| bond | 5%/yr | 33.8 y | **1.72%/yr** | A bond strategy needs >1.7%/yr alpha to be detectable |
+| etf | 15%/yr | 33.8 y | **5.16%/yr** | ETF alpha below ~5%/yr is invisible at this sample |
+| equity | 16%/yr | 33.8 y | **5.50%/yr** | Equity alpha below ~5.5%/yr is invisible |
+| fund | 10%/yr | 33.8 y | **3.44%/yr** | Fund alpha below ~3.4%/yr is invisible |
+| fx | 10%/yr | 33.8 y | **3.44%/yr** | FX alpha below ~3.4%/yr is invisible |
+| commodity | 20%/yr | 33.8 y | **6.88%/yr** | Commodity alpha below ~6.9%/yr is invisible |
+| futures | 22%/yr | 33.8 y | **7.57%/yr** | Futures alpha below ~7.6%/yr is invisible |
+| option | 25%/yr | 33.8 y | **8.60%/yr** | Option alpha below ~8.6%/yr is invisible |
+| crypto | 80%/yr | 33.8 y | **27.52%/yr** | Crypto alpha below ~27.5%/yr is invisible |
+| prediction | 30%/yr | 33.8 y | **10.32%/yr** | Prediction-market alpha below ~10.3%/yr is invisible |
+
+**Formula:** MDE(t=2) = 2 × vol / √T, where T = 33.8 years.
+
+**Read:** At 33.8 years of data, even a low-vol bond strategy needs nearly 2%/yr of alpha just to reach t=2. Crypto needs 27.5%/yr. **Most classes in this audit cannot have their alpha detected at any realistic sample length** — the gate was guaranteed to return null for high-vol classes.
+
+**Volatility assumptions:** bond 5%, etf 15%, equity 16%, fund 10%, fx 10%, commodity 20%, futures 22%, option 25%, crypto 80%, prediction 30%. These are illustrative; measured vols per class would tighten or loosen the MDEs proportionally.
+
+*Paper only. No live orders, no credentials. Not investment advice.*
