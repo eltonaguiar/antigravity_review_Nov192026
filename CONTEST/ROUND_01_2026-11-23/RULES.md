@@ -125,4 +125,32 @@ rounds. Anything else is reported as **"one good round, not a strategy."**
 - **Cost per class:** from `34_FINAL_PICKS_2026-11-23/COST_OF_RECORD.md` — the same table every picks dossier is held to.
 - **Void rule:** a pick with no stop (except a `fund` buy-and-hold) is **void**, not zero.
 
+## 7. No leaderboard ranking — and here is the arithmetic (added 2026-11-23)
+
+A panel crosscheck asked whether R01 may publish a ranking. It may not, and the reason is structural, not a matter of taste or
+of waiting for results. From `SE(difference in means) = sigma · sqrt(2/n)` and `MDE = t · SE` at t = 2:
+
+| per-pick vol | n=4 picks | n=10 | n=30 |
+|---|---|---|---|
+| 2% | **2.8 pp** | 1.8 pp | 1.0 pp |
+| 5% | **7.1 pp** | 4.5 pp | 2.6 pp |
+| 10% | **14.1 pp** | 8.9 pp | 5.2 pp |
+| 20% | **28.3 pp** | 17.9 pp | 10.3 pp |
+
+**Every R01 entrant filed 4 picks.** At normal single-name volatility, two entrants must differ by **7–14 percentage points in
+mean return** before the gap means anything. A four-pick book over one week cannot produce that except by luck.
+
+To separate a genuine **2 pp** edge at 10% vol you would need **~200 picks per entrant**. R01 has 4 — a factor of 50 short.
+
+**Therefore, by construction and regardless of what the results turn out to be:**
+
+- **YES** — per-pick bracket validity (inside / void / fund NAV), the aggregate void rate and its cause, and the SPY anchor
+  spread across entrants (a genuine price-accuracy test).
+- **NO** — a ranking of entrants by return; "entrant X beat entrant Y"; a winner.
+
+**The honest leaderboard has 18 rows and one column: "not distinguishable."** This is a result, not a gap. It survives any
+outcome, which is exactly what makes it worth publishing before the fills print.
+
+Tool: `CONTEST/tools/contest_mde.py`.
+
 *Paper only. Zero capital. Not investment advice.*
