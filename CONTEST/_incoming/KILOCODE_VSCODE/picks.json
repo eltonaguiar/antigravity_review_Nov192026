@@ -1,0 +1,67 @@
+{
+  "agent": "KILOCODE_VSCODE",
+  "round": "R02 (proposed; R01 frozen)",
+  "submitted_utc": "2026-11-23T07:20:00Z",
+  "budget_usd": 1000,
+  "edge_thesis": "This is a STRUCTURAL contest entry, not an edge claim: none of these picks pass my own G1-G5 gates (0/69 pass DSR>=0.95). I compete only where I hold a REAL dated price to anchor brackets, so the brackets are internally consistent instead of recalled. Mechanisms named: ETF/FUND = the equity risk premium (long-horizon beta; counterparty = risk-averse rebalancers and liquidity sellers who pay to de-risk); BOND SGOV = the T-bill carry (counterparty = borrowers of short-term cash, i.e. the Treasury bill market); CRYPTO BTC = BTC beta / trend (counterparty = leveraged late longs) and is DISCLOSED as the weakest, likely void due to an 8-month-stale reference. I explicitly DECLINE equity, fx, commodity, option, futures and prediction markets because I have NO dated price reference for them and will not fabricate brackets (Finding 1). I am not gaming the R scoreboard (Finding 4): stops are sized wider than one expected daily bar and R>=1.5 without narrowing brackets to game it.",
+  "declined_classes": {
+    "equity": "no dated price for CVX/AMD/AAPL locally - would require a fabricated bracket",
+    "fx": "no dated AUDJPY price; fx_prices end 2026-02-09",
+    "commodity": "no dated price; 20bp cost is ASSUMED not measured",
+    "option": "no options data layer",
+    "futures": "no dated futures price",
+    "prediction": "maker-only evidence, no measured OOS edge"
+  },
+  "picks": [
+    {
+      "class": "etf",
+      "symbol": "SPY",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "entry_ref_price": 754.37,
+      "tp": 822.27,
+      "sl": 709.1,
+      "size_usd": 250,
+      "horizon_hours": 720,
+      "style": "swing",
+      "why": "Anchor = REAL SPY adjusted close 2026-11-13 ($754.37). Equity risk premium long; tp +9% / sl -6% => R=1.5, stop 6% is wider than one SPY daily bar (~1.5%). Counterparty: risk-averse rebalancers/liquidity sellers. MAY BE STALE ~10 days - void acceptable."
+    },
+    {
+      "class": "fund",
+      "symbol": "VTSAX",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "entry_ref_price": 180.64,
+      "size_usd": 300,
+      "horizon_hours": 8760,
+      "style": "buy_and_hold",
+      "why": "Anchor = REAL VTSAX adjusted close 2026-11-13 ($180.64). Total-US-market beta, NAV-scored, no stop per RULES. Counterparty: same rebalancers. Not an edge - this is the benchmark."
+    },
+    {
+      "class": "bond",
+      "symbol": "SGOV",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "entry_ref_price": 100.56,
+      "tp": 101.57,
+      "sl": 100.16,
+      "size_usd": 200,
+      "horizon_hours": 2160,
+      "style": "swing",
+      "why": "Anchor = REAL SGOV adjusted close 2026-11-13 ($100.56). T-bill carry ~4%/yr; tp +1.0% / sl -0.4% => R=2.5. This is the CASH HURDLE (the bar, not alpha) - included as the honest low-risk leg. Counterparty: short-term cash borrowers (T-bill market)."
+    },
+    {
+      "class": "crypto",
+      "symbol": "BTCUSD",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "entry_ref_price": 72413.87,
+      "tp": 85448.37,
+      "sl": 63724.21,
+      "size_usd": 250,
+      "horizon_hours": 168,
+      "style": "swing",
+      "why": "Anchor = REAL BTCUSDT close 2026-03-05 ($72,413.87) - 8 MONTHS STALE, likely VOID at fill; included only for class coverage and disclosed. BTC beta/trend; tp +18% / sl -12% => R=1.5, stop wider than one BTC daily bar (~3-5%). Counterparty: leveraged late longs. WEAKEST pick."
+    }
+  ]
+}
