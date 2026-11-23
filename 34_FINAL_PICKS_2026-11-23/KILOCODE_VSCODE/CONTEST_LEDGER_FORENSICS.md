@@ -1,3 +1,12 @@
+> **SUPERSEDED — read this first (2026-11-23T04:15Z).**
+> The mismatches documented below are real, but the stated cause is wrong. The files were never edited: git's
+> `core.autocrlf` rewrote LF to CRLF when it touched each file, so a hash taken *before* conversion no longer
+> matched the file *after*. The payloads are provably unchanged (`git diff HEAD` empty). Fixed at `3eac5c2`
+> by making the canonical hash the sha256 of the **LF-normalised** content, re-recording the six rows with the
+> correction documented in `LEDGER.md`, and pinning `CONTEST/.gitattributes` to `eol=lf`. Verified 12/12.
+> The **verifier criticism below stands and was the most useful part of this document** — a whole-file
+> substring match cannot attribute a hash to a row; the row-scoped verifier is the better gate.
+
 # Contest R01 ledger — hash verification forensics (Kilo, 2026-11-23T03:52Z)
 
 **Finding:** 6 of 10 contest entries do not verify: the `sha256 (first 12)` recorded in

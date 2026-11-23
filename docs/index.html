@@ -133,6 +133,7 @@
     <nav>
       <a href="#eli5">ELI5</a>
       <a href="#answer">The answer</a>
+      <a href="#results">Live results</a>
       <a href="#classes">Per class</a>
       <a href="#overall">Overall</a>
       <a href="#fees">Mutual funds</a>
@@ -178,6 +179,7 @@
     <ol>
       <li><a href="#eli5">The whole thing in plain English <span class="d">lemonade stand analogy, no jargon</span></a></li>
       <li><a href="#answer">The answer in one sentence <span class="d">what we would actually buy, and why the answer is "index fund"</span></a></li>
+      <li><a href="#results">Measurable results — the paper-trading contest vs live prices <span class="d">12 entrants, 48 picks, and the 26 that are already void</span></a></li>
       <li><a href="#classes">Top picks per asset class <span class="d">stocks, ETFs, bonds, mutual funds, forex, crypto, commodities, options, futures, prediction markets</span></a></li>
       <li><a href="#overall">The overall ranking — what is worth spending money on <span class="d">none of the strategies; one vehicle; the reason</span></a></li>
       <li><a href="#fees">Why mutual funds are not the answer <span class="d">17.6× the cost of an index ETF over ten years</span></a></li>
@@ -280,6 +282,89 @@
 </section>
 
 <!-- ============ PER CLASS ============ -->
+<section id="results">
+  <div class="kicker">LIVE RESULTS · PAPER ONLY · $1,000 NOTIONAL PER ENTRANT</div>
+  <h2>Measurable results — 48 picks, scored against fetched prices</h2>
+  <p class="lede">
+    Twelve AI entrants each chose trades from a $1,000 paper book. Nothing below is self-reported: every price was
+    fetched from Yahoo Finance and Binance, and every classification is recomputed by the executor's own bracket rule.
+    <a href="#rules">The rules they were given</a> state the cost band, the stop-wins tie-break, and that the agent's
+    stated entry price is ignored.
+  </p>
+
+  <div class="card">
+    <div class="num">15 / 48</div>
+    <p>
+      picks still sit inside their own bracket at the live price. <b>26 are already outside it and will be void at the
+      fill</b> — before a single bar has printed. 7 more are mutual-fund NAV positions.
+    </p>
+    <p class="mute">
+      The contest's first filter is not forecasting skill. It is whether the price a model <i>recalled</i> was within its
+      own stop distance of the real one. Half the field failed that, and most did not fail by a little.
+    </p>
+  </div>
+
+  <h3>Who survived the price check</h3>
+  <table>
+    <thead><tr><th>entrant</th><th class="num">picks</th><th class="num">inside</th><th class="num">void at fill</th><th class="num">fund NAV</th></tr></thead>
+    <tbody>
+      <tr><td>Arena.ai Agent</td><td class="num">4</td><td class="num pos">4</td><td class="num">0</td><td class="num">0</td></tr>
+      <tr><td>Gemini 4 Neon</td><td class="num">4</td><td class="num pos">4</td><td class="num">0</td><td class="num">0</td></tr>
+      <tr><td>M365 Copilot (GPT-5)</td><td class="num">5</td><td class="num pos">3</td><td class="num">1</td><td class="num">1</td></tr>
+      <tr><td>Claude 5.1 Fable</td><td class="num">3</td><td class="num pos">2</td><td class="num">0</td><td class="num">1</td></tr>
+      <tr><td>Claude 5.2 Fable</td><td class="num">4</td><td class="num">1</td><td class="num neg">2</td><td class="num">1</td></tr>
+      <tr><td>GLM 5.3 Flash</td><td class="num">5</td><td class="num">1</td><td class="num neg">3</td><td class="num">1</td></tr>
+      <tr><td>ChatGPT-6 Luna</td><td class="num">2</td><td class="num">0</td><td class="num neg">2</td><td class="num">0</td></tr>
+      <tr><td>Claude Haiku 5.5</td><td class="num">2</td><td class="num">0</td><td class="num neg">2</td><td class="num">0</td></tr>
+      <tr><td>GPT-4.1 mini</td><td class="num">5</td><td class="num">0</td><td class="num neg">4</td><td class="num">1</td></tr>
+      <tr><td>GPT-5.3 Codex</td><td class="num">4</td><td class="num">0</td><td class="num neg">4</td><td class="num">0</td></tr>
+      <tr><td>Qwen4 Max</td><td class="num">5</td><td class="num">0</td><td class="num neg">4</td><td class="num">1</td></tr>
+      <tr><td>Qwen3.6 Flash</td><td class="num">5</td><td class="num">0</td><td class="num neg">4</td><td class="num">1</td></tr>
+    </tbody>
+  </table>
+
+  <h3>What the field thought versus what the market is</h3>
+  <table>
+    <thead><tr><th>instrument</th><th class="num">actual</th><th class="num">range implied by the entrants</th><th>error</th></tr></thead>
+    <tbody>
+      <tr><td>BTCUSD</td><td class="num mono">61,371</td><td class="num mono">59,800 – 125,000</td><td class="wrap-cell">four picks sit two stops below spot</td></tr>
+      <tr><td>AAPL</td><td class="num mono">342.56</td><td class="num mono">167.50 – 271.00</td><td class="wrap-cell">one target is <b>2.0×</b> below spot</td></tr>
+      <tr><td>NVDA</td><td class="num mono">125.53</td><td class="num mono">177.50 – 196.50</td><td class="wrap-cell">~40% too high</td></tr>
+      <tr><td>XAUUSD (spot gold)</td><td class="num mono">3,604</td><td class="num mono">2,600 – 4,000</td><td class="wrap-cell">one short's stop sits 841 below the market</td></tr>
+      <tr><td>SPY</td><td class="num mono">689.81</td><td class="num mono">540.00 – 730.00</td><td class="wrap-cell">lowest two ~25% below</td></tr>
+      <tr><td>GLD</td><td class="num mono">322.87</td><td class="num mono">180.00 – 469.20</td><td class="wrap-cell">a <b>2.6×</b> spread on one instrument</td></tr>
+      <tr><td>TLT</td><td class="num mono">81.45</td><td class="num mono">79.15 – 102.00</td><td class="wrap-cell">—</td></tr>
+      <tr><td>USDJPY</td><td class="num mono">158.97</td><td class="num mono">153.80 – 160.35</td><td class="wrap-cell">one short already through its stop</td></tr>
+      <tr><td>EURUSD</td><td class="num mono">1.0985</td><td class="num mono">1.0200 – 1.1800</td><td class="wrap-cell">—</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The two things this teaches</h3>
+  <div class="card">
+    <p>
+      <b>1. A model's price is a memory, not a quote.</b> Qwen4 Max reasoned most carefully about its own ignorance —
+      <i>"I don't have live market data… my knowledge cutoff — I need to pick plausible levels"</i> — and still scored
+      <b>0 of 4</b>. Arena.ai, which cited specific contemporaneous state (VIX 35.89, Sunday futures +2.1%), scored
+      <b>4 of 4</b>. Honest worry is not a quote; a recent quote is.
+    </p>
+    <p>
+      <b>2. Knowing the cost line does not mean paying it.</b> Claude 5.1 Fable built a thesis on T-bill carry at
+      1–1.5&nbsp;bp/day. Over its 120h horizon that is <b>5.89–6.09&nbsp;bp</b> against a <b>6.7122&nbsp;bp</b> ETF round
+      trip: <b>net −0.6 to −0.8&nbsp;bp</b>, negative under both day-count conventions. The same carry in a money-market
+      <b>fund</b> costs <b>0&nbsp;bp</b> and nets <b>+5.9&nbsp;bp</b>. The idea was right and the wrapper destroyed it.
+    </p>
+  </div>
+
+  <h3>What has not happened yet</h3>
+  <p class="mute">
+    <b>No pick has been scored.</b> The round fills at the first bar open <i>after</i> submission — crypto and FX at the
+    next 00:00 UTC, US equities at Monday 13:30 UTC. Nothing has won, nothing has lost, and a pick currently outside its
+    bracket can still be rescued if price returns before the fill. The scorer is written, tested on five cases, and
+    waiting. <b>0 of 12 entrants are endorsed</b> — no pick anywhere in this estate has cleared the 17-gate sheet.
+  </p>
+  <p class="mute">Paper only. Zero real capital. Not investment advice. Full working: <span class="mono">CONTEST/ROUND_01_2026-11-23/RESULTS.md</span></p>
+</section>
+
 <section id="classes">
   <h2><span class="num">03</span>Top pick per asset class</h2>
   <p class="lede">

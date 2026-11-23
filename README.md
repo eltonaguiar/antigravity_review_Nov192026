@@ -119,6 +119,81 @@ scanner's denylist. Full path in `04_RECOMMENDATIONS/forward_path.md`.
 
 ---
 
+## 📈 Measurable results — live prices, 2026-11-23
+
+Everything below is computed from **fetched market data**, not from anything an agent said about itself.
+Full working: [`CONTEST/ROUND_01_2026-11-23/RESULTS.md`](CONTEST/ROUND_01_2026-11-23/RESULTS.md).
+
+### The headline number
+
+> **12 entrants · 48 picks · only 15 still sit inside their own bracket at the live price.**
+> **26 are already outside it and will be void at the fill** — before a single bar has printed.
+> 7 are mutual-fund NAV positions.
+
+The first filter in this contest is not forecasting skill. It is **whether the price a model recalled was
+within its own stop distance of the real one.** Half the field failed, and most did not fail by a little.
+
+| entrant | picks | inside bracket | **void at fill** | fund NAV |
+|---|---|---|---|---|
+| Arena.ai Agent | 4 | **4** | 0 | 0 |
+| Gemini 4 Neon | 4 | **4** | 0 | 0 |
+| M365 Copilot (GPT-5) | 5 | 3 | 1 | 1 |
+| Claude 5.1 Fable | 3 | 2 | 0 | 1 |
+| Claude 5.2 Fable | 4 | 1 | 2 | 1 |
+| GLM 5.3 Flash | 5 | 1 | 3 | 1 |
+| ChatGPT-6 Luna · Claude Haiku 5.5 | 2 · 2 | 0 · 0 | 2 · 2 | — |
+| GPT-4.1 mini · GPT-5.3 Codex · Qwen4 Max · Qwen3.6 Flash | 5 · 4 · 5 · 5 | **0** | 4 · 4 · 4 · 4 | 1 each |
+
+### What the field thought versus what the market is
+
+| instrument | **actual** | range implied by the entrants | error |
+|---|---|---|---|
+| BTCUSD | **61,371** | 59,800 – 125,000 | four picks sit two stops below spot |
+| AAPL | **342.56** | 167.50 – 271.00 | one target is 2.0× below spot |
+| NVDA | **125.53** | 177.50 – 196.50 | ~40% too high |
+| XAUUSD | **3,604** | 2,600 – 4,000 | one short's stop is 841 below the market |
+| SPY | **689.81** | 540.00 – 730.00 | lowest two ~25% below |
+| GLD | **322.87** | 180.00 – 469.20 | a 2.6× spread on one instrument |
+| TLT | **81.45** | 79.15 – 102.00 | — |
+| USDJPY | **158.97** | 153.80 – 160.35 | one short already through its stop |
+| EURUSD | **1.0985** | 1.0200 – 1.1800 | — |
+
+**Arena.ai and Gemini 4 Neon are the only entrants whose every risk pick still brackets the real market** —
+and Arena is the one whose thesis cited specific contemporaneous state (VIX 35.89, Sunday futures +2.1%).
+The entrant that reasoned most carefully *about* its own uncertainty (Qwen4 Max, which wrote *"I don't have
+live market data… I need to pick plausible levels"*) scored **0/4**, because honest worry is not a quote.
+
+### Cost of record — measured, not assumed
+
+| class | round trip | note |
+|---|---|---|
+| fund | **0 bp** | the only free wrapper |
+| bond ETF | 0.6144 bp | |
+| ETF | **6.7122 bp** | |
+| FOREX | 7.533 bp | |
+| equity | 12.0749 bp | 191 names, 238,810 daily + 356,271 minute bars |
+| commodity | 20 bp | |
+| crypto | 20–52 bp | |
+
+Worked example from this round: Claude 5.1 Fable built a thesis on T-bill carry at 1–1.5 bp/day. Over its
+120h horizon the carry is **5.89–6.09 bp** against a **6.7122 bp** ETF round trip — **net −0.6 to −0.8 bp**,
+negative under both day-count conventions. The same carry in a money-market **fund** costs 0 bp and nets
+**+5.9 bp**. The idea was right; the wrapper destroyed it.
+
+### Verdicts so far
+
+- **0 of 12 entrants endorsed.** The accountability layer has endorsed zero picks across every agent
+  reviewed — Kilo, Zoo Code, GitHub Copilot and this field — because none clears the 17-gate sheet.
+- **0 picks scored.** R01 fills at the first bar open *after* submission: crypto/FX next 00:00 UTC, US
+  equities Monday 13:30 UTC. **No fill has occurred, so nothing has won or lost.** The scorer is written,
+  tested on five cases, and waiting.
+- **Zero is an allowed outcome.** A rejection can only be contested with the missing number, never by
+  restating the claim.
+
+*Paper only. $1,000 notional per entrant. Zero real capital. Not investment advice.*
+
+---
+
 ## Layout
 
 ```
