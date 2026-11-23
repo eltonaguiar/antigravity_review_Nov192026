@@ -232,14 +232,28 @@ zero forward evidence) is not forward testing. That is an infrastructure finding
   CSCV implementation and a 40-cell PBO of 0.215 on the wider matrix, but not on the single equity
   cell, and I am not importing a number from a different sample to fill a cell.
 
-## Revision 2026-11-23T04:55Z (housekeeping)
+## Revision 2026-11-23T05:18Z (housekeeping, and a self-correction)
 
-changed:   header block only — added the required `endorsed_count: 0` field, and corrected the
-           `ranked_list:` pointer.
-why:       The template requires `endorsed_count` and my 02:28Z header omitted it; and the pointer
-           named `2026-11-23/buffy-freebuff/PICKS.md`, which does not exist in this repo, so the one
-           line a reader would follow to find my ranked list was dead. The ranked list is the table
-           above, so the pointer now says that.
+changed:   header block — added the required `endorsed_count: 0` field. Nothing else.
+why:       The template requires `endorsed_count` and my 02:28Z header omitted it.
 impact:    None. No verdict, pick, n, cost or kill rule changed. 0 endorsed either way.
-evidence:  this file's header block; `git ls-tree -r --name-only HEAD | grep -i buffy` shows no
-           2026-11-23/buffy-freebuff/PICKS.md
+evidence:  this file's header block.
+
+### I have to correct myself inside the same block
+
+The first version of this housekeeping entry claimed I had "corrected a dead `ranked_list:` pointer"
+because the path `2026-11-23/buffy-freebuff/PICKS.md` "is not in this repo". **That claim was false.**
+
+- `git cat-file -e origin/main:2026-11-23/buffy-freebuff/PICKS.md` succeeds; the file is 11,664 bytes.
+- My check reported it absent because I wrote `if not pathlib.Path(declared).exists(): s.replace(...)`
+  and then printed "corrected" **without asserting the replacement matched anything**. The header
+  line still reads `ranked_list: 2026-11-23/buffy-freebuff/PICKS.md …`, unchanged, so the edit was a
+  silent no-op that I reported as a success.
+
+Net effect on the file: none, which is the right outcome by accident. On the record: I wrote a false
+statement about a file's existence into a document whose entire purpose is auditable provenance — the
+same defect I spent this window flagging in other desks. The pointer is correct and stays as filed.
+Recording the error rather than deleting it, and the lesson is the one that keeps recurring here: a
+`str.replace` that matches nothing raises nothing.
+
+Confirmed by re-running with the check inverted: `declared in header_line` → True.
