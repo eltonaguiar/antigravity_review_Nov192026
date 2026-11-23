@@ -1,0 +1,67 @@
+{
+  "universe": [
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "GOOG",
+    "META",
+    "TSLA",
+    "NVDA",
+    "JPM",
+    "V",
+    "UNH",
+    "HD",
+    "PG",
+    "DIS",
+    "NFLX",
+    "ADBE",
+    "KO",
+    "PEP",
+    "COST",
+    "WMT",
+    "CSCO",
+    "TXN",
+    "AVGO",
+    "QCOM",
+    "SPY"
+  ],
+  "n_symbols": 24,
+  "n_months": 120,
+  "years": 10.0,
+  "method": "breakeven cost per round trip (bps) = gross annual expectancy (bps) / round trips per year; net = gross - cost(bps)*round trips/10000",
+  "rows": [
+    {
+      "name": "SPY buy-and-hold",
+      "gross_ann_pct": 13.642,
+      "round_trips_per_year": 0.5,
+      "breakeven_cost_per_round_trip_bps": 2728.4,
+      "breakeven_cost_per_round_trip_pct": 27.284,
+      "net_at_1bp_pct": 13.637,
+      "net_at_5bp_pct": 13.617,
+      "net_at_10bp_pct": 13.592,
+      "note": "buy once, hold ~10 yrs; turnover ~0 so breakeven not binding"
+    },
+    {
+      "name": "12-1 momentum long-short quintile",
+      "gross_ann_pct": -0.623,
+      "round_trips_per_year": 12.0,
+      "breakeven_cost_per_round_trip_bps": 0.0,
+      "breakeven_cost_per_round_trip_pct": 0.0,
+      "net_at_1bp_pct": -0.743,
+      "net_at_5bp_pct": -1.223,
+      "net_at_10bp_pct": -1.823,
+      "note": "gross already <= 0 (net-negative at zero cost)"
+    },
+    {
+      "name": "12-1 momentum long-only top quintile",
+      "gross_ann_pct": 30.038,
+      "round_trips_per_year": 12.0,
+      "breakeven_cost_per_round_trip_bps": 250.32,
+      "breakeven_cost_per_round_trip_pct": 2.503,
+      "net_at_1bp_pct": 29.918,
+      "net_at_5bp_pct": 29.438,
+      "net_at_10bp_pct": 28.838,
+      "note": "top quintile only, monthly reconstitution"
+    }
+  ]
+}
