@@ -71,3 +71,20 @@ then bootstrapped the per-entrant mean margin, 2000 reps, tie-aware.
 winners (a permanent 3-way tie)**; under the gameable continuous margin there is still **no ≥95% unique winner**. Either way
 **RULES §7 is confirmed: no ranking.** The continuous result strengthens §7 *and* demonstrates why metric choice must be
 fixed in advance — a margin-style score would let a model "win" by missing the price the most.
+
+---
+
+## The R-metric falsifier is built AND calibrated (ready for fills)
+The bracket-fit test above cannot use R (no fills yet). `CONTEST/tools/bootstrap_winner_on_R.py` is the **net-R**
+version of the §7 falsifier, calibrated like a positive control **before** real data arrives:
+
+| self-test | injected | result | expected |
+|---|---|---|---|
+| **A — clear winner** | one entrant at +1.0 R (sd 0.3) vs 17 at 0 R (sd 1.0), n=30 | **unique-wins 97.8% → LEADERBOARD ALLOWED** | must detect → ✅ |
+| **B — true null** | all entrants share an identical return array | **0.0% unique → NO RANKING** | must report nothing → ✅ |
+
+**A winner must beat the runner-up by > 0.10 R to count as unique** (practical-significance band; without it, floating-point
+noise manufactures "winners"). So the test is proven to (a) detect a genuine ≥95% winner — meaning it *can* revise §7 when
+one exists — and (b) stay silent on a null. **When fills land, run:** `python CONTEST/tools/bootstrap_winner_on_R.py
+--fills fills.json` where `fills.json = {"ENTRANT": [netR_1, netR_2, ...], ...}`. Today it correctly reports **NO RANKING**
+on the only data we have (bracket-fit, 0/2000 unique winners).
