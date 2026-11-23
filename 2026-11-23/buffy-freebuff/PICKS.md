@@ -84,3 +84,49 @@ impact:    ETF stays **CANDIDATE**. The expectation that ~60 monthly records pro
            power at -100 bp/month) plus a point estimate whose interval tightens monthly.
 evidence:  reports/r4b_power_2026-11-23.md;
            docs/preregistration/ETF_TREND_FORWARD_2026-11-23_AMENDMENT-1_PROPOSED.md (PROPOSED, not in force)
+
+## Revision 2026-11-23T02:35Z — justification block per endorsed candidate
+
+Required by the accountability layer added 2026-11-23 (`34_FINAL_PICKS_2026-11-23/JUSTIFICATION_RULES.md (commit d5588ae)`): mechanism / counterparty /
+why-this-symbol / why-now / what-kills-it, plus an explicit cost-vs-edge check. **Verdicts
+unchanged: still 0 of 10 classes investable.** These are CANDIDATE rows, not endorsements for capital.
+
+### STOCKS — XLV long, KO long, MSFT long (H-201)
+- **Mechanism:** cross-sectional 6-month momentum. Under-reaction to news and premature
+  profit-taking leave a persistent premium; the return is compensation for holding what has run.
+- **Counterparty:** the seller who takes profit on a name up ~20% in six months. If that behaviour
+  disappears, the premium goes with it.
+- **Why these symbols:** top 3 of the pod's frozen 44-name universe by 6-month return at the
+  2026-11-19 close — XLV +20.77%, KO +19.86%, MSFT +19.35%. Rule-selected, nothing hand-picked.
+- **Why now:** the arithmetic permits it and only the statistics do not — 179 trades (above the
+  n>=30 floor), CI-LB +7.246 bp/day, k*=50.9, DSR 0.9469 at N=29. Clock is day 15 of 20.
+- **What kills it:** forward CI-LB <= 0 at day 40; DSR < 0.95 held at N >= 28; or the vol-matched
+  -0.533 proving it is SPY beta rather than a premium.
+- **Cost-vs-edge:** measured 12.0749 bp round trip against 11.521 bp/day gross — passes ~20x on the
+  amortised basis. PIT is PARTIAL_NON_DELISTING_AWARE (flagged). **Duplicate exposure:** XLV is also
+  in the ETF basket below; that is one view of healthcare, not two.
+
+### ETF — R4b basket (XLE, XLV, XLK, IWM, EFA longs)
+- **Mechanism:** 12-month absolute momentum with a cash alternative. Trend persistence plus vol-drag
+  rotation out of losers; no short leg, so no borrow and no squeeze.
+- **Counterparty:** the allocator who holds last year's loser to avoid realising a loss.
+- **Why these symbols:** strictly the frozen rule's top five — no discretion, reproducible from
+  `tools/etf_trend_forward_clock.py` and the cached closes.
+- **Why now:** it is *not* now. First legitimate record is 2026-11-30, and the power analysis says a
+  hurdle-sized edge confirms only 5% of the time at n=60 — the clock is a refutation instrument.
+- **What kills it:** the frozen rule itself — annualised net <= 4.32%, or a one-sided 95% upper bound
+  <= 4.32%, on forward rows only. No post-hoc rescue, no re-test.
+- **Cost-vs-edge:** 6.7122 bp round trip is the cheapest measured vehicle we have; edge UNMEASURED,
+  so this row cannot pass a cost-vs-edge check yet and does not claim to.
+
+### CRYPTO — BTCUSDT perp delta-neutral carry (0% allocation)
+- **Mechanism:** funding paid by leveraged longs to shorts, delta-hedged so direction is removed and
+  only the funding stream remains.
+- **Counterparty:** the leveraged perp long paying funding to stay in the trade.
+- **Why this instrument:** deepest perp book with a measured funding series (1.9252 bp/day, n=111
+  crossings) and 0.0 bp rehedge when quantity-matched.
+- **Why now:** no — deliberate. 0% allocation until the venue fee tier is measured, because the
+  overlay costs 15,440 bp to avoid 1,738 bp of decay.
+- **What kills it:** measured fees making it net negative, which the current estimate already implies.
+- **Cost-vs-edge:** the crypto cost band is 20-52 bp while the gross edge is 1.9 bp/day by
+  construction — the check fails on an assumed cost, so it stays at zero.
