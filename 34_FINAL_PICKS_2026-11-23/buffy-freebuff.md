@@ -166,3 +166,68 @@ is already out on benchmark excess and executability.
 **Gainer predictability:** daily null (AUC 0.537), weekly null (105 weeks; holdout top-5 precision
 1.0× base rate crypto, 1.08× equity, with the top feature's IC flipping sign on holdout), monthly
 not runnable — 24 months of data against ~48 needed for a 2× lift.
+
+## Revision 2026-11-23T04:54Z
+
+changed:   ETF row (EDGE cell now carries a measured backtest) and a new tracker-status section.
+why:       Two things were unknown when I filed at 02:28Z. (a) `reports/forward_observations.jsonl`
+           has 432 rows and **none of them belong to any hypothesis of mine** — the file is idle
+           since 2026-11-19 and covers only H-119 CRYPTO (430 closed rows). So "0 records until
+           2026-11-30" was right about my own clock but understated the problem: nothing in my 10
+           classes is being tracked at all. (b) H-244 was pre-registered and run after I filed.
+impact:    No verdict changes. ETF stays CANDIDATE with 0 forward records; STOCKS stays CANDIDATE
+           (its deflated Sharpe fails at every N tried). One row gains a measured number.
+evidence:  reports/h243_h244_cost_and_etf_2026-11-23.json,
+           plans/2026-11-23-prereg-H-243-H-244-cost-and-etf.md,
+           reports/h242_dsr_2026-11-23.json, reports/forward_observations.jsonl
+
+### H-244 — the ETF rule, backtested after filing (not forward)
+
+Pre-registered before the run, then measured on 10 ETF names with a 10-month formation window:
+
+| cost assumption | n | mean bp/day | 95% CI | SR (daily) |
+|---|---|---|---|---|
+| 20 bp round trip (crypto-grade, deliberately punitive) | 2514 | **+5.581** | **[+1.134, +10.239]** | 0.04735 |
+| 4 bp round trip (equity-spread lower bound) | 2514 | +5.802 | [+1.367, +10.445] | 0.04924 |
+| 20 bp, first half only (W5) | 1254 | +6.193 | [−0.029, +13.041] | 0.04982 |
+| 4 bp, first half only (W5) | 1254 | +6.431 | [+0.147, +13.273] | 0.05175 |
+
+Verdict carried in the artifact: `PASSES_W10`. **What it does not do is clear the multiplicity bar.**
+SR_daily 0.04735 annualises to 0.75 against the 1.37 required to clear DSR 0.95 at the honest trial
+count — so this is a rule that survives cost and does not survive deflation. Those are different
+tests and I am not going to let the first stand in for the second.
+
+H-243, same run, is the cost result: at the record 20 bp round trip the equity cell means
+**+16.598 bp/day, CI [+8.033, +25.317], n=2514**, with 7.94x/year turnover; re-costing at 10 bp
+saves 0.252 bp/day. Both artifacts are on `origin/main` of the main repo.
+
+### PART C — TRACKER STATUS (the part most agents have not reported)
+
+| Hypothesis | Class | Forward records | Closed | Newest record | Where it lands |
+|---|---|---|---|---|---|
+| H-201 (xsmom top-3 of 44) | STOCKS | **0** | 0 | — | needs 137 forward days at N=29; none started |
+| R4b (12m abs momentum, 5 of 20 ETFs) | ETF | **0** | 0 | first record 2026-11-30 | pre-registered, clock not started |
+| H-242 / H-243 / H-244 | EQUITY, ETF | **0** | 0 | — | backtests only, no forward rows |
+| H-119 (only hypothesis in the ledger) | CRYPTO | 430 | 430 | 2026-11-19 | not mine; the ledger's sole coverage |
+
+The honest reading: **my endorsed count is 0, so my tracker count is trivially 0** — but the
+stronger statement is that the forward surface has been idle for four days and tracks only H-119.
+A "future testing" programme whose only live row is a quarantined crypto hypothesis (R8 closed it:
+zero forward evidence) is not forward testing. That is an infrastructure finding, not a pick.
+
+### Section 2 compliance (DSR)
+
+- Implementation used: my own, in `tools/deflated_sharpe.py` + the H-242 runner. **Stated because the
+  mandated import cannot be followed literally**: `03-trading-strategies/tools/validation_toolkit.py`
+  does not exist anywhere in `antigravity_review_Nov192026` (searched all paths, case-insensitively;
+  the `03-trading-strategies/` directory is absent). Reported to the operator on the bus.
+- N is always stated, and both bases are reported: **N=121 canonical** (DSR 0.687), **N=26 most
+  favourable** (0.9224), plus the single-series SE basis (0.799) for contrast.
+- Variance basis: **cross-trial dispersion**, derived empirically at **sigma = 0.020485 across 38
+  cells**, against 0.022798 back-solved and 0.020089 single-series SE. The empirical value is 0.899x
+  the back-solved one, i.e. the back-solved figure was mildly *too* punishing, which is the opposite
+  of the direction two agents erred in today.
+- Rule (c), gates must be computed: the PBO cell for STOCKS is **UNMEASURED** and says so. I have a
+  CSCV implementation and a 40-cell PBO of 0.215 on the wider matrix, but not on the single equity
+  cell, and I am not importing a number from a different sample to fill a cell.
+
