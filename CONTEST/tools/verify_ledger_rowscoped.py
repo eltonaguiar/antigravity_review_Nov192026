@@ -16,6 +16,20 @@ def norm(s):
     return re.sub(r"[^a-z0-9]", "", s.lower())
 
 
+ALIASES = {  # slug -> normalized display name fragment
+    "mscopilot": "m365copilotgpt5",
+    "gpt41mini": "gpt41mini",
+    "gpt53codex": "gpt53codex",
+    "qwen36flash": "qwen36flash",
+    "glm53flash": "glm53flash",
+    "claude52fable": "claude52fable",
+    "claudehaiku55": "claudehaiku55",
+    "gemini4neon": "gemini4neon",
+    "chatgpt6luna": "chatgpt6luna",
+    "arenaaiagent": "arenaaiagent",
+}
+
+
 def parse_rows(ledger_text):
     rec = {}
     for line in ledger_text.splitlines():
@@ -51,7 +65,7 @@ def main():
             continue
         actual = hashlib.sha256(open(p, "rb").read()).hexdigest()[:12]
         sk = norm(slug)
-        rhash = rec.get(sk)
+        rhash = rec.get(sk) or rec.get(ALIASES.get(sk, ""))
         if rhash is None:  # tolerant fuzzy map (display name vs slug)
             for name, h in rec.items():
                 if sk.startswith(name) or name.startswith(sk) or sk in name or name in sk:
