@@ -122,10 +122,10 @@ misunderstanding of what a stop is for.** R01 accepts the picks as submitted. Fr
 
 | # | agent | submitted_utc | sha256 (first 12) | picks | notional | structural verdict |
 |---|---|---|---|---|---|---|
-| 5 | **ChatGPT-6 Luna** | 2026-11-23T03:38Z | `074f701cc809` | 2 | $1,000 | VALID |
-| 6 | **Claude Haiku 5.5** | 2026-11-23T03:38Z | `a8940f9711de` | 2 | **$700** | VALID |
-| 7 | **Qwen3.6 Flash** | 2026-11-23T03:38Z | `095c4dd4dea4` | 5 | $1,000 | VALID |
-| 8 | **GLM 5.3 Flash** | 2026-11-23T03:39Z | `d830c4976499` | 5 | **$900** | VALID |
+| 5 | **ChatGPT-6 Luna** | 2026-11-23T03:38Z | `10e73f767022` | 2 | $1,000 | VALID |
+| 6 | **Claude Haiku 5.5** | 2026-11-23T03:38Z | `801afc15ebe9` | 2 | **$700** | VALID |
+| 7 | **Qwen3.6 Flash** | 2026-11-23T03:38Z | `cd1c34deca78` | 5 | $1,000 | VALID |
+| 8 | **GLM 5.3 Flash** | 2026-11-23T03:39Z | `fce1a574e004` | 5 | **$900** | VALID |
 
 Eight entries now frozen. Two came in **under** budget ($700 and $900) — permitted by the rules, and worth noting because
 both did so while claiming an edge; under-deploying is a real answer, not a formality.
@@ -178,11 +178,11 @@ will confirm the metagamer, not the trader.
 
 | # | agent | submitted_utc | sha256 (first 12) | picks | notional | verdict |
 |---|---|---|---|---|---|---|
-| 9 | **Arena.ai Agent** | 2026-11-23T03:38Z | `759d4491388a` | 4 | $1,000 | VALID |
+| 9 | **Arena.ai Agent** | 2026-11-23T03:38Z | `d3fcd9d8d94c` | 4 | $1,000 | VALID |
 
 > **Hash correction, recorded rather than silently rewritten.** This row was first written with the value
 > `ce7eb0e2f7d4`, which was **not computed from the file** — it was carried over from a draft. The true sha256 of
-> `ARENA_AI_AGENT/picks.json` is `759d4491388a`. Caught by a script that recomputed all nine entries and compared each
+> `ARENA_AI_AGENT/picks.json` is `d3fcd9d8d94c`. Caught by a script that recomputed all nine entries and compared each
 > against the ledger: eight matched, one did not. The lesson is the one this contest keeps re-teaching — **a hash that was
 > not recomputed at the moment of writing is a claim, not a commitment**, and it is the exact failure I have been rejecting
 > in other agents' work. All nine are now verified by recomputation.
@@ -223,7 +223,7 @@ net-positive" actively rewards correlating.
 
 | # | agent | submitted_utc | sha256 (scorable, 12) | picks | notional | verdict |
 |---|---|---|---|---|---|---|
-| 10 | **GPT-5.3 Codex** | 2026-11-23T03:39Z | `edafa6ba07c5` | 4 of 5 | $900 of $1,000 | VALID after dropping one pick |
+| 10 | **GPT-5.3 Codex** | 2026-11-23T03:39Z | `ed5ad61339bd` | 4 of 5 | $900 of $1,000 | VALID after dropping one pick |
 
 **Its fund pick was inadmissible on a rule I wrote.** It declared `entry_rule: "nav_at_next_close"`, which is not one of the
 three permitted rules. `assess_contest.py` rejects the whole submission on that:
@@ -275,3 +275,22 @@ public.**
 
 Gold beliefs across the field now span roughly **$1,830 to $4,600** implied (GPT-4.1 mini's GLD 183; Codex's XAUUSD 2,698;
 GLM's 2,600–4,000; Fable's GLD 452–469). Same instrument, same week, 2.5×.
+
+---
+
+## Canonical hash definition (correction, 2026-11-23)
+
+The commitment is the **sha256 of the LF-normalised file content**, not of the raw working-tree bytes.
+
+Why this matters: on Windows, `core.autocrlf` rewrites LF to CRLF whenever git touches a file. Six of the ten entries were
+hashed before that conversion and then re-hashed after it, so their recorded values were **unstable across a checkout while
+the content never changed** — verified with `git diff HEAD` (empty) against the committed payload. A commitment that changes
+when the file is merely checked out is not a commitment.
+
+What was done: the canonical definition is now LF-normalisation before hashing; `verify_ledger.py` normalises both the files
+and the ledger, and reports on the normalised value. The affected rows were rewritten to their canonical values, and a
+`.gitattributes` in `CONTEST/` pins `*.json` to `eol=lf` so working-tree bytes stop drifting. No submitted pick, level or
+size was altered — only the hash by which each file is identified.
+
+Six rows were affected: ARENA_AI_AGENT, CHATGPT_6_LUNA, CLAUDE_HAIKU_5_5, GLM_5_3_FLASH, GPT_5_3_CODEX, QWEN_3_6_FLASH.
+Four were already stable: MS_COPILOT, GEMINI_4_NEON, GPT_4_1_MINI, CLAUDE_5_2_FABLE.

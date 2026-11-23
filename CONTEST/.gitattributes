@@ -1,0 +1,3 @@
+CONTEST/**/*.json text eol=lf
+CONTEST/**/*.md text eol=lf
+CONTEST/**/*.py text eol=lf

@@ -12,6 +12,17 @@ import re
 import sys
 
 
+def canonical_hash(path):
+    """sha256 of the LF-normalised content.
+
+    On Windows, git's core.autocrlf rewrites LF to CRLF when it touches a file, so hashing the raw
+    working-tree bytes changes after `git add`/checkout even though the content has not changed.
+    Normalising first makes the commitment platform-stable and reproducible on any clone.
+    """
+    data = open(path, "rb").read().replace(b"\r\n", b"\n")
+    return hashlib.sha256(data).hexdigest()
+
+
 def main():
     d = sys.argv[1] if len(sys.argv) > 1 else "CONTEST/ROUND_01_2026-11-23"
     ledger_path = os.path.join(d, "LEDGER.md")
@@ -25,7 +36,7 @@ def main():
         p = os.path.join(d, slug, "picks.json")
         if not os.path.isfile(p):
             continue
-        actual = hashlib.sha256(open(p, "rb").read()).hexdigest()
+        actual = canonical_hash(p)
         rows.append((slug, actual[:12]))
         if actual[:12] not in ledger:
             # distinguish "not recorded" from "recorded under a different value"
