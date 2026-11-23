@@ -113,3 +113,54 @@ The contest's first filter is not forecasting skill. It is **whether the price a
 * **UNPRICED, CAUSE UNVERIFIED:** `FUSEX` (submitted by GPT-4.1-mini as a mutual fund) returned 404 from Yahoo. It is a real Fidelity fund ticker, so **this is most likely a source limitation, not a fabricated symbol** — I have no NAV feed for it and cannot say either way. It is excluded from the $ scoring until one exists, and it is *not* counted as a failure by the entrant.
 
 *Paper only. Zero real capital. Not investment advice.*
+
+---
+
+## Addendum — Qwen4 Max's self-assessment, audited
+
+Its final answer arrived and matches the extraction filed here on every field (class, symbol, side, tp, sl,
+size, fund rule). Two independent capture paths agreeing, again.
+
+It named its own likely failures. Those claims are testable, so here they are tested.
+
+### Claim 1 — "the 52bp round-trip cost already consumes **a third** of the intended edge"
+
+| pick | risk (px) | gross R at TP | cost in R | **cost as % of the edge** | net R at TP |
+|---|---|---|---|---|---|
+| USDJPY short | 1.40 | 1.5714 | 0.0839 | 5.3% | 1.4875 |
+| GLD long | 8.50 | 1.5294 | 0.0298 | 2.0% | 1.4996 |
+| NVDA long | 7.50 | 1.5333 | 0.0298 | 1.9% | 1.5035 |
+| **BTCUSD long** | 4,500 | 1.5556 | 0.1098 | **7.1%** | 1.4458 |
+
+**Wrong by ~4.7×.** The 52 bp costs 494 points against a 7,000-point target: **7.1% of the edge, not a third.**
+The one model that priced the cost line at all overstated its own burden — while understating its anchor
+error by an order of magnitude. Both errors are in the same direction a trader's do not usually take:
+it talked itself *out of* a pick it could afford and *into* a price it could not.
+
+### Claim 2 — "BTCUSD is my most likely failure"
+
+| pick | live price | nearest bound | gap | **gap in R** | self-predicted rank |
+|---|---|---|---|---|---|
+| USDJPY short | 158.974 | 157.40 | 1.0% | **+1.12 R above stop** | 3rd |
+| GLD long | 322.87 | 369.50 | 12.6% | **−5.49 R below stop** | not named |
+| BTCUSD long | 61,371 | 90,500 | 32.2% | **−6.47 R below stop** | **1st** |
+| NVDA long | 125.53 | 177.50 | 29.3% | **−6.93 R below stop** | 2nd |
+
+**All four are already void, and it named one.** BTC is not even the worst: NVDA is further outside its own
+bracket in R terms. Its ranking of its own failures was directionally reasonable and quantitatively useless —
+it predicted a 1-of-4 chance and delivered 4-of-4, with the worst pick unnamed in R terms.
+
+### Claim 3 — and this one it got right
+
+> *"Stops are set outside one daily sigma but inside my price-anchor confidence band so a bad fill assumption
+> kills the pick cheaply instead of bleeding it."*
+
+**The containment worked exactly as stated.** Every one of its four picks fails as a **void at the fill —
+costing nothing** — rather than a slow bleed. A stale anchor with a loose stop would have been a losing
+position; a stale anchor with a bracket narrower than the error is a free no-trade. That is the correct
+engineering response to not knowing the price, and it is the only reason Qwen4 Max is at $0.00 lost rather
+than down several R.
+
+**The method was sound. The input was a memory.**
+
+*Paper only. Not investment advice.*

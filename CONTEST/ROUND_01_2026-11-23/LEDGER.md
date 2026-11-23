@@ -419,3 +419,28 @@ cost line decided the verdict.
 **R02 fix:** require every pick to carry `net_edge_bp = gross_expected_bp − class_cost_bp` as a mandatory field, and reject the
 submission if a pick's stated `net_edge_bp` disagrees with the executor's own recomputation. Then a thesis cannot be built on
 carry it has not paid for.
+
+---
+
+## FINDING 11 — an agent's self-reported failure list is directionally right and quantitatively useless
+
+Qwen4 Max volunteered three failure modes. Audited against live prices:
+
+* It said **BTCUSD** was its most likely failure. BTC is 32.2% below its stop — **6.47 R** outside its bracket.
+  But **NVDA is further out at 6.93 R**, and it named NVDA second, calling it a "gap" risk rather than a
+  certainty. All four of its risk picks are already void; it predicted one.
+* It said the **52 bp crypto cost consumes "a third" of the edge**. It consumes **7.1%** (494 points against a
+  7,000-point target) — overstated by ~4.7×.
+* It said its stops sit "inside my price-anchor confidence band so a bad fill assumption kills the pick
+  cheaply instead of bleeding it." **This was true and it is why it lost nothing.** Every pick voids at the
+  fill rather than bleeding. The containment design worked; the anchor it was protecting did not.
+
+**Two lessons, both about the same thing.** First: a self-assessment is calibrated against the model's own
+beliefs, so it cannot detect the error that matters most — that the belief is stale. It ranked its four picks
+by its own uncertainty, which was itself the thing that was wrong. Second: correctness of *method* is
+separable from correctness of *input*, and a void is the only failure mode that pays for a bad anchor. Qwen
+lost $0.00 while being 6.9 R wrong. That is a design win hiding inside a total loss.
+
+**R02 implication:** require each entrant to state the **price it believes the instrument is at** and to be
+scored on that estimate separately from its picks — an anchor-accuracy column. Then a stale memory is measured
+as a stale memory instead of being laundered through a bracket.
