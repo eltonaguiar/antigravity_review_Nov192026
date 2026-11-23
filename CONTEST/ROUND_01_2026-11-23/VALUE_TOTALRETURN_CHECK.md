@@ -71,3 +71,23 @@ used `history(period="5d")` with the default → **it was already total-return**
 
 Net: the dividend-drag arithmetic is correct and material, but my application of it to the +0.11% result **assumed a raw
 feed the yfinance default does not use.** Corrected before it propagated.
+
+---
+
+## PROVENANCE 2026-11-23T23:45Z — the "+0.11% value strategy" was a MISLABEL (the deepest fix)
+Tracing the number to its source:
+- `05_KILO_REVIEW/PAGES_AUDIT2_AUDIT3.md:104` → **"EQUITY | PF 1.65 … alpha-neutral (+0.11%, CI spans 0), no positive
+  alpha."** So **+0.11% is the EQUITY class *alpha* estimate (CI includes 0)**, not a value-strategy backtest.
+- `WHAT_WORKS_PER_ASSET_CLASS.md:38` → the value screener has **"no committed backtest output"**; round-33
+  (`33_VALUE_PEAD_AND_COST_GAPS`) says value/HML was **"never measured rather than measured and rejected"** (no book
+  equity / shares outstanding in the repo).
+
+**Therefore the entire "value strategy at +0.11% gross → correct to +2.89%" chain was wrong at the root:**
+1. +0.11% is an **equity alpha**, not a value result (mislabel in `POWER_ANALYSIS.md` and my analysis).
+2. Adding a *value* dividend drag to an *equity-alpha* number compounds the error.
+3. And the yfinance-default-adjusted discovery means the drag only applies to raw feeds anyway.
+
+**Corrected statement:** **there is no measured value result to correct.** Value/HML is **UNMEASURED** (needs
+fundamentals); the +0.11% is the equity **class alpha, CI spanning zero (alpha-neutral)**. Neither "value failed"
+nor "value corrects to +2.89%" is supported. The dividend-drag arithmetic (2.78%/yr for value ETFs) remains valid
+**as a property of raw feeds**, but it was applied to the wrong number.
