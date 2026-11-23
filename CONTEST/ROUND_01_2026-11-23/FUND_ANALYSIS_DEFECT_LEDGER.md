@@ -4,7 +4,20 @@ Seven reviewers saw this work. This is the single table that replaces five spraw
 `FIXED` means code or text changed and was verified; `RECORDED` means it is written down but not yet implemented; `GAP` means
 still missing. Nothing here is marked fixed because someone said so.
 
-**Tally of reviewers on the retracted claim: 4 audited it, 3 amplified it.**
+**Tally of reviewers on the retracted claim: 7 audited it, 4 amplified it** (11 reviewers total, five surfaces).
+
+**The decisive measurement nobody proposed but GLM 5.3 pointed at: VTSAX and VTI are share classes of ONE fund, so their
+measured difference is the noise floor for any vehicle comparison.** Over the aligned window they differ by **−2.5 bp/yr**
+(12.2820 % vs 12.3073 %), Sharpe difference **−0.0005, CI [−0.0127, +0.0119]**. Set against that floor:
+
+- **FXAIX − SPY = +8.7 bp/yr = 3.5× the noise floor**, and the fee gap is 7.95 bp — so on **CAGR the fee effect is real and
+  measurable**, not noise.
+- On **Sharpe** every pairwise difference remains indistinguishable (all CIs span zero), because Sharpe differences are far
+  noisier than return differences.
+- And **VOO beats FXAIX**, so the winner is the **cheapest share class**, not the wrapper.
+
+That is the sharper version of the answer: *the fee gap is real and measurable at ~8 bp/yr; the wrapper is irrelevant; buy
+the cheapest vehicle.*
 
 ---
 
@@ -51,7 +64,21 @@ still missing. Nothing here is marked fixed because someone said so.
 
 ---
 
-## What every one of the seven agreed on
+## Reviewers who were themselves wrong — because a reviewer's corrections need auditing too
+
+The rule that a review's *caveats* need checking (learned when I wrongly adopted the capital-gains point) applies to its
+*corrections* as well. Two cases:
+
+| reviewer claim | check | result |
+|---|---|---|
+| **GLM 5.3 Flash**: "Verify the SGOV MER. The script hardcodes 0.09 %; SGOV is commonly listed at ~0.05 %." | iShares prospectus **filed 2026-06-18** and multiple fee trackers as of **November 2026** both state **0.09 %** | **the reviewer was wrong; the hardcode was right.** GLM 5.3 was the best of the four models in that harvest and still produced a confident, specific, wrong correction |
+| **Qwen3.6 Flash**: "Date range includes 2026-11-13 — likely synthetic/projected data… introduces severe look-ahead bias and invalidates all metrics" | the current date on this host is 2026-11-23; 2026-11-13 is **ten days in the past** | **false alarm**, raised with a red "High" priority flag. It also listed *"Fee-NET Returns: explicitly subtracting MER before reporting CAGR/Sharpe is **institutional-grade practice**"* as the agent's **strength #1** — praising the exact double-count that four other models had already falsified |
+
+**Qwen3.6 Flash is therefore the cleanest example of the amplifier pattern yet**: the double-count promoted to a headline
+strength, plus an invented data-integrity alarm, delivered with the same confident formatting as a real audit. It gave one
+genuinely useful suggestion (factor overlays and regime splits) buried under both errors.
+
+## What every one of the eleven agreed on
 
 **The direction was right and the arithmetic was wrong.** Not one reviewer disputed that a cheap broad index fund is the
 correct instrument for a passive investor. Every one of them disputed a number used to prove it — and the numbers were what
