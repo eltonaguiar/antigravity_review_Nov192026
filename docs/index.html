@@ -198,6 +198,7 @@
       <li><a href="#pages">What each page is for <span class="d">this site, the /audit dashboard, the audit3 tribunal, and the dead /audit2</span></a></li>
       <li><a href="#filed">What the four agents filed as their final picks <span class="d">per asset class, their overall top 3–5, and why all of them endorse nothing</span></a></li>
       <li><a href="#results">Measurable results — the paper-trading contest vs live prices <span class="d">12 entrants, 48 picks, and the 26 that are already void</span></a></li>
+      <li><a href="#r01b">The panel wave — 21 more picks, and two new ways to score badly <span class="d">six more models, a 174-point spread on SPY, and the first replicated result</span></a></li>
       <li><a href="#classes">Top picks per asset class <span class="d">stocks, ETFs, bonds, mutual funds, forex, crypto, commodities, options, futures, prediction markets</span></a></li>
       <li><a href="#overall">The overall ranking — what is worth spending money on <span class="d">none of the strategies; one vehicle; the reason</span></a></li>
       <li><a href="#fees">Why mutual funds are not the answer <span class="d">17.6× the cost of an index ETF over ten years</span></a></li>
@@ -560,6 +561,89 @@
     waiting. <b>0 of 12 entrants are endorsed</b> — no pick anywhere in this estate has cleared the 17-gate sheet.
   </p>
   <p class="mute">Paper only. Zero real capital. Not investment advice. Full working: <span class="mono">CONTEST/ROUND_01_2026-11-23/RESULTS.md</span></p>
+</section>
+
+<section id="r01b">
+  <div class="kicker">R01b · SIX MORE MODELS · SAME LIVE PRICES · PAPER ONLY</div>
+  <h2>The panel wave — 21 more picks, and two new ways to score badly</h2>
+  <p class="lede">
+    Six more pick sets arrived through a multi-model chat surface. They were <b>captured from the page itself over the
+    DevTools protocol</b> — read out, not retyped by the referee — filed as entrants with their file hashes, and scored
+    with the identical bracket rule as round 1. Same prices, same cost band, same executor.
+  </p>
+
+  <div class="card">
+    <div class="num">3 / 21</div>
+    <p>
+      new picks still sit inside their own bracket. <b>15 are already void at the fill</b> and 3 are mutual-fund NAV.
+      Rolling everything together: <b>69 picks, 18 inside, 41 void at fill, 10 fund NAV.</b>
+    </p>
+    <p class="mute">
+      Still <b>0 endorsed</b>. A pick that is "inside its bracket" is a geometric statement, not a recommendation and
+      not evidence of skill.
+    </p>
+  </div>
+
+  <h3>The SPY anchor test, with six more models</h3>
+  <p class="mute">
+    SPY is the most liquid ETF in the world. Quoting it needs no forecasting skill, no model of the economy, and no view.
+    Live price: <b class="mono">689.81</b>.
+  </p>
+  <table>
+    <thead><tr><th>entrant</th><th class="num">SPY target</th><th class="num">SPY stop</th><th>verdict</th></tr></thead>
+    <tbody>
+      <tr><td>ChatGPT-6 Luna</td><td class="num mono">615</td><td class="num mono">594</td><td class="neg">void at fill</td></tr>
+      <tr><td>Claude (Latest Model)</td><td class="num mono">562</td><td class="num mono">540</td><td class="neg">void at fill</td></tr>
+      <tr><td>GLM 5.3 Flash <span class="mute">(answered as "Claude")</span></td><td class="num mono">655</td><td class="num mono">549</td><td class="neg">void at fill</td></tr>
+      <tr><td>Muse Spark</td><td class="num mono">715</td><td class="num mono">615</td><td class="pos">inside</td></tr>
+      <tr><td>Muse Spark 1.0 (Meta AI)</td><td class="num mono">541</td><td class="num mono">528</td><td class="neg">void at fill</td></tr>
+    </tbody>
+  </table>
+  <p>
+    Five sets put SPY between <b>541</b> and <b>715</b> in the same week — a <b>174-point spread</b> on one instrument,
+    against a market of 689.81. Only one bracket straddles reality. This is not a forecasting failure; it is a
+    <b>price-recall failure</b>, and with 18 entrants across two independent surfaces it is now the most reproducible
+    finding on this page.
+  </p>
+
+  <h3>Two pathologies that currently score as "fine"</h3>
+  <div class="card">
+    <p>
+      <b>1. A bracket thinner than the round-trip cost.</b> Muse Ember went long EURUSD with a target
+      <b class="mono">1.098</b> against a live <b class="mono">1.0973</b> — that is <b>6.4&nbsp;bp</b> of reward facing a
+      <b>7.53&nbsp;bp</b> round trip. It is <i>inside</i> its bracket and still <b>loses by construction</b>. A pick that
+      cannot pay for its own execution is not a trade.
+    </p>
+    <p>
+      <b>2. A bracket that cannot resolve.</b> GLM went long XAUUSD with <b class="mono">4000 / 2600</b> against
+      <b class="mono">3,620</b> — a <b>54% wide</b> bracket at R ≈ 0.37. It can neither win nor lose; it books ≈0 R.
+      Under a mean-R metric <b>zero silently beats a field that is mostly negative</b>, which makes this a scoring
+      exploit rather than a strategy — the same defect as Claude 5.1 Fable's T-bill play, arriving from a different
+      model with different reasoning.
+    </p>
+    <p class="mute">
+      Consequence for round 2: a bracket must be <b>reachable inside the horizon</b> and must <b>exceed the round-trip
+      cost by a stated multiple</b>, or it cannot score. That question is now with the panel.
+    </p>
+  </div>
+
+  <h3>The one claim that replicated</h3>
+  <p>
+    A low-cost index <b>mutual fund</b> can beat its own ETF net of fees. Two independent implementations, two data
+    paths, same conclusion:
+  </p>
+  <table>
+    <thead><tr><th>source</th><th class="num">net CAGR, fund vs ETF</th><th class="num">max drawdown</th><th class="num">Sharpe</th><th class="num">n</th></tr></thead>
+    <tbody>
+      <tr><td>Kilo Code</td><td class="num mono">11.66% vs 11.49%</td><td class="num mono">−24.5% both</td><td class="num mono">.728 vs .714</td><td class="num">1254 daily returns</td></tr>
+      <tr><td>buffy <span class="mute">(independent)</span></td><td class="num mono">11.67% vs 11.59%</td><td class="num">—</td><td class="num">—</td><td class="num">corr 0.998</td></tr>
+    </tbody>
+  </table>
+  <p class="mute">
+    The durable mechanism is the <b>~0.08&nbsp;pp/yr fee gap</b>. The residual tracking difference is labelled
+    <i>possibly noise</i>, not edge — that distinction is the whole reason the claim is allowed on this page.
+    Full working: <span class="mono">CONTEST/ROUND_01_2026-11-23/RESULTS_R01B.md</span>
+  </p>
 </section>
 
 <section id="classes">
