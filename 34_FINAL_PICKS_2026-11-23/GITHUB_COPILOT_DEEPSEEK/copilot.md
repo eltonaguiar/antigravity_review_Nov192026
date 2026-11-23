@@ -48,7 +48,7 @@ House cost bands from `JUSTIFICATION_RULES.md` §C are used as the reference whe
 the class myself. Where my own measurement disagrees with the house band, **both are shown** and the
 disagreement is named in §4.
 
-| CLASS | VERDICT | PICK | n | EDGE | DSR / N | PBO (vs 0.51) | COST | EXEC | KILL RULE | EVIDENCE |
+| CLASS | VERDICT | PICK | n | EDGE | DSR / N | PBO | COST | EXEC | KILL RULE | EVIDENCE |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **ETF** | CANDIDATE | none (vehicle only: broad-market index ETF, buy-and-hold, no TP/SL) | 20 ETFs × 5y monthly | −0.40 bp/cycle net on breakout (4.70 gross − 5.10 cost); **buy-and-hold** pays cost once: 6.7122 bp/yr ⇒ ≈ −0.14%/yr drag at $25k | 0.3191 @ N=90; 0.9543 @ N=15 | **0.443** (better than noise) | measured 6.7122 bp RT (house band, 1-min upper bound) | BUY AND HOLD — 1 round trip/yr; turnover drag 0.99 bp/yr (lowest of all classes) | If realised net ≤ 4.32%/yr on committed capital **OR** beta-adjusted alpha CI contains 0 → do not trade it, only hold index | `reports/cost_of_record_2026-11-23.json`; `tools/etf_trend_forward_clock.py`; commit `cd44a8cab33` |
 | **FOREX** | CANDIDATE | none — watch only, no position | 6 USD majors, 48 polls | −0.68 bp/trade at 4.98 bp cost of record; **−3.23 bp at 7.533 bp house band** | 0.0085 @ N=90 | 0.729 (worse than noise) | measured 7.533 bp RT (house, Tiingo top-of-book, thin Sunday reopen = UPPER BOUND); my cost of record 4.98 bp | ENTRY + TP/SL would be required for MR — turnover 7.6/yr × 7.533 = **56.93 bp/yr = 13.2% drag**, the highest of any class | If a weekday London/NY run prints RT ≥ 4.3038 bp → DEAD permanently; if < 4.3038 bp → re-open as CANDIDATE with a new prereg | `reports/fx_meanrev_cost_sweep/sweep.json`; `reports/cost_of_record_2026-11-23.json`; commit `0d7b1481966` |
@@ -166,3 +166,37 @@ worse answer than a list of two plus a reason.
 ## §7 — Revision history
 
 Revision 1 — 2026-11-23T03:05Z — initial filing.
+
+## Revision 2026-11-23T03:4xZ
+
+changed:   the BOND **COST** cell, and the BOND note in §2.
+why:       the 42.64 bp round trip I cited for BOND is NOT a bond cost. It is
+           `reports/claim_register.json` claim **C-013**, whose text reads
+           "Delta-neutral **funding carry** beats a 3.5% T-bill ... at the measured
+           42.64 bp retail-taker round trip" — funding carry is a **CRYPTO**
+           strategy. `reports/cost_measurement_20261122.json` contains no bond
+           entry at all, so **BOND has no measured cost anywhere in this estate**.
+impact:    **No verdict change** — BOND was already `UNKNOWN` on `n=0`.
+           The COST cell changes from "assumed 42.64 bp RT / 94% fees — cited from
+           another desk" to `UNMEASURED — no bond cost exists in the estate; the
+           42.64bp figure is CRYPTO funding carry (claim C-013)`.
+           Also corrected in the same pass: CRYPTO's 12.60 bp was labelled
+           "MEASURED" but the committed measurement is a **band**, 20.0 bp
+           (Binance/BinanceUS/KuCoin, taker 10 bp/side) to 52.0 bp (Kraken, 26
+           bp/side) from ccxt order books at $1k/$10k/$100k/$1M, 12 symbols × 3
+           samples. 12.60 is a mid-band choice, not a measurement.
+           And FOREX's 7.533 bp is **not in the repo** (`grep -o "7\.533"` over
+           `reports/fx_meanrev_cost_sweep/*` returns nothing); the committed
+           number there is the break-even 4.3038 bp. 7.533 is an **import from a
+           COMS note** (Tiingo, 48 polls, thin Sunday reopen, upper bound).
+evidence:  reports/claim_register.json (C-013); reports/cost_measurement_20261122.json;
+           reports/fx_meanrev_cost_sweep/sweep.json;
+           findtorontoevents_antigravity.ca commit 2a1a3775644;
+           updates/2026-11-23-a5a7-cost-claims-audited.md
+
+**Evidentiary consequence, stated rather than buried:** the FOREX row's deciding
+cost currently exists only on the COMS bus, not in the repository. That means the
+FOREX verdict is **auditable from the bus, not from the repo** — a weaker position
+than rank 2 implies. It does not change the ranking (nothing else is closer), but
+it is the strongest argument for the weekday London/NY run writing its output into
+`reports/` rather than into another note.
