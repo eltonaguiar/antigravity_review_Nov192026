@@ -53,6 +53,23 @@ the only two artefacts (a class ranking and a TP/SL construction) that can be im
 58× GPT-4.1 mini, and produced a longer answer whose distinctive content is currently unverified because the capture is
 partial. **A paste of the Qwen4 Max opening line would let it be verified like the other two and added to §2.**
 
+## Final state of the four surfaces (verified ~03:2x UTC, after all four reportedly finished)
+
+| Surface | Live page at final check | Implication |
+|---|---|---|
+| arena.ai | **still running** — 73,038 B, now at `python3 run_study.py 2>&1 \| sed -n '/2b\./,/2c\./p'` | only surface still producing |
+| 1min.ai | **blank** — 2,362 B, app shell + a *new* chat ("How can I assist you today?"), unrelated leftover prompt visible | transcript gone |
+| AskAnyModel | **blank** — 738 B, app shell only; credits read **460** (was 498) | transcript gone; 38 credits spent on the answers |
+| ChatPlayground | **blank** — 917 B, app shell only | transcript gone |
+
+**This is the finding that justifies the whole capture discipline:** within roughly an hour of answering, three of the
+four surfaces had lost their rendered transcripts — two reset to an empty composer, one navigated to a new chat. **The
+committed files are now the only surviving record of GPT-6.1 Terra's, GPT-4.1 mini's, Gemini 4 Neon's, Qwen4 Max's and
+GLM 5.3 Flash's answers.** Had these been summarised in chat instead of captured and committed, they would be gone.
+
+Arena is captured at three points (`_r1` 21,691 · `_r2` 55,285 · `_r3` 73,038 B); a fourth capture is required when it
+finishes, before any of its numbers are cited.
+
 ## Round 2 capture (`*_r2.txt`) — same evening, re-harvested
 
 | File | Bytes | Change |
