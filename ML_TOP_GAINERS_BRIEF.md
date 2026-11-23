@@ -31,6 +31,24 @@ A class can be predictable and unprofitable (FX carry: mechanism known in advanc
 and unpredictable and profitable (index ETF: daily direction near coin-flip, positive over decades at 6.7122 bp/yr of
 cost). **So classes are ranked on net expectancy per unit of cost, with predictability as a screen — never on hit rate.**
 
+## 0.3 Two numbers that set the scale of this study
+
+**Expected IC is 0.02–0.05, and anything above 0.1 is a bug or leakage** (Claude Opus 5.5, §2.7 of the synthesis). That
+calibrates §5's power table rather than defeating it: IC 0.03 needing ~10,000 observations is not a reason to abandon the
+study, it is the *specification* of it. **A reported IC above 0.1 is rejected on sight and audited for leakage before it is
+discussed.**
+
+**The mandatory baseline is a complete strategy, not a base rate:**
+
+> **Buy the previous day's top-10 gainers, hold 5 days, with a 2-ATR stop.**
+
+Any candidate must beat that **after measured costs**, on the same universe, same holding period, same stop (Grok 4.6,
+§2.7). Comparing to a base rate tells you whether the *signal* carries information; comparing to this tells you whether the
+*strategy* carries value. Both are required, and this one is reported first because it is the number a reader can act on.
+
+Two supporting rules from the same panel: **keep the full ranked list, not just the top 10**, so the whole distribution is
+inspectable; and **include a "do-nothing" class**, because *"most days the correct action is to sit out."*
+
 
 ---
 

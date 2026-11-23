@@ -454,6 +454,93 @@ They are all *credible* thresholds and none is *decisive* — the same pattern a
 **Still open:** the ranking of classes — genuinely open, and now a *procedure* (identical pipeline, OOS ICIR, net
 expectancy) rather than an argument. Nobody has run it.
 
+### 2.7 The AskAnyModel six — Claude Opus 5.5, Grok 4.6, Command A+, Terra, Inkling Small, Gemini 3.5 Flash Lite
+
+Full text saved as `harvest_askanymodel_full.txt`. **This panel contains the single most valuable sentence in the entire
+harvest**, the best baseline definition, and one outright error.
+
+#### THE number that calibrates the whole exercise — Claude Opus 5.5
+
+> *"Information Coefficient (IC): the rank correlation between your signal at t and forward returns. **An IC of 0.02–0.05
+> is realistic and can still be valuable. Anything above 0.1 is usually a bug or leakage.**"*
+
+That single sentence resolves the tension in §5. Our power table says an IC of 0.03 needs **10,000 observations** to reach
+t = 3 — which reads as "therefore don't bother." Opus supplies the missing half: **0.02–0.05 is what real edges actually
+look like**, so the sample requirement is not a reason to abandon the study, it is the *specification* of the study. And its
+second clause is a working fraud detector: **any reported IC above 0.1 should be treated as leakage until proven
+otherwise.** Every "we predict top gainers with 70% accuracy" claim lives in that 0.1+ region.
+
+It also supplied the test hierarchy I had as a list and it has as a discipline:
+
+> **asset class → symbol → symbol × direction → symbol × direction × regime** — with the example *"BTC long only when above
+> its 200-day MA and funding rate is not extreme."* And the warning: *"Test 500 symbols × 2 directions × 5 regimes and some
+> will look brilliant by pure chance."*
+
+Plus two refinements to §2.4's measurement battery:
+
+- **Variance-ratio tests at multiple horizons** (1h, 1d, 1w) as the primary trend/reversion test — *"a variance ratio ≠ 1
+  suggests trend or reversion."* It treats **Hurst with explicit caution** (*"it's noisy"*), which is a fair correction to
+  how much weight §2.4 put on it.
+- **"Requiring an economic reason for the effect"** listed *as* a multiple-testing defence — the same idea as our "name the
+  loser", arrived at independently.
+- **Meta-labeling** (a secondary model deciding whether to act on a primary rule) — mentioned as the natural next step, then
+  truncated by the length limit.
+
+#### THE baseline that should be mandatory — Grok 4.6
+
+> *"If the strategy does not beat a naïve **'buy the previous day's top-10 and hold 5 days with a 2-ATR stop'** after
+> costs, you have not found anything."*
+
+That is the most implementable benchmark in fifteen answers, and it is now in `ML_TOP_GAINERS_BRIEF.md` as a required
+comparison. It beats "compare to a base rate" because it is a *complete strategy* — same universe, same holding period, same
+stop — so the comparison isolates the model's contribution rather than conflating it with the premise.
+
+Grok's other two useful specifics: **keep the full ranked list, not just the top 10**, *"so you can study the whole
+distribution"*; and **include a "do-nothing" class** because *"most days the correct action is to sit out."* It also proposed
+filtering candidates by *"not already up 300% in 30 days"* to strip pump-and-dump artifacts.
+
+#### The error worth naming — Command A+
+
+> *"Cleaning: … apply **survivorship bias filters** (e.g., **keep only symbols that existed for the whole backtest
+> period**)."*
+
+**That is backwards.** Keeping only symbols that survived the whole period *is* survivorship bias — it is precisely the
+defect every other model spends paragraphs warning against, and it is Gate 1 in our own protocol. Command A+ is also the
+only answer to claim **large-cap equities are the *most* predictable class** ("highest risk-adjusted predictability for
+short-term top-gainer signals"), and it justifies that with data quality and lower costs — which is a *tradability*
+argument being used to answer a *predictability* question, the §1 confusion again.
+
+#### The class-ranking scoreboard — a genuine six-to-two split
+
+| Position | Models |
+|---|---|
+| **Crypto / small-cap most predictable** | Gemini 4 Neon · Gemini 3.5 Flash Lite · Grok 4.6 · GLM 5.3 Flash · Qwen3.6 Flash · Opus 5.5 (*"crypto and small caps show more raw predictability"*) |
+| **Large-cap most predictable** | Command A+ · Mistral Small |
+| **Refuse to rank — measure it** | Claude 5.2 Fable · Luna · Claude (latest) |
+
+**Six to two, with three abstentions — and note how the six phrase it.** Nearly all qualify with *raw*, *pre-cost* or
+*alpha potential*. Gemini 3.5 Flash Lite's reasoning is the clearest statement of the mechanism: crypto is *"heavily
+retail-driven, highly emotional, structurally inefficient, and plagued by leverage… high-funding-rate shorts create massive
+short squeezes"* — that is a real structural argument for raw predictability, and it does not contradict our measured
+result that crypto has the worst **net** edge. **The split is not a disagreement about facts; it is two groups answering
+different questions because nobody specified "predictable after cost".** That is the strongest possible justification for
+§1 and for the ICIR procedure.
+
+#### Two more things worth keeping
+
+- **Gemini 3.5 Flash Lite overclaims** in a way that is instructive: *"three factors are **universally proven** — the
+  volume/liquidity anomaly (accumulation), float and market-cap constraints, and the reflexive feedback loop."* Those are
+  plausible mechanisms, but our own equity breakout — which is the volume/accumulation family — measured **PF 0.9917 at
+  25 bp/side and 1.2865 at zero cost, break-even 24.59 bp/side**. "Universally proven" is exactly the language that gets a
+  research programme funded and then killed. It also asserted that *"shorting top gainers after they exhaust is a very
+  viable, highly profitable strategy"* with no number attached — the fade hypothesis is real (MAX effect), the *"highly
+  profitable"* is not yet measured anywhere in this estate.
+- **Inkling Small's cheap outlier filter** and driver clustering: *"is this symbol's behavior a 2-sigma outlier relative to
+  its 90-day volatility? If yes, it's likely noise/catalyst-driven, not a repeatable pattern"* — a one-line screen for
+  exactly the events that pollute a gainer sample. Its driver taxonomy (earnings surprise, M&A rumour, sector rotation,
+  short squeeze via borrow cost and float %, crypto airdrop/liquidity) is the same conditioning Fable demanded, but easier
+  to compute from data we hold.
+
 ---
 
 ## 3. Symbol, or symbol × direction — the decomposition that matters

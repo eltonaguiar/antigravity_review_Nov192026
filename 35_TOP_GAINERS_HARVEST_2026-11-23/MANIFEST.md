@@ -24,6 +24,7 @@ Verified by distinctive opening phrases, not by memory or label:
 | File | Model | Evidence |
 |---|---|---|
 | `harvest_askanymodel.txt` / `_r2` | **GPT-6.1 Terra (OpenAI)** | operator identification; contains *"research and trading-system design problem"* at offset 26,847, in no other file |
+| `harvest_askanymodel_full.txt` | **six panes: Claude Opus 5.5, Grok 4.6, Command A+, GPT-6.1 Terra, Inkling Small, Gemini 3.5 Flash Lite** | operator paste 2026-11-23T03:18Z, 12,668 tokens — authoritative for citation; contains Opus's IC calibration ("0.02–0.05 realistic, above 0.1 is a bug or leakage") and Grok's mandatory baseline |
 | `harvest_1min.txt` | **GPT-4.1 mini (OpenAI)** | contains *"can be a complex but systematic endeavor"* — the phrase unique to its pasted reply (14.1 s, 8,391 credits) |
 | `harvest_1min_gemini4neon.txt` | **Gemini 4 Neon (Google AI)** | contains *"classic quantitative finance problem"* — unique to its pasted reply (37.4 s, 105,111 credits) |
 | `harvest_1min_r2.txt` | **Qwen4 Max (Alibaba Cloud)** — *operator-identified* | later portion of the same 1min.ai transcript; **neither opening phrase is present**, so this attribution rests on the operator's identification, not on a quote match. Contains the extended data-integrity passage (no backfilled restatements, retroactive split adjustment changing distance-from-52w-high, LULD halts) |
@@ -36,7 +37,7 @@ Verified by distinctive opening phrases, not by memory or label:
 least two different answers** — GPT-4.1 mini and Gemini 4 Neon — so a single capture of that tab silently mixed sources.
 Any later reader of these files should key on the opening phrase, not the filename.
 
-**Consequence for counting:** the answers are **ten models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
+**Consequence for counting:** the answers are **fifteen models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
 Gemini 4 Neon, Qwen4 Max, GLM 5.3 Flash and two unlabelled ChatPlayground panes, plus the arena.ai agent. The **1min.ai
 tab is multi-model**, like AskAnyModel, not a single model. No result in `SYNTHESIS.md` depends on the count — it depends
 on which claim came from which model, which the table above fixes.
