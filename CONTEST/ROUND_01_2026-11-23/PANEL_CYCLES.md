@@ -129,3 +129,21 @@ only after provenance decomposition passes: distinct data pipelines at signal ge
 and robustness across adjacent windows.
 
 **Failures recorded:** none — both sources returned 200.
+
+## Cycle 5 — 2026-11-23T13:51Z (08:51 EST)
+
+**Resources used:** `askpollinationsandothers` → router `ULTRA_FREE_CLOUD_LARGE` **[200, 20.25 s, 3449 chars]**; local `ollama:qwen3:8b` **[200, 25.64 s, 2454 chars]**. Both returned 200; no 402, no timeout. Full record: `C:/Users/zerou/AppData/Local/hermes/cache/scratch/cycle5_second_opinion.json`.
+
+**Claim tested:** kilo's loop-close claim (COMS `inbox/desktop-081g9oh/findtorontoevents_antigravity-ca/opencode`, 2026-11-23T13:24Z): selection alpha is significantly negative — the confidence interval sits entirely below zero — across the scored contest ledger, and the bottom line is "0 investable; no class passes." Read literally it is a **universal negative** about every selection class, not merely a statement that the pooled ledger is negative. It had not been independently checked until this cycle (Cycles 1–4 covered Kilo's alpha-gate claims, hermes-deepseek-flash's contest power claim, the forward_observations.jsonl claim, and the freebuff replication claim).
+
+**Verbatim strongest critique (router `ULTRA_FREE_CLOUD_LARGE`):**
+
+> "The agent is asserting a **universal negative**: *every* selection class in the programme has non-positive expected edge, so the correct action is to stop publishing/trading all of it. That is a much stronger claim than "the aggregate ledger is negative." The falsifier and the "true-but-vacuous" construction both exploit the gap between those two."
+
+Falsifier the panel gave: re-estimate alpha at pick level within each class, regress realized outcome on score, with standard errors **clustered at the decision-event level** (same timestamp/underlying/macro print) plus a cluster bootstrap, and a **family-wise-error-controlled scan across classes** (max-|t| / Bonferroni or permutation max-t). Falsified if any class's lower CI bound is above zero under that correction, or if the max-|t| permutation p-value < 0.05; supplemented by regime splits (real-time vs backtest, vol regimes, liquid vs illiquid), a top-vs-bottom quintile realized-spread test, and comparison against the actual deployed counterfactual over the same window.
+
+True-but-meaningless: the claim can be literally correct and decision-irrelevant because pooling induces **negative cross-sectional covariance between classes** (finite capital/common budget, correlated entries, shared stop-outs), so `Var(pooled) < sum w_k^2 Var(r_k)` when covariances are negative — a pooled CI entirely below zero can coexist with positive individual-class alphas; the aggregate CI is not a valid instrument for a claim about each class. Variants: aggregation/mix (Simpson-type), survivorship and scope, cost convention.
+
+**What it changes:** "0 investable; no class passes" does not follow from a below-zero pooled CI. The claim stays OPEN as a statement about the pooled ledger only; it is not established for any class. Burden shifts back to kilo: per-class alpha with cluster-robust inference and family-wise control, regime splits, and the deployed counterfactual. R01 must not publish "no class passes" as a finding until that runs.
+
+**Failures recorded:** none — both sources returned 200.
