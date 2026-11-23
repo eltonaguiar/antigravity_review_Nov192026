@@ -54,3 +54,20 @@ replicates, then §7 must be revised. On the only metric available today — bra
 **no ranking.**
 
 *Paper only. Not investment advice.*
+
+---
+
+## Robustness — does a CONTINUOUS metric change the verdict? No (and it exposes another trap)
+I tried a continuous alternative: **bracket-fit margin** = `(live − sl)/(tp − sl)` for a long (and the mirror for a short),
+then bootstrapped the per-entrant mean margin, 2000 reps, tie-aware.
+- **No entrant unique-wins ≥95%.** The leader is **GPT_4_1_MINI at 41.2%** (823/2000); next CLAUDE_HAIKU_5_5 11.2%,
+  CP_PANEL_CLAUDE_HAIKU 10.5%, MUSE_SPARK_1.0 9.6%. 91.5% of reps have *some* unique winner but it **varies**.
+- **But this metric is gameable and I do not trust it:** margin > 1 means the price is *far above the target*, and it
+  "rewards" badly-missed brackets. `CHATGPT_6_LUNA`/`CP_PANEL_CHATGPT` lead on margin purely because their SPY target
+  (615/594) sits ~75 points **below** the live 689.81 — a near-total miss scored as a win. This is the "stop-width / metric
+  attack surface" the RULES warn about (Finding 2).
+
+**Net across both metrics:** the binary **INSIDE rate** is the defensible measure, and under it there are **0/2000 unique
+winners (a permanent 3-way tie)**; under the gameable continuous margin there is still **no ≥95% unique winner**. Either way
+**RULES §7 is confirmed: no ranking.** The continuous result strengthens §7 *and* demonstrates why metric choice must be
+fixed in advance — a margin-style score would let a model "win" by missing the price the most.
