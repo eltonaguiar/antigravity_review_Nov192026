@@ -82,3 +82,73 @@ suits your account**, and do not pay for a fund on the theory that funds beat ET
    had supplied incorrectly. Attack the argument, not the premise, and both can be wrong at once.
 
 *Paper only. No live orders, no credentials. Nothing here is investment advice.*
+
+---
+
+# ADDENDUM — root cause found: the expense ratio was subtracted twice
+
+After the retraction was published, a second reviewer audited the *script* rather than the claim and identified the
+mechanism. It is arithmetic, and it reproduces the retracted number to within **0.4 bp/yr**.
+
+## The mechanism
+
+Yahoo's `adjclose` — like any provider's adjusted series — is **already net of the expense ratio**: the MER accrues
+daily and is deducted from NAV before the price is ever published. A script that then computes
+`net_cagr = cagr - mer` subtracts the fee a **second** time. Applied to both vehicles, it inflates the cheaper
+vehicle's apparent advantage by exactly the fee difference:
+
+| quantity | value |
+|---|---|
+| honest aligned gap, FXAIX vs SPY | **+8.7 bp/yr** |
+| fee gap (0.0945 % − 0.015 %) | 7.95 bp/yr |
+| gap predicted by the double-count | **+16.6 bp/yr** |
+| gap the retracted claim reported | **+17.0 bp/yr** |
+| prediction error | **−0.4 bp/yr** |
+
+That is the whole story. **The "fund beats its ETF" edge was the expense ratio, counted twice.** The 8.7 bp that survives
+is the fee gap working as advertised — which is why VOO and IVV, the cheap ETFs the original comparison should always
+have used, sit above both mutual funds.
+
+## The other three defects the audit named, checked
+
+| claim | status | evidence |
+|---|---|---|
+| **Sharpe computed with risk-free = 0** | **CONFIRMED** | SGOV shows Sharpe **13.63** at rf=0 and **0.01** on excess return. A T-bill fund must have ≈0 Sharpe; 13.63 is the tell. |
+| **Sortino downside deviation divides by `len(downside)` instead of `len(r)`**, and measures against 0 rather than a target | **CONFIRMED** | FXAIX Sortino **0.812** < Sharpe 0.835 — the inversion is the symptom. Corrected: **0.921** > Sharpe. SGOV: 23.47 → 0.057. |
+| **`rebal=21` accepted, documented as monthly, never used** → costless *daily* rebalancing | **UNVERIFIED** | The script is not in any repo this seat can read; the agent ran it on a remote worktree. The defect is real and common, but I have not read the code and will not certify it. |
+
+## My own numbers had bug 2 as well
+
+The five-vehicle table published above computed Sharpe as `mean/sd × √252` with **rf = 0**. Correcting it (risk-free proxy =
+SGOV, 3.259 %/yr) changes the levels materially and the ordering not at all:
+
+| vehicle | CAGR | Sharpe, rf=0 (published) | Sharpe, excess return (correct) |
+|---|---|---|---|
+| VOO | 13.269 % | 0.840 | **0.645** |
+| IVV | 13.245 % | 0.836 | **0.642** |
+| FXAIX | 13.236 % | 0.835 | **0.641** |
+| VFIAX | 13.201 % | 0.833 | **0.639** |
+| SPY | 13.149 % | 0.825 | **0.632** |
+
+The ordering is unchanged and the conclusion is unaffected — but **the published Sharpe column was inflated by ~0.19 for
+every vehicle**, and the same bug appears in the numbers this programme has quoted all day. It is corrected here rather
+than quietly replaced.
+
+## What the audit got right that I had missed
+
+1. **Compare against the vehicles retail actually buys.** It named VOO / IVV / SPLG as the correct comparators and called
+   SPY a strawman (it is priced for options and institutional liquidity). My falsification test used VOO and IVV — which
+   is how it found that an ETF beats the funds — but I had not made that argument explicitly.
+2. **Regime bias.** The window starts late 2021, immediately before the 2022–23 rate-hike cycle. Five years is **one
+   interest-rate regime**; that is why BND looks catastrophic and SGOV looks strong. Any five-year ranking of bonds must
+   carry that caveat, and mine did not.
+3. **FZROX portability.** A 0.00 % proprietary Fidelity fund cannot be transferred in kind, so in a taxable account
+   leaving Fidelity forces a liquidation and a taxable event. The "free fund" is not free if you ever move.
+
+## The process lesson, second edition
+
+The first retraction taught that **replication across implementations is weaker than replication across questions**.
+This one adds: **audit the code that produced a number before you audit the argument about the number.** The claim
+survived two agreeing implementations and died to one reviewer who asked what the script actually computed. A shared,
+unit-tested metrics library — rather than each agent writing its own CAGR and Sharpe — would have made this class of
+error impossible, and that library now exists at `CONTEST/tools/quant_metrics.py` with tests.
