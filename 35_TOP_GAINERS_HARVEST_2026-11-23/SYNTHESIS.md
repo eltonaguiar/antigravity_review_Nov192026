@@ -152,6 +152,64 @@ which is the one place a mutual fund *could* carry information — into the hold
 
 **This is why §8 step 1 is now two steps:** the base-rate table, and immediately beside it the persistence test.
 
+### 2.4 Mistral Small — the only respondent who said *how to measure* predictability, and one category error worth naming
+
+**Mistral Small** (1min.ai, 25.4 s, **3,471 credits** — the cheapest answer in the set) contributed the one thing every
+other answer lacked: **a measurement battery for the "which class is more predictable" question**, instead of an assertion
+about it. It also decomposes predictability correctly into three separate properties:
+
+| Property | Question | Why it is separate |
+|---|---|---|
+| **Directional accuracy** | can the model call up/down over the horizon? | what most people mean by "predictable" |
+| **Magnitude accuracy** | can it size the move? | this is what TP/SL actually needs — a right direction with a wrong range stops out |
+| **Volatility clustering** | is the *second moment* predictable? | achievable even when direction is not (§2, item 1) |
+
+And it named the tests, which is the useful part because each is cheap to run:
+
+- **Ljung–Box** on returns — serial autocorrelation. If returns are autocorrelated, a lagged-feature model has something
+  to find; if not, the whole feature programme is decorative.
+- **Hurst exponent** — **H ≈ 0.5 random, H > 0.5 trending/persistent, H < 0.5 mean-reverting.** This is the single most
+  direct answer available to "is this symbol predictable", and it is computable per symbol in a few lines.
+- **Approximate / sample entropy** — a randomness gauge that does not assume linear structure.
+- **HMM or k-means regime clustering** — because predictability is regime-conditional: trending regimes favour momentum,
+  ranging regimes favour reversion. A single unconditional number hides this.
+- **A naive baseline** — *"compare accuracy to a naive benchmark (always predict up, or predict based on recent trend)."*
+
+That last item is the most important sentence in its answer, and it is the same rule as §5 from a different direction:
+**the naive benchmark IS the base rate.** In a market that rises 55% of days, a model at 54% accuracy is worse than doing
+nothing. Any accuracy figure quoted against 50% rather than against the class's own up-rate is inadmissible.
+
+**The category error, recorded because it is the most common one in this field:**
+
+> *"If crypto has Sharpe = 1.2, stocks = 0.8, forex = 0.5, crypto is more predictable."*
+
+**No.** That ranks classes by *risk-adjusted realised return*, which conflates predictability with cost, capacity, leverage
+and luck. It is exactly the confusion §1 exists to prevent — and it is the practical version of it: an agent that ranks by
+Sharpe will conclude crypto is most predictable precisely because crypto is most volatile, which says nothing about
+whether any of it is forecastable. Predictability is measured by **Hurst, autocorrelation, entropy, IC and lift over base
+rate** — never by Sharpe.
+
+**And a direct factual conflict with Gemini 4 Neon, which is testable:**
+
+| Claim | Gemini 4 Neon | Mistral Small |
+|---|---|---|
+| Large-cap equity | *"heavily efficient"* — least predictable | *"tend to be **more** predictable due to higher liquidity and institutional activity"* |
+| Small/mid-cap equity | 2nd most predictable — frenzy, squeezes, catalysts | *"higher volatility but also higher noise"* |
+
+Both cannot be right as stated. Liquidity plausibly makes a name *tradable*; it does not follow that it makes it
+*forecastable* — if anything the efficient-market prior says the opposite. **This is resolvable this week** with the Hurst
+exponent and lag-1 autocorrelation computed on large-cap versus small-cap panels: whichever group shows H further from 0.5
+and larger |autocorrelation| is the more predictable one, by definition, with no model required.
+
+Its other useful specifics: **TP at 1.5 × ATR with SL at 1 × ATR** (a 1.5:1 ratio — more conservative than Gemini's 3:1),
+**trailing ATR or moving average** for trending assets, and **position sizing by inverse ATR** so that a memecoin and a
+blue chip carry the same risk per trade. It also flagged **return smoothing in mutual funds** (NAV-based pricing) as a
+reason their measured predictability is illusory — a distinct argument from the fee argument in §5, and a better one: the
+series is smoothed, so autocorrelation is manufactured rather than real.
+
+**Cost note:** at 3,471 credits it delivered the measurement methodology that the 105,111-credit answer did not. **Price
+and usefulness were uncorrelated across this entire set.**
+
 ---
 
 ## 3. Symbol, or symbol × direction — the decomposition that matters
