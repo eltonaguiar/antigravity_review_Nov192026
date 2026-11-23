@@ -637,6 +637,101 @@ tradability-adjacent criterion. So the scoreboard is now **crypto-first 6 · equ
 "equity" positions and most of the six both defensible once "predictable after cost" is specified — which remains the
 missing clause in every disagreement.
 
+### 2.9 Qwen4 Max — a **thinking trace**, not an answer. The most rigorous reasoning artifact in the set.
+
+**Status: work in progress.** Qwen4 Max was still thinking when the capture was taken (`0s · 0 credits`, no final answer).
+What follows is its *reasoning*, committed verbatim as `harvest_1min_qwen4max_thinking.txt`. **It is not citable as an
+answer, but it contains three things no finished answer produced**, and one of them corrects my own §3.
+
+#### (a) THE THEOREM the other sixteen answers only gestured at
+
+> *"For a driftless martingale, **no combination of TP, SL, trailing stop, or breakeven move produces positive expectancy.**
+> Optional stopping theorem: with bounded barriers and a time limit, E[P&L at stop] = 0, minus costs. **Barriers reshape the
+> distribution — they trade win rate against payoff ratio — they do not create edge.**"*
+
+That is the proof behind Fable 5.2's practical statement and Claude's counterexample. It also defines exactly where an edge
+*must* come from, exhaustively:
+
+> *(a) conditional drift — the signal genuinely shifts E[r]; (b) non-martingale path structure — autocorrelation, vol
+> clustering, mean reversion; (c) a risk premium you're being paid to bear; (d) genuine convexity/optionality.*
+
+Anything not on that list is a reshaped distribution with a hidden tail. And the corollary that kills most retail grid
+searches: ***"every 'TP/SL optimizer' that shows a profitable grid on random-walk data is overfitting or leaking."***
+
+#### (b) THE CONTROL EXPERIMENT that should be mandatory — the overfitting floor
+
+> *"Run your entire TP/SL optimization pipeline on (i) bootstrapped/shuffled returns preserving vol clustering, and
+> (ii) synthetic GBM matched to each symbol's σ. **Whatever 'edge' appears there is your overfitting floor. Subtract it.**
+> This single control experiment is worth more than most indicator libraries."*
+
+That is a cheaper, more general version of the random-signal 99th-percentile test already in our protocol, and it applies
+**to the pipeline rather than to the strategy** — so it also catches defects in the harness, not just in the signal. It is
+now in the brief.
+
+#### (c) THE case-control design — the cleanest answer to "how would you reverse engineer it"
+
+Nobody else named the correct study design. Qwen did, and supplied a worked number:
+
+> *"A 'top gainers' list is a sample drawn on the dependent variable. If you collect 5,000 historical gainers and find 78%
+> had a volume spike, a tight consolidation and a low float — you have learned **P(features | big move), not P(big move |
+> features)**. […] If 1,500 of 3,000 names had a volume spike but only 200 became gainers, your '78% pattern' has a **~13%
+> hit rate against a ~2% base rate**. That's a real **6× lift** — but it is not a 78% system."*
+
+| Stage | Design | Output |
+|---|---|---|
+| **Reverse-engineering** | cases = historical top-N gainers; **controls = matched non-gainers** (match on date, market-cap bucket, sector, price level, trailing vol, liquidity) | conditional logistic regression → odds ratios per antecedent feature |
+| **Cohort / prospective** | full point-in-time universe, every day, including losers and flat names | base rates, precision@K, lift, calibration |
+| **Trading** | add costs, path, sizing, correlation | is it worth doing |
+
+*"Matching controls is the step everyone skips. Without it, you'll 'discover' that gainers are volatile small caps — which is
+a description of the universe, not an edge."*
+
+#### (d) It corrects my §3 recommendation
+
+§3 originally said **"test long and short separately, never pooled."** Qwen's version is statistically better:
+
+> *"Don't reflexively split your data — **you halve your sample and double your variance.** Fit one pooled model with a side
+> indicator and side × feature interactions. Test whether the interaction terms add OOS value. **Check calibration
+> separately per side** — the most common real finding is that the model is well-calibrated for longs and systematically
+> overconfident for shorts. Only split into separate models if there's evidence of parameter instability and enough samples
+> per side (≥ a few hundred independent events per side)."*
+
+§3 is amended accordingly: **pool with interactions, report per side, split only on evidence.** Fit TP/SL separately per
+side regardless, *"because you're estimating distributions, not searching a parameter grid"* — which is the distinction that
+makes it cheap rather than an overfitting risk.
+
+#### (e) Concrete expectation numbers — the most useful calibration in the set
+
+> *"IC 0.02–0.05 daily cross-sectional is real; hit rates **52–56%**; Sharpe **1–2** net for a decent retail-scale strategy;
+> anything **>3** OOS with a high win rate on tiny samples is suspicious. **Precision@10 for top gainers maybe 15–25% vs a 2%
+> base rate = huge lift, and that's enough.**"*
+
+So the target is explicit: **P@10 of 15–25% against a 2% base rate** is a success, not a compromise. Anything claiming 60%+
+precision on top-gainer selection is describing leakage. That number goes in the brief as the acceptance threshold.
+
+#### (f) Predictability is a tuple, and a surface — not a scalar
+
+> *"Predictability is a property of the tuple **(symbol, horizon, feature set, label, cost structure, regime)**. Change the
+> horizon from 1 day to 20 days and momentum flips to reversal. Change costs from 1 bp to 30 bps and a real edge becomes
+> unprofitable. **So measure it as a surface, not a scalar.**"*
+
+That is the most compact statement of why the ICIR-per-cell procedure (§2.6) is the right shape: the answer is a surface over
+that tuple, and any single ranking of classes is a projection of it.
+
+#### (g) One look-ahead trap we had not logged
+
+> *"**Retroactively adjusted price histories** — split/dividend adjustments silently change 'distance from 52w high' **as
+> computed years ago**."*
+
+Every price series we hold is back-adjusted, which means a feature computed today on 2015 prices is *not* the feature a
+trader could have computed in 2015. That is a distinct defect from survivorship and from publication lag, and it applies to
+any feature built from adjusted closes.
+
+Also worth recording: on ambiguous intrabar barriers it says to assume **SL first** (*"assuming TP first is the single most
+common inflator of TP/SL backtests"*) — third independent statement of our `AMBIGUOUS` rule. And on mutual funds it gives the
+mechanism precisely: *"stale pricing of illiquid holdings creates artificial autocorrelation that looks like predictability
+but isn't harvestable"* plus **forward pricing** — *"you can't actually trade a mutual fund at the price you see."*
+
 ---
 
 ## 3. Symbol, or symbol × direction — the decomposition that matters
@@ -651,9 +746,12 @@ Arena decomposed the search space correctly: **class → symbol → symbol × di
   positive drift you get for free. The short side pays borrow, faces locate failures, and carries negative skew. So a
   symmetric model that predicts "up or down" is modelling two different economic problems as one.
 
-**Recommendation:** test **long and short separately, never pooled**, and report the directional asymmetry. AskAnyModel's
-observation that mutual funds are a poor fit for TP/SL belongs here too — daily pricing, no intraday stop, redemption
-fees. **ETFs are the tradable equivalent of a mutual fund**, and that substitution alone removes the wrapper problem.
+**Recommendation (amended by §2.9):** pool long and short into **one model with a side indicator and side × feature
+interactions**, then split only if you can demonstrate parameter instability. Splitting first halves your sample and doubles
+your variance. But **report every metric per side regardless** — IC, precision@K and calibration separately — and fit TP/SL
+separately, because the MFE/MAE distributions genuinely differ. AskAnyModel's observation that mutual funds are a poor fit
+for TP/SL belongs here too — daily pricing, no intraday stop, redemption fees. **ETFs are the tradable equivalent of a
+mutual fund**, and that substitution alone removes the wrapper problem.
 
 ### 3.1 Arena's hierarchy — and the number that kills naive symbol-level search
 

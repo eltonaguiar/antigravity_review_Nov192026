@@ -37,7 +37,7 @@ Verified by distinctive opening phrases, not by memory or label:
 least two different answers** — GPT-4.1 mini and Gemini 4 Neon — so a single capture of that tab silently mixed sources.
 Any later reader of these files should key on the opening phrase, not the filename.
 
-**Consequence for counting:** the answers are **sixteen models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
+**Consequence for counting:** the answers are **seventeen models across four surfaces** — GPT-6.1 Terra, GPT-4.1 mini,
 Gemini 4 Neon, Qwen4 Max, GLM 5.3 Flash and two unlabelled ChatPlayground panes, plus the arena.ai agent. The **1min.ai
 tab is multi-model**, like AskAnyModel, not a single model. No result in `SYNTHESIS.md` depends on the count — it depends
 on which claim came from which model, which the table above fixes.

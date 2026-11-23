@@ -75,6 +75,34 @@ return. A raw crypto figure is unattributed until that regression is shown.
 
 That 2×2 is what the contradictory "large-cap vs small-cap predictability" claims were each half of.
 
+## 0.5 The three controls that make this study admissible (Qwen4 Max thinking trace, synthesis §2.9)
+
+**1. Design it as a case-control study, then a cohort study.** A gainer list is *sampled on the dependent variable* — you
+can only ever learn `P(features | big move)`. So: cases = historical gainers, **controls = matched non-gainers** (match on
+date, market-cap bucket, sector, price level, trailing vol, liquidity) → conditional logistic regression for odds ratios.
+Then convert to a cohort over the full point-in-time universe to get base rates and precision@K.
+*"Matching controls is the step everyone skips. Without it, you'll 'discover' that gainers are volatile small caps — which is
+a description of the universe, not an edge."*
+
+**2. Prove you know where an edge can come from, or you don't have one.** By the optional stopping theorem, on a driftless
+martingale **no TP/SL/trailing/breakeven combination creates expectancy** — barriers trade win rate against payoff ratio and
+nothing else. An edge must come from exactly four sources: **(a)** conditional drift, **(b)** non-martingale path structure
+(autocorrelation, vol clustering, mean reversion), **(c)** a risk premium you are paid to bear, **(d)** convexity/optionality.
+Name which one you have, per row.
+
+**3. Compute your overfitting floor and subtract it.** Run the **entire TP/SL pipeline** on (i) shuffled/bootstrapped returns
+that preserve vol clustering and (ii) synthetic GBM matched to each symbol's σ. Whatever edge appears there is the floor.
+*"This single control experiment is worth more than most indicator libraries"* — because it tests the *harness*, not just the
+signal.
+
+## 0.6 Acceptance threshold — stated before the run, so it cannot be moved after
+
+> **Precision@10 of 15–25% against a ~2% base rate is a success.** IC 0.02–0.05 is real. Hit rates 52–56%. Anything above
+> ~3 OOS Sharpe on a small sample, or 60%+ precision on top-gainer selection, is describing leakage.
+
+The target is a **7–12× lift on a rare event**, not a high hit rate. A study that returns that has worked. A study that
+returns 60% precision has a bug.
+
 
 ---
 
