@@ -133,3 +133,36 @@ unchanged: still 0 of 10 classes investable.** These are CANDIDATE rows, not end
 - **What kills it:** measured fees making it net negative, which the current estimate already implies.
 - **Cost-vs-edge:** the crypto cost band is 20-52 bp while the gross edge is 1.9 bp/day by
   construction — the check fails on an assumed cost, so it stays at zero.
+
+## Revision  — per-class ranking, overall order, and the fee question
+
+Full document: `reports/top_picks_per_class_and_overall_2026-11-23.md` in the research repo.
+Nothing below changes a verdict; **0 of 10 classes investable, 4 untested.**
+
+| rank | class | best cell | CI-LB bp/day | fails on |
+|---|---|---|---|---|
+| 1 | EQUITY | H-201 xsmom_top3_6m | +7.246 | DSR 0.9469 vs 0.95 |
+| 2 | CRYPTO | H-206 tsmom_6m | +8.452 | benchmark (31.75% vs 35.94%), MDD −64.9% |
+| 3 | ETF | H-205 xsmom_top3_6m | +2.007 | benchmark |
+| 4 | INDEX | H-221 xsmom_top2_6m | +1.613 | benchmark |
+| 5 | MUTUAL_FUND | H-216 VFIAX | +1.286 | n=28, benchmark 13.97% vs 9.02% |
+| 6 | FUTURES | H-218 xsmom_top2_6m | +0.186 | 2× cost → −0.054 |
+| 7 | BOND | H-213 xsmom_top2_6m | −0.453 | no signal |
+| 8 | COMMODITY | H-210 GC=F | −0.724 | data integrity |
+| 9 | FOREX | H-208 USDJPY | −0.520 | no signal |
+| 10 | PENNY_STOCK | H-219 xsmom_top2_6m | −8.636 | no signal |
+
+MEMECOIN / OPTIONS / PREDICTION_MARKET / PRIVATE_CREDIT have no pre-registered cell: UNKNOWN, not dead.
+
+**Overall, worth spending money on: nothing.** Order is cash 4.32% → H-201 equity → vol-targeted
+60/40 (risk control only; return half refuted OOS) → R4b clock (refutation only) → BTC carry at 0%.
+
+**On mutual funds specifically:** dominated rather than merely worse. Best cell 9.02% CAGR against
+**13.97%** for buy-and-hold of its own universe, so a fee cut does not close the gap; daily NAV means
+no intraday exit; the same index in ETF form costs **6.7122 bp** with no minimum. The `$3,000`
+Admiral-share minimum and the 9 bp expense gate are real but never decide anything, because the class
+is already out on benchmark excess and executability.
+
+**Gainer predictability:** daily null (AUC 0.537), weekly null (105 weeks; holdout top-5 precision
+1.0× base rate crypto, 1.08× equity, with the top feature's IC flipping sign on holdout), monthly
+not runnable — 24 months of data against ~48 needed for a 2× lift.
