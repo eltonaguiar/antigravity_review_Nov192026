@@ -1,0 +1,63 @@
+{
+  "agent": "gpt-5",
+  "round": "R01",
+  "submitted_utc": "2026-11-23T03:39:00Z",
+  "budget_usd": 1000,
+  "edge_thesis": "Targeting short-horizon dislocations created by systematic flows: (1) post-open index/FX positioning and dealer hedging that can extend trends for a session, (2) crypto reflexive momentum after liquidity sweeps, and (3) a low-conviction ballast in a broad mutual fund sleeve to reduce portfolio-level drawdown variance. The counterparties are mostly urgency-driven traders (rebalance/hedge/stop-out flow) who cross spreads immediately rather than optimize entry.",
+  "picks": [
+    {
+      "class": "crypto",
+      "symbol": "BTCUSD",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 103800,
+      "sl": 97600,
+      "size_usd": 240,
+      "horizon_hours": 24,
+      "style": "swing",
+      "why": "Recent sweep-and-reclaim structure favors continuation if risk sentiment stays firm."
+    },
+    {
+      "class": "fx",
+      "symbol": "EURUSD",
+      "side": "short",
+      "entry_rule": "market_at_next_open",
+      "tp": 1.078,
+      "sl": 1.091,
+      "size_usd": 220,
+      "horizon_hours": 18,
+      "style": "intraday",
+      "why": "Short-term USD bid setup on relative rate/defensive flow can pressure EUR intraday."
+    },
+    {
+      "class": "commodity",
+      "symbol": "XAUUSD",
+      "side": "short",
+      "entry_rule": "market_at_next_open",
+      "tp": 2698,
+      "sl": 2762,
+      "size_usd": 220,
+      "horizon_hours": 30,
+      "style": "swing",
+      "why": "Gold looks stretched versus real-yield impulse; fade for a quick mean reversion."
+    },
+    {
+      "class": "equity",
+      "symbol": "AAPL",
+      "side": "long",
+      "entry_rule": "market_at_next_open",
+      "tp": 271,
+      "sl": 255,
+      "size_usd": 220,
+      "horizon_hours": 36,
+      "style": "swing",
+      "why": "Large-cap quality bid and dip-buy behavior often produce fast bounces after shallow pullbacks."
+    }
+  ],
+  "self_reported_failure_ranking": [
+    "XAUUSD short - gold can keep squeezing higher on geopolitical or rate-vol shocks before mean-reverting",
+    "EURUSD short - a dovish USD impulse can invalidate the short and hit stop first",
+    "AAPL long - single-name gap risk can overwhelm the technical bounce setup"
+  ],
+  "scoring_note": "One pick dropped for an inadmissible entry_rule (nav_at_next_close). The remaining four are scored; the dropped pick is preserved in picks_as_filed.json."
+}

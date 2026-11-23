@@ -216,3 +216,62 @@ indistinguishable from a genuinely diversified book.** The scorer cannot fix thi
 **R02 requirement:** report an effective-position count alongside mean R — group picks by (direction, driver class) and
 divide notional by the number of distinct drivers. A pick count is not a position count, and the tie-break "more picks
 net-positive" actively rewards correlating.
+
+---
+
+## Entry 10 — GPT-5.3 Codex (AskAnyModel), with one pick dropped on a rule
+
+| # | agent | submitted_utc | sha256 (scorable, 12) | picks | notional | verdict |
+|---|---|---|---|---|---|---|
+| 10 | **GPT-5.3 Codex** | 2026-11-23T03:39Z | `edafa6ba07c5` | 4 of 5 | $900 of $1,000 | VALID after dropping one pick |
+
+**Its fund pick was inadmissible on a rule I wrote.** It declared `entry_rule: "nav_at_next_close"`, which is not one of the
+three permitted rules. `assess_contest.py` rejects the whole submission on that:
+
+```
+INVALID SUBMISSION (1 problem(s)):
+  - picks[4] VTSAX: bad entry_rule 'nav_at_next_close'
+```
+
+Both files are kept: `picks_as_filed.json` (5 picks, $1,000, exactly as submitted, so the rule breach remains visible) and
+`picks.json` (4 picks, $900, the scorable subset). The dropped pick is not silently corrected — a submission that breaks the
+rules is evidence about the agent, and editing it would destroy that.
+
+The four scorable picks: **BTCUSD long** 97,600–103,800 · **EURUSD short** 1.078–1.091 · **XAUUSD short** 2,698–2,762 ·
+**AAPL long** 255–271. It ranked its own likely failures, worst first: XAUUSD short, then EURUSD short, then AAPL.
+
+---
+
+## FINDING 6 — the panel was the binding constraint, not the market
+
+AskAnyModel, six models requested, **one usable entry**:
+
+| model | result |
+|---|---|
+| GPT-5.3 Codex | **answered — entry filed** |
+| DeepSeek V4 Pro | timeout, no answer |
+| Kimi K2.7 Code | error, no answer |
+| MiMo V2.5 Pro | timeout, no answer |
+| Gemma 4 26B A4B | error, no answer |
+| ERNIE-5.5-Flash | no JSON — reasoning trace truncated |
+
+Operational note from the operator, recorded because it changes how this surface is used: **AskAnyModel requires manual model
+curation — you must add models and swap out failing ones yourself.** A six-model ask is not six answers; on this run it was
+1.17. The 14 credits were partly wasted and the wall-clock was entirely wasted.
+
+## FINDING 7 — ERNIE failed by trying to work out what day it is, which is Finding 1 made visible
+
+ERNIE produced no JSON at all. What it produced instead:
+
+> *"Need think of current date? … Need realistic prices near current market. But model knowledge cutoff 2024-06. Need maybe
+> use levels from mid-2026? Could be BTC around 100k? Gold around 3500? S&P 6500? … Hmm … Let's assume … Need decide picks."*
+
+and then: **"This answer reached its length limit."**
+
+Third independent confirmation of Finding 1, and the most direct: an entrant burned its entire output budget on the question
+*"what is the current date, and therefore what is the price"* — and failed to submit. **The contest is not hard because
+trading is hard. It is unanswerable as posed for a model with no market data, and one model proved that by dying on it in
+public.**
+
+Gold beliefs across the field now span roughly **$1,830 to $4,600** implied (GPT-4.1 mini's GLD 183; Codex's XAUUSD 2,698;
+GLM's 2,600–4,000; Fable's GLD 452–469). Same instrument, same week, 2.5×.
