@@ -82,6 +82,41 @@ wins and a low hit rate with large wins are different products rather than bette
 
 
 
+
+<h2>Risk per pick is not the whole story — concentration</h2>
+<p>Per-pick risk assumes picks are independent bets. They are not. Grouping the open book by symbol
+and day shows that different strategies fire the same trade at the same instant:</p>
+
+<table>
+  <tr><th>Symbol (today)</th><th class="num">Rows fired</th><th class="num">Distinct strategies</th><th class="num">Long</th><th class="num">Short</th><th>Net</th></tr>
+  <tr><td>BTCUSDT</td><td class="num">31</td><td class="num">30</td><td class="num">21</td><td class="num">10</td><td>NET_LONG</td></tr>
+  <tr><td>ETHUSDT</td><td class="num">29</td><td class="num">29</td><td class="num">22</td><td class="num">7</td><td>NET_LONG</td></tr>
+  <tr><td>SOLUSDT</td><td class="num">27</td><td class="num">26</td><td class="num">23</td><td class="num">4</td><td>NET_LONG</td></tr>
+  <tr><td>TLT</td><td class="num">7</td><td class="num">6</td><td class="num">7</td><td class="num">0</td><td>NET_LONG</td></tr>
+  <tr><td>AUDJPY=X</td><td class="num">6</td><td class="num">5</td><td class="num">6</td><td class="num">0</td><td>NET_LONG</td></tr>
+</table>
+
+<p><b>509 open rows are only 281 distinct bets</b> — roughly 45% of the book is the same position
+counted more than once. Across the whole open book, <b>470 of 509 rows are net long</b>, 29 net short,
+and 10 sit in direct conflict (same symbol, same day, both directions).</p>
+
+<div class="warn">
+  <b>What this does to every number on this page.</b> Thirty strategies agreeing on BTCUSDT is not
+  thirty times the evidence — it is one view of one asset, sampled thirty ways. If BTC falls, all 21
+  net-long rows lose together. Any win rate computed across rows treats them as independent draws and
+  is therefore overstated. The row count is not the sample size; <b>281 is closer to the sample size
+  than 509</b>, and for the crypto complex it is nearer three.
+</div>
+
+<h2>Plain English — concentration</h2>
+<table>
+  <tr><th>Term</th><th>What it means</th></tr>
+  <tr><td><b>Correlated picks</b></td><td>Different strategies, same underlying. They win and lose together, so they behave as one position, not many.</td></tr>
+  <tr><td><b>Net exposure</b></td><td>Longs minus shorts. 21 long and 10 short on BTC is not 31 opinions — it is a net long of 11 with a lot of noise around it.</td></tr>
+  <tr><td><b>FLAT_CONFLICT</b></td><td>Same symbol, same day, both directions. If both fill, the position pays two spreads to hold nothing.</td></tr>
+  <tr><td><b>Effective n</b></td><td>The number of genuinely independent bets. Used instead of row count, it shrinks every claimed sample — which is the point.</td></tr>
+</table>
+
 <h2>Risk profile per pick</h2>
 <p>Every pick now carries a risk profile with numbers, not adjectives. Before this, the table existed
 but held no rows and no pick pointed at a profile — so "risk profile" was a name in a schema rather
