@@ -7,6 +7,7 @@ from pathlib import Path
 ap = argparse.ArgumentParser()
 ap.add_argument("--repo", default="/home/eaguiar2015/findtorontoevents_antigravity.ca/.kilo/worktrees/vanilla-handsaw")
 ap.add_argument("--out", default="")
+ap.add_argument("--rollup", default="", help="override rollup JSON path")
 a = ap.parse_args()
 root = Path(a.repo)
 todos = json.loads((root / "1000_TODOS.json").read_text())
@@ -16,7 +17,7 @@ status = Counter(c.get("status") for c in cells)
 files = {f.stem for f in (root / "results" / "cells").glob("*.json")}
 missing = [k for k in keys if k not in files]
 extra = sorted(files - set(keys))
-roll_path = root / "results" / "CENSUS_ROLLUP.json"
+roll_path = Path(a.rollup) if a.rollup else (root / "results" / "CENSUS_ROLLUP.json")
 roll = json.loads(roll_path.read_text()) if roll_path.exists() else None
 problems = []
 if len(cells) != 1000: problems.append(f"cell count {len(cells)} != 1000")
@@ -27,11 +28,13 @@ if missing: problems.append(f"missing artifacts: {len(missing)} (blocked={sum(1 
 if extra: problems.append(f"extra artifacts: {len(extra)}")
 if roll:
     cats = roll.get("categories", {})
-    if cats.get("measured_kill") != status.get("killed"):
-        problems.append(f"rollup measured_kill {cats.get('measured_kill')} != killed {status.get('killed')}")
+    killed = cats.get("killed", cats.get("measured_kill"))
+    if killed != status.get("killed"):
+        problems.append(f"rollup killed {killed} != killed {status.get('killed')}")
     if cats.get("blocked") != status.get("blocked_no_data"):
         problems.append(f"rollup blocked {cats.get('blocked')} != blocked_no_data {status.get('blocked_no_data')}")
-    if "cells" not in roll: problems.append("rollup has no cell list (unrecomputable)")
+    if not ("cell_keys" in roll or "cells" in roll):
+        problems.append("rollup has no cell list (unrecomputable)")
 res = {"cells": len(cells), "unique_keys": len(set(keys)), "status": dict(status),
        "artifacts": len(files), "missing": len(missing), "missing_sample": missing[:10],
        "extra": len(extra), "rollup": roll.get("categories") if roll else None,
