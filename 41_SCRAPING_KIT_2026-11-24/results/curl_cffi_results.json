@@ -1,0 +1,123 @@
+[
+ {
+  "target": "walmart_search",
+  "url": "https://www.walmart.ca/en/search?q=playstation+5",
+  "chrome": {
+   "status": 200,
+   "bytes": 7535,
+   "blocked_marker": true,
+   "has_content": false,
+   "price_tokens": 0
+  },
+  "chrome124": {
+   "status": 200,
+   "bytes": 7535,
+   "blocked_marker": true,
+   "has_content": false,
+   "price_tokens": 0
+  },
+  "safari": {
+   "status": 200,
+   "bytes": 7535,
+   "blocked_marker": true,
+   "has_content": false,
+   "price_tokens": 0
+  }
+ },
+ {
+  "target": "walmart_api",
+  "url": "https://www.walmart.ca/api/search/products?query=playstation%205&lang=en",
+  "chrome": {
+   "status": 403,
+   "bytes": 43,
+   "blocked_marker": false,
+   "has_content": false,
+   "price_tokens": 0
+  },
+  "chrome124": {
+   "status": 403,
+   "bytes": 43,
+   "blocked_marker": false,
+   "has_content": false,
+   "price_tokens": 0
+  },
+  "safari": {
+   "status": 403,
+   "bytes": 43,
+   "blocked_marker": false,
+   "has_content": false,
+   "price_tokens": 0
+  }
+ },
+ {
+  "target": "staples_search",
+  "url": "https://www.staples.ca/search?query=playstation%205",
+  "chrome": {
+   "status": 200,
+   "bytes": 396215,
+   "blocked_marker": false,
+   "has_content": true,
+   "price_tokens": 12
+  }
+ },
+ {
+  "target": "memoryexpress",
+  "url": "https://www.memoryexpress.com/Search/Products?Search=playstation+5",
+  "chrome": {
+   "status": 403,
+   "bytes": 6121,
+   "blocked_marker": true,
+   "has_content": true,
+   "price_tokens": 0
+  },
+  "chrome124": {
+   "status": 403,
+   "bytes": 6121,
+   "blocked_marker": true,
+   "has_content": true,
+   "price_tokens": 0
+  },
+  "safari": {
+   "status": 403,
+   "bytes": 5971,
+   "blocked_marker": true,
+   "has_content": true,
+   "price_tokens": 0
+  }
+ },
+ {
+  "target": "gamestop",
+  "url": "https://www.gamestop.ca/SearchResult/QuickSearch?q=playstation%205",
+  "chrome": {
+   "error": "DNSError: Failed to perform, curl: (6) Could not resolve host: www.gamestop.ca. See https://curl.se/libcurl/c/"
+  },
+  "chrome124": {
+   "error": "DNSError: Failed to perform, curl: (6) Could not resolve host: www.gamestop.ca. See https://curl.se/libcurl/c/"
+  },
+  "safari": {
+   "error": "DNSError: Failed to perform, curl: (6) Could not resolve host: www.gamestop.ca. See https://curl.se/libcurl/c/"
+  }
+ },
+ {
+  "target": "bestbuy_api",
+  "url": "https://www.bestbuy.ca/ecomm-api/availability/products?accept-language=en-CA&postalCode=M5G&skus=19422130&quantities=1",
+  "chrome": {
+   "status": 200,
+   "bytes": 297,
+   "blocked_marker": false,
+   "has_content": true,
+   "price_tokens": 0
+  }
+ },
+ {
+  "target": "amazon_ca",
+  "url": "https://www.amazon.ca/s?k=playstation+5",
+  "chrome": {
+   "status": 200,
+   "bytes": 2240,
+   "blocked_marker": false,
+   "has_content": true,
+   "price_tokens": 0
+  }
+ }
+]
