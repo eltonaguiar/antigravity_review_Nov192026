@@ -1,0 +1,2001 @@
+{
+  "generated_utc": "2026-11-24T10:38:47.139520+00:00",
+  "window_days": 180,
+  "sources": [
+    "Yahoo Finance quoteSummary (crumb)",
+    "Nasdaq analyst API"
+  ],
+  "disclaimer": "Analyst ratings are opinions, not investment advice. Dates are source timestamps.",
+  "rows": [
+    {
+      "symbol": "AAPL",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 6,
+        "buy": 20,
+        "hold": 13,
+        "sell": 3,
+        "strongSell": 3
+      },
+      "yahoo_total": 45,
+      "yahoo_mean": 2.17778,
+      "yahoo_key": "buy",
+      "nasdaq_consensus": "Hold",
+      "nasdaq_counts": {
+        "buy": 15,
+        "hold": 8,
+        "sell": 6
+      },
+      "price": 349.08,
+      "target_mean": 345.6313,
+      "target_low": 250.0,
+      "target_high": 425.0,
+      "upside_pct": -0.9879397272831381,
+      "composite": 0.41072796934865896,
+      "recent_actions": [
+        {
+          "date": "2026-11-11",
+          "firm": "China Renaissance",
+          "action": "up",
+          "from": "Hold",
+          "to": "Buy",
+          "target": 425.0,
+          "target_action": "Announces"
+        },
+        {
+          "date": "2026-11-04",
+          "firm": "Bernstein",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 380.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "JP Morgan",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 355.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 340.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Argus Research",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 400.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Barclays",
+          "action": "main",
+          "from": "Underweight",
+          "to": "Underweight",
+          "target": 261.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "TD Cowen",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 390.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "DA Davidson",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 295.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Keybanc",
+          "action": "reit",
+          "from": "Underweight",
+          "to": "Underweight",
+          "target": 250.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Rosenblatt",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 303.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Baird",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 340.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-03",
+          "firm": "Morgan Stanley",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 350.0,
+          "target_action": "Lowers"
+        }
+      ],
+      "latest_action_date": "2026-11-11"
+    },
+    {
+      "symbol": "MSFT",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 14,
+        "buy": 41,
+        "hold": 3,
+        "sell": 0,
+        "strongSell": 0
+      },
+      "yahoo_total": 58,
+      "yahoo_mean": 1.34483,
+      "yahoo_key": "strong_buy",
+      "nasdaq_consensus": "Buy",
+      "nasdaq_counts": {
+        "buy": 34,
+        "hold": 4,
+        "sell": 0
+      },
+      "price": 492.5,
+      "target_mean": 637.3617,
+      "target_low": 440.0,
+      "target_high": 870.0,
+      "upside_pct": 29.41354314720812,
+      "composite": 1.0421960072595282,
+      "recent_actions": [
+        {
+          "date": "2026-10-29",
+          "firm": "Bernstein",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 722.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "RBC Capital",
+          "action": "reit",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 640.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Citigroup",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 680.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "DA Davidson",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 650.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "TD Cowen",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 650.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Scotiabank",
+          "action": "main",
+          "from": "Sector Outperform",
+          "to": "Sector Outperform",
+          "target": 650.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Citizens",
+          "action": "main",
+          "from": "Market Outperform",
+          "to": "Market Outperform",
+          "target": 625.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Truist Securities",
+          "action": "reit",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 630.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Barclays",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 610.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Wells Fargo",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 750.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "StoneX",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 630.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Guggenheim",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 595.0,
+          "target_action": "Raises"
+        }
+      ],
+      "latest_action_date": "2026-10-29"
+    },
+    {
+      "symbol": "NVDA",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 10,
+        "buy": 38,
+        "hold": 12,
+        "sell": 2,
+        "strongSell": 0
+      },
+      "yahoo_total": 62,
+      "yahoo_mean": 1.80952,
+      "yahoo_key": "buy",
+      "nasdaq_consensus": "Buy",
+      "nasdaq_counts": {
+        "buy": 31,
+        "hold": 11,
+        "sell": 1
+      },
+      "price": 165.05,
+      "target_mean": 244.54807,
+      "target_low": 130.0,
+      "target_high": 425.0,
+      "upside_pct": 48.16605271129959,
+      "composite": 0.800450112528132,
+      "recent_actions": [
+        {
+          "date": "2026-11-12",
+          "firm": "Melius Research",
+          "action": "down",
+          "from": "Buy",
+          "to": "Hold",
+          "target": 185.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "DA Davidson",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 200.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "Craig-Hallum",
+          "action": "down",
+          "from": "Buy",
+          "to": "Hold",
+          "target": 180.0,
+          "target_action": "Announces"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "B of A Securities",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 280.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "BMO Capital",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 240.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "Baird",
+          "action": "reit",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 200.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "Goldman Sachs",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 220.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "Citigroup",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 225.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "Needham",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 200.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "StoneX",
+          "action": "down",
+          "from": "Buy",
+          "to": "Hold",
+          "target": null,
+          "target_action": ""
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "Stifel",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 205.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-12",
+          "firm": "RBC Capital",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 230.0,
+          "target_action": "Lowers"
+        }
+      ],
+      "latest_action_date": "2026-11-12"
+    },
+    {
+      "symbol": "GOOGL",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 10,
+        "buy": 43,
+        "hold": 6,
+        "sell": 0,
+        "strongSell": 0
+      },
+      "yahoo_total": 59,
+      "yahoo_mean": 1.37931,
+      "yahoo_key": "strong_buy",
+      "nasdaq_consensus": "Buy",
+      "nasdaq_counts": {
+        "buy": 29,
+        "hold": 4,
+        "sell": 0
+      },
+      "price": 282.1,
+      "target_mean": 395.7702,
+      "target_low": 300.0,
+      "target_high": 500.0,
+      "upside_pct": 40.29429280397021,
+      "composite": 0.9732922444786851,
+      "recent_actions": [
+        {
+          "date": "2026-11-02",
+          "firm": "Wells Fargo",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 365.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "Citigroup",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 375.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "Wells Fargo",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 371.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Bernstein",
+          "action": "main",
+          "from": "Market Perform",
+          "to": "Market Perform",
+          "target": 325.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "RBC Capital",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 400.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 332.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Morgan Stanley",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 375.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "DA Davidson",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 300.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Citizens",
+          "action": "down",
+          "from": "Market Outperform",
+          "to": "Market Perform",
+          "target": null,
+          "target_action": ""
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Barclays",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 405.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Wedbush",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 387.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-29",
+          "firm": "Truist Securities",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 410.0,
+          "target_action": "Lowers"
+        }
+      ],
+      "latest_action_date": "2026-11-02"
+    },
+    {
+      "symbol": "AMZN",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 14,
+        "buy": 45,
+        "hold": 3,
+        "sell": 0,
+        "strongSell": 0
+      },
+      "yahoo_total": 62,
+      "yahoo_mean": 1.32258,
+      "yahoo_key": "strong_buy",
+      "nasdaq_consensus": "Buy",
+      "nasdaq_counts": {
+        "buy": 41,
+        "hold": 1,
+        "sell": 0
+      },
+      "price": 255.39,
+      "target_mean": 326.34033,
+      "target_low": 230.0,
+      "target_high": 405.0,
+      "upside_pct": 27.781169975331842,
+      "composite": 1.076804915514593,
+      "recent_actions": [
+        {
+          "date": "2026-11-03",
+          "firm": "Freedom Broker",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 330.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-31",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 352.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "Scotiabank",
+          "action": "main",
+          "from": "Sector Outperform",
+          "to": "Sector Outperform",
+          "target": 300.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "Telsey Advisory Group",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 335.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "DA Davidson",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 250.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "Rosenblatt",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 360.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "Wells Fargo",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 326.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "TD Cowen",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 340.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "Wedbush",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 298.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "Morgan Stanley",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 335.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "RBC Capital",
+          "action": "reit",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 330.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-30",
+          "firm": "StoneX",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 380.0,
+          "target_action": "Lowers"
+        }
+      ],
+      "latest_action_date": "2026-11-03"
+    },
+    {
+      "symbol": "META",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 10,
+        "buy": 45,
+        "hold": 6,
+        "sell": 1,
+        "strongSell": 0
+      },
+      "yahoo_total": 62,
+      "yahoo_mean": 1.41935,
+      "yahoo_key": "strong_buy",
+      "nasdaq_consensus": "Buy",
+      "nasdaq_counts": {
+        "buy": 37,
+        "hold": 6,
+        "sell": 0
+      },
+      "price": 597.6,
+      "target_mean": 845.3814,
+      "target_low": 650.0,
+      "target_high": 1050.0,
+      "upside_pct": 41.46275100401606,
+      "composite": 0.9463615903975994,
+      "recent_actions": [
+        {
+          "date": "2026-10-22",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 892.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Citigroup",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 905.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "DA Davidson",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 800.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "BMO Capital",
+          "action": "main",
+          "from": "Market Perform",
+          "to": "Market Perform",
+          "target": 685.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Evercore ISI Group",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 870.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Mizuho",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 950.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Barclays",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 880.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "RBC Capital",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 800.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Wells Fargo",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 995.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Citizens",
+          "action": "reit",
+          "from": "Market Outperform",
+          "to": "Market Outperform",
+          "target": 885.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Scotiabank",
+          "action": "main",
+          "from": "Sector Perform",
+          "to": "Sector Perform",
+          "target": 650.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "JP Morgan",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 940.0,
+          "target_action": "Raises"
+        }
+      ],
+      "latest_action_date": "2026-10-22"
+    },
+    {
+      "symbol": "TSLA",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 5,
+        "buy": 15,
+        "hold": 23,
+        "sell": 1,
+        "strongSell": 0
+      },
+      "yahoo_total": 44,
+      "yahoo_mean": 2.25,
+      "yahoo_key": "buy",
+      "nasdaq_consensus": "Hold",
+      "nasdaq_counts": {
+        "buy": 13,
+        "hold": 11,
+        "sell": 2
+      },
+      "price": 385.46,
+      "target_mean": 417.52625,
+      "target_low": 128.11,
+      "target_high": 600.0,
+      "upside_pct": 8.318956571369274,
+      "composite": 0.48426573426573427,
+      "recent_actions": [
+        {
+          "date": "2026-11-05",
+          "firm": "GLJ Research",
+          "action": "reit",
+          "from": "Sell",
+          "to": "Sell",
+          "target": 24.86,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-26",
+          "firm": "Barclays",
+          "action": "up",
+          "from": "Equal-Weight",
+          "to": "Overweight",
+          "target": 450.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 425.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "CLSA",
+          "action": "up",
+          "from": "Underperform",
+          "to": "Hold",
+          "target": 400.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Canaccord Genuity",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 442.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Morgan Stanley",
+          "action": "main",
+          "from": "Equal-Weight",
+          "to": "Equal-Weight",
+          "target": 410.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "BNP Paribas",
+          "action": "up",
+          "from": "Underperform",
+          "to": "Neutral",
+          "target": 420.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "RBC Capital",
+          "action": "reit",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 480.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "JP Morgan",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 430.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "TD Cowen",
+          "action": "reit",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 460.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "Piper Sandler",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 475.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-22",
+          "firm": "StoneX",
+          "action": "reit",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 475.0,
+          "target_action": "Maintains"
+        }
+      ],
+      "latest_action_date": "2026-11-05"
+    },
+    {
+      "symbol": "JPM",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 5,
+        "buy": 10,
+        "hold": 11,
+        "sell": 0,
+        "strongSell": 0
+      },
+      "yahoo_total": 26,
+      "yahoo_mean": 2.03846,
+      "yahoo_key": "buy",
+      "nasdaq_consensus": "Buy",
+      "nasdaq_counts": {
+        "buy": 11,
+        "hold": 6,
+        "sell": 0
+      },
+      "price": 316.66,
+      "target_mean": 373.47827,
+      "target_low": 312.0,
+      "target_high": 425.0,
+      "upside_pct": 17.942989326091062,
+      "composite": 0.7081447963800905,
+      "recent_actions": [
+        {
+          "date": "2026-11-02",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 400.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-15",
+          "firm": "Citigroup",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 350.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-14",
+          "firm": "Truist Securities",
+          "action": "main",
+          "from": "Hold",
+          "to": "Hold",
+          "target": 361.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-14",
+          "firm": "Barclays",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 425.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-14",
+          "firm": "RBC Capital",
+          "action": "reit",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 370.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-14",
+          "firm": "Morgan Stanley",
+          "action": "main",
+          "from": "Equal-Weight",
+          "to": "Equal-Weight",
+          "target": 377.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-14",
+          "firm": "Baird",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 312.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-05",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 395.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-09-28",
+          "firm": "HSBC",
+          "action": "main",
+          "from": "Hold",
+          "to": "Hold",
+          "target": 377.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-08-14",
+          "firm": "Wells Fargo",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 390.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-08-03",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 400.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-07-20",
+          "firm": "Citigroup",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 360.0,
+          "target_action": "Raises"
+        }
+      ],
+      "latest_action_date": "2026-11-02"
+    },
+    {
+      "symbol": "XOM",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 3,
+        "buy": 6,
+        "hold": 17,
+        "sell": 0,
+        "strongSell": 0
+      },
+      "yahoo_total": 26,
+      "yahoo_mean": 2.42308,
+      "yahoo_key": "buy",
+      "nasdaq_consensus": "Hold",
+      "nasdaq_counts": {
+        "buy": 9,
+        "hold": 10,
+        "sell": 1
+      },
+      "price": 156.9,
+      "target_mean": 184.18182,
+      "target_low": 160.0,
+      "target_high": 213.0,
+      "upside_pct": 17.388030592734218,
+      "composite": 0.4307692307692308,
+      "recent_actions": [
+        {
+          "date": "2026-11-12",
+          "firm": "Bernstein",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 186.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-11-07",
+          "firm": "Freedom Broker",
+          "action": "main",
+          "from": "Hold",
+          "to": "Hold",
+          "target": 162.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-04",
+          "firm": "Citigroup",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 175.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-04",
+          "firm": "TD Cowen",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 193.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-02",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 213.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-02",
+          "firm": "Morgan Stanley",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 187.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-02",
+          "firm": "Evercore ISI Group",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 200.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-02",
+          "firm": "Wells Fargo",
+          "action": "main",
+          "from": "Equal-Weight",
+          "to": "Equal-Weight",
+          "target": 189.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-19",
+          "firm": "Barclays",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 200.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-15",
+          "firm": "Morgan Stanley",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 185.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-01",
+          "firm": "Wells Fargo",
+          "action": "down",
+          "from": "Overweight",
+          "to": "Equal-Weight",
+          "target": 182.0,
+          "target_action": "Announces"
+        },
+        {
+          "date": "2026-09-28",
+          "firm": "TD Cowen",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 180.0,
+          "target_action": "Raises"
+        }
+      ],
+      "latest_action_date": "2026-11-12"
+    },
+    {
+      "symbol": "JNJ",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 5,
+        "buy": 11,
+        "hold": 5,
+        "sell": 2,
+        "strongSell": 0
+      },
+      "yahoo_total": 23,
+      "yahoo_mean": 2.0,
+      "yahoo_key": "buy",
+      "nasdaq_consensus": "Buy",
+      "nasdaq_counts": {
+        "buy": 11,
+        "hold": 6,
+        "sell": 0
+      },
+      "price": 270.05,
+      "target_mean": 279.84726,
+      "target_low": 190.0,
+      "target_high": 320.0,
+      "upside_pct": 3.6279429735234237,
+      "composite": 0.7365728900255755,
+      "recent_actions": [
+        {
+          "date": "2026-10-16",
+          "firm": "Wells Fargo",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 287.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-15",
+          "firm": "Morgan Stanley",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 292.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-14",
+          "firm": "Leerink Partners",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 272.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-14",
+          "firm": "Wells Fargo",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 275.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-14",
+          "firm": "RBC Capital",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 280.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-10-07",
+          "firm": "Guggenheim",
+          "action": "reit",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 287.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-10-06",
+          "firm": "RBC Capital",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 290.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-05",
+          "firm": "Citigroup",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 303.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-09-29",
+          "firm": "JP Morgan",
+          "action": "main",
+          "from": "Neutral",
+          "to": "Neutral",
+          "target": 285.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-09-10",
+          "firm": "HSBC",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 320.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-09-02",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 320.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-08-06",
+          "firm": "Guggenheim",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 287.0,
+          "target_action": "Raises"
+        }
+      ],
+      "latest_action_date": "2026-10-16"
+    },
+    {
+      "symbol": "WMT",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 10,
+        "buy": 28,
+        "hold": 5,
+        "sell": 1,
+        "strongSell": 0
+      },
+      "yahoo_total": 44,
+      "yahoo_mean": 1.54545,
+      "yahoo_key": "buy",
+      "nasdaq_consensus": "Buy",
+      "nasdaq_counts": {
+        "buy": 28,
+        "hold": 2,
+        "sell": 0
+      },
+      "price": 129.58,
+      "target_mean": 136.14635,
+      "target_low": 81.0,
+      "target_high": 155.0,
+      "upside_pct": 5.067410094150326,
+      "composite": 1.0007575757575757,
+      "recent_actions": [
+        {
+          "date": "2026-11-12",
+          "firm": "BTIG",
+          "action": "reit",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 140.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-11-10",
+          "firm": "Mizuho",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 135.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-09",
+          "firm": "UBS",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 149.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-09",
+          "firm": "JP Morgan",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 145.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-20",
+          "firm": "Evercore ISI Group",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 130.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-15",
+          "firm": "Deutsche Bank",
+          "action": "up",
+          "from": "Hold",
+          "to": "Buy",
+          "target": 136.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-09-29",
+          "firm": "Mizuho",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 125.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-09-10",
+          "firm": "DA Davidson",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 132.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-09-10",
+          "firm": "BTIG",
+          "action": "reit",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 140.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-08-31",
+          "firm": "Tigress Financial",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 155.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-08-21",
+          "firm": "Telsey Advisory Group",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 130.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-08-21",
+          "firm": "Citigroup",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 132.0,
+          "target_action": "Lowers"
+        }
+      ],
+      "latest_action_date": "2026-11-12"
+    },
+    {
+      "symbol": "COST",
+      "asset_class": "Stocks",
+      "status": "ok",
+      "yahoo_trend": {
+        "period": "0m",
+        "strongBuy": 5,
+        "buy": 20,
+        "hold": 15,
+        "sell": 1,
+        "strongSell": 1
+      },
+      "yahoo_total": 42,
+      "yahoo_mean": 2.0,
+      "yahoo_key": "buy",
+      "nasdaq_consensus": "Buy",
+      "nasdaq_counts": {
+        "buy": 18,
+        "hold": 8,
+        "sell": 1
+      },
+      "price": 1097.91,
+      "target_mean": 1085.3513,
+      "target_low": 770.0,
+      "target_high": 1315.0,
+      "upside_pct": -1.1438733593828299,
+      "composite": 0.6362433862433863,
+      "recent_actions": [
+        {
+          "date": "2026-11-11",
+          "firm": "Bernstein",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 1155.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-11-05",
+          "firm": "JP Morgan",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 1150.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-21",
+          "firm": "CICC",
+          "action": "init",
+          "from": "",
+          "to": "Outperform",
+          "target": 1050.0,
+          "target_action": "Announces"
+        },
+        {
+          "date": "2026-10-15",
+          "firm": "Tigress Financial",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 1250.0,
+          "target_action": "Raises"
+        },
+        {
+          "date": "2026-10-09",
+          "firm": "RBC Capital",
+          "action": "reit",
+          "from": "Sector Perform",
+          "to": "Sector Perform",
+          "target": 1000.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-09-28",
+          "firm": "Deutsche Bank",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 1079.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-09-28",
+          "firm": "Argus Research",
+          "action": "reit",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 1230.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-09-25",
+          "firm": "Freedom Broker",
+          "action": "main",
+          "from": "Buy",
+          "to": "Buy",
+          "target": 1010.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-09-25",
+          "firm": "Raymond James",
+          "action": "main",
+          "from": "Outperform",
+          "to": "Outperform",
+          "target": 1050.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-09-25",
+          "firm": "Roth Capital",
+          "action": "reit",
+          "from": "Sell",
+          "to": "Sell",
+          "target": 781.0,
+          "target_action": "Maintains"
+        },
+        {
+          "date": "2026-09-25",
+          "firm": "JP Morgan",
+          "action": "main",
+          "from": "Overweight",
+          "to": "Overweight",
+          "target": 1015.0,
+          "target_action": "Lowers"
+        },
+        {
+          "date": "2026-09-25",
+          "firm": "Truist Securities",
+          "action": "main",
+          "from": "Hold",
+          "to": "Hold",
+          "target": 955.0,
+          "target_action": "Lowers"
+        }
+      ],
+      "latest_action_date": "2026-11-11"
+    },
+    {
+      "symbol": "SPY",
+      "asset_class": "ETF",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "QQQ",
+      "asset_class": "ETF",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "IWM",
+      "asset_class": "ETF",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "XLE",
+      "asset_class": "ETF",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "GLD",
+      "asset_class": "Commodity ETF",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "TLT",
+      "asset_class": "Bond ETF",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "BND",
+      "asset_class": "Bond ETF",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "SMH",
+      "asset_class": "ETF",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "VTSAX",
+      "asset_class": "Mutual fund",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "FXAIX",
+      "asset_class": "Mutual fund",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "FZROX",
+      "asset_class": "Mutual fund",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": "",
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "BTC-USD",
+      "asset_class": "Crypto",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": null,
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "ETH-USD",
+      "asset_class": "Crypto",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": null,
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    },
+    {
+      "symbol": "EURUSD=X",
+      "asset_class": "FX",
+      "status": "no_coverage",
+      "yahoo_trend": null,
+      "yahoo_total": null,
+      "yahoo_mean": null,
+      "yahoo_key": null,
+      "nasdaq_consensus": null,
+      "nasdaq_counts": {
+        "buy": null,
+        "hold": null,
+        "sell": null
+      },
+      "price": null,
+      "target_mean": null,
+      "target_low": null,
+      "target_high": null,
+      "upside_pct": null,
+      "composite": null,
+      "recent_actions": [],
+      "latest_action_date": null
+    }
+  ]
+}

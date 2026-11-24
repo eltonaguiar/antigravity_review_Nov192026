@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HARVEST — analyst endorsements by asset class</title>
+<style>
+  :root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2330;--ink:#e6edf3;--muted:#8b949e;--line:#30363d;--accent:#6cb6ff;--good:#3fb950;--bad:#f85149;--warn:#d29922;--purple:#b98cff}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+  header{border-bottom:1px solid var(--line);padding:26px 0 14px;background:linear-gradient(180deg,rgba(185,140,255,.10),transparent)}
+  h1{margin:.2rem 0;font-size:1.7rem}.sub{color:var(--muted);max-width:80ch}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.badge{border:1px solid var(--line);border-radius:999px;padding:3px 9px;font-size:.76rem;color:var(--muted);background:var(--panel)}
+  main{padding:20px 0 60px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .eli5{background:rgba(185,140,255,.10);border:1px solid rgba(185,140,255,.35);border-radius:10px;padding:10px 14px;margin:12px 0}
+  .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin:14px 0}
+  label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+  select,input[type=search]{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:7px 9px;font-size:.92rem}
+  input[type=search]{min-width:180px}
+  .chk{display:flex;gap:6px;align-items:center;font-size:.9rem;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  th,td{border-bottom:1px solid var(--line);padding:7px 7px;text-align:right;vertical-align:top}
+  th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+  th{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;user-select:none;white-space:nowrap}
+  th:hover{color:var(--accent)}
+  tr.row:hover{background:var(--panel2)}
+  .sym{font-weight:700}.cls{color:var(--muted);font-size:.8rem}
+  .pos{color:var(--good)}.neg{color:var(--bad)}.zero{color:var(--muted)}
+  .pill{font-size:.7rem;border:1px solid var(--line);border-radius:999px;padding:1px 7px;color:var(--muted)}
+  .cov-no{color:var(--warn)}
+  details.actions td{background:var(--panel2);text-align:left}
+  details summary{cursor:pointer;color:var(--accent);font-size:.8rem}
+  .actions ul{margin:6px 0 2px;padding-left:18px}.actions li{margin:2px 0}
+  .counts{color:var(--muted);font-size:.85rem;margin:8px 0}
+  footer{border-top:1px solid var(--line);padding:16px 0 40px;color:var(--muted);font-size:.85rem}
+  .note{color:var(--muted);font-size:.82rem}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="note"><a href="index.html">&larr; back to the main review</a></div>
+  <h1>HARVEST — official analyst endorsements</h1>
+  <p class="sub">Consensus and rating actions across stocks, ETFs, bond/commodity ETFs, mutual funds, crypto and FX. Built from Yahoo Finance recommendation trends and Nasdaq analyst endpoints; missing coverage is shown as a gap, never invented.</p>
+  <div class="badges">
+    <span class="badge">sortable</span><span class="badge">filter by class</span>
+    <span class="badge">hide actions older than N months</span><span class="badge" id="stamp">loading…</span>
+  </div>
+</div></header>
+<main class="wrap">
+  <div class="eli5"><b>ELI5:</b> Analysts vote “strong buy / buy / hold / sell / strong sell”. We combine those votes into one score (−1 to +1) and list the most recent upgrades/downgrades. A high score is a <i>crowd opinion</i>, not a guarantee — use the date filter so a stale call from last year does not masquerade as today's view.</div>
+  <div class="card">
+    <div class="controls">
+      <div><label for="cls">Asset class</label><select id="cls"><option value="">All</option></select></div>
+      <div><label for="age">Hide actions older than</label>
+        <select id="age">
+          <option value="3" selected>3 months</option>
+          <option value="6">6 months</option>
+          <option value="12">12 months</option>
+          <option value="0">show all</option>
+        </select></div>
+      <div><label for="q">Search symbol</label><input id="q" type="search" placeholder="e.g. AAPL"></div>
+      <div class="chk"><input id="cov" type="checkbox"><label for="cov" style="margin:0;text-transform:none;letter-spacing:0;font-size:.9rem">only rows with analyst coverage</label></div>
+    </div>
+    <div class="counts" id="counts">loading…</div>
+    <table>
+      <thead><tr>
+        <th data-k="symbol">Symbol</th><th data-k="asset_class">Class</th>
+        <th data-k="composite">Consensus</th><th>Yahoo SB/B/H/S/SS</th><th>Nasdaq B/H/S</th>
+        <th data-k="price">Price</th><th data-k="target_mean">Target</th><th data-k="upside_pct">Upside</th>
+        <th data-k="latest_action_date">Latest action</th><th data-k="status">Status</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="note">Consensus = mean of (Yahoo weighted vote: 2·SB + B − S − 2·SS)/N and (Nasdaq (buy−sell)/total), range −1..+1. Click a column to sort. Click “actions” to see the underlying upgrades/downgrades.</p>
+  </div>
+</main>
+<footer><div class="wrap">
+  Sources: Yahoo Finance quoteSummary (crumb), Nasdaq analyst API. Data generated by <code>KILOCODE/harvest_analysts.py</code>; raw JSON at <a href="harvest.json">harvest.json</a>. Analyst ratings are opinions, not investment advice. ToS/attribution rules of the sources apply.
+</div></footer>
+<script>
+(function(){
+  const state={rows:[],sort:'composite',dir:-1,cls:'',age:3,q:'',cov:false};
+  const $=id=>document.getElementById(id);
+  const fmtPct=v=>v==null?'—':(v>0?'+':'')+v.toFixed(1)+'%';
+  const fmtNum=v=>v==null?'—':'$'+v.toFixed(2);
+  const clsFor=v=>v==null?'zero':(v>0.15?'pos':(v<-0.15?'neg':'zero'));
+  function monthsAgoISO(m){const d=new Date();d.setMonth(d.getMonth()-m);return d.toISOString().slice(0,10);}
+  function visible(r){
+    if(state.cls && r.asset_class!==state.cls) return false;
+    if(state.cov && r.status!=='ok') return false;
+    if(state.q && !r.symbol.toLowerCase().includes(state.q)) return false;
+    if(state.age>0 && r.latest_action_date && r.latest_action_date<monthsAgoISO(state.age)) return false;
+    return true;
+  }
+  function sortRows(rows){
+    const k=state.sort, d=state.dir;
+    return rows.slice().sort((a,b)=>{
+      let x=a[k], y=b[k];
+      if(x==null) return 1; if(y==null) return -1;
+      if(typeof x==='string') return x.localeCompare(y)*d;
+      return (x-y)*d;
+    });
+  }
+  function render(){
+    const rows=sortRows(state.rows.filter(visible));
+    $('counts').textContent=`showing ${rows.length} of ${state.rows.length} symbols · coverage ${state.rows.filter(r=>r.status==='ok').length}`;
+    const tb=$('rows'); tb.innerHTML='';
+    for(const r of rows){
+      const t=r.yahoo_trend||{};
+      const trend=t.strongBuy!=null?`${t.strongBuy}/${t.buy}/${t.hold}/${t.sell}/${t.strongSell}`:'—';
+      const n=r.nasdaq_counts||{};
+      const ncs=(n.buy!=null||n.hold!=null||n.sell!=null)?`${n.buy??0}/${n.hold??0}/${n.sell??0}`:'—';
+      const comp=r.composite==null?'—':(r.composite>=0?'+':'')+r.composite.toFixed(2);
+      const tr=document.createElement('tr'); tr.className='row';
+      tr.innerHTML=`<td><span class="sym">${r.symbol}</span></td>
+        <td class="cls">${r.asset_class}</td>
+        <td class="${clsFor(r.composite)}">${comp}</td>
+        <td>${trend}</td><td>${ncs}</td>
+        <td>${fmtNum(r.price)}</td><td>${fmtNum(r.target_mean)}</td>
+        <td class="${r.upside_pct>0?'pos':(r.upside_pct<0?'neg':'zero')}">${fmtPct(r.upside_pct)}</td>
+        <td>${r.latest_action_date||'—'}</td>
+        <td>${r.status==='ok'?'<span class="pill">ok</span>':'<span class="pill cov-no">no coverage</span>'}</td>`;
+      tb.appendChild(tr);
+      const acts=(r.recent_actions||[]).filter(a=>state.age===0||a.date>=monthsAgoISO(state.age));
+      if(acts.length){
+        const d=document.createElement('tr'); d.className='actions';
+        d.innerHTML=`<td colspan="10"><details><summary>${acts.length} action(s) in window</summary><ul>${
+          acts.map(a=>`<li><b>${a.date}</b> — ${a.firm||'?'}: ${a.action||''} ${a.from||'?'} → ${a.to||'?'}${a.target?` (PT ${a.target})`:''}</li>`).join('')
+        }</ul></details></td>`;
+        tb.appendChild(d);
+      }
+    }
+  }
+  function init(rows){
+    state.rows=rows;
+    const classes=[...new Set(rows.map(r=>r.asset_class))].sort();
+    for(const c of classes){const o=document.createElement('option');o.value=c;o.textContent=c;$('cls').appendChild(o);}
+    render();
+  }
+  document.querySelectorAll('th[data-k]').forEach(th=>th.addEventListener('click',()=>{
+    const k=th.dataset.k;
+    if(state.sort===k) state.dir*=-1; else {state.sort=k;state.dir=(k==='symbol'||k==='asset_class')?1:-1;}
+    render();
+  }));
+  $('cls').addEventListener('change',e=>{state.cls=e.target.value;render();});
+  $('age').addEventListener('change',e=>{state.age=parseInt(e.target.value,10);render();});
+  $('q').addEventListener('input',e=>{state.q=e.target.value.trim().toLowerCase();render();});
+  $('cov').addEventListener('change',e=>{state.cov=e.target.checked;render();});
+  fetch('harvest.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+    if(d.generated_utc) $('stamp').textContent='generated '+d.generated_utc.replace('T',' ').slice(0,16)+' UTC';
+    init(d.rows||[]);
+  }).catch(err=>{$('counts').textContent='Failed to load harvest.json: '+err;});
+})();
+</script>
+</body>
+</html>
