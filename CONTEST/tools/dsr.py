@@ -35,22 +35,11 @@ import sys
 # A metric that cannot be valid must not be EMITTED, because every downstream consumer
 # (cron commit message, dashboard, report) cannot tell a refused metric from a real one.
 # Callers get an exception instead of a number.
-MIN_TRIALS_FOR_DSR = 30  # matches this estate's house n<30 = INSUFFICIENT convention
-
-_FIXTURE_RE = re.compile(
-    r"(dummy|fixture|fake|synthetic|placeholder|sample)", re.IGNORECASE
+import dsr_guard  # shared refusal gate - ONE definition for every DSR module here
+from dsr_guard import (  # re-exported so existing callers and tests keep working
+    MIN_TRIALS_FOR_DSR,
+    DSRNotComputable,
 )
-
-
-class DSRNotComputable(RuntimeError):
-    """Raised instead of returning a DSR that cannot be a valid measurement."""
-
-
-def _is_fixture(s):
-    if not s:
-        return False
-    s = str(s)
-    return bool(_FIXTURE_RE.search(s)) or s.lower().startswith("test")
 
 
 def norm_cdf(x):
@@ -77,21 +66,9 @@ def dsr_from_db(db, sr_bench=0.0, use_oos=True, allow_fixtures=False, min_trials
         con.close()
     sharpes = [float(r[0]) for r in rows]
     n = len(sharpes)
-    if not allow_fixtures:
-        bad = [r for r in rows if _is_fixture(r[1]) or _is_fixture(r[2])]
-        if bad:
-            raise DSRNotComputable(
-                "%d of %d ledger rows are fixtures (e.g. run_id=%r family=%r). "
-                "DSR on synthetic trials is not a measurement - refusing to emit one."
-                % (len(bad), n, bad[0][1], bad[0][2])
-            )
-    floor = MIN_TRIALS_FOR_DSR if min_trials is None else min_trials
-    if n < floor:
-        raise DSRNotComputable(
-            "n=%d trials < n_min=%d: cross-trial variance cannot be estimated and the "
-            "expected-maximum deflation is undefined. House convention treats n<30 as "
-            "INSUFFICIENT. Refusing to emit a DSR." % (n, floor)
-        )
+    dsr_guard.check(n, [(r[1], r[2], None) for r in rows],
+                    allow_fixtures=allow_fixtures, min_trials=min_trials,
+                    source=db)
     if n == 0:
         return None, 0, None
     sr_best = max(sharpes)
