@@ -1,0 +1,638 @@
+firm_norm,raw_grade,count,proposed_ordinal,notes
+aci research,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+aegis capital,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+aegis capital,Hold,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+aegis capital,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+alembic global,Neutral,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+alembic global,Overweight,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+arete research,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+arete research,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+arete research,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+argus research,Buy,508,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+argus research,Hold,126,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+argus research,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+argus research,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+argus research,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ascendiant capital,Buy,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ascendiant capital,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ascendiant capital,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+atlantic equities,Neutral,93,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+atlantic equities,Overweight,83,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+atlantic equities,Underweight,28,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+auriga,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+avian securities,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+avian securities,Positive,1,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Positive is direction, not strength; firms use it for Buy or Overweight. Counts from_grade+to_grade occurrences."
+avondale partners,Market Outperform,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+avondale partners,Market Perform,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+avondale partners,Underperform,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+axiom capital,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+b of a securities,Buy,1397,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+b of a securities,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+b of a securities,Neutral,671,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+b of a securities,Underperform,120,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+b riley securities,Buy,45,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+b riley securities,Neutral,52,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+baird,Average,1,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Vague strength, no fixed rank. Counts from_grade+to_grade occurrences."
+baird,Neutral,278,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+baird,Outperform,711,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+baird,Underperform,21,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+barclays,Equal-Weight,949,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+barclays,Equal-weight,12,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+barclays,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+barclays,Overweight,1970,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+barclays,Underperform,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+barclays,Underweight,149,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+barrington research,Outperform,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bb and t capital,Buy,7,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bb and t capital,Hold,10,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bb and t capital,Underweight,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+belus capital,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+belus capital,Hold,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+belus capital,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+benchmark,Buy,256,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+benchmark,Hold,27,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+benchmark,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+benchmark,Overweight,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+benchmark,Sell,32,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+berenberg,Buy,36,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+berenberg,Hold,70,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+berenberg,Sell,33,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bernstein,Buy,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bernstein,Market Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+bernstein,Market Perform,301,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+bernstein,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bernstein,Outperform,408,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bernstein,Underperform,65,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bgb securities,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bgc financial,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bgc financial,Hold,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bmo capital,Market Perform,569,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+bmo capital,Market Weight,1,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Weight-only label; hold-like but not on the frozen 1..5 list. Counts from_grade+to_grade occurrences.
+bmo capital,Outperform,1143,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bmo capital,Perform,1,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Perform without a market/sector qualifier has no fixed rank. Counts from_grade+to_grade occurrences.
+bmo capital,Underperform,38,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bmo capital,Underperformer,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+bnp paribas,Neutral,16,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bnp paribas,Outperform,25,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bnp paribas,Underperform,17,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bnp paribas exane,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+boenning and scattergood,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+brasil plural,Overweight,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+brean capital,Buy,25,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+brean capital,Hold,9,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+btig,Buy,209,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+btig,Neutral,20,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+btig,Sell,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+buckingham research,Buy,47,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+buckingham research,Neutral,49,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+buckingham research,Underperform,10,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+bwg global,Mixed,2,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Mixed has no fixed rank. Counts from_grade+to_grade occurrences.
+bwg global,Positive,2,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Positive is direction, not strength; firms use it for Buy or Overweight. Counts from_grade+to_grade occurrences."
+canaccord genuity,Buy,366,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+canaccord genuity,Hold,94,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+canaccord genuity,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cantor fitzgerald,Buy,16,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cantor fitzgerald,Hold,7,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cantor fitzgerald,Neutral,219,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cantor fitzgerald,Overweight,723,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+capital one,Equal-Weight,4,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+capital one,Overweight,5,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+capital one,Underweight,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+capstone,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+caris and,Above Average,1,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Vague strength, no fixed rank. Counts from_grade+to_grade occurrences."
+caris and,Average,2,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Vague strength, no fixed rank. Counts from_grade+to_grade occurrences."
+caris and,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cascend,Buy,30,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cascend,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cfra,Buy,52,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cfra,Hold,37,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cfra,Sell,20,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cfra,Strong Buy,37,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+charter equity,Buy,5,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+charter equity,Market Outperform,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+charter equity,Market Perform,7,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+charter equity,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+charter equity,Strong Buy,1,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+china renaissance,Buy,13,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+china renaissance,Hold,11,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cibc,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cibc,Neutral,9,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cibc,Outperform,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cibc,Outperformer,7,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+cibc,Sector Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+cibc,Sector Perform,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+cibc,Sector Underperform,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+cicc,Market Perform,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+cicc,Outperform,14,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+citigroup,Buy,1769,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+citigroup,Hold,6,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+citigroup,Neutral,1138,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+citigroup,Sell,55,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+citizens,Market Outperform,82,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+citizens,Market Perform,16,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+citizens capital markets,Market Outperform,12,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+citizens capital markets,Market Perform,8,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+clarkson capital markets,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+clarkson capital markets,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cleveland research,Buy,10,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cleveland research,Neutral,10,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+clsa,Buy,15,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+clsa,Hold,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+clsa,Outperform,35,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+clsa,Sell,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+clsa,Underperform,22,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+collins stewart,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+collins stewart,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+compass point,Buy,16,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+compass point,Neutral,31,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+compass point,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+consumer edge research,Equal-Weight,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+consumer edge research,Overweight,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cowen and,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cowen and,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cowen and,Market Perform,76,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+cowen and,Market Weight,2,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Weight-only label; hold-like but not on the frozen 1..5 list. Counts from_grade+to_grade occurrences.
+cowen and,Neutral,6,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cowen and,Outperform,207,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+cowen and,Underperform,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+craig hallum,Buy,29,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+craig hallum,Hold,15,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+credit agricole,Buy,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+credit agricole,Outperform,6,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+credit agricole,Underperform,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+credit suisse,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+credit suisse,Market Perform,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+credit suisse,Neutral,415,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+credit suisse,Outperform,841,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+credit suisse,Overweight,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+credit suisse,Underperform,64,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+crt capital,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+crt capital,Fair Value,4,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Valuation statement, not a rating. Counts from_grade+to_grade occurrences."
+crt capital,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+da davidson,Buy,292,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+da davidson,Neutral,253,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+da davidson,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+da davidson,Peer Perform,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+da davidson,Underperform,6,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+dahlman rose,Buy,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+dahlman rose,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+daiwa capital,Buy,13,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+daiwa capital,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+daiwa capital,Neutral,41,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+daiwa capital,Outperform,45,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+davenport,Buy,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+davenport,Neutral,4,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+dbs bank,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+deutsche bank,Buy,1145,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+deutsche bank,Hold,641,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+deutsche bank,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+deutsche bank,Outperform,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+deutsche bank,Sell,8,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+dougherty and,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+drexel hamilton,Buy,31,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+drexel hamilton,Hold,20,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+drexel hamilton,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+drexel hamilton,Sell,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+dz bank,Buy,65,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+dz bank,Hold,79,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+dz bank,Sell,24,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+early bird capital,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+edward jones,Buy,27,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+edward jones,Hold,31,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+edward jones,Sell,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+erste group,Buy,25,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+erste group,Hold,25,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+evercore isi group,Buy,30,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+evercore isi group,Equal-Weight,9,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+evercore isi group,Equal-weight,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+evercore isi group,Hold,29,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+evercore isi group,In-Line,252,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+evercore isi group,Outperform,985,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+evercore isi group,Overweight,16,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+evercore isi group,Sell,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+evercore isi group,Underperform,6,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+evercore isi group,Underweight,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+exane bnp paribas,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+exane bnp paribas,Neutral,49,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+exane bnp paribas,Outperform,32,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+exane bnp paribas,Underperform,29,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+fbn securities,Outperform,9,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+fbr capital,Market Perform,43,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+fbr capital,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+fbr capital,Outperform,49,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+fbr capital,Underperform,6,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+first analysis,Overweight,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+firstenergy capital,Market Perform,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+firstenergy capital,Outperform,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+freedom broker,Buy,67,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+freedom broker,Hold,91,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+freedom broker,Sell,10,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+freedom capital markets,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+freedom capital markets,Hold,4,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+freedom capital markets,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+gabelli and,Buy,6,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+gabelli and,Hold,6,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+gilford securities,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+gilford securities,Neutral,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+glj research,Sell,49,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+global equities research,Overweight,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+global hunter securities,Accumulate,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+global hunter securities,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+global hunter securities,Neutral,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+gmp securities,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+gmp securities,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+goldman sachs,Buy,808,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+goldman sachs,Conviction Buy,5,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (strong buy). Counts from_grade+to_grade occurrences.
+goldman sachs,Neutral,428,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+goldman sachs,Sell,106,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+gordon haskett,Accumulate,16,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+gordon haskett,Buy,14,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+gordon haskett,Hold,7,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+green street advistors,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+green street advistors,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+griffin securities,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+griffin securities,Neutral,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+griffin securities,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+guggenheim,Buy,499,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+guggenheim,Neutral,139,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+guggenheim,Sell,77,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hamburger sparkasse,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hamburger sparkasse,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hilliard lyons,Buy,12,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hilliard lyons,Long-Term Buy,9,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Buy modified by horizon; horizon is not part of this scale. Counts from_grade+to_grade occurrences.
+hilliard lyons,Long-term Buy,1,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Buy modified by horizon; horizon is not part of this scale. Counts from_grade+to_grade occurrences.
+hilliard lyons,Neutral,8,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hsbc,Buy,178,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hsbc,Hold,165,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hsbc,Neutral,12,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hsbc,Overweight,11,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hsbc,Reduce,44,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+hsbc,Underweight,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+huber research,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+huber research,Overweight,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+huber research,Underweight,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+hudson square,Buy,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hudson square,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+hudson square,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+iberia capital partners,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+iberia capital partners,Sector Perform,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+imperial capital,In-Line,19,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+imperial capital,Outperform,23,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+imperial capital,Underperform,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+independent research,Buy,5,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+independent research,Hold,6,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+independent research,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+isi group,Buy,39,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+isi group,Cautious,3,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Weak negative/neutral, no fixed rank. Counts from_grade+to_grade occurrences."
+isi group,Hold,18,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+isi group,Neutral,20,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+isi group,Overweight,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+isi group,Strong Buy,7,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+itau bba,Market Perform,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+itau bba,Outperform,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+itau bba,Underperform,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+j safra sarasin,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+j safra sarasin,Neutral,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+janco partners,Buy,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+janco partners,Strong Buy,2,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+janney montgomery scott,Buy,16,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+janney montgomery scott,Neutral,12,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jbl advisors,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jefferies,Buy,1047,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jefferies,Hold,527,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jefferies,Neutral,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jefferies,Overweight,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jefferies,Underperform,49,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jefferies,Underweight,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+jg capital,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jg capital,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jg capital,Neutral,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jg capital,Overweight,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jg capital,Underweight,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+jmp securities,Market Outperform,350,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+jmp securities,Market Perform,71,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+jmp securities,Market Underperform,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+jmp securities,Outperform,13,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jmp securities,Underperform,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+johnson rice,Accumulate,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+johnson rice,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+johnson rice,Equal-Weight,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+johnson rice,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+johnson rice,Overweight,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jp morgan,Neutral,745,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jp morgan,Overweight,1552,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+jp morgan,Underweight,114,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+kalinowski research,Buy,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+kalinowski research,Neutral,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+keefe bruyette and woods,Market Perform,118,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+keefe bruyette and woods,Outperform,166,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+keefe bruyette and woods,Underperform,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+keybanc,Buy,7,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+keybanc,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+keybanc,Overweight,909,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+keybanc,Sector Weight,89,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Weight-only label; hold-like but not on the frozen 1..5 list. Counts from_grade+to_grade occurrences.
+keybanc,Underweight,36,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+kgi securities,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+kgi securities,Neutral,15,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+kgi securities,Outperform,20,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+klr group,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+klr group,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ladenburg thalmann,Buy,8,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ladenburg thalmann,Hold,4,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ladenburg thalmann,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ladenburg thalmann,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+lake street,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+lazard,Buy,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+lazard,Neutral,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+lbbw research,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+lbbw research,Hold,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+lbbw research,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+leerink partners,Market Perform,7,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+leerink partners,Outperform,31,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+leerink swann,Market Perform,18,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+leerink swann,Outperform,17,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+lightshed partners,Buy,5,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+lightshed partners,Neutral,5,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+lightshed partners,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+longbow research,Buy,21,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+longbow research,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+longbow research,Neutral,22,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+longbow research,Underperform,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+loop capital,Buy,224,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+loop capital,Hold,122,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+loop capital,Sell,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mackie research,Buy,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mackie research,Hold,6,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mackie research,Sell,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+macquarie,Neutral,145,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+macquarie,Outperform,173,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+macquarie,Underperform,26,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mainfirst bank,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mainfirst bank,Underperform,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+maxim group,Buy,16,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+maxim group,Hold,10,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+maxim group,Market Perform,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+maxim group,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+maxim group,Underperform,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mcadams wright ragen,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mcadams wright ragen,Hold,8,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mcadams wright ragen,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mcnicoll lewis vlak,Hold,4,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mediobanca securities,Neutral,4,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mediobanca securities,Outperform,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mediobanca securities,Underperform,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+melius research,Buy,52,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+melius research,Hold,17,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+melius research,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+meredith whitney advisory group,Outperform,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+miller tabak,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+miller tabak,Hold,6,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+miller tabak,Neutral,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mizuho,Buy,523,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mizuho,Neutral,338,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mizuho,Outperform,355,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mizuho,Underperform,9,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mkm partners,Buy,77,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mkm partners,Neutral,32,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+mkm partners,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+moffettnathanson,Buy,23,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+moffettnathanson,Hold,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+moffettnathanson,Market Perform,9,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+moffettnathanson,Neutral,25,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+moffettnathanson,Outperform,7,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+moffettnathanson,Sell,8,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+moffettnathanson,Underperform,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+monness crespi hardt,Buy,74,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+monness crespi hardt,Neutral,10,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+monness crespi hardt,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+morgan keegan,Outperform,5,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+morgan stanley,Equal-Weight,1318,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+morgan stanley,Equal-weight,13,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+morgan stanley,In-line,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+morgan stanley,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+morgan stanley,Overweight,2538,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+morgan stanley,Underperform,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+morgan stanley,Underweight,246,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+needham,Buy,528,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+needham,Hold,91,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+needham,Strong Buy,5,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+needham,Underperform,15,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+new street research,Buy,27,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+new street research,Neutral,24,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+new street research,Sell,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+nomura,Buy,240,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+nomura,Hold Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; combined hold/neutral label. Counts from_grade+to_grade occurrences.
+nomura,Neutral,152,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+nomura,Reduce,20,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+nomura instinet,Buy,5,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+nomura instinet,Neutral,13,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+northcoast research,Buy,21,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+northcoast research,Neutral,23,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+northcoast research,Sell,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+northland capital markets,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+northland capital markets,Market Perform,45,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+northland capital markets,Outperform,42,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+northland capital markets,Underperform,5,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+oddo securities,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+odeon capital,Buy,20,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+odeon capital,Hold,27,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+odeon capital,Sell,6,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+oppenheimer,Market Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+oppenheimer,Market Perform,4,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+oppenheimer,Outperform,1071,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+oppenheimer,Outperformer,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+oppenheimer,Overweight,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+oppenheimer,Perform,122,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Perform without a market/sector qualifier has no fixed rank. Counts from_grade+to_grade occurrences.
+oppenheimer,Underperform,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+oppenheimer,Underweight,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+oppenheimer,market perform,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+oracle investment research,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+oracle investment research,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+oracle investment research,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+otr global,Mixed,17,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Mixed has no fixed rank. Counts from_grade+to_grade occurrences.
+otr global,Positive,17,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Positive is direction, not strength; firms use it for Buy or Overweight. Counts from_grade+to_grade occurrences."
+oxen group,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+oxen group,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+pacific crest,Outperform,20,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+pacific crest,Overweight,24,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+pacific crest,Sector Perform,11,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+pacific crest,Sector Weight,3,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Weight-only label; hold-like but not on the frozen 1..5 list. Counts from_grade+to_grade occurrences.
+pacific crest,Underperform,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+phillip securities,Accumulate,4,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+phillip securities,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+phillip securities,Neutral,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+phillip securities,Reduce,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+phoenix partners group,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+piper sandler,Buy,12,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+piper sandler,Hold,13,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+piper sandler,Neutral,338,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+piper sandler,Outperform,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+piper sandler,Overweight,1117,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+piper sandler,Perform,1,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Perform without a market/sector qualifier has no fixed rank. Counts from_grade+to_grade occurrences.
+piper sandler,Underweight,19,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+pivotal research,Buy,68,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+pivotal research,Hold,25,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+pivotal research,Sell,8,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+portales partners,Outperform,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+portales partners,Sector Perform,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+portales partners,Underperform,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+r5 capital,Buy,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+r5 capital,Hold,4,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+r5 capital,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rafferty capital,Buy,8,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rafferty capital,Hold,8,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rafferty capital,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+raymond james,Market Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+raymond james,Market Perform,81,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+raymond james,Outperform,630,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+raymond james,Strong Buy,281,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+raymond james,Underperform,15,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rbc capital,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rbc capital,Outperform,1348,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rbc capital,Sector Perform,605,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+rbc capital,Sector Weight,1,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Weight-only label; hold-like but not on the frozen 1..5 list. Counts from_grade+to_grade occurrences.
+rbc capital,Top Pick,11,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (strong buy). Counts from_grade+to_grade occurrences.
+rbc capital,Underperform,34,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+redburn atlantic,Buy,18,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+redburn atlantic,Neutral,15,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+redburn atlantic,Sell,8,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+redburn partners,Buy,8,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+redburn partners,Neutral,8,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+redburn partners,Sell,9,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rhino trading,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rosenblatt,Buy,473,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rosenblatt,Neutral,164,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rosenblatt,Outperform,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rosenblatt,Sell,56,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+roth capital,Buy,41,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+roth capital,Neutral,18,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+roth capital,Sell,5,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+roth mkm,Buy,69,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+roth mkm,Neutral,33,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rothschild and,Buy,9,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rothschild and,Neutral,4,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rothschild and,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rs platou markets,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+rs platou markets,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+s and p capital iq,Buy,5,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+s and p capital iq,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+s and p capital iq,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+s and p capital iq,Strong Buy,2,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+sbg securities,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+sbg securities,Sell,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+scotiabank,Market Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+scotiabank,Market Perform,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+scotiabank,Outperform,6,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+scotiabank,Sector Outperform,257,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+scotiabank,Sector Perform,184,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+scotiabank,Sector Underperform,9,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+seaport global,Accumulate,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+seaport global,Buy,55,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+seaport global,Neutral,47,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+seaport global,Sell,11,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+sidoti and,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+simmons and,Neutral,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+simmons and,Overweight,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+smbc nikko,Outperform,5,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+societe generale,Buy,50,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+societe generale,Hold,60,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+societe generale,Sell,27,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+standpoint research,Buy,41,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+standpoint research,Hold,38,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+standpoint research,Sell,9,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+stephens and,Equal-Weight,59,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+stephens and,Equal-weight,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+stephens and,Overweight,102,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+stephens and,Underweight,2,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+sterne agee,Buy,37,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+sterne agee,Neutral,34,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+sterne agee,Underperform,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+stifel,Buy,906,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+stifel,Hold,382,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+stifel,Sell,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+stonex,Buy,25,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+stonex,Hold,8,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+summit insights group,Buy,14,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+summit insights group,Hold,14,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+summit insights group,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+suntrust robinson humphrey,Buy,96,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+suntrust robinson humphrey,Hold,34,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+suntrust robinson humphrey,Neutral,69,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+suntrust robinson humphrey,Reduce,4,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+susquehanna,Negative,8,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Negative is direction, not strength; firms use it for Sell or Underweight. Counts from_grade+to_grade occurrences."
+susquehanna,Neutral,128,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+susquehanna,Positive,493,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Positive is direction, not strength; firms use it for Buy or Overweight. Counts from_grade+to_grade occurrences."
+svb leerink,Market Perform,31,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+svb leerink,Outperform,70,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+svb leerink,Underperform,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+svb securities,Outperform,10,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+td cowen,Buy,504,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+td cowen,Hold,192,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+td cowen,Market Perform,37,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+td cowen,Outperform,137,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+td securities,Buy,23,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+td securities,Hold,27,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+telsey advisory group,Market Perform,64,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+telsey advisory group,Outperform,405,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+thinkequity,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+thinkequity,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+tigress financial,Buy,180,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+tigress financial,Neutral,25,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+tigress financial,Strong Buy,76,5,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+tigress financial,Underperform,5,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+topeka capital,Buy,13,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+topeka capital,Hold,10,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+topeka capital,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+truist securities,Buy,913,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+truist securities,Hold,403,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+truist securities,Sell,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+tudor pickering,Buy,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+tudor pickering,Hold,5,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+tudor pickering,Sell,5,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ubs,Action List Buy,1,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Firm-specific buy variant; not on the frozen list. Counts from_grade+to_grade occurrences.
+ubs,Buy,1645,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ubs,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ubs,Neutral,977,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+ubs,Sell,105,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+vertical research,Buy,14,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+vertical research,Hold,11,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+vertical research,Mixed,1,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Mixed has no fixed rank. Counts from_grade+to_grade occurrences.
+vertical research,Positive,1,,"Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Positive is direction, not strength; firms use it for Buy or Overweight. Counts from_grade+to_grade occurrences."
+vertical research,Sell,1,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+vtb capital,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wallachbeth capital,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wedbush,Neutral,179,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wedbush,Outperform,864,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wedbush,Underperform,22,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wellington shields,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wells fargo,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wells fargo,Equal-Weight,683,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wells fargo,Market Perform,116,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+wells fargo,Outperform,154,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wells fargo,Overweight,1367,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wells fargo,Underperform,5,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wells fargo,Underweight,81,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (sell-side). Counts from_grade+to_grade occurrences.
+westpark capital,Buy,21,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+westpark capital,Hold,9,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+william blair,Buy,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+william blair,Market Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (buy-side). Counts from_grade+to_grade occurrences.
+william blair,Market Perform,21,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+william blair,Outperform,25,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+william blair,Underperform,3,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+williams capital,Buy,6,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+williams capital,Hold,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+williams capital,Market Perform,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+williams capital,Outperform,2,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+williams capital,Perform,1,,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; BLANK: Perform without a market/sector qualifier has no fixed rank. Counts from_grade+to_grade occurrences.
+williams trading,Buy,3,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+williams trading,Hold,3,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+williams trading,Sell,12,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wolfe research,Outperform,236,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wolfe research,Peer Perform,106,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; synonym (hold-equivalent). Counts from_grade+to_grade occurrences.
+wolfe research,Underperform,29,2,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wunderlich securities,Buy,14,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+wunderlich securities,Hold,19,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+zelman,Buy,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+zelman,Hold,2,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+zelman and assoc,Neutral,1,3,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
+zelman and assoc,Outperform,1,4,Yahoo upgradeDowngradeHistory 2026-11-24T19:36:28+00:00; exact. Counts from_grade+to_grade occurrences.
