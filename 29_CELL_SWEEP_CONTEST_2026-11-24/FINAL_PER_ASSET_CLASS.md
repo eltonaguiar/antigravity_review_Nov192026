@@ -10,13 +10,29 @@ The sweep ran **crypto-first**. Of 1000 ledger cells, the crypto class is the on
 
 | asset class | in ledger | resolved | measured | KILL | PASS | median net bp | best cell |
 |---|---:|---:|---:|---:|---:|---:|---|
+| **EQUITY** | 400 | 12 | 6 | 4 | 0 | -20.69 | `SPY/donchian/1d` -14.86 |
+| **FOREX** | 150 | 6 | 2 | 2 | 0 | -22.25 | `EURUSD/trend_pullback/1d` -21.66 |
 | **CRYPTO** | 350 | 107 | 28 | 12 | 0 | -31.09 | `SOLUSDT/breakout/1d` +71.90 |
 | **BOND_ETF** | 50 | 0 | 0 | 0 | 0 | n/a | — |
 | **COMMODITY_ETF** | 50 | 0 | 0 | 0 | 0 | n/a | — |
-| **EQUITY** | 400 | 1 | 0 | 0 | 0 | n/a | — |
-| **FOREX** | 150 | 1 | 0 | 0 | 0 | n/a | — |
 
 ## Per-class commentary
+
+### EQUITY
+
+- Cells measured: 6 (6 more had n<30, 0 blocked)
+- Verdicts: **4 KILL**, **0 PASS**
+- Median net bp/trade after 26bp: **-20.69**
+- Best: `SPY/donchian/1d` -14.86bp (DSR 0.0, p 0.209)
+- Worst: `SPY/trend_pullback/1d` -29.44bp
+
+### FOREX
+
+- Cells measured: 2 (5 more had n<30, 0 blocked)
+- Verdicts: **2 KILL**, **0 PASS**
+- Median net bp/trade after 26bp: **-22.25**
+- Best: `EURUSD/trend_pullback/1d` -21.66bp (DSR 0.0, p 0.105)
+- Worst: `EURUSD/vol_compression/1d` -22.84bp
 
 ### CRYPTO
 
@@ -34,12 +50,4 @@ No measurable cells (0 blocked, 0 insufficient trades). **No finding is possible
 ### COMMODITY_ETF
 
 No measurable cells (0 blocked, 0 insufficient trades). **No finding is possible for this class** — stating otherwise would be fabrication.
-
-### EQUITY
-
-No measurable cells (0 blocked, 1 insufficient trades). **No finding is possible for this class** — stating otherwise would be fabrication.
-
-### FOREX
-
-No measurable cells (0 blocked, 1 insufficient trades). **No finding is possible for this class** — stating otherwise would be fabrication.
 

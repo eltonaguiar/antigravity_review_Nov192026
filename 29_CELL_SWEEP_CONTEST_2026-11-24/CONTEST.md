@@ -11,14 +11,14 @@ This is a **ranking of a noisy quantity**, published because it was asked for. R
 | 5 | `BTCUSDT/donchian/1d` | CRYPTO | 48 | +1.66 | [-65.08, 76.07] | 0.214 | 0.0001 | not run | INCONCLUSIVE |
 | 6 | `SOLUSDT/bb_meanrev/1d` | CRYPTO | 54 | -7.58 | [-140.11, 129.3] | 0.365 | 0.0001 | not run | INCONCLUSIVE |
 | 7 | `BTCUSDT/breakout/1d` | CRYPTO | 82 | -12.18 | [-63.86, 40.05] | 0.314 | 0.0 | not run | INCONCLUSIVE |
-| 8 | `BTCUSDT/donchian/1h` | CRYPTO | 63 | -19.34 | [-31.7, -7.07] | 0.078 | 0.0 | not run | KILL |
-| 9 | `ETHUSDT/bb_meanrev/1d` | CRYPTO | 59 | -19.39 | [-128.54, 100.54] | 0.428 | 0.0 | not run | INCONCLUSIVE |
-| 10 | `SOLUSDT/vwap_reversion/1d` | CRYPTO | 154 | -23.68 | [-91.04, 42.46] | 0.52 | 0.0 | not run | INCONCLUSIVE |
-| 11 | `ETHUSDT/donchian/1d` | CRYPTO | 37 | -23.87 | [-115.89, 69.96] | 0.473 | 0.0 | not run | INCONCLUSIVE |
-| 12 | `BTCUSDT/vwap_reversion/1h` | CRYPTO | 321 | -27.08 | [-33.88, -20.05] | 0.444 | 0.0 | not run | KILL |
-| 13 | `BTCUSDT/momentum_12_1/1h` | CRYPTO | 557 | -29.62 | [-33.61, -25.36] | 0.922 | 0.0 | not run | KILL |
-| 14 | `ETHUSDT/momentum_12_1/1d` | CRYPTO | 242 | -30.95 | [-78.8, 19.54] | 0.619 | 0.0 | not run | INCONCLUSIVE |
-| 15 | `BTCUSDT/bb_meanrev/1h` | CRYPTO | 128 | -31.24 | [-43.85, -19.25] | 0.872 | 0.0 | not run | KILL |
+| 8 | `SPY/donchian/1d` | EQUITY | 121 | -14.86 | [-25.85, -3.34] | 0.209 | 0.0 | not run | KILL |
+| 9 | `SPY/donchian/1w` | EQUITY | 40 | -15.72 | [-53.62, 22.31] | 0.685 | 0.0 | not run | INCONCLUSIVE |
+| 10 | `SPY/breakout/1d` | EQUITY | 163 | -18.67 | [-28.79, -8.15] | 0.354 | 0.0 | not run | KILL |
+| 11 | `BTCUSDT/donchian/1h` | CRYPTO | 63 | -19.34 | [-31.7, -7.07] | 0.078 | 0.0 | not run | KILL |
+| 12 | `ETHUSDT/bb_meanrev/1d` | CRYPTO | 59 | -19.39 | [-128.54, 100.54] | 0.428 | 0.0 | not run | INCONCLUSIVE |
+| 13 | `EURUSD/trend_pullback/1d` | FOREX | 117 | -21.66 | [-30.71, -12.93] | 0.105 | 0.0 | not run | KILL |
+| 14 | `SPY/vol_compression/1d` | EQUITY | 75 | -22.71 | [-36.36, -9.52] | 0.588 | 0.0 | not run | KILL |
+| 15 | `EURUSD/vol_compression/1d` | FOREX | 53 | -22.84 | [-32.52, -13.12] | 0.25 | 0.0 | not run | KILL |
 
 ## Contest winner: nobody
 
