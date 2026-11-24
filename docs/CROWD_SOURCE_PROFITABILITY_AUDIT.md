@@ -87,6 +87,35 @@ inflows since late September.
 This is **context, not a pick source**: high transparency and attribution, zero actionable
 calls, so it cannot be scored on realised returns.
 
+## 3b. openPR press release — “7 Best Meme Coins to Buy” (2026-11-23)
+
+**Source:** https://www.openpr.com/news/4697189/from-market-favourites-to-new-contenders-7-best-meme-coins-to-buy
+— paid release distributed by “Crypto Presale PR”; published **2026-11-23 11:52 +01:00**. Picks:
+DOGE, SHIB, PEPE, BONK, WIF, FLOKI, plus **Apeing ($APEING) Stage-13 presale** at $0.00095.
+
+**Rule (frozen):** entry at the close of the first full 1h Binance bar after publication; latest
+close; 20 bp round trip; BTC same window. This is a **~32-hour** window, so it cannot rank the
+source; it can only catch immediate damage.
+
+| asset | return since publication | excess vs BTC | quoted Nov-19 vs actual close |
+|---|---:|---:|---:|
+| DOGE | −0.56% | +1.86 pp | +1.24% |
+| SHIB | −1.11% | +1.31 pp | +0.16% |
+| PEPE | −1.45% | +0.97 pp | +0.92% |
+| BONK | −0.93% | +1.50 pp | +2.16% |
+| WIF | −1.22% | +1.20 pp | +1.50% |
+| FLOKI | −1.51% | +0.91 pp | +2.01% |
+| BTC | −2.42% | — | — |
+| APEING | **unmeasurable** (presale, no market price) | — | — |
+
+All six measurable picks fell in absolute terms over 32h, but all beat a falling BTC by 0.9–1.9 pp.
+That is not a win; it is beta with a short window. The quoted Nov-19 prices are 0.2–2.2% above
+the actual daily close — consistent with intraday quoting, not fabricated, but not entry prices.
+
+**Source quality:** transparency 1/2 (paid release, no author), specificity 2/2 (named assets,
+dated prices, targets), independence **0/2** (promotes Apeing and is distributed by a presale PR
+service), verifiability 2/2 (timestamped and price-checkable), track record **0/2** → **5/10**.
+
 ## 4. Source ranking (quality vs measured edge)
 
 | source | type | quality | measured edge |
@@ -95,6 +124,7 @@ calls, so it cannot be scored on realised returns.
 | Polymarket crowd | market-implied | high (prices, resolutions) | **−15.96%/market, CI < 0** |
 | HARVEST analyst consensus | monthly sell-side | medium (71 names, provenance) | 21d BUY +0.589% q=0.135; nothing q<0.05 |
 | bmic.ai listicle | sponsored listicle | **4/10** | −22.9% mean to date; 4/5 below BTC |
+| openPR / Apeing release | paid press release | **5/10** | −0.6% to −1.5% in 32h; all beat BTC; too short |
 | Copy-trading leaderboards | self-reported | low (survivorship) | not measured; no PIT data |
 
 **Rule for future sources:** do not rank a source by how confident it sounds. Require a dated

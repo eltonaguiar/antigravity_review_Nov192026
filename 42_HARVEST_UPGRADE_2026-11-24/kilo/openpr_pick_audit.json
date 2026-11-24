@@ -1,0 +1,109 @@
+{
+ "source": "https://www.openpr.com/news/4697189/from-market-favourites-to-new-contenders-7-best-meme-coins-to-buy",
+ "publication": "2026-11-23T11:52:35+01:00",
+ "entry": "first full 1h close after publication",
+ "cost_bps": 20,
+ "assets": {
+  "DOGE": {
+   "entry": 0.05556,
+   "last": 0.05525,
+   "ret_since_pub_pct": -0.558,
+   "ret_since_pub_net20bp_pct": -0.758,
+   "bars": 32,
+   "quoted_nov19": 0.05895,
+   "actual_nov19_close": 0.05823,
+   "quoted_vs_actual_pct": 1.24,
+   "excess_vs_btc_pp": 1.863
+  },
+  "SHIB": {
+   "entry": 3.61e-06,
+   "last": 3.57e-06,
+   "ret_since_pub_pct": -1.108,
+   "ret_since_pub_net20bp_pct": -1.308,
+   "bars": 32,
+   "quoted_nov19": 3.796e-06,
+   "actual_nov19_close": 3.79e-06,
+   "quoted_vs_actual_pct": 0.16,
+   "excess_vs_btc_pp": 1.313
+  },
+  "PEPE": {
+   "entry": 3.45e-06,
+   "last": 3.4e-06,
+   "ret_since_pub_pct": -1.449,
+   "ret_since_pub_net20bp_pct": -1.649,
+   "bars": 32,
+   "quoted_nov19": 3.744e-06,
+   "actual_nov19_close": 3.71e-06,
+   "quoted_vs_actual_pct": 0.92,
+   "excess_vs_btc_pp": 0.972
+  },
+  "BONK": {
+   "entry": 2.16e-06,
+   "last": 2.14e-06,
+   "ret_since_pub_pct": -0.926,
+   "ret_since_pub_net20bp_pct": -1.126,
+   "bars": 32,
+   "quoted_nov19": 2.36e-06,
+   "actual_nov19_close": 2.31e-06,
+   "quoted_vs_actual_pct": 2.16,
+   "excess_vs_btc_pp": 1.495
+  },
+  "WIF": {
+   "entry": 0.1231,
+   "last": 0.1216,
+   "ret_since_pub_pct": -1.219,
+   "ret_since_pub_net20bp_pct": -1.419,
+   "bars": 32,
+   "quoted_nov19": 0.133682,
+   "actual_nov19_close": 0.1317,
+   "quoted_vs_actual_pct": 1.5,
+   "excess_vs_btc_pp": 1.202
+  },
+  "FLOKI": {
+   "entry": 1.652e-05,
+   "last": 1.627e-05,
+   "ret_since_pub_pct": -1.513,
+   "ret_since_pub_net20bp_pct": -1.713,
+   "bars": 32,
+   "quoted_nov19": 1.773e-05,
+   "actual_nov19_close": 1.738e-05,
+   "quoted_vs_actual_pct": 2.01,
+   "excess_vs_btc_pp": 0.908
+  },
+  "BTC": {
+   "entry": 61430.91,
+   "last": 59943.68,
+   "ret_since_pub_pct": -2.421,
+   "ret_since_pub_net20bp_pct": -2.621,
+   "bars": 32,
+   "quoted_nov19": null,
+   "actual_nov19_close": 61986.73,
+   "quoted_vs_actual_pct": null
+  }
+ },
+ "btc_ret_since_pub_pct": -2.421,
+ "apeing": "presale at $0.00095; no public market price -> unmeasurable",
+ "source_quality": {
+  "transparency": {
+   "score": 1,
+   "note": "paid press release on openPR; distributor 'Crypto Presale PR'; no author"
+  },
+  "specificity": {
+   "score": 2,
+   "note": "7 named assets, quoted Nov-19 prices, several Dec-2026 targets"
+  },
+  "independence": {
+   "score": 0,
+   "note": "promotes Apeing presale; the release is by a crypto presale PR service"
+  },
+  "verifiability": {
+   "score": 2,
+   "note": "dated publication timestamp and quoted prices can be checked"
+  },
+  "measurable_track_record": {
+   "score": 0,
+   "note": "no prior calls or outcomes"
+  },
+  "total_5": 5
+ }
+}
