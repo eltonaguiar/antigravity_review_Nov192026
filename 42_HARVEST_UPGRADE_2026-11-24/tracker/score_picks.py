@@ -67,7 +67,11 @@ def series_after(symbol, published_at):
         idx = [d for d in df.index if d.date() >= pub.date()]
         mode = "same_day_fallback"
         if not idx:
-            return None
+            # Market has not traded since the pick was published (equities close overnight and
+            # weekends). This is a pending entry, not a failure and not a zero return.
+            return {"pending": True,
+                    "reason": f"no session has traded at or after {pub.date()} (last bar "
+                              f"{df.index[-1].date()}); first mark on the next open"}
     entry = idx[0]
     entry_open = float(df.loc[entry, "Open"])
     last_close = float(df["Close"].iloc[-1])
@@ -105,7 +109,7 @@ def score(rows):
             legs, missing = [], []
             for m in r["basket"]:
                 s = series_after(m, r["published_at"])
-                if s:
+                if s and not s.get("pending"):
                     legs.append(s["last_close"] / s["entry_open"] - 1)
                 else:
                     missing.append(m)
@@ -120,6 +124,11 @@ def score(rows):
                        raw_pct=round(raw * 100, 3), legs=len(legs), missing_members=missing)
         else:
             s = series_after(r["symbol"], r["published_at"])
+            if s and s.get("pending"):
+                rec.update(scorable=False, status="pending_entry", reason=s["reason"],
+                           net_bps=None, excess_bps=None)
+                out.append(rec)
+                continue
             if not s:
                 rec.update(scorable=False, reason="no price bars after publish date (symbol may be dead)",
                            net_bps=None, excess_bps=None)
