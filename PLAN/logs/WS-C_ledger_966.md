@@ -54,29 +54,47 @@ run on one price series. Shared `bars` is a property of the *data*, not of the *
 
 ## Duplication that is real: `breakout` and `donchian` are the same computation
 
-Comparing every shared `(symbol, horizon)` pair, on `(n, net_mean_bp, ci95_bp, permutation_p, dsr, verdict)`:
+> **CORRECTED 2026-11-24.** The first version of this section said "pairs compared: 100,
+> IDENTICAL stats: 100" and listed CI95/p columns. Those numbers were wrong on two counts, and
+> the column values could not have come from this ledger: only **88 of the 966 files carry any
+> metric field at all**, and 91 breakout/donchian pairs exist, not 100. Re-derived below with
+> the figures the data actually supports.
 
-```
-pairs compared  : 100
-IDENTICAL stats : 100
-differing       : 0
-```
+There are **91** shared `(symbol, horizon)` pairs between `breakout` and `donchian`.
 
-Not "similar". Identical to the last digit, on every one of 100 pairs:
+| comparison basis | pairs | identical | differing |
+|---|---:|---:|---:|
+| pairs carrying metrics (`n`, `net_mean_bp`, `dsr`, `verdict`) | **9** | **9** | 0 |
+| pairs compared only on `(verdict, bars, reason)` — no metrics present | 82 | 82 | 0 |
 
-| cell | n | net_mean_bp | CI95 | p | DSR |
-|---|---:|---:|---|---:|---:|
-| BTCUSDT/1d (both) | 13 | 128.442 | [−66.513, 340.261] | 0.2722 | 0.0181 |
-| BTCUSDT/4h (both) | 16 | −54.003 | [−132.655, 25.929] | 0.2316 | 0.0 |
-| ETHUSDT/1w (both) | 2 | 2488.382 | [527.009, 4449.755] | 0.4865 | — |
-| DOGEUSDT/1d (both) | 4 | 225.433 | [−670.961, 1359.966] | 0.868 | — |
+**The 9 metric-bearing pairs are the evidence.** They are real measurements, not empty cells:
 
-Two strategies that never disagree on 100 independent symbol/horizon combinations are not two
-strategies. Either `donchian` calls the same breakout function, or one name is vestigial.
+| cell | n | net_mean_bp | DSR | verdict | git_sha (breakout vs donchian) |
+|---|---:|---:|---:|---|---|
+| BTCUSDT/1d | 13 | 128.442 | 0.0181 | KILLED | `9ddb420` vs `4383303` |
+| BTCUSDT/1h | 42 | −59.190 | 0.0 | KILLED | `9ddb420` vs `9ddb420` |
+| BTCUSDT/4h | 16 | −54.003 | 0.0 | KILLED | `9ddb420` vs `9ddb420` |
+| BTCUSDT/1w | 2 | −327.260 | — | KILLED | `9ddb420` vs `4383303` |
+| ETHUSDT/1d | 17 | −18.469 | 0.0007 | KILLED | `9ddb420` vs `4383303` |
+| ETHUSDT/1w | 2 | 2488.382 | — | KILLED | `9ddb420` vs `4383303` |
+| DOGEUSDT/1d | 4 | 225.433 | — | KILLED | `9ddb420` vs `4383303` |
+| SOLUSDT/1d | 7 | 66.235 | — | KILLED | `9ddb420` vs `4383303` |
+| XRPUSDT/1d | 3 | −235.398 | — | KILLED | `9ddb420` vs `4383303` |
 
-**Consequence:** the grid advertises 11 strategies and delivers **10 effective ones**. Every
-multiple-comparison count in this programme that used 11 per symbol is inflated, and the DSR's
-trial count is correspondingly overstated.
+Two strategies agreeing on nine independent symbol/horizon combinations, to six decimal places, on
+non-trivial values (n=13, 42, 17, 16, 7, 4, 3, 2), are not two strategies. **7 of the 9 pairs came
+from *different* git shas** — different code versions, different runs — and still produced
+byte-equal statistics. That is stronger evidence of a shared code path, not weaker.
+
+**The other 82 pairs prove nothing on their own**, and the first version of this section wrongly
+counted them as confirmation. Cells that are `BLOCKED_NO_DATA` on the same symbol share `bars` and
+`reason` by construction, so 82 identical verdicts is what you would see even if the two strategies
+were completely different. This is the same false-positive trap that produced the withdrawn
+"182 distinct results" figure — fingerprinting on fields that cannot differ.
+
+**Consequence, still standing:** the grid advertises 11 strategies and delivers **10 effective
+ones**. Any multiple-comparison count that used 11 per symbol is inflated, and the DSR's trial
+count is correspondingly overstated.
 
 ## Two incompatible schemas in one directory
 
