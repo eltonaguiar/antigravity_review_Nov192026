@@ -516,9 +516,14 @@ fetch('data/harvest_signals.json', { cache: 'no-store' })
   function fmt(v,d=2){return v==null?'—':(v>=0?'+':'')+v.toFixed(d);}
   fetch('data/harvest_backtest.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
     const rows=[];
-    for(const [lab,x] of Object.entries(d.by_label||{})){
+    function bh(ps){const m=ps.length;const order=[...ps.keys()].sort((i,j)=>ps[i]-ps[j]);const q=new Array(m);let prev=1;
+      for(let r=m-1;r>=0;r--){const i=order[r];const v=Math.min(prev,ps[i]*m/(r+1));q[i]=v;prev=v;}return q;}
+    const E=Object.entries(d.by_label||{});
+    const q21=bh(E.map(([l,x])=>((x['21d']||{}).p_one_sided ?? 1)));
+    const q63=bh(E.map(([l,x])=>((x['63d']||{}).p_one_sided ?? 1)));
+    E.forEach(([lab,x],idx)=>{
       const a=x['21d']||{}, b=x['63d']||{};
-      const qa=(x.q||{})['21d'], qb=(x.q||{})['63d'];
+      const qa=q21[idx], qb=q63[idx];
       rows.push(`<tr><td><b>${lab}</b></td>
         <td class="num">${a.n??'—'}</td><td class="num">${fmt(a.mean_pct)}%</td>
         <td class="num">${a.ci95_pct?'['+fmt(a.ci95_pct[0])+','+fmt(a.ci95_pct[1])+']':'—'}</td>
@@ -526,7 +531,7 @@ fetch('data/harvest_signals.json', { cache: 'no-store' })
         <td class="num">${b.n??'—'}</td><td class="num">${fmt(b.mean_pct)}%</td>
         <td class="num">${b.ci95_pct?'['+fmt(b.ci95_pct[0])+','+fmt(b.ci95_pct[1])+']':'—'}</td>
         <td class="num">${qb==null?'—':qb.toFixed(3)}</td></tr>`);
-    }
+    });
     $('overall-rows').innerHTML=rows.join('');
   }).catch(e=>{$('overall-rows').innerHTML='<tr><td colspan="9">Failed to load harvest_backtest.json</td></tr>';});
   let H=[];
