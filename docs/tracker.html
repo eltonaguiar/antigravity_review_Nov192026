@@ -54,10 +54,11 @@ paper research only, not investment advice</div>
         published 2026-11-24, so they sit at <code>pending_entry</code> — no number is invented for them.</li>
     <li><b>Two marks exist, both day-zero:</b> AUDJPY −12.7 bp net, ENJ −121.2 bp net but
         <b>+185.4 bp versus BTC</b>.</li>
-    <li><b>The important finding is a sample-size one.</b> A 97.6% hit rate on 41 trades at a 22:1
-        loss-to-win ratio has a break-even loss rate of 4.35%, but its 95% upper bound is
-        <b>12.6%</b>. That record cannot be distinguished from a losing strategy. It needs roughly
-        <b>141 trades</b> before it can be.</li>
+    <li><b>The important finding is a sample-size one.</b> A 97.6% hit rate at a 22:1 loss-to-win
+        ratio has a break-even loss rate of 4.35%, but at 41 trades its 95% upper bound is
+        <b>12.6%</b> — indistinguishable from a losing strategy until roughly <b>141 trades</b>.
+        <b>Both the sample size and the loss ratio are assumed, not supplied</b> — only the two
+        headline hit rates were given. See the assumptions note below.</li>
     <li><b>Named analyst track records are not purchasable at zero cost.</b> The free feed returns
         monthly counts with no name, no firm and no date. Any page claiming per-analyst skill on that
         data is fabricating it.</li>
@@ -91,6 +92,14 @@ wins and a low hit rate with large wins are different products rather than bette
 </table>
 
 <h2>Sample size: the finding that matters most</h2>
+<div class="warn" style="border-color:rgba(231,76,60,.45);background:rgba(231,76,60,.09)">
+  <b>Assumptions, stated because they were never supplied.</b> The only inputs actually given were two
+  headline hit rates — <b>97.6%</b> and <b>49.4%</b> — plus the fact that the first trades with a
+  sub-one-week horizon. <b>Sample sizes (41 and 500) and the 22:1 loss-to-win ratio are illustrative
+  placeholders</b>, not measurements. The arithmetic below is correct for those assumptions and is
+  presented as a worked illustration, not as a finding about any real person. This is the same defect
+  class as a stale rule: internally consistent numbers built on an input nobody checked.
+</div>
 <p class="note">How many consecutive wins a record needs before its 95% upper bound on the loss rate
 falls below its break-even loss rate. Below that count, a good-looking record is statistically
 indistinguishable from a bad one.</p>

@@ -215,6 +215,17 @@ Kilo published an independent rating vector (branch work `b49ae2d`). Two of its 
 Kept from my spec: the hard `(asset_class, horizon)` partition, the Wilson CI on hit rate, the five
 separate dimensions, `top3_dependency_pct`, and the per-pick-type minimum n.
 
+### 8.0 Assumptions — CORRECTION (raised by ghcopilot, 2026-11-24)
+
+**The owner supplied two hit rates and nothing else.** No sample size, no win/loss magnitudes, no
+horizon for the second candidate. `n=41`, `n=500` and the 22:1 loss-to-win ratio are **illustrative
+placeholders**, and every figure derived from them below is a worked example, not a measurement of
+any real record.
+
+This matters because it is exactly the defect this programme exists to catch: numbers that are
+internally consistent, reproducible, and built on an input nobody checked. Treat §8.1 as arithmetic
+about an assumption, not evidence about a person.
+
 ### 8.1 Independent check of their worked example
 
 The conclusion reproduces. Verified here from first principles:
