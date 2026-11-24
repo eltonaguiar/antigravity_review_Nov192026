@@ -1,0 +1,999 @@
+{
+ "generated_at": "2026-11-24T11:00:15Z",
+ "n_rows": 71,
+ "seed": 20261124,
+ "n_draws": 20000,
+ "1_label_ledger": {
+  "n": 71,
+  "mismatches": 0,
+  "rows": []
+ },
+ "2_rule_test": {
+  "holds": true,
+  "n_pass": 71,
+  "n_fail": 0,
+  "failing": []
+ },
+ "3_brk_b": {
+  "raw": {
+   "symbol": "BRK-B",
+   "name": "Berkshire Hathaway B",
+   "strong_buy": 0,
+   "buy": 1,
+   "hold": 3,
+   "sell": 3,
+   "strong_sell": 3,
+   "analysts": 10,
+   "buy_side_pct": 10.0,
+   "consensus": "SELL",
+   "consensus_score": -0.8
+  },
+  "recomputed": {
+   "score": -0.8,
+   "share": 0.1,
+   "rule_says": "SELL"
+  },
+  "arithmetic_consistent": true,
+  "smallest_coverage_peers": [
+   {
+    "symbol": "PLD",
+    "analysts": 21,
+    "counts": [
+     4,
+     13,
+     4,
+     0,
+     0
+    ],
+    "consensus": "STRONG_BUY",
+    "buy_side_pct": 81.0
+   },
+   {
+    "symbol": "BLK",
+    "analysts": 24,
+    "counts": [
+     4,
+     18,
+     2,
+     0,
+     0
+    ],
+    "consensus": "STRONG_BUY",
+    "buy_side_pct": 91.7
+   },
+   {
+    "symbol": "SPG",
+    "analysts": 25,
+    "counts": [
+     5,
+     4,
+     16,
+     0,
+     0
+    ],
+    "consensus": "HOLD",
+    "buy_side_pct": 36.0
+   },
+   {
+    "symbol": "PM",
+    "analysts": 26,
+    "counts": [
+     9,
+     10,
+     7,
+     0,
+     0
+    ],
+    "consensus": "BUY",
+    "buy_side_pct": 73.1
+   },
+   {
+    "symbol": "DUK",
+    "analysts": 27,
+    "counts": [
+     4,
+     11,
+     12,
+     0,
+     0
+    ],
+    "consensus": "BUY",
+    "buy_side_pct": 55.6
+   }
+  ],
+  "note": "Symbol mapping and rating scale can only be judged against the vendor: BRK-B is the class-B share (BRK-A is the other class), and Yahoo independently reports n=3 with key=hold for BRK-B while this feed reports 10 analysts -- a genuine cross-vendor disagreement in coverage, but both agree the name is not a buy."
+ },
+ "4_direction": {
+  "duk": {
+   "symbol": "DUK",
+   "mom_change_pp": -2.1,
+   "direction": "DETERIORATING",
+   "recomputed": "DETERIORATING"
+  },
+  "wmt": {
+   "symbol": "WMT",
+   "mom_change_pp": 2.1,
+   "direction": "IMPROVING",
+   "recomputed": "IMPROVING"
+  },
+  "threshold_evidence": {
+   "smallest_abs_value_labelled_IMPROVING": 2.1,
+   "largest_abs_value_labelled_STABLE": 1.9
+  },
+  "row_vs_recomputed_mismatches": [],
+  "kpi_vs_rows": {
+   "kpi": {
+    "improving": 14,
+    "deteriorating": 16,
+    "net_trend": -2,
+    "covered": 71
+   },
+   "rows_improving": 14,
+   "rows_deteriorating": 16,
+   "rows_net": -2,
+   "agree": true
+  }
+ },
+ "5_noise_floor": {
+  "definition": "100 / analysts, in pp: the change one analyst's move produces.",
+  "median_floor_pp": 2.94,
+  "labelled_but_inside_noise": [
+   {
+    "symbol": "HD",
+    "analysts": 46,
+    "noise_floor_pp": 2.17,
+    "abs_mom_pp": 2.1,
+    "direction": "IMPROVING",
+    "inside_noise": true
+   },
+   {
+    "symbol": "GE",
+    "analysts": 32,
+    "noise_floor_pp": 3.12,
+    "abs_mom_pp": 3.1,
+    "direction": "DETERIORATING",
+    "inside_noise": true
+   },
+   {
+    "symbol": "T",
+    "analysts": 32,
+    "noise_floor_pp": 3.12,
+    "abs_mom_pp": 2.4,
+    "direction": "DETERIORATING",
+    "inside_noise": true
+   },
+   {
+    "symbol": "NEM",
+    "analysts": 31,
+    "noise_floor_pp": 3.23,
+    "abs_mom_pp": 3.2,
+    "direction": "DETERIORATING",
+    "inside_noise": true
+   },
+   {
+    "symbol": "JNJ",
+    "analysts": 30,
+    "noise_floor_pp": 3.33,
+    "abs_mom_pp": 3.3,
+    "direction": "DETERIORATING",
+    "inside_noise": true
+   },
+   {
+    "symbol": "PEP",
+    "analysts": 29,
+    "noise_floor_pp": 3.45,
+    "abs_mom_pp": 3.4,
+    "direction": "IMPROVING",
+    "inside_noise": true
+   },
+   {
+    "symbol": "DUK",
+    "analysts": 27,
+    "noise_floor_pp": 3.7,
+    "abs_mom_pp": 2.1,
+    "direction": "DETERIORATING",
+    "inside_noise": true
+   }
+  ],
+  "n_labelled": 30,
+  "n_inside_noise": 7
+ },
+ "6_monte_carlo": {
+  "null": "opinion unchanged: redraw N ratings from Multinomial(N, p_current); statistic = shift in the score-weighted mean; two-sided",
+  "seed": 20261124,
+  "n_draws": 20000,
+  "n_tested": 71,
+  "alpha": 0.05,
+  "correction": "Benjamini-Hochberg",
+  "raw_p_lt_05": 0,
+  "bh_survivors": [],
+  "charitable_variant": {
+   "note": "Same test but shifting ONE analyst by one notch (the smallest real opinion change), so shifts below the noise floor are not penalised for being sub-analyst.",
+   "minimal_shift_share": "1/analysts (one analyst, one notch)",
+   "median_p_value": 0.9085
+  },
+  "tests": [
+   {
+    "symbol": "PLD",
+    "analysts": 21,
+    "mom_pp": 14.3,
+    "direction": "IMPROVING",
+    "shift_analysts": 3.0,
+    "noise_floor_pp": 4.76,
+    "p_value": 0.21364,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "INTC",
+    "analysts": 55,
+    "mom_pp": -7.3,
+    "direction": "DETERIORATING",
+    "shift_analysts": -4.01,
+    "noise_floor_pp": 1.82,
+    "p_value": 0.34128,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "BLK",
+    "analysts": 24,
+    "mom_pp": 4.7,
+    "direction": "IMPROVING",
+    "shift_analysts": 1.13,
+    "noise_floor_pp": 4.17,
+    "p_value": 0.53242,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "TMO",
+    "analysts": 34,
+    "mom_pp": -6.3,
+    "direction": "DETERIORATING",
+    "shift_analysts": -2.14,
+    "noise_floor_pp": 2.94,
+    "p_value": 0.55137,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "NFLX",
+    "analysts": 56,
+    "mom_pp": -5.8,
+    "direction": "DETERIORATING",
+    "shift_analysts": -3.25,
+    "noise_floor_pp": 1.79,
+    "p_value": 0.56012,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "LMT",
+    "analysts": 30,
+    "mom_pp": 6.7,
+    "direction": "IMPROVING",
+    "shift_analysts": 2.01,
+    "noise_floor_pp": 3.33,
+    "p_value": 0.57582,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "UNH",
+    "analysts": 32,
+    "mom_pp": 5.6,
+    "direction": "IMPROVING",
+    "shift_analysts": 1.79,
+    "noise_floor_pp": 3.12,
+    "p_value": 0.66907,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "ADBE",
+    "analysts": 45,
+    "mom_pp": -4.5,
+    "direction": "DETERIORATING",
+    "shift_analysts": -2.02,
+    "noise_floor_pp": 2.22,
+    "p_value": 0.67852,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "BA",
+    "analysts": 37,
+    "mom_pp": 3.3,
+    "direction": "IMPROVING",
+    "shift_analysts": 1.22,
+    "noise_floor_pp": 2.7,
+    "p_value": 0.68277,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "WFC",
+    "analysts": 31,
+    "mom_pp": 4.3,
+    "direction": "IMPROVING",
+    "shift_analysts": 1.33,
+    "noise_floor_pp": 3.23,
+    "p_value": 0.69337,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "WMT",
+    "analysts": 48,
+    "mom_pp": 2.1,
+    "direction": "IMPROVING",
+    "shift_analysts": 1.01,
+    "noise_floor_pp": 2.08,
+    "p_value": 0.70526,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "AVGO",
+    "analysts": 57,
+    "mom_pp": 1.8,
+    "direction": "STABLE",
+    "shift_analysts": 1.03,
+    "noise_floor_pp": 1.75,
+    "p_value": 0.71371,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "NKE",
+    "analysts": 49,
+    "mom_pp": -4.7,
+    "direction": "DETERIORATING",
+    "shift_analysts": -2.3,
+    "noise_floor_pp": 2.04,
+    "p_value": 0.71726,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "COP",
+    "analysts": 35,
+    "mom_pp": -4.0,
+    "direction": "DETERIORATING",
+    "shift_analysts": -1.4,
+    "noise_floor_pp": 2.86,
+    "p_value": 0.71976,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "SHW",
+    "analysts": 34,
+    "mom_pp": -3.3,
+    "direction": "DETERIORATING",
+    "shift_analysts": -1.12,
+    "noise_floor_pp": 2.94,
+    "p_value": 0.72181,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "MRK",
+    "analysts": 35,
+    "mom_pp": -2.9,
+    "direction": "DETERIORATING",
+    "shift_analysts": -1.01,
+    "noise_floor_pp": 2.86,
+    "p_value": 0.72286,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "XOM",
+    "analysts": 32,
+    "mom_pp": -4.6,
+    "direction": "DETERIORATING",
+    "shift_analysts": -1.47,
+    "noise_floor_pp": 3.12,
+    "p_value": 0.72536,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "SCHW",
+    "analysts": 31,
+    "mom_pp": -5.4,
+    "direction": "DETERIORATING",
+    "shift_analysts": -1.67,
+    "noise_floor_pp": 3.23,
+    "p_value": 0.73096,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "PG",
+    "analysts": 35,
+    "mom_pp": 5.7,
+    "direction": "IMPROVING",
+    "shift_analysts": 2.0,
+    "noise_floor_pp": 2.86,
+    "p_value": 0.73841,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "VZ",
+    "analysts": 34,
+    "mom_pp": 4.3,
+    "direction": "IMPROVING",
+    "shift_analysts": 1.46,
+    "noise_floor_pp": 2.94,
+    "p_value": 0.73971,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "GS",
+    "analysts": 33,
+    "mom_pp": 4.6,
+    "direction": "IMPROVING",
+    "shift_analysts": 1.52,
+    "noise_floor_pp": 3.03,
+    "p_value": 0.76776,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "TSLA",
+    "analysts": 54,
+    "mom_pp": 3.7,
+    "direction": "IMPROVING",
+    "shift_analysts": 2.0,
+    "noise_floor_pp": 1.85,
+    "p_value": 0.80536,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "CRM",
+    "analysts": 56,
+    "mom_pp": 1.8,
+    "direction": "STABLE",
+    "shift_analysts": 1.01,
+    "noise_floor_pp": 1.79,
+    "p_value": 0.81021,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "AAPL",
+    "analysts": 49,
+    "mom_pp": -2.1,
+    "direction": "DETERIORATING",
+    "shift_analysts": -1.03,
+    "noise_floor_pp": 2.04,
+    "p_value": 0.81936,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "BAC",
+    "analysts": 29,
+    "mom_pp": 0.7,
+    "direction": "STABLE",
+    "shift_analysts": 0.2,
+    "noise_floor_pp": 3.45,
+    "p_value": 0.88346,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "PEP",
+    "analysts": 29,
+    "mom_pp": 3.4,
+    "direction": "IMPROVING",
+    "shift_analysts": 0.99,
+    "noise_floor_pp": 3.45,
+    "p_value": 0.88911,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "JPM",
+    "analysts": 31,
+    "mom_pp": -1.9,
+    "direction": "STABLE",
+    "shift_analysts": -0.59,
+    "noise_floor_pp": 3.23,
+    "p_value": 0.88961,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "NEM",
+    "analysts": 31,
+    "mom_pp": -3.2,
+    "direction": "DETERIORATING",
+    "shift_analysts": -0.99,
+    "noise_floor_pp": 3.23,
+    "p_value": 0.89181,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "MA",
+    "analysts": 52,
+    "mom_pp": -0.2,
+    "direction": "STABLE",
+    "shift_analysts": -0.1,
+    "noise_floor_pp": 1.92,
+    "p_value": 0.89426,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "DUK",
+    "analysts": 27,
+    "mom_pp": -2.1,
+    "direction": "DETERIORATING",
+    "shift_analysts": -0.57,
+    "noise_floor_pp": 3.7,
+    "p_value": 0.89496,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "KO",
+    "analysts": 35,
+    "mom_pp": 0.6,
+    "direction": "STABLE",
+    "shift_analysts": 0.21,
+    "noise_floor_pp": 2.86,
+    "p_value": 0.89561,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "JNJ",
+    "analysts": 30,
+    "mom_pp": -3.3,
+    "direction": "DETERIORATING",
+    "shift_analysts": -0.99,
+    "noise_floor_pp": 3.33,
+    "p_value": 0.89791,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "SPG",
+    "analysts": 25,
+    "mom_pp": -1.5,
+    "direction": "STABLE",
+    "shift_analysts": -0.38,
+    "noise_floor_pp": 4.0,
+    "p_value": 0.90125,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "GE",
+    "analysts": 32,
+    "mom_pp": -3.1,
+    "direction": "DETERIORATING",
+    "shift_analysts": -0.99,
+    "noise_floor_pp": 3.12,
+    "p_value": 0.90495,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "CVX",
+    "analysts": 32,
+    "mom_pp": 1.1,
+    "direction": "STABLE",
+    "shift_analysts": 0.35,
+    "noise_floor_pp": 3.12,
+    "p_value": 0.905,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "ABBV",
+    "analysts": 38,
+    "mom_pp": -0.5,
+    "direction": "STABLE",
+    "shift_analysts": -0.19,
+    "noise_floor_pp": 2.63,
+    "p_value": 0.90535,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "LLY",
+    "analysts": 37,
+    "mom_pp": 0.4,
+    "direction": "STABLE",
+    "shift_analysts": 0.15,
+    "noise_floor_pp": 2.7,
+    "p_value": 0.9061,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "NEE",
+    "analysts": 27,
+    "mom_pp": 1.3,
+    "direction": "STABLE",
+    "shift_analysts": 0.35,
+    "noise_floor_pp": 3.7,
+    "p_value": 0.90805,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "LIN",
+    "analysts": 34,
+    "mom_pp": 0.9,
+    "direction": "STABLE",
+    "shift_analysts": 0.31,
+    "noise_floor_pp": 2.94,
+    "p_value": 0.9098,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "SO",
+    "analysts": 33,
+    "mom_pp": 1.7,
+    "direction": "STABLE",
+    "shift_analysts": 0.56,
+    "noise_floor_pp": 3.03,
+    "p_value": 0.91435,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "ORCL",
+    "analysts": 47,
+    "mom_pp": -0.3,
+    "direction": "STABLE",
+    "shift_analysts": -0.14,
+    "noise_floor_pp": 2.13,
+    "p_value": 0.91675,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "T",
+    "analysts": 32,
+    "mom_pp": -2.4,
+    "direction": "DETERIORATING",
+    "shift_analysts": -0.77,
+    "noise_floor_pp": 3.12,
+    "p_value": 0.91695,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "GOOGL",
+    "analysts": 68,
+    "mom_pp": -1.3,
+    "direction": "STABLE",
+    "shift_analysts": -0.88,
+    "noise_floor_pp": 1.47,
+    "p_value": 0.91795,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "IBM",
+    "analysts": 31,
+    "mom_pp": -1.7,
+    "direction": "STABLE",
+    "shift_analysts": -0.53,
+    "noise_floor_pp": 3.23,
+    "p_value": 0.9235,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "TXN",
+    "analysts": 40,
+    "mom_pp": 2.5,
+    "direction": "IMPROVING",
+    "shift_analysts": 1.0,
+    "noise_floor_pp": 2.5,
+    "p_value": 0.9246,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "MS",
+    "analysts": 34,
+    "mom_pp": -1.8,
+    "direction": "STABLE",
+    "shift_analysts": -0.61,
+    "noise_floor_pp": 2.94,
+    "p_value": 0.9248,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "PFE",
+    "analysts": 34,
+    "mom_pp": -1.2,
+    "direction": "STABLE",
+    "shift_analysts": -0.41,
+    "noise_floor_pp": 2.94,
+    "p_value": 0.92685,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "COST",
+    "analysts": 47,
+    "mom_pp": 1.4,
+    "direction": "STABLE",
+    "shift_analysts": 0.66,
+    "noise_floor_pp": 2.13,
+    "p_value": 0.9278,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "HD",
+    "analysts": 46,
+    "mom_pp": 2.1,
+    "direction": "IMPROVING",
+    "shift_analysts": 0.97,
+    "noise_floor_pp": 2.17,
+    "p_value": 0.9303,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "AMZN",
+    "analysts": 70,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 1.43,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "META",
+    "analysts": 69,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 1.45,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "NVDA",
+    "analysts": 69,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 1.45,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "MSFT",
+    "analysts": 65,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 1.54,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "AMD",
+    "analysts": 60,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 1.67,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "NOW",
+    "analysts": 52,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 1.92,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "V",
+    "analysts": 49,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.04,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "QCOM",
+    "analysts": 46,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.17,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "SBUX",
+    "analysts": 45,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.22,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "AMGN",
+    "analysts": 42,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.38,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "MCD",
+    "analysts": 41,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.44,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "DIS",
+    "analysts": 39,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.56,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "CSCO",
+    "analysts": 35,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.86,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "CAT",
+    "analysts": 34,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.94,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "DE",
+    "analysts": 34,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.94,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "SLB",
+    "analysts": 34,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.94,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "UPS",
+    "analysts": 34,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 2.94,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "FCX",
+    "analysts": 30,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 3.33,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "HON",
+    "analysts": 30,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 3.33,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "AMT",
+    "analysts": 29,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 3.45,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "PM",
+    "analysts": 26,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 3.85,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   },
+   {
+    "symbol": "BRK-B",
+    "analysts": 10,
+    "mom_pp": 0.0,
+    "direction": "STABLE",
+    "shift_analysts": 0.0,
+    "noise_floor_pp": 10.0,
+    "p_value": 1.0,
+    "bh_reject": false,
+    "q_value": 1.0
+   }
+  ]
+ }
+}

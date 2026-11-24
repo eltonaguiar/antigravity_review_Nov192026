@@ -1,0 +1,717 @@
+{
+ "generated_at": "2026-11-24T11:01:37Z",
+ "source": "Yahoo Finance quoteSummary financialData (crumb auth)",
+ "note": "upside_pct = targetMeanPrice/currentPrice - 1, in percent. n_yahoo is Yahoo's analyst count and can differ from the page's Finnhub count; both are shown rather than reconciled silently.",
+ "targets": {
+  "AMZN": {
+   "symbol": "AMZN",
+   "price": 255.39,
+   "target_mean": 326.34033,
+   "target_high": 405.0,
+   "target_low": 230.0,
+   "n_yahoo": 60,
+   "key": "strong_buy",
+   "upside_pct": 27.8
+  },
+  "META": {
+   "symbol": "META",
+   "price": 597.6,
+   "target_mean": 845.3814,
+   "target_high": 1050.0,
+   "target_low": 650.0,
+   "n_yahoo": 58,
+   "key": "strong_buy",
+   "upside_pct": 41.5
+  },
+  "NVDA": {
+   "symbol": "NVDA",
+   "price": 165.05,
+   "target_mean": 244.54807,
+   "target_high": 425.0,
+   "target_low": 130.0,
+   "n_yahoo": 57,
+   "key": "buy",
+   "upside_pct": 48.2
+  },
+  "GOOGL": {
+   "symbol": "GOOGL",
+   "price": 282.1,
+   "target_mean": 395.7702,
+   "target_high": 500.0,
+   "target_low": 300.0,
+   "n_yahoo": 53,
+   "key": "strong_buy",
+   "upside_pct": 40.3
+  },
+  "MSFT": {
+   "symbol": "MSFT",
+   "price": 492.5,
+   "target_mean": 637.3617,
+   "target_high": 870.0,
+   "target_low": 440.0,
+   "n_yahoo": 54,
+   "key": "strong_buy",
+   "upside_pct": 29.4
+  },
+  "AMD": {
+   "symbol": "AMD",
+   "price": 453.46,
+   "target_mean": 656.2122,
+   "target_high": 1250.0,
+   "target_low": 525.0,
+   "n_yahoo": 49,
+   "key": "strong_buy",
+   "upside_pct": 44.7
+  },
+  "AVGO": {
+   "symbol": "AVGO",
+   "price": 313.55,
+   "target_mean": 525.5147,
+   "target_high": 660.0,
+   "target_low": 398.4699,
+   "n_yahoo": 47,
+   "key": "strong_buy",
+   "upside_pct": 67.6
+  },
+  "CRM": {
+   "symbol": "CRM",
+   "price": 185.46,
+   "target_mean": 284.44208,
+   "target_high": 475.0,
+   "target_low": 165.0,
+   "n_yahoo": 53,
+   "key": "buy",
+   "upside_pct": 53.4
+  },
+  "NFLX": {
+   "symbol": "NFLX",
+   "price": 58.1,
+   "target_mean": 84.54884,
+   "target_high": 126.0,
+   "target_low": 57.0,
+   "n_yahoo": 43,
+   "key": "buy",
+   "upside_pct": 45.5
+  },
+  "INTC": {
+   "symbol": "INTC",
+   "price": 59.66,
+   "target_mean": 90.65116,
+   "target_high": 160.0,
+   "target_low": 63.0,
+   "n_yahoo": 43,
+   "key": "hold",
+   "upside_pct": 51.9
+  },
+  "TSLA": {
+   "symbol": "TSLA",
+   "price": 385.46,
+   "target_mean": 417.52625,
+   "target_high": 600.0,
+   "target_low": 128.11,
+   "n_yahoo": 40,
+   "key": "buy",
+   "upside_pct": 8.3
+  },
+  "MA": {
+   "symbol": "MA",
+   "price": 635.48,
+   "target_mean": 720.68677,
+   "target_high": 800.0,
+   "target_low": 550.0,
+   "n_yahoo": 37,
+   "key": "strong_buy",
+   "upside_pct": 13.4
+  },
+  "NOW": {
+   "symbol": "NOW",
+   "price": 91.72,
+   "target_mean": 155.75348,
+   "target_high": 266.0,
+   "target_low": 72.0,
+   "n_yahoo": 46,
+   "key": "strong_buy",
+   "upside_pct": 69.8
+  },
+  "AAPL": {
+   "symbol": "AAPL",
+   "price": 349.08,
+   "target_mean": 345.6313,
+   "target_high": 425.0,
+   "target_low": 250.0,
+   "n_yahoo": 39,
+   "key": "buy",
+   "upside_pct": -1.0
+  },
+  "NKE": {
+   "symbol": "NKE",
+   "price": 33.76,
+   "target_mean": 36.5,
+   "target_high": 60.0,
+   "target_low": 19.0,
+   "n_yahoo": 38,
+   "key": "hold",
+   "upside_pct": 8.1
+  },
+  "V": {
+   "symbol": "V",
+   "price": 409.4,
+   "target_mean": 450.9562,
+   "target_high": 500.0,
+   "target_low": 330.0,
+   "n_yahoo": 37,
+   "key": "strong_buy",
+   "upside_pct": 10.2
+  },
+  "WMT": {
+   "symbol": "WMT",
+   "price": 129.58,
+   "target_mean": 136.14635,
+   "target_high": 155.0,
+   "target_low": 81.0,
+   "n_yahoo": 41,
+   "key": "buy",
+   "upside_pct": 5.1
+  },
+  "COST": {
+   "symbol": "COST",
+   "price": 1097.91,
+   "target_mean": 1085.3513,
+   "target_high": 1315.0,
+   "target_low": 770.0,
+   "n_yahoo": 37,
+   "key": "buy",
+   "upside_pct": -1.1
+  },
+  "ORCL": {
+   "symbol": "ORCL",
+   "price": 113.68,
+   "target_mean": 236.184,
+   "target_high": 400.0,
+   "target_low": 110.0,
+   "n_yahoo": 40,
+   "key": "strong_buy",
+   "upside_pct": 107.8
+  },
+  "HD": {
+   "symbol": "HD",
+   "price": 346.06,
+   "target_mean": 374.8125,
+   "target_high": 417.0,
+   "target_low": 310.0,
+   "n_yahoo": 32,
+   "key": "buy",
+   "upside_pct": 8.3
+  },
+  "QCOM": {
+   "symbol": "QCOM",
+   "price": 165.38,
+   "target_mean": 185.25,
+   "target_high": 305.0,
+   "target_low": 100.0,
+   "n_yahoo": 28,
+   "key": "hold",
+   "upside_pct": 12.0
+  },
+  "ADBE": {
+   "symbol": "ADBE",
+   "price": 223.98,
+   "target_mean": 266.9097,
+   "target_high": 373.0,
+   "target_low": 140.0,
+   "n_yahoo": 33,
+   "key": "hold",
+   "upside_pct": 19.2
+  },
+  "SBUX": {
+   "symbol": "SBUX",
+   "price": 106.36,
+   "target_mean": 111.06667,
+   "target_high": 141.0,
+   "target_low": 82.0,
+   "n_yahoo": 30,
+   "key": "buy",
+   "upside_pct": 4.4
+  },
+  "AMGN": {
+   "symbol": "AMGN",
+   "price": 449.04,
+   "target_mean": 440.779,
+   "target_high": 550.0,
+   "target_low": 230.0,
+   "n_yahoo": 30,
+   "key": "hold",
+   "upside_pct": -1.8
+  },
+  "MCD": {
+   "symbol": "MCD",
+   "price": 276.38,
+   "target_mean": 299.0,
+   "target_high": 390.0,
+   "target_low": 230.0,
+   "n_yahoo": 29,
+   "key": "buy",
+   "upside_pct": 8.2
+  },
+  "TXN": {
+   "symbol": "TXN",
+   "price": 291.19,
+   "target_mean": 339.65518,
+   "target_high": 422.0,
+   "target_low": 250.0,
+   "n_yahoo": 29,
+   "key": "buy",
+   "upside_pct": 16.6
+  },
+  "DIS": {
+   "symbol": "DIS",
+   "price": 120.27,
+   "target_mean": 131.34355,
+   "target_high": 144.0,
+   "target_low": 86.0,
+   "n_yahoo": 31,
+   "key": "buy",
+   "upside_pct": 9.2
+  },
+  "ABBV": {
+   "symbol": "ABBV",
+   "price": 288.45,
+   "target_mean": 315.8846,
+   "target_high": 350.0,
+   "target_low": 237.0,
+   "n_yahoo": 26,
+   "key": "buy",
+   "upside_pct": 9.5
+  },
+  "BA": {
+   "symbol": "BA",
+   "price": 162.39,
+   "target_mean": 233.03703,
+   "target_high": 305.0,
+   "target_low": 157.0,
+   "n_yahoo": 27,
+   "key": "strong_buy",
+   "upside_pct": 43.5
+  },
+  "LLY": {
+   "symbol": "LLY",
+   "price": 1364.6,
+   "target_mean": 1470.0565,
+   "target_high": 1700.0,
+   "target_low": 940.0,
+   "n_yahoo": 29,
+   "key": "buy",
+   "upside_pct": 7.7
+  },
+  "COP": {
+   "symbol": "COP",
+   "price": 132.19,
+   "target_mean": 152.74074,
+   "target_high": 185.0,
+   "target_low": 122.0,
+   "n_yahoo": 27,
+   "key": "buy",
+   "upside_pct": 15.5
+  },
+  "CSCO": {
+   "symbol": "CSCO",
+   "price": 96.8,
+   "target_mean": 130.5,
+   "target_high": 160.0,
+   "target_low": 109.0,
+   "n_yahoo": 24,
+   "key": "buy",
+   "upside_pct": 34.8
+  },
+  "KO": {
+   "symbol": "KO",
+   "price": 95.88,
+   "target_mean": 99.64,
+   "target_high": 112.0,
+   "target_low": 88.0,
+   "n_yahoo": 25,
+   "key": "buy",
+   "upside_pct": 3.9
+  },
+  "MRK": {
+   "symbol": "MRK",
+   "price": 135.47,
+   "target_mean": 161.525,
+   "target_high": 186.0,
+   "target_low": 105.0,
+   "n_yahoo": 26,
+   "key": "buy",
+   "upside_pct": 19.2
+  },
+  "PG": {
+   "symbol": "PG",
+   "price": 169.6,
+   "target_mean": 176.34782,
+   "target_high": 192.0,
+   "target_low": 151.0,
+   "n_yahoo": 23,
+   "key": "buy",
+   "upside_pct": 4.0
+  },
+  "CAT": {
+   "symbol": "CAT",
+   "price": 547.04,
+   "target_mean": 807.2604,
+   "target_high": 1027.0,
+   "target_low": 575.0,
+   "n_yahoo": 26,
+   "key": "buy",
+   "upside_pct": 47.6
+  },
+  "DE": {
+   "symbol": "DE",
+   "price": 633.03,
+   "target_mean": 694.0078,
+   "target_high": 813.18,
+   "target_low": 500.0,
+   "n_yahoo": 23,
+   "key": "buy",
+   "upside_pct": 9.6
+  },
+  "LIN": {
+   "symbol": "LIN",
+   "price": 517.0,
+   "target_mean": 555.14813,
+   "target_high": 601.0,
+   "target_low": 400.0,
+   "n_yahoo": 27,
+   "key": "buy",
+   "upside_pct": 7.4
+  },
+  "MS": {
+   "symbol": "MS",
+   "price": 172.6,
+   "target_mean": 211.5,
+   "target_high": 262.0,
+   "target_low": 185.0,
+   "n_yahoo": 22,
+   "key": "buy",
+   "upside_pct": 22.5
+  },
+  "PFE": {
+   "symbol": "PFE",
+   "price": 27.4,
+   "target_mean": 30.22115,
+   "target_high": 37.0,
+   "target_low": 25.0,
+   "n_yahoo": 26,
+   "key": "buy",
+   "upside_pct": 10.3
+  },
+  "SHW": {
+   "symbol": "SHW",
+   "price": 349.47,
+   "target_mean": 373.83334,
+   "target_high": 420.0,
+   "target_low": 329.0,
+   "n_yahoo": 24,
+   "key": "buy",
+   "upside_pct": 7.0
+  },
+  "SLB": {
+   "symbol": "SLB",
+   "price": 46.16,
+   "target_mean": 62.2069,
+   "target_high": 71.0,
+   "target_low": 44.0,
+   "n_yahoo": 29,
+   "key": "buy",
+   "upside_pct": 34.8
+  },
+  "TMO": {
+   "symbol": "TMO",
+   "price": 688.08,
+   "target_mean": 755.1223,
+   "target_high": 830.0,
+   "target_low": 590.0,
+   "n_yahoo": 26,
+   "key": "strong_buy",
+   "upside_pct": 9.7
+  },
+  "UPS": {
+   "symbol": "UPS",
+   "price": 108.51,
+   "target_mean": 115.46154,
+   "target_high": 135.0,
+   "target_low": 76.0,
+   "n_yahoo": 26,
+   "key": "buy",
+   "upside_pct": 6.4
+  },
+  "VZ": {
+   "symbol": "VZ",
+   "price": 46.45,
+   "target_mean": 50.65,
+   "target_high": 62.0,
+   "target_low": 44.0,
+   "n_yahoo": 22,
+   "key": "none",
+   "upside_pct": 9.0
+  },
+  "GS": {
+   "symbol": "GS",
+   "price": 823.62,
+   "target_mean": 1030.7142,
+   "target_high": 1250.0,
+   "target_low": 730.0,
+   "n_yahoo": 21,
+   "key": "buy",
+   "upside_pct": 25.1
+  },
+  "SO": {
+   "symbol": "SO",
+   "price": 93.11,
+   "target_mean": 96.925,
+   "target_high": 115.0,
+   "target_low": 74.0,
+   "n_yahoo": 20,
+   "key": "hold",
+   "upside_pct": 4.1
+  },
+  "CVX": {
+   "symbol": "CVX",
+   "price": 206.17,
+   "target_mean": 241.625,
+   "target_high": 272.0,
+   "target_low": 202.0,
+   "n_yahoo": 24,
+   "key": "buy",
+   "upside_pct": 17.2
+  },
+  "GE": {
+   "symbol": "GE",
+   "price": 321.26,
+   "target_mean": 378.42856,
+   "target_high": 431.0,
+   "target_low": 280.0,
+   "n_yahoo": 21,
+   "key": "buy",
+   "upside_pct": 17.8
+  },
+  "T": {
+   "symbol": "T",
+   "price": 22.3,
+   "target_mean": 27.58696,
+   "target_high": 34.0,
+   "target_low": 20.0,
+   "n_yahoo": 23,
+   "key": "buy",
+   "upside_pct": 23.7
+  },
+  "UNH": {
+   "symbol": "UNH",
+   "price": 336.08,
+   "target_mean": 478.48,
+   "target_high": 531.0,
+   "target_low": 385.0,
+   "n_yahoo": 25,
+   "key": "strong_buy",
+   "upside_pct": 42.4
+  },
+  "XOM": {
+   "symbol": "XOM",
+   "price": 156.9,
+   "target_mean": 184.18182,
+   "target_high": 213.0,
+   "target_low": 160.0,
+   "n_yahoo": 22,
+   "key": "buy",
+   "upside_pct": 17.4
+  },
+  "IBM": {
+   "symbol": "IBM",
+   "price": 233.0,
+   "target_mean": 259.84738,
+   "target_high": 300.0,
+   "target_low": 174.0,
+   "n_yahoo": 23,
+   "key": "buy",
+   "upside_pct": 11.5
+  },
+  "JPM": {
+   "symbol": "JPM",
+   "price": 316.66,
+   "target_mean": 373.47827,
+   "target_high": 425.0,
+   "target_low": 312.0,
+   "n_yahoo": 23,
+   "key": "buy",
+   "upside_pct": 17.9
+  },
+  "NEM": {
+   "symbol": "NEM",
+   "price": 100.73,
+   "target_mean": 133.8,
+   "target_high": 165.0,
+   "target_low": 70.0,
+   "n_yahoo": 16,
+   "key": "buy",
+   "upside_pct": 32.8
+  },
+  "SCHW": {
+   "symbol": "SCHW",
+   "price": 92.37,
+   "target_mean": 116.63636,
+   "target_high": 147.0,
+   "target_low": 82.0,
+   "n_yahoo": 22,
+   "key": "buy",
+   "upside_pct": 26.3
+  },
+  "WFC": {
+   "symbol": "WFC",
+   "price": 80.0,
+   "target_mean": 97.375,
+   "target_high": 108.0,
+   "target_low": 88.0,
+   "n_yahoo": 24,
+   "key": "buy",
+   "upside_pct": 21.7
+  },
+  "FCX": {
+   "symbol": "FCX",
+   "price": 49.71,
+   "target_mean": 78.22273,
+   "target_high": 90.0,
+   "target_low": 33.0,
+   "n_yahoo": 22,
+   "key": "buy",
+   "upside_pct": 57.4
+  },
+  "HON": {
+   "symbol": "HON",
+   "price": 221.97,
+   "target_mean": 253.86957,
+   "target_high": 290.0,
+   "target_low": 186.0,
+   "n_yahoo": 23,
+   "key": "buy",
+   "upside_pct": 14.4
+  },
+  "JNJ": {
+   "symbol": "JNJ",
+   "price": 270.05,
+   "target_mean": 279.84726,
+   "target_high": 320.0,
+   "target_low": 190.0,
+   "n_yahoo": 22,
+   "key": "buy",
+   "upside_pct": 3.6
+  },
+  "LMT": {
+   "symbol": "LMT",
+   "price": 571.67,
+   "target_mean": 660.86365,
+   "target_high": 835.0,
+   "target_low": 498.0,
+   "n_yahoo": 22,
+   "key": "buy",
+   "upside_pct": 15.6
+  },
+  "AMT": {
+   "symbol": "AMT",
+   "price": 179.31,
+   "target_mean": 216.125,
+   "target_high": 260.0,
+   "target_low": 188.0,
+   "n_yahoo": 24,
+   "key": "strong_buy",
+   "upside_pct": 20.5
+  },
+  "BAC": {
+   "symbol": "BAC",
+   "price": 48.14,
+   "target_mean": 62.47727,
+   "target_high": 71.0,
+   "target_low": 56.0,
+   "n_yahoo": 22,
+   "key": "strong_buy",
+   "upside_pct": 29.8
+  },
+  "PEP": {
+   "symbol": "PEP",
+   "price": 140.21,
+   "target_mean": 141.13635,
+   "target_high": 165.0,
+   "target_low": 106.0,
+   "n_yahoo": 22,
+   "key": "hold",
+   "upside_pct": 0.7
+  },
+  "DUK": {
+   "symbol": "DUK",
+   "price": 129.47,
+   "target_mean": 133.92105,
+   "target_high": 145.0,
+   "target_low": 121.0,
+   "n_yahoo": 19,
+   "key": "buy",
+   "upside_pct": 3.4
+  },
+  "NEE": {
+   "symbol": "NEE",
+   "price": 83.97,
+   "target_mean": 94.47368,
+   "target_high": 117.0,
+   "target_low": 56.0,
+   "n_yahoo": 19,
+   "key": "buy",
+   "upside_pct": 12.5
+  },
+  "PM": {
+   "symbol": "PM",
+   "price": 182.5,
+   "target_mean": 212.6875,
+   "target_high": 240.0,
+   "target_low": 175.0,
+   "n_yahoo": 16,
+   "key": "buy",
+   "upside_pct": 16.5
+  },
+  "SPG": {
+   "symbol": "SPG",
+   "price": 227.07,
+   "target_mean": 235.23685,
+   "target_high": 275.0,
+   "target_low": 207.0,
+   "n_yahoo": 19,
+   "key": "buy",
+   "upside_pct": 3.6
+  },
+  "BLK": {
+   "symbol": "BLK",
+   "price": 1144.52,
+   "target_mean": 1366.0,
+   "target_high": 1531.0,
+   "target_low": 1250.0,
+   "n_yahoo": 18,
+   "key": "strong_buy",
+   "upside_pct": 19.4
+  },
+  "PLD": {
+   "symbol": "PLD",
+   "price": 125.14,
+   "target_mean": 152.07143,
+   "target_high": 170.0,
+   "target_low": 136.0,
+   "n_yahoo": 14,
+   "key": "buy",
+   "upside_pct": 21.5
+  },
+  "BRK-B": {
+   "symbol": "BRK-B",
+   "price": 572.36,
+   "target_mean": 564.6667,
+   "target_high": 628.0,
+   "target_low": 510.0,
+   "n_yahoo": 3,
+   "key": "hold",
+   "upside_pct": -1.3
+  }
+ }
+}
