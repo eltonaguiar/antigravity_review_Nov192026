@@ -8,7 +8,7 @@ Source: `sim_2026-11-24T0350Z.json` and `paramscan_2026-11-24T0350Z.json`
 ## Provenance and conventions (read before quoting any number)
 
 - **Window:** `2021-11-15 -> 2026-11-13`, 1255 trading bars. The JSON field `n_days: 1255` is **trading days**, not calendar days — `1255 / 252 = 4.98` years. Reading it as calendar days yields 3.44 years and a 13.58% CAGR instead of 9.18%, a 4.40pp error. Divides by 252, never by 365.
-- **Entry bar:** the simulation skips the first 200 bars as a 200-day-SMA warm-up, so all strategies enter at **bar 200 = 2022-09-01**. On that bar the closes were SPY **$374.84**, TLT **$92.83**, GLD $157.87, BIL $76.38. This is the price that governs every `buy`; the window's first-bar SPY close ($437.19) is *not* the entry price.
+- **Entry bar:** the simulation skips the first 200 bars as a 200-day-SMA warm-up, so all strategies enter at **bar 200 = 2022-09-01**. On that bar the closes were SPY **$374.84**, TLT **$92.83**, GLD $157.87, BIL $76.38. SPY is verifiable against this folder's own data: row 200 of `data/market_prices.csv` reads `2022-09-01, SPY_adj=374.8433837890625`, and the file has exactly 1255 rows, which is the `n_days` value in the sim artifact. The window's first-bar SPY close ($437.19, SPY_adj) is *not* the entry price.
 - **`idle_cash_pct` is cash as a share of ENDING nav,** not of starting capital. At $300 the account ends holding $207.12 cash against a $286.50 nav = 72.3%; measured against the $300 it started with, that is 69.0%. Both are true; the field reports the former.
 - **Fee model:** $0 commission, 5bp round-turn spread on traded notional, daily MER drag (SPY 0.0945%, TLT 0.15%, GLD 0.40%, BIL 0.136%), **no fractional shares**.
 

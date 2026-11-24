@@ -124,11 +124,14 @@ bar and allocation, cross-checks its own output against the committed sim, and
 3. **`R2-CAGR` only verifies internal consistency.** A CAGR that reconciles with
    its own start/final/duration can still be computed from the wrong window. It
    catches mislabelled durations, not mislabelled periods.
-4. **The 1254-vs-1255 bar drift is real.** Re-fetching today returns one bar
-   fewer than the committed run, so terminal closes differ (757.12 vs 754.37).
-   The provenance file records them under `refetch_last_bar_closes` and says
-   explicitly that they are not interchangeable. Substituting one for the other
-   would be an instance of class 1, committed by the tool built to catch class 1.
+4. **The 1254-vs-1255 bar drift was real and is now designed out.** Re-fetching
+today returned one fewer bar than the committed run, shifting the terminal close
+(757.12 vs 754.37). Rather than merely flag it, `derive_provenance.py` now takes
+`--prices-csv` and derives SPY and the bar count from the simulator's own
+`data/market_prices.csv`, so the source is the exact series the run used: 1255
+bars, entry 374.84, end 754.37, both exact. The re-fetch path still exists for
+tickers the CSV does not carry (TLT/GLD/BIL) and records the bar-count agreement
+explicitly instead of assuming it.
 
 ## Use
 

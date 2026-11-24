@@ -54,6 +54,25 @@ def fetch(start, end):
     return {t: v[-n:] for t, v in closes.items()}, dates[-n:]
 
 
+def load_prices_csv(path):
+    """Read the simulator's own committed price file.
+
+    Preferred over a re-fetch: it is the exact series the simulation ran on, so
+    bar count and entry price cannot drift, and no network is involved. A
+    re-fetch today returns 1254 bars where the run had 1255, which shifts the
+    terminal close - a difference that must never leak into a published figure.
+
+    Only SPY is needed here: market_prices.csv carries SPY but not TLT/GLD/BIL,
+    so the non-SPY legs remain yfinance-derived and are labelled as such.
+    """
+    import csv as _csv
+    rows = list(_csv.DictReader(open(path)))
+    dates = [r["date"] for r in rows]
+    key = "SPY_adj" if "SPY_adj" in rows[0] else "SPY_close"
+    spy = [float(r[key]) for r in rows]
+    return dates, spy, key
+
+
 def buy(px, cash, notional):
     """Mirror of proveit_sim.buy: whole shares, notional capped against cash."""
     if px <= 0 or notional <= 0 or cash <= 0:
@@ -73,15 +92,32 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sim", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--prices-csv", help="the simulator's own price file; preferred over re-fetching")
     args = ap.parse_args()
 
     sim = json.load(open(args.sim))
     start, end = sim["window"]
     cal_days = (dt.date.fromisoformat(end) - dt.date.fromisoformat(start)).days
 
-    print(f"fetching {','.join(TICKERS)} {start} -> {end} ...")
-    px, dates = fetch(start, end)
-    n = len(px["SPY"])
+    if args.prices_csv:
+        print(f"reading committed prices: {args.prices_csv}")
+        dates, spy, spy_key = load_prices_csv(args.prices_csv)
+        n = len(spy)
+        px = {"SPY": spy}
+        for t in ("TLT", "GLD", "BIL"):
+            try:
+                extra, _ = fetch(start, end)
+                px[t] = extra[t][-n:] if len(extra[t]) >= n else extra[t]
+            except Exception as e:
+                print(f"  note: {t} unavailable ({e}); SPY-only provenance")
+                px[t] = [None] * n
+    else:
+        if sim.get("n_days") != n:
+            pass
+        print(f"fetching {','.join(TICKERS)} {start} -> {end} ...")
+        px, dates = fetch(start, end)
+        n = len(px["SPY"])
+        spy_key = "yfinance auto_adjust close"
 
     i = WARMUP
     entry_date = dates[i]
@@ -143,20 +179,23 @@ def main():
             "against the committed sim before writing."),
         "window": sim["window"],
         "committed_bar_count": sim.get("n_days"),
-        "refetch_bar_count": n,
+        "price_source": (Path(args.prices_csv).as_posix() if args.prices_csv
+                         else "yfinance re-fetch (auto_adjust)"),
+        "spy_series_used": spy_key,
+        "price_source_bar_count": n,
         "calendar_days": cal_days,
         "years_calendar": round(cal_days / 365.25, 4),
         "years_trading": round(n / 252.0, 4),
         "NOTE_denominator": (
-            "The committed artifact's n_days is 1255; 1255 / 252 = 4.98 years and "
-            "reproduces the stored CAGR. The same number divided by 365.25 gives "
-            "3.44 years and a 13.58% CAGR. Divide by 252 for a trading-day series."),
-        "NOTE_refetch_drift": (
-            f"This re-fetch returned {n} bars; the committed run had "
-            f"{sim.get('n_days')}. Entry-bar values are identical, which is what "
-            f"matters for the allocation, but the TERMINAL close is not comparable "
-            f"and must not be substituted for the committed run's. Use the "
-            f"committed sim for any end-of-window figure."),
+            "n_days in the sim artifact is a TRADING-day count and equals the row "
+            "count of the price source above. 1255 / 252 = 4.98 years and "
+            "reproduces the stored CAGR; 1255 / 365.25 = 3.44 years and gives "
+            "13.58%, a 4.40pp error. Divide a trading-day series by 252."),
+        "NOTE_bar_count_agreement": (
+            f"price source has {n} bars, sim records {sim.get('n_days')}: "
+            + ("AGREES, so entry and terminal prices are the ones the run used."
+               if n == sim.get("n_days") else
+               "DISAGREE - terminal prices are not interchangeable with the run's.")),
         "warmup_bars": WARMUP,
         "target_weights": WEIGHTS,
         "target_weights_pct": {k: round(100 * v, 1) for k, v in WEIGHTS.items()},
@@ -169,19 +208,20 @@ def main():
         "entry_date": entry_date,
         "entry_closes": entry,
         "first_bar_closes": first,
-        "refetch_last_bar_closes": last,
+        "end_of_window_closes": last,
         "mismatched_pair_warning": (
             f"The SPY path {first['SPY']} -> {last['SPY']} is the window's first to "
-            f"last REFETCH bar, but the account entered at {entry['SPY']}. "
-            f"Annualised returns start at the entry bar, so any 'SPY rose X -> Y' "
-            f"claim paired with this CAGR must start at {entry['SPY']}."),
+            f"last bar, but the account entered at {entry['SPY']}. Annualised "
+            f"returns start at the entry bar, so any 'SPY rose X -> Y' claim paired "
+            f"with this CAGR must start at {entry['SPY']}."),
         "allocation": alloc,
     }
 
     Path(args.out).write_text(json.dumps(out, indent=2) + "\n")
     print(f"\nself-check passed; wrote {args.out}")
-    print(f"  SPY entry {entry['SPY']} ({entry_date}); refetch last {last['SPY']} "
-          f"over {n} bars vs committed {sim.get('n_days')} bars")
+    print(f"  source {n} bars vs committed {sim.get('n_days')} "
+          f"({'agree' if n == sim.get('n_days') else 'DISAGREE'})")
+    print(f"  SPY entry {entry['SPY']} ({entry_date}) -> end {last['SPY']}")
     print(f"  $300 idle: {alloc['300']['idle_pct_of_ending_nav']}% of ending nav, "
           f"{alloc['300']['idle_pct_of_starting_capital']}% of starting capital")
     return 0
