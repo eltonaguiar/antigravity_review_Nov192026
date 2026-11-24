@@ -1,0 +1,1011 @@
+{
+  "schema": "census_reason_annotation/1",
+  "count": 100,
+  "by_code": {
+    "NO_COVERAGE_STRUCTURAL": 88,
+    "STRATEGY_UNSUPPORTED": 12
+  },
+  "note": "Candidate only; statuses unchanged. 12 bars>0 cells need a strategy decision.",
+  "cells": [
+    {
+      "key": "BTCUSDT/gap_fade/15m",
+      "symbol": "BTCUSDT",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "BTCUSDT/gap_fade/1h",
+      "symbol": "BTCUSDT",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 2161,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=2161; None"
+    },
+    {
+      "key": "BTCUSDT/gap_fade/4h",
+      "symbol": "BTCUSDT",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 541,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=541; None"
+    },
+    {
+      "key": "BTCUSDT/gap_fade/1d",
+      "symbol": "BTCUSDT",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 365,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=365; None"
+    },
+    {
+      "key": "BTCUSDT/gap_fade/1w",
+      "symbol": "BTCUSDT",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 53,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=53; None"
+    },
+    {
+      "key": "ETHUSDT/gap_fade/15m",
+      "symbol": "ETHUSDT",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "ETHUSDT/gap_fade/1h",
+      "symbol": "ETHUSDT",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "ETHUSDT/gap_fade/4h",
+      "symbol": "ETHUSDT",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "ETHUSDT/gap_fade/1d",
+      "symbol": "ETHUSDT",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 365,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=365; None"
+    },
+    {
+      "key": "ETHUSDT/gap_fade/1w",
+      "symbol": "ETHUSDT",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 53,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=53; None"
+    },
+    {
+      "key": "SOLUSDT/gap_fade/15m",
+      "symbol": "SOLUSDT",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "SOLUSDT/gap_fade/1h",
+      "symbol": "SOLUSDT",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "SOLUSDT/gap_fade/4h",
+      "symbol": "SOLUSDT",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "SOLUSDT/gap_fade/1d",
+      "symbol": "SOLUSDT",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 250,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=250; None"
+    },
+    {
+      "key": "SOLUSDT/gap_fade/1w",
+      "symbol": "SOLUSDT",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 36,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=36; None"
+    },
+    {
+      "key": "XRPUSDT/gap_fade/15m",
+      "symbol": "XRPUSDT",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "XRPUSDT/gap_fade/1h",
+      "symbol": "XRPUSDT",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "XRPUSDT/gap_fade/4h",
+      "symbol": "XRPUSDT",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "XRPUSDT/gap_fade/1d",
+      "symbol": "XRPUSDT",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 250,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=250; None"
+    },
+    {
+      "key": "XRPUSDT/gap_fade/1w",
+      "symbol": "XRPUSDT",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 36,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=36; None"
+    },
+    {
+      "key": "DOGEUSDT/gap_fade/15m",
+      "symbol": "DOGEUSDT",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "DOGEUSDT/gap_fade/1h",
+      "symbol": "DOGEUSDT",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "DOGEUSDT/gap_fade/4h",
+      "symbol": "DOGEUSDT",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "DOGEUSDT/gap_fade/1d",
+      "symbol": "DOGEUSDT",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 250,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=250; None"
+    },
+    {
+      "key": "DOGEUSDT/gap_fade/1w",
+      "symbol": "DOGEUSDT",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 36,
+      "reason_code": "STRATEGY_UNSUPPORTED",
+      "suggested_action": "re-run gap_fade on available bars or document the real constraint",
+      "note": "BLOCKED_NO_DATA: bars=36; None"
+    },
+    {
+      "key": "ADAUSDT/gap_fade/15m",
+      "symbol": "ADAUSDT",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "ADAUSDT/gap_fade/1h",
+      "symbol": "ADAUSDT",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "ADAUSDT/gap_fade/4h",
+      "symbol": "ADAUSDT",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "ADAUSDT/gap_fade/1d",
+      "symbol": "ADAUSDT",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "ADAUSDT/gap_fade/1w",
+      "symbol": "ADAUSDT",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "LINKUSDT/gap_fade/15m",
+      "symbol": "LINKUSDT",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "LINKUSDT/gap_fade/1h",
+      "symbol": "LINKUSDT",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "LINKUSDT/gap_fade/4h",
+      "symbol": "LINKUSDT",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "LINKUSDT/gap_fade/1d",
+      "symbol": "LINKUSDT",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "LINKUSDT/gap_fade/1w",
+      "symbol": "LINKUSDT",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "SPY/gap_fade/15m",
+      "symbol": "SPY",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "SPY/gap_fade/1h",
+      "symbol": "SPY",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "SPY/gap_fade/4h",
+      "symbol": "SPY",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "SPY/gap_fade/1d",
+      "symbol": "SPY",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "SPY/gap_fade/1w",
+      "symbol": "SPY",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "QQQ/gap_fade/15m",
+      "symbol": "QQQ",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "QQQ/gap_fade/1h",
+      "symbol": "QQQ",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "QQQ/gap_fade/4h",
+      "symbol": "QQQ",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "QQQ/gap_fade/1d",
+      "symbol": "QQQ",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "QQQ/gap_fade/1w",
+      "symbol": "QQQ",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "IWM/gap_fade/15m",
+      "symbol": "IWM",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "IWM/gap_fade/1h",
+      "symbol": "IWM",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "IWM/gap_fade/4h",
+      "symbol": "IWM",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "IWM/gap_fade/1d",
+      "symbol": "IWM",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "IWM/gap_fade/1w",
+      "symbol": "IWM",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "AAPL/gap_fade/15m",
+      "symbol": "AAPL",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "AAPL/gap_fade/1h",
+      "symbol": "AAPL",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "AAPL/gap_fade/4h",
+      "symbol": "AAPL",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "AAPL/gap_fade/1d",
+      "symbol": "AAPL",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "AAPL/gap_fade/1w",
+      "symbol": "AAPL",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "MSFT/gap_fade/15m",
+      "symbol": "MSFT",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "MSFT/gap_fade/1h",
+      "symbol": "MSFT",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "MSFT/gap_fade/4h",
+      "symbol": "MSFT",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "MSFT/gap_fade/1d",
+      "symbol": "MSFT",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "MSFT/gap_fade/1w",
+      "symbol": "MSFT",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "NVDA/gap_fade/15m",
+      "symbol": "NVDA",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "NVDA/gap_fade/1h",
+      "symbol": "NVDA",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "NVDA/gap_fade/4h",
+      "symbol": "NVDA",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "NVDA/gap_fade/1d",
+      "symbol": "NVDA",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "NVDA/gap_fade/1w",
+      "symbol": "NVDA",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "JPM/gap_fade/15m",
+      "symbol": "JPM",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "JPM/gap_fade/1h",
+      "symbol": "JPM",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "JPM/gap_fade/4h",
+      "symbol": "JPM",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "JPM/gap_fade/1d",
+      "symbol": "JPM",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "JPM/gap_fade/1w",
+      "symbol": "JPM",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "XLE/gap_fade/15m",
+      "symbol": "XLE",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "XLE/gap_fade/1h",
+      "symbol": "XLE",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "XLE/gap_fade/4h",
+      "symbol": "XLE",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "XLE/gap_fade/1d",
+      "symbol": "XLE",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "XLE/gap_fade/1w",
+      "symbol": "XLE",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GLD/gap_fade/15m",
+      "symbol": "GLD",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GLD/gap_fade/1h",
+      "symbol": "GLD",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GLD/gap_fade/4h",
+      "symbol": "GLD",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GLD/gap_fade/1d",
+      "symbol": "GLD",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GLD/gap_fade/1w",
+      "symbol": "GLD",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "TLT/gap_fade/15m",
+      "symbol": "TLT",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "TLT/gap_fade/1h",
+      "symbol": "TLT",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "TLT/gap_fade/4h",
+      "symbol": "TLT",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "TLT/gap_fade/1d",
+      "symbol": "TLT",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "TLT/gap_fade/1w",
+      "symbol": "TLT",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "EURUSD/gap_fade/15m",
+      "symbol": "EURUSD",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "EURUSD/gap_fade/1h",
+      "symbol": "EURUSD",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "EURUSD/gap_fade/4h",
+      "symbol": "EURUSD",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "EURUSD/gap_fade/1d",
+      "symbol": "EURUSD",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "EURUSD/gap_fade/1w",
+      "symbol": "EURUSD",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "USDJPY/gap_fade/15m",
+      "symbol": "USDJPY",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "USDJPY/gap_fade/1h",
+      "symbol": "USDJPY",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "USDJPY/gap_fade/4h",
+      "symbol": "USDJPY",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "USDJPY/gap_fade/1d",
+      "symbol": "USDJPY",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "USDJPY/gap_fade/1w",
+      "symbol": "USDJPY",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GBPUSD/gap_fade/15m",
+      "symbol": "GBPUSD",
+      "horizon": "15m",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GBPUSD/gap_fade/1h",
+      "symbol": "GBPUSD",
+      "horizon": "1h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GBPUSD/gap_fade/4h",
+      "symbol": "GBPUSD",
+      "horizon": "4h",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GBPUSD/gap_fade/1d",
+      "symbol": "GBPUSD",
+      "horizon": "1d",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    },
+    {
+      "key": "GBPUSD/gap_fade/1w",
+      "symbol": "GBPUSD",
+      "horizon": "1w",
+      "current_status": "blocked_no_data",
+      "bars": 0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL",
+      "suggested_action": "attach the missing bar series",
+      "note": "BLOCKED_NO_DATA: bars=0; None"
+    }
+  ]
+}
