@@ -17,8 +17,13 @@ Three candidate families, in order of testability:
 outperform the median trader over the next 30 days, after fees/slippage.
 
 - Data: Polymarket Data API v2 `/leaderboard` snapshots (daily) plus `/positions`,
-  `/activity`, `/trades` for ranked wallets. Record snapshot time, window, PnL, volume,
-  rank, wallet. Do not backfill ranks from later data.
+  `/activity`, `/trades` for ranked wallets. Record snapshot time, PnL, volume, rank,
+  wallet. Do not backfill ranks from later data.
+- **Measured API defect (2026-11-24):** `window=1d|1w|1m|3m|all` returns the SAME 100
+  rows and the SAME PnL/volume on every value. The window parameter is ignored (or the
+  endpoint is all-time only). Do not use it to claim trailing-30/90-day performance.
+  Compute period PnL from each wallet's dated `/activity`/`/trades` rows instead; the
+  leaderboard is only a candidate list.
 - Test: rank IC (Spearman) between trailing rank and forward PnL/ROI; top-decile mean
   minus median; hit rate; net of a stated fee/slippage. Cluster by wallet and by event;
   bootstrap CI. Require **≥100 wallets** and **≥30 daily snapshots** before a verdict.
