@@ -1,0 +1,148 @@
+{
+  "generated_utc": "2026-11-24T10:42Z",
+  "note": "Best attempted pick per class from 73 contest picks by 19 agent files. Consensus \u2260 endorsement.",
+  "rows": [
+    {
+      "class": "Stocks",
+      "consensus_pick": "AAPL",
+      "agent_count": 3,
+      "n_agents_total": 5,
+      "agents": [
+        "GPT-4.1-mini",
+        "Muse Spark",
+        "gpt-5"
+      ],
+      "endorsement": "NOT ENDORSED",
+      "verdict": "WEAK / strategy DEAD",
+      "why": "Single-stock risk; best measured attempt DSR 0.318 against a 0.95 gate; survivor-conditioned universe.",
+      "estate_best": "CVX long \u2014 DSR 0.318"
+    },
+    {
+      "class": "ETF",
+      "consensus_pick": "SPY",
+      "agent_count": 11,
+      "n_agents_total": 8,
+      "agents": [
+        "ChatGPT",
+        "ChatGPT-6 Luna",
+        "Claude",
+        "GLM 5.3 Flash",
+        "KILOCODE_VSCODE",
+        "M365 Copilot (GPT-5)",
+        "Muse Spark",
+        "Muse Spark 1.0 - Meta AI",
+        "claude-haiku-5-5",
+        "us.anthropic.claude-fable-5-2"
+      ],
+      "endorsement": "ENDORSE (vehicle)",
+      "verdict": "Vehicle only",
+      "why": "Broad index beta, not alpha. SPY \u2261 S&P 500; CAD wrapper VFV/XEQT, USD/RRSP VTI/VOO.",
+      "estate_best": "SOXX long \u2014 DSR 0.004 (no signal)"
+    },
+    {
+      "class": "Bond",
+      "consensus_pick": "SGOV",
+      "agent_count": 1,
+      "n_agents_total": 1,
+      "agents": [
+        "KILOCODE_VSCODE"
+      ],
+      "endorsement": "ENDORSE (cash sleeve)",
+      "verdict": "Cash vehicle only",
+      "why": "SGOV is T-bill carry, not a bond-alpha bet. CAD: CASH.TO/ZST.",
+      "estate_best": "TLT long \u2014 net negative with any cost"
+    },
+    {
+      "class": "Mutual fund",
+      "consensus_pick": "VTSAX",
+      "agent_count": 4,
+      "n_agents_total": 6,
+      "agents": [
+        "KILOCODE_VSCODE",
+        "M365 Copilot (GPT-5)",
+        "Muse Spark",
+        "Muse Spark 1.0 - Meta AI"
+      ],
+      "endorsement": "ENDORSE (vehicle)",
+      "verdict": "Vehicle only",
+      "why": "VTSAX is a total-market index fund; use FXAIX/FZROX for lower cost. Active funds cost 17.6\u00d7 the ETF.",
+      "estate_best": "index variant only \u2014 active funds fail on fees"
+    },
+    {
+      "class": "Crypto",
+      "consensus_pick": "BTCUSD",
+      "agent_count": 8,
+      "n_agents_total": 2,
+      "agents": [
+        "Claude",
+        "GLM 5.3 Flash",
+        "KILOCODE_VSCODE",
+        "M365 Copilot (GPT-5)",
+        "Muse Spark 1.0 - Meta AI",
+        "gemini-4-neon",
+        "gpt-5",
+        "qwen4-max"
+      ],
+      "endorsement": "NOT ENDORSED",
+      "verdict": "KILL",
+      "why": "Class aggregate negative; intrabar truth WR 35.8%, PF 0.917 (n=3,726). Cost 20\u201352 bp.",
+      "estate_best": "ENJ long \u2014 DSR 0.004"
+    },
+    {
+      "class": "FOREX",
+      "consensus_pick": "EURUSD",
+      "agent_count": 7,
+      "n_agents_total": 3,
+      "agents": [
+        "GPT-4.1-mini",
+        "M365 Copilot (GPT-5)",
+        "Muse Ember",
+        "Muse Spark",
+        "Muse Spark 1.0 - Meta AI",
+        "gemini-4-neon",
+        "gpt-5"
+      ],
+      "endorsement": "NOT ENDORSED",
+      "verdict": "UNMEASURABLE",
+      "why": "Price feed dead since 2026-02-09; 0/35 FX cells passed CI + permutation at 5 bp.",
+      "estate_best": "AUDJPY long \u2014 DSR 0.815, feed dead"
+    },
+    {
+      "class": "Commodities",
+      "consensus_pick": "XAUUSD",
+      "agent_count": 3,
+      "n_agents_total": 1,
+      "agents": [
+        "Claude",
+        "GLM 5.3 Flash",
+        "gpt-5"
+      ],
+      "endorsement": "NOT ENDORSED",
+      "verdict": "KILL",
+      "why": "Class aggregate \u22122.9619 net bp/trade, n=50, CI [\u22125.004, \u22121.338] excludes zero on the wrong side.",
+      "estate_best": "\u2014 (fails at zero cost)"
+    },
+    {
+      "class": "Options",
+      "consensus_pick": "\u2014",
+      "agent_count": 0,
+      "n_agents_total": 0,
+      "agents": [],
+      "endorsement": "NOT ENDORSED",
+      "verdict": "UNKNOWN",
+      "why": "No options data layer; nothing measured.",
+      "estate_best": "\u2014"
+    },
+    {
+      "class": "Futures",
+      "consensus_pick": "\u2014",
+      "agent_count": 0,
+      "n_agents_total": 0,
+      "agents": [],
+      "endorsement": "NOT ENDORSED",
+      "verdict": "UNKNOWN",
+      "why": "No roll-adjusted series; cannot rank.",
+      "estate_best": "\u2014"
+    }
+  ]
+}

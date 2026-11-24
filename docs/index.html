@@ -30,6 +30,11 @@
   .top nav a{color:var(--dim);white-space:nowrap;padding:1px 0}
   .top nav a:hover{color:var(--ink);text-decoration:none}
 
+  @media (max-width:700px){
+    .top{position:static}
+    .top nav{font-size:12px;gap:3px 10px}
+  }
+
   /* hero */
   header.hero{padding:54px 0 34px;border-bottom:1px solid var(--line);
     background:radial-gradient(900px 340px at 18% -12%,rgba(61,220,151,.10),transparent 60%),
@@ -146,6 +151,7 @@
     <nav>
       <a href="#eli5">ELI5</a>
       <a href="#endorse">What we endorse</a>
+      <a href="best-picks.html">Best picks</a>
       <a href="harvest.html">HARVEST</a>
       <a href="#answer">The answer</a>
       <a href="#retractions">Retractions</a>
@@ -229,6 +235,44 @@
   </p>
 </section>
 
+<section id="bestpicks">
+  <h2><span class="num">P</span>Best attempted pick per asset class</h2>
+  <p class="lede">Counted from 73 picks filed by 19 agent entries. Consensus is <b>not</b> evidence: the favourite in ETFs is the index vehicle we endorse; the favourite in crypto is BTC, which we still refuse.</p>
+  <table>
+    <thead><tr><th>Class</th><th>Best attempted pick</th><th class="num">Agents</th><th>Endorsement</th><th>Verdict</th><th>Why</th></tr></thead>
+    <tbody>
+<tr><td><b>Stocks</b></td><td><b>AAPL</b></td>
+      <td class="num">3</td><td><span class="tag t-dead">NOT ENDORSED</span></td>
+      <td>WEAK / strategy DEAD</td><td>Single-stock risk; best measured attempt DSR 0.318 against a 0.95 gate; survivor-conditioned universe.</td></tr>
+<tr><td><b>ETF</b></td><td><b>SPY</b></td>
+      <td class="num">11</td><td><span class="tag t-pass">ENDORSE (vehicle)</span></td>
+      <td>Vehicle only</td><td>Broad index beta, not alpha. SPY ≡ S&P 500; CAD wrapper VFV/XEQT, USD/RRSP VTI/VOO.</td></tr>
+<tr><td><b>Bond</b></td><td><b>SGOV</b></td>
+      <td class="num">1</td><td><span class="tag t-pass">ENDORSE (cash sleeve)</span></td>
+      <td>Cash vehicle only</td><td>SGOV is T-bill carry, not a bond-alpha bet. CAD: CASH.TO/ZST.</td></tr>
+<tr><td><b>Mutual fund</b></td><td><b>VTSAX</b></td>
+      <td class="num">4</td><td><span class="tag t-pass">ENDORSE (vehicle)</span></td>
+      <td>Vehicle only</td><td>VTSAX is a total-market index fund; use FXAIX/FZROX for lower cost. Active funds cost 17.6× the ETF.</td></tr>
+<tr><td><b>Crypto</b></td><td><b>BTCUSD</b></td>
+      <td class="num">8</td><td><span class="tag t-dead">NOT ENDORSED</span></td>
+      <td>KILL</td><td>Class aggregate negative; intrabar truth WR 35.8%, PF 0.917 (n=3,726). Cost 20–52 bp.</td></tr>
+<tr><td><b>FOREX</b></td><td><b>EURUSD</b></td>
+      <td class="num">7</td><td><span class="tag t-unk">NOT ENDORSED</span></td>
+      <td>UNMEASURABLE</td><td>Price feed dead since 2026-02-09; 0/35 FX cells passed CI + permutation at 5 bp.</td></tr>
+<tr><td><b>Commodities</b></td><td><b>XAUUSD</b></td>
+      <td class="num">3</td><td><span class="tag t-dead">NOT ENDORSED</span></td>
+      <td>KILL</td><td>Class aggregate −2.9619 net bp/trade, n=50, CI [−5.004, −1.338] excludes zero on the wrong side.</td></tr>
+<tr><td><b>Options</b></td><td><b>—</b></td>
+      <td class="num">0</td><td><span class="tag t-unk">NOT ENDORSED</span></td>
+      <td>UNKNOWN</td><td>No options data layer; nothing measured.</td></tr>
+<tr><td><b>Futures</b></td><td><b>—</b></td>
+      <td class="num">0</td><td><span class="tag t-unk">NOT ENDORSED</span></td>
+      <td>UNKNOWN</td><td>No roll-adjusted series; cannot rank.</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:10px"><a href="best-picks.html"><b>Full table with agent attribution &rarr;</b></a></p>
+</section>
+
 <section id="toc">
   <h2><span class="num">00</span>Table of contents</h2>
   <p class="lede">Ten sections. If you read nothing else, read 01 and 04.</p>
@@ -245,6 +289,7 @@
     <ol>
       <li><a href="#eli5">The whole thing in plain English <span class="d">lemonade stand analogy, no jargon</span></a></li>
       <li><a href="#endorse">What we endorse — and what we refuse to <span class="d">one low-risk vehicle, zero alpha claims</span></a></li>
+      <li><a href="best-picks.html">Best attempted pick per asset class <span class="d">what 19 agents picked, and which we endorse</span></a></li>
       <li><a href="#answer">The answer in one sentence <span class="d">what we would actually buy, and why the answer is "index fund"</span></a></li>
       <li><a href="#pages">What each page is for <span class="d">this site, the /audit dashboard, the audit3 tribunal, and the dead /audit2</span></a></li>
       <li><a href="#filed">What the four agents filed as their final picks <span class="d">per asset class, their overall top 3–5, and why all of them endorse nothing</span></a></li>
@@ -268,7 +313,7 @@
   <div class="eli5" style="background:#1a1f26;border:1px solid #3d2b58;border-left:4px solid #b98cff;border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0">
     <b>ELI5:</b> Analysts publish “buy / hold / sell” opinions and upgrades. The HARVEST page collects those votes into one score per symbol and lists the recent actions. You can sort and hide anything older than 3/6/12 months, because last year's upgrade is not today's advice.
     <div style="margin-top:10px"><a href="harvest.html" style="font-weight:700">Open the HARVEST table &rarr;</a></div>
-    <div style="color:#9aa7b4;font-size:13px;margin-top:6px">Sources: Yahoo Finance recommendation trends + Nasdaq analyst API. Coverage gaps (ETFs, funds, crypto, FX) are shown as gaps — nothing is invented.</div>
+    <div style="color:#9aa7b4;font-size:13px;margin-top:6px">Source: Finnhub analyst recommendation trend, via a licensed key. Measured coverage in the current run: <b>71 of 71 stocks</b> with consensus; <b>0 of 14 ETFs</b>, <b>0 of 6 bonds</b>, <b>0 of 2 crypto</b> (no analyst coverage is published for those instrument types); <b>6 mutual funds return HTTP 403</b> on this plan tier. Coverage gaps are shown as gaps — nothing is invented, and a source we cannot reach is labelled with its exact failure.</div>
   </div>
 </section>
 
