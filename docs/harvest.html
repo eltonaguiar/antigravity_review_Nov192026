@@ -84,6 +84,12 @@
   .dist span { display:block; height:100%; }
   .presets { display:flex; gap:6px; flex-wrap:wrap; margin:.2rem 0 .8rem; }
   .presets .label { color:var(--dim); font-size:.8rem; align-self:center; }
+  .tabs{display:flex;gap:8px;margin:16px 0 6px;flex-wrap:wrap}
+  .tab{background:var(--panel2,#1c2330);border:1px solid var(--line,#30363d);color:var(--ink,#e6edf3);
+       border-radius:8px;padding:7px 12px;cursor:pointer;font-size:.9rem}
+  .tab.active{background:#2563eb;border-color:#3b82f6;color:#fff}
+  .hist td{vertical-align:top}
+  .hist details summary{cursor:pointer;color:#6cb6ff}
 </style>
 </head>
 <body>
@@ -104,13 +110,19 @@ both people and language models.</p>
     <li><b>One row = one stock.</b> “Analysts” is how many professionals cover it. “Buy-side %” is the share saying Buy or Strong Buy.</li>
     <li><b>Trend</b> compares this month to last month — it is <i>not</i> an upgrade or downgrade event.</li>
     <li><b>A blank / 0 analysts is not “bad”.</b> It means the data feed publishes no analyst coverage for that instrument type (ETFs, bonds, crypto) or our plan cannot access it (mutual funds).</li>
-    <li><b>This is an opinion poll, not advice</b> — and we have not yet measured whether these analysts’ calls made money. That track-record layer is the next build.</li>
+    <li><b>This is an opinion poll, not advice</b> — and the **Track record** tab now shows measured forward returns — small n, monthly consensus only, not a recommendation.</li>
   </ul>
 </div>
 <div id="banner" class="banner" hidden></div>
 
 <div class="cards" id="cards"></div>
 
+<div class="tabs">
+  <button class="tab active" data-tab="tab-consensus" type="button">Consensus</button>
+  <button class="tab" data-tab="tab-history" type="button">Track record</button>
+</div>
+
+<div id="tab-consensus">
 <h2>Filter</h2>
 <div class="controls">
   <label>Class
@@ -191,7 +203,6 @@ both people and language models.</p>
 </details>
 
 <div class="scroll">
-<p class="sub" id="snapshot"></p>
 <table id="tbl">
   <thead>
     <tr>
@@ -209,6 +220,26 @@ both people and language models.</p>
   </thead>
   <tbody id="rows"><tr><td colspan="10" class="na">loading…</td></tr></tbody>
 </table>
+</div>
+</div>
+
+<div id="tab-history" hidden>
+  <h2>Overall analyst record — consensus labels → forward excess vs SPY</h2>
+  <p class="method">Entry is the first close <b>strictly after</b> the snapshot date; 6.7122 bp cost.
+  CIs are symbol-clustered bootstrap; q is Benjamini–Hochberg across labels per horizon.
+  Monthly consensus only (4 periods), overlapping, survivorship-biased — not a recommendation.</p>
+  <table id="overall"><thead><tr>
+    <th>Label</th><th class="num">21d n</th><th class="num">21d mean</th><th class="num">21d CI</th><th class="num">21d q</th>
+    <th class="num">63d n</th><th class="num">63d mean</th><th class="num">63d CI</th><th class="num">63d q</th>
+  </tr></thead><tbody id="overall-rows"></tbody></table>
+
+  <h2>Per-symbol history</h2>
+  <p class="method">Each row is one symbol; expand to see its monthly consensus snapshots and the forward excess for each.
+  <input id="h-search" type="search" placeholder="filter symbol…" style="margin-left:8px;background:#1c2330;border:1px solid #30363d;color:#e6edf3;border-radius:6px;padding:4px 8px"></p>
+  <table class="hist"><thead><tr>
+    <th>Symbol</th><th>Latest</th><th>Trend</th><th class="num">Periods</th><th class="num">Mean 21d excess</th><th>Detail</th>
+  </tr></thead><tbody id="hist-rows"></tbody></table>
+  <p class="note" id="hist-note"></p>
 </div>
 
 <h2>Coverage by asset class</h2>
@@ -474,5 +505,46 @@ fetch('data/harvest_signals.json', { cache: 'no-store' })
     el('banner').textContent = 'Data feed unavailable. This page shows nothing rather than stale or invented figures.';
   });
 </script>
+
+(function(){
+  const $=id=>document.getElementById(id);
+  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));
+    ['tab-consensus','tab-history'].forEach(id=>$(id).hidden = (id!==b.dataset.tab));
+  });
+  function fmt(v,d=2){return v==null?'—':(v>=0?'+':'')+v.toFixed(d);}
+  fetch('data/harvest_backtest.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+    const rows=[];
+    for(const [lab,x] of Object.entries(d.by_label||{})){
+      const a=x['21d']||{}, b=x['63d']||{};
+      const qa=(x.q||{})['21d'], qb=(x.q||{})['63d'];
+      rows.push(`<tr><td><b>${lab}</b></td>
+        <td class="num">${a.n??'—'}</td><td class="num">${fmt(a.mean_pct)}%</td>
+        <td class="num">${a.ci95_pct?'['+fmt(a.ci95_pct[0])+','+fmt(a.ci95_pct[1])+']':'—'}</td>
+        <td class="num">${qa==null?'—':qa.toFixed(3)}</td>
+        <td class="num">${b.n??'—'}</td><td class="num">${fmt(b.mean_pct)}%</td>
+        <td class="num">${b.ci95_pct?'['+fmt(b.ci95_pct[0])+','+fmt(b.ci95_pct[1])+']':'—'}</td>
+        <td class="num">${qb==null?'—':qb.toFixed(3)}</td></tr>`);
+    }
+    $('overall-rows').innerHTML=rows.join('');
+  }).catch(e=>{$('overall-rows').innerHTML='<tr><td colspan="9">Failed to load harvest_backtest.json</td></tr>';});
+  let H=[];
+  function renderHist(){
+    const q=($('h-search').value||'').toLowerCase();
+    const rows=H.filter(x=>!q||x.symbol.toLowerCase().includes(q));
+    $('hist-rows').innerHTML=rows.map(x=>{
+      const det=(x.periods||[]).map(p=>`<div>${p.period} · <b>${p.label}</b> · ${p.analysts} analysts · buy-side ${p.buy_side_pct}% · ${p.direction} · 21d ${fmt(p.fwd21_pct)}% · 63d ${fmt(p.fwd63_pct)}%</div>`).join('');
+      return `<tr><td><b>${x.symbol}</b></td><td>${x.latest||'—'}</td><td>${x.latest_direction||'—'}</td>
+        <td class="num">${x.n_periods}</td><td class="num">${fmt(x.mean_fwd21_pct)}%</td>
+        <td><details><summary>periods</summary>${det||'none'}</details></td></tr>`;
+    }).join('')||'<tr><td colspan="6">No symbols.</td></tr>';
+    $('hist-note').textContent=`${rows.length} of ${H.length} symbols · monthly consensus, 4 periods · not a recommendation`;
+  }
+  fetch('data/harvest_symbol_history.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+    H=d.symbols||[]; renderHist();
+  }).catch(e=>{$('hist-rows').innerHTML='<tr><td colspan="6">Failed to load harvest_symbol_history.json</td></tr>';});
+  $('h-search').addEventListener('input',renderHist);
+})();
+
 </body>
 </html>
