@@ -1,0 +1,54 @@
+{
+ "generated": "2026-11-24T18:15:51.200702+00:00",
+ "seed": 20261124,
+ "n_perm": 2000,
+ "n_boot": 2000,
+ "n_obs": 442,
+ "n_symbols": 149,
+ "coverage_note": "consensus exists for STOCK only; other classes absent by construction",
+ "spearman_rho": -0.07264,
+ "permutation_p": 0.18491,
+ "per_label": {
+  "SELL": {
+   "n": 4,
+   "mean_excess_pct": 4.0362,
+   "ci95_pct": [
+    1.054,
+    12.9826
+   ]
+  },
+  "HOLD": {
+   "n": 126,
+   "mean_excess_pct": 1.9277,
+   "ci95_pct": [
+    0.5995,
+    3.2664
+   ]
+  },
+  "BUY": {
+   "n": 192,
+   "mean_excess_pct": 1.3764,
+   "ci95_pct": [
+    -0.0986,
+    2.9184
+   ]
+  },
+  "STRONG_BUY": {
+   "n": 120,
+   "mean_excess_pct": -0.2476,
+   "ci95_pct": [
+    -1.9076,
+    1.5664
+   ]
+  }
+ },
+ "kilo_reference": {
+  "STRONG_BUY": {
+   "mean_excess_pct": 1.325,
+   "ci95_pct": [
+    -0.329,
+    3.109
+   ]
+  }
+ }
+}
