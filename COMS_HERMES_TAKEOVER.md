@@ -169,7 +169,54 @@ Verified options:
 So Copilot no longer needs screen automation. Note `--mode agent` is the default, which means a
 scripted prompt can make edits unattended — keep approvals on.
 
-### Zoo Code — genuinely no CLI, and its URI handler does not exist
+### Zoo Code — no CLI, but it has a full IPC command protocol (this corrects an earlier claim)
+
+An earlier revision said Zoo has no programmatic door. That was wrong. The installed bundle
+(`zoocodeorganization.zoo-code-3.98.1/dist/extension.js`) reads an env var at activation and stands
+up a **socket.io server** on it:
+
+```js
+let f = process.env.ROO_CODE_IPC_SOCKET_PATH, c = typeof f === "string";
+...
+if (s) { const l = this.ipc = new PIt(s, this.log); l.listen(); ... }
+```
+
+Transport is socket.io over a Unix-domain socket / Windows named pipe (`TF.serve(socketPath, ...)`,
+`TF.server.on("connect"|"message")`, `broadcast`). Protocol, read from the dispatch switch:
+
+**Server -> client on connect**
+```json
+{"type":"Ack","origin":"server","data":{"clientId":"<hex>","pid":123,"ppid":45}}
+```
+
+**Client -> server**
+```json
+{"origin":"client","type":"TaskCommand","clientId":"<hex>","data":{"commandName":"SendMessage","text":"...","images":[]}}
+```
+
+**Supported `commandName` values** (each with its payload):
+
+| commandName | payload |
+|---|---|
+| `StartNewTask` | `{text, images?, newTab?, requestId?}` — returns `taskStartResponse` `{requestId, success, taskId}` |
+| `SendMessage` | `{text, images?}` |
+| `CancelTask` | — |
+| `ResumeTask` | `taskId` |
+| `CloseTask` | — save files then close the window |
+| `DeleteQueuedMessage` | `messageId` |
+| `GetCommands` / `GetModes` / `GetModels` | — |
+
+**Server -> client events**
+```json
+{"type":"TaskEvent","origin":"server","data":{"eventName":"...","payload":{...}}}
+```
+
+**Requirement:** VS Code must be started with `ROO_CODE_IPC_SOCKET_PATH` set — it is read once at
+`activate()`, so an already-running window will not pick it up. UNVERIFIED: whether a Windows named
+pipe path works as well as a POSIX socket path; the transport is socket.io, so a client needs
+`socket.io-client` (Node), not a plain `net.connect`.
+
+### Zoo Code URI handler — exists at runtime, but cannot activate the extension
 
 Verified against the installed manifests:
 
@@ -183,8 +230,10 @@ Verified against the installed manifests:
 
 - `vscode://kilocode.kilo-code?task=...` — plausible, handler is declared.
 - `vscode://saoudrizwan.claude-dev?task=...` — plausible, handler is declared.
-- `vscode://zoocodeorganization.zoo-code?task=...` — **will not activate anything**: no `onUri`.
-  This claim, from the same research batch, is false for Zoo.
+- `vscode://zoocodeorganization.zoo-code?task=...` — **will not activate the extension**: no `onUri`
+  event. Nuance found in the bundle: Zoo *does* call `window.registerUriHandler({handleUri: N_r})`
+  at activate time, so if Zoo is already running the URI may still be handled. A missing `onUri`
+  means it cannot cold-start from the link, not that the handler is absent.
 
 Zoo's remaining options are screen automation (fragile) or writing into its task files while the
 extension holds the same state in memory (unsupported, will be overwritten — do not do this).
