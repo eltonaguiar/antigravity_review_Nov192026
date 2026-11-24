@@ -1,0 +1,203 @@
+{
+  "generated_at": "2026-11-24T17:27Z",
+  "options": {
+    "SPY": {
+      "underlying": 718.42,
+      "expiry": "2026-11-24",
+      "atm_iv_call": 0.16443706665039065,
+      "atm_iv_put": 0.16236189208984375,
+      "put_skew_iv": 0.710940390625,
+      "call_wing_iv": 0.57812921875,
+      "atm_straddle_ask": 4.609999999999999,
+      "expected_move_pct": 0.6416859218841345,
+      "calls": 167,
+      "puts": 136,
+      "delta_field": false
+    },
+    "AAPL": {
+      "underlying": 352.865,
+      "expiry": "2026-11-25",
+      "atm_iv_call": 0.2172929833984375,
+      "atm_iv_put": 0.2912668530273437,
+      "put_skew_iv": 0.6015664843750002,
+      "call_wing_iv": 0.49023947265625,
+      "atm_straddle_ask": 5.21,
+      "expected_move_pct": 1.476485341419523,
+      "calls": 40,
+      "puts": 40,
+      "delta_field": false
+    }
+  },
+  "futures_rough_rank": [
+    {
+      "symbol": "ZS=F",
+      "class": "Ags",
+      "r12": 0.10438459826396618,
+      "r6": 0.03850983675177888,
+      "vol": 0.16888807122093916,
+      "above_sma": true,
+      "mdd": -0.11579174767768419,
+      "n": 502,
+      "score": 1.618
+    },
+    {
+      "symbol": "NG=F",
+      "class": "Energy",
+      "r12": -0.17872054594869735,
+      "r6": 0.13729070423765966,
+      "vol": 0.8142918356985801,
+      "above_sma": true,
+      "mdd": -0.6617962481225336,
+      "n": 503,
+      "score": 0.781
+    },
+    {
+      "symbol": "CL=F",
+      "class": "Energy",
+      "r12": 0.3772943695677924,
+      "r6": -0.08841395360452842,
+      "vol": 0.4600973795627211,
+      "above_sma": false,
+      "mdd": -0.39309424609218957,
+      "n": 503,
+      "score": -0.18
+    },
+    {
+      "symbol": "ES=F",
+      "class": "Equity index",
+      "r12": 0.07193602380509567,
+      "r6": -0.04972466778777984,
+      "vol": 0.17296215526148373,
+      "above_sma": false,
+      "mdd": -0.18542106117150747,
+      "n": 503,
+      "score": -0.584
+    },
+    {
+      "symbol": "ZC=F",
+      "class": "Ags",
+      "r12": 0.06253687315634227,
+      "r6": -0.01206801974766869,
+      "vol": 0.21056137591800295,
+      "above_sma": false,
+      "mdd": -0.2599601593625498,
+      "n": 502,
+      "score": -0.703
+    },
+    {
+      "symbol": "NQ=F",
+      "class": "Equity index",
+      "r12": 0.051466535728958984,
+      "r6": -0.13444913716303164,
+      "vol": 0.23795572665843184,
+      "above_sma": false,
+      "mdd": -0.22501741533898112,
+      "n": 503,
+      "score": -0.784
+    },
+    {
+      "symbol": "6J=F",
+      "class": "FX",
+      "r12": -0.016343444509908545,
+      "r6": 0.0003975934044528895,
+      "vol": 0.09382620793317445,
+      "above_sma": false,
+      "mdd": -0.14347763308879335,
+      "n": 503,
+      "score": -1.174
+    },
+    {
+      "symbol": "SI=F",
+      "class": "Metals",
+      "r12": -0.18997906031097656,
+      "r6": -0.46143164139857207,
+      "vol": 0.5196978366123118,
+      "above_sma": false,
+      "mdd": -0.6459853925074148,
+      "n": 503,
+      "score": -1.366
+    },
+    {
+      "symbol": "GC=F",
+      "class": "Metals",
+      "r12": -0.12913388634586498,
+      "r6": -0.20754336123915118,
+      "vol": 0.25033671959410286,
+      "above_sma": false,
+      "mdd": -0.3390117390769056,
+      "n": 503,
+      "score": -1.516
+    },
+    {
+      "symbol": "6E=F",
+      "class": "FX",
+      "r12": -0.04912918647635045,
+      "r6": -0.058551074069911335,
+      "vol": 0.07026230715541325,
+      "above_sma": false,
+      "mdd": -0.08970725364026344,
+      "n": 503,
+      "score": -1.699
+    },
+    {
+      "symbol": "ZB=F",
+      "class": "Rates",
+      "r12": -0.08229360233607641,
+      "r6": -0.042382271468143995,
+      "vol": 0.09096696028074666,
+      "above_sma": false,
+      "mdd": -0.15263021508162733,
+      "n": 503,
+      "score": -1.905
+    },
+    {
+      "symbol": "ZN=F",
+      "class": "Rates",
+      "r12": -0.05719404630650493,
+      "r6": -0.028680959818259244,
+      "vol": 0.048941396831418016,
+      "above_sma": false,
+      "mdd": -0.08480856319473029,
+      "n": 503,
+      "score": -2.169
+    }
+  ],
+  "meme": {
+    "DOGE": {
+      "bars": 250,
+      "first": "2025-06-29",
+      "last": "2026-03-05",
+      "ann_vol_pct": 89.2,
+      "total_return_pct": -43.3,
+      "max_dd_pct": -69.4,
+      "mom20": {
+        "n": 70,
+        "mean_net_pct": -1.257,
+        "wr": 0.314
+      },
+      "rev5": {
+        "n": 142,
+        "mean_net_pct": -0.724,
+        "wr": 0.423
+      }
+    }
+  },
+  "ledger_verdicts": {
+    "PENNY_STOCK": {
+      "wr_pct": 50.0,
+      "pf": 0.1779,
+      "n": 4
+    },
+    "MEME": {
+      "wr_pct": 10.0,
+      "pf": 0.0234,
+      "n": 10
+    },
+    "FUTURES": {
+      "wr_pct": 31.58,
+      "pf": 0.6834,
+      "n": 68
+    }
+  },
+  "disclaimer": "Rough screens only. Futures: front-month splice, no roll/cost, not investable. Options: single snapshot, no IV history, not backtestable. Penny/meme: no reliable local series."
+}
