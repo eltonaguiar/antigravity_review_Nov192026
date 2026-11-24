@@ -1,0 +1,42 @@
+{
+  "n": 585,
+  "symbols": 103,
+  "entry_dates": 123,
+  "gross_mean_pct": -1.410251452991453,
+  "net_mean_pct": -1.670251452991453,
+  "ci_iid": [
+    -2.022260145509399,
+    -1.3182427604735067
+  ],
+  "se_iid": 0.17959627169282966,
+  "se_two_way": 0.4339265341636712,
+  "ci_two_way": [
+    -2.5207474599522484,
+    -0.8197554460306574
+  ],
+  "design_effect_two_way": 5.837646353207331,
+  "design_effect_symbol": 5.246918767125102,
+  "design_effect_date": 1.5907275860822294,
+  "symbol_bootstrap_ci": [
+    -2.4692877378435516,
+    -0.8426391080617495
+  ],
+  "date_bootstrap_ci": [
+    -2.0939885931558933,
+    -1.2047685393258427
+  ],
+  "sign_test_symbol_means": {
+    "positive": 21,
+    "negative": 82,
+    "p_two_sided": 1.0696750216702926e-09
+  },
+  "win_rate": {
+    "pooled": 0.23931623931623933,
+    "symbol_clusters": 103,
+    "mean_of_symbol_wr": 0.2285772096774345,
+    "median_symbol_wr": 0.0,
+    "mean_of_date_wr": 0.29273814420873245,
+    "median_date_wr": 0.125
+  },
+  "implication": "26bp cost + 2-way clustering; see ci_two_way"
+}

@@ -1,0 +1,5267 @@
+[
+ {
+  "symbol": "AAPL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 04:53:49",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AAPL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AAPL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:41",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AAPL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMAT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 04:53:49",
+  "exit_pnl_pct": "15.7000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "AMD",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "AMD",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 13:29:08",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "AMD",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMD",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "AMD",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 13:17:05",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "AMD",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 07:38:31",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "AMT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 07:04:21",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:41",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 18:45:36",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMZN",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 04:53:49",
+  "exit_pnl_pct": "-4.5000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMZN",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "-4.5000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMZN",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:41",
+  "exit_pnl_pct": "-4.5000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AMZN",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "-4.5000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKG",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-10",
+  "generated_at": "2026-10-10 07:45:42",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKG",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-11",
+  "generated_at": "2026-10-11 06:13:31",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKG",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-12",
+  "generated_at": "2026-10-12 06:21:05",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-12",
+  "generated_at": "2026-10-12 18:10:47",
+  "exit_pnl_pct": "-4.1999",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 06:17:55",
+  "exit_pnl_pct": "-4.1000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 06:13:25",
+  "exit_pnl_pct": "-4.1000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-20",
+  "generated_at": "2026-10-20 18:12:45",
+  "exit_pnl_pct": "-5.1000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKW",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-20",
+  "generated_at": "2026-10-20 18:12:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKW",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-21",
+  "generated_at": "2026-10-21 06:12:52",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKW",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-22",
+  "generated_at": "2026-10-22 18:11:23",
+  "exit_pnl_pct": "-4.2000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKW",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-23",
+  "generated_at": "2026-10-23 06:12:19",
+  "exit_pnl_pct": "-4.3000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ARKW",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 18:12:10",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-23",
+  "generated_at": "2026-06-23 06:57:31",
+  "exit_pnl_pct": "-1.0062",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-23",
+  "generated_at": "2026-09-23 12:11:38",
+  "exit_pnl_pct": "-1.0041",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-15",
+  "generated_at": "2026-10-15 12:12:11",
+  "exit_pnl_pct": "1.5046",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-06",
+  "generated_at": "2026-11-06 06:10:53",
+  "exit_pnl_pct": "-1.0020",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-07",
+  "generated_at": "2026-11-07 06:09:25",
+  "exit_pnl_pct": "-1.0047",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-08",
+  "generated_at": "2026-11-08 06:10:08",
+  "exit_pnl_pct": "-1.0047",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-09",
+  "generated_at": "2026-11-09 06:11:42",
+  "exit_pnl_pct": "-1.0013",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-10",
+  "generated_at": "2026-11-10 12:09:31",
+  "exit_pnl_pct": "-0.9981",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-11",
+  "generated_at": "2026-11-11 06:09:47",
+  "exit_pnl_pct": "-1.0033",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 06:11:47",
+  "exit_pnl_pct": "-0.9943",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:35",
+  "exit_pnl_pct": "-1.0006",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-14",
+  "generated_at": "2026-11-14 06:09:19",
+  "exit_pnl_pct": "-1.0038",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "-1.0038",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "-1.0034",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:38",
+  "exit_pnl_pct": "-0.9950",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "-0.9938",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AUDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-19",
+  "generated_at": "2026-11-19 01:27:54",
+  "exit_pnl_pct": "-0.9964",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "AVGO",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 13:17:04",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BAC",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-12",
+  "generated_at": "2026-10-12 18:10:47",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 06:17:55",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-19",
+  "generated_at": "2026-10-19 18:13:21",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-20",
+  "generated_at": "2026-10-20 06:12:00",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-21",
+  "generated_at": "2026-10-21 06:12:52",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 18:12:10",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 06:12:23",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-30",
+  "generated_at": "2026-10-30 18:10:59",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-31",
+  "generated_at": "2026-10-31 06:10:00",
+  "exit_pnl_pct": "8.3001",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-01",
+  "generated_at": "2026-11-01 06:12:08",
+  "exit_pnl_pct": "-4.0997",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-02",
+  "generated_at": "2026-11-02 06:13:53",
+  "exit_pnl_pct": "-4.0997",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-03",
+  "generated_at": "2026-11-03 06:10:45",
+  "exit_pnl_pct": "-4.2002",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-04",
+  "generated_at": "2026-11-04 06:10:43",
+  "exit_pnl_pct": "-4.1003",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-05",
+  "generated_at": "2026-11-05 18:10:26",
+  "exit_pnl_pct": "-4.7001",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-06",
+  "generated_at": "2026-11-06 06:10:53",
+  "exit_pnl_pct": "-4.6002",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-09",
+  "generated_at": "2026-11-09 12:09:36",
+  "exit_pnl_pct": "-4.7004",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-10",
+  "generated_at": "2026-11-10 06:09:44",
+  "exit_pnl_pct": "-4.7005",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-11",
+  "generated_at": "2026-11-11 06:09:47",
+  "exit_pnl_pct": "-4.6997",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 06:11:47",
+  "exit_pnl_pct": "-4.3004",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:35",
+  "exit_pnl_pct": "-4.8999",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-14",
+  "generated_at": "2026-11-14 06:09:19",
+  "exit_pnl_pct": "-5.3005",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "-5.3005",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BITO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "-5.3005",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BLK",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:42",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BLK",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 13:01:51",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "BND",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BND",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BND",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:38",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BND",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:25",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BND",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-19",
+  "generated_at": "2026-11-19 01:27:54",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BND",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-20",
+  "generated_at": "2026-11-20 01:28:26",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BND",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-21",
+  "generated_at": "2026-11-21 01:28:20",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BND",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-22",
+  "generated_at": "2026-11-22 01:28:29",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "BND",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-23",
+  "generated_at": "2026-11-23 01:27:49",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "C",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 07:04:21",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "C",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "C",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:41",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "C",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "C",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 18:54:39",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "C",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 13:17:05",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "CADJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-31",
+  "generated_at": "2026-07-31 18:35:38",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "CADJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-01",
+  "generated_at": "2026-08-01 06:54:12",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "CADJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-02",
+  "generated_at": "2026-08-02 06:56:46",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "CADJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-11",
+  "generated_at": "2026-10-11 18:13:01",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "CAT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 19:18:53",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "CAT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 19:00:58",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "CAT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 07:38:31",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "COPX",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-15",
+  "generated_at": "2026-10-15 06:13:25",
+  "exit_pnl_pct": "-4.4000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "COPX",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-16",
+  "generated_at": "2026-10-16 12:11:31",
+  "exit_pnl_pct": "-4.4999",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "CRWD",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 18:45:36",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "CRWD",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "CSX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 13:10:32",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "CT=F",
+  "asset_class": "COMMODITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "8.5001",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "CT=F",
+  "asset_class": "COMMODITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 07:30:15",
+  "exit_pnl_pct": "9.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "CT=F",
+  "asset_class": "COMMODITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 07:41:12",
+  "exit_pnl_pct": "8.8000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "CT=F",
+  "asset_class": "COMMODITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 07:38:31",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "CWB",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 18:11:35",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "CWB",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 06:13:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "CWB",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-18",
+  "generated_at": "2026-06-18 20:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-19",
+  "generated_at": "2026-06-19 07:51:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-20",
+  "generated_at": "2026-06-20 07:21:48",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-21",
+  "generated_at": "2026-06-21 12:42:49",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-22",
+  "generated_at": "2026-06-22 07:59:53",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 18:10:50",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-30",
+  "generated_at": "2026-10-30 06:10:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-02",
+  "generated_at": "2026-11-02 18:09:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-03",
+  "generated_at": "2026-11-03 06:10:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-04",
+  "generated_at": "2026-11-04 06:10:43",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-07",
+  "generated_at": "2026-11-07 06:09:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-08",
+  "generated_at": "2026-11-08 06:10:08",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-09",
+  "generated_at": "2026-11-09 06:11:42",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 18:08:50",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-14",
+  "generated_at": "2026-11-14 06:09:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DDOG",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DDOG",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 07:38:31",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DIVO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 18:37:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DIVO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DVY",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-07",
+  "generated_at": "2026-09-07 06:14:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DVY",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-08",
+  "generated_at": "2026-09-08 06:13:00",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "DVY",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-22",
+  "generated_at": "2026-09-22 06:14:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EEM",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-21",
+  "generated_at": "2026-10-21 06:12:52",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EEM",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-22",
+  "generated_at": "2026-10-22 06:12:28",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EEM",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EQIX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 07:04:20",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EQIX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EQIX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:41",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURCHF=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-12",
+  "generated_at": "2026-10-12 06:21:05",
+  "exit_pnl_pct": "-0.9996",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURCHF=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 18:11:34",
+  "exit_pnl_pct": "-0.9974",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURCHF=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 06:11:27",
+  "exit_pnl_pct": "-0.9965",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURCHF=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 18:10:50",
+  "exit_pnl_pct": "-0.9974",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURGBP=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-05",
+  "generated_at": "2026-07-05 07:09:30",
+  "exit_pnl_pct": "-1.0040",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURGBP=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-06",
+  "generated_at": "2026-07-06 07:33:04",
+  "exit_pnl_pct": "-1.0043",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURGBP=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-11",
+  "generated_at": "2026-10-11 06:13:30",
+  "exit_pnl_pct": "-1.0046",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURGBP=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 06:17:55",
+  "exit_pnl_pct": "-1.0057",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURGBP=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-15",
+  "generated_at": "2026-10-15 18:11:03",
+  "exit_pnl_pct": "-0.9942",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURGBP=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-20",
+  "generated_at": "2026-10-20 06:12:00",
+  "exit_pnl_pct": "-0.9985",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-01",
+  "generated_at": "2026-08-01 06:54:13",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-02",
+  "generated_at": "2026-08-02 06:56:46",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-03",
+  "generated_at": "2026-08-03 07:09:50",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-04",
+  "generated_at": "2026-08-04 06:55:40",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-03",
+  "generated_at": "2026-09-03 06:16:36",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-04",
+  "generated_at": "2026-09-04 06:14:38",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-05",
+  "generated_at": "2026-09-05 06:13:35",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-06",
+  "generated_at": "2026-09-06 06:11:18",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-07",
+  "generated_at": "2026-09-07 06:14:19",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-09",
+  "generated_at": "2026-09-09 06:16:05",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-12",
+  "generated_at": "2026-10-12 06:21:05",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 06:17:55",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 06:13:25",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-16",
+  "generated_at": "2026-10-16 06:14:56",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-22",
+  "generated_at": "2026-10-22 06:12:28",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 06:11:27",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 06:12:24",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-01",
+  "generated_at": "2026-11-01 06:12:08",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 18:07:26",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 07:30:15",
+  "exit_pnl_pct": "-1.0037",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 07:41:12",
+  "exit_pnl_pct": "-1.0041",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-18",
+  "generated_at": "2026-06-18 20:38:58",
+  "exit_pnl_pct": "-1.0031",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-19",
+  "generated_at": "2026-06-19 07:51:47",
+  "exit_pnl_pct": "-1.0043",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-20",
+  "generated_at": "2026-06-20 07:21:48",
+  "exit_pnl_pct": "-1.0027",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-21",
+  "generated_at": "2026-06-21 07:40:44",
+  "exit_pnl_pct": "-1.0027",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-22",
+  "generated_at": "2026-06-22 07:59:53",
+  "exit_pnl_pct": "-1.0043",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-25",
+  "generated_at": "2026-07-25 12:22:37",
+  "exit_pnl_pct": "1.5033",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-17",
+  "generated_at": "2026-09-17 18:10:51",
+  "exit_pnl_pct": "-1.0017",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-22",
+  "generated_at": "2026-09-22 06:14:58",
+  "exit_pnl_pct": "-1.0028",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-23",
+  "generated_at": "2026-09-23 06:12:10",
+  "exit_pnl_pct": "-0.9976",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-06",
+  "generated_at": "2026-10-06 18:10:59",
+  "exit_pnl_pct": "-1.0028",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-07",
+  "generated_at": "2026-10-07 06:14:22",
+  "exit_pnl_pct": "-0.9975",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-09",
+  "generated_at": "2026-10-09 06:16:14",
+  "exit_pnl_pct": "-0.9973",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-06",
+  "generated_at": "2026-11-06 18:11:12",
+  "exit_pnl_pct": "-0.9957",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-09",
+  "generated_at": "2026-11-09 06:11:42",
+  "exit_pnl_pct": "-1.0030",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-10",
+  "generated_at": "2026-11-10 18:08:13",
+  "exit_pnl_pct": "-1.0037",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-11",
+  "generated_at": "2026-11-11 12:09:18",
+  "exit_pnl_pct": "-0.9966",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 06:11:47",
+  "exit_pnl_pct": "-1.0015",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:35",
+  "exit_pnl_pct": "-1.0035",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-14",
+  "generated_at": "2026-11-14 06:09:19",
+  "exit_pnl_pct": "-0.9955",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "-0.9955",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "-0.9955",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:37",
+  "exit_pnl_pct": "-1.0003",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EURUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "-0.9985",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWJ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-06",
+  "generated_at": "2026-10-06 18:10:59",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWJ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-07",
+  "generated_at": "2026-10-07 06:14:21",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWJ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWJ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-30",
+  "generated_at": "2026-10-30 18:10:59",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWJ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-31",
+  "generated_at": "2026-10-31 06:10:00",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWJ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-01",
+  "generated_at": "2026-11-01 06:12:08",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWJ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-02",
+  "generated_at": "2026-11-02 06:13:53",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWJ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-03",
+  "generated_at": "2026-11-03 06:10:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWJ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-04",
+  "generated_at": "2026-11-04 06:10:43",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWZ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-16",
+  "generated_at": "2026-10-16 18:10:12",
+  "exit_pnl_pct": "-4.4001",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWZ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-17",
+  "generated_at": "2026-10-17 06:13:25",
+  "exit_pnl_pct": "-4.4000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWZ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-18",
+  "generated_at": "2026-10-18 01:57:27",
+  "exit_pnl_pct": "-4.4000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWZ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-19",
+  "generated_at": "2026-10-19 06:17:13",
+  "exit_pnl_pct": "-4.4000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "EWZ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-20",
+  "generated_at": "2026-10-20 06:12:00",
+  "exit_pnl_pct": "-4.4000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-01",
+  "generated_at": "2026-08-01 06:54:13",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-02",
+  "generated_at": "2026-08-02 06:56:46",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-03",
+  "generated_at": "2026-08-03 07:09:50",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "GBPJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-03",
+  "generated_at": "2026-09-03 06:16:36",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-04",
+  "generated_at": "2026-09-04 06:14:38",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-05",
+  "generated_at": "2026-09-05 06:13:36",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-06",
+  "generated_at": "2026-09-06 06:11:18",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-07",
+  "generated_at": "2026-09-07 06:14:19",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-09",
+  "generated_at": "2026-09-09 06:16:05",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-25",
+  "generated_at": "2026-06-25 07:13:54",
+  "exit_pnl_pct": "1.5024",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-27",
+  "generated_at": "2026-06-27 12:29:40",
+  "exit_pnl_pct": "1.5002",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-17",
+  "generated_at": "2026-09-17 18:10:51",
+  "exit_pnl_pct": "-1.0034",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-18",
+  "generated_at": "2026-09-18 06:13:06",
+  "exit_pnl_pct": "-1.0024",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-21",
+  "generated_at": "2026-09-21 18:11:05",
+  "exit_pnl_pct": "-1.0021",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-22",
+  "generated_at": "2026-09-22 18:13:16",
+  "exit_pnl_pct": "-0.9973",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 18:13:20",
+  "exit_pnl_pct": "1.5033",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 18:08:27",
+  "exit_pnl_pct": "-0.9980",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:36",
+  "exit_pnl_pct": "-0.9980",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 06:57:51",
+  "exit_pnl_pct": "-1.0001",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:37",
+  "exit_pnl_pct": "-1.0014",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "-0.9983",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GBPUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-19",
+  "generated_at": "2026-11-19 01:27:53",
+  "exit_pnl_pct": "-1.0033",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GOOGL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 04:53:49",
+  "exit_pnl_pct": "-4.1000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GOOGL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "-4.1000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GOOGL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:41",
+  "exit_pnl_pct": "-4.1000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GOOGL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "GOOGL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "-4.1000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "HDV",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-14",
+  "generated_at": "2026-11-14 06:09:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "HDV",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "HDV",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "HYG",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-30",
+  "generated_at": "2026-10-30 06:10:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "HYG",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-03",
+  "generated_at": "2026-11-03 06:10:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 12:09:46",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-01",
+  "generated_at": "2026-11-01 06:12:08",
+  "exit_pnl_pct": "-4.1001",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-02",
+  "generated_at": "2026-11-02 06:13:53",
+  "exit_pnl_pct": "-4.1001",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-03",
+  "generated_at": "2026-11-03 06:10:45",
+  "exit_pnl_pct": "-4.0999",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-05",
+  "generated_at": "2026-11-05 18:10:26",
+  "exit_pnl_pct": "-4.6000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-06",
+  "generated_at": "2026-11-06 06:10:54",
+  "exit_pnl_pct": "-4.6000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-10",
+  "generated_at": "2026-11-10 18:08:13",
+  "exit_pnl_pct": "-4.7000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-11",
+  "generated_at": "2026-11-11 06:09:47",
+  "exit_pnl_pct": "-4.6000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 06:11:47",
+  "exit_pnl_pct": "-4.3000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IBIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:35",
+  "exit_pnl_pct": "-4.8000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ICVT",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-07",
+  "generated_at": "2026-07-07 18:45:23",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ICVT",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 06:13:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IVLU",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-21",
+  "generated_at": "2026-09-21 18:11:05",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IVLU",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-22",
+  "generated_at": "2026-09-22 06:14:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IVV",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-26",
+  "generated_at": "2026-10-26 18:12:36",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IVV",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "IYR",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-28",
+  "generated_at": "2026-07-28 18:34:40",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-15",
+  "generated_at": "2026-07-15 06:49:29",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 18:11:34",
+  "exit_pnl_pct": "-4.0001",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 06:13:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-20",
+  "generated_at": "2026-10-20 18:12:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-21",
+  "generated_at": "2026-10-21 18:13:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-22",
+  "generated_at": "2026-10-22 06:12:28",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 06:11:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 06:12:23",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-30",
+  "generated_at": "2026-10-30 18:10:59",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-31",
+  "generated_at": "2026-10-31 06:10:00",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-01",
+  "generated_at": "2026-11-01 06:12:08",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "JEPQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-02",
+  "generated_at": "2026-11-02 06:13:54",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "KO",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 13:10:32",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "LE=F",
+  "asset_class": "COMMODITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 07:41:12",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "LIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 07:04:21",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "LIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "LIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:42",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "LIT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-16",
+  "generated_at": "2026-10-16 06:14:56",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "LRCX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 04:53:49",
+  "exit_pnl_pct": "16.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-27",
+  "generated_at": "2026-09-27 06:13:12",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-28",
+  "generated_at": "2026-09-28 06:16:47",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-29",
+  "generated_at": "2026-09-29 18:13:14",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-30",
+  "generated_at": "2026-09-30 06:13:44",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-01",
+  "generated_at": "2026-10-01 18:13:54",
+  "exit_pnl_pct": "8.0004",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-02",
+  "generated_at": "2026-10-02 06:12:43",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-03",
+  "generated_at": "2026-10-03 06:15:55",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-04",
+  "generated_at": "2026-10-04 08:03:18",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-05",
+  "generated_at": "2026-10-05 06:19:25",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-06",
+  "generated_at": "2026-10-06 06:13:04",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-07",
+  "generated_at": "2026-10-07 06:14:21",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-08",
+  "generated_at": "2026-10-08 06:13:24",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MBS",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-09",
+  "generated_at": "2026-10-09 06:16:14",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MDB",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "MDB",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "MDB",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 13:17:05",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "MDB",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 07:38:31",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "MRK",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 07:38:31",
+  "exit_pnl_pct": "-4.3000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "MRVL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 18:54:39",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MRVL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 13:17:05",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MS",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 19:00:58",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MSFT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 04:53:49",
+  "exit_pnl_pct": "-4.8000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "MSFT",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 13:17:05",
+  "exit_pnl_pct": "-4.9000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "MTUM",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-20",
+  "generated_at": "2026-07-20 07:07:45",
+  "exit_pnl_pct": "-5.8000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "MU",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 04:53:49",
+  "exit_pnl_pct": "25.6000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MU",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "MU",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:42",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NFLX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 18:45:36",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NFLX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NFLX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 19:00:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NFLX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 07:38:31",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 07:41:12",
+  "exit_pnl_pct": "-1.0009",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-22",
+  "generated_at": "2026-06-22 07:59:53",
+  "exit_pnl_pct": "-0.9956",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-23",
+  "generated_at": "2026-06-23 00:32:16",
+  "exit_pnl_pct": "-0.9993",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-25",
+  "generated_at": "2026-06-25 07:13:53",
+  "exit_pnl_pct": "1.5068",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-27",
+  "generated_at": "2026-06-27 07:06:12",
+  "exit_pnl_pct": "1.5068",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-28",
+  "generated_at": "2026-06-28 07:22:42",
+  "exit_pnl_pct": "1.5068",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-30",
+  "generated_at": "2026-06-30 07:20:22",
+  "exit_pnl_pct": "1.5026",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-17",
+  "generated_at": "2026-09-17 18:10:51",
+  "exit_pnl_pct": "-0.9942",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-18",
+  "generated_at": "2026-09-18 06:13:06",
+  "exit_pnl_pct": "-0.9951",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-22",
+  "generated_at": "2026-09-22 06:14:58",
+  "exit_pnl_pct": "-0.9932",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-23",
+  "generated_at": "2026-09-23 06:12:10",
+  "exit_pnl_pct": "-0.9991",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-10",
+  "generated_at": "2026-10-10 07:45:42",
+  "exit_pnl_pct": "1.4968",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-11",
+  "generated_at": "2026-10-11 06:13:31",
+  "exit_pnl_pct": "1.4968",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-12",
+  "generated_at": "2026-10-12 06:21:05",
+  "exit_pnl_pct": "1.4976",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 18:11:34",
+  "exit_pnl_pct": "1.4952",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 18:13:20",
+  "exit_pnl_pct": "1.5038",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-06",
+  "generated_at": "2026-11-06 18:11:12",
+  "exit_pnl_pct": "1.4971",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-07",
+  "generated_at": "2026-11-07 06:09:25",
+  "exit_pnl_pct": "1.4960",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-08",
+  "generated_at": "2026-11-08 06:10:09",
+  "exit_pnl_pct": "1.4960",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-09",
+  "generated_at": "2026-11-09 06:11:42",
+  "exit_pnl_pct": "-0.9998",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 18:37:06",
+  "exit_pnl_pct": "-0.9998",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:38",
+  "exit_pnl_pct": "-0.9998",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "-0.9993",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-19",
+  "generated_at": "2026-11-19 01:27:54",
+  "exit_pnl_pct": "-1.0005",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "NZDUSD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-20",
+  "generated_at": "2026-11-20 01:28:26",
+  "exit_pnl_pct": "-0.9998",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ORCL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 07:04:21",
+  "exit_pnl_pct": "-9.1000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ORCL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ORCL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:41",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ORCL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ORCL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ORCL",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 13:17:05",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PANW",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PANW",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:41",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PANW",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-18",
+  "generated_at": "2026-06-18 20:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-19",
+  "generated_at": "2026-06-19 07:51:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-20",
+  "generated_at": "2026-06-20 07:21:48",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-21",
+  "generated_at": "2026-06-21 07:40:44",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-22",
+  "generated_at": "2026-06-22 07:59:53",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 18:10:50",
+  "exit_pnl_pct": "-3.9998",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-30",
+  "generated_at": "2026-10-30 06:10:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-02",
+  "generated_at": "2026-11-02 18:09:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-03",
+  "generated_at": "2026-11-03 06:10:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-04",
+  "generated_at": "2026-11-04 06:10:43",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 18:08:50",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-14",
+  "generated_at": "2026-11-14 06:09:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PDBC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-10",
+  "generated_at": "2026-11-10 18:08:13",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-11",
+  "generated_at": "2026-11-11 06:09:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 18:08:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:36",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-18",
+  "generated_at": "2026-06-18 20:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-19",
+  "generated_at": "2026-06-19 07:51:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-20",
+  "generated_at": "2026-06-20 07:21:48",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-21",
+  "generated_at": "2026-06-21 07:40:43",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-22",
+  "generated_at": "2026-06-22 07:59:53",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-07",
+  "generated_at": "2026-11-07 06:09:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-08",
+  "generated_at": "2026-11-08 06:10:08",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-09",
+  "generated_at": "2026-11-09 06:11:42",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-10",
+  "generated_at": "2026-11-10 18:08:13",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-11",
+  "generated_at": "2026-11-11 06:09:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 06:11:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:35",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-14",
+  "generated_at": "2026-11-14 06:09:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFA",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:37",
+  "exit_pnl_pct": "-3.9998",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFD",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-11",
+  "generated_at": "2026-11-11 06:09:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFFD",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 18:08:27",
+  "exit_pnl_pct": "-3.9999",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-18",
+  "generated_at": "2026-06-18 20:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-19",
+  "generated_at": "2026-06-19 07:51:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-20",
+  "generated_at": "2026-06-20 07:21:48",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-21",
+  "generated_at": "2026-06-21 07:40:44",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-22",
+  "generated_at": "2026-06-22 07:59:53",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 06:11:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-10",
+  "generated_at": "2026-11-10 06:09:44",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-11",
+  "generated_at": "2026-11-11 06:09:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 18:08:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:36",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 18:37:06",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PFXF",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:37",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "PLD",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 18:41:05",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QQQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-09",
+  "generated_at": "2026-10-09 06:16:14",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QQQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 18:11:34",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QQQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 06:13:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QQQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-21",
+  "generated_at": "2026-10-21 18:13:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QQQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-22",
+  "generated_at": "2026-10-22 06:12:28",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QQQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 18:11:18",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QQQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 06:11:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QQQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 06:12:24",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QUAL",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 18:37:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QUAL",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QUAL",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-19",
+  "generated_at": "2026-11-19 06:42:26",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-10",
+  "generated_at": "2026-07-10 07:14:01",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-11",
+  "generated_at": "2026-07-11 06:47:16",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-12",
+  "generated_at": "2026-07-12 06:56:10",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-13",
+  "generated_at": "2026-07-13 07:09:22",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-15",
+  "generated_at": "2026-07-15 06:49:29",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-16",
+  "generated_at": "2026-07-16 06:50:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 06:11:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 06:12:23",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-30",
+  "generated_at": "2026-10-30 06:10:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-31",
+  "generated_at": "2026-10-31 06:10:00",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-01",
+  "generated_at": "2026-11-01 06:12:08",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-02",
+  "generated_at": "2026-11-02 06:13:54",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-03",
+  "generated_at": "2026-11-03 06:10:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-04",
+  "generated_at": "2026-11-04 06:10:44",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "QYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-20",
+  "generated_at": "2026-11-20 06:44:21",
+  "exit_pnl_pct": "-4.3001",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "RYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-07",
+  "generated_at": "2026-09-07 06:14:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "RYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-08",
+  "generated_at": "2026-09-08 06:13:00",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SBUX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 07:04:20",
+  "exit_pnl_pct": "8.4000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "SBUX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-07",
+  "generated_at": "2026-06-07 07:25:23",
+  "exit_pnl_pct": "8.4000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "SBUX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-08",
+  "generated_at": "2026-06-08 07:40:41",
+  "exit_pnl_pct": "8.4000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "SBUX",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:19:00",
+  "exit_pnl_pct": "8.2000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "SCHD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-09",
+  "generated_at": "2026-11-09 18:12:34",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 06:11:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:35",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-14",
+  "generated_at": "2026-11-14 06:09:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHE",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-21",
+  "generated_at": "2026-10-21 06:12:52",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHE",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-22",
+  "generated_at": "2026-10-22 06:12:28",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHE",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 06:11:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHE",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-30",
+  "generated_at": "2026-10-30 06:10:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SCHH",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-28",
+  "generated_at": "2026-07-28 18:34:40",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SDY",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 18:08:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SGOV",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SGOV",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SGOV",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:38",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SGOV",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:25",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SGOV",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-19",
+  "generated_at": "2026-11-19 01:27:54",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SGOV",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-20",
+  "generated_at": "2026-11-20 01:28:26",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SGOV",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-21",
+  "generated_at": "2026-11-21 01:28:20",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SGOV",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-22",
+  "generated_at": "2026-11-22 01:28:29",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SGOV",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-23",
+  "generated_at": "2026-11-23 01:27:49",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SLV",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 06:13:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SNOW",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SNOW",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SOXX",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-28",
+  "generated_at": "2026-07-28 18:34:40",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "SOXX",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-29",
+  "generated_at": "2026-07-29 06:55:50",
+  "exit_pnl_pct": "10.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "SPY",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-20",
+  "generated_at": "2026-06-20 07:21:48",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SPY",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-21",
+  "generated_at": "2026-06-21 07:40:44",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SPY",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-26",
+  "generated_at": "2026-10-26 18:12:36",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SPY",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SPYD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-07",
+  "generated_at": "2026-09-07 06:14:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SPYD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-08",
+  "generated_at": "2026-09-08 06:13:00",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SPYD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-18",
+  "generated_at": "2026-09-18 18:09:48",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SPYD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-20",
+  "generated_at": "2026-09-20 06:13:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SPYD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-21",
+  "generated_at": "2026-09-21 06:16:23",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "SPYD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-22",
+  "generated_at": "2026-09-22 06:14:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "TLT",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "TLT",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "TLT",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:38",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "TLT",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "TLT",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-19",
+  "generated_at": "2026-11-19 01:27:54",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "TLT",
+  "asset_class": "BOND",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-23",
+  "generated_at": "2026-11-23 01:27:49",
+  "exit_pnl_pct": "1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "UBER",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 04:53:49",
+  "exit_pnl_pct": "-4.7000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "UNP",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 13:10:32",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-10",
+  "generated_at": "2026-08-10 12:20:40",
+  "exit_pnl_pct": "-0.9967",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-11",
+  "generated_at": "2026-08-11 06:21:53",
+  "exit_pnl_pct": "-0.9979",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-12",
+  "generated_at": "2026-08-12 06:31:37",
+  "exit_pnl_pct": "-0.9978",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-14",
+  "generated_at": "2026-08-14 06:30:43",
+  "exit_pnl_pct": "-0.9993",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-15",
+  "generated_at": "2026-08-15 06:09:26",
+  "exit_pnl_pct": "-1.0020",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-16",
+  "generated_at": "2026-08-16 06:10:19",
+  "exit_pnl_pct": "-1.0020",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-19",
+  "generated_at": "2026-08-19 06:15:14",
+  "exit_pnl_pct": "-1.0018",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-31",
+  "generated_at": "2026-10-31 06:10:00",
+  "exit_pnl_pct": "1.5029",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-01",
+  "generated_at": "2026-11-01 06:12:08",
+  "exit_pnl_pct": "1.5029",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-03",
+  "generated_at": "2026-11-03 12:10:28",
+  "exit_pnl_pct": "1.4975",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-04",
+  "generated_at": "2026-11-04 18:08:20",
+  "exit_pnl_pct": "1.4967",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDCAD=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-05",
+  "generated_at": "2026-11-05 06:16:33",
+  "exit_pnl_pct": "1.4980",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-20",
+  "generated_at": "2026-07-20 07:07:44",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-21",
+  "generated_at": "2026-07-21 06:54:04",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-22",
+  "generated_at": "2026-07-22 06:54:10",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-30",
+  "generated_at": "2026-07-30 18:32:42",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-31",
+  "generated_at": "2026-07-31 07:01:19",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-02",
+  "generated_at": "2026-08-02 12:26:57",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-03",
+  "generated_at": "2026-09-03 12:15:09",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-04",
+  "generated_at": "2026-09-04 06:14:38",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-08",
+  "generated_at": "2026-09-08 06:13:00",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDJPY=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-09",
+  "generated_at": "2026-09-09 06:16:05",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-07",
+  "generated_at": "2026-08-07 12:18:14",
+  "exit_pnl_pct": "-1.0002",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-09",
+  "generated_at": "2026-08-09 06:17:56",
+  "exit_pnl_pct": "-1.0002",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-10",
+  "generated_at": "2026-08-10 06:32:40",
+  "exit_pnl_pct": "-0.9998",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-11",
+  "generated_at": "2026-08-11 06:21:53",
+  "exit_pnl_pct": "-1.0002",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-12",
+  "generated_at": "2026-08-12 06:31:37",
+  "exit_pnl_pct": "-0.9997",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-13",
+  "generated_at": "2026-08-13 06:33:59",
+  "exit_pnl_pct": "-0.9998",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-18",
+  "generated_at": "2026-08-18 06:11:56",
+  "exit_pnl_pct": "-0.9999",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-19",
+  "generated_at": "2026-08-19 06:15:14",
+  "exit_pnl_pct": "-1.0003",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-10",
+  "generated_at": "2026-09-10 06:13:48",
+  "exit_pnl_pct": "1.5003",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-15",
+  "generated_at": "2026-10-15 18:11:03",
+  "exit_pnl_pct": "1.5001",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-16",
+  "generated_at": "2026-10-16 06:14:56",
+  "exit_pnl_pct": "1.4999",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-17",
+  "generated_at": "2026-10-17 06:13:25",
+  "exit_pnl_pct": "1.5001",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-18",
+  "generated_at": "2026-10-18 01:57:27",
+  "exit_pnl_pct": "1.5001",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-19",
+  "generated_at": "2026-10-19 06:17:13",
+  "exit_pnl_pct": "1.4998",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-20",
+  "generated_at": "2026-10-20 06:12:00",
+  "exit_pnl_pct": "1.4998",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-21",
+  "generated_at": "2026-10-21 06:12:52",
+  "exit_pnl_pct": "1.5001",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-01",
+  "generated_at": "2026-11-01 18:08:39",
+  "exit_pnl_pct": "-1.0002",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-02",
+  "generated_at": "2026-11-02 06:13:54",
+  "exit_pnl_pct": "-1.0001",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-06",
+  "generated_at": "2026-11-06 06:10:54",
+  "exit_pnl_pct": "-0.9999",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-07",
+  "generated_at": "2026-11-07 06:09:25",
+  "exit_pnl_pct": "-1.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-09",
+  "generated_at": "2026-11-09 06:11:42",
+  "exit_pnl_pct": "1.5001",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-10",
+  "generated_at": "2026-11-10 06:09:44",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-11",
+  "generated_at": "2026-11-11 06:09:47",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-12",
+  "generated_at": "2026-11-12 06:11:47",
+  "exit_pnl_pct": "-1.0002",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-13",
+  "generated_at": "2026-11-13 06:11:35",
+  "exit_pnl_pct": "-0.9999",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-14",
+  "generated_at": "2026-11-14 06:09:19",
+  "exit_pnl_pct": "1.5002",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "1.5002",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:37",
+  "exit_pnl_pct": "1.5001",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "1.4999",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "USDMXN=X",
+  "asset_class": "FOREX",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-19",
+  "generated_at": "2026-11-19 01:27:53",
+  "exit_pnl_pct": "1.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-06",
+  "generated_at": "2026-06-06 04:53:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-20",
+  "generated_at": "2026-07-20 07:07:45",
+  "exit_pnl_pct": "-4.2000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-08",
+  "generated_at": "2026-10-08 18:10:56",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-09",
+  "generated_at": "2026-10-09 06:16:14",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-10",
+  "generated_at": "2026-10-10 07:45:42",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-11",
+  "generated_at": "2026-10-11 06:13:31",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-12",
+  "generated_at": "2026-10-12 06:21:05",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 06:17:55",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 06:13:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-20",
+  "generated_at": "2026-10-20 18:12:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-21",
+  "generated_at": "2026-10-21 06:12:52",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-24",
+  "generated_at": "2026-10-24 06:14:07",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-25",
+  "generated_at": "2026-10-25 06:11:33",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VGT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-26",
+  "generated_at": "2026-10-26 06:15:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VHT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-23",
+  "generated_at": "2026-06-23 00:32:17",
+  "exit_pnl_pct": "8.0000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "VHT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-09",
+  "generated_at": "2026-07-09 18:42:14",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VHT",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-10",
+  "generated_at": "2026-07-10 07:14:01",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VNQ",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-16",
+  "generated_at": "2026-09-16 18:11:13",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VOO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-26",
+  "generated_at": "2026-10-26 18:12:36",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VOO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VTI",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-15",
+  "generated_at": "2026-11-15 00:50:12",
+  "exit_pnl_pct": "4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VTI",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-16",
+  "generated_at": "2026-11-16 01:38:58",
+  "exit_pnl_pct": "4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VTI",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 01:28:38",
+  "exit_pnl_pct": "4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VTI",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VWO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-21",
+  "generated_at": "2026-10-21 06:12:52",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VWO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-22",
+  "generated_at": "2026-10-22 06:12:28",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VWO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VWO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 06:11:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VWO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-29",
+  "generated_at": "2026-10-29 06:12:23",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "VWO",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-30",
+  "generated_at": "2026-10-30 06:10:19",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLB",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-09-21",
+  "generated_at": "2026-09-21 18:11:05",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-18",
+  "generated_at": "2026-06-18 20:38:58",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-19",
+  "generated_at": "2026-06-19 07:51:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-20",
+  "generated_at": "2026-06-20 07:21:48",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-21",
+  "generated_at": "2026-06-21 07:40:44",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-22",
+  "generated_at": "2026-06-22 07:59:53",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-23",
+  "generated_at": "2026-10-23 18:12:07",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-24",
+  "generated_at": "2026-10-24 06:14:07",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-25",
+  "generated_at": "2026-10-25 06:11:33",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-26",
+  "generated_at": "2026-10-26 06:15:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-27",
+  "generated_at": "2026-10-27 06:14:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLC",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-28",
+  "generated_at": "2026-10-28 06:11:27",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLE",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-03",
+  "generated_at": "2026-11-03 06:10:45",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLE",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-05",
+  "generated_at": "2026-11-05 06:16:32",
+  "exit_pnl_pct": "-4.1000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLI",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-08-16",
+  "generated_at": "2026-08-16 12:09:31",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-20",
+  "generated_at": "2026-07-20 07:07:45",
+  "exit_pnl_pct": "-4.8000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-21",
+  "generated_at": "2026-07-21 06:54:04",
+  "exit_pnl_pct": "-4.6000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-28",
+  "generated_at": "2026-07-28 18:34:40",
+  "exit_pnl_pct": "8.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "XLK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-07-29",
+  "generated_at": "2026-07-29 06:55:50",
+  "exit_pnl_pct": "8.5000",
+  "exit_reason": "TP_HIT"
+ },
+ {
+  "symbol": "XLK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-09",
+  "generated_at": "2026-10-09 18:12:52",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-13",
+  "generated_at": "2026-10-13 18:11:34",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLK",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-10-14",
+  "generated_at": "2026-10-14 06:13:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLV",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 18:37:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XLV",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-17",
+  "generated_at": "2026-11-17 18:37:47",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-18",
+  "generated_at": "2026-11-18 01:28:24",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-19",
+  "generated_at": "2026-11-19 01:27:53",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "XYLD",
+  "asset_class": "ETF",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-11-20",
+  "generated_at": "2026-11-20 01:28:25",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ZL=F",
+  "asset_class": "COMMODITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 07:30:15",
+  "exit_pnl_pct": "-4.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ZM",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-09",
+  "generated_at": "2026-06-09 05:09:24",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ZM",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-10",
+  "generated_at": "2026-06-10 03:59:39",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ZM",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-11",
+  "generated_at": "2026-06-11 13:17:05",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ },
+ {
+  "symbol": "ZM",
+  "asset_class": "EQUITY",
+  "direction": "STRONG_BUY",
+  "entry_date": "2026-06-12",
+  "generated_at": "2026-06-12 07:38:31",
+  "exit_pnl_pct": "-7.0000",
+  "exit_reason": "SL_HIT"
+ }
+]
