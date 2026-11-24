@@ -12,6 +12,13 @@ on:
       - 'PROVEIT/**'
       - 'ZOOCODE/**'
       - 'harvest/**'
+      # The build rewrites docs/harvest.html and docs/HARVEST_METHODOLOGY.md from
+      # 42_HARVEST_UPGRADE_2026-11-24/kilocode/harvest_rules.py (see render_legend.py,
+      # run as a build step further down). Without this trigger, editing the scoring
+      # rule - the source of truth - never redeploys the site and the published legend
+      # stays silently stale. Narrow on purpose: do NOT widen to the whole
+      # 42_HARVEST_UPGRADE_2026-11-24/** tree, which holds generated JSON.
+      - '42_HARVEST_UPGRADE_2026-11-24/kilocode/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
