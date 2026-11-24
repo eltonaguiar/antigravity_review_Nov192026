@@ -1,0 +1,19 @@
+{
+ "horizon_days": 63,
+ "n_events": 134923,
+ "n_symbols": 489,
+ "pre_window_days": 20,
+ "activity_only": {
+  "beta_pct": 0.9208,
+  "se_pct": 0.167,
+  "t": 5.512
+ },
+ "activity_plus_precar": {
+  "beta_activity_pct": 0.8765,
+  "se_activity_pct": 0.1665,
+  "t_activity": 5.266,
+  "beta_precar_pct": -5.2339,
+  "t_precar": -2.774
+ },
+ "verdict": "activity SURVIVES the drift control"
+}

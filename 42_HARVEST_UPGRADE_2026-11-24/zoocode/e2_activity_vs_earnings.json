@@ -1,0 +1,21 @@
+{
+ "horizon_days": 63,
+ "n_events": 134923,
+ "n_symbols": 489,
+ "n_activity": 26745,
+ "n_near_earnings": 6390,
+ "share_near_pct": 23.89,
+ "act_near": {
+  "beta_pct": 0.6222,
+  "t": 2.198
+ },
+ "act_far": {
+  "beta_pct": 0.9567,
+  "t": 5.72
+ },
+ "precar": {
+  "beta_pct": -5.2446,
+  "t": -2.781
+ },
+ "verdict": "activity SURVIVES outside earnings"
+}
