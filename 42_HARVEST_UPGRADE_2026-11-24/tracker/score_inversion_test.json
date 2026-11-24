@@ -1,0 +1,88 @@
+{
+ "n_events": 5656,
+ "buckets": {
+  "HOLD": {
+   "n": 2617,
+   "mean_net_excess_bps": 11.11,
+   "ci95": [
+    -27.6,
+    52.0
+   ],
+   "n_symbols": 456,
+   "largest_symbol": "ENPH",
+   "largest_share": 0.009,
+   "median_date": "2025-01-07",
+   "design_effect": 1.31,
+   "iid_se": 17.64,
+   "cluster_se": 20.19
+  },
+  "BUY": {
+   "n": 2541,
+   "mean_net_excess_bps": 24.15,
+   "ci95": [
+    -13.7,
+    63.2
+   ],
+   "n_symbols": 456,
+   "largest_symbol": "AMD",
+   "largest_share": 0.008,
+   "median_date": "2025-01-30",
+   "design_effect": 1.363,
+   "iid_se": 16.62,
+   "cluster_se": 19.4
+  },
+  "STRONG_BUY": {
+   "n": 23,
+   "mean_net_excess_bps": -47.87,
+   "ci95": [
+    -375.8,
+    368.5
+   ],
+   "n_symbols": 23,
+   "largest_symbol": "AMD",
+   "largest_share": 0.043,
+   "median_date": "2025-01-28",
+   "design_effect": 0.988,
+   "iid_se": 190.8,
+   "cluster_se": 189.66
+  },
+  "SELL": {
+   "n": 475,
+   "mean_net_excess_bps": 15.09,
+   "ci95": [
+    -82.7,
+    110.8
+   ],
+   "n_symbols": 243,
+   "largest_symbol": "LUV",
+   "largest_share": 0.019,
+   "median_date": "2025-01-24",
+   "design_effect": 1.262,
+   "iid_se": 43.78,
+   "cluster_se": 49.18
+  }
+ },
+ "generated": "2026-11-24",
+ "source": "ZOOCODE/harvest/2026-11-24T1942Z_earnings499.json",
+ "retrieved": "2026-11-24",
+ "event_rule": "action in {up,down}; to_grade mapped by frozen 1..5; 2023-06-01..2026-10-01; dedup symbol-date",
+ "entry": "next session OPEN after publication date",
+ "exit": "close 21 trading days later",
+ "benchmark": "same-date mean forward net return of other symbols in the same ADV tercile and 126d momentum tercile (size proxy = 60d dollar volume, not market cap)",
+ "cost": "10 / 30 / 100 bps round turn by ADV tercile",
+ "clustered_ci": "2,000 symbol-cluster bootstrap",
+ "track_b_claim": {
+  "HOLD": 2.88,
+  "BUY": 1.67,
+  "STRONG_BUY": 1.28,
+  "n": [
+   164,
+   579,
+   207
+  ],
+  "design_effect": 0.38
+ },
+ "verdict": "UNDERDETERMINED",
+ "verdict_reason": "No bucket CI excludes zero under matched controls; HOLD is not symbol- or date-concentrated; STRONG_BUY n=23. Track B design effect 0.38 is not reproduced (1.31 / 1.36 / 0.99).",
+ "next_probe": "Replace the ADV size proxy with market cap from the same PIT snapshot, and collect >=100 STRONG_BUY events; then rerun the same matched benchmark and cluster bootstrap."
+}
