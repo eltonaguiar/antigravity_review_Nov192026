@@ -1,0 +1,6 @@
+# Build artifacts
+__pycache__/
+*.pyc
+
+# Credentials / browser cookies - never commit
+*cookies*.txt
