@@ -254,25 +254,47 @@ stated *reason* for those picks does not survive checking.
 Extel's 2025 All-America Research Results, and justifies JPM as "sensible first test for **event
 volume**: it ranked first."
 
-The ranking is real — JPM does top that table. But Extel's All-America is a **buy-side survey of
-research quality, commission-weighted** ("who votes, on what"; "how the buy-side values and rewards
-the sell-side for their research advisory services"), not a count of rating changes. It measures
-**reputation**, not **event volume**. The pick may still be good; the reason given does not support it.
+Its ranking facts are **confirmed verbatim against the cited PDF** (88,969 B, downloaded and
+text-extracted, not taken from a snippet):
+
+> "J.P. Morgan maintains **first place** this year in the Research Team leaders table with **49
+> positions**. BofA Securities and J.P. Morgan have vied for the top two positions for 13 years, but
+> this year **BofA share second place with Morgan Stanley, both with 43 published positions**."
+> — Extel, 54th annual survey, New York, October 28, 2025
+
+So: JPM first (49), BofA and Morgan Stanley tied second (43 each), Evercore ISI fourth (37),
+Jefferies fifth (34). The survey itself is 4,430 portfolio managers and analysts at 1,705
+institutions, 61 sectors, **128,054 votes**, and 2025 is the **seventh year of commission-weighted
+results**.
+
+Two things that document also settles:
+
+1. **What is being ranked is "published positions"** — sector-level ranked analyst slots, weighted by
+   buy-side commission votes — not the number of rating changes. My correction stands: Extel
+   measures **reputation**, and the citation supports the *ranking* while saying nothing about
+   *event volume*.
+2. **The "global" qualifier is not supported by this citation.** The document is the All-America
+   (U.S.) table; arena's "global and U.S." overstates its own source. Minor, but it is the kind of
+   drift that turns one verified fact into two unverified ones.
 
 Our own measurement separates the two axes cleanly on 30 mega-caps:
 
-| firm | Extel 2025 standing | measured changes (30 tickers) |
+| firm | Extel 2025 All-America | measured changes (30 tickers) |
 |---|---|---|
-| J.P. Morgan | **#1** | below 106 (outside the top 14) |
-| Morgan Stanley | tied #2 | **164** |
-| BofA Securities | #2 | **147** |
+| J.P. Morgan | **1st — 49 positions** | below 106 (outside the top 14) |
+| Morgan Stanley | **tied 2nd — 43** | **164** |
+| BofA Securities | **tied 2nd — 43** | **147** |
 | RBC Capital | not cited | **234** |
 | Needham | not cited | **211** |
 
 Reputation and event count are inversely related here, which is the opposite of what the volume
-argument assumes. **Deployment of the pick: keep the block — these are the most-covered names in the
-world and should be tested — but order them by measured change count, not by Extel standing, and
-never describe Extel as a volume measure.**
+argument assumes. One caveat in fairness to arena: "published positions" counts ranked *sector* slots,
+so a firm ranked in more sectors plausibly does more coverage — the correlation just does not hold in
+our 30-name sample, and a 30-name sample is exactly what §0 says cannot decide this.
+
+**Deployment of the pick: keep the block — these are the most-covered names in the world and should be
+tested — but order them by measured change count, not by Extel standing, and never describe Extel as a
+volume measure.**
 
 ---
 
