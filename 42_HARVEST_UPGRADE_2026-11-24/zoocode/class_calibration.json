@@ -1,0 +1,110 @@
+{
+ "generated": "2026-11-24T21:05:58.227358+00:00",
+ "seed": 20261124,
+ "n_perm": 2000,
+ "n_boot": 1000,
+ "class_floor": 100,
+ "entry_rule": "publication lag (label known only from the 1st of the next month)",
+ "benchmark": "SPY (characteristic-matched on the only available characteristic: all rows are US equities)",
+ "cost_model": {
+  "deep": "6.71 bp (ETF/index measured round turn)",
+  "normal": "12.07 bp (equity measured round turn)",
+  "thin": "52.0 bp (crypto measured round turn (widest on record))"
+ },
+ "cost_model_is_assumption": "coverage -> cost mapping is an ASSUMPTION; the bp figures are measured",
+ "cost_band_rows": {
+  "deep": 152,
+  "normal": 784,
+  "thin": 27
+ },
+ "excluded_rows": 504,
+ "classes": [
+  {
+   "class": "EQUITY",
+   "n": 963,
+   "n_symbols": 485,
+   "rho": -0.04673,
+   "permutation_p": 0.9995,
+   "sign": "inverted",
+   "monotone": false,
+   "verdict": "inverted",
+   "design_effect": 0.38,
+   "t_raw": 4.117,
+   "t_cluster": 6.709,
+   "mde_pct": 18.868,
+   "buckets": {
+    "STRONG_BUY": {
+     "n": 207,
+     "mean_net_pct": 1.2818,
+     "ci95_pct": [
+      0.0619,
+      2.6378
+     ],
+     "ci_excludes_zero": true
+    },
+    "BUY": {
+     "n": 579,
+     "mean_net_pct": 1.6708,
+     "ci95_pct": [
+      1.0377,
+      2.3423
+     ],
+     "ci_excludes_zero": true
+    },
+    "HOLD": {
+     "n": 164,
+     "mean_net_pct": 2.8798,
+     "ci95_pct": [
+      1.5612,
+      4.3512
+     ],
+     "ci_excludes_zero": true
+    },
+    "SELL": {
+     "n": 13,
+     "mean_net_pct": -0.5222,
+     "ci95_pct": [
+      -6.7069,
+      3.9964
+     ],
+     "ci_excludes_zero": false
+    }
+   }
+  },
+  {
+   "class": "ETF",
+   "n": 0,
+   "n_symbols": 0,
+   "verdict": "insufficient",
+   "reason": "probed 14 ETFs: the consensus source returned an empty array -- no analyst coverage for the instrument type"
+  },
+  {
+   "class": "BOND",
+   "n": 0,
+   "n_symbols": 0,
+   "verdict": "insufficient",
+   "reason": "probed 6 bond funds: empty array -- no analyst coverage"
+  },
+  {
+   "class": "MUTUAL_FUND",
+   "n": 0,
+   "n_symbols": 0,
+   "verdict": "insufficient",
+   "reason": "probed 6 mutual funds: HTTP 403 -- a data-plan limit, so NOT an absence of coverage"
+  },
+  {
+   "class": "CRYPTO",
+   "n": 0,
+   "n_symbols": 0,
+   "verdict": "insufficient",
+   "reason": "probed 2 crypto pairs: empty array -- no analyst coverage"
+  },
+  {
+   "class": "COMMODITY_FUTURES_FOREX",
+   "n": 0,
+   "n_symbols": 0,
+   "verdict": "insufficient",
+   "reason": "no analyst consensus source exists; the appropriate signals are CFTC COT / funding rates, not ratings"
+  }
+ ]
+}
