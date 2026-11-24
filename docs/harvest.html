@@ -58,6 +58,17 @@
   footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--line);
            font-size: .82rem; opacity: var(--dim); }
   .err { color: #dc2626; }
+
+  .legend { border: 1px solid var(--line); border-radius: 6px; padding: .7rem .95rem;
+            margin: 1rem 0 1.2rem; background: rgba(128,128,128,.05); }
+  .legend > summary { cursor: pointer; font-size: .95rem; }
+  .legend dl { margin: .8rem 0 0; }
+  .legend dt { font-weight: 700; font-size: .85rem; margin-top: .75rem; }
+  .legend dd { margin: .2rem 0 0; font-size: .88rem; opacity: .93; }
+  .legend em { opacity: .95; }
+  th small { display: block; text-transform: none; letter-spacing: 0; font-weight: 400;
+             font-size: .66rem; opacity: .75; }
+  .method { font-size: .9rem; }
 </style>
 </head>
 <body>
@@ -65,6 +76,10 @@
 <h1>HARVEST — analyst endorsement signals</h1>
 <p class="sub">Sell-side analyst consensus per symbol, from a licensed data feed. Sortable and
 filterable by date and asset class. <strong>Not investment advice.</strong></p>
+<p class="method">Every column is defined in the legend below it. The full method — endpoints,
+formulas, coverage semantics, known weaknesses and a reviewer checklist — is in
+<a href="HARVEST_METHODOLOGY.md"><strong>HARVEST_METHODOLOGY.md</strong></a>, written to be read by
+both people and language models.</p>
 
 <div id="banner" class="banner" hidden></div>
 
@@ -97,22 +112,75 @@ filterable by date and asset class. <strong>Not investment advice.</strong></p>
   <span class="count" id="count"></span>
 </div>
 
+<details class="legend" open>
+  <summary><strong>How to read this table</strong> — every column, in plain English</summary>
+  <dl>
+    <dt>SB · B · H · S · SS</dt>
+    <dd>The <strong>count of analysts</strong> in each rating bucket for the latest month:
+      <strong>S</strong>trong <strong>B</strong>uy, <strong>B</strong>uy, <strong>H</strong>old,
+      <strong>S</strong>ell, <strong>S</strong>trong <strong>S</strong>ell. A cell reading
+      <code>19 / 48 / 3 / 0 / 0</code> means 19 analysts rated Strong Buy, 48 Buy, 3 Hold, none
+      Sell, none Strong Sell. The five numbers add up to the <em>Analysts</em> column.</dd>
+
+    <dt>Analysts</dt>
+    <dd>Total number of covering analysts — the sum of the five buckets. Always read this before the
+      percentage columns: a row backed by 70 analysts means far more than one backed by 3.</dd>
+
+    <dt>Consensus</dt>
+    <dd>One label derived from those five counts — it is <em>not</em> a separate opinion. Each analyst
+      scores +2 (SB), +1 (B), 0 (H), −1 (S), −2 (SS); the scores are averaged; the average is
+      bucketed: <code>≥1.0 STRONG BUY</code> · <code>≥0.3 BUY</code> · <code>&gt;−0.3 HOLD</code> ·
+      <code>&gt;−1.0 SELL</code> · otherwise <code>STRONG SELL</code>.
+      <br><em>Worked example, AAPL at 19 / 48 / 3 / 0 / 0 with 70 analysts:</em>
+      (2×19 + 1×48 + 0×3 − 1×0 − 2×0) / 70 = <strong>1.23</strong> → <strong>STRONG BUY</strong>.</dd>
+
+    <dt>Buy-side %</dt>
+    <dd>Share of analysts who are positive: (SB + B) ÷ Analysts. 67.7% means roughly two thirds of
+      covering analysts rate the name Buy or Strong Buy. It deliberately ignores <em>how</em> strong
+      — which is why the Consensus label sits next to it.</dd>
+
+    <dt>MoM pp</dt>
+    <dd>Change in Buy-side % versus the prior month, in <strong>p</strong>ercentage <strong>p</strong>oints.
+      <code>+1.8</code> means the buy-side share rose 1.8 points month over month. A value of
+      <code>0.0</code> means no change once rounded, not missing data.</dd>
+
+    <dt>Trend</dt>
+    <dd>MoM pp said as a word: <code>IMPROVING</code> at ≥ +2.0 pp, <code>DETERIORATING</code> at
+      ≤ −2.0 pp, otherwise <code>STABLE</code>.
+      <strong>This is not an upgrade or downgrade event.</strong> It is the month-over-month change in
+      the aggregate distribution. Dated firm-by-firm actions such as “China Renaissance raised AAPL
+      to Buy on 2026-11-11” need a paid upgrade/downgrade feed, which this run reports as
+      unavailable.</dd>
+
+    <dt>Period · Age (d)</dt>
+    <dd>The month the snapshot refers to (periods are dated the 1st) and how many days old that is at
+      the generation timestamp. The <em>Recency</em> filter hides anything older than the window you
+      choose — “≤ 3 months” is the default.</dd>
+
+    <dt>Summary cards above</dt>
+    <dd><em>Symbols covered</em> — rows with at least one month of consensus. <em>Avg buy-side</em> —
+      the mean of Buy-side % across those rows. <em>Improving</em> / <em>Deteriorating</em> — counts of
+      rows in each Trend bucket. <em>Net trend</em> — Improving minus Deteriorating, a <strong>count
+      of symbols, not a percentage</strong>. <em>Generated</em> — UTC time this snapshot was built.</dd>
+  </dl>
+</details>
+
 <div class="scroll">
 <table id="tbl">
   <thead>
     <tr>
-      <th data-k="symbol">Symbol</th>
-      <th data-k="name">Name</th>
-      <th data-k="asset_class">Class</th>
-      <th data-k="sector">Sector</th>
-      <th data-k="period">Period</th>
-      <th data-k="consensus">Consensus</th>
-      <th data-k="buy_side_pct">Buy-side %</th>
-      <th data-k="analysts">Analysts</th>
-      <th data-k="detail">SB / B / H / S / SS</th>
-      <th data-k="mom_change_pp">MoM pp</th>
-      <th data-k="direction">Trend</th>
-      <th data-k="age_days">Age (d)</th>
+      <th data-k="symbol" data-label="Symbol">Symbol</th>
+      <th data-k="name" data-label="Name">Name</th>
+      <th data-k="asset_class" data-label="Class">Class</th>
+      <th data-k="sector" data-label="Sector">Sector</th>
+      <th data-k="period" data-label="Period" title="Month the analyst snapshot refers to. Periods are dated the 1st.">Period</th>
+      <th data-k="consensus" data-label="Consensus" title="Weighted mean of the analyst distribution, bucketed. Derived, not a separate opinion — see the legend.">Consensus</th>
+      <th data-k="buy_side_pct" data-label="Buy-side %" title="(Strong Buy + Buy) / total analysts, as a percentage.">Buy-side %</th>
+      <th data-k="analysts" data-label="Analysts" title="Total covering analysts = the sum of the five rating buckets.">Analysts</th>
+      <th data-k="detail" title="Strong Buy / Buy / Hold / Sell / Strong Sell — counts of covering analysts in each bucket." data-label="SB·B·H·S·SS<small>strong buy · buy · hold · sell · strong sell</small>">SB·B·H·S·SS<small>strong buy · buy · hold · sell · strong sell</small></th>
+      <th data-k="mom_change_pp" data-label="MoM pp" title="Change in Buy-side % versus the prior month, in percentage points.">MoM pp</th>
+      <th data-k="direction" data-label="Trend" title="IMPROVING at >= +2.0 pp, DETERIORATING at <= -2.0 pp, else STABLE. Not an upgrade or downgrade event.">Trend</th>
+      <th data-k="age_days" data-label="Age (d)" title="Days from the period date to the generation timestamp.">Age (d)</th>
     </tr>
   </thead>
   <tbody id="rows"><tr><td colspan="12" class="na">loading…</td></tr></tbody>
@@ -143,6 +211,9 @@ never gets confused with “our key cannot reach it”.</p>
   <p id="defs"></p>
   <p>Per-run reports: <code>/ZOOCODE/COPILOT&lt;DATETIME&gt;.MD</code> · feed:
   <code>/data/harvest_signals.json</code> · generated by <code>tools/harvest_signals.py</code>.</p>
+  <p><strong>Method and reviewer checklist:</strong>
+  <a href="HARVEST_METHODOLOGY.md">HARVEST_METHODOLOGY.md</a> — source endpoints, formulas, coverage
+  semantics, the list of things this page cannot do, and how to verify any number on it.</p>
   <p>Consensus figures are the covering analysts' published distribution as distributed by the data
   vendor. This page computes a weighted mean of that distribution and a month-over-month change; it
   adds no rating of its own and should not be read as a recommendation to buy or sell anything.</p>
@@ -226,14 +297,14 @@ function render() {
     `${rows.length} of ${STATE.data.signals.length} shown` + (hidden ? ` · ${hidden} hidden by filters` : '');
 
   document.querySelectorAll('th[data-k]').forEach((th) => {
-    const base = th.textContent.replace(/[▲▼]\s*$/, '').trim();
+    const label = th.dataset.label || th.dataset.k;
     th.innerHTML = th.dataset.k === STATE.sortKey
-      ? `${base} <span class="arrow">${STATE.sortDir > 0 ? '▲' : '▼'}</span>` : base;
+      ? `${label} <span class="arrow">${STATE.sortDir > 0 ? '▲' : '▼'}</span>` : label;
   });
 }
 
-function card(k, v) {
-  return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+function card(k, v, title) {
+  return `<div class="card" title="${title || ''}"><div class="k">${k}</div><div class="v">${v}</div></div>`;
 }
 
 function boot() {
@@ -241,12 +312,18 @@ function boot() {
   const c = d.crowd_consensus;
 
   el('cards').innerHTML = [
-    card('Symbols covered', c.covered_symbols),
-    card('Avg buy-side', c.avg_buy_side_pct === null ? '—' : c.avg_buy_side_pct + '%'),
-    card('Improving', c.direction_counts.IMPROVING || 0),
-    card('Deteriorating', c.direction_counts.DETERIORATING || 0),
-    card('Net trend', (c.net_upgrades_minus_downgrades > 0 ? '+' : '') + c.net_upgrades_minus_downgrades),
-    card('Generated', d.generated_at.slice(0, 16).replace('T', ' ') + 'Z'),
+    card('Symbols covered', c.covered_symbols,
+         'Symbols with at least one month of analyst consensus in this run.'),
+    card('Avg buy-side', c.avg_buy_side_pct === null ? '—' : c.avg_buy_side_pct + '%',
+         'Mean of (Strong Buy + Buy) / analysts across the covered symbols.'),
+    card('Improving', c.direction_counts.IMPROVING || 0,
+         'Symbols whose buy-side share rose by 2 or more points month over month.'),
+    card('Deteriorating', c.direction_counts.DETERIORATING || 0,
+         'Symbols whose buy-side share fell by 2 or more points month over month.'),
+    card('Net trend', (c.net_upgrades_minus_downgrades > 0 ? '+' : '') + c.net_upgrades_minus_downgrades,
+         'Improving minus Deteriorating. This is a COUNT of symbols, not a percentage, and not upgrades minus downgrades.'),
+    card('Generated', d.generated_at.slice(0, 16).replace('T', ' ') + 'Z',
+         'UTC timestamp this snapshot was built. Every row shares it.'),
   ].join('');
 
   const bad = d.sources.filter((s) => s.status !== 'OK');
