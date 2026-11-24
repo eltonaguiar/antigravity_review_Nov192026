@@ -39,3 +39,22 @@ Direction adds nothing (IMPROVING n=12 −0.60%; DETERIORATING n=11 +0.24%; STAB
 - Negative classes are reliably negative (avoid signal), not investable longs.
 - Real person-level testing needs a paid dated ledger.
 - Next gate: forward n≥100, expectancy_worst>0, DSR≥0.95, BH, PBO<0.5.
+
+## Coverage-change experiment (the one remaining distinct test)
+Signal: change in the number of covering analysts between months, not the level or
+month-over-month direction. `INITIATION` = +2 or more analysts; `DROP` = −2 or more;
+`STABLE` otherwise. Entry next close after the period; excess vs SPY; 6.7122bp cost.
+
+| Bucket | horizon | n | mean excess | 95% CI | hit | CI-low>0 |
+|---|---|---|---|---|---|---|
+| DROP | 21d | 19 | +4.257% | [+1.059, +7.455] | 68% | **yes, but n<30** |
+| INITIATION | 21d | 12 | +2.085% | [−2.007, +6.335] | 50% | no |
+| STABLE | 21d | 182 | +0.118% | [−1.136, +1.391] | 48% | no |
+| STABLE | 63d | 69 | +0.536% | [−2.308, +3.213] | 55% | no |
+
+**Verdict: not defensible.** The only positive CI is DROP at n=19, below the
+n≥30 ranking floor; the 63d buckets are under n=3. It is a hypothesis to
+pre-register, not a result.
+**Falsifier:** pre-register the coverage-change rule now; if after forward
+accumulation no bucket reaches n≥30 with CI-low>0 and effect > 2× cost, the
+mechanism is dead. Do not retest consensus levels or direction again.
