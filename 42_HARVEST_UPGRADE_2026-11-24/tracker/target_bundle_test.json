@@ -1,0 +1,53 @@
+{
+ "raw_up_rows": 14427,
+ "usable_with_pt_and_prior": 2777,
+ "unknown_target": 465,
+ "target_changed_share": 0.938,
+ "subsets": {
+  "rating_only": {
+   "n": 161,
+   "mean": 30.33,
+   "ci": [
+    -95.9,
+    165.9
+   ],
+   "n_symbols": 130,
+   "largest_symbol": "BALL",
+   "largest_share": 0.025,
+   "median_date": "2025-03-14",
+   "design_effect": 1.005
+  },
+  "upgrade_plus_target": {
+   "n": 2505,
+   "mean": 28.53,
+   "ci": [
+    -11.0,
+    70.7
+   ],
+   "n_symbols": 458,
+   "largest_symbol": "NFLX",
+   "largest_share": 0.009,
+   "median_date": "2025-02-19",
+   "design_effect": 1.476
+  }
+ },
+ "difference_B_minus_A_bps": -1.8,
+ "difference_ci95": [
+  -144.2,
+  133.0
+ ],
+ "verdict": "UNDERDETERMINED",
+ "verdict_reason": "See CI overlap; target field coverage and subset imbalance.",
+ "next_probe": "Backfill target_price and prior target for every up row from a PIT feed; then rerun the same split, controls and cluster bootstrap.",
+ "coverage": {
+  "up_rows": 14427,
+  "current_pt_present": 9676,
+  "prior_record_pt_present": 10784,
+  "both_present": 7920,
+  "both_present_share": 0.549,
+  "both_changed": 7436,
+  "both_unchanged": 484,
+  "changed_share_of_both": 0.939,
+  "tested_after_date_grade_price": 2666
+ }
+}
