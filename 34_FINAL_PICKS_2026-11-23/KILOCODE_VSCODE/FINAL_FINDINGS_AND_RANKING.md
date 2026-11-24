@@ -36,7 +36,7 @@ fills. Ranking rule §7 currently **confirmed: no ranking** (bracket-fit bootstr
 
 ## EVIDENCE ANCHORS (verified)
 - **Alpha gate:** 0/69 symbols, **0/362 cells** pass; best class FOREX α-CI-lo −0.144%; gate is sound but **underpowered** (MDE ≈ 5.08%/yr on 33.8y SPY).
-- **1000-cell backlog (main repo):** 96 real measurements, **all KILLED (0 survivors)**; 861 blocked (no bars); open 0.
+- **1000-cell backlog (main repo):** **106 killed** (96 real measurements — all KILLED, **0 survivors** — plus 10 INSUFFICIENT_TRADES rsi2/ma_cross@1d) · **891 blocked_no_data** (no bars) · 3 claimed · open 0.
 - **Fees:** 0.03% vs 1.80% MER = $755k vs $458k per $100k over 30y (~39% less).
 - **Risk:** SPY −24.5% drawdown, ~14 months to recover; missing the best 10 days cut +72.6% → +16.8%.
 
