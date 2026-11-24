@@ -15,7 +15,7 @@ Companion to the PROVEIT and TWEAKS reports. This is the *operating manual*: wha
 | **60/40** | rebalance when a sleeve drifts **> 5 percentage points** from target, or annually if no band hit | check quarterly; act on the 5-pt band |
 | **All-in-one (XEQT/VEQT)** | none — internally rebalanced | annual check |
 
-**Why band (not calendar-only):** bands rebalance on real drift and cut unnecessary trades/cost; calendar-only misses large drifts. (Sweep showed calendar 21/63/252d all ~6.9%/yr — cadence is second-order; the *existence* of rebalancing matters more.)
+**CORRECTED (measured in REBALANCE_REPORT_2026-11-24T0350Z):** rebalancing is **optional, not a return enhancer**. Over this window **not rebalancing won** (7.44%/yr vs 6.91% monthly) and had the best Sharpe (0.346 vs 0.313); rebalancing sold the winning sleeve into the loser and **did not reduce drawdown** (~-20.9% all rules; 2022 hit both sleeves). Band vs calendar is second-order (6.95 vs 6.91) — the band's real benefit is **far fewer trades (2 vs 59)** = less cost/friction, not more return. If you rebalance for risk discipline, use a WIDE band (~+/-10pt, ~1 trade/5y).
 
 ## Alerts to set (calendar + threshold)
 1. **Rebalance alert** — recurring quarterly reminder ("check 60/40 sleeve drift vs 5-pt band").
