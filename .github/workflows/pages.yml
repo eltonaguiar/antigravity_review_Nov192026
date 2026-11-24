@@ -10,6 +10,8 @@ on:
       # published tree at build time (see below). Without this trigger a change
       # to the deliverable would never redeploy the site.
       - 'PROVEIT/**'
+      - 'ZOOCODE/**'
+      - 'harvest/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -50,6 +52,30 @@ jobs:
           rsync -a --exclude '.git*' PROVEIT/ docs/PROVEIT/
           echo "staged $(find docs/PROVEIT -type f | wc -l) files from PROVEIT/"
           test -f docs/PROVEIT/index.html || { echo "landing page docs/PROVEIT/index.html missing"; exit 1; }
+
+      # HARVEST run reports live at ZOOCODE/COPILOT<DATETIME>.MD in the repo root.
+      # Same publish-path issue as PROVEIT: root is not published, docs/ is. Stage it.
+      - name: Stage ZOOCODE run reports into the Pages tree
+        run: |
+          if [ -d ZOOCODE ]; then
+            mkdir -p docs/ZOOCODE
+            rsync -a --exclude '.git*' ZOOCODE/ docs/ZOOCODE/
+            echo "staged $(find docs/ZOOCODE -type f | wc -l) file(s) from ZOOCODE/"
+          else
+            echo "ZOOCODE/ absent - skipping (harvester has not run yet)"
+          fi
+
+      # The HARVEST page fetches data/harvest_signals.json. If the feed is missing
+      # the page renders an explicit error rather than stale numbers, but a missing
+      # feed at build time usually means the harvester failed - surface it here.
+      - name: Check HARVEST data feed
+        run: |
+          if [ -f docs/harvest.html ]; then
+            test -f docs/data/harvest_signals.json || { echo "docs/HARVEST.html present but docs/data/harvest_signals.json missing"; exit 1; }
+            echo "harvest feed bytes: $(wc -c < docs/data/harvest_signals.json)"
+          else
+            echo "harvest.html absent - skipping"
+          fi
 
       # Gate: every relative href in the landing page must resolve inside the
       # published tree. This is the check that would have caught the original

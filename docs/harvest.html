@@ -1,158 +1,335 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HARVEST — analyst endorsements by asset class</title>
+<title>HARVEST — analyst endorsement signals</title>
 <style>
-  :root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2330;--ink:#e6edf3;--muted:#8b949e;--line:#30363d;--accent:#6cb6ff;--good:#3fb950;--bad:#f85149;--warn:#d29922;--purple:#b98cff}
-  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 18px}
-  header{border-bottom:1px solid var(--line);padding:26px 0 14px;background:linear-gradient(180deg,rgba(185,140,255,.10),transparent)}
-  h1{margin:.2rem 0;font-size:1.7rem}.sub{color:var(--muted);max-width:80ch}
-  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.badge{border:1px solid var(--line);border-radius:999px;padding:3px 9px;font-size:.76rem;color:var(--muted);background:var(--panel)}
-  main{padding:20px 0 60px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
-  .eli5{background:rgba(185,140,255,.10);border:1px solid rgba(185,140,255,.35);border-radius:10px;padding:10px 14px;margin:12px 0}
-  .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin:14px 0}
-  label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
-  select,input[type=search]{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:7px 9px;font-size:.92rem}
-  input[type=search]{min-width:180px}
-  .chk{display:flex;gap:6px;align-items:center;font-size:.9rem;color:var(--muted)}
-  table{width:100%;border-collapse:collapse;font-size:.9rem}
-  th,td{border-bottom:1px solid var(--line);padding:7px 7px;text-align:right;vertical-align:top}
-  th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
-  th{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;user-select:none;white-space:nowrap}
-  th:hover{color:var(--accent)}
-  tr.row:hover{background:var(--panel2)}
-  .sym{font-weight:700}.cls{color:var(--muted);font-size:.8rem}
-  .pos{color:var(--good)}.neg{color:var(--bad)}.zero{color:var(--muted)}
-  .pill{font-size:.7rem;border:1px solid var(--line);border-radius:999px;padding:1px 7px;color:var(--muted)}
-  .cov-no{color:var(--warn)}
-  details.actions td{background:var(--panel2);text-align:left}
-  details summary{cursor:pointer;color:var(--accent);font-size:.8rem}
-  .actions ul{margin:6px 0 2px;padding-left:18px}.actions li{margin:2px 0}
-  .counts{color:var(--muted);font-size:.85rem;margin:8px 0}
-  footer{border-top:1px solid var(--line);padding:16px 0 40px;color:var(--muted);font-size:.85rem}
-  .note{color:var(--muted);font-size:.82rem}
+  :root { color-scheme: dark light; --line: rgba(128,128,128,.25); --dim: .68; }
+  * { box-sizing: border-box; }
+  body { font: 14px/1.55 -apple-system, Segoe UI, Roboto, sans-serif; max-width: 78rem;
+         margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 1.55rem; margin: 0 0 .2rem; }
+  h2 { font-size: 1.05rem; margin: 2rem 0 .5rem; }
+  .sub { opacity: var(--dim); margin-top: 0; }
+  a { color: inherit; }
+  code { background: rgba(128,128,128,.15); padding: .08rem .3rem; border-radius: 3px; font-size: .92em; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .6rem; margin: 1rem 0; }
+  .card { border: 1px solid var(--line); border-radius: 6px; padding: .6rem .75rem; }
+  .card .k { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; opacity: var(--dim); }
+  .card .v { font-size: 1.35rem; font-weight: 600; line-height: 1.2; }
+
+  .banner { border-left: 3px solid #c60; background: rgba(200,120,0,.08); padding: .65rem .9rem;
+            margin: 1rem 0; border-radius: 0 4px 4px 0; }
+
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: right; padding: .34rem .5rem; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th:nth-child(-n+3), td:nth-child(-n+3) { text-align: left; }
+  th { font-size: .74rem; text-transform: uppercase; letter-spacing: .03em; opacity: var(--dim);
+       cursor: pointer; user-select: none; position: sticky; top: 0; background: Canvas; z-index: 2; }
+  th:hover { opacity: 1; }
+  th .arrow { opacity: .45; font-size: .85em; }
+  tbody tr:hover { background: rgba(128,128,128,.07); }
+
+  .badge { display: inline-block; padding: .08rem .42rem; border-radius: 999px; font-size: .74rem;
+           font-weight: 600; letter-spacing: .02em; }
+  .STRONG_BUY  { background: rgba(22,163,74,.18);  color: #16a34a; }
+  .BUY         { background: rgba(101,163,13,.18); color: #65a30d; }
+  .HOLD        { background: rgba(128,128,128,.22); color: inherit; }
+  .SELL        { background: rgba(234,88,12,.18);  color: #ea580c; }
+  .STRONG_SELL { background: rgba(220,38,38,.18);  color: #dc2626; }
+  .IMPROVING   { color: #16a34a; font-weight: 600; }
+  .DETERIORATING { color: #dc2626; font-weight: 600; }
+  .STABLE, .NO_PRIOR_PERIOD { opacity: var(--dim); }
+
+  .controls { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: 1rem 0 .4rem; }
+  .controls label { font-size: .78rem; opacity: var(--dim); display: flex; gap: .3rem; align-items: center; }
+  select, input[type=search] { font: inherit; font-size: .85rem; padding: .28rem .45rem;
+       border: 1px solid var(--line); border-radius: 4px; background: Canvas; color: inherit; }
+  input[type=search] { min-width: 13rem; }
+  .count { font-size: .8rem; opacity: var(--dim); margin-left: auto; }
+
+  .coverage td, .coverage th { text-align: left; }
+  .ok  { color: #16a34a; font-weight: 600; }
+  .zero { color: #dc2626; font-weight: 600; }
+  .na  { opacity: var(--dim); }
+  .scroll { max-height: 34rem; overflow: auto; border: 1px solid var(--line); border-radius: 6px; }
+  footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--line);
+           font-size: .82rem; opacity: var(--dim); }
+  .err { color: #dc2626; }
 </style>
 </head>
 <body>
-<header><div class="wrap">
-  <div class="note"><a href="index.html">&larr; back to the main review</a></div>
-  <h1>HARVEST — official analyst endorsements</h1>
-  <p class="sub">Consensus and rating actions across stocks, ETFs, bond/commodity ETFs, mutual funds, crypto and FX. Built from Yahoo Finance recommendation trends and Nasdaq analyst endpoints; missing coverage is shown as a gap, never invented.</p>
-  <div class="badges">
-    <span class="badge">sortable</span><span class="badge">filter by class</span>
-    <span class="badge">hide actions older than N months</span><span class="badge" id="stamp">loading…</span>
-  </div>
-</div></header>
-<main class="wrap">
-  <div class="eli5"><b>ELI5:</b> Analysts vote “strong buy / buy / hold / sell / strong sell”. We combine those votes into one score (−1 to +1) and list the most recent upgrades/downgrades. A high score is a <i>crowd opinion</i>, not a guarantee — use the date filter so a stale call from last year does not masquerade as today's view.</div>
-  <div class="card">
-    <div class="controls">
-      <div><label for="cls">Asset class</label><select id="cls"><option value="">All</option></select></div>
-      <div><label for="age">Hide actions older than</label>
-        <select id="age">
-          <option value="3" selected>3 months</option>
-          <option value="6">6 months</option>
-          <option value="12">12 months</option>
-          <option value="0">show all</option>
-        </select></div>
-      <div><label for="q">Search symbol</label><input id="q" type="search" placeholder="e.g. AAPL"></div>
-      <div class="chk"><input id="cov" type="checkbox"><label for="cov" style="margin:0;text-transform:none;letter-spacing:0;font-size:.9rem">only rows with analyst coverage</label></div>
-    </div>
-    <div class="counts" id="counts">loading…</div>
-    <table>
-      <thead><tr>
-        <th data-k="symbol">Symbol</th><th data-k="asset_class">Class</th>
-        <th data-k="composite">Consensus</th><th>Yahoo SB/B/H/S/SS</th><th>Nasdaq B/H/S</th>
-        <th data-k="price">Price</th><th data-k="target_mean">Target</th><th data-k="upside_pct">Upside</th>
-        <th data-k="latest_action_date">Latest action</th><th data-k="status">Status</th>
-      </tr></thead>
-      <tbody id="rows"></tbody>
-    </table>
-    <p class="note">Consensus = mean of (Yahoo weighted vote: 2·SB + B − S − 2·SS)/N and (Nasdaq (buy−sell)/total), range −1..+1. Click a column to sort. Click “actions” to see the underlying upgrades/downgrades.</p>
-  </div>
-</main>
-<footer><div class="wrap">
-  Sources: Yahoo Finance quoteSummary (crumb), Nasdaq analyst API. Data generated by <code>KILOCODE/harvest_analysts.py</code>; raw JSON at <a href="harvest.json">harvest.json</a>. Analyst ratings are opinions, not investment advice. ToS/attribution rules of the sources apply.
-</div></footer>
+
+<h1>HARVEST — analyst endorsement signals</h1>
+<p class="sub">Sell-side analyst consensus per symbol, from a licensed data feed. Sortable and
+filterable by date and asset class. <strong>Not investment advice.</strong></p>
+
+<div id="banner" class="banner" hidden></div>
+
+<div class="cards" id="cards"></div>
+
+<h2>Filter</h2>
+<div class="controls">
+  <label>Class
+    <select id="f-class"><option value="">all</option></select>
+  </label>
+  <label>Consensus
+    <select id="f-consensus"><option value="">all</option></select>
+  </label>
+  <label>Trend
+    <select id="f-direction"><option value="">all</option></select>
+  </label>
+  <label>Recency
+    <select id="f-age">
+      <option value="7">≤ 1 week</option>
+      <option value="30">≤ 1 month</option>
+      <option value="90" selected>≤ 3 months</option>
+      <option value="180">≤ 6 months</option>
+      <option value="365">≤ 12 months</option>
+      <option value="">any age</option>
+    </select>
+  </label>
+  <label>Search
+    <input id="f-text" type="search" placeholder="symbol, name, sector…">
+  </label>
+  <span class="count" id="count"></span>
+</div>
+
+<div class="scroll">
+<table id="tbl">
+  <thead>
+    <tr>
+      <th data-k="symbol">Symbol</th>
+      <th data-k="name">Name</th>
+      <th data-k="asset_class">Class</th>
+      <th data-k="sector">Sector</th>
+      <th data-k="period">Period</th>
+      <th data-k="consensus">Consensus</th>
+      <th data-k="buy_side_pct">Buy-side %</th>
+      <th data-k="analysts">Analysts</th>
+      <th data-k="detail">SB / B / H / S / SS</th>
+      <th data-k="mom_change_pp">MoM pp</th>
+      <th data-k="direction">Trend</th>
+      <th data-k="age_days">Age (d)</th>
+    </tr>
+  </thead>
+  <tbody id="rows"><tr><td colspan="12" class="na">loading…</td></tr></tbody>
+</table>
+</div>
+
+<h2>Coverage by asset class</h2>
+<p class="sub">Measured, not assumed. A zero here means the feed returned no analyst coverage for
+that class — it is a property of the instrument type, not a temporary outage.</p>
+<table class="coverage"><thead>
+  <tr><th>Asset class</th><th>Symbols probed</th><th>With consensus</th><th>Coverage</th><th>Reading</th></tr>
+</thead><tbody id="coverage"></tbody></table>
+
+<h2>Sources</h2>
+<p class="sub">An unavailable source is listed with its exact failure, so “no analyst covers this”
+never gets confused with “our key cannot reach it”.</p>
+<table class="coverage"><thead>
+  <tr><th>Source</th><th>Status</th><th>HTTP</th><th>Rows</th><th>Note</th></tr>
+</thead><tbody id="sources"></tbody></table>
+
+<h2>Symbols with no data</h2>
+<p class="sub">Listed explicitly so the absence is visible rather than silent.</p>
+<table class="coverage"><thead>
+  <tr><th>Symbol</th><th>Class</th><th>Reason</th></tr>
+</thead><tbody id="gaps"></tbody></table>
+
+<footer>
+  <p id="defs"></p>
+  <p>Per-run reports: <code>/ZOOCODE/COPILOT&lt;DATETIME&gt;.MD</code> · feed:
+  <code>/data/harvest_signals.json</code> · generated by <code>tools/harvest_signals.py</code>.</p>
+  <p>Consensus figures are the covering analysts' published distribution as distributed by the data
+  vendor. This page computes a weighted mean of that distribution and a month-over-month change; it
+  adds no rating of its own and should not be read as a recommendation to buy or sell anything.</p>
+</footer>
+
 <script>
-(function(){
-  const state={rows:[],sort:'composite',dir:-1,cls:'',age:3,q:'',cov:false};
-  const $=id=>document.getElementById(id);
-  const fmtPct=v=>v==null?'—':(v>0?'+':'')+v.toFixed(1)+'%';
-  const fmtNum=v=>v==null?'—':'$'+v.toFixed(2);
-  const clsFor=v=>v==null?'zero':(v>0.15?'pos':(v<-0.15?'neg':'zero'));
-  function monthsAgoISO(m){const d=new Date();d.setMonth(d.getMonth()-m);return d.toISOString().slice(0,10);}
-  function visible(r){
-    if(state.cls && r.asset_class!==state.cls) return false;
-    if(state.cov && r.status!=='ok') return false;
-    if(state.q && !r.symbol.toLowerCase().includes(state.q)) return false;
-    if(state.age>0 && r.latest_action_date && r.latest_action_date<monthsAgoISO(state.age)) return false;
-    return true;
+const STATE = { data: null, sortKey: 'analysts', sortDir: -1 };
+
+const el = (id) => document.getElementById(id);
+const fmt = (v) => (v === null || v === undefined || v === '') ? '—' : v;
+
+function readAge() { const v = el('f-age').value; return v === '' ? null : Number(v); }
+
+function passes(s) {
+  const cls = el('f-class').value, con = el('f-consensus').value,
+        dir = el('f-direction').value, raw = el('f-text').value.trim().toLowerCase(),
+        maxAge = readAge();
+  if (cls && s.asset_class !== cls) return false;
+  if (con && s.consensus !== con) return false;
+  if (dir && s.direction !== dir) return false;
+  if (maxAge !== null && (s.age_days === null || s.age_days > maxAge)) return false;
+  if (raw) {
+    const hay = `${s.symbol} ${s.name} ${s.sector} ${s.asset_class}`.toLowerCase();
+    if (!hay.includes(raw)) return false;
   }
-  function sortRows(rows){
-    const k=state.sort, d=state.dir;
-    return rows.slice().sort((a,b)=>{
-      let x=a[k], y=b[k];
-      if(x==null) return 1; if(y==null) return -1;
-      if(typeof x==='string') return x.localeCompare(y)*d;
-      return (x-y)*d;
-    });
+  return true;
+}
+
+function cmp(a, b, k) {
+  let x = a[k], y = b[k];
+  if (k === 'detail') { x = a.analysts; y = b.analysts; }
+  if (k === 'period') { x = a.period || ''; y = b.period || ''; }
+  if (typeof x === 'string' || typeof y === 'string') {
+    return String(x ?? '').localeCompare(String(y ?? ''));
   }
-  function render(){
-    const rows=sortRows(state.rows.filter(visible));
-    $('counts').textContent=`showing ${rows.length} of ${state.rows.length} symbols · coverage ${state.rows.filter(r=>r.status==='ok').length}`;
-    const tb=$('rows'); tb.innerHTML='';
-    for(const r of rows){
-      const t=r.yahoo_trend||{};
-      const trend=t.strongBuy!=null?`${t.strongBuy}/${t.buy}/${t.hold}/${t.sell}/${t.strongSell}`:'—';
-      const n=r.nasdaq_counts||{};
-      const ncs=(n.buy!=null||n.hold!=null||n.sell!=null)?`${n.buy??0}/${n.hold??0}/${n.sell??0}`:'—';
-      const comp=r.composite==null?'—':(r.composite>=0?'+':'')+r.composite.toFixed(2);
-      const tr=document.createElement('tr'); tr.className='row';
-      tr.innerHTML=`<td><span class="sym">${r.symbol}</span></td>
-        <td class="cls">${r.asset_class}</td>
-        <td class="${clsFor(r.composite)}">${comp}</td>
-        <td>${trend}</td><td>${ncs}</td>
-        <td>${fmtNum(r.price)}</td><td>${fmtNum(r.target_mean)}</td>
-        <td class="${r.upside_pct>0?'pos':(r.upside_pct<0?'neg':'zero')}">${fmtPct(r.upside_pct)}</td>
-        <td>${r.latest_action_date||'—'}</td>
-        <td>${r.status==='ok'?'<span class="pill">ok</span>':'<span class="pill cov-no">no coverage</span>'}</td>`;
-      tb.appendChild(tr);
-      const acts=(r.recent_actions||[]).filter(a=>state.age===0||a.date>=monthsAgoISO(state.age));
-      if(acts.length){
-        const d=document.createElement('tr'); d.className='actions';
-        d.innerHTML=`<td colspan="10"><details><summary>${acts.length} action(s) in window</summary><ul>${
-          acts.map(a=>`<li><b>${a.date}</b> — ${a.firm||'?'}: ${a.action||''} ${a.from||'?'} → ${a.to||'?'}${a.target?` (PT ${a.target})`:''}</li>`).join('')
-        }</ul></details></td>`;
-        tb.appendChild(d);
-      }
+  return (x ?? -Infinity) - (y ?? -Infinity);
+}
+
+function emptyMessage() {
+  const cls = el('f-class').value;
+  const cov = STATE.data.coverage_by_asset_class[cls];
+  if (cls && cov && cov.with_consensus === 0) {
+    const clsErrors = STATE.data.errors.filter((e) => e.asset_class === cls);
+    if (clsErrors.length) {
+      const codes = [...new Set(clsErrors.map((e) => e.http))].join('/');
+      return `${cov.probed} ${cls} symbol(s) probed. <b>${clsErrors.length}</b> returned an access ` +
+             `error (HTTP ${codes}) — that is a <b>data-plan limit</b>, not an absence of analyst ` +
+             `coverage. It is reported separately so the two are never confused.`;
     }
+    return `${cov.probed} ${cls} symbol(s) were probed and <b>0</b> returned analyst consensus. ` +
+           `The feed publishes no analyst coverage for this instrument type — this is a ` +
+           `property of the asset class, not a failed fetch.`;
   }
-  function init(rows){
-    state.rows=rows;
-    const classes=[...new Set(rows.map(r=>r.asset_class))].sort();
-    for(const c of classes){const o=document.createElement('option');o.value=c;o.textContent=c;$('cls').appendChild(o);}
-    render();
+  const n = STATE.data.errors.length;
+  return 'no rows match these filters' +
+    (n ? ` · ${n} symbol(s) failed to fetch, listed under “Symbols with no data”` : '');
+}
+
+function render() {
+  const rows = STATE.data.signals.filter(passes);
+  rows.sort((a, b) => STATE.sortDir * cmp(a, b, STATE.sortKey));
+
+  el('rows').innerHTML = rows.map((s) => `
+    <tr>
+      <td><strong>${s.symbol}</strong></td>
+      <td>${s.name}</td>
+      <td>${s.asset_class}</td>
+      <td>${fmt(s.sector)}</td>
+      <td>${fmt(s.period)}</td>
+      <td><span class="badge ${s.consensus}">${fmt(s.consensus)}</span></td>
+      <td>${s.buy_side_pct === null ? '—' : s.buy_side_pct.toFixed(1)}</td>
+      <td>${s.analysts}</td>
+      <td>${s.strong_buy} / ${s.buy} / ${s.hold} / ${s.sell} / ${s.strong_sell}</td>
+      <td>${s.mom_change_pp === null ? '—' : (s.mom_change_pp > 0 ? '+' : '') + s.mom_change_pp.toFixed(1)}</td>
+      <td class="${s.direction}">${s.direction.replace(/_/g, ' ')}</td>
+      <td>${fmt(s.age_days)}</td>
+    </tr>`).join('') || `<tr><td colspan="12" class="na" style="white-space:normal">${emptyMessage()}</td></tr>`;
+
+  const hidden = STATE.data.signals.length - rows.length;
+  el('count').textContent =
+    `${rows.length} of ${STATE.data.signals.length} shown` + (hidden ? ` · ${hidden} hidden by filters` : '');
+
+  document.querySelectorAll('th[data-k]').forEach((th) => {
+    const base = th.textContent.replace(/[▲▼]\s*$/, '').trim();
+    th.innerHTML = th.dataset.k === STATE.sortKey
+      ? `${base} <span class="arrow">${STATE.sortDir > 0 ? '▲' : '▼'}</span>` : base;
+  });
+}
+
+function card(k, v) {
+  return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+}
+
+function boot() {
+  const d = STATE.data;
+  const c = d.crowd_consensus;
+
+  el('cards').innerHTML = [
+    card('Symbols covered', c.covered_symbols),
+    card('Avg buy-side', c.avg_buy_side_pct === null ? '—' : c.avg_buy_side_pct + '%'),
+    card('Improving', c.direction_counts.IMPROVING || 0),
+    card('Deteriorating', c.direction_counts.DETERIORATING || 0),
+    card('Net trend', (c.net_upgrades_minus_downgrades > 0 ? '+' : '') + c.net_upgrades_minus_downgrades),
+    card('Generated', d.generated_at.slice(0, 16).replace('T', ' ') + 'Z'),
+  ].join('');
+
+  const bad = d.sources.filter((s) => s.status !== 'OK');
+  if (bad.length) {
+    el('banner').hidden = false;
+    el('banner').innerHTML =
+      `<strong>Partial coverage, stated plainly.</strong> ${bad.length} of ${d.sources.length} sources ` +
+      `are unavailable in this run (${bad.map((s) => `${s.name}: ${s.status}`).join('; ')}). ` +
+      `Where dated firm-by-firm upgrades would appear, this page instead shows the month-over-month ` +
+      `change in the analyst distribution, labelled as such.`;
   }
-  document.querySelectorAll('th[data-k]').forEach(th=>th.addEventListener('click',()=>{
-    const k=th.dataset.k;
-    if(state.sort===k) state.dir*=-1; else {state.sort=k;state.dir=(k==='symbol'||k==='asset_class')?1:-1;}
+
+  // filter options — classes come from MEASURED COVERAGE, not from signals.
+  // Building them from signals hid every zero-coverage class (ETF/bond/fund/crypto),
+  // which are exactly the gaps this page exists to make visible.
+  const uniq = (f) => [...new Set(d.signals.map(f).filter(Boolean))].sort();
+  for (const v of Object.keys(d.coverage_by_asset_class).sort()) {
+    const c = d.coverage_by_asset_class[v];
+    el('f-class').add(new Option(`${v} (${c.with_consensus}/${c.probed} covered)`, v));
+  }
+  for (const v of uniq((s) => s.consensus)) el('f-consensus').add(new Option(v.replace(/_/g, ' '), v));
+  for (const v of uniq((s) => s.direction)) el('f-direction').add(new Option(v.replace(/_/g, ' '), v));
+
+  // coverage
+  el('coverage').innerHTML = Object.entries(d.coverage_by_asset_class)
+    .sort((a, b) => b[1].with_consensus - a[1].with_consensus)
+    .map(([k, v]) => {
+      const pct = v.coverage_pct;
+      const clsErrors = d.errors.filter((e) => e.asset_class === k);
+      let reading;
+      if (pct === 100) reading = 'full coverage';
+      else if (pct > 0) reading = 'partial coverage';
+      else if (clsErrors.length) {
+        const codes = [...new Set(clsErrors.map((e) => e.http))].join('/');
+        reading = `access error HTTP ${codes} — data-plan limit, not an absence of coverage`;
+      } else reading = 'no analyst coverage published for this instrument type';
+      return `<tr><td>${k}</td><td>${v.probed}</td><td>${v.with_consensus}</td>
+        <td class="${pct ? 'ok' : 'zero'}">${pct}%</td><td class="na">${reading}</td></tr>`;
+    }).join('');
+
+  // sources
+  el('sources').innerHTML = d.sources.map((s) => `
+    <tr><td><code>${s.name}</code></td>
+      <td class="${s.status === 'OK' ? 'ok' : 'zero'}">${s.status}</td>
+      <td>${s.http ?? '—'}</td><td>${s.rows}</td>
+      <td class="na" style="white-space:normal">${s.note}</td></tr>`).join('');
+
+  // gaps
+  const gaps = [
+    ...d.uncovered.map((u) => ({ symbol: u.symbol, cls: u.asset_class, reason: u.reason })),
+    ...d.errors.map((e) => ({ symbol: e.symbol, cls: e.asset_class || '—', reason: `fetch error (HTTP ${e.http}): ${e.error}` })),
+  ];
+  el('gaps').innerHTML = gaps.length
+    ? gaps.map((g) => `<tr><td>${g.symbol}</td><td>${g.cls}</td><td class="na" style="white-space:normal">${g.reason}</td></tr>`).join('')
+    : '<tr><td colspan="3" class="na">none — every symbol returned data</td></tr>';
+
+  el('defs').textContent = 'Definitions — ' + Object.entries(d.definitions)
+    .map(([k, v]) => `${k}: ${v}`).join('  ·  ');
+
+  render();
+}
+
+for (const id of ['f-class', 'f-consensus', 'f-direction', 'f-age', 'f-text']) {
+  el(id).addEventListener('input', render);
+}
+document.querySelectorAll('th[data-k]').forEach((th) => {
+  th.addEventListener('click', () => {
+    const k = th.dataset.k;
+    STATE.sortDir = (STATE.sortKey === k) ? -STATE.sortDir : -1;
+    STATE.sortKey = k;
     render();
-  }));
-  $('cls').addEventListener('change',e=>{state.cls=e.target.value;render();});
-  $('age').addEventListener('change',e=>{state.age=parseInt(e.target.value,10);render();});
-  $('q').addEventListener('input',e=>{state.q=e.target.value.trim().toLowerCase();render();});
-  $('cov').addEventListener('change',e=>{state.cov=e.target.checked;render();});
-  fetch('harvest.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
-    if(d.generated_utc) $('stamp').textContent='generated '+d.generated_utc.replace('T',' ').slice(0,16)+' UTC';
-    init(d.rows||[]);
-  }).catch(err=>{$('counts').textContent='Failed to load harvest.json: '+err;});
-})();
+  });
+});
+
+fetch('data/harvest_signals.json', { cache: 'no-store' })
+  .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then((d) => { STATE.data = d; boot(); })
+  .catch((e) => {
+    el('rows').innerHTML = `<tr><td colspan="12" class="err">could not load data/harvest_signals.json — ${e.message}</td></tr>`;
+    el('banner').hidden = false;
+    el('banner').className = 'banner err';
+    el('banner').textContent = 'Data feed unavailable. This page shows nothing rather than stale or invented figures.';
+  });
 </script>
 </body>
 </html>
