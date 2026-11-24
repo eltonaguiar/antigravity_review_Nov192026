@@ -77,6 +77,21 @@ footer{border-top:1px solid var(--line);padding:16px 0 40px;color:var(--muted);f
 <p>Ledger **FUTURES** class: 68 resolved, WR **31.6%**, PF **0.6834** — no class edge. The screen puts grains (ZS) at the top and rates (ZN/ZB) at the bottom, but roll yield can swamp spot trend in commodities; treat this as a watchlist ordering only.</p>
 </div>
 
+
+<div class="card">
+<h2>5. Generic playbooks vs our measured evidence</h2>
+<p class="method">Common advice for these classes mixes process controls (useful) with return claims (unverified here). We separate them.</p>
+<table><thead><tr><th>Playbook claim</th><th>Our evidence</th><th>Verdict</th></tr></thead><tbody>
+<tr><td>Penny: low-float catalyst momentum</td><td>No local OTC bars; ledger PENNY n=4, WR 50%, PF 0.1779</td><td style="color:#f85149">Unsupported / not testable</td></tr>
+<tr><td>Meme: momentum + scale-out ladders</td><td>DOGE mom20 −1.26%/trade (n=70), rev5 −0.72% (n=142); MEME PF 0.0234 (n=10)</td><td style="color:#f85149">Contradicted</td></tr>
+<tr><td>Options: defined-risk spreads sell rich IV</td><td>Snapshot only (SPY ATM IV 16.4%, EM 0.64%); no IV history, greeks or fills</td><td style="color:#d29922">Not testable</td></tr>
+<tr><td>Futures: trend/momentum with vol targeting</td><td>Rough front-month rank only; FUTURES ledger PF 0.6834 (n=68); no roll-adjusted test</td><td style="color:#d29922">Unproven</td></tr>
+<tr><td>Risk 0.25–1%/trade; size on max loss; notional not margin; ATR stops</td><td>Process controls; they bound losses, not returns</td><td style="color:#3fb950">Accept as process</td></tr>
+<tr><td>Leveraged/inverse ETF decay</td><td>Known path-dependence; not measured here</td><td style="color:#3fb950">Accept as risk note</td></tr>
+</tbody></table>
+<p><b>Bottom line:</b> the risk framework is useful; the return claims are not demonstrated for these classes on our data. “Most traders lose” is consistent with what we measure — the controls keep you solvent, they do not create an edge.</p>
+</div>
+
 <div class="card">
 <h2>What would change these verdicts</h2>
 <ul>
