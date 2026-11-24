@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HARVEST — analyst endorsement signals</title>
+<style>
+  :root{
+    --bg:#0b0d10; --panel:#14181d; --panel2:#1a1f26; --line:#262d36;
+    --ink:#e8edf2; --dim:#9aa7b4; --dim2:#6f7d8c;
+    --green:#3ddc97; --red:#ff6b6b; --amber:#ffb454; --blue:#6cb6ff;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+  header{padding:38px 0 18px;border-bottom:1px solid var(--line)}
+  h1{font-size:clamp(24px,3.6vw,34px);margin:0 0 10px;letter-spacing:-.4px}
+  .sub{color:var(--dim);max-width:90ch;margin:0 0 6px}
+  .sub code{font-family:var(--mono);font-size:13px;color:var(--ink)}
+  .notice{margin:18px 0 0;padding:13px 16px;border-radius:10px;
+    border:1px solid rgba(255,180,84,.3);background:rgba(255,180,84,.08);color:#ffcf8a;font-size:14px}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+    padding:16px 0;border-bottom:1px solid var(--line);position:sticky;top:0;
+    background:rgba(11,13,16,.95);backdrop-filter:blur(8px);z-index:20}
+  .controls label{font:600 11px/1 var(--mono);letter-spacing:.08em;
+    text-transform:uppercase;color:var(--dim2)}
+  select,input[type=search]{background:var(--panel);color:var(--ink);
+    border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;font-family:inherit}
+  select:focus,input:focus{outline:none;border-color:#3a4653}
+  .pill{font:600 11px/1 var(--mono);padding:6px 9px;border-radius:999px;
+    border:1px solid var(--line);background:var(--panel);color:var(--dim)}
+  .pill b{color:var(--ink)}
+  .stats{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}
+  table{width:100%;border-collapse:collapse;margin:8px 0 30px;font-size:13.5px;
+    display:block;overflow-x:auto}
+  thead th{text-align:left;font:600 11px/1.4 var(--mono);letter-spacing:.08em;
+    text-transform:uppercase;color:var(--dim2);border-bottom:1px solid var(--line);
+    padding:9px 12px;cursor:pointer;user-select:none;white-space:nowrap}
+  thead th:hover{color:var(--ink)}
+  thead th .arrow{color:var(--blue);margin-left:4px}
+  td{border-bottom:1px solid #1e252c;padding:8px 12px;vertical-align:top;white-space:nowrap}
+  td.firm{white-space:normal;min-width:160px}
+  tbody tr:hover{background:#12161b}
+  .mono{font-family:var(--mono);font-size:12.5px}
+  .pos{color:var(--green);font-weight:600}
+  .neg{color:var(--red);font-weight:600}
+  .mute{color:var(--dim2)}
+  .tag{display:inline-block;font:700 10px/1 var(--mono);letter-spacing:.05em;
+    padding:4px 6px;border-radius:5px;text-transform:uppercase}
+  .t-up{background:rgba(61,220,151,.14);color:#8ff0c2;border:1px solid rgba(61,220,151,.3)}
+  .t-down{background:rgba(255,107,107,.14);color:#ff9c9c;border:1px solid rgba(255,107,107,.3)}
+  .t-main{background:rgba(154,167,180,.12);color:#b8c4d0;border:1px solid rgba(154,167,180,.26)}
+  .t-reit{background:rgba(108,182,255,.14);color:#a8d1ff;border:1px solid rgba(108,182,255,.3)}
+  .t-init{background:rgba(255,180,84,.14);color:#ffcf8a;border:1px solid rgba(255,180,84,.3)}
+  .empty{padding:40px;text-align:center;color:var(--dim2)}
+  footer{padding:26px 0 50px;color:var(--dim2);font-size:12.5px;border-top:1px solid var(--line)}
+  footer code{font-family:var(--mono)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>HARVEST — analyst endorsement signals</h1>
+  <p class="sub">
+    Every dated endorsement the source returns: firm, rating change, action and price target,
+    one row per action. Collected by <code>tools/harvest_analyst_signals.py</code>; each
+    universe is written to its own <code>ZOOCODE/HARVEST_<DATETIME>_<universe>.MD</code>
+    with the exact symbol list and counts, so any number here can be traced back to a run.
+  </p>
+  <p class="sub">
+    Source: Yahoo Finance <code>quoteSummary</code>
+    (<code>upgradeDowngradeHistory</code>, <code>recommendationTrend</code>,
+    <code>financialData</code>), authorised by an <code>A3</code> cookie exchanged for a crumb.
+  </p>
+  <div class="notice" id="coverage"></div>
+</header>
+
+<div class="controls">
+  <label for="run">Run</label>
+  <select id="run"></select>
+  <label for="class">Class</label>
+  <select id="class"></select>
+  <label for="action">Action</label>
+  <select id="action"></select>
+  <label for="firm">Firm</label>
+  <select id="firm"></select>
+  <label for="since">Since</label>
+  <select id="since">
+    <option value="30">30 days</option>
+    <option value="90" selected>90 days</option>
+    <option value="180">6 months</option>
+    <option value="365">1 year</option>
+    <option value="0">All history</option>
+  </select>
+  <input type="search" id="q" placeholder="symbol…" size="9">
+</div>
+
+<div class="stats" id="stats"></div>
+<table>
+  <thead>
+    <tr>
+      <th data-k="symbol">Symbol</th>
+      <th data-k="date">Date</th>
+      <th data-k="firm">Firm</th>
+      <th data-k="from">From</th>
+      <th data-k="to">To</th>
+      <th data-k="action">Action</th>
+      <th data-k="pt">Price target</th>
+      <th data-k="dpt">Δ target</th>
+    </tr>
+  </thead>
+  <tbody id="rows"></tbody>
+</table>
+<div class="empty" id="empty" hidden>No endorsements match these filters.</div>
+
+<footer>
+  Rows for asset classes the source does not cover (ETFs, funds, bonds, crypto, forex,
+  futures) are absent by design, not zero. Regenerate the page data with
+  <code>python3 tools/harvest_to_page_json.py --in-dir ZOOCODE/harvest --out-dir docs/harvest</code>.
+</footer>
+</div>
+
+<script>
+const CLASS_OF = sym => {
+  const s = sym.toUpperCase();
+  if (s.endsWith('.TO') || s.endsWith('.V') || s.endsWith('.CN')) return 'EQUITY-CA';
+  if (/^(SPY|QQQ|IWM|EEM|EFA|IEF|TLT|VTI|BND|SGOV|DIA|VOO|IVV|XLE|XLF|XLK|GLD|SLV)$/.test(s)) return 'ETF/BOND';
+  if (s.endsWith('USDT') || s.endsWith('-USD')) return 'CRYPTO';
+  if (s.endsWith('=X')) return 'FOREX';
+  if (s.endsWith('=F')) return 'FUTURES';
+  return 'EQUITY';
+};
+
+let RUN = null;            // current run object
+let ROWS = [];             // flattened rows for the run
+let SORT = { k: 'date', dir: -1 };
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&','<':'<','>':'>','"':'"'}[c]));
+const actionClass = a => ({up:'t-up', down:'t-down', reit:'t-reit', init:'t-init'}[a] || 't-main');
+
+async function boot() {
+  const manifest = await (await fetch('harvest/manifest.json', { cache: 'no-store' })).json();
+  // Newest run per universe, so a re-run does not duplicate the same symbols.
+  const byUniverse = new Map();
+  for (const r of manifest.runs) {
+    const prev = byUniverse.get(r.universe);
+    if (!prev || r.generated > prev.generated) byUniverse.set(r.universe, r);
+  }
+  const runs = [...byUniverse.values()].sort((a, b) => b.rows - a.rows);
+  const sel = $('run');
+  sel.innerHTML = runs.map(r =>
+    `<option value="${esc(r.file)}">${esc(r.universe)} — ${r.symbols} symbols, ${r.rows} rows (${esc(r.generated)})</option>`
+  ).join('');
+  sel.addEventListener('change', () => load(sel.value));
+  if (runs.length) load(runs[0].file);
+}
+
+async function load(file) {
+  const d = await (await fetch('harvest/' + file, { cache: 'no-store' })).json();
+  RUN = d;
+  ROWS = [];
+  for (const s of d.symbols) {
+    const cls = CLASS_OF(s.symbol);
+    for (const r of s.rows) {
+      ROWS.push({ symbol: s.symbol, cls, date: r[0], firm: r[1], from: r[2], to: r[3],
+                  action: r[4], pt: r[5], dpt: (r[5] != null && r[6]) ? r[5] - r[6] : null });
+    }
+  }
+  const nOk = d.symbols.filter(s => s.status === 'ok').length;
+  const nMiss = d.symbols.filter(s => s.status !== 'ok').length;
+  const missing = d.symbols.filter(s => s.status !== 'ok').map(s => s.symbol);
+  $('coverage').innerHTML =
+    `<b>${nOk}</b> of <b>${d.symbols.length}</b> symbols resolved in this run.` +
+    (nMiss ? ` <b>${nMiss}</b> not covered (${esc(missing.slice(0, 12).join(', '))}${missing.length > 12 ? '…' : ''}) — the source has no analyst history for these; see the run's .MD for the reason per symbol.` : '') +
+    ` Rows older than ${esc(d.cutoff)} are not shipped to this page; full history is in <code>ZOOCODE/harvest/</code>.`;
+  fillSelect('class', [...new Set(ROWS.map(r => r.cls))].sort());
+  fillSelect('action', [...new Set(ROWS.map(r => r.action).filter(Boolean))].sort());
+  fillSelect('firm', [...new Set(ROWS.map(r => r.firm).filter(Boolean))].sort());
+  render();
+}
+
+function fillSelect(id, values) {
+  const el = $(id);
+  el.innerHTML = `<option value="">All</option>` +
+    values.map(v => `<option value="${esc(v)}">${esc(v)}</option>`).join('');
+  el.onchange = render;
+}
+
+function visible() {
+  const since = +$('since').value;
+  const cutoff = since ? new Date(Date.now() - since * 864e5).toISOString().slice(0, 10) : '';
+  const cls = $('class').value, act = $('action').value, firm = $('firm').value;
+  const q = $('q').value.trim().toUpperCase();
+  return ROWS.filter(r =>
+    (!cutoff || (r.date && r.date >= cutoff)) &&
+    (!cls || r.cls === cls) && (!act || r.action === act) &&
+    (!firm || r.firm === firm) && (!q || r.symbol.toUpperCase().includes(q))
+  );
+}
+
+function render() {
+  const rows = visible();
+  const cmp = (a, b) => {
+    const k = SORT.k;
+    let x = a[k], y = b[k];
+    if (x == null) x = SORT.dir > 0 ? '' : '\uffff';
+    if (y == null) y = SORT.dir > 0 ? '' : '\uffff';
+    if (typeof x === 'number' && typeof y === 'number') return (x - y) * SORT.dir;
+    return String(x).localeCompare(String(y)) * SORT.dir;
+  };
+  rows.sort(cmp);
+  const CAP = 500;
+  $('rows').innerHTML = rows.slice(0, CAP).map(r => `
+    <tr>
+      <td class="mono"><a href="#" data-sym="${esc(r.symbol)}">${esc(r.symbol)}</a></td>
+      <td class="mono">${esc(r.date || '')}</td>
+      <td class="firm">${esc(r.firm || '')}</td>
+      <td class="mute">${esc(r.from || '')}</td>
+      <td>${esc(r.to || '')}</td>
+      <td><span class="tag ${actionClass(r.action)}">${esc(r.action || '')}</span></td>
+      <td class="mono">${r.pt != null ? r.pt.toFixed(2) : ''}</td>
+      <td class="mono ${r.dpt == null ? 'mute' : (r.dpt > 0 ? 'pos' : (r.dpt < 0 ? 'neg' : 'mute'))}">
+        ${r.dpt == null ? '' : (r.dpt > 0 ? '+' : '') + r.dpt.toFixed(2)}</td>
+    </tr>`).join('');
+  $('empty').hidden = rows.length > 0;
+  const ups = rows.filter(r => r.action === 'up').length;
+  const downs = rows.filter(r => r.action === 'down').length;
+  const firms = new Set(rows.map(r => r.firm)).size;
+  const syms = new Set(rows.map(r => r.symbol)).size;
+  $('stats').innerHTML = [
+    ['rows', rows.length], ['shown', Math.min(rows.length, CAP)],
+    ['symbols', syms], ['firms', firms], ['upgrades', ups], ['downgrades', downs],
+  ].map(([k, v]) => `<span class="pill">${k} <b>${v}</b></span>`).join('') +
+    (rows.length > CAP ? `<span class="pill">rows capped at <b>${CAP}</b> for responsiveness</span>` : '');
+}
+
+document.querySelectorAll('thead th').forEach(th => {
+  th.addEventListener('click', () => {
+    const k = th.dataset.k;
+    SORT = { k, dir: SORT.k === k ? -SORT.dir : (k === 'date' ? -1 : 1) };
+    document.querySelectorAll('thead th .arrow').forEach(a => a.remove());
+    th.insertAdjacentHTML('beforeend', `<span class="arrow">${SORT.dir > 0 ? '▲' : '▼'}</span>`);
+    render();
+  });
+});
+$('since').addEventListener('change', render);
+$('q').addEventListener('input', render);
+$('rows').addEventListener('click', e => {
+  const a = e.target.closest('a[data-sym]');
+  if (!a) return;
+  e.preventDefault();
+  $('q').value = a.dataset.sym;
+  render();
+});
+boot().catch(err => {
+  $('coverage').textContent = 'Failed to load harvest data: ' + err.message;
+});
+</script>
+</body>
+</html>

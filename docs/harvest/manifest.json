@@ -1,0 +1,32 @@
+{
+ "cutoff": "2025-11-24",
+ "runs": [
+  {
+   "file": "2026-11-24T1040Z_starter.page.json",
+   "universe": "starter",
+   "generated": "2026-11-24T1040Z",
+   "symbols": 18,
+   "resolved": 18,
+   "rows": 1405,
+   "bytes": 99047
+  },
+  {
+   "file": "2026-11-24T1041Z_earnings120.page.json",
+   "universe": "earnings",
+   "generated": "2026-11-24T1042Z",
+   "symbols": 120,
+   "resolved": 120,
+   "rows": 5934,
+   "bytes": 427089
+  },
+  {
+   "file": "2026-11-24T1041Z_referenced.page.json",
+   "universe": "referenced",
+   "generated": "2026-11-24T1041Z",
+   "symbols": 41,
+   "resolved": 34,
+   "rows": 2665,
+   "bytes": 188235
+  }
+ ]
+}

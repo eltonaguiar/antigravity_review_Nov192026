@@ -1,6 +1,6 @@
 """Tests for quant_metrics. Each test pins one of the four defects the review found in an agent's fund script.
 
-Run: python CONTEST/tools/test_quant_metrics.py
+Run: python CONTEST/tools/selftest_quant_metrics.py
 """
 import math
 import os
