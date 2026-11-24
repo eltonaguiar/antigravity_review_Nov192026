@@ -183,7 +183,7 @@ $C roster                                   # who else is live
 **Then read this document and the two that precede it before touching a cell:**
 1. `31_SWEEP_CLOSURE_2026-11-24/SWEEP_CLOSURE.md` — what is closed and why
 2. `30_COST_STRUCTURE_2026-11-24/COST_VS_SIGNAL.md` — the signal-vs-cost split
-3. `PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT/README.md` — the scenario/endorsement result
+3. `PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/README.md` — the scenario/endorsement result
 
 ---
 
@@ -205,3 +205,47 @@ should not expect to "find the edge" by continuing — the remaining cells are b
 The genuinely open question is **execution cost**: the three COST-problem classes need roughly **5x
 cheaper fills** for their +3 to +5bp gross edge to survive. That needs real order/fill data, not more
 backtests.
+
+---
+
+## 9. Tooling added 2026-11-24 — read this before trusting any number here
+
+Twelve defects were found across the fund report, the cell sweep and the PROVEIT scenarios.
+**None was arithmetic.** Each was a label on the wrong quantity, and each survived prose review
+because the prose was internally consistent. The prose cannot be fixed by reading harder; the
+artifact has to be reconciled against itself.
+
+**Before quoting anything from this repo, run:**
+
+```bash
+P=PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT
+python3 PLAN/tools/artifact_lint.py \
+  "$P/sim_2026-11-24T0350Z.json" "$P/paramscan_2026-11-24T0350Z.json" \
+  "$P/provenance_2026-11-24T0350Z.json" --claims "$P/README.md" \
+  --baseline PLAN/lint_baseline.json
+```
+
+| file | what it does |
+|---|---|
+| `PLAN/DEFECT_CLASSES.md` | the five defect classes, each with the concrete instance that produced it |
+| `PLAN/tools/artifact_lint.py` | R1–R7: duration denominators, CAGR reconciliation, 100x scale, estimand pairs, identical siblings, provenance paths, unsourced prose numbers |
+| `PLAN/tools/derive_provenance.py` | generates every prose number the artifacts lack, **self-checks against the committed sim, refuses to write on mismatch** |
+| `PLAN/tools/assert_quoted_numbers.py` | numeric membership test — grep fails here because JSON stores `226.8`, not `226.80` |
+| `PLAN/verify_pages.sh` | three-class Pages check: `ALREADY_LIVE` / `NEW_IN_PR` / `NEVER_SERVED` |
+| `.github/workflows/artifact-lint.yml` | runs all of the above plus a mirror-drift gate on PRs touching `PROVEIT/` |
+
+**Four things a successor will otherwise get wrong:**
+
+1. **`n_days: 1255` is trading days.** Divide by 252 → 4.98y → reproduces 9.18%. Divide by 365.25 →
+   3.44y → **13.58%**, a 4.40pp error. This is baselined as a known upstream defect, not fixed.
+2. **The entry bar is bar 200, not bar 0.** `trend_200` needs a 200-day SMA, so every strategy
+   enters at 2022-09-01 where SPY closed **$374.84**. Quoting "SPY rose 437.19 → 754.37" beside a
+   CAGR measured from 374.84 is a mismatched pair.
+3. **Pages publishes `path: docs` only.** 1 of 9 README-claimed files is served. Anything outside
+   `docs/` 404s forever, merge or no merge.
+4. **`gh pr edit` is broken on gh 2.45.0** (Projects-classic GraphQL removal) and exits 1 while
+   silently leaving the body unchanged. Use `gh api -X PATCH repos/OWNER/REPO/pulls/N`.
+
+**Not caught by any of this:** data-source substitution (15m cells silently measured on daily bars)
+and inert parameters (`rebal`, `merblend` accepted and never read). Both need instrumented engines.
+A tool that claimed to catch them would be lying.

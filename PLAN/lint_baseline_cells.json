@@ -1,0 +1,274 @@
+[
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_bb_meanrev_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_bb_meanrev_1h.json $"
+  },
+  {
+    "code": "R9-CACHE",
+    "where": "/tmp/cells/results/cells/BTCUSDT_bb_meanrev_1h.json $.bar_source"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_breakout_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_donchian_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_donchian_1h.json $"
+  },
+  {
+    "code": "R9-CACHE",
+    "where": "/tmp/cells/results/cells/BTCUSDT_donchian_1h.json $.bar_source"
+  },
+  {
+    "code": "R9-CACHE",
+    "where": "/tmp/cells/results/cells/BTCUSDT_gap_fade_1h.json $.bar_source"
+  },
+  {
+    "code": "R9-CACHE",
+    "where": "/tmp/cells/results/cells/BTCUSDT_ma_cross_1h.json $.bar_source"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_momentum_12_1_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_momentum_12_1_1h.json $"
+  },
+  {
+    "code": "R9-CACHE",
+    "where": "/tmp/cells/results/cells/BTCUSDT_momentum_12_1_1h.json $.bar_source"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_momentum_12_1_1w.json $"
+  },
+  {
+    "code": "R8-BARSOURCE",
+    "where": "/tmp/cells/results/cells/BTCUSDT_rsi2_pullback_15m.json $.bar_source"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_trend_pullback_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_vol_compression_15m.json $"
+  },
+  {
+    "code": "R8-BARSOURCE",
+    "where": "/tmp/cells/results/cells/BTCUSDT_vol_compression_15m.json $.bar_source"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_vol_compression_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_vwap_reversion_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/BTCUSDT_vwap_reversion_1h.json $"
+  },
+  {
+    "code": "R9-CACHE",
+    "where": "/tmp/cells/results/cells/BTCUSDT_vwap_reversion_1h.json $.bar_source"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/ETHUSDT_bb_meanrev_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/ETHUSDT_breakout_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/ETHUSDT_donchian_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/ETHUSDT_momentum_12_1_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/ETHUSDT_momentum_12_1_1w.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/ETHUSDT_vol_compression_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/ETHUSDT_vwap_reversion_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/EURUSD_trend_pullback_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/EURUSD_vol_compression_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/GLD_breakout_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/GLD_breakout_1w.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/GLD_donchian_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/GLD_trend_pullback_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/GLD_vol_compression_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SOLUSDT_bb_meanrev_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SOLUSDT_breakout_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SOLUSDT_donchian_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SOLUSDT_momentum_12_1_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SOLUSDT_momentum_12_1_1w.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SOLUSDT_trend_pullback_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SOLUSDT_vol_compression_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SOLUSDT_vwap_reversion_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SPY_breakout_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SPY_breakout_1w.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SPY_donchian_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SPY_donchian_1w.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SPY_trend_pullback_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/SPY_vol_compression_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/TLT_breakout_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/TLT_donchian_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/TLT_trend_pullback_1d.json $"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_BTCUSDT_bb_meanrev_1d.json $.folds[0]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_BTCUSDT_bb_meanrev_1d.json $.folds[1]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_BTCUSDT_bb_meanrev_1d.json $.folds[2]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_EURUSD_trend_pullback_1d.json $.folds[0]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_EURUSD_trend_pullback_1d.json $.folds[1]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_EURUSD_trend_pullback_1d.json $.folds[2]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_GLD_breakout_1w.json $.folds[1]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_GLD_breakout_1w.json $.folds[2]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_SOLUSDT_breakout_1d.json $.folds[0]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_SOLUSDT_breakout_1d.json $.folds[1]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_SOLUSDT_breakout_1d.json $.folds[2]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_SOLUSDT_donchian_1d.json $.folds[0]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_SOLUSDT_donchian_1d.json $.folds[1]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_SPY_donchian_1d.json $.folds[0]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_SPY_donchian_1d.json $.folds[1]"
+  },
+  {
+    "code": "R7-ESTIMAND",
+    "where": "/tmp/cells/results/cells/wf_SPY_donchian_1d.json $.folds[2]"
+  }
+]

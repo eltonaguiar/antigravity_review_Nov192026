@@ -1,0 +1,10 @@
+[
+  {
+    "code": "R1-DURATION",
+    "where": "PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/sim_2026-11-24T0350Z.json $.n_days"
+  },
+  {
+    "code": "R1-DURATION",
+    "where": "PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/paramscan_2026-11-24T0350Z.json $.n_days"
+  }
+]

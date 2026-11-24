@@ -18,7 +18,7 @@ python3 simulate_proveit.py     # writes a new SIM_<timestamp>.json
 ```
 
 ## Headline (this run)
-Buy-and-hold low-cost equity: **18.3%/yr, −18.8% DD, Sharpe 0.86**. 60/40: 11.96%/−11.2%. 200d-MA timing: 13.76%/−9.4% (**risk control, not alpha**). Fees cost a $300 account **2.09%** vs $10,000 **0.69%** → small accounts must use zero-commission, no-FX index funds. **0 active-edge proof; the provable edge is cheap, patient, diversified beta.**
+Buy-and-hold low-cost equity: **18.3%/yr, −18.8% DD, excess-of-cash Sharpe 0.86** (`sharpe_excess` = 0.859 in `SIM_2026-11-24T0321Z.json`; it is a Sharpe *over cash*, not a raw Sharpe). 60/40: 11.96%/−11.2%. 200d-MA timing: 13.76%/−9.4% (**risk control, not alpha**). Fees cost a $300 account **2.09%** vs $10,000 **0.69%** → small accounts must use zero-commission, no-FX index funds. **0 active-edge proof; the provable edge is cheap, patient, diversified beta.**
 
 ## Merged in: the scenario-portfolio findings (2026-11-24)
 
@@ -26,11 +26,19 @@ Buy-and-hold low-cost equity: **18.3%/yr, −18.8% DD, Sharpe 0.86**. 60/40: 11.
 `PROVEIT_24-11-2026KILOCODE_AGENT/` folder, merged here and removed there. Its unique
 findings, kept because they are not reproduced elsewhere:
 
-- **At $300 the 60/40 cannot be built.** One SPY share cost $374.84 at start, so with
+- **At $300 the 60/40 cannot be built.** One SPY share cost **$374.84** at entry, so with
   whole shares 72% of a $300 account is idle cash and the 5-year result is -0.92%/yr
   -- not because the market fell (SPY went 437 -> 754) but because the position was
   never expressible. Instrument choice (a low-share-price ETF or fractional shares),
   not strategy choice, fixes this.
+  <br>*Source, correcting an earlier note in this file that called the figure unsourced:*
+  `data/market_prices.csv` row **200** reads `2022-09-01, SPY_adj=374.8433837890625`.
+  Bar 200 is the entry bar — the simulator opens every philosophy at `START=200` so the
+  200d-MA rule cannot silently skip the 2021-22 drawdown. The $437.19 seen on the
+  window's **first** bar (and the $467.43 `SPY_close` on that same date) are a different
+  bar and a different series: pairing either with a CAGR measured from bar 200 compares
+  two quantities that were never the same. The file has 1255 rows, which is also the
+  `n_days` value in the sim dump.
 - **Per-size endorsement:** $300/$500 -> low-price broad ETF or fractional broker;
   $2,000 -> 60/40 becomes buildable; $10,000 -> 60/40 or a 3-fund, cost not binding.
 - **No philosophy beat holding.** At $10,000: buy-and-hold 9.18%/yr, rebalance 7.52%,
