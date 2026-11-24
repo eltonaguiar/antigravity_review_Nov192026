@@ -133,9 +133,25 @@ That means the operator's real browser tabs — Arena AI, 1min.AI, Gemini — ca
 programmatically, with no focus stealing and no synthetic mouse. `websocket` and `websockets` are
 both installed.
 
-**VS Code itself is not debuggable right now** — the only listening debug port is Chrome's. Launching
-VS Code with `--remote-debugging-port=9333` would make its webview panels drivable the same way,
-which would remove the mic/send/stop misclick class of failure entirely. UNVERIFIED until tried.
+**VS Code itself is not debuggable right now** — the only listening debug port is Chrome's, on 9222.
+
+On `--remote-debugging-port` for VS Code, a probe changes the verdict:
+
+```
+$ code --remote-debugging-port=9333 --version
+Warning: 'remote-debugging-port' is not in the list of known options, but still passed to
+Electron/Chromium.
+1.144.0
+```
+
+That warning is **not** a failure. VS Code's own CLI does not define the flag, but it forwards it to
+Electron/Chromium, which is where the DevTools protocol listener is actually created. So the route
+is plausible — and would remove the mic/send/stop misclick class of failure entirely, since everything
+would be DOM-level instead of pixel-level.
+
+**Still UNVERIFIED**, deliberately: testing it means launching another VS Code window, which is
+disruptive while the operator is using the machine. Use a distinct port (not 9222, which Chrome owns)
+and confirm with `curl 127.0.0.1:<port>/json/list` that a `workbench` target appears.
 
 ### What the API claims get wrong
 
@@ -147,7 +163,10 @@ Tested against the installed bundles, not the documentation:
 | `api.pressPrimaryButton()` | **FALSE for Kilo** — 0 occurrences. |
 | `vscode://kilocode.kilo-code?task=...` | **FALSE** — handler ignores any path but its 3 own. |
 | `code --command <id> --args` | **FALSE** — no such flag in VS Code 1.144.0. |
-| Bridge extensions `pokey.command-server`, `eliostruyf.vscode-remote-control` | Real products, **neither installed**. Either would let a CLI execute VS Code commands, including `workbench.action.chat.open`. |
+| Bridge extension `eliostruyf.vscode-remote-control` | **Exists** (marketplace query returned exactly 1 hit). Not installed. Would let a CLI execute VS Code commands over a local WebSocket, including `workbench.action.chat.open`. |
+| Bridge extension `seunlanlege.vscode-remote-control` | **Does not exist** — marketplace query returned 0 results. A second research batch gave this wrong publisher; use `eliostruyf`. |
+| Bridge extension `pokey.command-server` | Not verified, not installed. |
+| `code --remote-debugging-port=9222` to drive the webviews | **Nuanced, see below** |
 
 **Also false for Kilo 7.8.32** (checked against the bundle, not the docs): the extension id
 `kilocode.Kilo-Code`, the commands `kilo-code.newTask` / `kilo-code.plusButtonClicked` /
