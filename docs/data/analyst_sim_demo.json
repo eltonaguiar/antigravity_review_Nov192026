@@ -270,5 +270,12 @@
     "max_calls_per_firm": 4,
     "finnhub_upgrade_downgrade": "HTTP 403 (paid)",
     "fmp_upgrades": "HTTP 429 (quota)"
+  },
+  "provenance": {
+    "source": "synthetic",
+    "published_at": "",
+    "rule": "two_condition_v1_b2a1c744",
+    "cost_bps": 6.7122,
+    "benchmark": "SPY"
   }
 }

@@ -11,8 +11,34 @@ SIG = DATA["signals"]; COVERED = [s for s in SIG if s.get("has_consensus")]
 def test_labels_recompute_71():
     bad = [(s["symbol"], s["consensus"], R.label_for_counts(s["strong_buy"], s["buy"], s["hold"], s["sell"], s["strong_sell"]))
            for s in COVERED if R.label_for_counts(s["strong_buy"], s["buy"], s["hold"], s["sell"], s["strong_sell"]) != s["consensus"]]
+    print(f"labels checked={len(COVERED)} mismatches={len(bad)}")
     assert not bad, bad
     assert len(COVERED) == 71
+
+
+def _old_score_only(sb, b, h, se, ss):
+    n = sb + b + h + se + ss
+    score = (2*sb + b - se - 2*ss) / n
+    if score >= 1.0: return "STRONG_BUY"
+    if score >= 0.3: return "BUY"
+    if score > -0.3: return "HOLD"
+    if score > -1.0: return "SELL"
+    return "STRONG_SELL"
+
+
+def test_old_score_only_rule_matches_only_60():
+    mism = sorted(s["symbol"] for s in COVERED
+                  if _old_score_only(s["strong_buy"], s["buy"], s["hold"], s["sell"], s["strong_sell"]) != s["consensus"])
+    print(f"old-rule matches={len(COVERED)-len(mism)} mismatches={len(mism)}")
+    assert len(mism) == 11, mism
+    assert set(mism) == {"INTC","QCOM","ADBE","SBUX","AMGN","PFE","SO","XOM","PEP","PM","SPG"}, mism
+
+
+def test_published_picks_have_provenance():
+    need = ("source", "published_at", "rule", "cost_bps", "benchmark")
+    missing = [(s["symbol"], k) for s in COVERED for k in need if s.get(k) in (None, "")]
+    print(f"provenance rows checked={len(COVERED)} missing={len(missing)}")
+    assert not missing, missing[:10]
 
 def test_scores_and_counts():
     for s in COVERED:
