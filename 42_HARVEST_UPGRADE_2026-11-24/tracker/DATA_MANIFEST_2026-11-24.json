@@ -1,0 +1,31 @@
+{
+ "generated": "2026-11-24",
+ "note": "raw inputs are local; analyst_actions.csv and ZOOCODE/harvest are absent from origin",
+ "files": {
+  "analyst_actions.csv": {
+   "path": "/home/eaguiar2015/antigravity_review/42_HARVEST_UPGRADE_2026-11-24/tracker/analyst_actions.csv",
+   "bytes": 9454358,
+   "sha256": "9dd7d8cbf4ecd907e513422e157a96a5f3bcdde3cf0b48f66e6d9ea269a30f11"
+  },
+  "harvest_499.json": {
+   "path": "/home/eaguiar2015/findtorontoevents_antigravity.ca/ZOOCODE/harvest/2026-11-24T1942Z_earnings499.json",
+   "bytes": 35216547,
+   "sha256": "1176f8cee654a3aeb6f88576ccac13df2a688cae4e3a03bf58827b48f5096a67"
+  },
+  "grade_ordinals_frozen.csv": {
+   "path": "/home/eaguiar2015/antigravity_review/42_HARVEST_UPGRADE_2026-11-24/tracker/grade_ordinals_frozen.csv",
+   "bytes": 102115,
+   "sha256": "597d90b42425d760324e27f2fab56d11976c5c7f54354a91726a6a68822f45fe"
+  },
+  "trials_union.jsonl": {
+   "path": "/home/eaguiar2015/antigravity_review/CONTEST/trials/trials_union.jsonl",
+   "bytes": 6722,
+   "sha256": "225c72d1d3328b996548ebcd420a44ac8fcb1e0fce97d1de7c7bf2bbf71adc14"
+  },
+  "openrouter_chat.json": {
+   "path": "/home/eaguiar2015/antigravity_review/42_HARVEST_UPGRADE_2026-11-24/kilocode/openrouter_chat_2026-11-24.json",
+   "bytes": 45220842,
+   "sha256": "329703efead1292a035a08492dad3799977e6b1125cc98920d7b87226fc21a5d"
+  }
+ }
+}

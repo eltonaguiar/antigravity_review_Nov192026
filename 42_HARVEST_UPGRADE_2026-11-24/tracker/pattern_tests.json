@@ -1,0 +1,31 @@
+{
+ "P1_upgrade_target_raise": {
+  "n": 1257,
+  "mean_bps": 59.47,
+  "ci95": [
+   -5.7,
+   121.2
+  ],
+  "n_symbols": 253,
+  "design_effect": 1.759
+ },
+ "P3_contrarian_downgrade": {
+  "n": 951,
+  "mean_bps": 27.3,
+  "ci95": [
+   -30.2,
+   84.3
+  ],
+  "n_symbols": 249,
+  "design_effect": 1.001
+ },
+ "generated": "2026-11-24",
+ "source": "tracker/analyst_actions.csv + Yahoo prices in /tmp/harvest_prices.pkl",
+ "entry": "next open after event",
+ "exit": "21 trading days",
+ "benchmark": "same-date ADV/momentum tercile control",
+ "cost": "10/30/100 bp by ADV tercile",
+ "cluster": "2000 symbol bootstrap",
+ "verdict": "no candidate: both CIs include 0; P2 n=126 is near floor and not tested",
+ "next_probe": "add 2026 H2 events and run non-overlapping 63d; require CI-low>0 and BH q<0.05 across P1-P3"
+}
