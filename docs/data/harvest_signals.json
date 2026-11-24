@@ -30,45 +30,50 @@
     "STOCK": {
       "probed": 71,
       "with_consensus": 71,
-      "coverage_pct": 100.0
+      "coverage_pct": 100.0,
+      "reason_code": "STALE_OK"
     },
     "ETF": {
       "probed": 14,
       "with_consensus": 0,
-      "coverage_pct": 0.0
+      "coverage_pct": 0.0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     "BOND": {
       "probed": 6,
       "with_consensus": 0,
-      "coverage_pct": 0.0
+      "coverage_pct": 0.0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     "MUTUAL_FUND": {
       "probed": 6,
       "with_consensus": 0,
-      "coverage_pct": 0.0
+      "coverage_pct": 0.0,
+      "reason_code": "ACCESS_DENIED_403"
     },
     "CRYPTO": {
       "probed": 2,
       "with_consensus": 0,
-      "coverage_pct": 0.0
+      "coverage_pct": 0.0,
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     }
   },
   "crowd_consensus": {
     "covered_symbols": 71,
     "label_counts": {
-      "BUY": 40,
-      "STRONG_BUY": 29,
-      "HOLD": 1,
+      "STRONG_BUY": 28,
+      "BUY": 31,
+      "HOLD": 11,
       "SELL": 1
     },
     "direction_counts": {
-      "DETERIORATING": 16,
-      "STABLE": 41,
-      "IMPROVING": 14
+      "STABLE": 61,
+      "DETERIORATING": 5,
+      "IMPROVING": 5
     },
     "avg_buy_side_pct": 67.7,
     "avg_mom_change_pp": 0.05,
-    "net_upgrades_minus_downgrades": -2
+    "net_upgrades_minus_downgrades": 0
   },
   "signals": [
     {
@@ -94,7 +99,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 70,
+      "prior_strong_buy": 19,
+      "prior_buy": 48,
+      "prior_hold": 3,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 70,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.0,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "META",
@@ -119,7 +136,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 69,
+      "prior_strong_buy": 20,
+      "prior_buy": 41,
+      "prior_hold": 7,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 69,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.0,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "NVDA",
@@ -144,7 +173,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 69,
+      "prior_strong_buy": 25,
+      "prior_buy": 41,
+      "prior_hold": 2,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 69,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.0,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "GOOGL",
@@ -169,7 +210,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 68,
+      "prior_strong_buy": 20,
+      "prior_buy": 41,
+      "prior_hold": 6,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 67,
+      "delta_pp": -1.3,
+      "threshold_pp": 2.0,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "MSFT",
@@ -194,7 +247,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 65,
+      "prior_strong_buy": 22,
+      "prior_buy": 40,
+      "prior_hold": 3,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 65,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.0,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "AMD",
@@ -219,7 +284,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 60,
+      "prior_strong_buy": 17,
+      "prior_buy": 33,
+      "prior_hold": 10,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 60,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.0,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "AVGO",
@@ -244,7 +321,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 57,
+      "prior_strong_buy": 17,
+      "prior_buy": 35,
+      "prior_hold": 4,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 56,
+      "delta_pp": 1.9,
+      "threshold_pp": 2.0,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "CRM",
@@ -269,7 +358,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 56,
+      "prior_strong_buy": 14,
+      "prior_buy": 26,
+      "prior_hold": 14,
+      "prior_sell": 1,
+      "prior_strong_sell": 1,
+      "n_prior": 56,
+      "delta_pp": 1.8,
+      "threshold_pp": 2.0,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "NFLX",
@@ -294,7 +395,19 @@
       "direction": "DETERIORATING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 56,
+      "prior_strong_buy": 14,
+      "prior_buy": 29,
+      "prior_hold": 13,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 57,
+      "delta_pp": -5.8,
+      "threshold_pp": 2.0,
+      "bucket_moves": 3,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "INTC",
@@ -319,7 +432,19 @@
       "direction": "DETERIORATING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 55,
+      "prior_strong_buy": 4,
+      "prior_buy": 16,
+      "prior_hold": 33,
+      "prior_sell": 2,
+      "prior_strong_sell": 0,
+      "n_prior": 55,
+      "delta_pp": -7.3,
+      "threshold_pp": 2.0,
+      "bucket_moves": 5,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "TSLA",
@@ -344,7 +469,19 @@
       "direction": "IMPROVING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 54,
+      "prior_strong_buy": 10,
+      "prior_buy": 17,
+      "prior_hold": 22,
+      "prior_sell": 5,
+      "prior_strong_sell": 0,
+      "n_prior": 54,
+      "delta_pp": 3.7,
+      "threshold_pp": 2.0,
+      "bucket_moves": 3,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "MA",
@@ -369,7 +506,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 52,
+      "prior_strong_buy": 13,
+      "prior_buy": 36,
+      "prior_hold": 4,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 53,
+      "delta_pp": -0.1,
+      "threshold_pp": 2.0,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "NOW",
@@ -394,7 +543,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 52,
+      "prior_strong_buy": 16,
+      "prior_buy": 31,
+      "prior_hold": 3,
+      "prior_sell": 2,
+      "prior_strong_sell": 0,
+      "n_prior": 52,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.0,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "AAPL",
@@ -416,10 +577,22 @@
       "prior_buy_side_pct": 63.3,
       "prior_consensus": "BUY",
       "mom_change_pp": -2.1,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 49,
+      "prior_strong_buy": 11,
+      "prior_buy": 20,
+      "prior_hold": 14,
+      "prior_sell": 3,
+      "prior_strong_sell": 1,
+      "n_prior": 49,
+      "delta_pp": -2.0,
+      "threshold_pp": 2.04,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "NKE",
@@ -444,7 +617,19 @@
       "direction": "DETERIORATING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 49,
+      "prior_strong_buy": 9,
+      "prior_buy": 7,
+      "prior_hold": 26,
+      "prior_sell": 6,
+      "prior_strong_sell": 0,
+      "n_prior": 48,
+      "delta_pp": -4.8,
+      "threshold_pp": 2.04,
+      "bucket_moves": 2,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "V",
@@ -469,7 +654,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 49,
+      "prior_strong_buy": 12,
+      "prior_buy": 32,
+      "prior_hold": 5,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 49,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.04,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "WMT",
@@ -491,10 +688,22 @@
       "prior_buy_side_pct": 87.5,
       "prior_consensus": "STRONG_BUY",
       "mom_change_pp": 2.1,
-      "direction": "IMPROVING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 48,
+      "prior_strong_buy": 12,
+      "prior_buy": 30,
+      "prior_hold": 6,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 48,
+      "delta_pp": 2.1,
+      "threshold_pp": 2.08,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "COST",
@@ -519,7 +728,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 47,
+      "prior_strong_buy": 13,
+      "prior_buy": 17,
+      "prior_hold": 14,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 45,
+      "delta_pp": 1.4,
+      "threshold_pp": 2.13,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "ORCL",
@@ -544,7 +765,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 47,
+      "prior_strong_buy": 15,
+      "prior_buy": 24,
+      "prior_hold": 8,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 48,
+      "delta_pp": -0.4,
+      "threshold_pp": 2.13,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "HD",
@@ -566,10 +799,22 @@
       "prior_buy_side_pct": 60.9,
       "prior_consensus": "BUY",
       "mom_change_pp": 2.1,
-      "direction": "IMPROVING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 46,
+      "prior_strong_buy": 9,
+      "prior_buy": 19,
+      "prior_hold": 17,
+      "prior_sell": 0,
+      "prior_strong_sell": 1,
+      "n_prior": 46,
+      "delta_pp": 2.2,
+      "threshold_pp": 2.17,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "QCOM",
@@ -594,7 +839,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 46,
+      "prior_strong_buy": 6,
+      "prior_buy": 13,
+      "prior_hold": 24,
+      "prior_sell": 3,
+      "prior_strong_sell": 0,
+      "n_prior": 46,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.17,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "ADBE",
@@ -619,7 +876,19 @@
       "direction": "DETERIORATING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 45,
+      "prior_strong_buy": 7,
+      "prior_buy": 10,
+      "prior_hold": 23,
+      "prior_sell": 5,
+      "prior_strong_sell": 0,
+      "n_prior": 45,
+      "delta_pp": -4.4,
+      "threshold_pp": 2.22,
+      "bucket_moves": 2,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "SBUX",
@@ -644,7 +913,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 45,
+      "prior_strong_buy": 8,
+      "prior_buy": 12,
+      "prior_hold": 21,
+      "prior_sell": 3,
+      "prior_strong_sell": 1,
+      "n_prior": 45,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.22,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "AMGN",
@@ -669,7 +950,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 42,
+      "prior_strong_buy": 6,
+      "prior_buy": 12,
+      "prior_hold": 20,
+      "prior_sell": 3,
+      "prior_strong_sell": 1,
+      "n_prior": 42,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.38,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "MCD",
@@ -694,7 +987,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 41,
+      "prior_strong_buy": 8,
+      "prior_buy": 17,
+      "prior_hold": 15,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 41,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.44,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "TXN",
@@ -716,10 +1021,22 @@
       "prior_buy_side_pct": 55.0,
       "prior_consensus": "BUY",
       "mom_change_pp": 2.5,
-      "direction": "IMPROVING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 40,
+      "prior_strong_buy": 7,
+      "prior_buy": 15,
+      "prior_hold": 15,
+      "prior_sell": 2,
+      "prior_strong_sell": 1,
+      "n_prior": 40,
+      "delta_pp": 2.5,
+      "threshold_pp": 2.5,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "DIS",
@@ -744,7 +1061,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 39,
+      "prior_strong_buy": 11,
+      "prior_buy": 23,
+      "prior_hold": 4,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 39,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.56,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "ABBV",
@@ -769,7 +1098,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 38,
+      "prior_strong_buy": 10,
+      "prior_buy": 22,
+      "prior_hold": 7,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 39,
+      "delta_pp": -0.5,
+      "threshold_pp": 2.63,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "BA",
@@ -794,7 +1135,19 @@
       "direction": "IMPROVING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 37,
+      "prior_strong_buy": 13,
+      "prior_buy": 18,
+      "prior_hold": 4,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 35,
+      "delta_pp": 3.3,
+      "threshold_pp": 2.7,
+      "bucket_moves": 2,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "LLY",
@@ -819,7 +1172,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 37,
+      "prior_strong_buy": 11,
+      "prior_buy": 20,
+      "prior_hold": 4,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 36,
+      "delta_pp": 0.4,
+      "threshold_pp": 2.7,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "COP",
@@ -841,10 +1206,22 @@
       "prior_buy_side_pct": 69.7,
       "prior_consensus": "BUY",
       "mom_change_pp": -4.0,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 35,
+      "prior_strong_buy": 7,
+      "prior_buy": 16,
+      "prior_hold": 10,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 33,
+      "delta_pp": -4.0,
+      "threshold_pp": 2.86,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "CSCO",
@@ -869,7 +1246,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 35,
+      "prior_strong_buy": 6,
+      "prior_buy": 17,
+      "prior_hold": 12,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 35,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.86,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "KO",
@@ -894,7 +1283,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 35,
+      "prior_strong_buy": 8,
+      "prior_buy": 19,
+      "prior_hold": 7,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 34,
+      "delta_pp": 0.6,
+      "threshold_pp": 2.86,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "MRK",
@@ -916,10 +1317,22 @@
       "prior_buy_side_pct": 74.3,
       "prior_consensus": "BUY",
       "mom_change_pp": -2.9,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 35,
+      "prior_strong_buy": 8,
+      "prior_buy": 18,
+      "prior_hold": 9,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 35,
+      "delta_pp": -2.9,
+      "threshold_pp": 2.86,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "PG",
@@ -944,7 +1357,19 @@
       "direction": "IMPROVING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 35,
+      "prior_strong_buy": 6,
+      "prior_buy": 12,
+      "prior_hold": 16,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 35,
+      "delta_pp": 5.7,
+      "threshold_pp": 2.86,
+      "bucket_moves": 2,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "CAT",
@@ -969,7 +1394,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 8,
+      "prior_buy": 12,
+      "prior_hold": 13,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 34,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.94,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "DE",
@@ -994,7 +1431,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 7,
+      "prior_buy": 17,
+      "prior_hold": 10,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 34,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.94,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "LIN",
@@ -1019,7 +1468,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 5,
+      "prior_buy": 18,
+      "prior_hold": 8,
+      "prior_sell": 2,
+      "prior_strong_sell": 0,
+      "n_prior": 33,
+      "delta_pp": 0.9,
+      "threshold_pp": 2.94,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "MS",
@@ -1044,7 +1505,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 8,
+      "prior_buy": 13,
+      "prior_hold": 11,
+      "prior_sell": 0,
+      "prior_strong_sell": 1,
+      "n_prior": 33,
+      "delta_pp": -1.9,
+      "threshold_pp": 2.94,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "PFE",
@@ -1069,7 +1542,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 5,
+      "prior_buy": 8,
+      "prior_hold": 18,
+      "prior_sell": 1,
+      "prior_strong_sell": 1,
+      "n_prior": 33,
+      "delta_pp": -1.2,
+      "threshold_pp": 2.94,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "SHW",
@@ -1091,10 +1576,22 @@
       "prior_buy_side_pct": 56.2,
       "prior_consensus": "BUY",
       "mom_change_pp": -3.3,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 5,
+      "prior_buy": 13,
+      "prior_hold": 14,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 32,
+      "delta_pp": -3.3,
+      "threshold_pp": 2.94,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "SLB",
@@ -1119,7 +1616,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 10,
+      "prior_buy": 19,
+      "prior_hold": 3,
+      "prior_sell": 2,
+      "prior_strong_sell": 0,
+      "n_prior": 34,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.94,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "TMO",
@@ -1144,7 +1653,19 @@
       "direction": "DETERIORATING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 11,
+      "prior_buy": 19,
+      "prior_hold": 5,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 35,
+      "delta_pp": -6.3,
+      "threshold_pp": 2.94,
+      "bucket_moves": 2,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "UPS",
@@ -1169,7 +1690,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 9,
+      "prior_buy": 8,
+      "prior_hold": 13,
+      "prior_sell": 4,
+      "prior_strong_sell": 0,
+      "n_prior": 34,
+      "delta_pp": 0.0,
+      "threshold_pp": 2.94,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "VZ",
@@ -1191,10 +1724,22 @@
       "prior_buy_side_pct": 48.6,
       "prior_consensus": "BUY",
       "mom_change_pp": 4.3,
-      "direction": "IMPROVING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 34,
+      "prior_strong_buy": 7,
+      "prior_buy": 10,
+      "prior_hold": 18,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 35,
+      "delta_pp": 4.4,
+      "threshold_pp": 2.94,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "GS",
@@ -1216,10 +1761,22 @@
       "prior_buy_side_pct": 46.9,
       "prior_consensus": "BUY",
       "mom_change_pp": 4.6,
-      "direction": "IMPROVING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 33,
+      "prior_strong_buy": 6,
+      "prior_buy": 9,
+      "prior_hold": 16,
+      "prior_sell": 0,
+      "prior_strong_sell": 1,
+      "n_prior": 32,
+      "delta_pp": 4.6,
+      "threshold_pp": 3.03,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "SO",
@@ -1244,7 +1801,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 33,
+      "prior_strong_buy": 5,
+      "prior_buy": 9,
+      "prior_hold": 16,
+      "prior_sell": 2,
+      "prior_strong_sell": 0,
+      "n_prior": 32,
+      "delta_pp": 1.7,
+      "threshold_pp": 3.03,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "CVX",
@@ -1269,7 +1838,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 32,
+      "prior_strong_buy": 7,
+      "prior_buy": 18,
+      "prior_hold": 4,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 30,
+      "delta_pp": 1.0,
+      "threshold_pp": 3.12,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "GE",
@@ -1291,10 +1872,22 @@
       "prior_buy_side_pct": 87.5,
       "prior_consensus": "STRONG_BUY",
       "mom_change_pp": -3.1,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 32,
+      "prior_strong_buy": 9,
+      "prior_buy": 19,
+      "prior_hold": 3,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 32,
+      "delta_pp": -3.1,
+      "threshold_pp": 3.12,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "T",
@@ -1316,10 +1909,22 @@
       "prior_buy_side_pct": 61.8,
       "prior_consensus": "BUY",
       "mom_change_pp": -2.4,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 32,
+      "prior_strong_buy": 9,
+      "prior_buy": 12,
+      "prior_hold": 12,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 34,
+      "delta_pp": -2.4,
+      "threshold_pp": 3.12,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "UNH",
@@ -1341,10 +1946,22 @@
       "prior_buy_side_pct": 78.8,
       "prior_consensus": "STRONG_BUY",
       "mom_change_pp": 5.6,
-      "direction": "IMPROVING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 32,
+      "prior_strong_buy": 8,
+      "prior_buy": 18,
+      "prior_hold": 7,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 33,
+      "delta_pp": 5.6,
+      "threshold_pp": 3.12,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "XOM",
@@ -1366,10 +1983,22 @@
       "prior_buy_side_pct": 45.2,
       "prior_consensus": "BUY",
       "mom_change_pp": -4.6,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 32,
+      "prior_strong_buy": 5,
+      "prior_buy": 9,
+      "prior_hold": 17,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 31,
+      "delta_pp": -4.5,
+      "threshold_pp": 3.12,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "IBM",
@@ -1394,7 +2023,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 31,
+      "prior_strong_buy": 8,
+      "prior_buy": 8,
+      "prior_hold": 12,
+      "prior_sell": 2,
+      "prior_strong_sell": 0,
+      "n_prior": 30,
+      "delta_pp": -1.7,
+      "threshold_pp": 3.23,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "JPM",
@@ -1419,7 +2060,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 31,
+      "prior_strong_buy": 3,
+      "prior_buy": 15,
+      "prior_hold": 12,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 30,
+      "delta_pp": -1.9,
+      "threshold_pp": 3.23,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "NEM",
@@ -1441,10 +2094,22 @@
       "prior_buy_side_pct": 90.3,
       "prior_consensus": "STRONG_BUY",
       "mom_change_pp": -3.2,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 31,
+      "prior_strong_buy": 10,
+      "prior_buy": 18,
+      "prior_hold": 3,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 31,
+      "delta_pp": -3.2,
+      "threshold_pp": 3.23,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "SCHW",
@@ -1466,10 +2131,22 @@
       "prior_buy_side_pct": 82.8,
       "prior_consensus": "STRONG_BUY",
       "mom_change_pp": -5.4,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 31,
+      "prior_strong_buy": 8,
+      "prior_buy": 16,
+      "prior_hold": 4,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 29,
+      "delta_pp": -5.3,
+      "threshold_pp": 3.23,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "WFC",
@@ -1491,10 +2168,22 @@
       "prior_buy_side_pct": 66.7,
       "prior_consensus": "BUY",
       "mom_change_pp": 4.3,
-      "direction": "IMPROVING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 31,
+      "prior_strong_buy": 6,
+      "prior_buy": 14,
+      "prior_hold": 10,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 30,
+      "delta_pp": 4.3,
+      "threshold_pp": 3.23,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "FCX",
@@ -1519,7 +2208,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 30,
+      "prior_strong_buy": 5,
+      "prior_buy": 18,
+      "prior_hold": 6,
+      "prior_sell": 0,
+      "prior_strong_sell": 1,
+      "n_prior": 30,
+      "delta_pp": 0.0,
+      "threshold_pp": 3.33,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "HON",
@@ -1544,7 +2245,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 30,
+      "prior_strong_buy": 5,
+      "prior_buy": 14,
+      "prior_hold": 11,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 30,
+      "delta_pp": 0.0,
+      "threshold_pp": 3.33,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "JNJ",
@@ -1566,10 +2279,22 @@
       "prior_buy_side_pct": 73.3,
       "prior_consensus": "BUY",
       "mom_change_pp": -3.3,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 30,
+      "prior_strong_buy": 7,
+      "prior_buy": 15,
+      "prior_hold": 8,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 30,
+      "delta_pp": -3.3,
+      "threshold_pp": 3.33,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "LMT",
@@ -1594,7 +2319,19 @@
       "direction": "IMPROVING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 30,
+      "prior_strong_buy": 6,
+      "prior_buy": 8,
+      "prior_hold": 13,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 28,
+      "delta_pp": 6.7,
+      "threshold_pp": 3.33,
+      "bucket_moves": 2,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "AMT",
@@ -1619,7 +2356,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 29,
+      "prior_strong_buy": 8,
+      "prior_buy": 17,
+      "prior_hold": 4,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 29,
+      "delta_pp": 0.0,
+      "threshold_pp": 3.45,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "BAC",
@@ -1644,7 +2393,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 29,
+      "prior_strong_buy": 6,
+      "prior_buy": 17,
+      "prior_hold": 5,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 28,
+      "delta_pp": 0.6,
+      "threshold_pp": 3.45,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "PEP",
@@ -1666,10 +2427,22 @@
       "prior_buy_side_pct": 34.5,
       "prior_consensus": "BUY",
       "mom_change_pp": 3.4,
-      "direction": "IMPROVING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 29,
+      "prior_strong_buy": 2,
+      "prior_buy": 8,
+      "prior_hold": 18,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 29,
+      "delta_pp": 3.4,
+      "threshold_pp": 3.45,
+      "bucket_moves": 1,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "DUK",
@@ -1691,10 +2464,22 @@
       "prior_buy_side_pct": 57.7,
       "prior_consensus": "BUY",
       "mom_change_pp": -2.1,
-      "direction": "DETERIORATING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 27,
+      "prior_strong_buy": 4,
+      "prior_buy": 11,
+      "prior_hold": 11,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 26,
+      "delta_pp": -2.1,
+      "threshold_pp": 3.7,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "NEE",
@@ -1719,7 +2504,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 27,
+      "prior_strong_buy": 6,
+      "prior_buy": 11,
+      "prior_hold": 8,
+      "prior_sell": 1,
+      "prior_strong_sell": 0,
+      "n_prior": 26,
+      "delta_pp": 1.3,
+      "threshold_pp": 3.7,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "PM",
@@ -1744,7 +2541,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 26,
+      "prior_strong_buy": 9,
+      "prior_buy": 10,
+      "prior_hold": 7,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 26,
+      "delta_pp": 0.0,
+      "threshold_pp": 3.85,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "SPG",
@@ -1769,7 +2578,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 25,
+      "prior_strong_buy": 5,
+      "prior_buy": 4,
+      "prior_hold": 15,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 24,
+      "delta_pp": -1.5,
+      "threshold_pp": 4.0,
+      "bucket_moves": 0,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "BLK",
@@ -1791,10 +2612,22 @@
       "prior_buy_side_pct": 87.0,
       "prior_consensus": "STRONG_BUY",
       "mom_change_pp": 4.7,
-      "direction": "IMPROVING",
+      "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 24,
+      "prior_strong_buy": 4,
+      "prior_buy": 16,
+      "prior_hold": 3,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 23,
+      "delta_pp": 4.7,
+      "threshold_pp": 4.17,
+      "bucket_moves": 1,
+      "churn_flag": "CHURN_CONTAMINATED",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "PLD",
@@ -1819,7 +2652,19 @@
       "direction": "IMPROVING",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 21,
+      "prior_strong_buy": 4,
+      "prior_buy": 10,
+      "prior_hold": 7,
+      "prior_sell": 0,
+      "prior_strong_sell": 0,
+      "n_prior": 21,
+      "delta_pp": 14.3,
+      "threshold_pp": 4.76,
+      "bucket_moves": 3,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     },
     {
       "symbol": "BRK-B",
@@ -1844,7 +2689,19 @@
       "direction": "STABLE",
       "age_days": 23,
       "source": "finnhub:/stock/recommendation",
-      "fetched_at": "2026-11-24T10:43:22Z"
+      "fetched_at": "2026-11-24T10:43:22Z",
+      "n_now": 10,
+      "prior_strong_buy": 0,
+      "prior_buy": 1,
+      "prior_hold": 3,
+      "prior_sell": 3,
+      "prior_strong_sell": 3,
+      "n_prior": 10,
+      "delta_pp": 0.0,
+      "threshold_pp": 10.0,
+      "bucket_moves": 0,
+      "churn_flag": "CLEAN",
+      "reason_code": "STALE_OK"
     }
   ],
   "uncovered": [
@@ -1852,133 +2709,155 @@
       "symbol": "SPY",
       "name": "SPDR S&P 500 ETF",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "QQQ",
       "name": "Invesco QQQ Trust",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "IWM",
       "name": "iShares Russell 2000",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "DIA",
       "name": "SPDR Dow Jones Industrial",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "VTI",
       "name": "Vanguard Total Stock Market",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "GLD",
       "name": "SPDR Gold Shares",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "SLV",
       "name": "iShares Silver Trust",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "XLE",
       "name": "Energy Select Sector SPDR",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "XLF",
       "name": "Financial Select Sector SPDR",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "XLK",
       "name": "Technology Select Sector SPDR",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "VNQ",
       "name": "Vanguard Real Estate",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "EEM",
       "name": "iShares MSCI Emerging Markets",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "EFA",
       "name": "iShares MSCI EAFE",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "ARKK",
       "name": "ARK Innovation ETF",
       "asset_class": "ETF",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "TLT",
       "name": "iShares 20+ Year Treasury",
       "asset_class": "BOND",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "IEF",
       "name": "iShares 7-10 Year Treasury",
       "asset_class": "BOND",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "SHY",
       "name": "iShares 1-3 Year Treasury",
       "asset_class": "BOND",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "LQD",
       "name": "iShares IG Corporate Bond",
       "asset_class": "BOND",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "HYG",
       "name": "iShares iBoxx High Yield",
       "asset_class": "BOND",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "BND",
       "name": "Vanguard Total Bond Market",
       "asset_class": "BOND",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
       "asset_class": "CRYPTO",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     },
     {
       "symbol": "ETH-USD",
       "name": "Ethereum",
       "asset_class": "CRYPTO",
-      "reason": "endpoint returned an empty array - no analyst coverage"
+      "reason": "endpoint returned an empty array - no analyst coverage",
+      "reason_code": "NO_COVERAGE_STRUCTURAL"
     }
   ],
   "errors": [
@@ -1986,37 +2865,43 @@
       "symbol": "VFIAX",
       "asset_class": "MUTUAL_FUND",
       "http": 403,
-      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}"
+      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}",
+      "reason_code": "ACCESS_DENIED_403"
     },
     {
       "symbol": "FXAIX",
       "asset_class": "MUTUAL_FUND",
       "http": 403,
-      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}"
+      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}",
+      "reason_code": "ACCESS_DENIED_403"
     },
     {
       "symbol": "VTSAX",
       "asset_class": "MUTUAL_FUND",
       "http": 403,
-      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}"
+      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}",
+      "reason_code": "ACCESS_DENIED_403"
     },
     {
       "symbol": "VBTLX",
       "asset_class": "MUTUAL_FUND",
       "http": 403,
-      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}"
+      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}",
+      "reason_code": "ACCESS_DENIED_403"
     },
     {
       "symbol": "AGTHX",
       "asset_class": "MUTUAL_FUND",
       "http": 403,
-      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}"
+      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}",
+      "reason_code": "ACCESS_DENIED_403"
     },
     {
       "symbol": "DODGX",
       "asset_class": "MUTUAL_FUND",
       "http": 403,
-      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}"
+      "error": "HTTP 403: {\"error\":\"You don't have access to this resource.\"}",
+      "reason_code": "ACCESS_DENIED_403"
     }
   ],
   "definitions": {
@@ -2025,5 +2910,45 @@
     "mom_change_pp": "Change in buy_side_pct versus the prior month, in percentage points.",
     "direction": "IMPROVING at >= +2.0pp, DETERIORATING at <= -2.0pp, else STABLE.",
     "age_days": "Days from the period date (first of month) to generated_at."
-  }
+  },
+  "rule": {
+    "weights": {
+      "strong_buy": 2,
+      "buy": 1,
+      "hold": 0,
+      "sell": -1,
+      "strong_sell": -2
+    },
+    "strong_buy": {
+      "score_min": 1.0,
+      "buy_side_min": 0.75
+    },
+    "buy": {
+      "score_min": 0.3,
+      "buy_side_min": 0.5
+    },
+    "sell": {
+      "score_max": -0.3,
+      "buy_side_max": 0.3
+    },
+    "strong_sell": {
+      "score_max": -1.0,
+      "buy_side_max": 0.15
+    },
+    "trend": {
+      "min_abs_pp": 2.0,
+      "min_bucket_moves": 2,
+      "noise_floor_pp": "100 / n_now"
+    }
+  },
+  "reason_codes": [
+    "NO_COVERAGE_STRUCTURAL",
+    "NO_COVERAGE_VENDOR",
+    "SYMBOL_UNMAPPED",
+    "ACCESS_DENIED_403",
+    "RATE_LIMITED_429",
+    "EMPTY_RESPONSE",
+    "STALE_OK"
+  ],
+  "enriched_at": "2026-11-24T11:08:38Z"
 }

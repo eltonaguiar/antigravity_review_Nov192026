@@ -163,12 +163,7 @@ both people and language models.</p>
       percentage columns: a row backed by 70 analysts means far more than one backed by 3.</dd>
 
     <dt>Consensus</dt>
-    <dd>One label derived from those five counts — it is <em>not</em> a separate opinion. Each analyst
-      scores +2 (SB), +1 (B), 0 (H), −1 (S), −2 (SS); the scores are averaged; the average is
-      bucketed: <code>≥1.0 STRONG BUY</code> · <code>≥0.3 BUY</code> · <code>&gt;−0.3 HOLD</code> ·
-      <code>&gt;−1.0 SELL</code> · otherwise <code>STRONG SELL</code>.
-      <br><em>Worked example, AAPL at 19 / 48 / 3 / 0 / 0 with 70 analysts:</em>
-      (2×19 + 1×48 + 0×3 − 1×0 − 2×0) / 70 = <strong>1.23</strong> → <strong>STRONG BUY</strong>.</dd>
+    <dd><!-- RULE_LEGEND_START --><p>One label, derived only from the five counts — not a separate opinion. Each analyst scores +2 (SB), +1 (B), 0 (H), −1 (S), −2 (SS).</p><p><code>score = (2·SB + B − S − 2·SS) / analysts</code> · <code>buy-side = (SB + B) / analysts</code></p><ul><li><b>STRONG BUY</b>: score ≥ 1.0 <b>and</b> buy-side ≥ 75%</li><li><b>BUY</b>: score ≥ 0.3 <b>and</b> buy-side ≥ 50%</li><li><b>SELL</b>: score ≤ -0.3 <b>and</b> buy-side ≤ 30%</li><li><b>STRONG SELL</b>: score ≤ -1.0 <b>and</b> buy-side ≤ 15%</li><li><b>HOLD</b>: anything else.</li></ul><p><em>Why both conditions?</em> A score alone can label a split name BUY; INTC scores 0.35 but only 29% of analysts say Buy, so it is HOLD.</p><!-- RULE_LEGEND_END --></dd>
 
     <dt>Buy-side %</dt>
     <dd>Share of analysts who are positive: (SB + B) ÷ Analysts. 67.7% means roughly two thirds of
@@ -181,17 +176,10 @@ both people and language models.</p>
       <code>0.0</code> means no change once rounded, not missing data.</dd>
 
     <dt>Trend</dt>
-    <dd>MoM pp said as a word: <code>IMPROVING</code> at ≥ +2.0 pp, <code>DETERIORATING</code> at
-      ≤ −2.0 pp, otherwise <code>STABLE</code>.
-      <strong>This is not an upgrade or downgrade event.</strong> It is the month-over-month change in
-      the aggregate distribution. Dated firm-by-firm actions such as “China Renaissance raised AAPL
-      to Buy on 2026-11-11” need a paid upgrade/downgrade feed, which this run reports as
-      unavailable.</dd>
+    <dd><!-- RULE_TREND_START --><p>Computed once in the pipeline and stored; the page does not re-derive it. IMPROVING/DETERIORATING requires <b>both</b>:</p><ul><li>|Δ buy-side| ≥ max(2.0 pp, 100 / n_now) — the coverage-relative noise floor</li><li>at least 2 analysts changed rating bucket</li></ul><p>Otherwise STABLE. If the analyst count changed between months the row is tagged <code>CHURN_CONTAMINATED</code>. This is a change in the analyst mix, <b>not</b> a firm upgrade/downgrade event.</p><!-- RULE_TREND_END --></dd>
 
-    <dt>Period · Age (d)</dt>
-    <dd>The month the snapshot refers to (periods are dated the 1st) and how many days old that is at
-      the generation timestamp. The <em>Recency</em> filter hides anything older than the window you
-      choose — “≤ 3 months” is the default.</dd>
+    <dt>Snapshot period</dt>
+    <dd>Shown once above the table; every row shares it. The recency filter and per-row period/age are hidden until the feed spans more than one month.</dd>
 
     <dt>Summary cards above</dt>
     <dd><em>Symbols covered</em> — rows with at least one month of consensus. <em>Avg buy-side</em> —
@@ -213,7 +201,7 @@ both people and language models.</p>
       <th data-k="consensus" data-label="Consensus" title="Weighted mean of the analyst distribution, bucketed. Derived, not a separate opinion — see the legend.">Consensus</th>
       <th data-k="buy_side_pct" data-label="Buy-side %" title="(Strong Buy + Buy) / total analysts, as a percentage.">Buy-side %</th>
       <th data-k="analysts" data-label="Analysts" title="Total covering analysts = the sum of the five rating buckets.">Analysts</th>
-      <th data-k="detail" title="Strong Buy / Buy / Hold / Sell / Strong Sell — counts of covering analysts in each bucket." data-label="SB·B·H·S·SS<span class="q" title="Strong Buy · Buy · Hold · Sell · Strong Sell: the COUNT of analysts in each bucket. They add up to the Analysts column. Example 19/48/3/0/0 = 19 strong buy, 48 buy, 3 hold, 0 sell, 0 strong sell.">?</span><small>strong buy · buy · hold · sell · strong sell</small>">SB·B·H·S·SS<span class="q" title="Strong Buy · Buy · Hold · Sell · Strong Sell: the COUNT of analysts in each bucket. They add up to the Analysts column. Example 19/48/3/0/0 = 19 strong buy, 48 buy, 3 hold, 0 sell, 0 strong sell.">?</span><small>strong buy · buy · hold · sell · strong sell</small></th>
+      <th data-k="detail" title="Strong Buy / Buy / Hold / Sell / Strong Sell — counts of covering analysts in each bucket." data-label="SB·B·H·S·SS">SB·B·H·S·SS<span class="q" title="Strong Buy · Buy · Hold · Sell · Strong Sell: the COUNT of analysts in each bucket. They add up to the Analysts column. Example 19/48/3/0/0 = 19 strong buy, 48 buy, 3 hold, 0 sell, 0 strong sell.">?</span><small>strong buy · buy · hold · sell · strong sell</small></th>
       <th data-k="mom_change_pp" data-label="MoM pp" title="Change in Buy-side % versus the prior month, in percentage points.">MoM pp</th>
       <th data-k="direction" data-label="Trend" title="IMPROVING at >= +2.0 pp, DETERIORATING at <= -2.0 pp, else STABLE. Not an upgrade or downgrade event.">Trend</th>
     </tr>
@@ -223,10 +211,9 @@ both people and language models.</p>
 </div>
 
 <h2>Coverage by asset class</h2>
-<p class="sub">Measured, not assumed. Class labels are the vendor's: <b>BOND</b> rows here are bond <i>ETFs</i>, and <b>ETF</b> rows are fund wrappers, not single companies. A zero means the feed returned an empty array; for mutual funds it is an explicit HTTP 403. An empty array is evidence, not proof, of absence.
-that class — it is a property of the instrument type, not a temporary outage.</p>
+<p class="sub">Measured, not assumed. Class labels are the vendor's: <b>BOND</b> rows here are bond <i>ETFs</i>, and <b>ETF</b> rows are fund wrappers, not single companies. A zero means the feed returned an empty array; for mutual funds it is an explicit HTTP 403. An empty array is evidence, not proof, of absence. A source we cannot reach is labelled with its exact failure.</p>
 <table class="coverage"><thead>
-  <tr><th>Asset class</th><th>Symbols probed</th><th>With consensus</th><th>Coverage</th><th>Reading</th></tr>
+  <tr><th>Asset class</th><th>Symbols probed</th><th>With consensus</th><th>Coverage</th><th>Reading</th><th>Reason code</th></tr>
 </thead><tbody id="coverage"></tbody></table>
 
 <h2>Sources</h2>
@@ -239,7 +226,7 @@ never gets confused with “our key cannot reach it”.</p>
 <h2>Symbols with no data</h2>
 <p class="sub">Listed explicitly so the absence is visible rather than silent.</p>
 <table class="coverage"><thead>
-  <tr><th>Symbol</th><th>Class</th><th>Reason</th></tr>
+  <tr><th>Symbol</th><th>Class</th><th>Reason</th><th>Code</th></tr>
 </thead><tbody id="gaps"></tbody></table>
 
 <footer>
@@ -357,7 +344,8 @@ function render() {
       <td title="Change in buy-side share versus the prior month: ${s.prior_buy_side_pct ?? '—'}% → ${s.buy_side_pct ?? '—'}% = ${s.mom_change_pp === null ? '—' : (s.mom_change_pp > 0 ? '+' : '') + s.mom_change_pp.toFixed(1)} pp.">${s.mom_change_pp === null ? '—' : (s.mom_change_pp > 0 ? '+' : '') + s.mom_change_pp.toFixed(1)}</td>
       <td title="IMPROVING if buy-side share rose by 2.0pp or more month-over-month; DETERIORATING if it fell by 2.0pp or more; otherwise STABLE. This is a change in the analyst mix, not a firm upgrade/downgrade event.">${s.direction === 'IMPROVING' ? '<span class="trend up">▲ Improving</span>'
             : s.direction === 'DETERIORATING' ? '<span class="trend down">▼ Deteriorating</span>'
-            : '<span class="trend flat">▬ Stable</span>'}</td>
+            : '<span class="trend flat">▬ Stable</span>'}${s.churn_flag === 'CHURN_CONTAMINATED'
+              ? '<span class="thin" title="Analyst count changed between months; the movement may reflect coverage churn.">churn</span>' : ''}</td>
     </tr>`).join('') || `<tr><td colspan="10" class="na" style="white-space:normal">${emptyMessage()}</td></tr>`;
 
   const hidden = STATE.data.signals.length - rows.length;
@@ -435,7 +423,8 @@ function boot() {
       else if (k === 'CRYPTO') reading = 'crypto pairs — empty response; no sell-side equity coverage';
       else reading = 'empty response — likely no coverage for this wrapper; not independently verified';
       return `<tr><td>${k}</td><td>${v.probed}</td><td>${v.with_consensus}</td>
-        <td class="${pct ? 'ok' : 'zero'}">${pct}%</td><td class="na">${reading}</td></tr>`;
+        <td class="${pct ? 'ok' : 'zero'}">${pct}%</td><td class="na">${reading}</td>
+        <td><code>${v.reason_code || '—'}</code></td></tr>`;
     }).join('');
 
   // sources
@@ -447,12 +436,12 @@ function boot() {
 
   // gaps
   const gaps = [
-    ...d.uncovered.map((u) => ({ symbol: u.symbol, cls: u.asset_class, reason: u.reason })),
-    ...d.errors.map((e) => ({ symbol: e.symbol, cls: e.asset_class || '—', reason: `fetch error (HTTP ${e.http}): ${e.error}` })),
+    ...d.uncovered.map((u) => ({ symbol: u.symbol, cls: u.asset_class, reason: u.reason, code: u.reason_code })),
+    ...d.errors.map((e) => ({ symbol: e.symbol, cls: e.asset_class || '—', reason: `fetch error (HTTP ${e.http}): ${e.error}`, code: e.reason_code })),
   ];
   el('gaps').innerHTML = gaps.length
-    ? gaps.map((g) => `<tr><td>${g.symbol}</td><td>${g.cls}</td><td class="na" style="white-space:normal">${g.reason}</td></tr>`).join('')
-    : '<tr><td colspan="3" class="na">none — every symbol returned data</td></tr>';
+    ? gaps.map((g) => `<tr><td>${g.symbol}</td><td>${g.cls}</td><td class="na" style="white-space:normal">${g.reason}</td><td><code>${g.code || '—'}</code></td></tr>`).join('')
+    : '<tr><td colspan="4" class="na">none — every symbol returned data</td></tr>';
 
   el('defs').textContent = 'Definitions — ' + Object.entries(d.definitions)
     .map(([k, v]) => `${k}: ${v}`).join('  ·  ');
