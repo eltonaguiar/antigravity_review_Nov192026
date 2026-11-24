@@ -52,3 +52,24 @@ See `DQ_CHECKS.sql` in this folder: freshness, zero-P&L-aged, closed-without-P&L
 TP/SL side, duplicates, orphans, coverage ratio, analyst-bridge emptiness, crowd
 staleness, consensus arithmetic, ingest failures. Each check returns offending
 rows plus a one-row severity summary.
+
+## Per-check scorecard against the live payload (2026-11-24T11:16Z)
+
+| Check | Result | Verdict |
+|---|---|---|
+| `STALE_FEED` (newest pick per class) | CRYPTO 1.9h, EQUITY 2.0h, ETF 4.6h, FOREX/COMMODITY/BOND 1.3h, **FUTURES 46.0h** | **FAIL (FUTURES >30h)** |
+| `OPEN_ZERO_PNL_AGED` (>7d) | **0** | pass |
+| `CLOSED_ZERO_PNL` | **40** (all status CLOSED, TIME_EXIT, real exit price) | **FAIL** |
+| `STATUS_INCONSISTENT` | **0** | pass |
+| `TPSL_WRONG_SIDE` | **49** (crypto shorts; GC=F short) | **FAIL** |
+| `DUP_PICK_ID` | **0** | pass |
+| `DUP_NATURAL` (symbol+direction+timestamp) | **12** | investigate (mirrors?) |
+| `BAD_PRICE` (entry/exit ≤ 0) | **13** — exit_price = 0.0 (SOLUSDT, TRXUSDT, ADBE, LABD, AMD, USDCAD=X, JDST, AUDJPY=X, …) | **FAIL** |
+| `PNL_OUTLIER` (>100%) | **0** | pass |
+| `UNRESOLVED_PAST_HORIZON` (>30d open) | **0** | pass |
+| `COVERAGE_LOW` (excluded share) | **39.9%** (6,016 of 15,063 closed) | **FAIL (>30%)** |
+| `ANALYST_BRIDGE_EMPTY` | analysts **0**, predictions **0** vs 71 HARVEST rows | **FAIL** |
+| orphan outcomes / perf-without-recs / crowd / ingest | tables not yet in DB | N/A |
+
+Note: `STALE_FEED` must use the **newest** pick (max timestamp), not the oldest;
+using max(age) wrongly reports ~6,500h for classes with old closed history.
