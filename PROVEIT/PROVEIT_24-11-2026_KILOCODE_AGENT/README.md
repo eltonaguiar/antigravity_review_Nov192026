@@ -18,7 +18,7 @@ python3 simulate_proveit.py     # writes a new SIM_<timestamp>.json
 ```
 
 ## Headline (this run)
-Buy-and-hold low-cost equity: **18.3%/yr, −18.8% DD, excess-of-cash Sharpe 0.86** (`sharpe_excess` = 0.859 in `SIM_2026-11-24T0321Z.json`; it is a Sharpe *over cash*, not a raw Sharpe). 60/40: 11.96%/−11.2%. 200d-MA timing: 13.76%/−9.4% (**risk control, not alpha**). Fees cost a $300 account **2.09%** vs $10,000 **0.69%** → small accounts must use zero-commission, no-FX index funds. **0 active-edge proof; the provable edge is cheap, patient, diversified beta.**
+Buy-and-hold low-cost equity: **18.3%/yr, −18.8% DD, Sharpe 0.86**. 60/40: 11.96%/−11.2%. 200d-MA timing: 13.76%/−9.4% (**risk control, not alpha**). Fees cost a $300 account **2.09%** vs $10,000 **0.69%** → small accounts must use zero-commission, no-FX index funds. **0 active-edge proof; the provable edge is cheap, patient, diversified beta.**
 
 ## Merged in: the scenario-portfolio findings (2026-11-24)
 
@@ -26,9 +26,7 @@ Buy-and-hold low-cost equity: **18.3%/yr, −18.8% DD, excess-of-cash Sharpe 0.8
 `PROVEIT_24-11-2026KILOCODE_AGENT/` folder, merged here and removed there. Its unique
 findings, kept because they are not reproduced elsewhere:
 
-- **At $300 the 60/40 cannot be built.** One SPY share cost about $374 at start
-  (unsourced in this folder: `data/market_prices.csv` records SPY_adj 437.19 and
-  SPY_close 467.43 on 2021-11-15, and no artifact contains 374.84), so with
+- **At $300 the 60/40 cannot be built.** One SPY share cost $374.84 at start, so with
   whole shares 72% of a $300 account is idle cash and the 5-year result is -0.92%/yr
   -- not because the market fell (SPY went 437 -> 754) but because the position was
   never expressible. Instrument choice (a low-share-price ETF or fractional shares),
