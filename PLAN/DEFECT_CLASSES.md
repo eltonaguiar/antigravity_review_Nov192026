@@ -51,9 +51,24 @@ the `window`, and flags the field when only one reading matches.
 Both are silent: no error, no null, just a plausible number computed from the
 wrong resolution.
 
-→ Not statically detectable. Guarded instead by an explicit *intraday returns
-`bars=0` rather than falling back to daily* contract in `measure_cell.py`, and by
-a regression test that asserts the 15m and 1d cell counts differ.
+→ Not statically detectable **by prose review**. An earlier version of this
+document claimed the defect was "guarded instead by an explicit *intraday returns
+`bars=0` rather than falling back to daily* contract in `measure_cell.py`".
+**That claim was false.** A re-scan of all 149 cell artifacts on 2026-11-24 found
+two intraday cells still served daily bars:
+
+| cell | `bar_source` | n | verdict |
+|---|---|---:|---|
+| `BTCUSDT_rsi2_pullback_15m` | `binance:1d` | 3 | `INSUFFICIENT_TRADES` |
+| `BTCUSDT_vol_compression_15m` | `binance:1d` | 57 | **`KILL`** |
+
+The first has *exactly* the `n` of its `1d` sibling — the signature of the original
+bug. The second recorded a **KILL** against evidence that was never 15-minute data,
+so a strategy was demoted using a measurement of a different horizon. A convention
+in a script did not prevent this; only a test can.
+
+→ `R8-BARSOURCE` now asserts that a horizon declared in the cell name matches the
+recorded `bar_source`. Detection by reading has failed twice for this class.
 
 ### 4. Inert parameter — accepted, recorded, ignored
 
