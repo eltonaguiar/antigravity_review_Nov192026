@@ -12,9 +12,9 @@ The sweep ran **crypto-first**. Of 1000 ledger cells, the crypto class is the on
 |---|---:|---:|---:|---:|---:|---:|---|
 | **EQUITY** | 400 | 12 | 6 | 4 | 0 | -20.69 | `SPY/donchian/1d` -14.86 |
 | **FOREX** | 150 | 6 | 2 | 2 | 0 | -22.25 | `EURUSD/trend_pullback/1d` -21.66 |
+| **COMMODITY_ETF** | 50 | 10 | 5 | 2 | 0 | -22.76 | `GLD/breakout/1w` -6.85 |
 | **CRYPTO** | 350 | 107 | 28 | 12 | 0 | -31.09 | `SOLUSDT/breakout/1d` +71.90 |
-| **BOND_ETF** | 50 | 0 | 0 | 0 | 0 | n/a | — |
-| **COMMODITY_ETF** | 50 | 0 | 0 | 0 | 0 | n/a | — |
+| **BOND_ETF** | 50 | 10 | 3 | 3 | 0 | -43.29 | `TLT/breakout/1d` -34.83 |
 
 ## Per-class commentary
 
@@ -34,6 +34,14 @@ The sweep ran **crypto-first**. Of 1000 ledger cells, the crypto class is the on
 - Best: `EURUSD/trend_pullback/1d` -21.66bp (DSR 0.0, p 0.105)
 - Worst: `EURUSD/vol_compression/1d` -22.84bp
 
+### COMMODITY_ETF
+
+- Cells measured: 5 (5 more had n<30, 0 blocked)
+- Verdicts: **2 KILL**, **0 PASS**
+- Median net bp/trade after 26bp: **-22.76**
+- Best: `GLD/breakout/1w` -6.85bp (DSR 0.0001, p 0.697)
+- Worst: `GLD/vol_compression/1d` -45.17bp
+
 ### CRYPTO
 
 - Cells measured: 28 (38 more had n<30, 38 blocked)
@@ -45,9 +53,9 @@ The sweep ran **crypto-first**. Of 1000 ledger cells, the crypto class is the on
 
 ### BOND_ETF
 
-No measurable cells (0 blocked, 0 insufficient trades). **No finding is possible for this class** — stating otherwise would be fabrication.
-
-### COMMODITY_ETF
-
-No measurable cells (0 blocked, 0 insufficient trades). **No finding is possible for this class** — stating otherwise would be fabrication.
+- Cells measured: 3 (7 more had n<30, 0 blocked)
+- Verdicts: **3 KILL**, **0 PASS**
+- Median net bp/trade after 26bp: **-43.29**
+- Best: `TLT/breakout/1d` -34.83bp (DSR 0.0, p 0.736)
+- Worst: `TLT/donchian/1d` -60.05bp
 
