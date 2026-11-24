@@ -140,6 +140,35 @@ levels and measured changes), independence 2/2 (no promoted token), verifiabilit
 (prices checkable), track record 1/2 (one resolved conditional, no archive) → **9/10 as
 commentary, 0/2 as a pick source**.
 
+## 3d. Forbes Digital Assets — meme-coins category page (2026-11-24)
+
+**Source:** https://www.forbes.com/digital-assets/categories/meme-coins/ — a live directory
+of 100 meme coins, sorted by market cap, with CoinGecko prices. It is **not** an article with
+dated picks: no publication time on the list, no entry, target, horizon or “buy” label, and
+the page’s `sponsored` flag is false.
+
+**Snapshot checked at 17:53Z** (Forbes → Binance last, % difference):
+
+| asset | Forbes | Binance | diff |
+|---|---:|---:|---:|
+| DOGE | 0.055078 | 0.055220 | −0.26% |
+| SHIB | 3.57e−6 | 3.57e−6 | 0.00% |
+| PEPE | 3.39e−6 | 3.40e−6 | −0.29% |
+| BONK | 2.13e−6 | 2.14e−6 | −0.47% |
+| WIF | 0.12065 | 0.12140 | −0.62% |
+| FLOKI | 1.619e−5 | 1.626e−5 | −0.43% |
+
+That is a consistent snapshot, not a fabricated one. The directory’s top names are DOGE,
+SHIB, PEPE, Ape and Pepe, Pudgy Penguins, SPX6900, BONK, FLOKI, Binance-Peg DOGE, WIF — a
+market-cap ranking, not a recommendation.
+
+**Evaluable:** data accuracy only. **Not evaluable:** forward return, hit rate or PF, because
+there is no dated claim to score.
+
+**Source quality:** transparency 2/2 (Forbes, no sponsor flag), specificity 1/2 (prices but no
+thesis/entry), independence 2/2, verifiability 2/2 (cross-checks to Binance), track record 0/2
+→ **7/10 as a data page, 0/2 as a pick source**.
+
 ## 4. Source ranking (quality vs measured edge)
 
 | source | type | quality | measured edge |
@@ -150,6 +179,7 @@ commentary, 0/2 as a pick source**.
 | bmic.ai listicle | sponsored listicle | **4/10** | −22.9% mean to date; 4/5 below BTC |
 | openPR / Apeing release | paid press release | **5/10** | −0.6% to −1.5% in 32h; all beat BTC; too short |
 | CMC AI MEME analysis | AI commentary | **9/10** | no picks/targets; not testable |
+| Forbes meme-coins category | live directory | **7/10** | no dated picks; snapshot matches Binance |
 | Copy-trading leaderboards | self-reported | low (survivorship) | not measured; no PIT data |
 
 **Rule for future sources:** do not rank a source by how confident it sounds. Require a dated
