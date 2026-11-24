@@ -1,0 +1,123 @@
+{
+  "_comment": "PROPOSED machine-readable cost-of-record sidecar. NOT YET CANONICAL.",
+  "_status": "proposal by copilot 2026-11-24; awaiting operator sign-off because it changes 34_FINAL_PICKS_2026-11-23/COST_OF_RECORD.md which is operator-owned and declares itself canonical.",
+  "_why": "21 tracked files quote equity as a single number (12.0749). Rewriting 21 dated round artefacts is wrong; they are historical records. The durable fix is ONE machine-readable source that docs and pick rows read, plus a CI guard that fails when a doc quotes a single-value equity cost.",
+  "_suggested_path": "docs/data/cost_of_record.json",
+
+  "schema": "cost_of_record/1",
+  "as_of": "2026-11-24",
+
+  "grading_rule": {
+    "grade_net_of_cost_at": "ceiling",
+    "report_at": "central",
+    "source": "37_BUFFY_DRAFT_PATCHES_2026-11-23/03_equity_cost_settlement.md",
+    "quote": "stop quoting one number",
+    "rationale": "A floor that omits commission is not a cost; a ceiling that cannot be below the true spread is not a cost either. Grade at the end that cannot flatter a strategy."
+  },
+
+  "classes": {
+    "fund": {
+      "round_trip_bp": { "floor": 0.0, "central": 0.0, "ceiling": 0.0 },
+      "basis": "wrapper has no trading cost",
+      "provenance": "README.md cost of record",
+      "includes_impact": false,
+      "includes_tax": false
+    },
+    "bond_etf": {
+      "round_trip_bp": { "floor": 0.6144, "central": 0.6144, "ceiling": 0.6144 },
+      "basis": "measured, SHY",
+      "provenance": "README.md; COST_OF_RECORD.md",
+      "includes_impact": false,
+      "includes_tax": false
+    },
+    "etf": {
+      "round_trip_bp": { "floor": 6.7122, "central": 6.7122, "ceiling": 6.7122 },
+      "basis": "1-min upper bound, house band",
+      "provenance": "README.md; COST_OF_RECORD.md",
+      "includes_impact": false,
+      "includes_tax": false,
+      "_open_item": "no bracket exists for ETF. Needed before any ETF-vs-equity claim is made in either direction."
+    },
+    "forex": {
+      "round_trip_bp": { "floor": 7.533, "central": 7.533, "ceiling": 7.533 },
+      "basis": "measured",
+      "provenance": "README.md",
+      "includes_impact": false,
+      "includes_tax": false
+    },
+    "equity": {
+      "round_trip_bp": { "floor": 0.9756, "central": 4.0124, "ceiling": 12.0749 },
+      "basis": {
+        "floor": "Corwin-Schultz + SEC, usable on 65/191 names — volatility swamps it elsewhere. NEVER GRADE HERE.",
+        "central": "Roll + SEC, 190/191 names — the verdict-grade estimate",
+        "ceiling": "1-min bar-range upper bound, 13 megacaps — an upper bound, it cannot be below the true spread"
+      },
+      "provenance": "37_BUFFY_DRAFT_PATCHES_2026-11-23/03_equity_cost_settlement.md",
+      "supersedes": "the single-number reading of 12.0749 in 34_FINAL_PICKS_2026-11-23/COST_OF_RECORD.md",
+      "ratios": { "ceiling_over_central": 3.01, "ceiling_over_floor": 12.38 },
+      "_conflict_to_resolve": "COST_OF_RECORD.md describes 12.0749 as 'spread + impact at 0.008% ADV participation'; the settlement doc describes the same number as a 1-min bar-range ceiling on 13 megacaps. Two different provenance claims for one number — the operator must pick one.",
+      "includes_impact": false,
+      "includes_tax": false
+    },
+    "commodity": {
+      "round_trip_bp": { "floor": 20.0, "central": 20.0, "ceiling": 20.0 },
+      "basis": "house figure",
+      "provenance": "README.md",
+      "includes_impact": false,
+      "includes_tax": false
+    },
+    "crypto": {
+      "round_trip_bp": { "floor": 20.0, "central": 36.0, "ceiling": 52.0 },
+      "basis": "measured band; midpoint used for any netting exercise",
+      "provenance": "README.md",
+      "_note": "40 bp is NOT ours — it is an external reviewer's assumption. 20 = band low, 36 = midpoint, 52 = high.",
+      "includes_impact": false,
+      "includes_tax": false,
+      "_meme_venue_reality": "a thin-DEX meme round turn is realistically 100-500 bp (swap fee x2 + priority x2 + slippage x2 + MEV). The 20-52 band is large-cap CEX."
+    }
+  },
+
+  "hurdle": {
+    "name": "HURDLE_TBILL_APR",
+    "value_pct": 4.32,
+    "kind": "T-bill APR, MEASURED",
+    "provenance": "tools/capacity_model.py, consumed at PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT_SIGNALS/sim/proveit.py:44",
+    "sensitivity": "moving to the realised SGOV CAGR 3.89% shifts the 1-day crypto requirement by 1.1pp and equity/ETF by 0.5pp; no verdict changes"
+  },
+
+  "turnover_convention": {
+    "round_turns_per_year": { "1d": 252.0, "1w": 50.4, "1m": 12.0 },
+    "unit": "round turns = one buy + one sell",
+    "warning": "if read as one-way trades, all drag figures halve"
+  },
+
+  "required_gross_pct": {
+    "_comment": "COMPOUNDED solve: ((1+g_d)(1-c))^N = 1+h. Do NOT use h + N*c — that is linear and understates high-turnover rows.",
+    "at_1_day": {
+      "fund": 4.3, "bond_etf": 5.9, "equity": 15.4, "etf": 23.6,
+      "forex": 26.1, "commodity": 72.8, "crypto": 158.9
+    },
+    "at_1_week": {
+      "fund": 4.3, "bond_etf": 4.6, "equity": 4.6, "etf": 7.7,
+      "forex": 8.1, "commodity": 14.4, "crypto": 30.5
+    },
+    "_supersedes": "the linear figures 14.4 / 21.2 / 23.3 / 54.7 / 95.0 published in cost_of_hurdle.py"
+  },
+
+  "unmeasured_cost_stack": [
+    "market impact / slippage / MEV — every bp above has includes_impact=false",
+    "taxes — at daily turnover short-term gains can exceed the transaction cost outright; jurisdiction-dependent",
+    "stop-level fill risk — a stop on an illiquid name fills far from the stop price",
+    "survivorship — every series used is of instruments that still exist"
+  ],
+
+  "measured_meme_intrabar": {
+    "_source": "Binance public klines, 999 daily bars per symbol, low-vs-open",
+    "_why": "a session gap cannot exist in a 24/7 market (open_t ~= close_t-1 in 41.5-57.0% of bars exactly), so gap-through-stop must be replaced by intrabar excursion",
+    "wickout_breaks_5pct_recovers_pct": {
+      "WIFUSDT": 22.91, "BONKUSDT": 20.90, "PEPEUSDT": 20.20, "FLOKIUSDT": 17.60,
+      "DOGEUSDT": 14.50, "SHIBUSDT": 13.00, "ETHUSDT": 9.30, "BTCUSDT": 4.00
+    },
+    "_reading": "on WIF, 22.9% of days broke a -5% stop then closed back above it: the stop fired and the trade was still right. 5.7x BTC's 4.0%. Tight stops are unusable on meme coins."
+  }
+}
