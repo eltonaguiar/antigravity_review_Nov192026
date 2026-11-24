@@ -33,3 +33,18 @@ the 12 gap_fade, and the 10 INSUFFICIENT_TRADES/1 null discrepancies.
    refuse mixed-sha directories.
 3. Reclassify `gap_fade` (bars exist → not BLOCKED_NO_DATA) and the 10
    INSUFFICIENT_TRADES/1 null rows; then regenerate the rollup.
+
+## Correction (16:31Z): the status “drift” is fully explained
+The earlier note said artifact statuses “do not reconcile”. They do, exactly:
+
+- TODOS `killed 107` = artifacts `KILLED 96` + `INSUFFICIENT_TRADES 10` + `null 1`.
+- TODOS `blocked_no_data 893` = artifacts `BLOCKED_NO_DATA 859` + **34 missing files**.
+
+So there is **no unexplained status drift**. The real defects are:
+1. the **34 missing artifacts** (candidate stubs generated; sandbox proves 1000/1000),
+2. **inconsistent verdict naming** (`INSUFFICIENT_TRADES` and one `null` should be
+   normalised to a single canonical verdict before counting),
+3. the **11 malformed** files and **12 gap_fade bars>0** blocks (separate findings).
+
+Apply: 34 stubs + normalise verdicts → checker and validator should both report
+1,000 cells / 1,000 artifacts with matching status counts.
