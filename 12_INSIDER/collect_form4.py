@@ -78,33 +78,54 @@ def _value_after(xml, parent):
     return m.group(1).strip() if m else ""
 
 
+def _blocks(xml, tag):
+    return re.findall(rf"<{tag}>(.*?)</{tag}>", xml, re.S)
+
+
+def _truthy(v):
+    return str(v).strip().lower() in ("1", "true", "yes", "y")
+
+
+def _owner(block):
+    return {
+        "reporting_owner_id": _tag(block, "rptOwnerCik") or _tag(block, "rptOwnerName"),
+        "owner": _tag(block, "rptOwnerName"),
+        "officer_title": _tag(block, "officerTitle"),
+        "is_officer": _tag(block, "isOfficer") or "false",
+        "is_director": _tag(block, "isDirector") or "false",
+        "is_ten_percent_owner": _tag(block, "isTenPercentOwner") or "false",
+    }
+
+
 def parse_form4(xml):
-    """Extract one row per filing. Returns list of dicts (a filing can hold several transactions)."""
+    """One row per reporting owner per non-derivative transaction.
+
+    A Form 4 can list several reportingOwner blocks (e.g. an entity plus an
+    individual officer). The old parser took the first owner's flags for every
+    transaction, losing the officer and counting the entity as an insider.
+    """
     if "<ownershipDocument" not in xml:
         return []
-    base = {
-        "issuer": _tag(xml, "issuerName"),
-        "owner": _tag(xml, "rptOwnerName"),
-        "officer_title": _tag(xml, "officerTitle"),
-        "is_officer": _tag(xml, "isOfficer") or "false",
-        "is_director": _tag(xml, "isDirector") or "false",
-        "transaction_date": _tag(xml, "transactionDate"),
-    }
-    # non-derivative transactions only: those are the open-market P/S actions we care about
-    blocks = re.split(r"<nonDerivativeTransaction>", xml)[1:]
-    if not blocks:
-        blocks = [xml]
+    issuer = _tag(xml, "issuerName")
+    owners = [_owner(b) for b in _blocks(xml, "reportingOwner")]
+    if not owners:
+        owners = [{"reporting_owner_id": "", "owner": "", "officer_title": "",
+                   "is_officer": "false", "is_director": "false",
+                   "is_ten_percent_owner": "false"}]
+    blocks = _blocks(xml, "nonDerivativeTransaction") or [xml]
     rows = []
     for b in blocks:
         code = _tag(b, "transactionCode")
         if not code:
             continue
-        rows.append(dict(
-            base,
-            code=code,
-            shares=_value_after(b, "transactionShares"),
-            price=_value_after(b, "transactionPricePerShare"),
-        ))
+        tx = {
+            "transaction_date": _tag(b, "transactionDate"),
+            "code": code,
+            "shares": _value_after(b, "transactionShares"),
+            "price": _value_after(b, "transactionPricePerShare"),
+        }
+        for o in owners:
+            rows.append(dict({"issuer": issuer}, **o, **tx))
     return rows
 
 
@@ -183,8 +204,9 @@ def main():
     print(f"collecting Form 4 for {len(tickers)} tickers ...")
     rows, missing = collect(tickers, a.max_filings, a.since)
 
-    cols = ["symbol", "cik", "filing_date", "transaction_date", "owner", "officer_title",
-            "is_officer", "is_director", "code", "shares", "price"]
+    cols = ["symbol", "cik", "filing_date", "transaction_date", "reporting_owner_id",
+            "owner", "officer_title", "is_officer", "is_director", "is_ten_percent_owner",
+            "code", "shares", "price"]
     with open(a.out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
         w.writeheader()
@@ -218,7 +240,10 @@ def main():
         f.write("A p95 above ~2 business days means the pipeline is reading a later date than the "
                 "legal filing deadline, which is a look-ahead risk. Form 4 is due within 2 business days.\n\n")
         f.write("## Event counts for the probe\n\n")
+        p_rows = [r for r in rows if r["code"] == "P"]
+        p_insiders = [r for r in p_rows if _truthy(r.get("is_officer")) or _truthy(r.get("is_director"))]
         f.write(f"- code P (purchases): {codes.get('P', 0)}\n")
+        f.write(f"- code P after officer-or-director filter: {len(p_insiders)}\n")
         f.write(f"- code S (sales, control): {codes.get('S', 0)}\n")
         if missing:
             f.write(f"\n## Unresolved tickers\n\n{', '.join(missing[:40])}\n")
