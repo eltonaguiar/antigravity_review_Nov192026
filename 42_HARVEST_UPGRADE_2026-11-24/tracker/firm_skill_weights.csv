@@ -219,4 +219,4 @@ Vertical Group,1,,,underpowered,0
 Zelman& Assoc,1,,,underpowered,0
 unknown,1,,,underpowered,0
 
-# next_probe: add ~27 more tickers with BofA coverage (551 clean events now, 750 floor; ~7.5 events/ticker) and rerun the 63d within-ticker placebo for the first firm to clear 750.
+"# next_probe: add about 27 more BofA-covered tickers to reach the 750 floor and rerun the 63d within-ticker placebo"
