@@ -120,6 +120,23 @@ KILO_CLI_OK
 machine, so it dies with `EPERM: operation not permitted, uv_spawn 'git'`. Prepending
 `/c/Program Files/Git/cmd` to `PATH` fixes it. The `EPIPE: broken pipe` line at exit is cosmetic.
 
+### Chrome tabs are drivable too, with no screen interaction
+
+Chrome on this machine is already listening on **`127.0.0.1:9222`** (pid 29004, `chrome.exe`).
+Verified by attaching over CDP and evaluating JS inside the live tabs:
+
+```
+Arena AI => {"title":"Arena AI ...","textareas":1,"editables":1,...}
+```
+
+That means the operator's real browser tabs — Arena AI, 1min.AI, Gemini — can be read and typed into
+programmatically, with no focus stealing and no synthetic mouse. `websocket` and `websockets` are
+both installed.
+
+**VS Code itself is not debuggable right now** — the only listening debug port is Chrome's. Launching
+VS Code with `--remote-debugging-port=9333` would make its webview panels drivable the same way,
+which would remove the mic/send/stop misclick class of failure entirely. UNVERIFIED until tried.
+
 ### Also available headless on PATH
 
 | Tool | Command |
@@ -128,12 +145,49 @@ machine, so it dies with `EPERM: operation not permitted, uv_spawn 'git'`. Prepe
 | OpenAI Codex | `codex` |
 | Hermes | `hermes` |
 
-### Zoo Code and Copilot Chat — no CLI
+### Copilot Chat — there IS a first-class CLI (`code chat`)
 
-Neither exposes a headless entry point. Their options are screen automation (fragile: webview
-composers reject synthetic focus, and the circular button in Copilot is **send when idle, STOP when
-running**) or writing into their task files while the extension holds the same state in memory
-(unsupported, will be overwritten — do not do this).
+**CORRECTION.** An earlier version of this document said Copilot Chat has no CLI. That is wrong.
+VS Code **1.144.0** ships a `chat` subcommand:
+
+```bash
+code chat "explain the auth middleware in this repo"
+echo "review this file" | code chat -            # read the prompt from stdin
+```
+
+Verified options:
+
+| Flag | Meaning |
+|---|---|
+| `-m, --mode <mode>` | `ask`, `edit`, `agent`, or a custom mode id. **Defaults to `agent`** |
+| `-a, --add-file <path>` | attach files as context |
+| `-r, --reuse-window` | force the last active window (important for a remote workspace) |
+| `-n, --new-window` | force an empty window |
+| `--maximize` | maximise the chat view |
+| `--profile <name>` | open with a named profile |
+
+So Copilot no longer needs screen automation. Note `--mode agent` is the default, which means a
+scripted prompt can make edits unattended — keep approvals on.
+
+### Zoo Code — genuinely no CLI, and its URI handler does not exist
+
+Verified against the installed manifests:
+
+| Extension | Version | `onUri` activation | Commands |
+|---|---|---|---|
+| `kilocode.kilo-code` | 7.8.32 | **present** | 72 |
+| `saoudrizwan.claude-dev` (Cline) | 4.1.27 | **present** | 19 |
+| `zoocodeorganization.zoo-code` | 3.98.1 | **NONE** | 22 |
+
+`onUri` is the activation event an extension must declare to receive `vscode://` links, so:
+
+- `vscode://kilocode.kilo-code?task=...` — plausible, handler is declared.
+- `vscode://saoudrizwan.claude-dev?task=...` — plausible, handler is declared.
+- `vscode://zoocodeorganization.zoo-code?task=...` — **will not activate anything**: no `onUri`.
+  This claim, from the same research batch, is false for Zoo.
+
+Zoo's remaining options are screen automation (fragile) or writing into its task files while the
+extension holds the same state in memory (unsupported, will be overwritten — do not do this).
 
 **Recommended:** run the work through `kilo run` / `claude` / `codex` and treat the IDE panels as
 optional read-only supervision. The output lands as commits and artifacts either way.
