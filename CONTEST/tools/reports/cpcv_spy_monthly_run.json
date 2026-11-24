@@ -1,0 +1,23 @@
+{
+  "tool": "CONTEST/tools/cpcv.py",
+  "method": "Lopez de Prado, Advances in Financial Machine Learning, Ch. 7 - combinatorial purged cross-validation with purge and embargo.",
+  "input_csv": "PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/data/market_prices.csv",
+  "date_col": "date",
+  "price_col": "SPY_adj",
+  "resampling": "monthly (last close of each YYYY-MM wins; monthly return = px[i]/px[i-1] - 1)",
+  "n_groups": 12,
+  "embargo": 1,
+  "horizon": 1,
+  "n_months": 60,
+  "n_paths": 12,
+  "oos_sharpe_distribution_annualised": {
+    "mean": 1.7564804414136381,
+    "std": 2.0668194620797147,
+    "min": -1.2520405622847266,
+    "max": 5.241525781302824,
+    "median": 1.311639421043937,
+    "p5": -1.152504571321,
+    "p95": 4.102972422677754
+  },
+  "note": "Local SPY daily history resampled to monthly (60 months). The 33.8-year SPY monthly sample referenced in POWER_ANALYSIS.md is not present as a local file; this run used the available SPY price panel."
+}

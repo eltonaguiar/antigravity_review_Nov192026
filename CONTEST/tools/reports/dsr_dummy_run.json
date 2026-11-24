@@ -1,0 +1,11 @@
+{
+  "tool": "CONTEST/tools/dsr.py",
+  "formula_source": "Bailey & Lopez de Prado, \"The Deflated Sharpe Ratio\", Journal of Investment Management, 2014. PSR adjusted for multiple trials via the cross-trial variance of trial Sharpes: DSR = Phi((SR_best - SR_bench) / s_trials), SR_bench = 0.",
+  "input_db": "CONTEST/tools/reports/trial_ledger.db",
+  "input_table": "trials (docs/experiment_schema.sql)",
+  "column_used": "sharpe_oos",
+  "trials": 2,
+  "best_sharpe": 0.6,
+  "DSR": 0.9830525732376554,
+  "note": "Dummy variants logged via CONTEST/tools/trial_log.py (append-only, no delete path); commit c9bdbc6, row count 2."
+}
