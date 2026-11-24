@@ -1,0 +1,63 @@
+{
+  "source": "harvest_backtest.json",
+  "method": "normal approx on published aggregates",
+  "internal_consistency": {
+    "mean_delta": 0.0,
+    "hit_delta": 0.0,
+    "reconciles": true
+  },
+  "21d": {
+    "strong_buy_n": 110,
+    "strong_buy_mean": 1.3250292365714824,
+    "rest_n": 174,
+    "rest_mean": 0.781314492762584,
+    "delta_pp": 0.5437147438088984,
+    "z": 0.5081070898274699,
+    "p_two_sided": 0.6113782434475417,
+    "n_needed_80pct_power": 4493.039677547233
+  },
+  "63d": {
+    "strong_buy_n": 55,
+    "strong_buy_mean": 0.003215950053210836,
+    "rest_n": 85,
+    "rest_mean": -1.5272284529392561,
+    "delta_pp": 1.5304444029924669,
+    "z": 0.7407917466888722,
+    "p_two_sided": 0.4588197201663253,
+    "n_needed_80pct_power": 1035.1933463846574
+  },
+  "monotonic_21d": {
+    "inversions": [
+      [
+        "STRONG_BUY",
+        "SELL"
+      ],
+      [
+        "BUY",
+        "HOLD"
+      ],
+      [
+        "BUY",
+        "SELL"
+      ],
+      [
+        "HOLD",
+        "SELL"
+      ]
+    ],
+    "monotonic": false
+  },
+  "monotonic_63d": {
+    "inversions": [
+      [
+        "STRONG_BUY",
+        "HOLD"
+      ],
+      [
+        "BUY",
+        "HOLD"
+      ]
+    ],
+    "monotonic": false
+  }
+}
