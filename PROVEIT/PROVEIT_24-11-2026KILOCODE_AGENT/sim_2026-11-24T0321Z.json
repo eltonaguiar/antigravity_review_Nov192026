@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-11-24T0321Z",
+  "window": [
+    "2021-11-15",
+    "2026-11-13"
+  ],
+  "n_days": 1255,
+  "commission": 0.0,
+  "spread_bp": 5.0,
+  "mer": {
+    "SPY": 0.000945,
+    "TLT": 0.0015,
+    "GLD": 0.004,
+    "BIL": 0.00136
+  },
+  "fractional_shares": false,
+  "scenarios": {
+    "300": {
+      "buy_hold": {
+        "start": 300,
+        "final": 72.0,
+        "cagr_pct": -24.92,
+        "max_dd_pct": -76.0,
+        "trades": 0,
+        "fees_and_spread": 0.0,
+        "fee_pct_of_start": 0.0,
+        "idle_cash_pct": 100.0
+      },
+      "annual_rebalance": {
+        "start": 300,
+        "final": 2.86,
+        "cagr_pct": -60.72,
+        "max_dd_pct": -99.05,
+        "trades": 1,
+        "fees_and_spread": 0.05,
+        "fee_pct_of_start": 0.02,
+        "idle_cash_pct": 100.0
+      },
+      "tp_sl": {
+        "start": 300,
+        "final": 72.0,
+        "cagr_pct": -24.92,
+        "max_dd_pct": -76.0,
+        "trades": 0,
+        "fees_and_spread": 0.0,
+        "fee_pct_of_start": 0.0,
+        "idle_cash_pct": 100.0
+      },
+      "trend_200": {
+        "start": 300,
+        "final": 300.0,
+        "cagr_pct": 0.0,
+        "max_dd_pct": 0.0,
+        "trades": 0,
+        "fees_and_spread": 0.0,
+        "fee_pct_of_start": 0.0,
+        "idle_cash_pct": 100.0
+      }
+    },
+    "500": {
+      "buy_hold": {
+        "start": 500,
+        "final": 106.5,
+        "cagr_pct": -26.69,
+        "max_dd_pct": -80.07,
+        "trades": 1,
+        "fees_and_spread": 0.05,
+        "fee_pct_of_start": 0.01,
+        "idle_cash_pct": 25.5
+      },
+      "annual_rebalance": {
+        "start": 500,
+        "final": 4.69,
+        "cagr_pct": -60.84,
+        "max_dd_pct": -99.06,
+        "trades": 1,
+        "fees_and_spread": 0.09,
+        "fee_pct_of_start": 0.02,
+        "idle_cash_pct": 100.0
+      },
+      "tp_sl": {
+        "start": 500,
+        "final": 103.81,
+        "cagr_pct": -27.07,
+        "max_dd_pct": -80.35,
+        "trades": 9,
+        "fees_and_spread": 0.38,
+        "fee_pct_of_start": 0.08,
+        "idle_cash_pct": 23.5
+      },
+      "trend_200": {
+        "start": 500,
+        "final": 785.15,
+        "cagr_pct": 9.48,
+        "max_dd_pct": -8.94,
+        "trades": 19,
+        "fees_and_spread": 4.26,
+        "fee_pct_of_start": 0.85,
+        "idle_cash_pct": 3.9
+      }
+    },
+    "2000": {
+      "buy_hold": {
+        "start": 2000,
+        "final": 2293.06,
+        "cagr_pct": 2.78,
+        "max_dd_pct": -47.72,
+        "trades": 1,
+        "fees_and_spread": 0.56,
+        "fee_pct_of_start": 0.03,
+        "idle_cash_pct": 1.3
+      },
+      "annual_rebalance": {
+        "start": 2000,
+        "final": 1274.34,
+        "cagr_pct": -8.65,
+        "max_dd_pct": -41.37,
+        "trades": 10,
+        "fees_and_spread": 3.56,
+        "fee_pct_of_start": 0.18,
+        "idle_cash_pct": 3.4
+      },
+      "tp_sl": {
+        "start": 2000,
+        "final": 1240.33,
+        "cagr_pct": -9.15,
+        "max_dd_pct": -47.72,
+        "trades": 6,
+        "fees_and_spread": 3.16,
+        "fee_pct_of_start": 0.16,
+        "idle_cash_pct": 0.8
+      },
+      "trend_200": {
+        "start": 2000,
+        "final": 3112.91,
+        "cagr_pct": 9.29,
+        "max_dd_pct": -9.03,
+        "trades": 19,
+        "fees_and_spread": 18.93,
+        "fee_pct_of_start": 0.95,
+        "idle_cash_pct": 3.1
+      }
+    },
+    "10000": {
+      "buy_hold": {
+        "start": 10000,
+        "final": 11451.83,
+        "cagr_pct": 2.76,
+        "max_dd_pct": -47.8,
+        "trades": 2,
+        "fees_and_spread": 2.86,
+        "fee_pct_of_start": 0.03,
+        "idle_cash_pct": 0.5
+      },
+      "annual_rebalance": {
+        "start": 10000,
+        "final": 11954.33,
+        "cagr_pct": 3.65,
+        "max_dd_pct": -15.01,
+        "trades": 10,
+        "fees_and_spread": 25.03,
+        "fee_pct_of_start": 0.25,
+        "idle_cash_pct": 0.4
+      },
+      "tp_sl": {
+        "start": 10000,
+        "final": 11483.49,
+        "cagr_pct": 2.82,
+        "max_dd_pct": -47.8,
+        "trades": 16,
+        "fees_and_spread": 27.99,
+        "fee_pct_of_start": 0.28,
+        "idle_cash_pct": 0.1
+      },
+      "trend_200": {
+        "start": 10000,
+        "final": 16435.17,
+        "cagr_pct": 10.49,
+        "max_dd_pct": -10.09,
+        "trades": 19,
+        "fees_and_spread": 101.36,
+        "fee_pct_of_start": 1.01,
+        "idle_cash_pct": 3.6
+      }
+    }
+  }
+}
