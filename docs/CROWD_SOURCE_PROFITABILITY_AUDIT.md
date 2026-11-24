@@ -116,6 +116,30 @@ the actual daily close — consistent with intraday quoting, not fabricated, but
 dated prices, targets), independence **0/2** (promotes Apeing and is distributed by a presale PR
 service), verifiability 2/2 (timestamped and price-checkable), track record **0/2** → **5/10**.
 
+## 3c. CoinMarketCap CMC AI — MEME daily analysis (2026-11-24)
+
+**Source:** https://coinmarketcap.com/cmc-ai/meme/price-analysis/ — AI-generated daily
+“why is MEME up/down” commentary, explicitly labelled “CMC AI can make mistakes. Not
+financial advice.” It names **no picks, no entry, no target and no horizon trade**.
+
+**Claims checked (24/11/2026):** MEME −6.96% to **$0.000286**; Bitcoin −4.78%; total crypto
+market cap −4.59%; conditional levels **MEME $0.000286** and **BTC $60,000**. Binance daily
+closes on 24/11: MEMEUSDT **0.000289**, BTCUSDT **59,918** — consistent with the page.
+
+**What can be evaluated:** the 23/11 note said that losing $0.000311 while the market weakened
+would raise pullback risk. On 24/11 MEME printed **$0.000286**, so that conditional was
+triggered and the page correctly re-labelled the move as market beta, not a coin catalyst.
+The 24/11 “next 24–48h” question (BTC back above $60k while MEME holds $0.000286) is still
+open at the time of writing.
+
+**What cannot:** there is no tradeable claim, so no P&L, hit rate or PF exists. This is
+commentary, not a pick source.
+
+**Source quality:** transparency 2/2 (AI + date + disclaimer), specificity 2/2 (explicit
+levels and measured changes), independence 2/2 (no promoted token), verifiability 2/2
+(prices checkable), track record 1/2 (one resolved conditional, no archive) → **9/10 as
+commentary, 0/2 as a pick source**.
+
 ## 4. Source ranking (quality vs measured edge)
 
 | source | type | quality | measured edge |
@@ -125,6 +149,7 @@ service), verifiability 2/2 (timestamped and price-checkable), track record **0/
 | HARVEST analyst consensus | monthly sell-side | medium (71 names, provenance) | 21d BUY +0.589% q=0.135; nothing q<0.05 |
 | bmic.ai listicle | sponsored listicle | **4/10** | −22.9% mean to date; 4/5 below BTC |
 | openPR / Apeing release | paid press release | **5/10** | −0.6% to −1.5% in 32h; all beat BTC; too short |
+| CMC AI MEME analysis | AI commentary | **9/10** | no picks/targets; not testable |
 | Copy-trading leaderboards | self-reported | low (survivorship) | not measured; no PIT data |
 
 **Rule for future sources:** do not rank a source by how confident it sounds. Require a dated
