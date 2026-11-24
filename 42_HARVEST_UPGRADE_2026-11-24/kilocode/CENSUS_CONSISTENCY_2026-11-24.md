@@ -36,3 +36,17 @@ unrecomputable-counter problem flagged earlier for 362/361.
    census is complete and auditable.
 3. Add a CI check: `count(cells) == 1000`, `statuses ⊆ {killed, blocked_no_data}`,
    `artifacts == cells`, and rollup counts equal source counts.
+
+## Sandbox validation of the candidate fix (14:46Z)
+Copied `1000_TODOS.json` + the 966 existing `results/cells` into `/tmp/census_sandbox`,
+added the 34 candidate blocked stubs, and installed `census_rollup_candidate.json`
+as the rollup. Checker result:
+
+```
+cells 1000 | unique_keys 1000 | status {blocked_no_data 893, killed 107}
+artifacts 1000 | missing 0 | extra 0 | problems [] | ok true
+```
+
+So the candidate set is sufficient to make the census internally consistent.
+It has not been applied to main; owner action = copy `census_blocked_artifacts/*.json`
+into `results/cells/` and the candidate rollup into `results/CENSUS_ROLLUP.json`.
