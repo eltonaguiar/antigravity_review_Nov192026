@@ -220,7 +220,7 @@ both people and language models.</p>
 </div>
 
 <h2>Coverage by asset class</h2>
-<p class="sub">Measured, not assumed. A zero here means the feed returned no analyst coverage for
+<p class="sub">Measured, not assumed. Class labels are the vendor's: <b>BOND</b> rows here are bond <i>ETFs</i>, and <b>ETF</b> rows are fund wrappers, not single companies. A zero means the feed returned an empty array; for mutual funds it is an explicit HTTP 403. An empty array is evidence, not proof, of absence.
 that class — it is a property of the instrument type, not a temporary outage.</p>
 <table class="coverage"><thead>
   <tr><th>Asset class</th><th>Symbols probed</th><th>With consensus</th><th>Coverage</th><th>Reading</th></tr>
@@ -297,7 +297,7 @@ function emptyMessage() {
     }
     return `${cov.probed} ${cls} symbol(s) were probed and <b>0</b> returned analyst consensus. ` +
            `The feed publishes no analyst coverage for this instrument type — this is a ` +
-           `property of the asset class, not a failed fetch.`;
+           `likely a property of the wrapper/type. An empty response is not proof of absence.`;
   }
   const n = STATE.data.errors.length;
   return 'no rows match these filters' +
