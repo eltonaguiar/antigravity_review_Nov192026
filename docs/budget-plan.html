@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Budget plan — what our own measurements support</title>
+<style>
+  :root { --bg:#0f1115; --card:#171a21; --fg:#e6e9ef; --dim:#9aa4b2; --line:#262b36;
+          --good:#4ade80; --bad:#f87171; --warn:#fbbf24; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f7f8fa; --card:#fff; --fg:#141821; --dim:#5b6472; --line:#e3e7ee; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:960px; margin:0 auto; padding:40px 20px 80px; }
+  h1 { font-size:30px; line-height:1.2; margin:0 0 8px; }
+  h2 { font-size:21px; margin:40px 0 12px; padding-top:14px; border-top:1px solid var(--line); }
+  h3 { font-size:17px; margin:24px 0 8px; }
+  p, li { color:var(--fg); }
+  .sub { color:var(--dim); font-size:15px; margin:0 0 24px; }
+  table { width:100%; border-collapse:collapse; margin:14px 0; font-size:15px; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--dim); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.03em; }
+  .num { text-align:right; font-variant-numeric:tabular-nums; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin:16px 0; }
+  .verdict { border-left:4px solid var(--bad); }
+  .note { border-left:4px solid var(--warn); }
+  .ok { border-left:4px solid var(--good); }
+  code { background:rgba(127,127,127,.16); padding:1px 5px; border-radius:4px; font-size:14px; }
+  .bad { color:var(--bad); font-weight:600; }
+  .good { color:var(--good); font-weight:600; }
+  .dim { color:var(--dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>What our own measurements support spending, by budget</h1>
+<p class="sub">Computed 2026-11-24 from this repository's own measured returns, costs and stop distances.
+Every number below traces to a query or a script in <code>42_HARVEST_UPGRADE_2026-11-24/tracker/</code>.</p>
+
+<div class="card verdict">
+  <h3 style="margin-top:0">The answer, in one line</h3>
+  <p><b>At every budget, the defensible allocation to the picks is zero today.</b> Not because the
+  picks lost once, but because the measured rate loses <b>10% of the account in 25 trades</b> — and that
+  is true at $100 and at $30,000 alike. Capital size does not change the sign of an expectation.</p>
+</div>
+
+<h2>The three numbers everything rests on</h2>
+<table>
+  <tr><th>Input</th><th class="num">Value</th><th>Where it comes from</th></tr>
+  <tr><td>The bar (risk-free)</td><td class="num">4.32% / yr</td><td>T-bill yield used as the bar throughout this programme</td></tr>
+  <tr><td>Measured mean per pick</td><td class="num bad">−1.41%</td><td>picks-now track record, 585 resolved picks</td></tr>
+  <tr><td>Round-turn cost</td><td class="num">26 bp</td><td>House cost model, both legs, taker fee plus slippage</td></tr>
+  <tr><td>Net per pick on position</td><td class="num bad">−1.67%</td><td>−1.41% gross − 0.26% cost</td></tr>
+  <tr><td>Average stop, open crypto picks</td><td class="num">4.13%</td><td>Measured across 244 open crypto picks carrying a stop</td></tr>
+  <tr><td>Position at 1% risk</td><td class="num">24.2% of equity</td><td>1% ÷ 4.13% — a 4.13% stop needs a 24% position to lose only 1%</td></tr>
+  <tr><td>Portfolio impact per pick</td><td class="num bad">−0.404%</td><td>24.2% × −1.67%</td></tr>
+</table>
+
+<h2>By budget</h2>
+<table>
+  <tr><th class="num">Budget</th><th class="num">Bar income / yr</th><th class="num">Cost of one pick</th><th class="num">Cost of 100 picks</th><th class="num">Position at 1% risk</th><th>Defensible allocation today</th></tr>
+  <tr><td class="num">$100</td><td class="num good">+$4.32</td><td class="num bad">−$0.40</td><td class="num bad">−$40</td><td class="num">$24</td><td>100% cash / money market</td></tr>
+  <tr><td class="num">$500</td><td class="num good">+$21.60</td><td class="num bad">−$2.02</td><td class="num bad">−$202</td><td class="num">$121</td><td>100% cash / money market</td></tr>
+  <tr><td class="num">$1,000</td><td class="num good">+$43.20</td><td class="num bad">−$4.04</td><td class="num bad">−$404</td><td class="num">$242</td><td>Cash core; broad index only if you accept it is a vehicle, not an edge</td></tr>
+  <tr><td class="num">$3,000</td><td class="num good">+$129.60</td><td class="num bad">−$12.13</td><td class="num bad">−$1,213</td><td class="num">$726</td><td>Same. No pick money.</td></tr>
+  <tr><td class="num">$5,000</td><td class="num good">+$216.00</td><td class="num bad">−$20.22</td><td class="num bad">−$2,022</td><td class="num">$1,211</td><td>Same. No pick money.</td></tr>
+  <tr><td class="num">$10,000</td><td class="num good">+$432.00</td><td class="num bad">−$40.44</td><td class="num bad">−$4,044</td><td class="num">$2,421</td><td>Cash core + index. Picks: <b>paper only</b></td></tr>
+  <tr><td class="num">$30,000</td><td class="num good">+$1,296.00</td><td class="num bad">−$121.31</td><td class="num bad">−$12,131</td><td class="num">$7,264</td><td>Cash ladder + index. Satellite stays at 0% until a gate is passed</td></tr>
+</table>
+
+<div class="card note">
+  <p><b>25 trades.</b> At the measured rate, 25 trades costs 10% of the account — regardless of whether
+  the account holds $100 or $30,000. That is the single most important number on this page: the loss is
+  proportional, so a bigger budget does not buy more room, it buys a bigger loss.</p>
+</div>
+
+<h2>Why more money does not fix it</h2>
+<p>Size changes three things and none of them is the sign of the expectation.</p>
+<ul>
+  <li><b>Cost is not the problem at small size.</b> A round turn on a $24 position costs about
+  <b>6 cents</b>. The cost of the strategy is not its fees, it is that it loses 1.41% before fees.</li>
+  <li><b>Size does not reduce variance in proportion.</b> Risking 1% per trade scales linearly, so
+  expected loss scales linearly too. A $30,000 account funding this loses about $121 per pick.</li>
+  <li><b>Capital was never the binding constraint.</b> The binding constraint is <b>n</b>: deciding
+  whether the picks work needs about <b>4,493</b> observations at 21 days, and the book holds 284.
+  That gap is closed by time, not money — and paper trading closes it at zero cost.</li>
+</ul>
+
+<h2>What would change the answer</h2>
+<p>A cohort becomes fundable when it clears all four, at once:</p>
+<table>
+  <tr><th>Gate</th><th>Threshold</th><th>Current state</th></tr>
+  <tr><td>Sample floor for its pick type</td><td class="num">60 swing / 100 day trade</td><td class="dim">best cohort has 37 — <b>fails</b></td></tr>
+  <tr><td>Beats the selection null at that n</td><td class="num">69% at n=100, 95% at n=20</td><td class="dim">not reachable at current n</td></tr>
+  <tr><td>Sign repeats out of sample</td><td class="num">2+ periods</td><td class="dim">no positive period yet</td></tr>
+  <tr><td>Positive at the loss-rate upper bound</td><td class="num">worst-case expectancy &gt; 0</td><td class="dim">unproven</td></tr>
+</table>
+<p>When a cohort passes, a satellite of 5–10% of the budget is defensible, sized so that its total
+drawdown halts at 10% of the whole account. Until then the satellite is 0%.</p>
+
+<h2>Plain English</h2>
+<table>
+  <tr><th>Term</th><th>What it means here</th></tr>
+  <tr><td><b>The bar</b></td><td>What you get for doing nothing risky — 4.32% a year. Any strategy has to beat this, not zero.</td></tr>
+  <tr><td><b>Round turn</b></td><td>Buy then sell, so you pay the cost twice. 26 bp = 0.26% = $2.60 on $1,000.</td></tr>
+  <tr><td><b>1% risk</b></td><td>1% of the <i>account</i> if the stop is hit — not 1% of the position. A 4.13% stop therefore needs a 24% position.</td></tr>
+  <tr><td><b>Measured expectation</b></td><td>The average result of picks already resolved: −1.41% each. A negative expectation multiplied by any budget is still negative.</td></tr>
+  <tr><td><b>Paper trading</b></td><td>Recording picks without money. It is how you reach 4,493 observations without paying 26 bp 4,493 times.</td></tr>
+</table>
+
+<div class="card">
+  <p class="dim">This page states what this repository's own measurements support. It is not investment
+  advice, and it does not claim to know future returns of any asset, including the index. Everything
+  above can be recomputed from the scripts in <code>tracker/</code>; if a number here cannot be
+  reproduced from those scripts, treat the page as wrong rather than the scripts.</p>
+</div>
+
+</div>
+</body>
+</html>
