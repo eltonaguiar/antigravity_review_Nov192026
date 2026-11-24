@@ -188,6 +188,22 @@ cost 6.71 bp, returns measured as excess versus SPY.</p>
 <p><b>No bucket has a confidence interval above zero.</b> The highest-rated names do not outperform,
 and the SELL bucket is <i>positive</i> — on four observations, which is far too few to mean anything.</p>
 
+
+<h2>How much data would actually settle it</h2>
+<p>The backtest above has 284 observations at 21 days and 140 at 63 days. A power calculation on
+those same published aggregates gives the sample needed to detect the observed effect at 80% power:</p>
+<table>
+  <tr><th>Horizon</th><th class="num">Observations held</th><th class="num">Needed for 80% power</th><th class="num">Shortfall</th><th class="num">p (two-sided)</th></tr>
+  <tr><td>21 days</td><td class="num">284</td><td class="num"><b>4,493</b></td><td class="num">~16×</td><td class="num">0.611</td></tr>
+  <tr><td>63 days</td><td class="num">140</td><td class="num"><b>1,035</b></td><td class="num">~7×</td><td class="num">0.459</td></tr>
+</table>
+<div class="note">
+  <b>This is the honest headline.</b> The effect is not proven <i>and not disproven</i> — the sample is
+  roughly sixteen times too small to tell. Anyone quoting a hit rate from 284 observations as evidence
+  is quoting noise. The monotonicity test also fails: STRONG_BUY vs SELL and BUY vs HOLD are inverted,
+  so a higher rating did not mean a better return even in the direction the data leans.
+</div>
+
 <h2>Monte Carlo per asset class (3,000 resamples, 1% risk per trade)</h2>
 <table>
   <tr><th>Class</th><th class="num">n</th><th class="num">mean / trade</th><th class="num">P(mean &gt; 0)</th><th class="num">equity P5 / P50 / P95</th><th class="num">permutation p</th><th>Read</th></tr>
