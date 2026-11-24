@@ -1,0 +1,351 @@
+{
+  "meta": {
+    "generated_utc": "2026-11-24",
+    "cost_bp": 26,
+    "cost_profile": "programme_sweep",
+    "hurdle_apr": 0.0432,
+    "tp": null,
+    "sl": null,
+    "years": 1.0,
+    "note": "PAPER ONLY. Measured inputs, modeled dispersion."
+  },
+  "classes": {
+    "CRYPTO": {
+      "n": 200,
+      "mean_pct": -0.17068681974844513,
+      "ci": [
+        -1.025038587334555,
+        0.7019354844392245
+      ],
+      "verdict": "KILL",
+      "ci_excludes_zero": false,
+      "source": "38_FINAL.../README.md \u00a71 (intrabar truth WR 35.8%, PF 0.917)"
+    },
+    "COMMODITY": {
+      "n": 50,
+      "mean_pct": -2.1260757680447586,
+      "ci": [
+        -2.994162450500407,
+        -1.283431778749202
+      ],
+      "verdict": "KILL",
+      "ci_excludes_zero": true,
+      "source": "38_FINAL.../README.md \u00a71"
+    },
+    "EQUITY": {
+      "n": 200,
+      "mean_pct": 0.28876149201207696,
+      "ci": [
+        -0.04116369404488011,
+        0.621203998702094
+      ],
+      "verdict": "WEAK",
+      "ci_excludes_zero": false,
+      "source": "38_FINAL.../README.md \u00a71"
+    },
+    "ETF": {
+      "n": 200,
+      "mean_pct": -0.056041202203919976,
+      "ci": [
+        -0.2588407957935496,
+        0.1453887714014131
+      ],
+      "verdict": "WEAK",
+      "ci_excludes_zero": false,
+      "source": "38_FINAL.../README.md \u00a71"
+    },
+    "FOREX": {
+      "n": 200,
+      "mean_pct": -0.07530158451834494,
+      "ci": [
+        -0.18587322718339444,
+        0.04081498538426606
+      ],
+      "verdict": "WEAK",
+      "ci_excludes_zero": false,
+      "source": "38_FINAL.../README.md \u00a71"
+    },
+    "BOND": {
+      "n": 37,
+      "mean_pct": -0.054965928368166245,
+      "ci": [
+        -0.23895998712620234,
+        0.1403405485141358
+      ],
+      "verdict": "WEAK",
+      "ci_excludes_zero": false,
+      "source": "38_FINAL.../README.md \u00a71"
+    },
+    "FUTURES": {
+      "n": 0,
+      "verdict": "INSUFFICIENT_N",
+      "note": "no measured expectancy -- not simulated"
+    }
+  },
+  "scenarios": {
+    "defensive_300": {
+      "cash": 300,
+      "weights": {
+        "cash": 0.4,
+        "bond": 0.4,
+        "etf": 0.2,
+        "equity": 0.0,
+        "crypto": 0.0
+      },
+      "median_apr": -0.002620896549777374,
+      "mean_apr": 0.00036126064408266136,
+      "ci_apr": [
+        -0.07676038693652198,
+        0.09175034521106284
+      ],
+      "excess_apr_median": -0.04392340543498585,
+      "ci_excess": [
+        -0.11499270220142055,
+        0.046539824780543526
+      ],
+      "verdict": "INCONCLUSIVE",
+      "share_beating_hurdle": 0.144,
+      "share_losing": 0.528,
+      "sleeves": {
+        "cash": {
+          "weight": 0.4,
+          "start": 120.0,
+          "end": 125.18399999999998,
+          "ret_pct": 4.3199999999999905,
+          "mdd": 0.0,
+          "n_trades": 0
+        },
+        "bond": {
+          "weight": 0.4,
+          "start": 120.0,
+          "end": 113.98584731188915,
+          "ret_pct": -5.011793906759044,
+          "mdd": -0.05425585795342584,
+          "n_trades": 37
+        },
+        "etf": {
+          "weight": 0.2,
+          "start": 60.0,
+          "end": 69.37939990088545,
+          "ret_pct": 15.63233316814241,
+          "mdd": -0.10814727079100549,
+          "n_trades": 200
+        },
+        "equity": {
+          "weight": 0.0,
+          "start": 0.0,
+          "end": 0.0,
+          "ret_pct": 0.0,
+          "mdd": 0.0,
+          "n_trades": 200
+        },
+        "crypto": {
+          "weight": 0.0,
+          "start": 0.0,
+          "end": 0.0,
+          "ret_pct": 0.0,
+          "mdd": 0.0,
+          "n_trades": 200
+        }
+      }
+    },
+    "core_500": {
+      "cash": 500,
+      "weights": {
+        "cash": 0.2,
+        "bond": 0.3,
+        "etf": 0.35,
+        "equity": 0.15,
+        "crypto": 0.0
+      },
+      "median_apr": 0.017933090995928658,
+      "mean_apr": 0.026954516672563097,
+      "ci_apr": [
+        -0.1197552845362857,
+        0.2245692502284884
+      ],
+      "excess_apr_median": -0.024220579950221532,
+      "ci_excess": [
+        -0.15620713625027383,
+        0.17385856041841308
+      ],
+      "verdict": "INCONCLUSIVE",
+      "share_beating_hurdle": 0.381,
+      "share_losing": 0.417,
+      "sleeves": {
+        "cash": {
+          "weight": 0.2,
+          "start": 100.0,
+          "end": 104.32,
+          "ret_pct": 4.3199999999999905,
+          "mdd": 0.0,
+          "n_trades": 0
+        },
+        "bond": {
+          "weight": 0.3,
+          "start": 150.0,
+          "end": 142.48230913986146,
+          "ret_pct": -5.011793906759032,
+          "mdd": -0.05425585795342556,
+          "n_trades": 37
+        },
+        "etf": {
+          "weight": 0.35,
+          "start": 175.0,
+          "end": 202.35658304424922,
+          "ret_pct": 15.63233316814241,
+          "mdd": -0.10814727079100521,
+          "n_trades": 200
+        },
+        "equity": {
+          "weight": 0.15,
+          "start": 75.0,
+          "end": 62.99874006115512,
+          "ret_pct": -16.001679918459843,
+          "mdd": -0.3691776750251393,
+          "n_trades": 200
+        },
+        "crypto": {
+          "weight": 0.0,
+          "start": 0.0,
+          "end": 0.0,
+          "ret_pct": 0.0,
+          "mdd": 0.0,
+          "n_trades": 200
+        }
+      }
+    },
+    "balanced_2000": {
+      "cash": 2000,
+      "weights": {
+        "cash": 0.1,
+        "bond": 0.2,
+        "etf": 0.4,
+        "equity": 0.25,
+        "crypto": 0.05
+      },
+      "median_apr": 0.011950714717048783,
+      "mean_apr": 0.025118970252434907,
+      "ci_apr": [
+        -0.18182171239306766,
+        0.30255661225419717
+      ],
+      "excess_apr_median": -0.029955219788105003,
+      "ci_excess": [
+        -0.21570332859764918,
+        0.24861638444612466
+      ],
+      "verdict": "INCONCLUSIVE",
+      "share_beating_hurdle": 0.398,
+      "share_losing": 0.463,
+      "sleeves": {
+        "cash": {
+          "weight": 0.1,
+          "start": 200.0,
+          "end": 208.64,
+          "ret_pct": 4.3199999999999905,
+          "mdd": 0.0,
+          "n_trades": 0
+        },
+        "bond": {
+          "weight": 0.2,
+          "start": 400.0,
+          "end": 379.9528243729639,
+          "ret_pct": -5.011793906759021,
+          "mdd": -0.054255857953425704,
+          "n_trades": 37
+        },
+        "etf": {
+          "weight": 0.4,
+          "start": 800.0,
+          "end": 925.0586653451393,
+          "ret_pct": 15.63233316814241,
+          "mdd": -0.1081472707910055,
+          "n_trades": 200
+        },
+        "equity": {
+          "weight": 0.25,
+          "start": 500.0,
+          "end": 419.99160040770033,
+          "ret_pct": -16.00167991845993,
+          "mdd": -0.3691776750251392,
+          "n_trades": 200
+        },
+        "crypto": {
+          "weight": 0.05,
+          "start": 100.0,
+          "end": 56.425195993039,
+          "ret_pct": -43.574804006960996,
+          "mdd": -0.6956943751991935,
+          "n_trades": 200
+        }
+      }
+    },
+    "growth_10000": {
+      "cash": 10000,
+      "weights": {
+        "cash": 0.05,
+        "bond": 0.1,
+        "etf": 0.45,
+        "equity": 0.3,
+        "crypto": 0.1
+      },
+      "median_apr": -0.003446565420421488,
+      "mean_apr": 0.014292911063242198,
+      "ci_apr": [
+        -0.24143365613005152,
+        0.3565569197906535
+      ],
+      "excess_apr_median": -0.04471488249656952,
+      "ci_excess": [
+        -0.2728466795725186,
+        0.30038048292815733
+      ],
+      "verdict": "INCONCLUSIVE",
+      "share_beating_hurdle": 0.37,
+      "share_losing": 0.508,
+      "sleeves": {
+        "cash": {
+          "weight": 0.05,
+          "start": 500.0,
+          "end": 521.5999999999999,
+          "ret_pct": 4.3199999999999905,
+          "mdd": 0.0,
+          "n_trades": 0
+        },
+        "bond": {
+          "weight": 0.1,
+          "start": 1000.0,
+          "end": 949.8820609324098,
+          "ret_pct": -5.011793906759021,
+          "mdd": -0.054255857953425676,
+          "n_trades": 37
+        },
+        "etf": {
+          "weight": 0.45,
+          "start": 4500.0,
+          "end": 5203.454992566414,
+          "ret_pct": 15.632333168142543,
+          "mdd": -0.10814727079100506,
+          "n_trades": 200
+        },
+        "equity": {
+          "weight": 0.3,
+          "start": 3000.0,
+          "end": 2519.9496024462055,
+          "ret_pct": -16.00167991845982,
+          "mdd": -0.3691776750251389,
+          "n_trades": 200
+        },
+        "crypto": {
+          "weight": 0.1,
+          "start": 1000.0,
+          "end": 564.2519599303909,
+          "ret_pct": -43.57480400696091,
+          "mdd": -0.6956943751991931,
+          "n_trades": 200
+        }
+      }
+    }
+  }
+}
