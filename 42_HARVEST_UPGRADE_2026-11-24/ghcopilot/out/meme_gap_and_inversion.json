@@ -1,0 +1,97 @@
+{
+  "inversion": {
+    "equity_gross_1d_central": 14.431248,
+    "equity_gross_1d_ceiling": 34.748748,
+    "etf_gross_1d": 21.234744,
+    "inversion_holds_at_ceiling": true
+  },
+  "relabel": {
+    "repo_band": [
+      20.0,
+      52.0
+    ],
+    "point_used": 36.0,
+    "external_assumption_40bp": "zoocode's, not ours"
+  },
+  "gaps": {
+    "DOGEUSDT": {
+      "bars": 999,
+      "open_equals_prev_close_pct": 47.747747747747745,
+      "low_breaks_minus5_pct": 23.9,
+      "low_breaks_minus20_pct": 0.5,
+      "wickout_breaks5_recovers_pct": 14.5,
+      "worst_intrabar_pct": -61.770623742454724,
+      "median_intrabar_pct": -2.650853851436291
+    },
+    "SHIBUSDT": {
+      "bars": 999,
+      "open_equals_prev_close_pct": 55.75575575575576,
+      "low_breaks_minus5_pct": 21.1,
+      "low_breaks_minus20_pct": 0.7,
+      "wickout_breaks5_recovers_pct": 13.0,
+      "worst_intrabar_pct": -43.54704412989175,
+      "median_intrabar_pct": -2.597493113869287
+    },
+    "PEPEUSDT": {
+      "bars": 999,
+      "open_equals_prev_close_pct": 56.35635635635636,
+      "low_breaks_minus5_pct": 35.8,
+      "low_breaks_minus20_pct": 0.9,
+      "wickout_breaks5_recovers_pct": 20.2,
+      "worst_intrabar_pct": -69.87041036717063,
+      "median_intrabar_pct": -3.5503542562696166
+    },
+    "BONKUSDT": {
+      "bars": 999,
+      "open_equals_prev_close_pct": 56.95695695695696,
+      "low_breaks_minus5_pct": 39.2,
+      "low_breaks_minus20_pct": 1.1,
+      "wickout_breaks5_recovers_pct": 20.9,
+      "worst_intrabar_pct": -78.82787750791975,
+      "median_intrabar_pct": -3.91975271154944
+    },
+    "WIFUSDT": {
+      "bars": 994,
+      "open_equals_prev_close_pct": 50.905432595573444,
+      "low_breaks_minus5_pct": 42.11055276381909,
+      "low_breaks_minus20_pct": 1.0050251256281406,
+      "wickout_breaks5_recovers_pct": 22.91457286432161,
+      "worst_intrabar_pct": -91.23055162659122,
+      "median_intrabar_pct": -4.026423403586021
+    },
+    "FLOKIUSDT": {
+      "bars": 999,
+      "open_equals_prev_close_pct": 41.54154154154154,
+      "low_breaks_minus5_pct": 32.4,
+      "low_breaks_minus20_pct": 0.9,
+      "wickout_breaks5_recovers_pct": 17.6,
+      "worst_intrabar_pct": -83.41390052637233,
+      "median_intrabar_pct": -3.2813662705481694
+    },
+    "BTCUSDT": {
+      "bars": 999,
+      "open_equals_prev_close_pct": 51.751751751751755,
+      "low_breaks_minus5_pct": 6.3,
+      "low_breaks_minus20_pct": 0.0,
+      "wickout_breaks5_recovers_pct": 4.0,
+      "worst_intrabar_pct": -16.161450360879748,
+      "median_intrabar_pct": -1.276066364826034
+    },
+    "ETHUSDT": {
+      "bars": 999,
+      "open_equals_prev_close_pct": 49.249249249249246,
+      "low_breaks_minus5_pct": 15.3,
+      "low_breaks_minus20_pct": 0.3,
+      "wickout_breaks5_recovers_pct": 9.3,
+      "worst_intrabar_pct": -25.94958322879205,
+      "median_intrabar_pct": -1.8365693825988683
+    }
+  },
+  "hurdle_pct": 4.32,
+  "turns_per_year": {
+    "1d": 252.0,
+    "1w": 50.4,
+    "1m": 12.0
+  },
+  "convention": "round turns (one buy + one sell per turn)"
+}

@@ -186,9 +186,21 @@ live market data… I need to pick plausible levels"*) scored **0/4**, because h
 | bond ETF | 0.6144 bp | |
 | ETF | **6.7122 bp** | |
 | FOREX | 7.533 bp | |
-| equity | 12.0749 bp | 191 names, 238,810 daily + 356,271 minute bars |
+| equity | **0.9756 / 4.0124 / 12.0749 bp** | floor / **central** / ceiling — **do not quote one number**, see the note below |
 | commodity | 20 bp | |
-| crypto | 20–52 bp | |
+| crypto | 20–52 bp | a band, not a point. Any netting exercise must state which point it used |
+
+> **Equity is a bracket, not a number.** Three estimators on the same 191 names and the same
+> cached bars: **0.9756 bp floor** (Corwin-Schultz + SEC, usable on only 65/191 — volatility
+> swamps it elsewhere), **4.0124 bp central** (Roll + SEC, 190/191 — this is the verdict-grade
+> estimate), **12.0749 bp ceiling** (1-min bar range on 13 megacaps — an upper bound, it cannot
+> be below the true spread but it is not a cost). **Grade net-of-cost at the ceiling; report at
+> central.** Source of the settlement: `37_BUFFY_DRAFT_PATCHES_2026-11-23/03_equity_cost_settlement.md`.
+> Single-number quoting here has already caused one external reviewer (2026-11-24) to
+> overstate equity cost 3× against central and 12× against the floor — and at weekly
+> turnover that span is 0.49%/yr to 6.09%/yr of drag, so the choice of point changes
+> conclusions. Crypto's 20–52 bp band carries the same hazard: 20 bp is the band low,
+> 52 bp the high, and there is no measured 40 bp (that figure is an external assumption).
 
 Worked example from this round: Claude 5.1 Fable built a thesis on T-bill carry at 1–1.5 bp/day. Over its
 120h horizon the carry is **5.89–6.09 bp** against a **6.7122 bp** ETF round trip — **net −0.6 to −0.8 bp**,
