@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PROVEIT — KILO CODE</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:960px;margin:24px auto;padding:0 16px;color:#1a1a1a;line-height:1.5}
+h1{margin:.2em 0}h2{margin-top:1.6em;border-bottom:2px solid #eee;padding-bottom:.2em}
+table{border-collapse:collapse;width:100%;margin:.6em 0;font-size:.95em}th,td{border:1px solid #ddd;padding:6px 9px;text-align:left}th{background:#f6f8fa}
+.num{text-align:right;font-variant-numeric:tabular-nums}.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:.8em;background:#ffe9e9;color:#a33}
+.ok{background:#e9f7ec;color:#20603a}.note{background:#fff7e6;color:#8a5a00;border-left:3px solid #f0b400;padding:.6em .9em;margin:1em 0}
+small{color:#666}
+</style></head><body>
+<h1>PROVEIT — KILO CODE</h1>
+<small>Agent: KILO CODE (Kilo VS Code) · date-folder <span class="mono">PROVEIT_24-11-2026_KILOCODE_AGENT</span> · paper only, zero capital, <b>not investment advice</b></small>
+
+<div class="note"><b>Honest headline:</b> the math proves a <b>negative</b> result for active trading and a <b>positive</b> one for cheap, patient beta. Buy-and-hold low-cost equity compounded <b>18.3%/yr</b> (Sharpe 0.86) over the test window; every active family in the 1000-cell grid failed (0 survivors). The defensible real-money action is a <b>Canadian CAD-listed low-cost index ETF</b> (or 60/40 for lower drawdown).</div>
+
+<h2>Backtest — common window (fair comparison)</h2>
+<table><tr><th>philosophy</th><th class="num">net CAGR</th><th class="num">max DD</th><th class="num">excess Sharpe</th></tr>
+<tr><td>Buy &amp; hold 100% equity (FXAIX)</td><td class="num">18.30%</td><td class="num">−18.76%</td><td class="num"><b>0.859</b></td></tr>
+<tr><td>60/40 (monthly rebalance)</td><td class="num">11.96%</td><td class="num">−11.20%</td><td class="num">0.710</td></tr>
+<tr><td>200d-MA “timing” (cash when below)</td><td class="num">13.76%</td><td class="num">−9.39%</td><td class="num">0.779</td></tr></table>
+<small>Timing <b>loses ~4.5%/yr vs buy-and-hold</b> and only wins on drawdown → <b>risk control, not alpha</b>. (A prior version wrongly showed timing ahead because it started 200 bars later; windows are now aligned.)</small>
+
+<h2>Scenario portfolios — terminal value, fee-aware</h2>
+<table><tr><th>account</th><th class="num">zero-comm + CAD</th><th class="num">+1.5% FX</th><th class="num">+FX &amp; $5/trade</th><th class="num">fee drag on start</th></tr>
+<tr><td>$300</td><td class="num">$693</td><td class="num">$688</td><td class="num">$678</td><td class="num">2.09%</td></tr>
+<tr><td>$500</td><td class="num">$1,155</td><td class="num">$1,147</td><td class="num">$1,137</td><td class="num">1.52%</td></tr>
+<tr><td>$2,000</td><td class="num">$4,618</td><td class="num">$4,588</td><td class="num">$4,578</td><td class="num">0.87%</td></tr>
+<tr><td>$10,000</td><td class="num">$23,092</td><td class="num">$22,942</td><td class="num">$22,932</td><td class="num">0.69%</td></tr></table>
+<small>Fixed fees cost a <b>$300 account 3× more</b> (as % of capital) than a $10,000 account → small accounts must use zero-commission, no-FX index funds.</small>
+
+<h2>Endorsement by scenario / asset class</h2>
+<table><tr><th>account</th><th>endorsed</th><th>rules</th></tr>
+<tr><td>$300</td><td>100% one broad index fund (FXAIX/FZROX, or CAD VFV fractional)</td><td>buy &amp; hold; no TP/SL</td></tr>
+<tr><td>$500</td><td>total-market index (FZROX / VTI / VEQT)</td><td>buy &amp; hold</td></tr>
+<tr><td>$2,000</td><td>all-in-one (XEQT/VEQT) or simple 60/40</td><td>annual rebalance alert</td></tr>
+<tr><td>$10,000</td><td>60/40 or XEQT</td><td>monthly/quarterly rebalance alerts</td></tr>
+<tr><td>all</td><td>cash (SGOV) ≈ 3.8% = the hurdle, not an edge</td><td>—</td></tr>
+<tr><td><b>not endorsed</b></td><td>active “5 value stocks”, timing-as-alpha, crypto/FX strategies</td><td><span class="tag">0 demonstrated alpha</span></td></tr></table>
+
+<h2>Per-asset-class findings</h2>
+<table><tr><th>class</th><th>best</th><th>status</th></tr>
+<tr><td>STOCKS</td><td>CVX</td><td>DEAD — DSR .318, alpha-neg, no hold-times</td></tr>
+<tr><td>ETF</td><td>SPY/SOXX</td><td>DEAD as signal (beta = the vehicle)</td></tr>
+<tr><td>CRYPTO</td><td>ETH/ENJ</td><td>DEAD — net ≤0 at cost, DSR &lt;.07</td></tr>
+<tr><td>FOREX</td><td>AUDJPY</td><td>DEAD — beta_dominant, alpha-gate FAILED, recency fail</td></tr>
+<tr><td>BONDS</td><td>SGOV</td><td>cash hurdle (not a pick)</td></tr>
+<tr><td>MUTUAL_FUND</td><td>FXAIX/FZROX</td><td>beta — fees decide (corr .998 to SPY)</td></tr>
+<tr><td>COMMODITY / OPTIONS / FUTURES / PM / PRIVATE_CREDIT</td><td>—</td><td>DEAD / UNRANKABLE</td></tr></table>
+
+<h2>What the proof shows</h2>
+<ol>
+<li><b>Cheap beta is reliably powerful; active alpha is not</b> — 1000-cell sweep: 0 survivors; median cell gross edge negative.</li>
+<li><b>Risk is real</b>: −18.8% DD (100% equity), −11.2% (60/40), −9.4% (timing). You trade return for a shallower hole.</li>
+<li><b>Fees are the great separator</b>: 1.8% vs 0.03% MER ends ~39% lower over 30y; fixed fees hit small accounts 3×.</li>
+<li><b>Conclusion</b>: the provable edge is <b>cheap, diversified, patient</b> — not clever picking.</li>
+</ol>
+
+<p><small>Detail &amp; machine files: <a href="https://github.com/eltonaguiar/antigravity_review_Nov192026/tree/main/PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT">PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT</a> · contest entry in <span class="mono">CONTEST/_incoming/KILOCODE_VSCODE/</span>. Paper only, not investment advice.</small></p>
+</body></html>
