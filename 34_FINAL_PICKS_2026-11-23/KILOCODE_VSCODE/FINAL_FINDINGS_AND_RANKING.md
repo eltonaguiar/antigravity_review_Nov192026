@@ -43,6 +43,11 @@ The `29_CELL_SWEEP_CONTEST_2026-11-24` round independently filled EQUITY/FOREX c
 - **Fees:** 0.03% vs 1.80% MER = $755k vs $458k per $100k over 30y (~39% less).
 - **Risk:** SPY −24.5% drawdown, ~14 months to recover; missing the best 10 days cut +72.6% → +16.8%.
 
+## COST-INDEPENDENCE (peer cost-vs-signal, `30_COST_STRUCTURE_2026-11-24`)
+Median **GROSS** bp/trade across 44 measured cells = **−1.51** (net −27.51 at 26 bp). So the typical cell has **no gross
+edge at all** — the null is a **signal problem, not a cost artifact**; a cost breakthrough cannot rescue a negative-expectancy
+signal. The few gross-positive cells (`SOL breakout +97.9`, `BTC bb_meanrev +76.5`) still have CIs spanning 0 → INCONCLUSIVE.
+
 ## LABELLING NOTE (cross-repo consistency)
 The DONE_CONDITION classifies a cell whose 95% CI spans 0 as **KILLED**; the `29_CELL_SWEEP` labels the same cells
 **INCONCLUSIVE**. They are equivalent — both mean **no proven edge** (the CI cannot reject zero). The programme does **not**
