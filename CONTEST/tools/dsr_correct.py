@@ -36,7 +36,10 @@ import argparse
 import math
 import random
 import sqlite3
+import sys
 from pathlib import Path
+
+import dsr_guard  # shared refusal gate (same one dsr.py uses) - see dsr_guard.py
 
 EULER_GAMMA = 0.5772156649015329
 
@@ -116,14 +119,23 @@ def dsr_correct(sharpes: list[float], n_obs: int,
             "sr0": sr0, "e_max": e_max, "sd_sr": sd, "g3": g3, "g4": g4, "z": z}
 
 
-def dsr_from_db(db: str, n_obs: int, use_oos: bool = True) -> dict:
+def dsr_from_db(db: str, n_obs: int, use_oos: bool = True,
+                allow_fixtures: bool = False, min_trials=None) -> dict:
+    """Compute the corrected DSR, or RAISE rather than return an invalid number.
+
+    The refusal gate is the SHARED one in dsr_guard.py, so that the correct formula
+    is not less protected than the deprecated one it replaces. Emitting nothing is
+    the whole point: a wrong number gets quoted, a refusal cannot be.
+    """
     con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
     try:
         col = "sharpe_oos" if use_oos else "sharpe_is"
         rows = con.execute(
-            f"select {col} from trials where {col} is not null").fetchall()
+            f"select {col}, run_id, family from trials where {col} is not null").fetchall()
     finally:
         con.close()
+    dsr_guard.check(len(rows), [(r[1], r[2], None) for r in rows],
+                    allow_fixtures=allow_fixtures, min_trials=min_trials, source=db)
     return dsr_correct([float(r[0]) for r in rows], n_obs)
 
 
@@ -235,15 +247,27 @@ def main() -> int:
     ap.add_argument("--n", type=int, default=250, help="return observations behind the best trial")
     ap.add_argument("--is", action="store_true", help="use sharpe_is instead of sharpe_oos")
     ap.add_argument("--proof", help="write the noise-simulation proof to this path")
+    ap.add_argument("--allow-fixtures", action="store_true",
+                    help="estimator self-tests ONLY - never for a reported result")
     a = ap.parse_args()
     if a.proof:
         return proof(Path(a.proof), ns=[10, 30, 100, 300, 1000, 2000],
                      seeds=[1, 2, 3, 4, 5], n_obs=1000)
     if not a.db:
         ap.error("give --db or --proof")
-    r = dsr_from_db(a.db, a.n, use_oos=not a.is_)
+    try:
+        # NOTE: argparse stores --is under the attribute name "is", which is a Python
+        # keyword and therefore NOT reachable as `a.is` (SyntaxError) or `a.is_`
+        # (AttributeError). That made this CLI raise on EVERY invocation, --is or not,
+        # until 2026-11-24. getattr is the only correct access.
+        r = dsr_from_db(a.db, a.n, use_oos=not getattr(a, "is", False),
+                        allow_fixtures=a.allow_fixtures)
+    except dsr_guard.DSRNotComputable as exc:
+        sys.stderr.write("REFUSED: %s\n" % exc)
+        sys.stderr.write("DSR=REFUSED source=%s (no number emitted)\n" % a.db)
+        return 2
     print(f"trials={r['n_trials']} best_sharpe={r['sr_best']} "
-          f"sr_star={r['sr_star']} E[max]={r['e_max']}")
+          f"sr0={r['sr0']} E[max]={r['e_max']}")
     print(f"DSR={r['dsr']}")
     return 0
 

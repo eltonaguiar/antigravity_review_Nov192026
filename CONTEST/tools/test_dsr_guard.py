@@ -20,6 +20,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 from dsr import DSRNotComputable, MIN_TRIALS_FOR_DSR, dsr_from_db  # noqa: E402
+import dsr_correct  # noqa: E402  - the CORRECT formula must be guarded too
 
 COLS = "trial_id,run_id,family,variant,sharpe_is,sharpe_oos,kept,ts_logged"
 
@@ -90,6 +91,56 @@ def test_cli_refusal_prints_no_numeric_dsr():
     leaked = [ln for ln in proc.stdout.splitlines()
               if ln.startswith("DSR=") and ln[4:5].isdigit()]
     assert not leaked, "a numeric DSR escaped on stdout: %r" % (leaked,)
+
+
+# --- 6. THE CORRECT FORMULA IS GUARDED TOO (ported 2026-11-24) ---------------
+# Before this, dsr_correct.py had the right formula and NO guard, while dsr.py had
+# the guard and the wrong formula. These tests keep the two in lockstep.
+def test_correct_refuses_fixture_rows():
+    db = _make_db(40, "dummy", "dummy")
+    assert _refuses(dsr_correct.dsr_from_db, db, 250), \
+        "dsr_correct accepted 40 fixture rows"
+
+
+def test_correct_refuses_below_min_trials():
+    db = _make_db(MIN_TRIALS_FOR_DSR - 1, "live", "trend")
+    assert _refuses(dsr_correct.dsr_from_db, db, 250), \
+        "dsr_correct accepted n=%d" % (MIN_TRIALS_FOR_DSR - 1)
+
+
+def test_correct_computes_on_clean_ledger():
+    db = _make_db(40, "live", "trend")
+    r = dsr_correct.dsr_from_db(db, 250)
+    assert r["n_trials"] == 40, r
+    assert r["dsr"] is None or 0.0 <= r["dsr"] <= 1.0, r
+
+
+def test_correct_cli_refusal_prints_no_numeric_dsr():
+    db = _make_db(4, "dummy", "dummy")
+    proc = subprocess.run(
+        [sys.executable, os.path.join(HERE, "dsr_correct.py"), "--db", db],
+        capture_output=True, text=True,
+    )
+    assert proc.returncode == 2, "expected exit 2, got %d" % proc.returncode
+    leaked = [ln for ln in proc.stdout.splitlines()
+              if ln.startswith("DSR=") and ln[4:5].isdigit()]
+    assert not leaked, "a numeric DSR escaped from dsr_correct: %r" % (leaked,)
+
+
+def test_correct_cli_prints_number_on_clean_ledger():
+    """The HAPPY path must run end-to-end. Two pre-existing bugs in dsr_correct.py
+    (AttributeError on a.is_ and KeyError on r['sr_star']) meant its --db path had
+    never executed; a refusal-only test suite cannot see that."""
+    db = _make_db(40, "live", "trend")
+    proc = subprocess.run(
+        [sys.executable, os.path.join(HERE, "dsr_correct.py"), "--db", db, "--n", "250"],
+        capture_output=True, text=True,
+    )
+    assert proc.returncode == 0, "clean ledger exited %d: %s" % (
+        proc.returncode, proc.stderr.strip()[:200])
+    assert any(ln.startswith("DSR=") and ln[4:5].isdigit()
+               for ln in proc.stdout.splitlines()), \
+        "clean ledger produced no numeric DSR: %r" % (proc.stdout[:200],)
 
 
 def main():

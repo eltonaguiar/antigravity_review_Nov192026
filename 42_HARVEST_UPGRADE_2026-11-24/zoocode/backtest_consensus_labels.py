@@ -26,11 +26,6 @@ import statistics
 from datetime import datetime, timezone
 from pathlib import Path
 
-SEED = 20261124
-N_PERM = 2000
-N_BOOT = 2000
-LEDGER = Path("/home/eaguiar2015/findtorontoevents_antigravity.ca/ZOOCODE/harvest")
-OUT = Path(__file__).resolve().parent / "consensus_label_backtest.json"
 
 LABELS = ["STRONG_SELL", "SELL", "HOLD", "BUY", "STRONG_BUY"]
 RANK = {name: i + 1 for i, name in enumerate(LABELS)}
@@ -105,8 +100,6 @@ def main() -> int:
     spy = yf.Ticker("SPY").history(period="1y", interval="1d", auto_adjust=True)
     spy_c = {d.date(): float(c) for d, c in zip(spy.index, spy["Close"])}
 
-    obs = []   # (symbol, period, rank, excess)
-    non_finite = []   # (symbol, period, a, b) -- excluded and REPORTED, never averaged
     for sym, periods in trend_by_symbol.items():
         try:
             df = yf.Ticker(sym).history(period="1y", interval="1d", auto_adjust=True)
@@ -125,8 +118,15 @@ def main() -> int:
                                        t.get("strongSell", 0))
             if lab is None:
                 continue
+            # Kilo's rule: the consensus for period P is only KNOWN once P is
+            # published, i.e. on the 1st of the FOLLOWING month. Entering at the
+            # period date uses the label with information from its own window --
+            # mild look-ahead. PUBLICATION_LAG shifts both bounds forward.
             start = datetime.strptime(period_date(months_back, today), "%Y-%m-%d").date()
             end = datetime.strptime(period_date(months_back - 1, today), "%Y-%m-%d").date()
+            if PUBLICATION_LAG:
+                start = datetime.strptime(period_date(months_back - 1, today), "%Y-%m-%d").date()
+                end = datetime.strptime(period_date(months_back - 2, today), "%Y-%m-%d").date()
             i = next((k for k, d in enumerate(idx) if d > start), None)
             j = next((k for k, d in enumerate(idx) if d > end), None)
             if i is None or j is None or j <= i:
@@ -137,9 +137,6 @@ def main() -> int:
                     and math.isfinite(closes[j])):
                 non_finite.append((sym, pk, closes[i], closes[j]))
                 continue
-            stock = closes[j] / closes[i] - 1
-            bench = spy_c[idx[j]] / spy_c[idx[i]] - 1
-            ex = stock - bench
             if not math.isfinite(ex):
                 non_finite.append((sym, pk, stock, bench))
                 continue

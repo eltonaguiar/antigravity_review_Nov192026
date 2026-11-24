@@ -1,44 +1,53 @@
 {
- "generated": "2026-11-24T18:15:51.200702+00:00",
+ "generated": "2026-11-24T20:50:20.620283+00:00",
  "seed": 20261124,
  "n_perm": 2000,
  "n_boot": 2000,
- "n_obs": 442,
- "n_symbols": 149,
+ "entry_rule": "publication_lag",
+ "cost_bps": 26.0,
+ "n_obs": 963,
+ "n_symbols": 485,
+ "excluded_non_finite": 0,
  "coverage_note": "consensus exists for STOCK only; other classes absent by construction",
- "spearman_rho": -0.07264,
- "permutation_p": 0.18491,
+ "interpretation": {
+  "monotonic": false,
+  "directional": false,
+  "verdict": "NOT MONOTONIC and NOT DIRECTIONAL",
+  "why": "Spearman(label rank, excess) is negative and its within-symbol permutation p-value does not clear 0.05: the ordering is neither increasing nor established. Do not read a label as a buy/sell signal."
+ },
+ "spearman_rho": -0.02936,
+ "permutation_p": 0.97051,
  "per_label": {
   "SELL": {
-   "n": 4,
-   "mean_excess_pct": 4.0362,
+   "n": 13,
+   "mean_excess_pct": -0.6615,
    "ci95_pct": [
-    1.054,
-    12.9826
+    -7.1689,
+    3.8307
    ]
   },
   "HOLD": {
-   "n": 126,
-   "mean_excess_pct": 1.9277,
+   "n": 339,
+   "mean_excess_pct": 2.3509,
    "ci95_pct": [
-    0.5995,
-    3.2664
+    1.4582,
+    3.2645
    ]
   },
   "BUY": {
-   "n": 192,
-   "mean_excess_pct": 1.3764,
+   "n": 409,
+   "mean_excess_pct": 1.371,
    "ci95_pct": [
-    -0.0986,
-    2.9184
+    0.5621,
+    2.2159
    ]
   },
   "STRONG_BUY": {
-   "n": 120,
-   "mean_excess_pct": -0.2476,
+   "n": 202,
+   "mean_excess_pct": 1.0773,
    "ci95_pct": [
-    -1.9076,
-    1.5664
+    -0.1996,
+    2.4
    ]
   }
  },
@@ -50,13 +59,5 @@
     3.109
    ]
   }
- },
- "interpretation": {
-  "monotonic": false,
-  "directional": false,
-  "verdict": "NOT MONOTONIC and NOT DIRECTIONAL",
-  "why": "Spearman(label rank, excess return) is negative and its within-symbol permutation p-value does not clear 0.05, so the label ordering is neither increasing nor established. Do not read any label as a buy or sell signal.",
-  "entry_rule": "entry = first close STRICTLY AFTER the period date; exit = first close STRICTLY AFTER the next period date; stock and SPY over identical dates; NO transaction cost applied",
-  "not_comparable_until": "Kilo's STRONG_BUY figure uses a point-in-time entry at publication with 26 bp cost; mine uses a period-end snapshot with no cost"
  }
 }
