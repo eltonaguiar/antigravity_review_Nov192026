@@ -1,0 +1,3651 @@
+{
+  "schema": "harvest_taxonomy/1",
+  "axes": {
+    "asset_class": [
+      "equities",
+      "fixed_income",
+      "funds",
+      "fx",
+      "commodities",
+      "crypto",
+      "futures",
+      "options",
+      "real_assets",
+      "alternatives",
+      "prediction_markets",
+      "cash"
+    ],
+    "wrapper": [
+      "single_security",
+      "etf",
+      "mutual_fund",
+      "closed_end_fund",
+      "adr",
+      "contract",
+      "token",
+      "trust"
+    ],
+    "exposure": [
+      "broad_market",
+      "sector_theme",
+      "income_credit",
+      "rates_duration",
+      "commodity_curve",
+      "digital_assets",
+      "event_outcome",
+      "illiquid_private"
+    ]
+  },
+  "n_leaves": 328,
+  "leaves": [
+    {
+      "id": "equities.single_security.broad_market",
+      "asset_class": "equities",
+      "wrapper": "single_security",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.single_security.sector_theme",
+      "asset_class": "equities",
+      "wrapper": "single_security",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.single_security.income_credit",
+      "asset_class": "equities",
+      "wrapper": "single_security",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.single_security.rates_duration",
+      "asset_class": "equities",
+      "wrapper": "single_security",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.single_security.commodity_curve",
+      "asset_class": "equities",
+      "wrapper": "single_security",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.single_security.digital_assets",
+      "asset_class": "equities",
+      "wrapper": "single_security",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.single_security.event_outcome",
+      "asset_class": "equities",
+      "wrapper": "single_security",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.single_security.illiquid_private",
+      "asset_class": "equities",
+      "wrapper": "single_security",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.etf.broad_market",
+      "asset_class": "equities",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.etf.sector_theme",
+      "asset_class": "equities",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.etf.income_credit",
+      "asset_class": "equities",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.etf.rates_duration",
+      "asset_class": "equities",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.etf.commodity_curve",
+      "asset_class": "equities",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.etf.digital_assets",
+      "asset_class": "equities",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.etf.event_outcome",
+      "asset_class": "equities",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.etf.illiquid_private",
+      "asset_class": "equities",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.mutual_fund.broad_market",
+      "asset_class": "equities",
+      "wrapper": "mutual_fund",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.mutual_fund.sector_theme",
+      "asset_class": "equities",
+      "wrapper": "mutual_fund",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.mutual_fund.income_credit",
+      "asset_class": "equities",
+      "wrapper": "mutual_fund",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.mutual_fund.rates_duration",
+      "asset_class": "equities",
+      "wrapper": "mutual_fund",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.mutual_fund.commodity_curve",
+      "asset_class": "equities",
+      "wrapper": "mutual_fund",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.mutual_fund.digital_assets",
+      "asset_class": "equities",
+      "wrapper": "mutual_fund",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.mutual_fund.event_outcome",
+      "asset_class": "equities",
+      "wrapper": "mutual_fund",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.mutual_fund.illiquid_private",
+      "asset_class": "equities",
+      "wrapper": "mutual_fund",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.closed_end_fund.broad_market",
+      "asset_class": "equities",
+      "wrapper": "closed_end_fund",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.closed_end_fund.sector_theme",
+      "asset_class": "equities",
+      "wrapper": "closed_end_fund",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.closed_end_fund.income_credit",
+      "asset_class": "equities",
+      "wrapper": "closed_end_fund",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.closed_end_fund.rates_duration",
+      "asset_class": "equities",
+      "wrapper": "closed_end_fund",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.closed_end_fund.commodity_curve",
+      "asset_class": "equities",
+      "wrapper": "closed_end_fund",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.closed_end_fund.digital_assets",
+      "asset_class": "equities",
+      "wrapper": "closed_end_fund",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.closed_end_fund.event_outcome",
+      "asset_class": "equities",
+      "wrapper": "closed_end_fund",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.closed_end_fund.illiquid_private",
+      "asset_class": "equities",
+      "wrapper": "closed_end_fund",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.adr.broad_market",
+      "asset_class": "equities",
+      "wrapper": "adr",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.adr.sector_theme",
+      "asset_class": "equities",
+      "wrapper": "adr",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.adr.income_credit",
+      "asset_class": "equities",
+      "wrapper": "adr",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.adr.rates_duration",
+      "asset_class": "equities",
+      "wrapper": "adr",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.adr.commodity_curve",
+      "asset_class": "equities",
+      "wrapper": "adr",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.adr.digital_assets",
+      "asset_class": "equities",
+      "wrapper": "adr",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.adr.event_outcome",
+      "asset_class": "equities",
+      "wrapper": "adr",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.adr.illiquid_private",
+      "asset_class": "equities",
+      "wrapper": "adr",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "equities.trust.broad_market",
+      "asset_class": "equities",
+      "wrapper": "trust",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.trust.sector_theme",
+      "asset_class": "equities",
+      "wrapper": "trust",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.trust.income_credit",
+      "asset_class": "equities",
+      "wrapper": "trust",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.trust.rates_duration",
+      "asset_class": "equities",
+      "wrapper": "trust",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.trust.commodity_curve",
+      "asset_class": "equities",
+      "wrapper": "trust",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.trust.digital_assets",
+      "asset_class": "equities",
+      "wrapper": "trust",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.trust.event_outcome",
+      "asset_class": "equities",
+      "wrapper": "trust",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "equities.trust.illiquid_private",
+      "asset_class": "equities",
+      "wrapper": "trust",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fixed_income.etf.broad_market",
+      "asset_class": "fixed_income",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.etf.sector_theme",
+      "asset_class": "fixed_income",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.etf.income_credit",
+      "asset_class": "fixed_income",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.etf.rates_duration",
+      "asset_class": "fixed_income",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.etf.commodity_curve",
+      "asset_class": "fixed_income",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.etf.digital_assets",
+      "asset_class": "fixed_income",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.etf.event_outcome",
+      "asset_class": "fixed_income",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.etf.illiquid_private",
+      "asset_class": "fixed_income",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.mutual_fund.broad_market",
+      "asset_class": "fixed_income",
+      "wrapper": "mutual_fund",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.mutual_fund.sector_theme",
+      "asset_class": "fixed_income",
+      "wrapper": "mutual_fund",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.mutual_fund.income_credit",
+      "asset_class": "fixed_income",
+      "wrapper": "mutual_fund",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.mutual_fund.rates_duration",
+      "asset_class": "fixed_income",
+      "wrapper": "mutual_fund",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.mutual_fund.commodity_curve",
+      "asset_class": "fixed_income",
+      "wrapper": "mutual_fund",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.mutual_fund.digital_assets",
+      "asset_class": "fixed_income",
+      "wrapper": "mutual_fund",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.mutual_fund.event_outcome",
+      "asset_class": "fixed_income",
+      "wrapper": "mutual_fund",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.mutual_fund.illiquid_private",
+      "asset_class": "fixed_income",
+      "wrapper": "mutual_fund",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.closed_end_fund.broad_market",
+      "asset_class": "fixed_income",
+      "wrapper": "closed_end_fund",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.closed_end_fund.sector_theme",
+      "asset_class": "fixed_income",
+      "wrapper": "closed_end_fund",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.closed_end_fund.income_credit",
+      "asset_class": "fixed_income",
+      "wrapper": "closed_end_fund",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.closed_end_fund.rates_duration",
+      "asset_class": "fixed_income",
+      "wrapper": "closed_end_fund",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.closed_end_fund.commodity_curve",
+      "asset_class": "fixed_income",
+      "wrapper": "closed_end_fund",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.closed_end_fund.digital_assets",
+      "asset_class": "fixed_income",
+      "wrapper": "closed_end_fund",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.closed_end_fund.event_outcome",
+      "asset_class": "fixed_income",
+      "wrapper": "closed_end_fund",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.closed_end_fund.illiquid_private",
+      "asset_class": "fixed_income",
+      "wrapper": "closed_end_fund",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.contract.broad_market",
+      "asset_class": "fixed_income",
+      "wrapper": "contract",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.contract.sector_theme",
+      "asset_class": "fixed_income",
+      "wrapper": "contract",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.contract.income_credit",
+      "asset_class": "fixed_income",
+      "wrapper": "contract",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.contract.rates_duration",
+      "asset_class": "fixed_income",
+      "wrapper": "contract",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.contract.commodity_curve",
+      "asset_class": "fixed_income",
+      "wrapper": "contract",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.contract.digital_assets",
+      "asset_class": "fixed_income",
+      "wrapper": "contract",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.contract.event_outcome",
+      "asset_class": "fixed_income",
+      "wrapper": "contract",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.contract.illiquid_private",
+      "asset_class": "fixed_income",
+      "wrapper": "contract",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.trust.broad_market",
+      "asset_class": "fixed_income",
+      "wrapper": "trust",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.trust.sector_theme",
+      "asset_class": "fixed_income",
+      "wrapper": "trust",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.trust.income_credit",
+      "asset_class": "fixed_income",
+      "wrapper": "trust",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.trust.rates_duration",
+      "asset_class": "fixed_income",
+      "wrapper": "trust",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.trust.commodity_curve",
+      "asset_class": "fixed_income",
+      "wrapper": "trust",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.trust.digital_assets",
+      "asset_class": "fixed_income",
+      "wrapper": "trust",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.trust.event_outcome",
+      "asset_class": "fixed_income",
+      "wrapper": "trust",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "fixed_income.trust.illiquid_private",
+      "asset_class": "fixed_income",
+      "wrapper": "trust",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "credit_rating"
+      }
+    },
+    {
+      "id": "funds.etf.broad_market",
+      "asset_class": "funds",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.etf.sector_theme",
+      "asset_class": "funds",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.etf.income_credit",
+      "asset_class": "funds",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.etf.rates_duration",
+      "asset_class": "funds",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.etf.commodity_curve",
+      "asset_class": "funds",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.etf.digital_assets",
+      "asset_class": "funds",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.etf.event_outcome",
+      "asset_class": "funds",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.etf.illiquid_private",
+      "asset_class": "funds",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.mutual_fund.broad_market",
+      "asset_class": "funds",
+      "wrapper": "mutual_fund",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.mutual_fund.sector_theme",
+      "asset_class": "funds",
+      "wrapper": "mutual_fund",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.mutual_fund.income_credit",
+      "asset_class": "funds",
+      "wrapper": "mutual_fund",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.mutual_fund.rates_duration",
+      "asset_class": "funds",
+      "wrapper": "mutual_fund",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.mutual_fund.commodity_curve",
+      "asset_class": "funds",
+      "wrapper": "mutual_fund",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.mutual_fund.digital_assets",
+      "asset_class": "funds",
+      "wrapper": "mutual_fund",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.mutual_fund.event_outcome",
+      "asset_class": "funds",
+      "wrapper": "mutual_fund",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.mutual_fund.illiquid_private",
+      "asset_class": "funds",
+      "wrapper": "mutual_fund",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.closed_end_fund.broad_market",
+      "asset_class": "funds",
+      "wrapper": "closed_end_fund",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.closed_end_fund.sector_theme",
+      "asset_class": "funds",
+      "wrapper": "closed_end_fund",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.closed_end_fund.income_credit",
+      "asset_class": "funds",
+      "wrapper": "closed_end_fund",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.closed_end_fund.rates_duration",
+      "asset_class": "funds",
+      "wrapper": "closed_end_fund",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.closed_end_fund.commodity_curve",
+      "asset_class": "funds",
+      "wrapper": "closed_end_fund",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.closed_end_fund.digital_assets",
+      "asset_class": "funds",
+      "wrapper": "closed_end_fund",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.closed_end_fund.event_outcome",
+      "asset_class": "funds",
+      "wrapper": "closed_end_fund",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.closed_end_fund.illiquid_private",
+      "asset_class": "funds",
+      "wrapper": "closed_end_fund",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.trust.broad_market",
+      "asset_class": "funds",
+      "wrapper": "trust",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.trust.sector_theme",
+      "asset_class": "funds",
+      "wrapper": "trust",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.trust.income_credit",
+      "asset_class": "funds",
+      "wrapper": "trust",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.trust.rates_duration",
+      "asset_class": "funds",
+      "wrapper": "trust",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.trust.commodity_curve",
+      "asset_class": "funds",
+      "wrapper": "trust",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.trust.digital_assets",
+      "asset_class": "funds",
+      "wrapper": "trust",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.trust.event_outcome",
+      "asset_class": "funds",
+      "wrapper": "trust",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "funds.trust.illiquid_private",
+      "asset_class": "funds",
+      "wrapper": "trust",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.contract.broad_market",
+      "asset_class": "fx",
+      "wrapper": "contract",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.contract.sector_theme",
+      "asset_class": "fx",
+      "wrapper": "contract",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.contract.income_credit",
+      "asset_class": "fx",
+      "wrapper": "contract",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.contract.rates_duration",
+      "asset_class": "fx",
+      "wrapper": "contract",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.contract.commodity_curve",
+      "asset_class": "fx",
+      "wrapper": "contract",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.contract.digital_assets",
+      "asset_class": "fx",
+      "wrapper": "contract",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.contract.event_outcome",
+      "asset_class": "fx",
+      "wrapper": "contract",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.contract.illiquid_private",
+      "asset_class": "fx",
+      "wrapper": "contract",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.etf.broad_market",
+      "asset_class": "fx",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.etf.sector_theme",
+      "asset_class": "fx",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.etf.income_credit",
+      "asset_class": "fx",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.etf.rates_duration",
+      "asset_class": "fx",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.etf.commodity_curve",
+      "asset_class": "fx",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.etf.digital_assets",
+      "asset_class": "fx",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.etf.event_outcome",
+      "asset_class": "fx",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.etf.illiquid_private",
+      "asset_class": "fx",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.token.broad_market",
+      "asset_class": "fx",
+      "wrapper": "token",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.token.sector_theme",
+      "asset_class": "fx",
+      "wrapper": "token",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.token.income_credit",
+      "asset_class": "fx",
+      "wrapper": "token",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.token.rates_duration",
+      "asset_class": "fx",
+      "wrapper": "token",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.token.commodity_curve",
+      "asset_class": "fx",
+      "wrapper": "token",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.token.digital_assets",
+      "asset_class": "fx",
+      "wrapper": "token",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.token.event_outcome",
+      "asset_class": "fx",
+      "wrapper": "token",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "fx.token.illiquid_private",
+      "asset_class": "fx",
+      "wrapper": "token",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.contract.broad_market",
+      "asset_class": "commodities",
+      "wrapper": "contract",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.contract.sector_theme",
+      "asset_class": "commodities",
+      "wrapper": "contract",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.contract.income_credit",
+      "asset_class": "commodities",
+      "wrapper": "contract",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.contract.rates_duration",
+      "asset_class": "commodities",
+      "wrapper": "contract",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.contract.commodity_curve",
+      "asset_class": "commodities",
+      "wrapper": "contract",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.contract.digital_assets",
+      "asset_class": "commodities",
+      "wrapper": "contract",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.contract.event_outcome",
+      "asset_class": "commodities",
+      "wrapper": "contract",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.contract.illiquid_private",
+      "asset_class": "commodities",
+      "wrapper": "contract",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.etf.broad_market",
+      "asset_class": "commodities",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.etf.sector_theme",
+      "asset_class": "commodities",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.etf.income_credit",
+      "asset_class": "commodities",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.etf.rates_duration",
+      "asset_class": "commodities",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.etf.commodity_curve",
+      "asset_class": "commodities",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.etf.digital_assets",
+      "asset_class": "commodities",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.etf.event_outcome",
+      "asset_class": "commodities",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.etf.illiquid_private",
+      "asset_class": "commodities",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.trust.broad_market",
+      "asset_class": "commodities",
+      "wrapper": "trust",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.trust.sector_theme",
+      "asset_class": "commodities",
+      "wrapper": "trust",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.trust.income_credit",
+      "asset_class": "commodities",
+      "wrapper": "trust",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.trust.rates_duration",
+      "asset_class": "commodities",
+      "wrapper": "trust",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.trust.commodity_curve",
+      "asset_class": "commodities",
+      "wrapper": "trust",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.trust.digital_assets",
+      "asset_class": "commodities",
+      "wrapper": "trust",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.trust.event_outcome",
+      "asset_class": "commodities",
+      "wrapper": "trust",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "commodities.trust.illiquid_private",
+      "asset_class": "commodities",
+      "wrapper": "trust",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.token.broad_market",
+      "asset_class": "crypto",
+      "wrapper": "token",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.token.sector_theme",
+      "asset_class": "crypto",
+      "wrapper": "token",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.token.income_credit",
+      "asset_class": "crypto",
+      "wrapper": "token",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.token.rates_duration",
+      "asset_class": "crypto",
+      "wrapper": "token",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.token.commodity_curve",
+      "asset_class": "crypto",
+      "wrapper": "token",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.token.digital_assets",
+      "asset_class": "crypto",
+      "wrapper": "token",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.token.event_outcome",
+      "asset_class": "crypto",
+      "wrapper": "token",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.token.illiquid_private",
+      "asset_class": "crypto",
+      "wrapper": "token",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.etf.broad_market",
+      "asset_class": "crypto",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.etf.sector_theme",
+      "asset_class": "crypto",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.etf.income_credit",
+      "asset_class": "crypto",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.etf.rates_duration",
+      "asset_class": "crypto",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.etf.commodity_curve",
+      "asset_class": "crypto",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.etf.digital_assets",
+      "asset_class": "crypto",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.etf.event_outcome",
+      "asset_class": "crypto",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.etf.illiquid_private",
+      "asset_class": "crypto",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.trust.broad_market",
+      "asset_class": "crypto",
+      "wrapper": "trust",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.trust.sector_theme",
+      "asset_class": "crypto",
+      "wrapper": "trust",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.trust.income_credit",
+      "asset_class": "crypto",
+      "wrapper": "trust",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.trust.rates_duration",
+      "asset_class": "crypto",
+      "wrapper": "trust",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.trust.commodity_curve",
+      "asset_class": "crypto",
+      "wrapper": "trust",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.trust.digital_assets",
+      "asset_class": "crypto",
+      "wrapper": "trust",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.trust.event_outcome",
+      "asset_class": "crypto",
+      "wrapper": "trust",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.trust.illiquid_private",
+      "asset_class": "crypto",
+      "wrapper": "trust",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.contract.broad_market",
+      "asset_class": "crypto",
+      "wrapper": "contract",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.contract.sector_theme",
+      "asset_class": "crypto",
+      "wrapper": "contract",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.contract.income_credit",
+      "asset_class": "crypto",
+      "wrapper": "contract",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.contract.rates_duration",
+      "asset_class": "crypto",
+      "wrapper": "contract",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.contract.commodity_curve",
+      "asset_class": "crypto",
+      "wrapper": "contract",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.contract.digital_assets",
+      "asset_class": "crypto",
+      "wrapper": "contract",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.contract.event_outcome",
+      "asset_class": "crypto",
+      "wrapper": "contract",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "crypto.contract.illiquid_private",
+      "asset_class": "crypto",
+      "wrapper": "contract",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "funding_open_interest",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.contract.broad_market",
+      "asset_class": "futures",
+      "wrapper": "contract",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.contract.sector_theme",
+      "asset_class": "futures",
+      "wrapper": "contract",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.contract.income_credit",
+      "asset_class": "futures",
+      "wrapper": "contract",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.contract.rates_duration",
+      "asset_class": "futures",
+      "wrapper": "contract",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.contract.commodity_curve",
+      "asset_class": "futures",
+      "wrapper": "contract",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.contract.digital_assets",
+      "asset_class": "futures",
+      "wrapper": "contract",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.contract.event_outcome",
+      "asset_class": "futures",
+      "wrapper": "contract",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.contract.illiquid_private",
+      "asset_class": "futures",
+      "wrapper": "contract",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.etf.broad_market",
+      "asset_class": "futures",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.etf.sector_theme",
+      "asset_class": "futures",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.etf.income_credit",
+      "asset_class": "futures",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.etf.rates_duration",
+      "asset_class": "futures",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.etf.commodity_curve",
+      "asset_class": "futures",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.etf.digital_assets",
+      "asset_class": "futures",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.etf.event_outcome",
+      "asset_class": "futures",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "futures.etf.illiquid_private",
+      "asset_class": "futures",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "cftc_cot",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.contract.broad_market",
+      "asset_class": "options",
+      "wrapper": "contract",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.contract.sector_theme",
+      "asset_class": "options",
+      "wrapper": "contract",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.contract.income_credit",
+      "asset_class": "options",
+      "wrapper": "contract",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.contract.rates_duration",
+      "asset_class": "options",
+      "wrapper": "contract",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.contract.commodity_curve",
+      "asset_class": "options",
+      "wrapper": "contract",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.contract.digital_assets",
+      "asset_class": "options",
+      "wrapper": "contract",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.contract.event_outcome",
+      "asset_class": "options",
+      "wrapper": "contract",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.contract.illiquid_private",
+      "asset_class": "options",
+      "wrapper": "contract",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.etf.broad_market",
+      "asset_class": "options",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.etf.sector_theme",
+      "asset_class": "options",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.etf.income_credit",
+      "asset_class": "options",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.etf.rates_duration",
+      "asset_class": "options",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.etf.commodity_curve",
+      "asset_class": "options",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.etf.digital_assets",
+      "asset_class": "options",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.etf.event_outcome",
+      "asset_class": "options",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "options.etf.illiquid_private",
+      "asset_class": "options",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.single_security.broad_market",
+      "asset_class": "real_assets",
+      "wrapper": "single_security",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "real_assets.single_security.sector_theme",
+      "asset_class": "real_assets",
+      "wrapper": "single_security",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "real_assets.single_security.income_credit",
+      "asset_class": "real_assets",
+      "wrapper": "single_security",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "real_assets.single_security.rates_duration",
+      "asset_class": "real_assets",
+      "wrapper": "single_security",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "real_assets.single_security.commodity_curve",
+      "asset_class": "real_assets",
+      "wrapper": "single_security",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "real_assets.single_security.digital_assets",
+      "asset_class": "real_assets",
+      "wrapper": "single_security",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "real_assets.single_security.event_outcome",
+      "asset_class": "real_assets",
+      "wrapper": "single_security",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "real_assets.single_security.illiquid_private",
+      "asset_class": "real_assets",
+      "wrapper": "single_security",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "direct",
+        "crowd": "none",
+        "official_rating": "analyst_consensus"
+      }
+    },
+    {
+      "id": "real_assets.etf.broad_market",
+      "asset_class": "real_assets",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.etf.sector_theme",
+      "asset_class": "real_assets",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.etf.income_credit",
+      "asset_class": "real_assets",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.etf.rates_duration",
+      "asset_class": "real_assets",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.etf.commodity_curve",
+      "asset_class": "real_assets",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.etf.digital_assets",
+      "asset_class": "real_assets",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.etf.event_outcome",
+      "asset_class": "real_assets",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.etf.illiquid_private",
+      "asset_class": "real_assets",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.trust.broad_market",
+      "asset_class": "real_assets",
+      "wrapper": "trust",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.trust.sector_theme",
+      "asset_class": "real_assets",
+      "wrapper": "trust",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.trust.income_credit",
+      "asset_class": "real_assets",
+      "wrapper": "trust",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.trust.rates_duration",
+      "asset_class": "real_assets",
+      "wrapper": "trust",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.trust.commodity_curve",
+      "asset_class": "real_assets",
+      "wrapper": "trust",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.trust.digital_assets",
+      "asset_class": "real_assets",
+      "wrapper": "trust",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.trust.event_outcome",
+      "asset_class": "real_assets",
+      "wrapper": "trust",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.trust.illiquid_private",
+      "asset_class": "real_assets",
+      "wrapper": "trust",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.closed_end_fund.broad_market",
+      "asset_class": "real_assets",
+      "wrapper": "closed_end_fund",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.closed_end_fund.sector_theme",
+      "asset_class": "real_assets",
+      "wrapper": "closed_end_fund",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.closed_end_fund.income_credit",
+      "asset_class": "real_assets",
+      "wrapper": "closed_end_fund",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.closed_end_fund.rates_duration",
+      "asset_class": "real_assets",
+      "wrapper": "closed_end_fund",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.closed_end_fund.commodity_curve",
+      "asset_class": "real_assets",
+      "wrapper": "closed_end_fund",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.closed_end_fund.digital_assets",
+      "asset_class": "real_assets",
+      "wrapper": "closed_end_fund",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.closed_end_fund.event_outcome",
+      "asset_class": "real_assets",
+      "wrapper": "closed_end_fund",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "real_assets.closed_end_fund.illiquid_private",
+      "asset_class": "real_assets",
+      "wrapper": "closed_end_fund",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "look_through",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.closed_end_fund.broad_market",
+      "asset_class": "alternatives",
+      "wrapper": "closed_end_fund",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.closed_end_fund.sector_theme",
+      "asset_class": "alternatives",
+      "wrapper": "closed_end_fund",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.closed_end_fund.income_credit",
+      "asset_class": "alternatives",
+      "wrapper": "closed_end_fund",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.closed_end_fund.rates_duration",
+      "asset_class": "alternatives",
+      "wrapper": "closed_end_fund",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.closed_end_fund.commodity_curve",
+      "asset_class": "alternatives",
+      "wrapper": "closed_end_fund",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.closed_end_fund.digital_assets",
+      "asset_class": "alternatives",
+      "wrapper": "closed_end_fund",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.closed_end_fund.event_outcome",
+      "asset_class": "alternatives",
+      "wrapper": "closed_end_fund",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.closed_end_fund.illiquid_private",
+      "asset_class": "alternatives",
+      "wrapper": "closed_end_fund",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.trust.broad_market",
+      "asset_class": "alternatives",
+      "wrapper": "trust",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.trust.sector_theme",
+      "asset_class": "alternatives",
+      "wrapper": "trust",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.trust.income_credit",
+      "asset_class": "alternatives",
+      "wrapper": "trust",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.trust.rates_duration",
+      "asset_class": "alternatives",
+      "wrapper": "trust",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.trust.commodity_curve",
+      "asset_class": "alternatives",
+      "wrapper": "trust",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.trust.digital_assets",
+      "asset_class": "alternatives",
+      "wrapper": "trust",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.trust.event_outcome",
+      "asset_class": "alternatives",
+      "wrapper": "trust",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.trust.illiquid_private",
+      "asset_class": "alternatives",
+      "wrapper": "trust",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.contract.broad_market",
+      "asset_class": "alternatives",
+      "wrapper": "contract",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.contract.sector_theme",
+      "asset_class": "alternatives",
+      "wrapper": "contract",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.contract.income_credit",
+      "asset_class": "alternatives",
+      "wrapper": "contract",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.contract.rates_duration",
+      "asset_class": "alternatives",
+      "wrapper": "contract",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.contract.commodity_curve",
+      "asset_class": "alternatives",
+      "wrapper": "contract",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.contract.digital_assets",
+      "asset_class": "alternatives",
+      "wrapper": "contract",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.contract.event_outcome",
+      "asset_class": "alternatives",
+      "wrapper": "contract",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "alternatives.contract.illiquid_private",
+      "asset_class": "alternatives",
+      "wrapper": "contract",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.contract.broad_market",
+      "asset_class": "prediction_markets",
+      "wrapper": "contract",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.contract.sector_theme",
+      "asset_class": "prediction_markets",
+      "wrapper": "contract",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.contract.income_credit",
+      "asset_class": "prediction_markets",
+      "wrapper": "contract",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.contract.rates_duration",
+      "asset_class": "prediction_markets",
+      "wrapper": "contract",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.contract.commodity_curve",
+      "asset_class": "prediction_markets",
+      "wrapper": "contract",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.contract.digital_assets",
+      "asset_class": "prediction_markets",
+      "wrapper": "contract",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.contract.event_outcome",
+      "asset_class": "prediction_markets",
+      "wrapper": "contract",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.contract.illiquid_private",
+      "asset_class": "prediction_markets",
+      "wrapper": "contract",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.token.broad_market",
+      "asset_class": "prediction_markets",
+      "wrapper": "token",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.token.sector_theme",
+      "asset_class": "prediction_markets",
+      "wrapper": "token",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.token.income_credit",
+      "asset_class": "prediction_markets",
+      "wrapper": "token",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.token.rates_duration",
+      "asset_class": "prediction_markets",
+      "wrapper": "token",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.token.commodity_curve",
+      "asset_class": "prediction_markets",
+      "wrapper": "token",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.token.digital_assets",
+      "asset_class": "prediction_markets",
+      "wrapper": "token",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.token.event_outcome",
+      "asset_class": "prediction_markets",
+      "wrapper": "token",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "prediction_markets.token.illiquid_private",
+      "asset_class": "prediction_markets",
+      "wrapper": "token",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "prediction_market",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.etf.broad_market",
+      "asset_class": "cash",
+      "wrapper": "etf",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.etf.sector_theme",
+      "asset_class": "cash",
+      "wrapper": "etf",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.etf.income_credit",
+      "asset_class": "cash",
+      "wrapper": "etf",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.etf.rates_duration",
+      "asset_class": "cash",
+      "wrapper": "etf",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.etf.commodity_curve",
+      "asset_class": "cash",
+      "wrapper": "etf",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.etf.digital_assets",
+      "asset_class": "cash",
+      "wrapper": "etf",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.etf.event_outcome",
+      "asset_class": "cash",
+      "wrapper": "etf",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.etf.illiquid_private",
+      "asset_class": "cash",
+      "wrapper": "etf",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.mutual_fund.broad_market",
+      "asset_class": "cash",
+      "wrapper": "mutual_fund",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.mutual_fund.sector_theme",
+      "asset_class": "cash",
+      "wrapper": "mutual_fund",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.mutual_fund.income_credit",
+      "asset_class": "cash",
+      "wrapper": "mutual_fund",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.mutual_fund.rates_duration",
+      "asset_class": "cash",
+      "wrapper": "mutual_fund",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.mutual_fund.commodity_curve",
+      "asset_class": "cash",
+      "wrapper": "mutual_fund",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.mutual_fund.digital_assets",
+      "asset_class": "cash",
+      "wrapper": "mutual_fund",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.mutual_fund.event_outcome",
+      "asset_class": "cash",
+      "wrapper": "mutual_fund",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.mutual_fund.illiquid_private",
+      "asset_class": "cash",
+      "wrapper": "mutual_fund",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "fund_flows",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.contract.broad_market",
+      "asset_class": "cash",
+      "wrapper": "contract",
+      "exposure": "broad_market",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.contract.sector_theme",
+      "asset_class": "cash",
+      "wrapper": "contract",
+      "exposure": "sector_theme",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.contract.income_credit",
+      "asset_class": "cash",
+      "wrapper": "contract",
+      "exposure": "income_credit",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.contract.rates_duration",
+      "asset_class": "cash",
+      "wrapper": "contract",
+      "exposure": "rates_duration",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.contract.commodity_curve",
+      "asset_class": "cash",
+      "wrapper": "contract",
+      "exposure": "commodity_curve",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.contract.digital_assets",
+      "asset_class": "cash",
+      "wrapper": "contract",
+      "exposure": "digital_assets",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.contract.event_outcome",
+      "asset_class": "cash",
+      "wrapper": "contract",
+      "exposure": "event_outcome",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    },
+    {
+      "id": "cash.contract.illiquid_private",
+      "asset_class": "cash",
+      "wrapper": "contract",
+      "exposure": "illiquid_private",
+      "signal_availability": {
+        "sell_side": "none",
+        "crowd": "none",
+        "official_rating": "none"
+      }
+    }
+  ],
+  "note": "Coverage is a property of the (asset class, wrapper, exposure) leaf, not of the class name alone."
+}

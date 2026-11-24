@@ -97,6 +97,9 @@ jobs:
           fi
           echo "link integrity: OK"
 
+      - name: Render harvest rule legend from constants
+        run: python3 42_HARVEST_UPGRADE_2026-11-24/kilocode/render_legend.py
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

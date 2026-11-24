@@ -108,24 +108,35 @@ Additional keys not surfaced as columns: `consensus_score`, `prior_period`, `pri
 
 ## 5. Consensus label — exact formula
 
-Each analyst contributes a weight:
+<!-- RULE_MD_START -->Each analyst contributes `STRONG_BUY +2`, `BUY +1`, `HOLD 0`, `SELL −1`, `STRONG_SELL −2`.
 
 ```
-STRONG_BUY  +2
-BUY         +1
-HOLD         0
-SELL        −1
-STRONG_SELL −2
+score    = (2·strong_buy + buy − sell − 2·strong_sell) / analysts
+buy_side = (strong_buy + buy) / analysts
 ```
 
-```
-consensus_score = (2·strong_buy + 1·buy + 0·hold − 1·sell − 2·strong_sell) / analysts
-```
+A label requires **both** the score and the buy-side share to agree:
 
-`consensus_score` lands in `[−2, +2]`. It is bucketed as:
-
-| score | label |
+| label | condition |
 |---|---|
+| `STRONG_BUY` | `score ≥ 1.0` and `buy_side ≥ 75%` |
+| `BUY` | `score ≥ 0.3` and `buy_side ≥ 50%` |
+| `SELL` | `score ≤ -0.3` and `buy_side ≤ 30%` |
+| `STRONG_SELL` | `score ≤ -1.0` and `buy_side ≤ 15%` |
+| `HOLD` | anything else |
+
+**Why the second condition.** A score alone mislabels split names: INTC scores 0.35 with only 29%
+buy-side, so it is `HOLD`, not `BUY`.
+
+**Trend** is computed once in the pipeline and stored; the page does not re-derive it. A row is
+`IMPROVING`/`DETERIORATING` only when `|Δ buy-side| ≥ max(2.0 pp, 100 / n_now)`
+**and** at least 2 analysts changed bucket; otherwise `STABLE`. When the
+analyst count changed between months the row is tagged `CHURN_CONTAMINATED`.
+
+Generated from `42_HARVEST_UPGRADE_2026-11-24/kilocode/harvest_rules.py`; do not hand-edit.
+<!-- RULE_MD_END -->
+
+---|---|
 | `≥ 1.0` | `STRONG_BUY` |
 | `≥ 0.3` and `< 1.0` | `BUY` |
 | `> −0.3` and `< 0.3` | `HOLD` |

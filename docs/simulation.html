@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analyst-follow simulation — design + synthetic demo</title>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2330;--ink:#e6edf3;--muted:#8b949e;--line:#30363d;--accent:#6cb6ff;--good:#3fb950;--bad:#f85149;--warn:#d29922;--purple:#b98cff}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 ui-sans-serif,system-ui,Arial}.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+header{padding:24px 0 12px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(185,140,255,.10),transparent)}
+h1{margin:.2rem 0;font-size:1.6rem}.sub{color:var(--muted);max-width:85ch}
+main{padding:20px 0 60px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.eli5{background:rgba(185,140,255,.10);border:1px solid rgba(185,140,255,.35);border-radius:10px;padding:10px 14px;margin:12px 0}
+.demo{background:rgba(210,153,34,.10);border:1px solid rgba(210,153,34,.4);border-radius:10px;padding:10px 14px;margin:12px 0;color:#e3b341;font-weight:600}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.kpi div{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:120px}
+.kpi b{display:block;font-size:1.05rem}.kpi span{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{border-bottom:1px solid var(--line);padding:7px;text-align:left}
+th{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}label{font-size:.78rem;color:var(--muted)}
+input,select{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:7px;padding:6px 8px}
+.note{color:var(--muted);font-size:.85rem}ul{margin:8px 0 8px 18px}li{margin:5px 0}
+footer{border-top:1px solid var(--line);padding:16px 0 40px;color:var(--muted);font-size:.85rem}
+</style></head><body>
+<header><div class="wrap">
+<div class="note"><a href="harvest.html">&larr; HARVEST</a> · <a href="best-picks.html">Best attempted picks</a></div>
+<h1>Following high-performing analysts — design + demo</h1>
+<p class="sub">What would happen if we took the latest endorsed picks from analysts with a measured track record? Below is the design, the data blocker, and a synthetic demo that exercises the pipeline end to end.</p>
+</div></header>
+<main class="wrap">
+<div class="demo">SYNTHETIC DEMO — every number in the table and cards is generated data, not real analysts. It exists to prove the mechanics, not performance.</div>
+
+<div class="card">
+<h2>1. The design</h2>
+<div class="eli5"><b>ELI5:</b> First rank analysts by how often their Buy calls beat the market. Then, each month, take only the latest picks from analysts above your bar, buy them equal-weight at the next close, hold for the horizon, charge costs, and compare with the index.</div>
+<ul>
+<li><b>Filters:</b> minimum calls, minimum hit rate, horizon (30/90/180d), maximum age of the call, asset class.</li>
+<li><b>Entry:</b> first close <i>after</i> the published timestamp (no look-ahead).</li>
+<li><b>Exit:</b> horizon end, or the analyst’s next action if earlier.</li>
+<li><b>Portfolio:</b> equal weight, max N names, 6.7bp round-trip cost, benchmark = SPY.</li>
+<li><b>Metrics:</b> hit rate, mean excess, CAGR, vol, Sharpe, max drawdown, turnover, n.</li>
+<li><b>Anti-overfit:</b> rank analysts only on data before each decision date; report CPCV/DSR before any claim.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>2. The data blocker (real)</h2>
+<p>Free feeds cannot rank analysts <b>by name</b>:</p>
+<ul>
+<li>Yahoo upgrade history: <b>52 buy-ish actions / 37 firms / max n=4</b> over 540 days for 12 mega-caps.</li>
+<li>Finnhub upgrade/downgrade: <b>HTTP 403</b> (paid); FMP upgrades: <b>HTTP 429</b> (quota).</li>
+<li>Person-level success rates: <b>Benzinga, TipRanks, LSEG I/B/E/S, FactSet, Bloomberg ANR</b> — paid, equities only.</li>
+</ul>
+<p class="note">Until a licensed feed arrives, no real analyst-follow simulation can be published honestly. The demo below uses synthetic analysts.</p>
+</div>
+
+<div class="card">
+<h2>3. Synthetic demo</h2>
+<div class="kpi" id="kpi"></div>
+<div class="controls">
+  <label>Min calls <input id="minn" type="number" value="8" min="1" style="width:70px"></label>
+  <label>Min hit rate <input id="minh" type="number" value="50" min="0" max="100" style="width:70px"> %</label>
+</div>
+<table><thead><tr><th>Analyst</th><th>Firm</th><th class="num">Calls</th><th class="num">Hit rate</th><th class="num">Mean excess</th><th>Latest pick</th></tr></thead>
+<tbody id="rows"></tbody></table>
+<p class="note" id="count"></p>
+</div>
+
+<div class="card">
+<h2>4. What would make it real</h2>
+<ul>
+<li>A licensed per-analyst actions feed (Benzinga/TipRanks/LSEG) with a stable analyst ID.</li>
+<li>Point-in-time prices and a benchmark; corporate actions; FX for non-USD.</li>
+<li>Forward-only evaluation: freeze the rule, then accumulate n≥100 independent picks.</li>
+</ul>
+</div>
+</main>
+<footer><div class="wrap">Raw demo data: <a href="data/analyst_sim_demo.json">analyst_sim_demo.json</a>. Not investment advice. <a href="harvest.html">HARVEST</a></div></footer>
+<script>
+(function(){
+ const $=id=>document.getElementById(id); const S={rows:[],minn:8,minh:50};
+ const fmt=(v,d=1)=>v==null?'—':(v>0?'+':'')+v.toFixed(d);
+ function render(){
+   const rows=S.rows.filter(r=>r.n_calls>=S.minn && r.hit_rate*100>=S.minh);
+   $('rows').innerHTML=rows.map(r=>`<tr><td><b>${r.id}</b></td><td>${r.firm}</td>
+     <td class="num">${r.n_calls}</td><td class="num">${(r.hit_rate*100).toFixed(1)}%</td>
+     <td class="num">${fmt(r.mean_excess_pct,2)} pp</td><td>${r.latest_symbol||'—'}</td></tr>`).join('')
+     || '<tr><td colspan="6" class="note">No analyst passes these filters.</td></tr>';
+   $('count').textContent=`${rows.length} of ${S.rows.length} analysts shown · synthetic`;
+ }
+ $('minn').addEventListener('input',e=>{S.minn=+e.target.value||1;render();});
+ $('minh').addEventListener('input',e=>{S.minh=+e.target.value||0;render();});
+ fetch('data/analyst_sim_demo.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+   S.rows=d.analysts||[];
+   const m=d.portfolio_metrics||{};
+   $('kpi').innerHTML=[
+     ['CAGR',m.cagr_pct==null?'—':m.cagr_pct.toFixed(1)+'%'],['Sharpe',m.sharpe==null?'—':m.sharpe.toFixed(2)],
+     ['Max DD',m.max_drawdown_pct==null?'—':m.max_drawdown_pct.toFixed(1)+'%'],['Hit rate',m.hit_rate==null?'—':(m.hit_rate*100).toFixed(0)+'%'],
+     ['Months',m.months??'—']].map(([k,v])=>`<div><span>${k}</span><b>${v}</b></div>`).join('');
+   render();
+ });
+})();
+</script></body></html>
