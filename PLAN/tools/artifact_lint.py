@@ -38,6 +38,7 @@ import json
 import math
 import re
 import sys
+from pathlib import Path
 
 HIGH, MED, LOW = "HIGH", "MED", "LOW"
 findings = []
@@ -174,6 +175,12 @@ def check_estimand(obj, path="$"):
     programme: 'cagr_pct' (gross) quoted as 'net_cagr_pct', and a distribution
     yield quoted as a yield-to-maturity. Both artifacts held BOTH numbers. The
     bug was never missing data; it was choosing the wrong one.
+
+    SEVERITY CALIBRATION: gross/net is the one pair where coexistence is normal -
+    they differ by exactly the cost wedge, so an object holding both is correct
+    design, not a hazard. Firing MED on all 60 affected cells would teach reviewers
+    to ignore the rule. That pair is therefore LOW (informational: pick the right
+    one), while genuinely incommensurable pairs stay MED.
     """
     if isinstance(obj, dict):
         keys = [k for k in obj if isinstance(k, str)]
@@ -185,11 +192,23 @@ def check_estimand(obj, path="$"):
                     if x == y:
                         continue
                     if isinstance(obj[x], (int, float)) and isinstance(obj[y], (int, float)):
-                        if obj[x] != obj[y]:
-                            add(MED, "R7-ESTIMAND", path,
-                                f"'{x}'={obj[x]} and '{y}'={obj[y]} measure different "
-                                f"quantities and disagree. State which one any quoted "
-                                f"figure is, or the two will be conflated.")
+                        if obj[x] == obj[y]:
+                            continue
+                        vx, vy = obj[x], obj[y]
+                        # arithmetic decomposition: same sign, and 'net' smaller in
+                        # magnitude than 'gross' - that IS the cost model working.
+                        cost_wedge = (
+                            (a, b) == ("gross", "net")
+                            and vx * vy > 0
+                            and abs(vy) < abs(vx)
+                        )
+                        sev = LOW if cost_wedge else MED
+                        note = (" (cost wedge - expected; quote the one you mean)"
+                                if cost_wedge else " and disagree")
+                        add(sev, "R7-ESTIMAND", path,
+                            f"'{x}'={vx} and '{y}'={vy} measure different "
+                            f"quantities{note}. State which one any quoted figure "
+                            f"is, or the two will be conflated.")
         for k, v in obj.items():
             check_estimand(v, f"{path}.{k}")
     elif isinstance(obj, list):
@@ -247,6 +266,87 @@ def check_provenance(obj, path="$"):
             check_provenance(v, f"{path}[{i}]")
 
 
+# ---------------------------------------------------------------- R8 barsource
+# The horizon the cell claims in its NAME, versus the resolution it was served.
+# Two cells in the 149-cell ledger declared 15m and recorded binance:1d; one of
+# them returned KILL. A strategy was demoted on a measurement of a different
+# horizon. Nothing about the JSON's internal consistency reveals this - only the
+# pairing of name against provenance does.
+HZ_NAME = re.compile(r"_(15m|1h|4h|1d|1w)$")
+HZ_INTRADAY = re.compile(r"(15m|1h|4h|min|minute|hour)")
+
+
+def check_barsource(obj, stem, path="$"):
+    if isinstance(obj, dict):
+        src = obj.get("bar_source")
+        if isinstance(src, str):
+            m = HZ_NAME.search(stem or "")
+            if m:
+                hz = m.group(1)
+                low = src.lower()
+                served_intraday = bool(HZ_INTRADAY.search(low))
+                if hz in ("15m", "1h", "4h") and not served_intraday:
+                    add(HIGH, "R8-BARSOURCE", f"{path}.bar_source",
+                        f"cell '{stem}' declares horizon {hz} but was served "
+                        f"'{src}'. The measurement is of a different resolution "
+                        f"than the one claimed, so any verdict names the wrong "
+                        f"thing. A KILL here demotes a strategy using evidence it "
+                        f"was never tested on.")
+                elif hz in ("1d", "1w") and served_intraday and "resampled" not in low:
+                    add(MED, "R8-BARSOURCE", f"{path}.bar_source",
+                        f"cell '{stem}' declares {hz} but was served intraday "
+                        f"'{src}' with no 'resampled' marker.")
+        for k, v in obj.items():
+            check_barsource(v, stem, f"{path}.{k}")
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            check_barsource(v, stem, f"{path}[{i}]")
+
+
+# ---------------------------------------------------------------- R9 cache age
+# A cache file is a frozen window. Six cells were measured on a 90-day cache that
+# ended 261 days before the ledger date, and four of them were KILLs - while every
+# daily cell covered 2.7 years. Shorter, older windows bias toward false kills.
+CACHE_RE = re.compile(r"cache:([^\s(]+)")
+
+
+def check_cache_staleness(obj, cache_dir, today, path="$"):
+    if cache_dir is None:
+        return
+    import datetime as _dt
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k == "bar_source" and isinstance(v, str):
+                m = CACHE_RE.search(v)
+                if m:
+                    f = cache_dir / m.group(1)
+                    if not f.exists():
+                        add(MED, "R9-CACHE", f"{path}.{k}",
+                            f"cites cache file {m.group(1)!r} which is not present; "
+                            f"the measurement cannot be re-derived.")
+                    else:
+                        dates = []
+                        for line in f.read_text(errors="ignore").splitlines():
+                            mm = re.match(r"(\d{4}-\d{2}-\d{2})", line)
+                            if mm:
+                                dates.append(mm.group(1))
+                        if dates:
+                            span = (today - _dt.date.fromisoformat(dates[-1])).days
+                            if span > 30:
+                                add(HIGH, "R9-CACHE", f"{path}.{k}",
+                                    f"cache {m.group(1)} spans "
+                                    f"{dates[0]} -> {dates[-1]} and ends {span} "
+                                    f"days ({span/30.44:.1f} months) before the "
+                                    f"ledger date. Verdicts from it describe a "
+                                    f"different regime and a much shorter window "
+                                    f"than the rest of the ledger.")
+            else:
+                check_cache_staleness(v, cache_dir, today, f"{path}.{k}")
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            check_cache_staleness(v, cache_dir, today, f"{path}[{i}]")
+
+
 # ---------------------------------------------------------------- R6 claims
 NUM = re.compile(r"(?<![\w.])-?\d+(?:,\d{3})*(?:\.\d+)?(?![\w])")
 
@@ -286,6 +386,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("artifacts", nargs="+")
     ap.add_argument("--claims", help="markdown/HTML file whose numbers are asserted from the artifacts")
+    ap.add_argument("--cache-dir", help="directory holding cache: files, enables R9 staleness check")
     ap.add_argument("--baseline", help="JSON list of acknowledged findings; matching findings do not fail the run")
     ap.add_argument("--write-baseline", help="write the current findings to this path as an acknowledged baseline")
     args = ap.parse_args()
@@ -314,6 +415,9 @@ def main():
         check_estimand(obj)
         check_identical_siblings(obj)
         check_provenance(obj)
+        check_barsource(obj, Path(path).stem)
+        if args.cache_dir:
+            check_cache_staleness(obj, Path(args.cache_dir), dt.date.today())
 
     if args.claims:
         try:
