@@ -48,10 +48,15 @@ lives below $10K.</p>
 </table>
 
 <h3>Why $300 fails</h3>
-<p>One SPY share cost <strong>$374.84</strong> at the simulation start, so a $300 account
-<strong>cannot buy a single share</strong>. It ends holding <strong>72.3% cash</strong> and compounds at
-−0.92%/yr over five years <em>while SPY rose 437.19 → 754.37</em>. The position was never expressible;
-this is an instrument-choice failure, not a strategy failure.</p>
+<p>One SPY share cost <strong>$374.84</strong> on <strong>2022-09-01</strong> — bar 200 of the price series,
+the first bar the simulation is allowed to trade after its 200-day moving-average warm-up. A $300 account
+therefore <strong>cannot buy a single SPY share</strong>: the 60% SPY leg is $180, which buys 0.41 of a share.
+It ends holding <strong>72.3% cash</strong> (cash as a share of the <em>ending</em> portfolio — 69.0% of the
+$300 it started with) and compounds at −0.92%/yr over five years, <em>while SPY rose from $374.84 to
+$754.37</em>. The position was never expressible; this is an instrument-choice failure, not a strategy failure.</p>
+<p class="sub" style="font-size:13px">Source: the entry bar is a warm-up convention, not the window start.
+SPY's first bar in the window closed at $437.19 and its last at $754.37, but the account never held a share
+at $437.19 — the only SPY price that matters to this portfolio is the $374.84 it would have paid.</p>
 
 <h2>Does a bigger account rescue a strategy?</h2>
 <table>
