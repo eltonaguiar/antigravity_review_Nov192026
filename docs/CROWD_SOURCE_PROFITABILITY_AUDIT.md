@@ -87,6 +87,88 @@ inflows since late September.
 This is **context, not a pick source**: high transparency and attribution, zero actionable
 calls, so it cannot be scored on realised returns.
 
+## 3b. openPR press release — “7 Best Meme Coins to Buy” (2026-11-23)
+
+**Source:** https://www.openpr.com/news/4697189/from-market-favourites-to-new-contenders-7-best-meme-coins-to-buy
+— paid release distributed by “Crypto Presale PR”; published **2026-11-23 11:52 +01:00**. Picks:
+DOGE, SHIB, PEPE, BONK, WIF, FLOKI, plus **Apeing ($APEING) Stage-13 presale** at $0.00095.
+
+**Rule (frozen):** entry at the close of the first full 1h Binance bar after publication; latest
+close; 20 bp round trip; BTC same window. This is a **~32-hour** window, so it cannot rank the
+source; it can only catch immediate damage.
+
+| asset | return since publication | excess vs BTC | quoted Nov-19 vs actual close |
+|---|---:|---:|---:|
+| DOGE | −0.56% | +1.86 pp | +1.24% |
+| SHIB | −1.11% | +1.31 pp | +0.16% |
+| PEPE | −1.45% | +0.97 pp | +0.92% |
+| BONK | −0.93% | +1.50 pp | +2.16% |
+| WIF | −1.22% | +1.20 pp | +1.50% |
+| FLOKI | −1.51% | +0.91 pp | +2.01% |
+| BTC | −2.42% | — | — |
+| APEING | **unmeasurable** (presale, no market price) | — | — |
+
+All six measurable picks fell in absolute terms over 32h, but all beat a falling BTC by 0.9–1.9 pp.
+That is not a win; it is beta with a short window. The quoted Nov-19 prices are 0.2–2.2% above
+the actual daily close — consistent with intraday quoting, not fabricated, but not entry prices.
+
+**Source quality:** transparency 1/2 (paid release, no author), specificity 2/2 (named assets,
+dated prices, targets), independence **0/2** (promotes Apeing and is distributed by a presale PR
+service), verifiability 2/2 (timestamped and price-checkable), track record **0/2** → **5/10**.
+
+## 3c. CoinMarketCap CMC AI — MEME daily analysis (2026-11-24)
+
+**Source:** https://coinmarketcap.com/cmc-ai/meme/price-analysis/ — AI-generated daily
+“why is MEME up/down” commentary, explicitly labelled “CMC AI can make mistakes. Not
+financial advice.” It names **no picks, no entry, no target and no horizon trade**.
+
+**Claims checked (24/11/2026):** MEME −6.96% to **$0.000286**; Bitcoin −4.78%; total crypto
+market cap −4.59%; conditional levels **MEME $0.000286** and **BTC $60,000**. Binance daily
+closes on 24/11: MEMEUSDT **0.000289**, BTCUSDT **59,918** — consistent with the page.
+
+**What can be evaluated:** the 23/11 note said that losing $0.000311 while the market weakened
+would raise pullback risk. On 24/11 MEME printed **$0.000286**, so that conditional was
+triggered and the page correctly re-labelled the move as market beta, not a coin catalyst.
+The 24/11 “next 24–48h” question (BTC back above $60k while MEME holds $0.000286) is still
+open at the time of writing.
+
+**What cannot:** there is no tradeable claim, so no P&L, hit rate or PF exists. This is
+commentary, not a pick source.
+
+**Source quality:** transparency 2/2 (AI + date + disclaimer), specificity 2/2 (explicit
+levels and measured changes), independence 2/2 (no promoted token), verifiability 2/2
+(prices checkable), track record 1/2 (one resolved conditional, no archive) → **9/10 as
+commentary, 0/2 as a pick source**.
+
+## 3d. Forbes Digital Assets — meme-coins category page (2026-11-24)
+
+**Source:** https://www.forbes.com/digital-assets/categories/meme-coins/ — a live directory
+of 100 meme coins, sorted by market cap, with CoinGecko prices. It is **not** an article with
+dated picks: no publication time on the list, no entry, target, horizon or “buy” label, and
+the page’s `sponsored` flag is false.
+
+**Snapshot checked at 17:53Z** (Forbes → Binance last, % difference):
+
+| asset | Forbes | Binance | diff |
+|---|---:|---:|---:|
+| DOGE | 0.055078 | 0.055220 | −0.26% |
+| SHIB | 3.57e−6 | 3.57e−6 | 0.00% |
+| PEPE | 3.39e−6 | 3.40e−6 | −0.29% |
+| BONK | 2.13e−6 | 2.14e−6 | −0.47% |
+| WIF | 0.12065 | 0.12140 | −0.62% |
+| FLOKI | 1.619e−5 | 1.626e−5 | −0.43% |
+
+That is a consistent snapshot, not a fabricated one. The directory’s top names are DOGE,
+SHIB, PEPE, Ape and Pepe, Pudgy Penguins, SPX6900, BONK, FLOKI, Binance-Peg DOGE, WIF — a
+market-cap ranking, not a recommendation.
+
+**Evaluable:** data accuracy only. **Not evaluable:** forward return, hit rate or PF, because
+there is no dated claim to score.
+
+**Source quality:** transparency 2/2 (Forbes, no sponsor flag), specificity 1/2 (prices but no
+thesis/entry), independence 2/2, verifiability 2/2 (cross-checks to Binance), track record 0/2
+→ **7/10 as a data page, 0/2 as a pick source**.
+
 ## 4. Source ranking (quality vs measured edge)
 
 | source | type | quality | measured edge |
@@ -95,6 +177,9 @@ calls, so it cannot be scored on realised returns.
 | Polymarket crowd | market-implied | high (prices, resolutions) | **−15.96%/market, CI < 0** |
 | HARVEST analyst consensus | monthly sell-side | medium (71 names, provenance) | 21d BUY +0.589% q=0.135; nothing q<0.05 |
 | bmic.ai listicle | sponsored listicle | **4/10** | −22.9% mean to date; 4/5 below BTC |
+| openPR / Apeing release | paid press release | **5/10** | −0.6% to −1.5% in 32h; all beat BTC; too short |
+| CMC AI MEME analysis | AI commentary | **9/10** | no picks/targets; not testable |
+| Forbes meme-coins category | live directory | **7/10** | no dated picks; snapshot matches Binance |
 | Copy-trading leaderboards | self-reported | low (survivorship) | not measured; no PIT data |
 
 **Rule for future sources:** do not rank a source by how confident it sounds. Require a dated
