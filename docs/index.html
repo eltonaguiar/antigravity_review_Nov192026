@@ -24,7 +24,8 @@
   /* top bar */
   .top{position:sticky;top:0;z-index:50;background:rgba(11,13,16,.93);
     backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .top .wrap{display:flex;align-items:center;gap:18px;height:52px}
+  .top .wrap{display:flex;align-items:center;gap:18px;min-height:52px;height:auto;
+    flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
   .top .brand{font-weight:700;letter-spacing:.2px;font-size:15px;white-space:nowrap}
   .top nav{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12.5px;line-height:1.25;padding-bottom:2px}
   .top nav a{color:var(--dim);white-space:nowrap;padding:1px 0}
@@ -32,7 +33,8 @@
 
   @media (max-width:700px){
     .top{position:static}
-    .top nav{font-size:12px;gap:3px 10px}
+    .top .wrap{align-items:flex-start}
+    .top nav{width:100%;font-size:12px;gap:3px 10px}
   }
 
   /* hero */
@@ -314,6 +316,18 @@
     <b>ELI5:</b> Analysts publish “buy / hold / sell” opinions and upgrades. The HARVEST page collects those votes into one score per symbol and lists the recent actions. You can sort and hide anything older than 3/6/12 months, because last year's upgrade is not today's advice.
     <div style="margin-top:10px"><a href="harvest.html" style="font-weight:700">Open the HARVEST table &rarr;</a></div>
     <div style="color:#9aa7b4;font-size:13px;margin-top:6px">Source: Finnhub analyst recommendation trend, via a licensed key. Measured coverage in the current run: <b>71 of 71 stocks</b> with consensus; <b>0 of 14 ETFs</b>, <b>0 of 6 bonds</b>, <b>0 of 2 crypto</b> (no analyst coverage is published for those instrument types); <b>6 mutual funds return HTTP 403</b> on this plan tier. Coverage gaps are shown as gaps — nothing is invented, and a source we cannot reach is labelled with its exact failure.</div>
+  </div>
+
+  <div style="background:#1a1f26;border:1px solid #26313d;border-left:4px solid #6cb6ff;border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0">
+    <b>ZOOCODE HARVEST (independent source, dated per-firm actions):</b> the same question answered from Yahoo Finance's <code>upgradeDowngradeHistory</code> instead of a consensus score. Every row is one dated action by one firm &mdash; <i>from grade &rarr; to grade</i>, up/down/maintain/reiterate, and the price target with its change. Sortable by symbol, date, firm, action or target; filterable by class, action, firm and a recency window (default <b>90 days</b>, so a year-old upgrade is hidden until you ask for it).
+    <div style="margin-top:10px"><a href="harvest-zoo.html" style="font-weight:700">Open the ZOOCODE HARVEST table &rarr;</a></div>
+    <div style="color:#9aa7b4;font-size:13px;margin-top:6px">
+      Three universes were run, each to its own self-documenting file under <code>ZOOCODE/HARVEST_<DATETIME>_<universe>.MD</code>:
+      <b>starter</b> (18 large caps + Canadian names, 18 resolved),
+      <b>referenced</b> (41 equity tickers already cited in the repo's own data, 34 resolved, 7 ETFs not covered),
+      <b>earnings</b> (120 symbols, 120 resolved).
+      ETF, bond, mutual-fund, crypto, forex and futures signals are <b>not covered</b> by this source &mdash; measured, not assumed: SPY, QQQ, IWM, TLT, VTI, FZROX, BND, BTC-USD, EURUSD=X and GC=F all return &ldquo;No fundamentals data found&rdquo;. Those rows are absent, never invented.
+    </div>
   </div>
 </section>
 
