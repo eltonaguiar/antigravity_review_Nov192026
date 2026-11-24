@@ -182,6 +182,27 @@ there is no dated claim to score.
 thesis/entry), independence 2/2, verifiability 2/2 (cross-checks to Binance), track record 0/2
 → **7/10 as a data page, 0/2 as a pick source**.
 
+## 3e. Near-resolution check (T−1 / T−2)
+
+Same rule, entry at the last daily point one or two days before resolution:
+
+| horizon | n | mean | 95% CI | WR |
+|---|---:|---:|---|---:|
+| T−1 | 106 | −4.02% | [−15.85%, +7.49%] | 72.6% |
+| T−2 | 108 | −1.81% | [−13.51%, +9.51%] | 75.0% |
+
+Both CIs include zero. There is no late-resolution favorite edge either; the 72–75% win rate
+still pairs with a negative mean, which is the same negative skew seen at T−7.
+
+## 4x3 analyst grid — NOT AVAILABLE
+
+The requested 4 action classes × 3 horizons raw+net grid with design effects is **not published**.
+The current Zoo artifact (`consensus_label_backtest.json`) has 4 labels but **one** horizon and no
+net/design-effect cells. Publishing a 3-horizon grid from it would be fabrication. The only
+measured per-label table is the single-horizon one in that artifact; the 5d/21d/63d clustered
+results live in prose in `HARVEST_ANALYST_VERDICT.md`, not in a machine-readable grid. Marked
+NOT AVAILABLE rather than estimated.
+
 ## 4. Source ranking (quality vs measured edge)
 
 | source | type | quality | measured edge |
