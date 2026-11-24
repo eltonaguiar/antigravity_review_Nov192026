@@ -5,6 +5,11 @@ on:
     branches: [main]
     paths:
       - 'docs/**'
+      # PROVEIT lives at the repo root because README.md and the live
+      # /PROVEIT_KILOCODE.html link to it on github.com. It is staged into the
+      # published tree at build time (see below). Without this trigger a change
+      # to the deliverable would never redeploy the site.
+      - 'PROVEIT/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -33,6 +38,38 @@ jobs:
           echo "index.html bytes: $(wc -c < docs/index.html)"
           grep -q 'id="toc"' docs/index.html || { echo "TOC anchor missing"; exit 1; }
           echo "asset checks passed"
+
+      # Stage the deliverable into the published tree at BUILD TIME.
+      # Root PROVEIT/ is the single source of truth. Do NOT commit a second copy
+      # under docs/PROVEIT/ - two unsynchronised copies is the divergence pattern
+      # that cost us commit 8277657 (a silent revert).
+      - name: Stage PROVEIT deliverable into the Pages tree
+        run: |
+          test -d PROVEIT || { echo "PROVEIT/ missing from repo root"; exit 1; }
+          mkdir -p docs/PROVEIT
+          rsync -a --exclude '.git*' PROVEIT/ docs/PROVEIT/
+          echo "staged $(find docs/PROVEIT -type f | wc -l) files from PROVEIT/"
+          test -f docs/PROVEIT/index.html || { echo "landing page docs/PROVEIT/index.html missing"; exit 1; }
+
+      # Gate: every relative href in the landing page must resolve inside the
+      # published tree. This is the check that would have caught the original
+      # defect, where the page advertised files the site never served.
+      - name: Verify landing-page link integrity
+        run: |
+          missing=0
+          while read -r h; do
+            [ -f "docs/PROVEIT/$h" ] && continue
+            echo "MISSING TARGET: $h"
+            missing=$((missing + 1))
+          done < <(grep -oE 'href="[^"]+"' docs/PROVEIT/index.html \
+                     | sed 's/href="//; s/"$//' \
+                     | grep -vE '^(https?:|mailto:|#|/|\?)' \
+                     | sort -u)
+          if [ "$missing" -ne 0 ]; then
+            echo "$missing broken relative link(s) in docs/PROVEIT/index.html"
+            exit 1
+          fi
+          echo "link integrity: OK"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
