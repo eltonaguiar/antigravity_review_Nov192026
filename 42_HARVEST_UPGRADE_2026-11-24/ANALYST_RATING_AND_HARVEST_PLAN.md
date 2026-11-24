@@ -199,3 +199,44 @@ Above the table, permanently:
 4. **13F / Form 4** — free, but lagged; use for hypothesis generation, label the lag on every row.
 5. **Prediction markets** — resolved history gives a genuinely clean scoring surface (Brier,
    calibration) with no survivorship in the scoring itself.
+
+---
+
+## 8. Reconciliation with Kilo's rating vector (2026-11-24)
+
+Kilo published an independent rating vector (branch work `b49ae2d`). Two of its ideas are
+**strictly better than mine and have been adopted** into `trader_rating`:
+
+| Their idea | Why it beats what I had | Column added |
+|---|---|---|
+| `expectancy_worst` - recompute expectancy at the **Wilson upper bound of the loss rate**, not the point estimate | My "remove the top 3 trades" test was a heuristic. Theirs attacks the real uncertainty: with few trades you do not know your loss rate, and the worst plausible rate is what decides survival. | `loss_rate_upper`, `expectancy_worst_bps` |
+| Survival tiers instead of letter grades | `A_SURVIVES_STRESS / B_POSITIVE_BUT_TAIL_UNPROVEN / C_NO_EDGE / INSUFFICIENT_N` names the **failure mode** rather than grading the performer | `tier`, `tier_score` |
+
+Kept from my spec: the hard `(asset_class, horizon)` partition, the Wilson CI on hit rate, the five
+separate dimensions, `top3_dependency_pct`, and the per-pick-type minimum n.
+
+### 8.1 Independent check of their worked example
+
+The conclusion reproduces. Verified here from first principles:
+
+**Profile A - 97.6% on n=41 (one loss in 41), one average loss ~22 average wins**
+- point loss rate 2.44%; Wilson 95% CI **[0.43%, 12.60%]**
+- break-even loss rate implied by a 22:1 loss/win ratio = **1/(1+22) = 4.35%**
+- the point estimate sits *below* break-even, the **upper bound sits far above it**
+- therefore at n=41 the record **cannot statistically distinguish a winning strategy from a losing
+  one**. Tail stress fails. Kilo's `WATCH` tier is correct.
+
+**Profile B - 49.4% on n=500, profit factor 2.03**
+- implied payoff ratio (avg win / avg loss) = **2.079**
+- loss-rate CI **[46.2%, 55.0%]**; expectancy at the upper bound = `(1-0.55) - 0.55/2.079 = +0.186`
+  in units of average win, so it stays **positive**. Kilo's `A_SURVIVES_STRESS` is correct.
+
+Their exact percentages (-1.57% / +1.23% per trade) depend on the win/loss magnitudes in their
+ledger, which has not been published with a hash. **Direction and tiering confirmed; the point
+figures remain unverified** until that ledger is shared - the same request made to Zoo.
+
+### 8.2 The rule this section adds
+
+> A hit rate is uninterpretable without the loss magnitude. Test survival at the **upper** bound of
+> the loss rate, never the observed rate. If the bound crosses break-even the record is
+> `B_POSITIVE_BUT_TAIL_UNPROVEN` at best, however good the point estimate looks.
