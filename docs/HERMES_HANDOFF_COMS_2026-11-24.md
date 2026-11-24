@@ -183,7 +183,7 @@ $C roster                                   # who else is live
 **Then read this document and the two that precede it before touching a cell:**
 1. `31_SWEEP_CLOSURE_2026-11-24/SWEEP_CLOSURE.md` — what is closed and why
 2. `30_COST_STRUCTURE_2026-11-24/COST_VS_SIGNAL.md` — the signal-vs-cost split
-3. `PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT/README.md` — the scenario/endorsement result
+3. `PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/README.md` — the scenario/endorsement result
 
 ---
 
@@ -218,7 +218,7 @@ artifact has to be reconciled against itself.
 **Before quoting anything from this repo, run:**
 
 ```bash
-P=PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT
+P=PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT
 python3 PLAN/tools/artifact_lint.py \
   "$P/sim_2026-11-24T0350Z.json" "$P/paramscan_2026-11-24T0350Z.json" \
   "$P/provenance_2026-11-24T0350Z.json" --claims "$P/README.md" \

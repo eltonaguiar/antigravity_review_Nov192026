@@ -37,21 +37,21 @@ jobs:
       - name: Lint PROVEIT artifacts and the README claims
         run: |
           set -euo pipefail
-          P=PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT
+          P=PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT
           python3 PLAN/tools/artifact_lint.py \
             "$P/sim_2026-11-24T0350Z.json" \
             "$P/paramscan_2026-11-24T0350Z.json" \
             "$P/provenance_2026-11-24T0350Z.json" \
-            --claims "$P/README.md" \
+            --claims "$P/PROVEIT_EXTENDED_SCENARIOS_20261124T0350Z.md" \
             --baseline PLAN/lint_baseline.json
 
       - name: Assert the mirror is byte-identical to the source
         run: |
           set -euo pipefail
-          P=PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT
-          D=docs/PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT
+          P=PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT
+          D=docs/PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT
           rc=0
-          for f in README.md sim_2026-11-24T0350Z.json paramscan_2026-11-24T0350Z.json provenance_2026-11-24T0350Z.json; do
+          for f in PROVEIT_EXTENDED_SCENARIOS_20261124T0350Z.md sim_2026-11-24T0350Z.json paramscan_2026-11-24T0350Z.json provenance_2026-11-24T0350Z.json; do
             if [ ! -f "$D/$f" ]; then
               echo "MISSING in docs mirror: $f"; rc=1; continue
             fi
@@ -68,7 +68,7 @@ jobs:
       - name: Assert every quoted figure traces to an artifact
         run: |
           set -euo pipefail
-          P=PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT
+          P=PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT
           # Numeric membership, not grep. JSON stores 226.8 and 1.5, so grepping
           # for "226.80" reported a sourced number as unsourced - a gate that
           # fails on formatting gets deleted within a week.

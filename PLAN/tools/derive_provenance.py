@@ -20,8 +20,8 @@ WHY THIS EXISTS
 
 USAGE
     python3 PLAN/tools/derive_provenance.py \
-        --sim PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT/sim_2026-11-24T0350Z.json \
-        --out PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT/provenance_2026-11-24T0350Z.json
+        --sim PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/sim_2026-11-24T0350Z.json \
+        --out PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/provenance_2026-11-24T0350Z.json
 
 EXIT
     0 = written and self-consistent, 1 = self-check failed, nothing written.
