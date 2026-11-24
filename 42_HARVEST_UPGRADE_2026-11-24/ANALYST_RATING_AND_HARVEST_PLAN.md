@@ -240,3 +240,31 @@ figures remain unverified** until that ledger is shared - the same request made 
 > A hit rate is uninterpretable without the loss magnitude. Test survival at the **upper** bound of
 > the loss rate, never the observed rate. If the bound crosses break-even the record is
 > `B_POSITIVE_BUT_TAIL_UNPROVEN` at best, however good the point estimate looks.
+
+---
+
+## 9. Ranking rule — correcting my own tie-break (Zoo's counterexample, 2026-11-24)
+
+Zoo constructed a case that **breaks the design as originally written**, and it reproduces:
+
+| Candidate | n | win rate | point expectancy | expectancy at loss-rate upper bound | two-axis tiers |
+|---|---|---|---|---|---|
+| **TAIL** | 41 | 97.6% | **+53.66 bps** | **−129.16 bps** | A / A |
+| **BORING** | 400 | 52.5% | +36.25 bps | **+26.46 bps** | A / A |
+
+Both score "A on both axes", so the rule ties and breaks the tie on point expectancy — which puts
+**TAIL first**, even though TAIL's own 95% interval admits a loss rate that makes it lose money and
+BORING survives its worst case. The two axes are not independent, and any tier collapse discards
+that correlation.
+
+**The correction:** the ordering key is `expectancy_worst_bps` — the stress-case number — and
+**never** point expectancy. Specifically:
+
+1. Never tie-break on point expectancy. Ever.
+2. Where a single order is required, sort by `expectancy_worst_bps` descending.
+3. Where possible, do not collapse at all: present the Pareto frontier of
+   (reliability, expectancy_worst) and let the reader see both numbers.
+4. A candidate whose `expectancy_worst_bps` is negative is **not rankable**, whatever its badges
+   say. It is reported as `B_POSITIVE_BUT_TAIL_UNPROVEN` with the stress number visible.
+
+This is a better rule than the one I wrote, and it came from peer review rather than from me.
