@@ -74,6 +74,9 @@
   .btn { background:#1f2937;border:1px solid #374151;color:#e5e7eb;border-radius:6px;
          padding:.4rem .7rem;font-size:.85rem;cursor:pointer; }
   .btn:hover { background:#374151; }
+  td[title], th[title], .q { cursor: help; }
+  .q { display:inline-block; width:15px; height:15px; line-height:15px; text-align:center;
+       border-radius:50%; background:#374151; color:#e5e7eb; font-size:11px; margin-left:4px; }
   .btn.on { background:#2563eb; border-color:#3b82f6; color:#fff; }
   .thin { font-size:.68rem; color:#b45309; border:1px solid #b45309; border-radius:999px;
           padding:0 5px; margin-left:4px; cursor:help; }
@@ -91,7 +94,7 @@ filterable by date and asset class. <strong>Not investment advice.</strong></p>
 <p class="method">Every column is defined in the legend below it. The full method — endpoints,
 formulas, coverage semantics, known weaknesses and a reviewer checklist — is in
 <a href="HARVEST_METHODOLOGY.md"><strong>HARVEST_METHODOLOGY.md</strong></a>
-(and the per-class universe/coverage plan in <a href="../harvest/UNIVERSE.md"><strong>harvest/UNIVERSE.md</strong></a>), written to be read by
+(and the per-class universe/coverage plan in <a href="harvest/UNIVERSE.md"><strong>harvest/UNIVERSE.md</strong></a>), written to be read by
 both people and language models.</p>
 
 <div class="eli5" style="background:rgba(108,182,255,.10);border:1px solid rgba(108,182,255,.35);border-radius:8px;padding:12px 16px;margin:12px 0">
@@ -110,13 +113,13 @@ both people and language models.</p>
 <h2>Filter</h2>
 <div class="controls">
   <label>Class
-    <select id="f-class"><option value="">all</option></select>
+    <select id="f-class" title="Filter by vendor asset class. ETF/BOND/MUTUAL_FUND have no stock-analyst coverage in this feed."><option value="">all</option></select>
   </label>
   <label>Consensus
-    <select id="f-consensus"><option value="">all</option></select>
+    <select id="f-consensus" title="Filter by derived label: STRONG BUY / BUY / HOLD / SELL / STRONG SELL."><option value="">all</option></select>
   </label>
   <label>Trend
-    <select id="f-direction"><option value="">all</option></select>
+    <select id="f-direction" title="Filter by month-over-month trend: Improving / Stable / Deteriorating."><option value="">all</option></select>
   </label>
   <label hidden>Recency
     <select id="f-age">
@@ -129,10 +132,10 @@ both people and language models.</p>
     </select>
   </label>
   <label>Search
-    <input id="f-text" type="search" placeholder="symbol, name, sector…" list="symbols">
+    <input id="f-text" type="search" placeholder="symbol, name, sector…" list="symbols" title="Search by ticker, company name, sector or asset class.">
   </label>
   <datalist id="symbols"></datalist>
-  <button class="btn" id="export" type="button">Export CSV</button>
+  <button class="btn" id="export" type="button" title="Download the currently filtered and sorted rows as a CSV file.">Export CSV</button>
   <span class="count" id="count"></span>
 </div>
 <p class="method">All rows currently share one snapshot period, so the recency filter is hidden until the feed carries more than one month. The period is shown once above the table, not repeated on every row.</p>
@@ -210,7 +213,7 @@ both people and language models.</p>
       <th data-k="consensus" data-label="Consensus" title="Weighted mean of the analyst distribution, bucketed. Derived, not a separate opinion — see the legend.">Consensus</th>
       <th data-k="buy_side_pct" data-label="Buy-side %" title="(Strong Buy + Buy) / total analysts, as a percentage.">Buy-side %</th>
       <th data-k="analysts" data-label="Analysts" title="Total covering analysts = the sum of the five rating buckets.">Analysts</th>
-      <th data-k="detail" title="Strong Buy / Buy / Hold / Sell / Strong Sell — counts of covering analysts in each bucket." data-label="SB·B·H·S·SS<small>strong buy · buy · hold · sell · strong sell</small>">SB·B·H·S·SS<small>strong buy · buy · hold · sell · strong sell</small></th>
+      <th data-k="detail" title="Strong Buy / Buy / Hold / Sell / Strong Sell — counts of covering analysts in each bucket." data-label="SB·B·H·S·SS<span class="q" title="Strong Buy · Buy · Hold · Sell · Strong Sell: the COUNT of analysts in each bucket. They add up to the Analysts column. Example 19/48/3/0/0 = 19 strong buy, 48 buy, 3 hold, 0 sell, 0 strong sell.">?</span><small>strong buy · buy · hold · sell · strong sell</small>">SB·B·H·S·SS<span class="q" title="Strong Buy · Buy · Hold · Sell · Strong Sell: the COUNT of analysts in each bucket. They add up to the Analysts column. Example 19/48/3/0/0 = 19 strong buy, 48 buy, 3 hold, 0 sell, 0 strong sell.">?</span><small>strong buy · buy · hold · sell · strong sell</small></th>
       <th data-k="mom_change_pp" data-label="MoM pp" title="Change in Buy-side % versus the prior month, in percentage points.">MoM pp</th>
       <th data-k="direction" data-label="Trend" title="IMPROVING at >= +2.0 pp, DETERIORATING at <= -2.0 pp, else STABLE. Not an upgrade or downgrade event.">Trend</th>
     </tr>
@@ -343,16 +346,16 @@ function render() {
 
   el('rows').innerHTML = rows.map((s) => `
     <tr>
-      <td><strong>${s.symbol}</strong></td>
-      <td>${s.name}</td>
-      <td>${s.asset_class}</td>
-      <td>${fmt(s.sector)}</td>
-      <td><span class="badge ${s.consensus}">${fmt(s.consensus)}</span></td>
-      <td>${s.buy_side_pct === null ? '—' : s.buy_side_pct.toFixed(1)}</td>
-      <td>${s.analysts}${s.analysts > 0 && s.analysts < 15 ? '<span class="thin" title="Thin coverage: fewer than 15 analysts">thin</span>' : ''}</td>
-      <td>${s.strong_buy} / ${s.buy} / ${s.hold} / ${s.sell} / ${s.strong_sell}${distBar(s)}</td>
-      <td>${s.mom_change_pp === null ? '—' : (s.mom_change_pp > 0 ? '+' : '') + s.mom_change_pp.toFixed(1)}</td>
-      <td>${s.direction === 'IMPROVING' ? '<span class="trend up">▲ Improving</span>'
+      <td title="Ticker symbol used by the data feed."><strong>${s.symbol}</strong></td>
+      <td title="Company or instrument name.">${s.name}</td>
+      <td title="Vendor asset class. STOCK = a single company; ETF / BOND / MUTUAL_FUND rows are fund wrappers, not companies.">${s.asset_class}</td>
+      <td title="Vendor sector classification.">${fmt(s.sector)}</td>
+      <td title="Label from the analyst distribution. It requires BOTH the weighted score and the buy-side share to agree — e.g. 29% buy-side is HOLD even if the weighted score is mildly positive."><span class="badge ${s.consensus}">${fmt(s.consensus)}</span></td>
+      <td title="(${s.strong_buy} strong buy + ${s.buy} buy) / ${s.analysts} analysts = ${s.buy_side_pct === null ? '—' : s.buy_side_pct.toFixed(1) + '%'} saying Buy or Strong Buy.">${s.buy_side_pct === null ? '—' : s.buy_side_pct.toFixed(1)}</td>
+      <td title="Total covering analysts = SB+B+H+S+SS = ${s.analysts}. Fewer than 15 is flagged 'thin': do not over-read those labels.">${s.analysts}${s.analysts > 0 && s.analysts < 15 ? '<span class="thin" title="Thin coverage: fewer than 15 analysts">thin</span>' : ''}</td>
+      <td title="Strong Buy ${s.strong_buy} · Buy ${s.buy} · Hold ${s.hold} · Sell ${s.sell} · Strong Sell ${s.strong_sell}. They add up to ${s.analysts} analysts.">${s.strong_buy} / ${s.buy} / ${s.hold} / ${s.sell} / ${s.strong_sell}${distBar(s)}</td>
+      <td title="Change in buy-side share versus the prior month: ${s.prior_buy_side_pct ?? '—'}% → ${s.buy_side_pct ?? '—'}% = ${s.mom_change_pp === null ? '—' : (s.mom_change_pp > 0 ? '+' : '') + s.mom_change_pp.toFixed(1)} pp.">${s.mom_change_pp === null ? '—' : (s.mom_change_pp > 0 ? '+' : '') + s.mom_change_pp.toFixed(1)}</td>
+      <td title="IMPROVING if buy-side share rose by 2.0pp or more month-over-month; DETERIORATING if it fell by 2.0pp or more; otherwise STABLE. This is a change in the analyst mix, not a firm upgrade/downgrade event.">${s.direction === 'IMPROVING' ? '<span class="trend up">▲ Improving</span>'
             : s.direction === 'DETERIORATING' ? '<span class="trend down">▼ Deteriorating</span>'
             : '<span class="trend flat">▬ Stable</span>'}</td>
     </tr>`).join('') || `<tr><td colspan="10" class="na" style="white-space:normal">${emptyMessage()}</td></tr>`;
