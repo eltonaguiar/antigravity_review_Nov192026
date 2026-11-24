@@ -81,8 +81,15 @@ def main() -> int:
 
     out = []
     mapped = unresolved = split = 0
+    counts = {"same": 0, "pre": 0, "post": 0, "none": 0, "unresolved": 0}
     for raw, d in sorted(agg.items(), key=lambda kv: -kv[1]["n"]):
-        ent, era = ALIASES.get(raw, (raw, "unresolved"))
+        # A name that is its own entity is IDENTITY-RESOLVED (era "none");
+        # "unresolved" is reserved for rows whose identity is genuinely unknown
+        # (currently only the empty raw name). The earlier version conflated the
+        # two by defaulting every unmapped name to "unresolved".
+        default = (raw, "none") if raw.strip() else ("unknown", "unresolved")
+        ent, era = ALIASES.get(raw, default)
+        counts[era] = counts.get(era, 0) + 1
         if era == "unresolved":
             unresolved += 1
         else:
@@ -109,6 +116,8 @@ def main() -> int:
     print(f"mapped: {mapped}")
     print(f"UNRESOLVED: {unresolved}")
     print(f"split by merger era (era_suffix pre/post): {split}")
+    print(f"class counts: same={counts['same']} pre+post={counts['pre'] + counts['post']} "
+          f"none={counts['none']} unresolved={counts['unresolved']}")
     print(f"wrote {OUT}")
     return 0
 

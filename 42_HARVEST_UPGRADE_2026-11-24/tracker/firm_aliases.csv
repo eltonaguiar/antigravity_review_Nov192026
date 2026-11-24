@@ -1,240 +1,240 @@
 raw_name,normalized_entity,era_suffix,first_seen,last_seen,action_count
-Morgan Stanley,Morgan Stanley,unresolved,2012-02-08,2026-11-11,5531
-Barclays,Barclays,unresolved,2012-05-04,2026-11-09,4287
-Citigroup,Citigroup,unresolved,2012-02-09,2026-11-12,3861
-Wells Fargo,Wells Fargo,unresolved,2012-03-01,2026-11-12,3205
+Morgan Stanley,Morgan Stanley,none,2012-02-08,2026-11-11,5531
+Barclays,Barclays,none,2012-05-04,2026-11-09,4287
+Citigroup,Citigroup,none,2012-02-09,2026-11-12,3861
+Wells Fargo,Wells Fargo,none,2012-03-01,2026-11-12,3205
 UBS,UBS,post,2012-02-08,2026-11-12,3167
-JP Morgan,JP Morgan,unresolved,2011-12-08,2026-11-11,3039
-Deutsche Bank,Deutsche Bank,unresolved,2012-01-27,2026-10-15,2675
+JP Morgan,JP Morgan,none,2011-12-08,2026-11-11,3039
+Deutsche Bank,Deutsche Bank,none,2012-01-27,2026-10-15,2675
 RBC Capital,RBC Capital Markets,same,2012-06-29,2026-11-12,2371
 B of A Securities,BofA Securities,post,2012-02-22,2026-11-12,2331
 Credit Suisse,UBS,pre,2012-03-02,2023-09-15,2077
-Jefferies,Jefferies,unresolved,2012-02-08,2026-11-12,2016
-BMO Capital,BMO Capital,unresolved,2012-03-23,2026-11-12,1895
+Jefferies,Jefferies,none,2012-02-08,2026-11-12,2016
+BMO Capital,BMO Capital,none,2012-03-23,2026-11-12,1895
 Piper Sandler,Piper Sandler,post,2012-02-13,2026-11-12,1725
-Goldman Sachs,Goldman Sachs,unresolved,2012-02-08,2026-11-12,1724
+Goldman Sachs,Goldman Sachs,none,2012-02-08,2026-11-12,1724
 Stifel,Stifel,post,2012-02-08,2026-11-12,1605
-Mizuho,Mizuho,unresolved,2012-05-15,2026-11-12,1564
+Mizuho,Mizuho,none,2012-05-15,2026-11-12,1564
 Truist Securities,Truist Securities,post,2020-08-12,2026-11-09,1403
-Raymond James,Raymond James,unresolved,2012-03-21,2026-11-03,1377
-Evercore ISI Group,Evercore ISI Group,unresolved,2012-02-09,2026-11-12,1343
-Keybanc,Keybanc,unresolved,2012-09-25,2026-11-12,1314
-Oppenheimer,Oppenheimer,unresolved,2012-02-09,2026-11-12,1291
-Baird,Baird,unresolved,2012-05-14,2026-11-12,1250
-Wedbush,Wedbush,unresolved,2012-02-09,2026-11-06,1049
+Raymond James,Raymond James,none,2012-03-21,2026-11-03,1377
+Evercore ISI Group,Evercore ISI Group,none,2012-02-09,2026-11-12,1343
+Keybanc,Keybanc,none,2012-09-25,2026-11-12,1314
+Oppenheimer,Oppenheimer,none,2012-02-09,2026-11-12,1291
+Baird,Baird,none,2012-05-14,2026-11-12,1250
+Wedbush,Wedbush,none,2012-02-09,2026-11-06,1049
 TD Cowen,TD Cowen,post,2019-12-26,2026-11-09,923
-Susquehanna,Susquehanna,unresolved,2012-05-22,2026-11-10,850
-Cantor Fitzgerald,Cantor Fitzgerald,unresolved,2012-05-15,2026-11-12,809
-Needham,Needham,unresolved,2013-03-19,2026-11-12,793
+Susquehanna,Susquehanna,none,2012-05-22,2026-11-10,850
+Cantor Fitzgerald,Cantor Fitzgerald,none,2012-05-15,2026-11-12,809
+Needham,Needham,none,2013-03-19,2026-11-12,793
 Bernstein,Bernstein,post,2012-07-11,2026-11-12,722
-Argus Research,Argus Research,unresolved,2012-05-08,2026-11-12,714
-Guggenheim,Guggenheim,unresolved,2011-12-30,2026-11-12,661
-Rosenblatt,Rosenblatt,unresolved,2015-07-16,2026-11-06,659
-Nomura,Nomura,unresolved,2012-08-21,2024-07-10,554
-DA Davidson,DA Davidson,unresolved,2012-03-16,2026-11-12,525
-"Keefe, Bruyette & Woods","Keefe, Bruyette & Woods",unresolved,2012-10-01,2026-11-10,459
-Canaccord Genuity,Canaccord Genuity,unresolved,2012-03-23,2026-11-09,457
+Argus Research,Argus Research,none,2012-05-08,2026-11-12,714
+Guggenheim,Guggenheim,none,2011-12-30,2026-11-12,661
+Rosenblatt,Rosenblatt,none,2015-07-16,2026-11-06,659
+Nomura,Nomura,none,2012-08-21,2024-07-10,554
+DA Davidson,DA Davidson,none,2012-03-16,2026-11-12,525
+"Keefe, Bruyette & Woods","Keefe, Bruyette & Woods",none,2012-10-01,2026-11-10,459
+Canaccord Genuity,Canaccord Genuity,none,2012-03-23,2026-11-09,457
 Cowen & Co.,TD Cowen,pre,2012-05-15,2023-02-24,437
-JMP Securities,JMP Securities,unresolved,2012-05-21,2025-10-27,422
-Wolfe Research,Wolfe Research,unresolved,2013-11-26,2026-10-22,396
-Telsey Advisory Group,Telsey Advisory Group,unresolved,2015-08-24,2026-10-30,394
-Benchmark,Benchmark,unresolved,2012-04-13,2026-08-27,379
-Stephens & Co.,Stephens & Co.,unresolved,2012-05-22,2026-11-06,363
-BTIG,BTIG,unresolved,2014-04-07,2026-11-12,350
-Loop Capital,Loop Capital,unresolved,2016-08-04,2026-10-20,344
-Scotiabank,Scotiabank,unresolved,2012-02-21,2026-11-04,343
-Macquarie,Macquarie,unresolved,2012-06-29,2026-11-07,338
-HSBC,HSBC,unresolved,2013-02-22,2026-10-30,332
+JMP Securities,JMP Securities,none,2012-05-21,2025-10-27,422
+Wolfe Research,Wolfe Research,none,2013-11-26,2026-10-22,396
+Telsey Advisory Group,Telsey Advisory Group,none,2015-08-24,2026-10-30,394
+Benchmark,Benchmark,none,2012-04-13,2026-08-27,379
+Stephens & Co.,Stephens & Co.,none,2012-05-22,2026-11-06,363
+BTIG,BTIG,none,2014-04-07,2026-11-12,350
+Loop Capital,Loop Capital,none,2016-08-04,2026-10-20,344
+Scotiabank,Scotiabank,none,2012-02-21,2026-11-04,343
+Macquarie,Macquarie,none,2012-06-29,2026-11-07,338
+HSBC,HSBC,none,2013-02-22,2026-10-30,332
 SunTrust Robinson Humphrey,Truist Securities,pre,2012-09-27,2020-10-21,325
-Atlantic Equities,Atlantic Equities,unresolved,2012-08-28,2023-08-04,227
-B. Riley Securities,B. Riley Securities,unresolved,2013-01-11,2026-11-12,207
-Tigress Financial,Tigress Financial,unresolved,2013-02-20,2026-10-22,181
-Seaport Global,Seaport Global,unresolved,2014-04-23,2026-10-30,165
-Berenberg,Berenberg,unresolved,2012-12-21,2026-08-06,155
+Atlantic Equities,Atlantic Equities,none,2012-08-28,2023-08-04,227
+B. Riley Securities,B. Riley Securities,none,2013-01-11,2026-11-12,207
+Tigress Financial,Tigress Financial,none,2013-02-20,2026-10-22,181
+Seaport Global,Seaport Global,none,2014-04-23,2026-10-30,165
+Berenberg,Berenberg,none,2012-12-21,2026-08-06,155
 SVB Leerink,Leerink,pre,2019-05-28,2023-07-10,153
-Buckingham Research,Buckingham Research,unresolved,2012-08-01,2020-02-07,151
-CFRA,CFRA,unresolved,2019-10-30,2026-03-06,149
-MKM Partners,MKM Partners,unresolved,2012-07-16,2023-01-25,146
-Sterne Agee,Sterne Agee,unresolved,2012-03-06,2016-06-08,130
-Societe Generale,Societe Generale,unresolved,2012-01-18,2024-03-11,129
-ISI Group,ISI Group,unresolved,2012-02-07,2014-10-17,128
-Compass Point,Compass Point,unresolved,2012-05-22,2026-09-14,118
-Roth MKM,Roth MKM,unresolved,2022-11-09,2026-08-06,105
-Freedom Broker,Freedom Broker,unresolved,2025-09-30,2026-11-11,103
-FBR Capital,FBR Capital,unresolved,2012-04-20,2017-10-10,102
-CLSA,CLSA,unresolved,2012-10-15,2026-10-22,100
-Exane BNP Paribas,Exane BNP Paribas,unresolved,2013-03-18,2024-10-09,99
-DZ Bank,DZ Bank,unresolved,2018-01-17,2025-07-15,97
-Northland Capital Markets,Northland Capital Markets,unresolved,2013-03-07,2026-09-08,81
-Citizens,Citizens,unresolved,2025-10-31,2026-11-04,79
-William Blair,William Blair,unresolved,2012-08-03,2026-11-12,78
-Pacific Crest,Pacific Crest,unresolved,2012-07-24,2017-06-21,78
-Standpoint Research,Standpoint Research,unresolved,2012-05-14,2019-12-12,77
-Imperial Capital,Imperial Capital,unresolved,2012-03-09,2020-07-06,76
-Daiwa Capital,Daiwa Capital,unresolved,2013-08-21,2026-08-12,74
-"Monness, Crespi, Hardt","Monness, Crespi, Hardt",unresolved,2013-02-05,2025-11-10,70
-Pivotal Research,Pivotal Research,unresolved,2012-04-09,2026-10-22,66
-Roth Capital,Roth Capital,unresolved,2014-06-13,2026-10-30,63
-Barrington Research,Barrington Research,unresolved,2012-04-23,2025-12-05,57
-Wunderlich Securities,Wunderlich Securities,unresolved,2012-02-21,2017-03-17,56
-Longbow Research,Longbow Research,unresolved,2012-02-07,2025-03-31,55
-Edward Jones,Edward Jones,unresolved,2012-11-13,2024-08-20,55
-MoffettNathanson,MoffettNathanson,unresolved,2016-01-11,2026-10-20,54
-TD Securities,TD Securities,unresolved,2013-04-29,2025-06-24,53
-Melius Research,Melius Research,unresolved,2023-03-27,2026-11-12,52
-Craig-Hallum,Craig-Hallum,unresolved,2012-10-31,2026-11-12,52
-Brean Capital,Brean Capital,unresolved,2012-02-21,2016-11-21,52
-Drexel Hamilton,Drexel Hamilton,unresolved,2012-06-06,2016-12-19,52
-Gordon Haskett,Gordon Haskett,unresolved,2017-05-09,2026-01-13,52
-Maxim Group,Maxim Group,unresolved,2013-01-23,2026-06-09,51
-BNP Paribas,BNP Paribas,unresolved,2021-07-21,2026-11-05,50
-Redburn Atlantic,Redburn Atlantic,unresolved,2023-09-18,2025-07-07,50
-Leerink Swann,Leerink Swann,unresolved,2012-08-02,2018-11-19,50
-Northcoast Research,Northcoast Research,unresolved,2012-07-05,2025-12-24,43
-Vertical Research,Vertical Research,unresolved,2015-01-28,2025-09-08,41
-New Street Research,New Street Research,unresolved,2019-11-15,2026-10-26,39
-Odeon Capital,Odeon Capital,unresolved,2019-04-17,2024-01-18,39
-Janney Montgomery Scott,Janney Montgomery Scott,unresolved,2012-06-21,2020-06-03,37
-Redburn Partners,Redburn Partners,unresolved,2017-07-26,2023-09-14,36
-Cascend,Cascend,unresolved,2019-07-11,2021-04-27,35
-Summit Insights Group,Summit Insights Group,unresolved,2014-04-23,2024-01-26,35
-Tudor Pickering,Tudor Pickering,unresolved,2012-07-23,2023-07-31,33
-Leerink Partners,Leerink Partners,unresolved,2023-10-11,2026-11-05,33
-Hilliard Lyons,Hilliard Lyons,unresolved,2012-04-16,2018-02-09,32
-OTR Global,OTR Global,unresolved,2015-04-30,2024-11-07,31
-GLJ Research,GLJ Research,unresolved,2022-07-19,2026-11-10,31
-Erste Group,Erste Group,unresolved,2016-04-25,2026-08-05,29
-Ascendiant Capital,Ascendiant Capital,unresolved,2012-03-16,2025-03-03,29
-Topeka Capital,Topeka Capital,unresolved,2012-07-11,2016-05-24,28
-WestPark Capital,WestPark Capital,unresolved,2023-08-24,2025-11-20,26
-Cleveland Research,Cleveland Research,unresolved,2013-06-13,2022-12-12,25
-KGI Securities,KGI Securities,unresolved,2021-06-02,2026-10-30,23
-Miller Tabak,Miller Tabak,unresolved,2012-02-13,2015-05-28,23
-Ladenburg Thalmann,Ladenburg Thalmann,unresolved,2012-07-24,2026-08-11,23
-Rothschild & Co,Rothschild & Co,unresolved,2025-09-03,2026-11-09,22
-Rafferty Capital,Rafferty Capital,unresolved,2013-02-07,2017-04-18,22
-BB&T Capital,BB&T Capital,unresolved,2012-07-02,2016-07-15,22
-HC Wainwright & Co.,HC Wainwright & Co.,unresolved,2023-04-26,2026-10-30,22
-StoneX,StoneX,unresolved,2026-09-03,2026-11-12,21
-CIBC,CIBC,unresolved,2013-07-10,2026-10-21,21
-CICC,CICC,unresolved,2022-05-09,2026-10-21,18
-KeyBanc,KeyBanc,unresolved,2021-01-06,2021-01-22,18
-China Renaissance,China Renaissance,unresolved,2019-05-29,2026-11-11,17
-Gabelli & Co.,Gabelli & Co.,unresolved,2012-08-08,2019-11-27,17
-Avondale Partners,Avondale Partners,unresolved,2012-08-10,2017-02-10,17
-Citizens Capital Markets,Citizens Capital Markets,unresolved,2025-02-24,2025-07-21,16
-FBN Securities,FBN Securities,unresolved,2012-02-10,2018-03-15,15
-Williams Capital,Williams Capital,unresolved,2012-03-12,2013-08-01,15
-CRT Capital,CRT Capital,unresolved,2012-11-19,2015-01-21,15
-Nomura Instinet,Nomura Instinet,unresolved,2017-07-24,2023-10-20,14
-Dahlman Rose,Dahlman Rose,unresolved,2012-03-30,2013-02-04,13
-Fermium Research,Fermium Research,unresolved,2022-07-01,2026-11-02,13
-SMBC Nikko,SMBC Nikko,unresolved,2020-11-17,2023-01-18,12
-Credit Agricole,Credit Agricole,unresolved,2012-11-13,2015-01-08,12
-S&P Capital IQ,S&P Capital IQ,unresolved,2012-07-25,2014-07-24,12
-Capital One,Capital One,unresolved,2014-09-02,2023-05-12,10
-Gilford Securities,Gilford Securities,unresolved,2012-03-15,2015-03-31,10
-Chardan Capital,Chardan Capital,unresolved,2019-04-05,2023-01-18,10
-McAdams Wright Ragen,McAdams Wright Ragen,unresolved,2012-05-30,2013-11-19,9
-BGC FInancial,BGC FInancial,unresolved,2013-04-10,2014-05-20,9
-First Analysis,First Analysis,unresolved,2012-09-26,2020-01-14,9
-Johnson Rice,Johnson Rice,unresolved,2014-01-21,2025-12-05,9
-Williams Trading,Williams Trading,unresolved,2023-05-22,2025-04-21,9
-Alembic Global,Alembic Global,unresolved,2019-04-29,2026-07-02,9
-Charter Equity,Charter Equity,unresolved,2013-10-03,2020-07-22,8
-Freedom Capital Markets,Freedom Capital Markets,unresolved,2025-09-29,2026-11-07,8
-McNicoll Lewis Vlak,McNicoll Lewis Vlak,unresolved,2012-12-12,2014-05-05,8
-Phillip Securities,Phillip Securities,unresolved,2024-08-30,2025-09-11,7
-Simmons & Co.,Simmons & Co.,unresolved,2012-08-27,2014-12-01,7
-Consumer Edge Research,Consumer Edge Research,unresolved,2019-07-18,2020-11-04,7
-Aegis Capital,Aegis Capital,unresolved,2016-10-24,2017-10-16,7
-Hudson Square,Hudson Square,unresolved,2012-05-08,2014-05-19,6
-Lazard,Lazard,unresolved,2012-11-26,2013-09-13,6
-Portales Partners,Portales Partners,unresolved,2014-05-12,2016-02-22,6
-KLR Group,KLR Group,unresolved,2013-07-24,2016-01-28,6
-SVB Securities,SVB Securities,unresolved,2022-11-30,2023-06-14,6
-FirstEnergy Capital,FirstEnergy Capital,unresolved,2013-08-02,2014-03-20,6
-Mackie Research,Mackie Research,unresolved,2013-05-01,2016-10-31,6
-Itau BBA,Itau BBA,unresolved,2022-07-26,2025-10-07,5
-LightShed Partners,LightShed Partners,unresolved,2020-05-05,2023-03-10,5
-JG Capital,JG Capital,unresolved,2012-08-14,2014-04-15,5
-Davenport,Davenport,unresolved,2012-12-10,2013-06-26,5
-Independent Research,Independent Research,unresolved,2016-12-01,2021-01-22,5
-BGB Securities,BGB Securities,unresolved,2012-04-10,2012-10-15,5
-Griffin Securities,Griffin Securities,unresolved,2014-01-30,2018-02-12,5
-GMP Securities,GMP Securities,unresolved,2016-01-05,2016-02-03,5
-Global Hunter Securities,Global Hunter Securities,unresolved,2012-10-18,2013-11-18,5
-R5 Capital,R5 Capital,unresolved,2020-08-31,2022-10-10,5
-Belus Capital,Belus Capital,unresolved,2014-01-13,2014-07-21,5
-Zelman & Assoc,Zelman & Assoc,unresolved,2024-04-02,2026-07-07,5
-DBS Bank,DBS Bank,unresolved,2023-07-03,2024-09-18,4
-Morgan Keegan,Morgan Keegan,unresolved,2012-02-09,2012-03-21,4
-Dougherty & Co.,Dougherty & Co.,unresolved,2014-06-26,2020-02-25,4
-Mediobanca Securities,Mediobanca Securities,unresolved,2013-01-14,2014-01-28,4
-Meredith Whitney Advisory Group,Meredith Whitney Advisory Group,unresolved,2012-02-09,2012-05-03,4
-IBERIA Capital Partners,IBERIA Capital Partners,unresolved,2013-12-31,2016-05-04,4
-Zelman,Zelman,unresolved,2014-07-18,2021-04-15,4
-BWG Global,BWG Global,unresolved,2025-07-07,2026-01-22,4
-Boenning & Scattergood,Boenning & Scattergood,unresolved,2015-01-28,2016-11-28,4
-Mitsubishi UFJ,Mitsubishi UFJ,unresolved,2016-02-09,2019-06-06,4
-National Alliance Securities,National Alliance Securities,unresolved,2012-05-03,2012-08-02,4
-CL King,CL King,unresolved,2013-01-09,2022-03-11,4
-Arete Research,Arete Research,unresolved,2021-09-09,2023-03-06,3
-LBBW Research,LBBW Research,unresolved,2013-11-14,2013-12-20,3
-Collins Stewart,Collins Stewart,unresolved,2012-02-08,2012-03-15,3
-Oracle Investment Research,Oracle Investment Research,unresolved,2013-02-01,2013-05-24,3
-Kalinowski Research,Kalinowski Research,unresolved,2019-10-14,2022-08-15,3
-Axiom Capital,Axiom Capital,unresolved,2015-08-21,2016-08-29,3
-Wellington Shields,Wellington Shields,unresolved,2013-08-07,2017-11-08,3
+Buckingham Research,Buckingham Research,none,2012-08-01,2020-02-07,151
+CFRA,CFRA,none,2019-10-30,2026-03-06,149
+MKM Partners,MKM Partners,none,2012-07-16,2023-01-25,146
+Sterne Agee,Sterne Agee,none,2012-03-06,2016-06-08,130
+Societe Generale,Societe Generale,none,2012-01-18,2024-03-11,129
+ISI Group,ISI Group,none,2012-02-07,2014-10-17,128
+Compass Point,Compass Point,none,2012-05-22,2026-09-14,118
+Roth MKM,Roth MKM,none,2022-11-09,2026-08-06,105
+Freedom Broker,Freedom Broker,none,2025-09-30,2026-11-11,103
+FBR Capital,FBR Capital,none,2012-04-20,2017-10-10,102
+CLSA,CLSA,none,2012-10-15,2026-10-22,100
+Exane BNP Paribas,Exane BNP Paribas,none,2013-03-18,2024-10-09,99
+DZ Bank,DZ Bank,none,2018-01-17,2025-07-15,97
+Northland Capital Markets,Northland Capital Markets,none,2013-03-07,2026-09-08,81
+Citizens,Citizens,none,2025-10-31,2026-11-04,79
+William Blair,William Blair,none,2012-08-03,2026-11-12,78
+Pacific Crest,Pacific Crest,none,2012-07-24,2017-06-21,78
+Standpoint Research,Standpoint Research,none,2012-05-14,2019-12-12,77
+Imperial Capital,Imperial Capital,none,2012-03-09,2020-07-06,76
+Daiwa Capital,Daiwa Capital,none,2013-08-21,2026-08-12,74
+"Monness, Crespi, Hardt","Monness, Crespi, Hardt",none,2013-02-05,2025-11-10,70
+Pivotal Research,Pivotal Research,none,2012-04-09,2026-10-22,66
+Roth Capital,Roth Capital,none,2014-06-13,2026-10-30,63
+Barrington Research,Barrington Research,none,2012-04-23,2025-12-05,57
+Wunderlich Securities,Wunderlich Securities,none,2012-02-21,2017-03-17,56
+Longbow Research,Longbow Research,none,2012-02-07,2025-03-31,55
+Edward Jones,Edward Jones,none,2012-11-13,2024-08-20,55
+MoffettNathanson,MoffettNathanson,none,2016-01-11,2026-10-20,54
+TD Securities,TD Securities,none,2013-04-29,2025-06-24,53
+Melius Research,Melius Research,none,2023-03-27,2026-11-12,52
+Craig-Hallum,Craig-Hallum,none,2012-10-31,2026-11-12,52
+Brean Capital,Brean Capital,none,2012-02-21,2016-11-21,52
+Drexel Hamilton,Drexel Hamilton,none,2012-06-06,2016-12-19,52
+Gordon Haskett,Gordon Haskett,none,2017-05-09,2026-01-13,52
+Maxim Group,Maxim Group,none,2013-01-23,2026-06-09,51
+BNP Paribas,BNP Paribas,none,2021-07-21,2026-11-05,50
+Redburn Atlantic,Redburn Atlantic,none,2023-09-18,2025-07-07,50
+Leerink Swann,Leerink Swann,none,2012-08-02,2018-11-19,50
+Northcoast Research,Northcoast Research,none,2012-07-05,2025-12-24,43
+Vertical Research,Vertical Research,none,2015-01-28,2025-09-08,41
+New Street Research,New Street Research,none,2019-11-15,2026-10-26,39
+Odeon Capital,Odeon Capital,none,2019-04-17,2024-01-18,39
+Janney Montgomery Scott,Janney Montgomery Scott,none,2012-06-21,2020-06-03,37
+Redburn Partners,Redburn Partners,none,2017-07-26,2023-09-14,36
+Cascend,Cascend,none,2019-07-11,2021-04-27,35
+Summit Insights Group,Summit Insights Group,none,2014-04-23,2024-01-26,35
+Tudor Pickering,Tudor Pickering,none,2012-07-23,2023-07-31,33
+Leerink Partners,Leerink Partners,none,2023-10-11,2026-11-05,33
+Hilliard Lyons,Hilliard Lyons,none,2012-04-16,2018-02-09,32
+OTR Global,OTR Global,none,2015-04-30,2024-11-07,31
+GLJ Research,GLJ Research,none,2022-07-19,2026-11-10,31
+Erste Group,Erste Group,none,2016-04-25,2026-08-05,29
+Ascendiant Capital,Ascendiant Capital,none,2012-03-16,2025-03-03,29
+Topeka Capital,Topeka Capital,none,2012-07-11,2016-05-24,28
+WestPark Capital,WestPark Capital,none,2023-08-24,2025-11-20,26
+Cleveland Research,Cleveland Research,none,2013-06-13,2022-12-12,25
+KGI Securities,KGI Securities,none,2021-06-02,2026-10-30,23
+Miller Tabak,Miller Tabak,none,2012-02-13,2015-05-28,23
+Ladenburg Thalmann,Ladenburg Thalmann,none,2012-07-24,2026-08-11,23
+Rothschild & Co,Rothschild & Co,none,2025-09-03,2026-11-09,22
+Rafferty Capital,Rafferty Capital,none,2013-02-07,2017-04-18,22
+BB&T Capital,BB&T Capital,none,2012-07-02,2016-07-15,22
+HC Wainwright & Co.,HC Wainwright & Co.,none,2023-04-26,2026-10-30,22
+StoneX,StoneX,none,2026-09-03,2026-11-12,21
+CIBC,CIBC,none,2013-07-10,2026-10-21,21
+CICC,CICC,none,2022-05-09,2026-10-21,18
+KeyBanc,KeyBanc,none,2021-01-06,2021-01-22,18
+China Renaissance,China Renaissance,none,2019-05-29,2026-11-11,17
+Gabelli & Co.,Gabelli & Co.,none,2012-08-08,2019-11-27,17
+Avondale Partners,Avondale Partners,none,2012-08-10,2017-02-10,17
+Citizens Capital Markets,Citizens Capital Markets,none,2025-02-24,2025-07-21,16
+FBN Securities,FBN Securities,none,2012-02-10,2018-03-15,15
+Williams Capital,Williams Capital,none,2012-03-12,2013-08-01,15
+CRT Capital,CRT Capital,none,2012-11-19,2015-01-21,15
+Nomura Instinet,Nomura Instinet,none,2017-07-24,2023-10-20,14
+Dahlman Rose,Dahlman Rose,none,2012-03-30,2013-02-04,13
+Fermium Research,Fermium Research,none,2022-07-01,2026-11-02,13
+SMBC Nikko,SMBC Nikko,none,2020-11-17,2023-01-18,12
+Credit Agricole,Credit Agricole,none,2012-11-13,2015-01-08,12
+S&P Capital IQ,S&P Capital IQ,none,2012-07-25,2014-07-24,12
+Capital One,Capital One,none,2014-09-02,2023-05-12,10
+Gilford Securities,Gilford Securities,none,2012-03-15,2015-03-31,10
+Chardan Capital,Chardan Capital,none,2019-04-05,2023-01-18,10
+McAdams Wright Ragen,McAdams Wright Ragen,none,2012-05-30,2013-11-19,9
+BGC FInancial,BGC FInancial,none,2013-04-10,2014-05-20,9
+First Analysis,First Analysis,none,2012-09-26,2020-01-14,9
+Johnson Rice,Johnson Rice,none,2014-01-21,2025-12-05,9
+Williams Trading,Williams Trading,none,2023-05-22,2025-04-21,9
+Alembic Global,Alembic Global,none,2019-04-29,2026-07-02,9
+Charter Equity,Charter Equity,none,2013-10-03,2020-07-22,8
+Freedom Capital Markets,Freedom Capital Markets,none,2025-09-29,2026-11-07,8
+McNicoll Lewis Vlak,McNicoll Lewis Vlak,none,2012-12-12,2014-05-05,8
+Phillip Securities,Phillip Securities,none,2024-08-30,2025-09-11,7
+Simmons & Co.,Simmons & Co.,none,2012-08-27,2014-12-01,7
+Consumer Edge Research,Consumer Edge Research,none,2019-07-18,2020-11-04,7
+Aegis Capital,Aegis Capital,none,2016-10-24,2017-10-16,7
+Hudson Square,Hudson Square,none,2012-05-08,2014-05-19,6
+Lazard,Lazard,none,2012-11-26,2013-09-13,6
+Portales Partners,Portales Partners,none,2014-05-12,2016-02-22,6
+KLR Group,KLR Group,none,2013-07-24,2016-01-28,6
+SVB Securities,SVB Securities,none,2022-11-30,2023-06-14,6
+FirstEnergy Capital,FirstEnergy Capital,none,2013-08-02,2014-03-20,6
+Mackie Research,Mackie Research,none,2013-05-01,2016-10-31,6
+Itau BBA,Itau BBA,none,2022-07-26,2025-10-07,5
+LightShed Partners,LightShed Partners,none,2020-05-05,2023-03-10,5
+JG Capital,JG Capital,none,2012-08-14,2014-04-15,5
+Davenport,Davenport,none,2012-12-10,2013-06-26,5
+Independent Research,Independent Research,none,2016-12-01,2021-01-22,5
+BGB Securities,BGB Securities,none,2012-04-10,2012-10-15,5
+Griffin Securities,Griffin Securities,none,2014-01-30,2018-02-12,5
+GMP Securities,GMP Securities,none,2016-01-05,2016-02-03,5
+Global Hunter Securities,Global Hunter Securities,none,2012-10-18,2013-11-18,5
+R5 Capital,R5 Capital,none,2020-08-31,2022-10-10,5
+Belus Capital,Belus Capital,none,2014-01-13,2014-07-21,5
+Zelman & Assoc,Zelman & Assoc,none,2024-04-02,2026-07-07,5
+DBS Bank,DBS Bank,none,2023-07-03,2024-09-18,4
+Morgan Keegan,Morgan Keegan,none,2012-02-09,2012-03-21,4
+Dougherty & Co.,Dougherty & Co.,none,2014-06-26,2020-02-25,4
+Mediobanca Securities,Mediobanca Securities,none,2013-01-14,2014-01-28,4
+Meredith Whitney Advisory Group,Meredith Whitney Advisory Group,none,2012-02-09,2012-05-03,4
+IBERIA Capital Partners,IBERIA Capital Partners,none,2013-12-31,2016-05-04,4
+Zelman,Zelman,none,2014-07-18,2021-04-15,4
+BWG Global,BWG Global,none,2025-07-07,2026-01-22,4
+Boenning & Scattergood,Boenning & Scattergood,none,2015-01-28,2016-11-28,4
+Mitsubishi UFJ,Mitsubishi UFJ,none,2016-02-09,2019-06-06,4
+National Alliance Securities,National Alliance Securities,none,2012-05-03,2012-08-02,4
+CL King,CL King,none,2013-01-09,2022-03-11,4
+Arete Research,Arete Research,none,2021-09-09,2023-03-06,3
+LBBW Research,LBBW Research,none,2013-11-14,2013-12-20,3
+Collins Stewart,Collins Stewart,none,2012-02-08,2012-03-15,3
+Oracle Investment Research,Oracle Investment Research,none,2013-02-01,2013-05-24,3
+Kalinowski Research,Kalinowski Research,none,2019-10-14,2022-08-15,3
+Axiom Capital,Axiom Capital,none,2015-08-21,2016-08-29,3
+Wellington Shields,Wellington Shields,none,2013-08-07,2017-11-08,3
 Bank of America,BofA Securities,same,2017-07-14,2019-12-06,3
-Sterne Agee CRT,Sterne Agee CRT,unresolved,2015-07-27,2016-05-24,3
-Global Equities Research,Global Equities Research,unresolved,2012-04-03,2013-08-16,2
-Oxen Group,Oxen Group,unresolved,2012-02-17,2012-03-14,2
-Huber Research,Huber Research,unresolved,2019-10-17,2023-04-27,2
-Sidoti & Co.,Sidoti & Co.,unresolved,2013-01-28,2016-02-24,2
-ThinkEquity,ThinkEquity,unresolved,2012-05-18,2012-07-13,2
-Caris & Co.,Caris & Co.,unresolved,2012-09-26,2012-10-08,2
-,,unresolved,2014-11-06,2015-07-28,2
+Sterne Agee CRT,Sterne Agee CRT,none,2015-07-27,2016-05-24,3
+Global Equities Research,Global Equities Research,none,2012-04-03,2013-08-16,2
+Oxen Group,Oxen Group,none,2012-02-17,2012-03-14,2
+Huber Research,Huber Research,none,2019-10-17,2023-04-27,2
+Sidoti & Co.,Sidoti & Co.,none,2013-01-28,2016-02-24,2
+ThinkEquity,ThinkEquity,none,2012-05-18,2012-07-13,2
+Caris & Co.,Caris & Co.,none,2012-09-26,2012-10-08,2
+,unknown,unresolved,2014-11-06,2015-07-28,2
 Deutsche bank,Deutsche Bank,same,2021-01-06,2021-01-06,2
-Rochdale Securities,Rochdale Securities,unresolved,2012-10-18,2012-10-22,2
-VTB Capital,VTB Capital,unresolved,2012-09-27,2012-09-27,2
-U.S. Capital Advisors,U.S. Capital Advisors,unresolved,2018-01-04,2018-11-16,2
-SBG Securities,SBG Securities,unresolved,2016-07-20,2017-08-11,2
-Clarkson Capital Markets,Clarkson Capital Markets,unresolved,2016-02-16,2016-04-18,2
-"US Tiger Securities, Inc","US Tiger Securities, Inc",unresolved,2022-03-31,2023-03-20,2
-MLV & Co.,MLV & Co.,unresolved,2013-01-28,2014-05-21,2
+Rochdale Securities,Rochdale Securities,none,2012-10-18,2012-10-22,2
+VTB Capital,VTB Capital,none,2012-09-27,2012-09-27,2
+U.S. Capital Advisors,U.S. Capital Advisors,none,2018-01-04,2018-11-16,2
+SBG Securities,SBG Securities,none,2016-07-20,2017-08-11,2
+Clarkson Capital Markets,Clarkson Capital Markets,none,2016-02-16,2016-04-18,2
+"US Tiger Securities, Inc","US Tiger Securities, Inc",none,2022-03-31,2023-03-20,2
+MLV & Co.,MLV & Co.,none,2013-01-28,2014-05-21,2
 PiperJaffray,Piper Sandler,pre,2017-01-04,2018-01-03,2
-Brookline Capital,Brookline Capital,unresolved,2020-07-13,2021-02-26,2
-US Capital Advisors,US Capital Advisors,unresolved,2014-01-23,2016-05-18,2
-BNP Paribas Exane,BNP Paribas Exane,unresolved,2025-11-24,2025-11-24,1
-Capstone,Capstone,unresolved,2012-10-03,2012-10-03,1
-Lake Street,Lake Street,unresolved,2015-11-09,2015-11-09,1
-Hamburger Sparkasse,Hamburger Sparkasse,unresolved,2015-02-09,2015-02-09,1
-Avian Securities,Avian Securities,unresolved,2012-10-08,2012-10-08,1
-Lynx Global,Lynx Global,unresolved,2026-01-12,2026-01-12,1
-Fox Advisors,Fox Advisors,unresolved,2022-07-05,2022-07-05,1
-GF Securities,GF Securities,unresolved,2019-11-29,2019-11-29,1
-Cross Research,Cross Research,unresolved,2012-12-07,2012-12-07,1
-Amerx,Amerx,unresolved,2026-10-08,2026-10-08,1
-Phoenix Partners Group,Phoenix Partners Group,unresolved,2013-03-26,2013-03-26,1
+Brookline Capital,Brookline Capital,none,2020-07-13,2021-02-26,2
+US Capital Advisors,US Capital Advisors,none,2014-01-23,2016-05-18,2
+BNP Paribas Exane,BNP Paribas Exane,none,2025-11-24,2025-11-24,1
+Capstone,Capstone,none,2012-10-03,2012-10-03,1
+Lake Street,Lake Street,none,2015-11-09,2015-11-09,1
+Hamburger Sparkasse,Hamburger Sparkasse,none,2015-02-09,2015-02-09,1
+Avian Securities,Avian Securities,none,2012-10-08,2012-10-08,1
+Lynx Global,Lynx Global,none,2026-01-12,2026-01-12,1
+Fox Advisors,Fox Advisors,none,2022-07-05,2022-07-05,1
+GF Securities,GF Securities,none,2019-11-29,2019-11-29,1
+Cross Research,Cross Research,none,2012-12-07,2012-12-07,1
+Amerx,Amerx,none,2026-10-08,2026-10-08,1
+Phoenix Partners Group,Phoenix Partners Group,none,2013-03-26,2013-03-26,1
 ScotiaBank,Scotiabank,same,2021-01-14,2021-01-14,1
-Oddo Securities,Oddo Securities,unresolved,2021-10-14,2021-10-14,1
-RS Platou Markets,RS Platou Markets,unresolved,2015-01-20,2015-01-20,1
-MainFirst Bank AG,MainFirst Bank AG,unresolved,2014-07-28,2014-07-28,1
-WallachBeth Capital,WallachBeth Capital,unresolved,2012-08-09,2012-08-09,1
-Brasil Plural,Brasil Plural,unresolved,2014-08-25,2014-08-25,1
-Rhino Trading,Rhino Trading,unresolved,2015-01-20,2015-01-20,1
-Auriga,Auriga,unresolved,2012-03-19,2012-03-19,1
-JBL Advisors,JBL Advisors,unresolved,2015-04-16,2015-04-16,1
-J. Safra Sarasin,J. Safra Sarasin,unresolved,2014-11-11,2014-11-11,1
-Early Bird Capital,Early Bird Capital,unresolved,2012-07-25,2012-07-25,1
-Green Street Advistors,Green Street Advistors,unresolved,2015-01-28,2015-01-28,1
-Autonomous Research,Autonomous Research,unresolved,2020-01-08,2020-01-08,1
-Langenberg & Company,Langenberg & Company,unresolved,2012-04-27,2012-04-27,1
-Janney Capital,Janney Capital,unresolved,2021-01-22,2021-01-22,1
-Indaba Global Research,Indaba Global Research,unresolved,2012-05-11,2012-05-11,1
+Oddo Securities,Oddo Securities,none,2021-10-14,2021-10-14,1
+RS Platou Markets,RS Platou Markets,none,2015-01-20,2015-01-20,1
+MainFirst Bank AG,MainFirst Bank AG,none,2014-07-28,2014-07-28,1
+WallachBeth Capital,WallachBeth Capital,none,2012-08-09,2012-08-09,1
+Brasil Plural,Brasil Plural,none,2014-08-25,2014-08-25,1
+Rhino Trading,Rhino Trading,none,2015-01-20,2015-01-20,1
+Auriga,Auriga,none,2012-03-19,2012-03-19,1
+JBL Advisors,JBL Advisors,none,2015-04-16,2015-04-16,1
+J. Safra Sarasin,J. Safra Sarasin,none,2014-11-11,2014-11-11,1
+Early Bird Capital,Early Bird Capital,none,2012-07-25,2012-07-25,1
+Green Street Advistors,Green Street Advistors,none,2015-01-28,2015-01-28,1
+Autonomous Research,Autonomous Research,none,2020-01-08,2020-01-08,1
+Langenberg & Company,Langenberg & Company,none,2012-04-27,2012-04-27,1
+Janney Capital,Janney Capital,none,2021-01-22,2021-01-22,1
+Indaba Global Research,Indaba Global Research,none,2012-05-11,2012-05-11,1
 Argus,Argus Research,same,2019-01-24,2019-01-24,1
 Stifel Nicolaus,Stifel,pre,2017-01-04,2017-01-04,1
-Pritchard Capital Partners,Pritchard Capital Partners,unresolved,2012-04-19,2012-04-19,1
-Pickering Energy Partners,Pickering Energy Partners,unresolved,2023-10-03,2023-10-03,1
-CJS Securities,CJS Securities,unresolved,2026-05-06,2026-05-06,1
+Pritchard Capital Partners,Pritchard Capital Partners,none,2012-04-19,2012-04-19,1
+Pickering Energy Partners,Pickering Energy Partners,none,2023-10-03,2023-10-03,1
+CJS Securities,CJS Securities,none,2026-05-06,2026-05-06,1
