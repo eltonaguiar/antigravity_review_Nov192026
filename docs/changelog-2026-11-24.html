@@ -71,6 +71,7 @@
   <nav>
     <a href="index.html">← Main page</a>
     <a href="#headline">Headline</a>
+    <a href="#rank">Rank test</a>
     <a href="#db">Live database</a>
     <a href="#research">Research programme</a>
     <a href="#new">New probe</a>
@@ -99,6 +100,40 @@ the table that was supposed to hold the benchmark has never had a row in it.</p>
 skill. The best portfolio beats cash by 5.4 pp, but that is one portfolio out of 123, and the median
 <b>loses</b> to cash by 2.7 pp. The defensible statement is: the ensemble was defensively positioned and
 that positioning paid off. Whether the top cohort's outperformance persists is now a testable question.</div>
+
+<h2 id="rank">Rank persistence — the skill question, answered (19:05 EST)</h2>
+<p>The test that decides whether +7.58% means anything. Rank all portfolios in the first half of the
+window, measure the second. If rank carries information, the engine has skill.</p>
+
+<div class="grid">
+  <div class="card"><div class="k">Spearman rho, H1 → H2</div><div class="v r">−0.020</div>
+    <div class="n">n = 122 · split at 2026-08-28</div></div>
+  <div class="card"><div class="k">Permutation p</div><div class="v r">0.839</div>
+    <div class="n">5,000 draws — no rank information</div></div>
+  <div class="card"><div class="k">Top quartile in H2</div><div class="v r">−4.51%</div>
+    <div class="n">bottom quartile −9.48% · spread +4.97 pp, not significant</div></div>
+  <div class="card"><div class="k">Best H1 performer</div><div class="v r">+8.07% → −23.64%</div>
+    <div class="n">pf36 gave it all back and more</div></div>
+</div>
+
+<table>
+  <thead><tr><th>Leader in H1</th><th class="num">H1</th><th class="num">H2</th></tr></thead>
+  <tbody>
+    <tr><td>pf36</td><td class="num g">+8.07%</td><td class="num r">−23.64%</td></tr>
+    <tr><td>pf6</td><td class="num g">+6.37%</td><td class="num r">−4.12%</td></tr>
+    <tr><td>pf99</td><td class="num g">+5.93%</td><td class="num r">−3.19%</td></tr>
+    <tr><td>pf63</td><td class="num g">+4.46%</td><td class="num r">−9.40%</td></tr>
+    <tr><td>pf57</td><td class="num g">+3.90%</td><td class="num r">−24.24%</td></tr>
+  </tbody>
+</table>
+
+<div class="note bad"><b>What this settles.</b> The engine has <b>no demonstrable selection skill</b>. The
++7.58% was variance. Rank-based thinking — find the best model and follow it — has no support here.
+The earlier "median beat SPY by 4.0 pp" <i>level</i> result stands, but with rho ≈ 0 its interpretation is
+pinned down: the outperformance came from <b>where the portfolios were exposed</b>, not from <b>which</b>
+portfolio was good. Holding bonds and cash while QQQ fell 11.8% and GLD fell 20.2% produces relative gains
+with no skill present. This is the first <b>powered</b> negative in either programme — n=122, fixed split,
+permutation test, effect indistinguishable from zero.</div>
 
 <h2 id="db">Live database — <code>ejaguiar1_stocks</code>, 463 tables</h2>
 
@@ -229,9 +264,10 @@ an order of magnitude more than the analyst stream ever produced at the same cov
 
 <h2 id="next">What is left</h2>
 <ol>
-  <li><b>Rank persistence across the 123 portfolios.</b> Rank in the first half of the window, measure the
-  second half. Persistence means skill; mean reversion means the +7.58% was luck. Needs no new data and is
-  the single most valuable unrun test in the programme.</li>
+  <li><b>Rank persistence across the 123 portfolios — DONE, and negative.</b> rho −0.020, p 0.839, n 122.
+  The next question it opens: condition H2 return on <i>exposure</i> as well as H1 return. If exposure
+  absorbs the 4.97 pp spread, the engine is a beta-management tool and not a selection engine, and the
+  model-comparison exercise can be closed in favour of a fixed allocation.</li>
   <li><b>The insider P-vs-S asymmetry test</b> on the 44 distinct officer/director purchases and the 31
   non-10%-owner subset, at 21/63/126 days with a size × momentum matched control and cluster CI.</li>
   <li><b>Fix the five defects before any of it is quoted.</b></li>
