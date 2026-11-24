@@ -40,3 +40,10 @@ Pre-register a return rule, require n>=100 independent picks per entrant, and
 size the contest so the minimum detectable edge is below the expected edge
 (currently MDE ~10%/yr is larger than any plausible edge). Until then, publish
 "not distinguishable" rather than a ranking.
+
+## 4. Preflight gate (applied)
+`CONTEST/tools/check_round_integrity.py` runs the canonical verifier and exits
+non-zero if any submission is NOT RECORDED or MISMATCHED, so a round cannot be
+scored on unrecorded entries. Current run:
+`round=CONTEST/ROUND_01_2026-11-23 ok=False not_recorded=6 mismatched=0` (exit 1).
+`--json` emits the machine-readable list for CI.
