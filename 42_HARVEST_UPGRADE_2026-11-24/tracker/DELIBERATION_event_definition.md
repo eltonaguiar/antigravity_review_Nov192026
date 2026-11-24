@@ -105,3 +105,44 @@ On the collected data, count distinct **broker-stock pairs** with at least one `
 surviving a 6-month no-prior-`up`/`down` filter, and report firms above 300/500/750 for both. That
 single table converts this from an argument about definitions into a statement about what is
 measurable — and it is the number that should decide, not a vote of models.
+
+## Round 4 — independent replication, and one new objection
+
+After the round-2 convergence, three further models (`free-mode-fast`, `free-mode-tools`,
+`hybrid-model`) were asked the identical round-1 question, with no sight of the earlier answers.
+This is a replication test of the up-only conclusion, not a fourth opinion.
+
+**Result: 6 of 6 models now agree.** All three new answers independently rule out `init`, `reit` and
+`main`, and all three define the event as the *first* `up` per brokerage-firm pair inside a clean
+window. The conclusion is no longer one round's judgement.
+
+| Question | Round 1-2 (3 models) | Round 4 (3 new models) |
+|---|---|---|
+| `reit` is an event | 0/3 | **0/3** |
+| `init` is an event | 0/3 | **0/3** |
+| Event = `up` only | 3/3 | **3/3** |
+| Clean window before the event | 3/3 | **3/3** |
+| Names pre-event drift | 3/3 | 0/3 |
+
+**The clean window is agreed but its length is not.** Two of the new models specify 12 months, one
+specifies a 30-day cooldown. These are very different populations, and our event density probably
+supports neither at 750 events. This stays unresolved and must be measured, not voted.
+
+**New objection worth taking seriously, from `free-mode-tools`:** an `up` code may *bundle* a
+target-price or earnings-forecast change, so the event conflates rating migration with other analyst
+information. Its proposed discriminator is available in our data: within `up` records, split on
+whether `currentPriceTarget` changed, and compare forward returns across the two subsets. If
+rating-only upgrades behave differently from upgrade-plus-target-raise, every pooled estimate in this
+programme so far is an average over two different signals.
+
+That is the second refinement the deliberation has produced (after pre-event drift), and unlike the
+drift covariate it is cheap: the field is already collected.
+
+**Provenance note.** Three consumer playgrounds were probed as additional sources and rejected on
+evidence, not preference: `freellmplayground.com` gated the send action behind a LangFast
+Google/Microsoft login, `openrouter.ai/chat` presented a signup wall with no composer, and `duck.ai`
+served a CAPTCHA challenge the moment a prompt arrived non-human. Of twelve local router aliases, six
+answer keylessly (`free-mode-large`, `free-mode`, `free-mode-fast`, `free-mode-tools`, `hybrid-model`,
+`deepseek-chat-direct`); five fail with recorded codes (410 x2, 403, 401, 400) and one returns an empty
+message. Sources that answer with generic investing education rather than a frozen definition are not
+useful deliberation partners for a pre-registration, however fluent they are.
