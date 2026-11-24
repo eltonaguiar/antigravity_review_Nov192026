@@ -103,19 +103,17 @@ def dsr_correct(sharpes: list[float], n_obs: int,
         m = sum(sharpes) / k
         sd = math.sqrt(sum((s - m) ** 2 for s in sharpes) / (k - 1))
     e_max = expected_max_of_n_normals(k)
-    if sd == 0:
-        # No dispersion between trials: nothing to deflate against, but the
-        # benchmark still applies. Treat SR* as the raw best Sharpe.
-        sr_star = sr_best
-    else:
-        sr_star = sr_best / sd
-    denom = 1 - g3 * sr_star + ((g4 - 1) / 4) * sr_star ** 2
+    # The null benchmark is in the SAME units as SR_best, so it must be scaled
+    # by the cross-trial standard deviation. Using E[max] raw is the defect:
+    # it is a z-score, not a Sharpe ratio.
+    sr0 = sd * e_max
+    denom = 1 - g3 * sr_best + ((g4 - 1) / 4) * sr_best ** 2
     if denom <= 0 or n_obs < 2:
         return {"dsr": None, "n_trials": k, "sr_best": sr_best,
-                "sr_star": sr_star, "e_max": e_max}
-    z = (sr_star - e_max) * math.sqrt(n_obs - 1) / math.sqrt(denom)
+                "sr0": sr0, "e_max": e_max, "sd_sr": sd, "g3": g3, "g4": g4}
+    z = (sr_best - sr0) * math.sqrt(n_obs - 1) / math.sqrt(denom)
     return {"dsr": norm_cdf(z), "n_trials": k, "sr_best": sr_best,
-            "sr_star": sr_star, "e_max": e_max, "z": z}
+            "sr0": sr0, "e_max": e_max, "sd_sr": sd, "g3": g3, "g4": g4, "z": z}
 
 
 def dsr_from_db(db: str, n_obs: int, use_oos: bool = True) -> dict:
@@ -132,21 +130,33 @@ def dsr_from_db(db: str, n_obs: int, use_oos: bool = True) -> dict:
 # ---------------------------------------------------------------------------
 # The proof: pure noise, true Sharpe 0, DSR must FALL as N rises.
 # ---------------------------------------------------------------------------
-def simulate_noise(n_trials: int, seed: int, n_obs: int = 1000) -> list[float]:
-    """N independent trials of pure noise -> their Sharpe ratios.
-
-    Each trial is n_obs iid normals (true Sharpe 0). Its Sharpe is estimated
-    from that sample, so the set of Sharpes is exactly what a data-mining
-    search over N worthless strategies would produce.
-    """
+def simulate_noise_best(n_trials: int, seed: int, n_obs: int = 1000):
+    """N independent pure-noise trials -> (Sharpes, returns of the best trial)."""
     rng = random.Random(seed)
-    out = []
+    sharpes = []
+    best_sr = -1e9
+    best_returns = None
     for _ in range(n_trials):
         xs = [rng.gauss(0.0, 1.0) for _ in range(n_obs)]
         m = sum(xs) / n_obs
         sd = math.sqrt(sum((x - m) ** 2 for x in xs) / (n_obs - 1))
-        out.append(m / sd if sd else 0.0)
-    return out
+        sr = m / sd if sd else 0.0
+        sharpes.append(sr)
+        if sr > best_sr:
+            best_sr = sr
+            best_returns = xs
+    return sharpes, best_returns
+
+
+def _moments(xs: list[float]) -> tuple[float, float]:
+    n = len(xs)
+    m = sum(xs) / n
+    m2 = sum((x - m) ** 2 for x in xs) / n
+    if m2 <= 0:
+        return 0.0, 3.0
+    g3 = (sum((x - m) ** 3 for x in xs) / n) / (m2 ** 1.5)
+    g4 = (sum((x - m) ** 4 for x in xs) / n) / (m2 * m2)
+    return g3, g4
 
 
 def _mc_pvalue(n_trials: int, seed: int) -> float:
@@ -171,40 +181,51 @@ def _mc_pvalue(n_trials: int, seed: int) -> float:
 
 
 def proof(out_path: Path, ns: list[int], seeds: list[int], n_obs: int) -> int:
-    lines = ["# DSR_CORRECT proof -- pure noise must not be certified as an edge", "",
+    lines = ["# DSR_CORRECT proof -- pure noise, scaled SR0", "",
              f"Each trial is {n_obs} iid N(0,1) draws, so the TRUE Sharpe is 0. "
-             f"N trials per row, {len(seeds)} seeds.",
+             f"N trials per row, {len(seeds)} seeds, DSR averaged across seeds.", "",
+             "Formula under test:",
              "",
-             "Two columns matter, and they answer different questions:",
+             "    SR0 = sd_SR * E[max of N standard normals]",
+             "    DSR = Phi( (SR_best - SR0) * sqrt(n_obs - 1)",
+             "               / sqrt(1 - g3*SR_best + ((g4-1)/4)*SR_best^2) )",
              "",
-             "* **DSR** -- the probability the best Sharpe is real. On noise it sits near 0.5, "
-             "because the best of N noise trials IS a max-of-N draw, so it lands near the "
-             "benchmark by construction. A value near 0.5 is correct; a value near 1.0 would be "
-             "the defect.",
-             "* **p-value** -- P(a fresh noise run under the same N scores at least this high). "
-             "It must stay roughly uniform (not tiny), i.e. noise is never certified.",
-             "",
-             "| N | E[max] | mean DSR | median DSR | p-value (seed 1) | certified at 0.95? |",
-             "|---|---|---|---|---|---|"]
+             "g3/g4 are the skewness and kurtosis of the BEST trial's returns.", "",
+             "| N | E[max] | mean sd_SR | mean SR0 | mean DSR | min | max |",
+             "|---|---|---|---|---|---|---|"]
+    means = []
     for n in ns:
-        vals = [dsr_correct(simulate_noise(n, s, n_obs), n_obs)["dsr"] for s in seeds]
-        vals = [v for v in vals if v is not None]
+        vals, sds, sr0s = [], [], []
+        for seed in seeds:
+            sh, best = simulate_noise_best(n, seed, n_obs)
+            g3, g4 = _moments(best)
+            r = dsr_correct(sh, n_obs, g3=g3, g4=g4)
+            if r["dsr"] is not None:
+                vals.append(r["dsr"]); sds.append(r["sd_sr"]); sr0s.append(r["sr0"])
         m = sum(vals) / len(vals)
-        med = sorted(vals)[len(vals) // 2]
-        p = _mc_pvalue(n, seeds[0])
-        lines.append(f"| {n} | {expected_max_of_n_normals(n):.4f} | {m:.4f} | {med:.4f} | "
-                     f"{p:.3f} | {'YES -- DEFECT' if m > 0.95 else 'no'} |")
-    certified = [n for n in ns
-                 if (lambda v: sum(v) / len(v) > 0.95)(
-                     [dsr_correct(simulate_noise(n, s, n_obs), n_obs)["dsr"] for s in seeds])]
-    lines += ["", f"**Any N certifying pure noise at 0.95: {certified or 'none'}**",
-              "**The monotonicity claim is REFUTED, and that is the finding**: DSR on noise "
-              "does not fall monotonically with N, because both the best Sharpe and E[max] grow "
-              "like sqrt(2 ln N) and the finite-sample draws are noisy. The property that does "
-              "hold is the one that matters -- noise is never certified.", ""]
+        means.append(m)
+        lines.append(f"| {n} | {expected_max_of_n_normals(n):.4f} | "
+                     f"{sum(sds)/len(sds):.4f} | {sum(sr0s)/len(sr0s):.4f} | "
+                     f"{m:.4f} | {min(vals):.4f} | {max(vals):.4f} |")
+    monotone = all(means[i] >= means[i+1] for i in range(len(means)-1))
+    lines += ["", f"**Monotone non-increasing in N: {monotone}**",
+              f"**DSR at N={ns[0]}: {means[0]:.4f}**",
+              f"**DSR at N={ns[-1]}: {means[-1]:.4f}**", ""]
+    if not monotone:
+        lines += [
+            "**It still fails, and the mechanism is structural, not a scaling bug.**",
+            "The proof draws a FRESH max for every N. Under the null, E[SR_best] = sd_SR * E[max]",
+            "by construction, so DSR is calibrated to ~0.5 at every N; the residual is sampling",
+            "noise in the max, not a trend. Monotonicity is a property of a FIXED observed SR_best",
+            "compared against a growing N. Recomputing the best Sharpe at each N tests calibration,",
+            "not monotonicity. To test monotonicity, hold SR_best fixed (e.g. 0.10 with sd_SR 0.03)",
+            "and raise N: DSR must fall. That is stated here rather than loosening the criterion.",
+            "",
+            "The correct null claim is: noise is not certified (DSR stays near 0.5, not 0.95).",
+            "The monotonicity claim, as written with a resampled best, is refuted."]
     out_path.write_text("\n".join(lines), encoding="utf-8")
     print("\n".join(lines))
-    return 0 if not certified else 1
+    return 0 if monotone else 1
 
 
 def main() -> int:
