@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pick Tracker — what our picks actually did</title>
+<style>
+  :root{--bg:#0f1115;--card:#161a21;--line:#252b36;--txt:#e8ecf3;--mute:#98a3b3;
+        --ok:#2ecc71;--bad:#e74c3c;--wait:#f0b429;--accent:#4da3ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fb;--card:#fff;--line:#e2e8f0;--txt:#131720;--mute:#5b6676;}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:32px 20px 70px}
+  h1{font-size:1.6rem;margin:0 0 6px;letter-spacing:-.02em}
+  h2{font-size:1.12rem;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .sub{color:var(--mute);font-size:.9rem;margin-bottom:22px}
+  .tldr{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+        border-radius:10px;padding:16px 20px;margin:20px 0}
+  .tldr h3{margin:0 0 10px;font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+  .tldr ul{margin:0;padding-left:20px}
+  .tldr li{margin:7px 0}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+        border-radius:10px;overflow:hidden;font-size:.88rem;margin:14px 0}
+  th{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--mute);
+     font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .b{display:inline-block;padding:2px 8px;border-radius:99px;font-size:.72rem;font-weight:600}
+  .b-ok{background:rgba(46,204,113,.16);color:var(--ok)}
+  .b-bad{background:rgba(231,76,60,.16);color:var(--bad)}
+  .b-wait{background:rgba(240,180,41,.16);color:var(--wait)}
+  .b-unk{background:rgba(152,163,179,.16);color:var(--mute)}
+  .note{color:var(--mute);font-size:.85rem}
+  code{background:rgba(152,163,179,.14);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .warn{margin:16px 0;padding:12px 16px;background:rgba(240,180,41,.09);
+        border:1px solid rgba(240,180,41,.3);border-radius:8px;font-size:.9rem}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Pick Tracker — what our picks actually did</h1>
+<div class="sub">Forward-test ledger for every pick this estate publishes · generated 2026-11-24 ·
+paper research only, not investment advice</div>
+
+<div class="tldr">
+  <h3>TL;DR</h3>
+  <ul>
+    <li><b>Zero picks are callable today.</b> 31 picks are tracked; every source is below the
+        n=30 gate, so all report <code>INSUFFICIENT_N</code>. That is the correct answer, not a bug.</li>
+    <li><b>US equity picks have not traded yet.</b> The last US bar is 2026-11-23 and the picks were
+        published 2026-11-24, so they sit at <code>pending_entry</code> — no number is invented for them.</li>
+    <li><b>Two marks exist, both day-zero:</b> AUDJPY −12.7 bp net, ENJ −121.2 bp net but
+        <b>+185.4 bp versus BTC</b>.</li>
+    <li><b>The important finding is a sample-size one.</b> A 97.6% hit rate on 41 trades at a 22:1
+        loss-to-win ratio has a break-even loss rate of 4.35%, but its 95% upper bound is
+        <b>12.6%</b>. That record cannot be distinguished from a losing strategy. It needs roughly
+        <b>141 trades</b> before it can be.</li>
+    <li><b>Named analyst track records are not purchasable at zero cost.</b> The free feed returns
+        monthly counts with no name, no firm and no date. Any page claiming per-analyst skill on that
+        data is fabricating it.</li>
+  </ul>
+</div>
+
+<h2>Executive summary</h2>
+<p>Every pick this estate publishes — the harvest consensus, the per-class "best candidate" table and
+each agent's ranked list — was previously argued about and then forgotten. Nothing measured what
+happened next. This tracker makes a pick an append-only record with a timestamp, an owner, a cost
+basis and a benchmark, so the question <i>"what if we had actually taken that?"</i> is answered with
+data instead of opinion.</p>
+
+<p>Three things were built. A <b>ledger</b> (<code>picktrack_picks</code>) that is immutable: what a
+pick claimed lives in one table, what it returned lives in another, so rescoring can never rewrite
+history. A <b>scoring rule frozen before results existed</b>: entry at the first open strictly after
+publication, per-row round-turn cost, benchmark measured over the same window with the same rule.
+And a <b>rating design</b> that refuses to collapse to one number, because a high hit rate with small
+wins and a low hit rate with large wins are different products rather than better and worse ones.</p>
+
+<h2>What is being tracked</h2>
+<table>
+  <tr><th>Source</th><th class="num">Picks</th><th>State</th><th>Basis</th></tr>
+  <tr><td>Harvest consensus</td><td class="num">5</td><td><span class="b b-unk">pending_entry</span></td><td>STRONG_BUY with buy-side ≥ 80%: WMT, BA, BLK, UNH, PLD</td></tr>
+  <tr><td>Top pick per asset class</td><td class="num">12</td><td><span class="b b-unk">5 scorable / 7 descriptors</span></td><td>CVX, SOXX, TLT, AUDJPY, ENJ scorable; funds, commodities, FX carry, options, futures, prediction markets, private credit recorded as explicit descriptors rather than dropped</td></tr>
+  <tr><td>Kilo</td><td class="num">5</td><td><span class="b b-wait">1 pending / 1 marked</span></td><td>CVX, AMD, AMC (pending); ENJ (−121.2 bp net, +185.4 excess); AUDJPY (−12.7 net)</td></tr>
+  <tr><td>Buffy</td><td class="num">4</td><td><span class="b b-unk">pending_entry</span></td><td>XLV, KO, MSFT + the equal-weight R4b basket</td></tr>
+  <tr><td>Zoo</td><td class="num">3</td><td><span class="b b-unk">unscorable</span></td><td>strategy descriptors (FX carry quintile, FX mean-reversion, crypto VWAP) — kept visible, never scored as a single symbol</td></tr>
+  <tr><td>Copilot</td><td class="num">1</td><td><span class="b b-unk">pending_entry</span></td><td>broad-market index ETF as a <i>vehicle</i>, explicitly not as an edge</td></tr>
+  <tr><td>Bar</td><td class="num">1</td><td><span class="b b-ok">reference</span></td><td>T-bills at 4.32% — shown beside every net number, deliberately</td></tr>
+</table>
+
+<h2>Sample size: the finding that matters most</h2>
+<p class="note">How many consecutive wins a record needs before its 95% upper bound on the loss rate
+falls below its break-even loss rate. Below that count, a good-looking record is statistically
+indistinguishable from a bad one.</p>
+<table>
+  <tr><th>Loss : win ratio</th><th class="num">Break-even loss rate</th><th class="num">Consecutive wins needed</th></tr>
+  <tr><td>1 : 5</td><td class="num">16.67%</td><td class="num">20</td></tr>
+  <tr><td>1 : 10</td><td class="num">9.09%</td><td class="num">39</td></tr>
+  <tr><td><b>1 : 22</b> <span class="note">(the 97.6% profile)</span></td><td class="num"><b>4.35%</b></td><td class="num"><b>85</b></td></tr>
+  <tr><td>1 : 50</td><td class="num">1.96%</td><td class="num">193</td></tr>
+</table>
+<p>Applied to the record as claimed — 97.6% on n=41 with one loss and a 22:1 ratio:</p>
+<table>
+  <tr><th>Measure</th><th class="num">Value</th></tr>
+  <tr><td>Observed loss rate</td><td class="num">2.44%</td></tr>
+  <tr><td>Break-even loss rate at 22:1</td><td class="num">4.35%</td></tr>
+  <tr><td>Wilson 95% upper bound</td><td class="num" style="color:var(--bad)">12.60%</td></tr>
+  <tr><td>Verdict</td><td><span class="b b-bad">indistinguishable from a losing strategy at n=41</span></td></tr>
+  <tr><td>Clean trades still needed (keeping the one loss)</td><td class="num">+100 → n=141</td></tr>
+</table>
+
+<h2>When a pick becomes reportable</h2>
+<p>A pick earns a verdict only when all four hold: <b>n</b> reaches its pick-type minimum (day trade
+100, swing 60, position 40, long-term 20, buy-and-hold 10) · expectancy confidence interval excludes
+zero after multiple-testing correction · the sign repeats across at least two out-of-sample periods ·
+and expectancy at the <b>upper</b> bound of the loss rate stays positive, not the observed rate.</p>
+<p>Ratings are per <b>asset class and holding period</b>. A crypto scalper and an equity swing trader
+averaged together describe nobody, so no cohort is ever pooled.</p>
+
+<div class="warn">
+  <b>What cannot be back-tested yet.</b> The consensus feed is a single monthly snapshot with no
+  history beyond one prior month. Scoring today's consensus against past prices would be look-ahead
+  and would produce a flattering, meaningless number. That is precisely why this tracker is forward
+  only — the honest alternative to a fake backtest is a record that starts now and accrues.
+</div>
+
+<h2>What is deliberately absent</h2>
+<table>
+  <tr><th>Not shown</th><th>Why</th></tr>
+  <tr><td>Named analyst track records</td><td>the free feed has no analyst name, no firm and no action date; <code>/upgrade-downgrade</code> returns HTTP 403 and the paid alternative is a licensing decision on a public site</td></tr>
+  <tr><td>A single overall "best pick"</td><td>no source has cleared n=30, so a ranking would be noise presented as judgement</td></tr>
+  <tr><td>Backtested consensus returns</td><td>one snapshot, no history — any such figure would be look-ahead</td></tr>
+  <tr><td>P/L percentages</td><td>replaced by net basis points with the cost basis and benchmark stated on the row</td></tr>
+</table>
+
+<p class="note" style="margin-top:26px">Database: <code>ejaguiar1_stocks</code> · 20 objects ·
+schema and methodology documented in
+<a href="https://github.com/eltonaguiar/antigravity_review_Nov192026/blob/main/42_HARVEST_UPGRADE_2026-11-24/tracker/DATABASE_SCHEMA.md">DATABASE_SCHEMA.md</a> ·
+rating criteria in
+<a href="https://github.com/eltonaguiar/antigravity_review_Nov192026/blob/main/42_HARVEST_UPGRADE_2026-11-24/ANALYST_RATING_AND_HARVEST_PLAN.md">ANALYST_RATING_AND_HARVEST_PLAN.md</a>.
+No credentials are stored in this repository.</p>
+
+</div>
+</body>
+</html>
