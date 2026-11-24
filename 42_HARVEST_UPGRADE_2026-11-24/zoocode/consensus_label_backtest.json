@@ -50,5 +50,13 @@
     3.109
    ]
   }
+ },
+ "interpretation": {
+  "monotonic": false,
+  "directional": false,
+  "verdict": "NOT MONOTONIC and NOT DIRECTIONAL",
+  "why": "Spearman(label rank, excess return) is negative and its within-symbol permutation p-value does not clear 0.05, so the label ordering is neither increasing nor established. Do not read any label as a buy or sell signal.",
+  "entry_rule": "entry = first close STRICTLY AFTER the period date; exit = first close STRICTLY AFTER the next period date; stock and SPY over identical dates; NO transaction cost applied",
+  "not_comparable_until": "Kilo's STRONG_BUY figure uses a point-in-time entry at publication with 26 bp cost; mine uses a period-end snapshot with no cost"
  }
 }
