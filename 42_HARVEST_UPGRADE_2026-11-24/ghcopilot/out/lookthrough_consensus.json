@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-11-24T11:07:12Z",
+  "consensus_feed": "docs/data/harvest_signals.json",
+  "consensus_symbols": 71,
+  "method": "fund_share_buy = sum(w_i * share_buy_i) / sum(w_i) over covered holdings; coverage_pct = sum(w_i covered) / sum(w_j all). DERIVED, never a published rating.",
+  "sources": [
+    {
+      "ticker": "SPY",
+      "source": "SSGA daily holdings xlsx",
+      "url": "https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx",
+      "status": "OK",
+      "parsed": "xlsx header at row 3"
+    },
+    {
+      "ticker": "XLK",
+      "source": "SSGA daily holdings xlsx",
+      "url": "https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-xlk.xlsx",
+      "status": "OK",
+      "parsed": "xlsx header at row 3"
+    },
+    {
+      "ticker": "JNK",
+      "source": "SSGA daily holdings xlsx",
+      "url": "https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-jnk.xlsx",
+      "status": "OK",
+      "parsed": "xlsx header at row 3"
+    },
+    {
+      "ticker": "QQQ",
+      "source": "SEC EDGAR N-PORT",
+      "url": "https://www.sec.gov/Archives/edgar/data/1067839/000106783926000030/primary_doc.xml",
+      "accession": "0001067839-26-000030",
+      "status": "OK",
+      "parsed": "nport 105 positions; cusip->ticker translated 86"
+    },
+    {
+      "ticker": "VTI",
+      "source": "SEC EDGAR N-PORT",
+      "url": "https://www.sec.gov/Archives/edgar/data/36405/000003640526000483/primary_doc.xml",
+      "accession": "0000036405-26-000483",
+      "status": "OK",
+      "parsed": "nport 551 positions; cusip->ticker translated 35"
+    }
+  ],
+  "blocked": [
+    {
+      "ticker": "EEM",
+      "reason": "iShares daily CSV returned text/csv content-type but an HTML page body (interstitial); Invesco download endpoint returned HTTP 406. No credential-free holdings source verified.",
+      "attempted": [
+        "https://www.ishares.com/us/products/239637/.../EEM_holdings (HTTP 200, text/csv, body=HTML)",
+        "https://www.invesco.com/us/financial-products/etfs/holdings/main/holdings/0?... (HTTP 406, 0 bytes)",
+        "https://data.sec.gov/submissions/CIK0000872664.json (non-JSON)"
+      ]
+    }
+  ],
+  "funds": [
+    {
+      "ticker": "SPY",
+      "label": "SPDR S&P 500 ETF Trust",
+      "derivation": "DERIVED_NOT_PUBLISHED",
+      "source_how": "xlsx header at row 3",
+      "positions": 505,
+      "positions_matched": 70,
+      "total_weight": 99.9418,
+      "covered_weight": 60.0328,
+      "coverage_pct": 60.07,
+      "fund_share_buy_pct": 77.35,
+      "unmatched_top": [
+        "GOOG",
+        "BRK.B",
+        "MU",
+        "PLTR",
+        "PANW"
+      ],
+      "note": "Holdings-weighted mean of Share Buy/Strong Buy across COVERED holdings only. Valid for the coverage share stated; not a statement about the whole fund.",
+      "status": "DERIVED_OK"
+    },
+    {
+      "ticker": "XLK",
+      "label": "Technology Select Sector SPDR",
+      "derivation": "DERIVED_NOT_PUBLISHED",
+      "source_how": "xlsx header at row 3",
+      "positions": 78,
+      "positions_matched": 14,
+      "total_weight": 99.975,
+      "covered_weight": 65.4397,
+      "coverage_pct": 65.46,
+      "fund_share_buy_pct": 77.44,
+      "unmatched_top": [
+        "MU",
+        "PLTR",
+        "PANW",
+        "AMAT",
+        "CRWD"
+      ],
+      "note": "Holdings-weighted mean of Share Buy/Strong Buy across COVERED holdings only. Valid for the coverage share stated; not a statement about the whole fund.",
+      "status": "DERIVED_OK"
+    },
+    {
+      "ticker": "JNK",
+      "label": "SPDR Bloomberg High Yield Bond ETF",
+      "derivation": "DERIVED_NOT_PUBLISHED",
+      "source_how": "xlsx header at row 3",
+      "positions": 1117,
+      "positions_matched": 0,
+      "total_weight": 98.5991,
+      "covered_weight": 0.0,
+      "coverage_pct": 0.0,
+      "fund_share_buy_pct": null,
+      "unmatched_top": [
+        "924QSGII3",
+        "US68288AAA51",
+        "US58990CAA18",
+        "US74843PAA84",
+        "US83408KAC36"
+      ],
+      "note": "Holdings-weighted mean of Share Buy/Strong Buy across COVERED holdings only. Valid for the coverage share stated; not a statement about the whole fund.",
+      "status": "NOT_APPLICABLE_BOND_FUND",
+      "reason": "This fund holds no equities, so an equity-analyst look-through is undefined for it by construction. The 0% is the right answer, not a data failure. Bond funds need credit ratings and yield data instead."
+    },
+    {
+      "ticker": "QQQ",
+      "label": "Invesco QQQ Trust",
+      "derivation": "DERIVED_NOT_PUBLISHED",
+      "source_how": "nport 105 positions; cusip->ticker translated 86",
+      "positions": 105,
+      "positions_matched": 22,
+      "total_weight": 100.2821,
+      "covered_weight": 55.1388,
+      "coverage_pct": 54.98,
+      "fund_share_buy_pct": 75.95,
+      "unmatched_top": [
+        "Coca-Cola Europa",
+        "AXON",
+        "BKR",
+        "BKNG",
+        "FAST"
+      ],
+      "note": "Holdings-weighted mean of Share Buy/Strong Buy across COVERED holdings only. Valid for the coverage share stated; not a statement about the whole fund.",
+      "status": "DERIVED_OK"
+    },
+    {
+      "ticker": "VTI",
+      "label": "Vanguard Total Stock Market ETF",
+      "derivation": "DERIVED_NOT_PUBLISHED",
+      "source_how": "nport 551 positions; cusip->ticker translated 35",
+      "positions": 551,
+      "positions_matched": 0,
+      "total_weight": 102.5588,
+      "covered_weight": 0.0,
+      "coverage_pct": 0.0,
+      "fund_share_buy_pct": null,
+      "unmatched_top": [
+        "ExlService Holdi",
+        "Six Flags Entert",
+        "Globalstar Inc",
+        "Tempur Sealy Int",
+        "Outfront Media I"
+      ],
+      "note": "Holdings-weighted mean of Share Buy/Strong Buy across COVERED holdings only. Valid for the coverage share stated; not a statement about the whole fund.",
+      "status": "BLOCKED_WRONG_SERIES",
+      "reason": "Parsed document appears to describe a different fund series: 551 positions, 0 of them in the 71-symbol consensus universe, and the position names are not this fund's known constituents. Released as a zero-coverage figure would be wrong; it is withheld instead."
+    }
+  ],
+  "crosswalk_cusip_to_ticker": 1621
+}
