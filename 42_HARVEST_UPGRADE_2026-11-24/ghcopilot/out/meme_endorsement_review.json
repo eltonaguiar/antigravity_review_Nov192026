@@ -1,0 +1,913 @@
+{
+  "total_mcap_musd": 15139.53,
+  "total_vol_musd": 1175.40538419,
+  "top3_share_pct": 80.31953435806791,
+  "top10_share_pct": 89.66962646792865,
+  "negative_24h": 91,
+  "negative_7d": 84,
+  "median_7d_pct": -6.1850000000000005,
+  "turnover_under_0_1pct_count": 18,
+  "executable_10k_count": 45,
+  "rows": [
+    {
+      "rank": 1,
+      "ticker": "DOGE",
+      "mcap_musd": 8640,
+      "vol_musd": 511.27,
+      "chg24": -3.49,
+      "chg7d": -5.7,
+      "turnover_pct": 5.917476851851852
+    },
+    {
+      "rank": 2,
+      "ticker": "SHIB",
+      "mcap_musd": 2100,
+      "vol_musd": 43.46,
+      "chg24": -3.78,
+      "chg7d": -6.32,
+      "turnover_pct": 2.0695238095238095
+    },
+    {
+      "rank": 3,
+      "ticker": "PEPE",
+      "mcap_musd": 1420,
+      "vol_musd": 338.65,
+      "chg24": -3.14,
+      "chg7d": -8.87,
+      "turnover_pct": 23.848591549295776
+    },
+    {
+      "rank": 4,
+      "ticker": "APEPE",
+      "mcap_musd": 293.18,
+      "vol_musd": 16.95,
+      "chg24": 0.72,
+      "chg7d": 12.1,
+      "turnover_pct": 5.781431202674125
+    },
+    {
+      "rank": 5,
+      "ticker": "PENGU",
+      "mcap_musd": 265.47,
+      "vol_musd": 62.13,
+      "chg24": -6.46,
+      "chg7d": -6.55,
+      "turnover_pct": 23.40377443778958
+    },
+    {
+      "rank": 6,
+      "ticker": "SPX",
+      "mcap_musd": 252.24,
+      "vol_musd": 4.9,
+      "chg24": -5.7,
+      "chg7d": -12.64,
+      "turnover_pct": 1.942594354582937
+    },
+    {
+      "rank": 7,
+      "ticker": "BONK",
+      "mcap_musd": 187.28,
+      "vol_musd": 23.43,
+      "chg24": -3.18,
+      "chg7d": -8.97,
+      "turnover_pct": 12.510679196924391
+    },
+    {
+      "rank": 8,
+      "ticker": "FLOKI",
+      "mcap_musd": 156.09,
+      "vol_musd": 9.01,
+      "chg24": -3.57,
+      "chg7d": -8.87,
+      "turnover_pct": 5.772310846306618
+    },
+    {
+      "rank": 9,
+      "ticker": "DOGE(peg)",
+      "mcap_musd": 140.78,
+      "vol_musd": 0.47070999999999996,
+      "chg24": -3.16,
+      "chg7d": -5.37,
+      "turnover_pct": 0.3343585736610314
+    },
+    {
+      "rank": 10,
+      "ticker": "WIF",
+      "mcap_musd": 120.52,
+      "vol_musd": 28.84,
+      "chg24": -5.29,
+      "chg7d": -9.05,
+      "turnover_pct": 23.929638234317956
+    },
+    {
+      "rank": 11,
+      "ticker": "NPC",
+      "mcap_musd": 83.07,
+      "vol_musd": 3.2,
+      "chg24": -10.62,
+      "chg7d": -11.75,
+      "turnover_pct": 3.8521728662573738
+    },
+    {
+      "rank": 12,
+      "ticker": "FARTCOIN",
+      "mcap_musd": 78.7,
+      "vol_musd": 9.59,
+      "chg24": -6.04,
+      "chg7d": -11.08,
+      "turnover_pct": 12.18551461245235
+    },
+    {
+      "rank": 13,
+      "ticker": "DOG",
+      "mcap_musd": 65.5,
+      "vol_musd": 0.38201,
+      "chg24": -3.73,
+      "chg7d": -7.72,
+      "turnover_pct": 0.5832213740458015
+    },
+    {
+      "rank": 14,
+      "ticker": "CHEEMS",
+      "mcap_musd": 56.55,
+      "vol_musd": 0.31973,
+      "chg24": -3.27,
+      "chg7d": -5.25,
+      "turnover_pct": 0.5653934571175951
+    },
+    {
+      "rank": 15,
+      "ticker": "ORDI",
+      "mcap_musd": 54.23,
+      "vol_musd": 8.7,
+      "chg24": -4.81,
+      "chg7d": -5.86,
+      "turnover_pct": 16.0427807486631
+    },
+    {
+      "rank": 16,
+      "ticker": "BANANAS31",
+      "mcap_musd": 46.79,
+      "vol_musd": 3.08,
+      "chg24": -3.39,
+      "chg7d": -8.47,
+      "turnover_pct": 6.582603120324856
+    },
+    {
+      "rank": 17,
+      "ticker": "BABYDOGE",
+      "mcap_musd": 44.93,
+      "vol_musd": 1.28,
+      "chg24": -3.81,
+      "chg7d": -4.54,
+      "turnover_pct": 2.848876029379034
+    },
+    {
+      "rank": 18,
+      "ticker": "BAN",
+      "mcap_musd": 40.46,
+      "vol_musd": 2.73,
+      "chg24": -4.76,
+      "chg7d": 4.37,
+      "turnover_pct": 6.747404844290657
+    },
+    {
+      "rank": 19,
+      "ticker": "PURR",
+      "mcap_musd": 39.61,
+      "vol_musd": 0.90025,
+      "chg24": -9.88,
+      "chg7d": -25.8,
+      "turnover_pct": 2.272784650340823
+    },
+    {
+      "rank": 20,
+      "ticker": "TURBO",
+      "mcap_musd": 38.21,
+      "vol_musd": 5.27,
+      "chg24": -3.48,
+      "chg7d": -8.26,
+      "turnover_pct": 13.792200994504055
+    },
+    {
+      "rank": 21,
+      "ticker": "TOSHI",
+      "mcap_musd": 32.67,
+      "vol_musd": 2.14,
+      "chg24": -4.87,
+      "chg7d": -2.66,
+      "turnover_pct": 6.5503520048974595
+    },
+    {
+      "rank": 22,
+      "ticker": "SHIB(peg)",
+      "mcap_musd": 32.67,
+      "vol_musd": 0.01174,
+      "chg24": -3.52,
+      "chg7d": -6.32,
+      "turnover_pct": 0.035935108662381386
+    },
+    {
+      "rank": 23,
+      "ticker": "REKT",
+      "mcap_musd": 32.27,
+      "vol_musd": 1.0,
+      "chg24": -3.66,
+      "chg7d": 16.17,
+      "turnover_pct": 3.0988534242330337
+    },
+    {
+      "rank": 24,
+      "ticker": "LOBO",
+      "mcap_musd": 31.51,
+      "vol_musd": 0.009550000000000001,
+      "chg24": 0.35,
+      "chg7d": -11.87,
+      "turnover_pct": 0.030307838781339257
+    },
+    {
+      "rank": 25,
+      "ticker": "BOME",
+      "mcap_musd": 31.03,
+      "vol_musd": 5.01,
+      "chg24": -4.82,
+      "chg7d": -8.77,
+      "turnover_pct": 16.1456654850145
+    },
+    {
+      "rank": 26,
+      "ticker": "MOG",
+      "mcap_musd": 30.78,
+      "vol_musd": 6.31,
+      "chg24": -3.41,
+      "chg7d": 2.49,
+      "turnover_pct": 20.500324886289796
+    },
+    {
+      "rank": 27,
+      "ticker": "SNEK",
+      "mcap_musd": 30.6,
+      "vol_musd": 0.82031,
+      "chg24": -8.59,
+      "chg7d": -7.09,
+      "turnover_pct": 2.6807516339869277
+    },
+    {
+      "rank": 28,
+      "ticker": "BRETT",
+      "mcap_musd": 30.02,
+      "vol_musd": 2.27,
+      "chg24": -4.43,
+      "chg7d": -9.82,
+      "turnover_pct": 7.561625582944703
+    },
+    {
+      "rank": 29,
+      "ticker": "NOT",
+      "mcap_musd": 28.66,
+      "vol_musd": 2.85,
+      "chg24": -3.08,
+      "chg7d": -5.78,
+      "turnover_pct": 9.94417306350314
+    },
+    {
+      "rank": 30,
+      "ticker": "GEKKO",
+      "mcap_musd": 28.31,
+      "vol_musd": 0.0006093699999999999,
+      "chg24": -4.01,
+      "chg7d": -26.97,
+      "turnover_pct": 0.002152490286117979
+    },
+    {
+      "rank": 31,
+      "ticker": "PNUT",
+      "mcap_musd": 25.79,
+      "vol_musd": 8.01,
+      "chg24": -4.13,
+      "chg7d": -10.69,
+      "turnover_pct": 31.058549825513765
+    },
+    {
+      "rank": 32,
+      "ticker": "MEW",
+      "mcap_musd": 25.16,
+      "vol_musd": 1.8,
+      "chg24": -4.29,
+      "chg7d": -5.98,
+      "turnover_pct": 7.154213036565977
+    },
+    {
+      "rank": 33,
+      "ticker": "POPCAT",
+      "mcap_musd": 24.41,
+      "vol_musd": 5.07,
+      "chg24": -6.8,
+      "chg7d": -11.37,
+      "turnover_pct": 20.770176157312576
+    },
+    {
+      "rank": 34,
+      "ticker": "DEGEN",
+      "mcap_musd": 24.4,
+      "vol_musd": 2.25,
+      "chg24": -3.75,
+      "chg7d": -1.2,
+      "turnover_pct": 9.221311475409836
+    },
+    {
+      "rank": 35,
+      "ticker": "PEOPLE",
+      "mcap_musd": 24.28,
+      "vol_musd": 5.31,
+      "chg24": -2.66,
+      "chg7d": -5.56,
+      "turnover_pct": 21.86985172981878
+    },
+    {
+      "rank": 36,
+      "ticker": "MOODENG",
+      "mcap_musd": 24.26,
+      "vol_musd": 5.19,
+      "chg24": -6.61,
+      "chg7d": -8.63,
+      "turnover_pct": 21.393239901071723
+    },
+    {
+      "rank": 37,
+      "ticker": "HUNDRED",
+      "mcap_musd": 21.95,
+      "vol_musd": 0.00186,
+      "chg24": 0.02,
+      "chg7d": 1.38,
+      "turnover_pct": 0.008473804100227791
+    },
+    {
+      "rank": 38,
+      "ticker": "UTYA",
+      "mcap_musd": 21.72,
+      "vol_musd": 0.35187,
+      "chg24": -7.78,
+      "chg7d": -26.71,
+      "turnover_pct": 1.6200276243093925
+    },
+    {
+      "rank": 39,
+      "ticker": "WKC",
+      "mcap_musd": 20.61,
+      "vol_musd": 0.09004999999999999,
+      "chg24": -6.76,
+      "chg7d": -22.29,
+      "turnover_pct": 0.43692382338670543
+    },
+    {
+      "rank": 40,
+      "ticker": "ZEREBRO",
+      "mcap_musd": 20.39,
+      "vol_musd": 5.0,
+      "chg24": -5.86,
+      "chg7d": -3.36,
+      "turnover_pct": 24.521824423737126
+    },
+    {
+      "rank": 41,
+      "ticker": "NEIRO",
+      "mcap_musd": 19.54,
+      "vol_musd": 3.02,
+      "chg24": -3.25,
+      "chg7d": -5.2,
+      "turnover_pct": 15.455475946775845
+    },
+    {
+      "rank": 42,
+      "ticker": "PIPPIN",
+      "mcap_musd": 19.07,
+      "vol_musd": 3.56,
+      "chg24": 4.25,
+      "chg7d": 74.21,
+      "turnover_pct": 18.668065023597272
+    },
+    {
+      "rank": 43,
+      "ticker": "MEME",
+      "mcap_musd": 18.51,
+      "vol_musd": 4.35,
+      "chg24": -3.49,
+      "chg7d": -9.76,
+      "turnover_pct": 23.50081037277147
+    },
+    {
+      "rank": 44,
+      "ticker": "BURN",
+      "mcap_musd": 15.61,
+      "vol_musd": 0.02468,
+      "chg24": -0.78,
+      "chg7d": -13.01,
+      "turnover_pct": 0.1581037796284433
+    },
+    {
+      "rank": 45,
+      "ticker": "ELON",
+      "mcap_musd": 15.34,
+      "vol_musd": 2.3,
+      "chg24": -8.43,
+      "chg7d": -20.48,
+      "turnover_pct": 14.993481095176008
+    },
+    {
+      "rank": 46,
+      "ticker": "FRTC",
+      "mcap_musd": 14.83,
+      "vol_musd": 0.04398,
+      "chg24": -0.03,
+      "chg7d": -0.01,
+      "turnover_pct": 0.2965610249494268
+    },
+    {
+      "rank": 47,
+      "ticker": "GIGA",
+      "mcap_musd": 13.08,
+      "vol_musd": 1.57,
+      "chg24": -7.01,
+      "chg7d": -14.27,
+      "turnover_pct": 12.003058103975535
+    },
+    {
+      "rank": 48,
+      "ticker": "DOGS",
+      "mcap_musd": 12.48,
+      "vol_musd": 1.95,
+      "chg24": -5.11,
+      "chg7d": -8.9,
+      "turnover_pct": 15.625
+    },
+    {
+      "rank": 49,
+      "ticker": "$CWIF",
+      "mcap_musd": 12.03,
+      "vol_musd": 0.00060316,
+      "chg24": 3.02,
+      "chg7d": 15.64,
+      "turnover_pct": 0.005013798836242727
+    },
+    {
+      "rank": 50,
+      "ticker": "AIXBT",
+      "mcap_musd": 11.64,
+      "vol_musd": 1.97,
+      "chg24": -3.31,
+      "chg7d": -9.64,
+      "turnover_pct": 16.924398625429554
+    },
+    {
+      "rank": 51,
+      "ticker": "HAROLD",
+      "mcap_musd": 11.26,
+      "vol_musd": 0.00126,
+      "chg24": -6.17,
+      "chg7d": -12.27,
+      "turnover_pct": 0.011190053285968029
+    },
+    {
+      "rank": 52,
+      "ticker": "AIC",
+      "mcap_musd": 10.76,
+      "vol_musd": 0.06831999999999999,
+      "chg24": -5.12,
+      "chg7d": -5.5,
+      "turnover_pct": 0.6349442379182155
+    },
+    {
+      "rank": 53,
+      "ticker": "OSAK",
+      "mcap_musd": 10.24,
+      "vol_musd": 0.05973,
+      "chg24": -7.33,
+      "chg7d": -3.97,
+      "turnover_pct": 0.58330078125
+    },
+    {
+      "rank": 54,
+      "ticker": "GOAT",
+      "mcap_musd": 10.17,
+      "vol_musd": 1.19,
+      "chg24": -4.09,
+      "chg7d": -5.25,
+      "turnover_pct": 11.701081612586037
+    },
+    {
+      "rank": 55,
+      "ticker": "CAT",
+      "mcap_musd": 9.64,
+      "vol_musd": 0.61758,
+      "chg24": -5.84,
+      "chg7d": -11.03,
+      "turnover_pct": 6.40643153526971
+    },
+    {
+      "rank": 56,
+      "ticker": "GRIFFAIN",
+      "mcap_musd": 9.56,
+      "vol_musd": 2.64,
+      "chg24": -2.88,
+      "chg7d": -1.14,
+      "turnover_pct": 27.615062761506273
+    },
+    {
+      "rank": 57,
+      "ticker": "BONE",
+      "mcap_musd": 9.54,
+      "vol_musd": 2.39,
+      "chg24": -2.18,
+      "chg7d": -3.37,
+      "turnover_pct": 25.052410901467507
+    },
+    {
+      "rank": 58,
+      "ticker": "BALD",
+      "mcap_musd": 9.21,
+      "vol_musd": 2.3600000000000003e-06,
+      "chg24": -3.02,
+      "chg7d": -7.78,
+      "turnover_pct": 2.5624321389793702e-05
+    },
+    {
+      "rank": 59,
+      "ticker": "BITCOIN",
+      "mcap_musd": 8.93,
+      "vol_musd": 0.32395999999999997,
+      "chg24": -7.25,
+      "chg7d": -14.93,
+      "turnover_pct": 3.627771556550951
+    },
+    {
+      "rank": 60,
+      "ticker": "ACT",
+      "mcap_musd": 8.18,
+      "vol_musd": 4.34,
+      "chg24": -1.15,
+      "chg7d": -1.41,
+      "turnover_pct": 53.05623471882641
+    },
+    {
+      "rank": 61,
+      "ticker": "ANDY",
+      "mcap_musd": 8.12,
+      "vol_musd": 0.07975,
+      "chg24": -7.96,
+      "chg7d": -4.37,
+      "turnover_pct": 0.9821428571428573
+    },
+    {
+      "rank": 62,
+      "ticker": "NST",
+      "mcap_musd": 7.97,
+      "vol_musd": 0.14553,
+      "chg24": -5.75,
+      "chg7d": -14.04,
+      "turnover_pct": 1.8259723964868255
+    },
+    {
+      "rank": 63,
+      "ticker": "BINK",
+      "mcap_musd": 7.85,
+      "vol_musd": 8.97e-06,
+      "chg24": -5.38,
+      "chg7d": -5.83,
+      "turnover_pct": 0.00011426751592356688
+    },
+    {
+      "rank": 64,
+      "ticker": "BERT",
+      "mcap_musd": 7.61,
+      "vol_musd": 0.6075,
+      "chg24": -7.71,
+      "chg7d": -22.55,
+      "turnover_pct": 7.982917214191853
+    },
+    {
+      "rank": 65,
+      "ticker": "AVA",
+      "mcap_musd": 7.59,
+      "vol_musd": 2.7,
+      "chg24": 0.98,
+      "chg7d": 27.92,
+      "turnover_pct": 35.573122529644266
+    },
+    {
+      "rank": 66,
+      "ticker": "BARA",
+      "mcap_musd": 7.5,
+      "vol_musd": 0.014039999999999999,
+      "chg24": -0.61,
+      "chg7d": 3.93,
+      "turnover_pct": 0.18719999999999998
+    },
+    {
+      "rank": 67,
+      "ticker": "KOMA",
+      "mcap_musd": 7.49,
+      "vol_musd": 0.96213,
+      "chg24": -4.46,
+      "chg7d": -1.77,
+      "turnover_pct": 12.845527369826437
+    },
+    {
+      "rank": 68,
+      "ticker": "CORGIAI",
+      "mcap_musd": 7.4,
+      "vol_musd": 0.00393,
+      "chg24": -1.59,
+      "chg7d": -4.55,
+      "turnover_pct": 0.05310810810810811
+    },
+    {
+      "rank": 69,
+      "ticker": "PONKE",
+      "mcap_musd": 7.35,
+      "vol_musd": 2.26,
+      "chg24": -2.1,
+      "chg7d": -6.34,
+      "turnover_pct": 30.748299319727888
+    },
+    {
+      "rank": 70,
+      "ticker": "CHILLGUY",
+      "mcap_musd": 6.8,
+      "vol_musd": 3.67,
+      "chg24": -2.96,
+      "chg7d": -7.67,
+      "turnover_pct": 53.970588235294116
+    },
+    {
+      "rank": 71,
+      "ticker": "PEPECOIN",
+      "mcap_musd": 6.37,
+      "vol_musd": 0.12961,
+      "chg24": -14.88,
+      "chg7d": -18.79,
+      "turnover_pct": 2.0346938775510206
+    },
+    {
+      "rank": 72,
+      "ticker": "PEP",
+      "mcap_musd": 6.2,
+      "vol_musd": 0.09095,
+      "chg24": -4.13,
+      "chg7d": -0.36,
+      "turnover_pct": 1.4669354838709678
+    },
+    {
+      "rank": 73,
+      "ticker": "LOFI",
+      "mcap_musd": 6.09,
+      "vol_musd": 0.20487,
+      "chg24": -5.99,
+      "chg7d": -11.45,
+      "turnover_pct": 3.364039408866995
+    },
+    {
+      "rank": 74,
+      "ticker": "SMOLE",
+      "mcap_musd": 6.0,
+      "vol_musd": 5.152e-05,
+      "chg24": -6.35,
+      "chg7d": -4.85,
+      "turnover_pct": 0.0008586666666666668
+    },
+    {
+      "rank": 75,
+      "ticker": "COQ",
+      "mcap_musd": 5.99,
+      "vol_musd": 2.21,
+      "chg24": -1.88,
+      "chg7d": 10.96,
+      "turnover_pct": 36.89482470784641
+    },
+    {
+      "rank": 76,
+      "ticker": "AHT",
+      "mcap_musd": 5.97,
+      "vol_musd": 0.06331,
+      "chg24": -1.8,
+      "chg7d": -2.21,
+      "turnover_pct": 1.0604690117252933
+    },
+    {
+      "rank": 77,
+      "ticker": "PUPPIES",
+      "mcap_musd": 5.84,
+      "vol_musd": 0.46576999999999996,
+      "chg24": -3.73,
+      "chg7d": 13.5,
+      "turnover_pct": 7.975513698630137
+    },
+    {
+      "rank": 78,
+      "ticker": "WOLF",
+      "mcap_musd": 5.72,
+      "vol_musd": 0.29397,
+      "chg24": -7.59,
+      "chg7d": -6.64,
+      "turnover_pct": 5.139335664335665
+    },
+    {
+      "rank": 79,
+      "ticker": "ROSA",
+      "mcap_musd": 5.71,
+      "vol_musd": 0.20940999999999999,
+      "chg24": -8.04,
+      "chg7d": -15.41,
+      "turnover_pct": 3.6674255691768827
+    },
+    {
+      "rank": 80,
+      "ticker": "CROB",
+      "mcap_musd": 5.35,
+      "vol_musd": 2.016e-05,
+      "chg24": -1.2,
+      "chg7d": -7.38,
+      "turnover_pct": 0.0003768224299065421
+    },
+    {
+      "rank": 81,
+      "ticker": "BNBTIGEROG",
+      "mcap_musd": 5.3,
+      "vol_musd": 0.01005,
+      "chg24": 0.0,
+      "chg7d": 0.0,
+      "turnover_pct": 0.18962264150943395
+    },
+    {
+      "rank": 82,
+      "ticker": "PEPPER",
+      "mcap_musd": 5.21,
+      "vol_musd": 0.00945,
+      "chg24": -3.28,
+      "chg7d": 10.46,
+      "turnover_pct": 0.1813819577735125
+    },
+    {
+      "rank": 83,
+      "ticker": "PTGC",
+      "mcap_musd": 5.05,
+      "vol_musd": 0.0045,
+      "chg24": -1.62,
+      "chg7d": -3.97,
+      "turnover_pct": 0.0891089108910891
+    },
+    {
+      "rank": 84,
+      "ticker": "CULT",
+      "mcap_musd": 4.89,
+      "vol_musd": 0.09207,
+      "chg24": -4.15,
+      "chg7d": -18.42,
+      "turnover_pct": 1.8828220858895708
+    },
+    {
+      "rank": 85,
+      "ticker": "PNDC",
+      "mcap_musd": 4.87,
+      "vol_musd": 0.0145,
+      "chg24": -15.19,
+      "chg7d": -18.8,
+      "turnover_pct": 0.29774127310061604
+    },
+    {
+      "rank": 86,
+      "ticker": "MONA",
+      "mcap_musd": 4.85,
+      "vol_musd": 0.00392,
+      "chg24": -2.93,
+      "chg7d": -5.47,
+      "turnover_pct": 0.08082474226804125
+    },
+    {
+      "rank": 87,
+      "ticker": "BABYSHIBAINU",
+      "mcap_musd": 4.84,
+      "vol_musd": 8.865e-05,
+      "chg24": -1.86,
+      "chg7d": -6.37,
+      "turnover_pct": 0.0018316115702479339
+    },
+    {
+      "rank": 88,
+      "ticker": "PIKA",
+      "mcap_musd": 4.78,
+      "vol_musd": 0.0035299999999999997,
+      "chg24": -1.99,
+      "chg7d": -2.76,
+      "turnover_pct": 0.07384937238493723
+    },
+    {
+      "rank": 89,
+      "ticker": "PEPECAT",
+      "mcap_musd": 4.64,
+      "vol_musd": 0.01703,
+      "chg24": 0.29,
+      "chg7d": -2.21,
+      "turnover_pct": 0.36702586206896554
+    },
+    {
+      "rank": 90,
+      "ticker": "DOG(OTD)",
+      "mcap_musd": 4.57,
+      "vol_musd": 0.01102,
+      "chg24": -4.08,
+      "chg7d": -3.49,
+      "turnover_pct": 0.24113785557986872
+    },
+    {
+      "rank": 91,
+      "ticker": "PIT",
+      "mcap_musd": 4.35,
+      "vol_musd": 0.05686,
+      "chg24": -3.23,
+      "chg7d": -5.24,
+      "turnover_pct": 1.3071264367816093
+    },
+    {
+      "rank": 92,
+      "ticker": "HTM",
+      "mcap_musd": 4.32,
+      "vol_musd": 0.00825,
+      "chg24": -4.62,
+      "chg7d": -10.33,
+      "turnover_pct": 0.19097222222222224
+    },
+    {
+      "rank": 93,
+      "ticker": "SQGROW",
+      "mcap_musd": 4.24,
+      "vol_musd": 0.0024700000000000004,
+      "chg24": -7.93,
+      "chg7d": 6.2,
+      "turnover_pct": 0.05825471698113208
+    },
+    {
+      "rank": 94,
+      "ticker": "VDOGE",
+      "mcap_musd": 4.16,
+      "vol_musd": 0.0,
+      "chg24": -4.96,
+      "chg7d": -6.05,
+      "turnover_pct": 0.0
+    },
+    {
+      "rank": 95,
+      "ticker": "UFD",
+      "mcap_musd": 4.13,
+      "vol_musd": 0.03147,
+      "chg24": -5.17,
+      "chg7d": -9.58,
+      "turnover_pct": 0.7619854721549637
+    },
+    {
+      "rank": 96,
+      "ticker": "AURA",
+      "mcap_musd": 4.1,
+      "vol_musd": 0.20939,
+      "chg24": -7.66,
+      "chg7d": -17.87,
+      "turnover_pct": 5.107073170731708
+    },
+    {
+      "rank": 97,
+      "ticker": "KEKIUS",
+      "mcap_musd": 4.0,
+      "vol_musd": 2.23,
+      "chg24": 3.65,
+      "chg7d": 1.13,
+      "turnover_pct": 55.75
+    },
+    {
+      "rank": 98,
+      "ticker": "PORK",
+      "mcap_musd": 3.95,
+      "vol_musd": 0.010029999999999999,
+      "chg24": -4.45,
+      "chg7d": -15.16,
+      "turnover_pct": 0.25392405063291135
+    },
+    {
+      "rank": 99,
+      "ticker": "HOSKY",
+      "mcap_musd": 3.89,
+      "vol_musd": 0.00332,
+      "chg24": -4.07,
+      "chg7d": 4.99,
+      "turnover_pct": 0.08534704370179949
+    },
+    {
+      "rank": 100,
+      "ticker": "LADYS",
+      "mcap_musd": 3.75,
+      "vol_musd": 0.09778,
+      "chg24": -3.93,
+      "chg7d": -4.11,
+      "turnover_pct": 2.607466666666667
+    }
+  ]
+}
