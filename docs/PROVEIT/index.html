@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROVEIT — six-size account analysis</title>
+<style>
+  :root { color-scheme: dark light; }
+  body { font: 15px/1.6 -apple-system, Segoe UI, Roboto, sans-serif; max-width: 60rem;
+         margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 1.5rem; margin-bottom: .25rem; }
+  .sub { opacity: .7; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0 1.5rem; }
+  th, td { text-align: right; padding: .35rem .6rem; border-bottom: 1px solid rgba(128,128,128,.25); }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-weight: 600; font-size: .85rem; opacity: .8; }
+  .flag { color: #c60; font-weight: 600; }
+  ul { padding-left: 1.2rem; }
+  code { background: rgba(128,128,128,.15); padding: .1rem .3rem; border-radius: 3px; }
+  .warn { border-left: 3px solid #c60; padding: .6rem .9rem; background: rgba(200,120,0,.08); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<h1>PROVEIT — six-size account analysis</h1>
+<p class="sub">Paper research. Not investment advice. Window 2021-11-15 → 2026-11-13.</p>
+
+<div class="warn">
+  <strong>Why this page exists.</strong> The GitHub Pages workflow publishes
+  <code>path: docs</code> only, while the deliverable lives at the repo root under
+  <code>PROVEIT/</code> — kept there because <code>README.md</code> and the live
+  <code>/PROVEIT_KILOCODE.html</code> link to it on github.com. The workflow therefore copies
+  <code>PROVEIT/</code> into <code>docs/PROVEIT/</code> at <em>build time</em>, and the relative
+  links below resolve against that staged copy. Exactly one source of truth exists; no second copy
+  is committed, so the two can never drift apart. The build also fails if any link here does not
+  resolve.
+</div>
+
+<h2>Headline result</h2>
+<p>Buy-and-hold returns an <strong>identical 9.18% CAGR at $10,000, $20,000 and $50,000</strong>.
+Once whole-share granularity stops binding, account size is irrelevant — every size-dependent effect
+lives below $10K.</p>
+
+<table>
+  <caption>Buy-and-hold by account size</caption>
+  <tr><th>start</th><th>final</th><th>CAGR</th><th>max DD</th><th>fees+spread</th></tr>
+  <tr><td>$300</td><td>$286.50</td><td>−0.92%</td><td>−6.98%</td><td>$0.05</td></tr>
+  <tr><td>$500</td><td>$473.01</td><td>−1.11%</td><td>−8.37%</td><td>$0.09</td></tr>
+  <tr><td>$2,000</td><td>$3,030.04</td><td>+8.70%</td><td>−13.51%</td><td>$0.93</td></tr>
+  <tr><td>$10,000</td><td>$15,489.06</td><td>+9.18%</td><td>−14.20%</td><td>$4.99</td></tr>
+  <tr><td>$20,000</td><td>$30,978.12</td><td>+9.18%</td><td>−14.20%</td><td>$9.99</td></tr>
+  <tr><td>$50,000</td><td>$77,445.30</td><td>+9.18%</td><td>−14.20%</td><td>$24.97</td></tr>
+</table>
+
+<h3>Why $300 fails</h3>
+<p>One SPY share cost <strong>$374.84</strong> on <strong>2022-09-01</strong> — bar 200 of the price series,
+the first bar the simulation is allowed to trade after its 200-day moving-average warm-up. A $300 account
+therefore <strong>cannot buy a single SPY share</strong>: the 60% SPY leg is $180, which buys 0.41 of a share.
+It ends holding <strong>72.3% cash</strong> (cash as a share of the <em>ending</em> portfolio — 69.0% of the
+$300 it started with) and compounds at −0.92%/yr over five years, <em>while SPY rose from $374.84 to
+$754.37</em>. The position was never expressible; this is an instrument-choice failure, not a strategy failure.</p>
+<p class="sub" style="font-size:13px">Source: the entry bar is a warm-up convention, not the window start.
+SPY's first bar in the window closed at $437.19 and its last at $754.37, but the account never held a share
+at $437.19 — the only SPY price that matters to this portfolio is the $374.84 it would have paid.</p>
+
+<h2>Does a bigger account rescue a strategy?</h2>
+<table>
+  <tr><th>start</th><th>hold CAGR</th><th>best variant</th><th>best CAGR</th><th>edge</th></tr>
+  <tr><td>$10,000</td><td>9.18%</td><td>trend_200</td><td>10.49%</td><td>+1.31pp</td></tr>
+  <tr><td>$20,000</td><td>9.18%</td><td>trend_200</td><td>10.60%</td><td>+1.42pp</td></tr>
+  <tr><td>$50,000</td><td>9.18%</td><td>trend_200</td><td>10.68%</td><td>+1.50pp</td></tr>
+</table>
+<p>The edge creeps up with size but never leaves the noise band, and it is the same rule family the
+1000-cell sweep killed across five asset classes — <strong>0 PASS in 47 measured cells</strong>, every
+candidate failing walk-forward. 24 variants were scanned; the variant count is reported because a scan
+of N variants is N trials.</p>
+
+<h2>Costs scale; edge does not</h2>
+<table>
+  <tr><th>start</th><th>TP/SL cost</th><th>TP/SL CAGR</th><th>vs holding</th></tr>
+  <tr><td>$10,000</td><td>$44.61</td><td><strong>8.56%</strong></td><td class="flag">−0.62pp (worse)</td></tr>
+  <tr><td>$20,000</td><td>$90.23</td><td>9.02%</td><td>−0.16pp</td></tr>
+  <tr><td>$50,000</td><td>$226.80</td><td>9.05%</td><td>−0.13pp</td></tr>
+</table>
+<p>16 trades at every size. <span class="flag">Correction:</span> an earlier summary quoted
+"9.02–9.05%, indistinguishable from holding" beside all three rows — that range covers only $20K and
+$50K. At $10K, TP/SL returns <strong>8.56%</strong>, below holding. Trading activity scales with
+capital; its edge does not.</p>
+
+<h2>Fee model (stated, not hidden)</h2>
+<ul>
+  <li>commission: <code>$0.00</code> per order (discount broker)</li>
+  <li>spread / slippage: <code>5bp</code> round-turn on every traded notional</li>
+  <li>MER charged daily: SPY 0.0945%, TLT 0.15%, GLD 0.40%, BIL 0.136%</li>
+  <li>fractional shares: <strong>not available</strong> (whole shares only)</li>
+</ul>
+
+<h2>Result files</h2>
+<ul>
+  <li><a href="PROVEIT_24-11-2026_KILOCODE_AGENT/sim_2026-11-24T0350Z.json">sim_2026-11-24T0350Z.json</a> — scenario simulation, all six sizes</li>
+  <li><a href="PROVEIT_24-11-2026_KILOCODE_AGENT/paramscan_2026-11-24T0350Z.json">paramscan_2026-11-24T0350Z.json</a> — 24-variant parameter scan</li>
+  <li><a href="PROVEIT_24-11-2026_KILOCODE_AGENT/provenance_2026-11-24T0350Z.json">provenance_2026-11-24T0350Z.json</a> — the provenance record: inputs, hashes and bar counts behind every figure above. It shipped without a link, so this was the one file nobody could find</li>
+  <li><a href="PROVEIT_24-11-2026_KILOCODE_AGENT/PROVEIT_EXTENDED_SCENARIOS_20261124T0350Z.md">PROVEIT_EXTENDED_SCENARIOS_20261124T0350Z.md</a> — generated report and error log</li>
+  <li><a href="PROVEIT_24-11-2026_KILOCODE_AGENT/BEHAVIOUR_REPORT_20261124T0340Z.md">BEHAVIOUR_REPORT_20261124T0340Z.md</a> — the 11.66% → 3.47% miss-best-days figure and the panic-sell test it comes from <em>(the site's main page quotes this number but links no source; this is that source)</em></li>
+    <li><a href="PROVEIT_24-11-2026_KILOCODE_AGENT/PROVEIT_REPORT_2026-11-24T0322Z.md">PROVEIT_REPORT_2026-11-24T0322Z.md</a> — the primary dated report: philosophy and rules, common-window backtest, per-size fee math, per-class endorsement</li>
+    <li><a href="PROVEIT_24-11-2026_KILOCODE_AGENT/REBALANCE_REPORT_2026-11-24T0350Z.md">REBALANCE_REPORT_2026-11-24T0350Z.md</a> — why rebalancing is optional rather than alpha: not rebalancing won (7.44%/yr vs 6.91%), no drawdown benefit, and the band's real gain is 2 trades instead of 59</li>
+    <li><a href="PROVEIT_24-11-2026_KILOCODE_AGENT/data/market_prices.csv">data/market_prices.csv</a> — the price series every figure above is computed from (1255 daily bars, 2021-11 → 2026-11, adjusted and close). Without this file none of the other results can be re-derived</li>
+</ul>
+
+<h2>Verdict</h2>
+<p><strong>No investable edge at any account size.</strong> Below ~$10K the binding constraint is
+instrument choice; above it, size is irrelevant and only cost and holding discipline matter. The only
+thing that survived testing is the unglamorous null: a cheap broad index, held.</p>
+</body>
+</html>
