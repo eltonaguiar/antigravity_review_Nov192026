@@ -1,0 +1,76 @@
+{
+  "method": "re-cost each marked pick at its class cost-of-record (ceiling)",
+  "by_class": {
+    "BOND": {
+      "n": 24,
+      "charged_bp": 26.0,
+      "correct_bp": 0.6144,
+      "gross_mean": 9.625,
+      "net_now": -16.375,
+      "net_correct": 9.0106,
+      "flips_pos": 11,
+      "flips_neg": 0
+    },
+    "COMMODITY": {
+      "n": 8,
+      "charged_bp": 26.0,
+      "correct_bp": 20.0,
+      "gross_mean": 88.59,
+      "net_now": 62.59,
+      "net_correct": 68.59,
+      "flips_pos": 0,
+      "flips_neg": 0
+    },
+    "CRYPTO": {
+      "n": 331,
+      "charged_bp": 26.0,
+      "correct_bp": 52.0,
+      "gross_mean": 74.28758308157101,
+      "net_now": 48.28758308157101,
+      "net_correct": 22.28758308157101,
+      "flips_pos": 0,
+      "flips_neg": 5
+    },
+    "EQUITY": {
+      "n": 70,
+      "charged_bp": 26.0,
+      "correct_bp": 12.0749,
+      "gross_mean": 65.82857142857144,
+      "net_now": 39.82857142857143,
+      "net_correct": 53.75367142857143,
+      "flips_pos": 1,
+      "flips_neg": 0
+    },
+    "ETF": {
+      "n": 33,
+      "charged_bp": 26.0,
+      "correct_bp": 6.7122,
+      "gross_mean": -61.696666666666665,
+      "net_now": -87.69666666666667,
+      "net_correct": -68.40886666666667,
+      "flips_pos": 0,
+      "flips_neg": 0
+    },
+    "FOREX": {
+      "n": 23,
+      "charged_bp": 26.0,
+      "correct_bp": 7.533,
+      "gross_mean": 8.347826086956522,
+      "net_now": -17.652173913043477,
+      "net_correct": 0.8148260869565213,
+      "flips_pos": 8,
+      "flips_neg": 0
+    },
+    "FUTURES": {
+      "n": 5,
+      "charged_bp": 26.0,
+      "correct_bp": 1.0,
+      "gross_mean": 10.55,
+      "net_now": -15.45,
+      "net_correct": 9.55,
+      "flips_pos": 0,
+      "flips_neg": 0
+    }
+  },
+  "total_flips_positive": 20
+}
