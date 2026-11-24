@@ -69,6 +69,11 @@
   th small { display: block; text-transform: none; letter-spacing: 0; font-weight: 400;
              font-size: .66rem; opacity: .75; }
   .method { font-size: .9rem; }
+  .trend { font-weight: 700; white-space: nowrap; }
+  .trend.up { color: #16a34a; } .trend.down { color: #dc2626; } .trend.flat { color: #6b7280; }
+  .btn { background:#1f2937;border:1px solid #374151;color:#e5e7eb;border-radius:6px;
+         padding:.4rem .7rem;font-size:.85rem;cursor:pointer; }
+  .btn:hover { background:#374151; }
 </style>
 </head>
 <body>
@@ -78,7 +83,8 @@
 filterable by date and asset class. <strong>Not investment advice.</strong></p>
 <p class="method">Every column is defined in the legend below it. The full method — endpoints,
 formulas, coverage semantics, known weaknesses and a reviewer checklist — is in
-<a href="HARVEST_METHODOLOGY.md"><strong>HARVEST_METHODOLOGY.md</strong></a>, written to be read by
+<a href="HARVEST_METHODOLOGY.md"><strong>HARVEST_METHODOLOGY.md</strong></a>
+(and the per-class universe/coverage plan in <a href="../harvest/UNIVERSE.md"><strong>harvest/UNIVERSE.md</strong></a>), written to be read by
 both people and language models.</p>
 
 <div class="eli5" style="background:rgba(108,182,255,.10);border:1px solid rgba(108,182,255,.35);border-radius:8px;padding:12px 16px;margin:12px 0">
@@ -116,8 +122,10 @@ both people and language models.</p>
     </select>
   </label>
   <label>Search
-    <input id="f-text" type="search" placeholder="symbol, name, sector…">
+    <input id="f-text" type="search" placeholder="symbol, name, sector…" list="symbols">
   </label>
+  <datalist id="symbols"></datalist>
+  <button class="btn" id="export" type="button">Export CSV</button>
   <span class="count" id="count"></span>
 </div>
 
@@ -281,6 +289,20 @@ function emptyMessage() {
     (n ? ` · ${n} symbol(s) failed to fetch, listed under “Symbols with no data”` : '');
 }
 
+function exportCsv() {
+  const cols = ['symbol','name','asset_class','sector','period','consensus','buy_side_pct',
+                'analysts','strong_buy','buy','hold','sell','strong_sell','mom_change_pp',
+                'direction','age_days'];
+  const rows = STATE.data.signals.filter(passes).slice()
+    .sort((a,b) => STATE.sortDir * cmp(a,b,STATE.sortKey));
+  const esc = (v) => v === null || v === undefined ? '' : `"${String(v).replace(/"/g,'""')}"`;
+  const csv = [cols.join(',')].concat(rows.map(r => cols.map(c => esc(r[c])).join(','))).join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+  a.download = 'harvest_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click(); URL.revokeObjectURL(a.href);
+}
+
 function render() {
   const rows = STATE.data.signals.filter(passes);
   rows.sort((a, b) => STATE.sortDir * cmp(a, b, STATE.sortKey));
@@ -297,7 +319,9 @@ function render() {
       <td>${s.analysts}</td>
       <td>${s.strong_buy} / ${s.buy} / ${s.hold} / ${s.sell} / ${s.strong_sell}</td>
       <td>${s.mom_change_pp === null ? '—' : (s.mom_change_pp > 0 ? '+' : '') + s.mom_change_pp.toFixed(1)}</td>
-      <td class="${s.direction}">${s.direction.replace(/_/g, ' ')}</td>
+      <td>${s.direction === 'IMPROVING' ? '<span class="trend up">▲ Improving</span>'
+            : s.direction === 'DETERIORATING' ? '<span class="trend down">▼ Deteriorating</span>'
+            : '<span class="trend flat">▬ Stable</span>'}</td>
       <td>${fmt(s.age_days)}</td>
     </tr>`).join('') || `<tr><td colspan="12" class="na" style="white-space:normal">${emptyMessage()}</td></tr>`;
 
@@ -355,6 +379,7 @@ function boot() {
   }
   for (const v of uniq((s) => s.consensus)) el('f-consensus').add(new Option(v.replace(/_/g, ' '), v));
   for (const v of uniq((s) => s.direction)) el('f-direction').add(new Option(v.replace(/_/g, ' '), v));
+  for (const v of uniq((s) => s.symbol)) el('symbols').appendChild(new Option(v, v));
 
   // coverage
   el('coverage').innerHTML = Object.entries(d.coverage_by_asset_class)
@@ -395,6 +420,7 @@ function boot() {
   render();
 }
 
+el('export').addEventListener('click', exportCsv);
 for (const id of ['f-class', 'f-consensus', 'f-direction', 'f-age', 'f-text']) {
   el(id).addEventListener('input', render);
 }
