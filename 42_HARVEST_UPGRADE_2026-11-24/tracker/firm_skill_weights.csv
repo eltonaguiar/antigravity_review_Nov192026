@@ -1,0 +1,222 @@
+firm_norm,n_clean_events,mean_net_excess_bps,placebo_p95_bps,verdict,weight
+BofA Securities,551,,,underpowered,0
+Morgan Stanley,473,,,underpowered,0
+J.P. Morgan,454,,,underpowered,0
+Goldman Sachs,448,,,underpowered,0
+UBS,359,,,underpowered,0
+Citi,350,,,underpowered,0
+Deutsche Bank,331,,,underpowered,0
+Jefferies,313,,,underpowered,0
+Wells Fargo,313,,,underpowered,0
+Barclays,297,,,underpowered,0
+Evercore ISI Group,254,,,underpowered,0
+Raymond James,251,,,underpowered,0
+Argus Research,240,,,underpowered,0
+Credit Suisse,220,,,underpowered,0
+RBC Capital Markets,214,,,underpowered,0
+Piper Sandler,208,,,underpowered,0
+BMO Capital Markets,202,,,underpowered,0
+Baird,186,,,underpowered,0
+Wolfe Research,174,,,underpowered,0
+Bernstein,153,,,underpowered,0
+Stifel,153,,,underpowered,0
+Mizuho,122,,,underpowered,0
+HSBC,116,,,underpowered,0
+Macquarie,103,,,underpowered,0
+Cowen & Co.,98,,,underpowered,0
+Guggenheim,97,,,underpowered,0
+"Keefe, Bruyette & Woods",91,,,underpowered,0
+Atlantic Equities,85,,,underpowered,0
+Scotiabank,78,,,underpowered,0
+Wedbush,76,,,underpowered,0
+Nomura,68,,,underpowered,0
+Seaport Global,60,,,underpowered,0
+Truist Securities,60,,,underpowered,0
+DA Davidson,57,,,underpowered,0
+SunTrust Robinson Humphrey,56,,,underpowered,0
+Berenberg,55,,,underpowered,0
+Loop Capital,54,,,underpowered,0
+Stephens & Co.,54,,,underpowered,0
+ISI Group,53,,,underpowered,0
+DZ Bank,52,,,underpowered,0
+TD Cowen,51,,,underpowered,0
+Exane BNP Paribas,46,,,underpowered,0
+BTIG,43,,,underpowered,0
+Needham & Company,43,,,underpowered,0
+CFRA,42,,,underpowered,0
+Freedom Broker,40,,,underpowered,0
+Buckingham Research,38,,,underpowered,0
+Longbow Research,38,,,underpowered,0
+MKM Partners,38,,,underpowered,0
+Societe Generale,38,,,underpowered,0
+Standpoint Research,38,,,underpowered,0
+William Blair,37,,,underpowered,0
+Canaccord Genuity,34,,,underpowered,0
+Edward Jones,34,,,underpowered,0
+Northcoast Research,32,,,underpowered,0
+Compass Point,31,,,underpowered,0
+Sterne Agee,31,,,underpowered,0
+B. Riley Securities,28,,,underpowered,0
+Vertical Research,28,,,underpowered,0
+Daiwa Capital,27,,,underpowered,0
+Gordon Haskett,27,,,underpowered,0
+Odeon Capital,27,,,underpowered,0
+Cantor Fitzgerald,26,,,underpowered,0
+Craig-Hallum,26,,,underpowered,0
+Janney Montgomery Scott,26,,,underpowered,0
+JMP Securities,25,,,underpowered,0
+FBR Capital,24,,,underpowered,0
+Rosenblatt,24,,,underpowered,0
+Northland Capital Markets,23,,,underpowered,0
+Tigress Financial,20,,,underpowered,0
+Drexel Hamilton,18,,,underpowered,0
+Telsey Advisory Group,18,,,underpowered,0
+Maxim Group,17,,,underpowered,0
+Benchmark,16,,,underpowered,0
+CLSA,16,,,underpowered,0
+Erste Group,15,,,underpowered,0
+Keybanc,15,,,underpowered,0
+"Monness, Crespi, Hardt",15,,,underpowered,0
+Pivotal Research,15,,,underpowered,0
+Redburn Atlantic,15,,,underpowered,0
+Capital One,14,,,underpowered,0
+Pacific Crest,14,,,underpowered,0
+Summit Insights Group,14,,,underpowered,0
+Imperial Capital,13,,,underpowered,0
+Tudor Pickering,13,,,underpowered,0
+Oppenheimer,12,,,underpowered,0
+Redburn Partners,12,,,underpowered,0
+Roth Capital,12,,,underpowered,0
+BB&T Capital,11,,,underpowered,0
+Cleveland Research,11,,,underpowered,0
+Melius Research,11,,,underpowered,0
+MoffettNathanson,11,,,underpowered,0
+New Street Research,11,,,underpowered,0
+Rothschild & Co,11,,,underpowered,0
+Wunderlich Securities,11,,,underpowered,0
+BNP Paribas,9,,,underpowered,0
+Hilliard Lyons,9,,,underpowered,0
+Leerink Partners,9,,,underpowered,0
+Miller Tabak,9,,,underpowered,0
+S&P Capital IQ,9,,,underpowered,0
+KGI Securities,8,,,underpowered,0
+Alembic Global,7,,,underpowered,0
+Brean Capital,7,,,underpowered,0
+CIBC,7,,,underpowered,0
+Ladenburg Thalmann,7,,,underpowered,0
+Rafferty Capital,7,,,underpowered,0
+Avondale Partners,6,,,underpowered,0
+Barrington Research,6,,,underpowered,0
+China Renaissance,6,,,underpowered,0
+FBN Securities,6,,,underpowered,0
+Gabelli & Co.,6,,,underpowered,0
+Itau BBA,6,,,underpowered,0
+Johnson Rice,6,,,underpowered,0
+TD Securities,6,,,underpowered,0
+Zelman & Assoc,6,,,underpowered,0
+Cross Research,5,,,underpowered,0
+GLJ Research,5,,,underpowered,0
+Lazard,5,,,underpowered,0
+Leerink Swann,5,,,underpowered,0
+Mackie Research,5,,,underpowered,0
+Portales Partners,5,,,underpowered,0
+SVB Leerink,5,,,underpowered,0
+Zelman,5,,,underpowered,0
+Boenning & Scattergood,4,,,underpowered,0
+Charter Equity,4,,,underpowered,0
+Citizens,4,,,underpowered,0
+Gilford Securities,4,,,underpowered,0
+Independent Research,4,,,underpowered,0
+Simmons & Co.,4,,,underpowered,0
+Topeka Capital,4,,,underpowered,0
+Williams Capital,4,,,underpowered,0
+Arete Research,3,,,underpowered,0
+CICC,3,,,underpowered,0
+Credit Agricole,3,,,underpowered,0
+Dahlman Rose,3,,,underpowered,0
+First Analysis,3,,,underpowered,0
+Global Hunter Securities,3,,,underpowered,0
+LBBW Research,3,,,underpowered,0
+Mitsubishi UFJ,3,,,underpowered,0
+SMBC Nikko,3,,,underpowered,0
+Union Gaming,3,,,underpowered,0
+Aegis Capital,2,,,underpowered,0
+BGC FInancial,2,,,underpowered,0
+Belus Capital,2,,,underpowered,0
+Carnegie,2,,,underpowered,0
+DBS Bank,2,,,underpowered,0
+Danske Bank,2,,,underpowered,0
+Espirito Santo,2,,,underpowered,0
+Fermium Research,2,,,underpowered,0
+Fox Advisors,2,,,underpowered,0
+IBERIA Capital Partners,2,,,underpowered,0
+Kalinowski Research,2,,,underpowered,0
+McAdams Wright Ragen,2,,,underpowered,0
+Phillip Securities,2,,,underpowered,0
+R5 Capital,2,,,underpowered,0
+Renaissance Capital,2,,,underpowered,0
+Rochdale Securities,2,,,underpowered,0
+Roth MKM,2,,,underpowered,0
+SBG Securities,2,,,underpowered,0
+VTB Capital,2,,,underpowered,0
+Wellington Shields,2,,,underpowered,0
+WestPark Capital,2,,,underpowered,0
+Williams Trading,2,,,underpowered,0
+86 Research,1,,,underpowered,0
+ABG Sundal Collier,1,,,underpowered,0
+Ascendiant Capital,1,,,underpowered,0
+Autonomous Research,1,,,underpowered,0
+Axiom Capital,1,,,underpowered,0
+BTG Pactual,1,,,underpowered,0
+Banco Bradesco BBI S.A,1,,,underpowered,0
+CBRE,1,,,underpowered,0
+CJS Securities,1,,,underpowered,0
+CapitalOne Southecoast,1,,,underpowered,0
+Cascend,1,,,underpowered,0
+Clarkson Capital Markets,1,,,underpowered,0
+Colliers Securities,1,,,underpowered,0
+Consumer Edge Research,1,,,underpowered,0
+Davenport,1,,,underpowered,0
+Dougherty & Co.,1,,,underpowered,0
+Eight Capital,1,,,underpowered,0
+FirstEnergy Capital,1,,,underpowered,0
+Freedom Capital Markets,1,,,underpowered,0
+Griffin Securities,1,,,underpowered,0
+HC Wainwright & Co.,1,,,underpowered,0
+Hamburger Sparkasse,1,,,underpowered,0
+Huber Research,1,,,underpowered,0
+Hudson Square,1,,,underpowered,0
+JG Capital,1,,,underpowered,0
+KLR Group,1,,,underpowered,0
+KeyBanc,1,,,underpowered,0
+Lake Street,1,,,underpowered,0
+MLV & Co.,1,,,underpowered,0
+MainFirst Bank AG,1,,,underpowered,0
+McNicoll Lewis Vlak,1,,,underpowered,0
+Mediobanca Securities,1,,,underpowered,0
+Meredith Whitney Advisory Group,1,,,underpowered,0
+Natixis,1,,,underpowered,0
+Nomura Instinet,1,,,underpowered,0
+Norne Securities,1,,,underpowered,0
+Numis Securities,1,,,underpowered,0
+Oddo Securities,1,,,underpowered,0
+Oracle Investment Research,1,,,underpowered,0
+PiperJaffray,1,,,underpowered,0
+RS Platou Markets,1,,,underpowered,0
+Santander,1,,,underpowered,0
+ScotiaBank,1,,,underpowered,0
+Shore Capital,1,,,underpowered,0
+Sidoti & Co.,1,,,underpowered,0
+SpareBank 1 Markets,1,,,underpowered,0
+Sterne Agee CRT,1,,,underpowered,0
+Stifel Nicolaus,1,,,underpowered,0
+Swedbank,1,,,underpowered,0
+Taglich Brothers,1,,,underpowered,0
+U.S. Capital Advisors,1,,,underpowered,0
+UOB Kay Hian,1,,,underpowered,0
+"US Tiger Securities, Inc",1,,,underpowered,0
+Vertical Group,1,,,underpowered,0
+Zelman& Assoc,1,,,underpowered,0
+unknown,1,,,underpowered,0
+
+# next_probe: add ~27 more tickers with BofA coverage (551 clean events now, 750 floor; ~7.5 events/ticker) and rerun the 63d within-ticker placebo for the first firm to clear 750.
