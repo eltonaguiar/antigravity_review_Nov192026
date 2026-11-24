@@ -63,10 +63,10 @@ FROM consensus_snapshots
 WHERE ABS((2.0*sb + b - s - 2.0*ss)/NULLIF(n,0) - score) > 0.002;
 
 -- 11) Analyst bridge emptiness: HARVEST rows but no per-firm actions
-SELECT 'ANALYST_BRIDGE_EMPTY',
-       (SELECT COUNT(*) FROM consensus_snapshots) AS consensus_rows,
-       (SELECT COUNT(*) FROM recommendations) AS recommendation_rows
-HAVING recommendation_rows = 0 AND consensus_rows > 0;
+SELECT 'ANALYST_BRIDGE_EMPTY', r.c AS recommendation_rows, c.c AS consensus_rows
+FROM (SELECT COUNT(*) c FROM recommendations) r,
+     (SELECT COUNT(*) c FROM consensus_snapshots) c
+WHERE r.c = 0 AND c.c > 0;
 
 -- 12) Analyst performance with n but no underlying recommendations
 SELECT 'PERF_WITHOUT_RECS', ap.entity_id, ap.n_calls

@@ -1,0 +1,3211 @@
+{
+  "schema": "harvest_history/1",
+  "generated_at": "2026-11-24T17:29:50Z",
+  "entry": "next close strictly after period date",
+  "cost_bps": 6.7122,
+  "benchmark": "SPY",
+  "caveats": [
+    "monthly consensus only (4 periods)",
+    "overlapping windows",
+    "survivorship",
+    "sell-side bullish bias",
+    "no firm/person attribution in the free feed"
+  ],
+  "symbols": [
+    {
+      "symbol": "DIS",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 37,
+          "buy_side_pct": 89.2,
+          "direction": "STABLE",
+          "fwd21_pct": 11.874,
+          "fwd63_pct": 2.988
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 38,
+          "buy_side_pct": 89.5,
+          "direction": "STABLE",
+          "fwd21_pct": -4.849,
+          "fwd63_pct": 9.628
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 39,
+          "buy_side_pct": 87.2,
+          "direction": "STABLE",
+          "fwd21_pct": 11.298,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 39,
+          "buy_side_pct": 87.2,
+          "direction": "STABLE",
+          "fwd21_pct": 10.227,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 7.137,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "NEM",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 31,
+          "buy_side_pct": 87.1,
+          "direction": "STABLE",
+          "fwd21_pct": 37.408,
+          "fwd63_pct": 19.11
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 32,
+          "buy_side_pct": 84.4,
+          "direction": "STABLE",
+          "fwd21_pct": -1.743,
+          "fwd63_pct": -5.968
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 31,
+          "buy_side_pct": 90.3,
+          "direction": "STABLE",
+          "fwd21_pct": -4.6,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 31,
+          "buy_side_pct": 87.1,
+          "direction": "STABLE",
+          "fwd21_pct": -3.767,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 6.824,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "TMO",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 36,
+          "buy_side_pct": 80.6,
+          "direction": "STABLE",
+          "fwd21_pct": 8.698,
+          "fwd63_pct": 15.401
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 36,
+          "buy_side_pct": 80.6,
+          "direction": "STABLE",
+          "fwd21_pct": 8.748,
+          "fwd63_pct": 15.599
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 35,
+          "buy_side_pct": 85.7,
+          "direction": "STABLE",
+          "fwd21_pct": 4.094,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 34,
+          "buy_side_pct": 79.4,
+          "direction": "DETERIORATING",
+          "fwd21_pct": 4.692,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 6.558,
+      "latest": "STRONG_BUY",
+      "latest_direction": "DETERIORATING"
+    },
+    {
+      "symbol": "NOW",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 55,
+          "buy_side_pct": 89.1,
+          "direction": "STABLE",
+          "fwd21_pct": 11.305,
+          "fwd63_pct": 16.584
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 55,
+          "buy_side_pct": 90.9,
+          "direction": "STABLE",
+          "fwd21_pct": 2.307,
+          "fwd63_pct": -20.946
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 52,
+          "buy_side_pct": 90.4,
+          "direction": "STABLE",
+          "fwd21_pct": 19.481,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 52,
+          "buy_side_pct": 90.4,
+          "direction": "STABLE",
+          "fwd21_pct": -9.583,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 5.877,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "LLY",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 38,
+          "buy_side_pct": 78.9,
+          "direction": "STABLE",
+          "fwd21_pct": 10.525,
+          "fwd63_pct": -0.499
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 38,
+          "buy_side_pct": 78.9,
+          "direction": "STABLE",
+          "fwd21_pct": -1.446,
+          "fwd63_pct": 21.7
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 36,
+          "buy_side_pct": 86.1,
+          "direction": "IMPROVING",
+          "fwd21_pct": 12.618,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 37,
+          "buy_side_pct": 86.5,
+          "direction": "STABLE",
+          "fwd21_pct": 0.726,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 5.606,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "QCOM",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 49,
+          "buy_side_pct": 40.8,
+          "direction": "STABLE",
+          "fwd21_pct": 3.759,
+          "fwd63_pct": 17.341
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 49,
+          "buy_side_pct": 40.8,
+          "direction": "STABLE",
+          "fwd21_pct": 16.02,
+          "fwd63_pct": 1.923
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 46,
+          "buy_side_pct": 41.3,
+          "direction": "STABLE",
+          "fwd21_pct": -3.657,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 46,
+          "buy_side_pct": 41.3,
+          "direction": "STABLE",
+          "fwd21_pct": 5.932,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 5.514,
+      "latest": "HOLD",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "ABBV",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 38,
+          "buy_side_pct": 81.6,
+          "direction": "STABLE",
+          "fwd21_pct": 7.091,
+          "fwd63_pct": 5.843
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 39,
+          "buy_side_pct": 82.1,
+          "direction": "STABLE",
+          "fwd21_pct": 0.621,
+          "fwd63_pct": 12.811
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 39,
+          "buy_side_pct": 82.1,
+          "direction": "STABLE",
+          "fwd21_pct": 10.539,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 38,
+          "buy_side_pct": 81.6,
+          "direction": "STABLE",
+          "fwd21_pct": 3.761,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 5.503,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "WMT",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 48,
+          "buy_side_pct": 89.6,
+          "direction": "STABLE",
+          "fwd21_pct": -4.414,
+          "fwd63_pct": -7.453
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 48,
+          "buy_side_pct": 87.5,
+          "direction": "DETERIORATING",
+          "fwd21_pct": 3.522,
+          "fwd63_pct": 21.223
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 48,
+          "buy_side_pct": 87.5,
+          "direction": "STABLE",
+          "fwd21_pct": 16.181,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 48,
+          "buy_side_pct": 89.6,
+          "direction": "STABLE",
+          "fwd21_pct": 5.377,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 5.166,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "PG",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 37,
+          "buy_side_pct": 56.8,
+          "direction": "STABLE",
+          "fwd21_pct": 0.292,
+          "fwd63_pct": -1.917
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 37,
+          "buy_side_pct": 51.4,
+          "direction": "DETERIORATING",
+          "fwd21_pct": -0.832,
+          "fwd63_pct": 13.548
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 51.4,
+          "direction": "STABLE",
+          "fwd21_pct": 13.042,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 57.1,
+          "direction": "IMPROVING",
+          "fwd21_pct": 7.589,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 5.023,
+      "latest": "BUY",
+      "latest_direction": "IMPROVING"
+    },
+    {
+      "symbol": "COP",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 71.0,
+          "direction": "STABLE",
+          "fwd21_pct": 11.822,
+          "fwd63_pct": 5.887
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 74.2,
+          "direction": "STABLE",
+          "fwd21_pct": -7.303,
+          "fwd63_pct": -0.721
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 33,
+          "buy_side_pct": 69.7,
+          "direction": "STABLE",
+          "fwd21_pct": 20.164,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 65.7,
+          "direction": "STABLE",
+          "fwd21_pct": -5.488,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 4.799,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "AMGN",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 43,
+          "buy_side_pct": 48.8,
+          "direction": "STABLE",
+          "fwd21_pct": 17.0,
+          "fwd63_pct": 4.399
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 43,
+          "buy_side_pct": 46.5,
+          "direction": "STABLE",
+          "fwd21_pct": -8.961,
+          "fwd63_pct": 7.516
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 42,
+          "buy_side_pct": 42.9,
+          "direction": "STABLE",
+          "fwd21_pct": 10.176,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 42,
+          "buy_side_pct": 42.9,
+          "direction": "STABLE",
+          "fwd21_pct": 0.928,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 4.786,
+      "latest": "HOLD",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "KO",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 35,
+          "buy_side_pct": 77.1,
+          "direction": "STABLE",
+          "fwd21_pct": 5.073,
+          "fwd63_pct": -2.395
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 35,
+          "buy_side_pct": 77.1,
+          "direction": "STABLE",
+          "fwd21_pct": -0.237,
+          "fwd63_pct": 8.684
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 34,
+          "buy_side_pct": 79.4,
+          "direction": "STABLE",
+          "fwd21_pct": 9.432,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 35,
+          "buy_side_pct": 80.0,
+          "direction": "STABLE",
+          "fwd21_pct": 3.949,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 4.554,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "COST",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 46,
+          "buy_side_pct": 65.2,
+          "direction": "STABLE",
+          "fwd21_pct": 0.983,
+          "fwd63_pct": -5.789
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 46,
+          "buy_side_pct": 65.2,
+          "direction": "STABLE",
+          "fwd21_pct": -3.224,
+          "fwd63_pct": 12.343
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 45,
+          "buy_side_pct": 66.7,
+          "direction": "STABLE",
+          "fwd21_pct": 10.169,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 47,
+          "buy_side_pct": 68.1,
+          "direction": "STABLE",
+          "fwd21_pct": 9.409,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 4.334,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "AMT",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 29,
+          "buy_side_pct": 82.8,
+          "direction": "STABLE",
+          "fwd21_pct": 2.283,
+          "fwd63_pct": -7.78
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 29,
+          "buy_side_pct": 86.2,
+          "direction": "STABLE",
+          "fwd21_pct": -1.9,
+          "fwd63_pct": 13.375
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 29,
+          "buy_side_pct": 86.2,
+          "direction": "STABLE",
+          "fwd21_pct": 17.694,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 29,
+          "buy_side_pct": 86.2,
+          "direction": "STABLE",
+          "fwd21_pct": -0.878,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 4.3,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "AAPL",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 54,
+          "buy_side_pct": 68.5,
+          "direction": "STABLE",
+          "fwd21_pct": 1.536,
+          "fwd63_pct": 7.221
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 53,
+          "buy_side_pct": 64.2,
+          "direction": "DETERIORATING",
+          "fwd21_pct": 3.049,
+          "fwd63_pct": 7.023
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 49,
+          "buy_side_pct": 63.3,
+          "direction": "STABLE",
+          "fwd21_pct": 5.397,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 49,
+          "buy_side_pct": 61.2,
+          "direction": "STABLE",
+          "fwd21_pct": 7.155,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 4.284,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "TSLA",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 61,
+          "buy_side_pct": 49.2,
+          "direction": "STABLE",
+          "fwd21_pct": 7.51,
+          "fwd63_pct": 15.003
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 61,
+          "buy_side_pct": 49.2,
+          "direction": "STABLE",
+          "fwd21_pct": 5.811,
+          "fwd63_pct": 7.362
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 54,
+          "buy_side_pct": 50.0,
+          "direction": "STABLE",
+          "fwd21_pct": 1.629,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 54,
+          "buy_side_pct": 53.7,
+          "direction": "IMPROVING",
+          "fwd21_pct": -0.65,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 3.575,
+      "latest": "BUY",
+      "latest_direction": "IMPROVING"
+    },
+    {
+      "symbol": "IBM",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 54.8,
+          "direction": "STABLE",
+          "fwd21_pct": 1.99,
+          "fwd63_pct": -3.974
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 51.6,
+          "direction": "STABLE",
+          "fwd21_pct": -0.205,
+          "fwd63_pct": 9.231
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 53.3,
+          "direction": "STABLE",
+          "fwd21_pct": 15.077,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 51.6,
+          "direction": "STABLE",
+          "fwd21_pct": -3.192,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 3.417,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "MA",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 54,
+          "buy_side_pct": 92.6,
+          "direction": "STABLE",
+          "fwd21_pct": 4.227,
+          "fwd63_pct": -3.703
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 54,
+          "buy_side_pct": 90.7,
+          "direction": "STABLE",
+          "fwd21_pct": -5.461,
+          "fwd63_pct": 14.016
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 53,
+          "buy_side_pct": 92.5,
+          "direction": "STABLE",
+          "fwd21_pct": 14.278,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 52,
+          "buy_side_pct": 92.3,
+          "direction": "STABLE",
+          "fwd21_pct": 0.459,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 3.376,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "V",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 51,
+          "buy_side_pct": 92.2,
+          "direction": "STABLE",
+          "fwd21_pct": 3.94,
+          "fwd63_pct": -1.293
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 51,
+          "buy_side_pct": 88.2,
+          "direction": "DETERIORATING",
+          "fwd21_pct": -5.124,
+          "fwd63_pct": 14.841
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 49,
+          "buy_side_pct": 89.8,
+          "direction": "STABLE",
+          "fwd21_pct": 14.293,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 49,
+          "buy_side_pct": 89.8,
+          "direction": "STABLE",
+          "fwd21_pct": 0.288,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 3.349,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "BRK-B",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "SELL",
+          "analysts": 10,
+          "buy_side_pct": 10.0,
+          "direction": "STABLE",
+          "fwd21_pct": -2.551,
+          "fwd63_pct": -4.316
+        },
+        {
+          "period": "2026-09-01",
+          "label": "SELL",
+          "analysts": 10,
+          "buy_side_pct": 10.0,
+          "direction": "STABLE",
+          "fwd21_pct": -0.281,
+          "fwd63_pct": 14.085
+        },
+        {
+          "period": "2026-10-01",
+          "label": "SELL",
+          "analysts": 10,
+          "buy_side_pct": 10.0,
+          "direction": "STABLE",
+          "fwd21_pct": 9.056,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "SELL",
+          "analysts": 10,
+          "buy_side_pct": 10.0,
+          "direction": "STABLE",
+          "fwd21_pct": 6.819,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 3.261,
+      "latest": "SELL",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "MRK",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 36,
+          "buy_side_pct": 69.4,
+          "direction": "STABLE",
+          "fwd21_pct": 17.082,
+          "fwd63_pct": 7.271
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 36,
+          "buy_side_pct": 72.2,
+          "direction": "IMPROVING",
+          "fwd21_pct": -2.434,
+          "fwd63_pct": -0.79
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 74.3,
+          "direction": "STABLE",
+          "fwd21_pct": 1.862,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 71.4,
+          "direction": "STABLE",
+          "fwd21_pct": -4.792,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.93,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "JNJ",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 71.0,
+          "direction": "STABLE",
+          "fwd21_pct": 6.49,
+          "fwd63_pct": -2.677
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 71.0,
+          "direction": "STABLE",
+          "fwd21_pct": -2.857,
+          "fwd63_pct": -0.128
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 73.3,
+          "direction": "STABLE",
+          "fwd21_pct": 4.228,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 70.0,
+          "direction": "STABLE",
+          "fwd21_pct": 3.708,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.892,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "HD",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 46,
+          "buy_side_pct": 60.9,
+          "direction": "STABLE",
+          "fwd21_pct": -1.594,
+          "fwd63_pct": -19.29
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 46,
+          "buy_side_pct": 60.9,
+          "direction": "STABLE",
+          "fwd21_pct": -6.817,
+          "fwd63_pct": 11.885
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 46,
+          "buy_side_pct": 60.9,
+          "direction": "STABLE",
+          "fwd21_pct": 14.263,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 46,
+          "buy_side_pct": 63.0,
+          "direction": "STABLE",
+          "fwd21_pct": 5.336,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.797,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "PFE",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 36,
+          "buy_side_pct": 38.9,
+          "direction": "STABLE",
+          "fwd21_pct": 10.913,
+          "fwd63_pct": 6.923
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 36,
+          "buy_side_pct": 38.9,
+          "direction": "STABLE",
+          "fwd21_pct": -3.557,
+          "fwd63_pct": 5.568
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 33,
+          "buy_side_pct": 39.4,
+          "direction": "STABLE",
+          "fwd21_pct": 9.211,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 34,
+          "buy_side_pct": 38.2,
+          "direction": "STABLE",
+          "fwd21_pct": -5.461,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.776,
+      "latest": "HOLD",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "AMD",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 58,
+          "buy_side_pct": 82.8,
+          "direction": "STABLE",
+          "fwd21_pct": -6.587,
+          "fwd63_pct": 27.769
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 59,
+          "buy_side_pct": 83.1,
+          "direction": "STABLE",
+          "fwd21_pct": 33.808,
+          "fwd63_pct": 6.408
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 60,
+          "buy_side_pct": 83.3,
+          "direction": "STABLE",
+          "fwd21_pct": -17.286,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 60,
+          "buy_side_pct": 83.3,
+          "direction": "STABLE",
+          "fwd21_pct": 1.03,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.741,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "CVX",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 31,
+          "buy_side_pct": 83.9,
+          "direction": "STABLE",
+          "fwd21_pct": 5.215,
+          "fwd63_pct": 5.226
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 30,
+          "buy_side_pct": 83.3,
+          "direction": "STABLE",
+          "fwd21_pct": -3.623,
+          "fwd63_pct": 1.914
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 30,
+          "buy_side_pct": 83.3,
+          "direction": "STABLE",
+          "fwd21_pct": 14.02,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 32,
+          "buy_side_pct": 84.4,
+          "direction": "STABLE",
+          "fwd21_pct": -4.835,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.694,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "META",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 71,
+          "buy_side_pct": 87.3,
+          "direction": "STABLE",
+          "fwd21_pct": -6.122,
+          "fwd63_pct": 23.208
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 71,
+          "buy_side_pct": 87.3,
+          "direction": "STABLE",
+          "fwd21_pct": 24.949,
+          "fwd63_pct": 5.819
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 69,
+          "buy_side_pct": 88.4,
+          "direction": "STABLE",
+          "fwd21_pct": -10.548,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 69,
+          "buy_side_pct": 88.4,
+          "direction": "STABLE",
+          "fwd21_pct": 2.392,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.668,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "MCD",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 41,
+          "buy_side_pct": 58.5,
+          "direction": "STABLE",
+          "fwd21_pct": 1.923,
+          "fwd63_pct": -14.098
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 41,
+          "buy_side_pct": 61.0,
+          "direction": "STABLE",
+          "fwd21_pct": -9.335,
+          "fwd63_pct": 6.853
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 41,
+          "buy_side_pct": 61.0,
+          "direction": "STABLE",
+          "fwd21_pct": 8.335,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 41,
+          "buy_side_pct": 61.0,
+          "direction": "STABLE",
+          "fwd21_pct": 7.94,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.216,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "PEP",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 30,
+          "buy_side_pct": 40.0,
+          "direction": "STABLE",
+          "fwd21_pct": 2.777,
+          "fwd63_pct": -11.637
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 30,
+          "buy_side_pct": 40.0,
+          "direction": "STABLE",
+          "fwd21_pct": -7.031,
+          "fwd63_pct": 1.903
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 29,
+          "buy_side_pct": 34.5,
+          "direction": "STABLE",
+          "fwd21_pct": 9.037,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 29,
+          "buy_side_pct": 37.9,
+          "direction": "STABLE",
+          "fwd21_pct": 3.747,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.132,
+      "latest": "HOLD",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "DUK",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 28,
+          "buy_side_pct": 53.6,
+          "direction": "STABLE",
+          "fwd21_pct": -1.828,
+          "fwd63_pct": -10.181
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 27,
+          "buy_side_pct": 55.6,
+          "direction": "STABLE",
+          "fwd21_pct": -5.963,
+          "fwd63_pct": 6.958
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 26,
+          "buy_side_pct": 57.7,
+          "direction": "STABLE",
+          "fwd21_pct": 10.696,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 27,
+          "buy_side_pct": 55.6,
+          "direction": "STABLE",
+          "fwd21_pct": 5.604,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 2.127,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "INTC",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 55,
+          "buy_side_pct": 34.5,
+          "direction": "STABLE",
+          "fwd21_pct": -4.943,
+          "fwd63_pct": 25.095
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 55,
+          "buy_side_pct": 34.5,
+          "direction": "STABLE",
+          "fwd21_pct": 35.484,
+          "fwd63_pct": -35.823
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 55,
+          "buy_side_pct": 36.4,
+          "direction": "STABLE",
+          "fwd21_pct": -25.937,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 55,
+          "buy_side_pct": 29.1,
+          "direction": "DETERIORATING",
+          "fwd21_pct": 3.38,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 1.996,
+      "latest": "HOLD",
+      "latest_direction": "DETERIORATING"
+    },
+    {
+      "symbol": "XOM",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 50.0,
+          "direction": "STABLE",
+          "fwd21_pct": 5.65,
+          "fwd63_pct": 3.864
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 30,
+          "buy_side_pct": 46.7,
+          "direction": "STABLE",
+          "fwd21_pct": -2.441,
+          "fwd63_pct": 2.587
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 31,
+          "buy_side_pct": 45.2,
+          "direction": "STABLE",
+          "fwd21_pct": 12.896,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 32,
+          "buy_side_pct": 40.6,
+          "direction": "STABLE",
+          "fwd21_pct": -8.226,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 1.97,
+      "latest": "HOLD",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "LIN",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 73.3,
+          "direction": "STABLE",
+          "fwd21_pct": 1.159,
+          "fwd63_pct": -1.856
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 71.0,
+          "direction": "STABLE",
+          "fwd21_pct": -3.983,
+          "fwd63_pct": 7.473
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 33,
+          "buy_side_pct": 69.7,
+          "direction": "STABLE",
+          "fwd21_pct": 7.311,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 70.6,
+          "direction": "STABLE",
+          "fwd21_pct": 3.373,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 1.965,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "BLK",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 23,
+          "buy_side_pct": 87.0,
+          "direction": "STABLE",
+          "fwd21_pct": 3.249,
+          "fwd63_pct": -7.442
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 23,
+          "buy_side_pct": 87.0,
+          "direction": "STABLE",
+          "fwd21_pct": -4.343,
+          "fwd63_pct": 10.63
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 23,
+          "buy_side_pct": 87.0,
+          "direction": "STABLE",
+          "fwd21_pct": 6.721,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 24,
+          "buy_side_pct": 91.7,
+          "direction": "STABLE",
+          "fwd21_pct": 1.958,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 1.896,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "LMT",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 28,
+          "buy_side_pct": 46.4,
+          "direction": "STABLE",
+          "fwd21_pct": -4.611,
+          "fwd63_pct": -15.639
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 28,
+          "buy_side_pct": 46.4,
+          "direction": "STABLE",
+          "fwd21_pct": -1.955,
+          "fwd63_pct": 11.413
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 28,
+          "buy_side_pct": 50.0,
+          "direction": "STABLE",
+          "fwd21_pct": 20.732,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 56.7,
+          "direction": "IMPROVING",
+          "fwd21_pct": -7.218,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 1.737,
+      "latest": "BUY",
+      "latest_direction": "IMPROVING"
+    },
+    {
+      "symbol": "SO",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 33,
+          "buy_side_pct": 42.4,
+          "direction": "STABLE",
+          "fwd21_pct": -3.088,
+          "fwd63_pct": -11.687
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 32,
+          "buy_side_pct": 43.8,
+          "direction": "STABLE",
+          "fwd21_pct": -6.143,
+          "fwd63_pct": 4.915
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 32,
+          "buy_side_pct": 43.8,
+          "direction": "STABLE",
+          "fwd21_pct": 12.142,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 33,
+          "buy_side_pct": 45.5,
+          "direction": "STABLE",
+          "fwd21_pct": 3.117,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 1.507,
+      "latest": "HOLD",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "SPG",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 26,
+          "buy_side_pct": 38.5,
+          "direction": "STABLE",
+          "fwd21_pct": -4.511,
+          "fwd63_pct": -13.756
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 26,
+          "buy_side_pct": 38.5,
+          "direction": "STABLE",
+          "fwd21_pct": -2.494,
+          "fwd63_pct": 9.341
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 24,
+          "buy_side_pct": 37.5,
+          "direction": "STABLE",
+          "fwd21_pct": 6.504,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 25,
+          "buy_side_pct": 36.0,
+          "direction": "STABLE",
+          "fwd21_pct": 6.305,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 1.451,
+      "latest": "HOLD",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "SBUX",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 46,
+          "buy_side_pct": 47.8,
+          "direction": "STABLE",
+          "fwd21_pct": 3.75,
+          "fwd63_pct": -10.71
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 46,
+          "buy_side_pct": 47.8,
+          "direction": "STABLE",
+          "fwd21_pct": -12.45,
+          "fwd63_pct": 2.261
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 45,
+          "buy_side_pct": 44.4,
+          "direction": "STABLE",
+          "fwd21_pct": 7.619,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 45,
+          "buy_side_pct": 44.4,
+          "direction": "STABLE",
+          "fwd21_pct": 6.376,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 1.324,
+      "latest": "HOLD",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "SHW",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 29,
+          "buy_side_pct": 55.2,
+          "direction": "STABLE",
+          "fwd21_pct": -2.721,
+          "fwd63_pct": -12.474
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 32,
+          "buy_side_pct": 56.2,
+          "direction": "STABLE",
+          "fwd21_pct": -2.109,
+          "fwd63_pct": 9.204
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 32,
+          "buy_side_pct": 56.2,
+          "direction": "STABLE",
+          "fwd21_pct": 6.682,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 52.9,
+          "direction": "STABLE",
+          "fwd21_pct": 3.3,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 1.288,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "VZ",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 36,
+          "buy_side_pct": 50.0,
+          "direction": "STABLE",
+          "fwd21_pct": 5.058,
+          "fwd63_pct": -5.774
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 36,
+          "buy_side_pct": 50.0,
+          "direction": "STABLE",
+          "fwd21_pct": -8.03,
+          "fwd63_pct": -7.17
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 35,
+          "buy_side_pct": 48.6,
+          "direction": "STABLE",
+          "fwd21_pct": -0.046,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 52.9,
+          "direction": "STABLE",
+          "fwd21_pct": 7.004,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 0.997,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "UPS",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 51.4,
+          "direction": "STABLE",
+          "fwd21_pct": -3.183,
+          "fwd63_pct": -14.044
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 51.4,
+          "direction": "STABLE",
+          "fwd21_pct": -7.643,
+          "fwd63_pct": 10.438
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 50.0,
+          "direction": "STABLE",
+          "fwd21_pct": 9.833,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 50.0,
+          "direction": "STABLE",
+          "fwd21_pct": 4.267,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 0.818,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "MSFT",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 69,
+          "buy_side_pct": 92.8,
+          "direction": "STABLE",
+          "fwd21_pct": -0.714,
+          "fwd63_pct": 5.313
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 69,
+          "buy_side_pct": 92.8,
+          "direction": "STABLE",
+          "fwd21_pct": 0.096,
+          "fwd63_pct": 11.34
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 65,
+          "buy_side_pct": 95.4,
+          "direction": "IMPROVING",
+          "fwd21_pct": 2.538,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 65,
+          "buy_side_pct": 95.4,
+          "direction": "STABLE",
+          "fwd21_pct": 1.201,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 0.78,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "SCHW",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 29,
+          "buy_side_pct": 86.2,
+          "direction": "STABLE",
+          "fwd21_pct": 6.829,
+          "fwd63_pct": -9.788
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 30,
+          "buy_side_pct": 83.3,
+          "direction": "STABLE",
+          "fwd21_pct": -8.737,
+          "fwd63_pct": -14.27
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 29,
+          "buy_side_pct": 82.8,
+          "direction": "STABLE",
+          "fwd21_pct": -5.14,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 31,
+          "buy_side_pct": 77.4,
+          "direction": "STABLE",
+          "fwd21_pct": 8.387,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 0.335,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "PM",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 27,
+          "buy_side_pct": 74.1,
+          "direction": "STABLE",
+          "fwd21_pct": 1.328,
+          "fwd63_pct": -0.587
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 27,
+          "buy_side_pct": 74.1,
+          "direction": "STABLE",
+          "fwd21_pct": 0.88,
+          "fwd63_pct": 12.851
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 26,
+          "buy_side_pct": 73.1,
+          "direction": "STABLE",
+          "fwd21_pct": 7.596,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 26,
+          "buy_side_pct": 73.1,
+          "direction": "STABLE",
+          "fwd21_pct": -8.485,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 0.33,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "DE",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 61.8,
+          "direction": "STABLE",
+          "fwd21_pct": 6.37,
+          "fwd63_pct": 10.432
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 64.7,
+          "direction": "STABLE",
+          "fwd21_pct": 0.928,
+          "fwd63_pct": -3.432
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 70.6,
+          "direction": "IMPROVING",
+          "fwd21_pct": -4.757,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 70.6,
+          "direction": "STABLE",
+          "fwd21_pct": -1.282,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 0.315,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "T",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 57.1,
+          "direction": "STABLE",
+          "fwd21_pct": 8.069,
+          "fwd63_pct": 0.169
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 57.1,
+          "direction": "STABLE",
+          "fwd21_pct": -3.167,
+          "fwd63_pct": -15.457
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 61.8,
+          "direction": "STABLE",
+          "fwd21_pct": -11.705,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 32,
+          "buy_side_pct": 59.4,
+          "direction": "STABLE",
+          "fwd21_pct": 7.908,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 0.276,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "TXN",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 43,
+          "buy_side_pct": 46.5,
+          "direction": "STABLE",
+          "fwd21_pct": -4.587,
+          "fwd63_pct": 7.026
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 43,
+          "buy_side_pct": 48.8,
+          "direction": "STABLE",
+          "fwd21_pct": 6.331,
+          "fwd63_pct": 22.314
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 40,
+          "buy_side_pct": 55.0,
+          "direction": "IMPROVING",
+          "fwd21_pct": -1.911,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 40,
+          "buy_side_pct": 57.5,
+          "direction": "STABLE",
+          "fwd21_pct": 0.311,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": 0.036,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "ADBE",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 46,
+          "buy_side_pct": 39.1,
+          "direction": "STABLE",
+          "fwd21_pct": 9.086,
+          "fwd63_pct": -7.579
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 46,
+          "buy_side_pct": 39.1,
+          "direction": "STABLE",
+          "fwd21_pct": -14.637,
+          "fwd63_pct": -11.722
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 45,
+          "buy_side_pct": 37.8,
+          "direction": "STABLE",
+          "fwd21_pct": 12.183,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 45,
+          "buy_side_pct": 33.3,
+          "direction": "DETERIORATING",
+          "fwd21_pct": -7.035,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -0.101,
+      "latest": "HOLD",
+      "latest_direction": "DETERIORATING"
+    },
+    {
+      "symbol": "SLB",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 34,
+          "buy_side_pct": 85.3,
+          "direction": "STABLE",
+          "fwd21_pct": 8.679,
+          "fwd63_pct": -0.09
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 34,
+          "buy_side_pct": 85.3,
+          "direction": "STABLE",
+          "fwd21_pct": -11.432,
+          "fwd63_pct": -11.834
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 34,
+          "buy_side_pct": 85.3,
+          "direction": "STABLE",
+          "fwd21_pct": 10.053,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 34,
+          "buy_side_pct": 85.3,
+          "direction": "STABLE",
+          "fwd21_pct": -7.86,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -0.14,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "NEE",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 29,
+          "buy_side_pct": 65.5,
+          "direction": "STABLE",
+          "fwd21_pct": -3.663,
+          "fwd63_pct": -13.789
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 28,
+          "buy_side_pct": 64.3,
+          "direction": "STABLE",
+          "fwd21_pct": -7.979,
+          "fwd63_pct": 5.906
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 26,
+          "buy_side_pct": 65.4,
+          "direction": "STABLE",
+          "fwd21_pct": 8.049,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 27,
+          "buy_side_pct": 66.7,
+          "direction": "STABLE",
+          "fwd21_pct": 2.65,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -0.236,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "HON",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 64.5,
+          "direction": "STABLE",
+          "fwd21_pct": -13.539,
+          "fwd63_pct": -15.548
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 64.5,
+          "direction": "STABLE",
+          "fwd21_pct": 2.492,
+          "fwd63_pct": 10.338
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 63.3,
+          "direction": "STABLE",
+          "fwd21_pct": 4.535,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 63.3,
+          "direction": "STABLE",
+          "fwd21_pct": 3.404,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -0.777,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "CRM",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 58,
+          "buy_side_pct": 74.1,
+          "direction": "STABLE",
+          "fwd21_pct": 11.595,
+          "fwd63_pct": 21.208
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 59,
+          "buy_side_pct": 74.6,
+          "direction": "STABLE",
+          "fwd21_pct": -8.031,
+          "fwd63_pct": -11.982
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 56,
+          "buy_side_pct": 71.4,
+          "direction": "DETERIORATING",
+          "fwd21_pct": 7.104,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 56,
+          "buy_side_pct": 73.2,
+          "direction": "STABLE",
+          "fwd21_pct": -14.107,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -0.86,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "PLD",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 23,
+          "buy_side_pct": 60.9,
+          "direction": "STABLE",
+          "fwd21_pct": -1.381,
+          "fwd63_pct": -13.029
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 23,
+          "buy_side_pct": 65.2,
+          "direction": "STABLE",
+          "fwd21_pct": -1.809,
+          "fwd63_pct": -3.597
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 21,
+          "buy_side_pct": 66.7,
+          "direction": "STABLE",
+          "fwd21_pct": -0.719,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 21,
+          "buy_side_pct": 81.0,
+          "direction": "IMPROVING",
+          "fwd21_pct": 0.418,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -0.873,
+      "latest": "STRONG_BUY",
+      "latest_direction": "IMPROVING"
+    },
+    {
+      "symbol": "AMZN",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 75,
+          "buy_side_pct": 93.3,
+          "direction": "STABLE",
+          "fwd21_pct": -8.561,
+          "fwd63_pct": -14.071
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 74,
+          "buy_side_pct": 93.2,
+          "direction": "STABLE",
+          "fwd21_pct": -2.902,
+          "fwd63_pct": 3.802
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 70,
+          "buy_side_pct": 95.7,
+          "direction": "IMPROVING",
+          "fwd21_pct": -0.21,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 70,
+          "buy_side_pct": 95.7,
+          "direction": "STABLE",
+          "fwd21_pct": 7.87,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -0.951,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "FCX",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 80.0,
+          "direction": "STABLE",
+          "fwd21_pct": 21.418,
+          "fwd63_pct": 11.493
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 80.0,
+          "direction": "STABLE",
+          "fwd21_pct": -2.489,
+          "fwd63_pct": -15.674
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 76.7,
+          "direction": "STABLE",
+          "fwd21_pct": -8.138,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 76.7,
+          "direction": "STABLE",
+          "fwd21_pct": -17.161,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -1.593,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "JPM",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 60.0,
+          "direction": "STABLE",
+          "fwd21_pct": 0.231,
+          "fwd63_pct": -8.331
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 60.0,
+          "direction": "STABLE",
+          "fwd21_pct": -5.909,
+          "fwd63_pct": -1.192
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 60.0,
+          "direction": "STABLE",
+          "fwd21_pct": 1.446,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 58.1,
+          "direction": "STABLE",
+          "fwd21_pct": -3.127,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -1.84,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "GOOGL",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 70,
+          "buy_side_pct": 88.6,
+          "direction": "STABLE",
+          "fwd21_pct": -7.646,
+          "fwd63_pct": -9.766
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 70,
+          "buy_side_pct": 90.0,
+          "direction": "STABLE",
+          "fwd21_pct": -0.388,
+          "fwd63_pct": -14.771
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 67,
+          "buy_side_pct": 91.0,
+          "direction": "STABLE",
+          "fwd21_pct": -5.591,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 68,
+          "buy_side_pct": 89.7,
+          "direction": "STABLE",
+          "fwd21_pct": 5.011,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -2.153,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "NFLX",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 58,
+          "buy_side_pct": 75.9,
+          "direction": "STABLE",
+          "fwd21_pct": 8.277,
+          "fwd63_pct": -10.536
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 58,
+          "buy_side_pct": 74.1,
+          "direction": "STABLE",
+          "fwd21_pct": -14.406,
+          "fwd63_pct": -20.283
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 57,
+          "buy_side_pct": 75.4,
+          "direction": "STABLE",
+          "fwd21_pct": -0.615,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 56,
+          "buy_side_pct": 69.6,
+          "direction": "DETERIORATING",
+          "fwd21_pct": -2.905,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -2.412,
+      "latest": "BUY",
+      "latest_direction": "DETERIORATING"
+    },
+    {
+      "symbol": "NKE",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 46,
+          "buy_side_pct": 39.1,
+          "direction": "STABLE",
+          "fwd21_pct": -5.265,
+          "fwd63_pct": -22.098
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 46,
+          "buy_side_pct": 39.1,
+          "direction": "STABLE",
+          "fwd21_pct": -6.39,
+          "fwd63_pct": 5.352
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 48,
+          "buy_side_pct": 33.3,
+          "direction": "DETERIORATING",
+          "fwd21_pct": 11.316,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "HOLD",
+          "analysts": 49,
+          "buy_side_pct": 28.6,
+          "direction": "DETERIORATING",
+          "fwd21_pct": -9.805,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -2.536,
+      "latest": "HOLD",
+      "latest_direction": "DETERIORATING"
+    },
+    {
+      "symbol": "UNH",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 34,
+          "buy_side_pct": 79.4,
+          "direction": "STABLE",
+          "fwd21_pct": -4.829,
+          "fwd63_pct": -10.88
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 34,
+          "buy_side_pct": 79.4,
+          "direction": "STABLE",
+          "fwd21_pct": -7.189,
+          "fwd63_pct": 2.531
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 33,
+          "buy_side_pct": 78.8,
+          "direction": "STABLE",
+          "fwd21_pct": 13.609,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 32,
+          "buy_side_pct": 84.4,
+          "direction": "STABLE",
+          "fwd21_pct": -12.176,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -2.646,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "WFC",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 66.7,
+          "direction": "STABLE",
+          "fwd21_pct": -3.886,
+          "fwd63_pct": -9.393
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 66.7,
+          "direction": "STABLE",
+          "fwd21_pct": -8.918,
+          "fwd63_pct": -2.593
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 30,
+          "buy_side_pct": 66.7,
+          "direction": "STABLE",
+          "fwd21_pct": 3.601,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 31,
+          "buy_side_pct": 71.0,
+          "direction": "STABLE",
+          "fwd21_pct": -2.409,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -2.903,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "ORCL",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 49,
+          "buy_side_pct": 81.6,
+          "direction": "STABLE",
+          "fwd21_pct": -0.41,
+          "fwd63_pct": -2.142
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 49,
+          "buy_side_pct": 79.6,
+          "direction": "STABLE",
+          "fwd21_pct": -1.479,
+          "fwd63_pct": -15.326
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 48,
+          "buy_side_pct": 81.2,
+          "direction": "STABLE",
+          "fwd21_pct": -9.825,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 47,
+          "buy_side_pct": 80.9,
+          "direction": "STABLE",
+          "fwd21_pct": -0.75,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -3.116,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "GE",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 32,
+          "buy_side_pct": 87.5,
+          "direction": "STABLE",
+          "fwd21_pct": -8.175,
+          "fwd63_pct": -19.425
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 32,
+          "buy_side_pct": 87.5,
+          "direction": "STABLE",
+          "fwd21_pct": -3.606,
+          "fwd63_pct": -0.395
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 32,
+          "buy_side_pct": 87.5,
+          "direction": "STABLE",
+          "fwd21_pct": -6.397,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 32,
+          "buy_side_pct": 84.4,
+          "direction": "STABLE",
+          "fwd21_pct": 5.632,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -3.137,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "GS",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "HOLD",
+          "analysts": 32,
+          "buy_side_pct": 46.9,
+          "direction": "STABLE",
+          "fwd21_pct": 0.065,
+          "fwd63_pct": -15.168
+        },
+        {
+          "period": "2026-09-01",
+          "label": "HOLD",
+          "analysts": 32,
+          "buy_side_pct": 46.9,
+          "direction": "STABLE",
+          "fwd21_pct": -7.439,
+          "fwd63_pct": -8.14
+        },
+        {
+          "period": "2026-10-01",
+          "label": "HOLD",
+          "analysts": 32,
+          "buy_side_pct": 46.9,
+          "direction": "STABLE",
+          "fwd21_pct": -1.789,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 33,
+          "buy_side_pct": 51.5,
+          "direction": "STABLE",
+          "fwd21_pct": -4.46,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -3.406,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "CSCO",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 33,
+          "buy_side_pct": 69.7,
+          "direction": "STABLE",
+          "fwd21_pct": -5.692,
+          "fwd63_pct": -4.832
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 68.6,
+          "direction": "STABLE",
+          "fwd21_pct": -3.431,
+          "fwd63_pct": -5.509
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 65.7,
+          "direction": "STABLE",
+          "fwd21_pct": -3.891,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 35,
+          "buy_side_pct": 65.7,
+          "direction": "STABLE",
+          "fwd21_pct": -0.837,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -3.463,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "MS",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 33,
+          "buy_side_pct": 60.6,
+          "direction": "STABLE",
+          "fwd21_pct": 0.517,
+          "fwd63_pct": -12.547
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 33,
+          "buy_side_pct": 60.6,
+          "direction": "STABLE",
+          "fwd21_pct": -7.003,
+          "fwd63_pct": -8.401
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 33,
+          "buy_side_pct": 63.6,
+          "direction": "STABLE",
+          "fwd21_pct": -4.496,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 61.8,
+          "direction": "STABLE",
+          "fwd21_pct": -3.173,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -3.539,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "BAC",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 29,
+          "buy_side_pct": 79.3,
+          "direction": "STABLE",
+          "fwd21_pct": -1.073,
+          "fwd63_pct": -15.717
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 29,
+          "buy_side_pct": 79.3,
+          "direction": "STABLE",
+          "fwd21_pct": -10.749,
+          "fwd63_pct": -17.635
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 28,
+          "buy_side_pct": 82.1,
+          "direction": "STABLE",
+          "fwd21_pct": -4.746,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 29,
+          "buy_side_pct": 82.8,
+          "direction": "STABLE",
+          "fwd21_pct": 1.012,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -3.889,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "AVGO",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 56,
+          "buy_side_pct": 91.1,
+          "direction": "STABLE",
+          "fwd21_pct": -9.366,
+          "fwd63_pct": -9.995
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 57,
+          "buy_side_pct": 91.2,
+          "direction": "STABLE",
+          "fwd21_pct": -3.822,
+          "fwd63_pct": -11.742
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 56,
+          "buy_side_pct": 92.9,
+          "direction": "STABLE",
+          "fwd21_pct": -8.232,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 57,
+          "buy_side_pct": 94.7,
+          "direction": "STABLE",
+          "fwd21_pct": 1.203,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -5.054,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "BA",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 37,
+          "buy_side_pct": 83.8,
+          "direction": "STABLE",
+          "fwd21_pct": -10.696,
+          "fwd63_pct": -20.047
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 37,
+          "buy_side_pct": 86.5,
+          "direction": "STABLE",
+          "fwd21_pct": -4.943,
+          "fwd63_pct": -15.79
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 35,
+          "buy_side_pct": 88.6,
+          "direction": "STABLE",
+          "fwd21_pct": -1.502,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 37,
+          "buy_side_pct": 91.9,
+          "direction": "IMPROVING",
+          "fwd21_pct": -3.521,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -5.166,
+      "latest": "STRONG_BUY",
+      "latest_direction": "IMPROVING"
+    },
+    {
+      "symbol": "NVDA",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "STRONG_BUY",
+          "analysts": 68,
+          "buy_side_pct": 94.1,
+          "direction": "STABLE",
+          "fwd21_pct": 0.058,
+          "fwd63_pct": 13.155
+        },
+        {
+          "period": "2026-09-01",
+          "label": "STRONG_BUY",
+          "analysts": 69,
+          "buy_side_pct": 94.2,
+          "direction": "STABLE",
+          "fwd21_pct": -0.06,
+          "fwd63_pct": -11.251
+        },
+        {
+          "period": "2026-10-01",
+          "label": "STRONG_BUY",
+          "analysts": 69,
+          "buy_side_pct": 95.7,
+          "direction": "STABLE",
+          "fwd21_pct": -8.638,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "STRONG_BUY",
+          "analysts": 69,
+          "buy_side_pct": 95.7,
+          "direction": "STABLE",
+          "fwd21_pct": -14.42,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -5.765,
+      "latest": "STRONG_BUY",
+      "latest_direction": "STABLE"
+    },
+    {
+      "symbol": "CAT",
+      "periods": [
+        {
+          "period": "2026-08-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 52.9,
+          "direction": "STABLE",
+          "fwd21_pct": -3.123,
+          "fwd63_pct": -0.404
+        },
+        {
+          "period": "2026-09-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 52.9,
+          "direction": "STABLE",
+          "fwd21_pct": 1.829,
+          "fwd63_pct": -25.721
+        },
+        {
+          "period": "2026-10-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 58.8,
+          "direction": "IMPROVING",
+          "fwd21_pct": -17.549,
+          "fwd63_pct": null
+        },
+        {
+          "period": "2026-11-01",
+          "label": "BUY",
+          "analysts": 34,
+          "buy_side_pct": 58.8,
+          "direction": "STABLE",
+          "fwd21_pct": -6.954,
+          "fwd63_pct": null
+        }
+      ],
+      "n_periods": 4,
+      "mean_fwd21_pct": -6.449,
+      "latest": "BUY",
+      "latest_direction": "STABLE"
+    }
+  ]
+}

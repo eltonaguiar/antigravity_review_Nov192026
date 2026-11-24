@@ -1,0 +1,29 @@
+{
+  "schema": "census_verdict_map/1",
+  "map": {
+    "KILLED": "KILLED",
+    "INSUFFICIENT_TRADES": "KILLED",
+    "null": "KILLED",
+    "BLOCKED_NO_DATA": "BLOCKED_NO_DATA"
+  },
+  "rationale": "Artifact layer used three spellings for a non-viable cell; the source uses one (killed). Normalise, do not recount.",
+  "raw_counts": {
+    "BLOCKED_NO_DATA": 859,
+    "KILLED": 96,
+    "INSUFFICIENT_TRADES": 10,
+    "None": 1
+  },
+  "canonical_counts": {
+    "BLOCKED_NO_DATA": 859,
+    "KILLED": 107
+  },
+  "todos_counts": {
+    "blocked_no_data": 893,
+    "killed": 107
+  },
+  "missing_artifacts": 34,
+  "proof": {
+    "killed": "96+10+1=107 vs TODOS 107",
+    "blocked": "859+missing(34)=893 vs TODOS 893"
+  }
+}

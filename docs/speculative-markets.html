@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Penny stocks, meme coins, options, futures — what the evidence says</title>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2330;--ink:#e6edf3;--muted:#8b949e;--line:#30363d;--accent:#6cb6ff;--good:#3fb950;--bad:#f85149;--warn:#d29922}
+body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 ui-sans-serif,system-ui,Arial}.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+header{padding:26px 0 14px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(108,182,255,.10),transparent)}
+h1{margin:.2rem 0;font-size:1.65rem}.sub{color:var(--muted);max-width:85ch}
+main{padding:20px 0 60px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.eli5{background:rgba(108,182,255,.10);border:1px solid rgba(108,182,255,.35);border-radius:10px;padding:10px 14px;margin:12px 0}
+.warn{background:rgba(210,153,34,.10);border:1px solid rgba(210,153,34,.4);border-radius:10px;padding:10px 14px;margin:12px 0;color:#e3b341;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:8px}th,td{border-bottom:1px solid var(--line);padding:7px;text-align:left}
+th{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+ul{margin:8px 0 8px 18px}li{margin:5px 0}
+.note{color:var(--muted);font-size:.85rem}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+footer{border-top:1px solid var(--line);padding:16px 0 40px;color:var(--muted);font-size:.85rem}
+</style></head><body>
+<header><div class="wrap">
+<div class="note"><a href="index.html">&larr; main review</a> · <a href="harvest.html">HARVEST</a> · <a href="best-picks.html">Best attempted picks</a></div>
+<h1>Penny stocks, meme coins, options, futures</h1>
+<p class="sub">Four speculative corners. For each: what data exists, what it shows, and whether we would put money in it. No claim is made that any is investable.</p>
+</div></header>
+<main class="wrap">
+
+<div class="card">
+<h2>1. Penny stocks — <span style="color:#f85149">NOT RELIABLE</span></h2>
+<div class="eli5"><b>ELI5:</b> Sub-$1 shares look cheap but are usually illiquid, heavily diluted, and prone to pumps. The quoted price is not a price you can actually trade at size.</div>
+<ul>
+<li><b>No local bar series</b> for OTC/penny names; we cannot backtest them honestly.</li>
+<li>Ledger evidence: **PENNY_STOCK** 4 resolved picks, WR **50%**, PF **0.1779** — a single big loss wipes the wins.</li>
+<li>Missing: point-in-time prices, delisting/suspension history, borrow/dilution data, realistic spread and capacity.</li>
+<li><b>Verdict:</b> not reliably backtestable; do not allocate. A $50 fill can move the price.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>2. Meme coins — <span style="color:#f85149">KILLED</span></h2>
+<div class="eli5"><b>ELI5:</b> Meme coins are a volatility lottery. High average moves cut both ways; our simple rules lose after a realistic 52 bp round turn.</div>
+<table><thead><tr><th>Measure (DOGE, 250 daily bars)</th><th class="num">Value</th></tr></thead><tbody>
+<tr><td>Annualised volatility</td><td class="num" style="color:#f85149">89.2%</td></tr>
+<tr><td>Total return over the window</td><td class="num" style="color:#f85149">−43.3%</td></tr>
+<tr><td>Max drawdown</td><td class="num" style="color:#f85149">−69.4%</td></tr>
+<tr><td>20-day momentum (n=70, net)</td><td class="num">−1.26%/trade, WR 31%</td></tr>
+<tr><td>5-day reversal (n=142, net)</td><td class="num">−0.72%/trade, WR 42%</td></tr>
+</tbody></table>
+<p>Ledger **MEME** class: 10 resolved, WR **10%**, PF **0.0234**. Only DOGE is covered locally; SHIB/PEPE/BONK have no bars here. **Verdict: KILLED** — volatility is not edge.</p>
+</div>
+
+<div class="card">
+<h2>3. Options — <span style="color:#d29922">SNAPSHOT ONLY / NOT BACKTESTABLE</span></h2>
+<div class="eli5"><b>ELI5:</b> We can see today’s option prices and implied volatility, but we have no history of IV, skew, or fills to test a strategy. A snapshot is not a backtest.</div>
+<table><thead><tr><th>Symbol</th><th class="num">Spot</th><th>Expiry</th><th class="num">ATM call IV</th><th class="num">ATM put IV</th><th class="num">10% OTM put IV</th><th class="num">ATM expected move</th><th class="num">Calls/Puts</th></tr></thead><tbody>
+<tr><td><b>SPY</b></td><td class='num'>$718.42</td><td>2026-11-24</td><td class='num'>16.4%</td><td class='num'>16.2%</td><td class='num'>71%</td><td class='num'>0.64%</td><td class='num'>167/136</td></tr>
+<tr><td><b>AAPL</b></td><td class='num'>$352.87</td><td>2026-11-25</td><td class='num'>21.7%</td><td class='num'>29.1%</td><td class='num'>60%</td><td class='num'>1.48%</td><td class='num'>40/40</td></tr>
+</tbody></table>
+<p>SPY expected move ≈0.64% to the nearest expiry; AAPL ≈1.48%. The very high “10% OTM put IV” (71% SPY) reflects thin, wide quotes, not a tradable edge. <b>Verdict:</b> no options strategy is evaluated or endorsed; we lack IV history, greeks by strike, fills, and assignment modelling.</p>
+</div>
+
+<div class="card">
+<h2>4. Futures — <span style="color:#d29922">ROUGH RANK ONLY</span></h2>
+<div class="warn">Disclaimer: front-month Yahoo series, no roll adjustment, no commissions/slippage, no contract specs. This is a directional screen, not a backtest and not an allocation.</div>
+<p>Rough score = <code>12-month return / annualised vol + (price above 200-day SMA ? +1 : −1)</code>. Higher is “more trend, less vol”.</p>
+<table><thead><tr><th>Contract</th><th>Class</th><th class="num">12m</th><th class="num">6m</th><th class="num">Vol</th><th>Above 200d</th><th class="num">Max DD</th><th class="num">Score</th></tr></thead><tbody>
+<tr><td><b>ZS=F</b></td><td>Ags</td><td class='num'>+10.4%</td><td class='num'>+3.9%</td><td class='num'>16.9%</td><td>yes</td><td class='num'>-11.6%</td><td class='num'><b>+1.62</b></td></tr>
+<tr><td><b>NG=F</b></td><td>Energy</td><td class='num'>-17.9%</td><td class='num'>+13.7%</td><td class='num'>81.4%</td><td>yes</td><td class='num'>-66.2%</td><td class='num'><b>+0.78</b></td></tr>
+<tr><td><b>CL=F</b></td><td>Energy</td><td class='num'>+37.7%</td><td class='num'>-8.8%</td><td class='num'>46.0%</td><td>no</td><td class='num'>-39.3%</td><td class='num'><b>-0.18</b></td></tr>
+<tr><td><b>ES=F</b></td><td>Equity index</td><td class='num'>+7.2%</td><td class='num'>-5.0%</td><td class='num'>17.3%</td><td>no</td><td class='num'>-18.5%</td><td class='num'><b>-0.58</b></td></tr>
+<tr><td><b>ZC=F</b></td><td>Ags</td><td class='num'>+6.3%</td><td class='num'>-1.2%</td><td class='num'>21.1%</td><td>no</td><td class='num'>-26.0%</td><td class='num'><b>-0.70</b></td></tr>
+<tr><td><b>NQ=F</b></td><td>Equity index</td><td class='num'>+5.1%</td><td class='num'>-13.4%</td><td class='num'>23.8%</td><td>no</td><td class='num'>-22.5%</td><td class='num'><b>-0.78</b></td></tr>
+<tr><td><b>6J=F</b></td><td>FX</td><td class='num'>-1.6%</td><td class='num'>+0.0%</td><td class='num'>9.4%</td><td>no</td><td class='num'>-14.3%</td><td class='num'><b>-1.17</b></td></tr>
+<tr><td><b>SI=F</b></td><td>Metals</td><td class='num'>-19.0%</td><td class='num'>-46.1%</td><td class='num'>52.0%</td><td>no</td><td class='num'>-64.6%</td><td class='num'><b>-1.37</b></td></tr>
+<tr><td><b>GC=F</b></td><td>Metals</td><td class='num'>-12.9%</td><td class='num'>-20.8%</td><td class='num'>25.0%</td><td>no</td><td class='num'>-33.9%</td><td class='num'><b>-1.52</b></td></tr>
+<tr><td><b>6E=F</b></td><td>FX</td><td class='num'>-4.9%</td><td class='num'>-5.9%</td><td class='num'>7.0%</td><td>no</td><td class='num'>-9.0%</td><td class='num'><b>-1.70</b></td></tr>
+<tr><td><b>ZB=F</b></td><td>Rates</td><td class='num'>-8.2%</td><td class='num'>-4.2%</td><td class='num'>9.1%</td><td>no</td><td class='num'>-15.3%</td><td class='num'><b>-1.91</b></td></tr>
+<tr><td><b>ZN=F</b></td><td>Rates</td><td class='num'>-5.7%</td><td class='num'>-2.9%</td><td class='num'>4.9%</td><td>no</td><td class='num'>-8.5%</td><td class='num'><b>-2.17</b></td></tr>
+</tbody></table>
+<p>Ledger **FUTURES** class: 68 resolved, WR **31.6%**, PF **0.6834** — no class edge. The screen puts grains (ZS) at the top and rates (ZN/ZB) at the bottom, but roll yield can swamp spot trend in commodities; treat this as a watchlist ordering only.</p>
+</div>
+
+<div class="card">
+<h2>What would change these verdicts</h2>
+<ul>
+<li><b>Penny:</b> point-in-time OTC bars + delisting + spread/capacity data; until then, no.</li>
+<li><b>Meme:</b> a pre-registered rule with forward n≥100, net CI-low>0, DSR≥0.95; current evidence is negative.</li>
+<li><b>Options:</b> historical IV surfaces, greeks, and fill data; a snapshot cannot support a claim.</li>
+<li><b>Futures:</b> roll-adjusted continuous contracts + COT + costs; then re-rank with CPCV/DSR.</li>
+</ul>
+</div>
+</main>
+<footer><div class="wrap">Raw snapshot: <a href="data/speculative_snapshot.json">speculative_snapshot.json</a> · generated 2026-11-24. Not investment advice.</div></footer>
+</body></html>
