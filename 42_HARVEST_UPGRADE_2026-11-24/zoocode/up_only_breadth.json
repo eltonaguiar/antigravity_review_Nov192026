@@ -1,0 +1,43 @@
+{
+ "generated": "2026-11-24T21:39:34.896656+00:00",
+ "source": "/home/eaguiar2015/antigravity_review/42_HARVEST_UPGRADE_2026-11-24/tracker/analyst_actions.csv",
+ "rows_total": 122746,
+ "action_mix": {
+  "up": 9873,
+  "main": 88341,
+  "reit": 6000,
+  "down": 9720,
+  "init": 8812
+ },
+ "up_share_of_rows": 0.0804,
+ "no_filter": {
+  "firms_above": {
+   "300": 10,
+   "500": 1,
+   "750": 0
+  },
+  "biggest": [
+   "BofA Securities",
+   556
+  ],
+  "n_firms": 227,
+  "total_events": 9873,
+  "pairs_with_at_least_one_up": 6012
+ },
+ "six_month": {
+  "firms_above": {
+   "300": 6,
+   "500": 0,
+   "750": 0
+  },
+  "biggest": [
+   "BofA Securities",
+   439
+  ],
+  "n_firms": 220,
+  "total_events": 8498,
+  "pairs_with_a_surviving_up": 5696
+ },
+ "window_days": 182,
+ "floors_unchanged": true
+}
