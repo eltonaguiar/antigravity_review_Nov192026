@@ -39,9 +39,11 @@ def main():
         actual = canonical_hash(p)
         rows.append((slug, actual[:12]))
         if actual[:12] not in ledger:
-            # distinguish "not recorded" from "recorded under a different value"
-            unverified = re.search(re.escape(slug.replace("_", " ")) , ledger, re.I)
-            (missing if unverified else bad).append(slug)
+            # distinguish "not recorded" from "recorded under a different value":
+            # name present but hash absent => the file changed (bad);
+            # name absent entirely => the submission was never recorded (missing).
+            named = bool(re.search(re.escape(slug.replace("_", " ")), ledger, re.I))
+            (bad if named else missing).append(slug)
 
     print("%-20s %-14s %s" % ("agent", "actual sha256", "in ledger"))
     for slug, h in rows:
