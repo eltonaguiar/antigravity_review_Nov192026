@@ -81,6 +81,63 @@ wins and a low hit rate with large wins are different products rather than bette
 
 
 
+
+<h2>Risk profile per pick</h2>
+<p>Every pick now carries a risk profile with numbers, not adjectives. Before this, the table existed
+but held no rows and no pick pointed at a profile — so "risk profile" was a name in a schema rather
+than a fact about any pick. That is fixed.</p>
+
+<table>
+  <tr><th>Profile</th><th class="num">Risk per trade</th><th class="num">Max open positions</th><th class="num">Halt at drawdown</th><th>How it fails</th></tr>
+  <tr><td><b>Conservative</b></td><td class="num">0.25% of equity</td><td class="num">5</td><td class="num">10%</td><td>Slow bleed: many small losses that each look acceptable alone</td></tr>
+  <tr><td><b>Moderate</b></td><td class="num">0.50% of equity</td><td class="num">10</td><td class="num">15%</td><td>Correlated positions that behave as one large bet</td></tr>
+  <tr><td><b>Aggressive</b></td><td class="num">1.00% of equity</td><td class="num">20</td><td class="num">25%</td><td>Gap risk: the exit you planned is not available overnight</td></tr>
+</table>
+
+<p><b>Assignment is deterministic from the asset class</b>, so anyone can recompute it:
+ETF / BOND / CASH → Conservative · EQUITY / STOCK / FOREX / INDEX → Moderate ·
+CRYPTO / COMMODITY / FUTURES / MEME → Aggressive.</p>
+
+<p>Live book: <b>3,555 Aggressive</b>, <b>361 Moderate</b>, <b>76 Conservative</b>. That imbalance is
+itself a finding — four fifths of the tracked book is in the profile that gaps overnight.</p>
+
+<h2>Risk flags — what the numbers say about each pick</h2>
+<table>
+  <tr><th>Flag</th><th class="num">All picks</th><th class="num">Open picks</th><th>What it means</th></tr>
+  <tr><td>BOUNDED</td><td class="num">3,663</td><td class="num">416</td><td>Has a stop, the stop is within 15%, payoff is at least 1:1</td></tr>
+  <tr><td>UNBOUNDED</td><td class="num">110</td><td class="num">77</td><td><b>No stop supplied by the source</b> — loss has no defined limit</td></tr>
+  <tr><td>WIDE</td><td class="num">140</td><td class="num">10</td><td>Stop is more than 15% away, so a normal stop is a large loss</td></tr>
+  <tr><td>POOR PAYOFF</td><td class="num">79</td><td class="num">6</td><td>Target is closer than the stop — risking more than the reward</td></tr>
+</table>
+
+<p><b>77 of 509 open picks carry no stop at all.</b> That is not a data gap to be filled by guessing:
+a pick with no stop is an unbounded position, and it is recorded that way.</p>
+
+<h3>Three widest open stops, with payoff</h3>
+<table>
+  <tr><th>Symbol</th><th>Class</th><th class="num">Stop distance</th><th class="num">Reward : risk</th><th class="num">Position size at 1% risk</th></tr>
+  <tr><td>SOXLBUSDT</td><td>CRYPTO</td><td class="num">21.86%</td><td class="num">2.00 : 1</td><td class="num">4.6% of equity</td></tr>
+  <tr><td>ETHUSDT</td><td>CRYPTO</td><td class="num">21.70%</td><td class="num">0.31 : 1</td><td class="num">4.6% of equity</td></tr>
+  <tr><td>BTCUSDT</td><td>CRYPTO</td><td class="num">21.20%</td><td class="num">0.49 : 1</td><td class="num">4.7% of equity</td></tr>
+</table>
+
+<div class="warn">
+  <b>Read that ETH row carefully.</b> A reward:risk of 0.31 means the target is roughly a third of the
+  distance to the stop — you are risking 3.2 to make 1. That is a losing structure even with a 50%
+  hit rate. BTCUSDT at 0.49 has the same problem, less severely. Both are open positions.
+</div>
+
+<h2>Plain English — the risk terms</h2>
+<table>
+  <tr><th>Term</th><th>What it actually means</th></tr>
+  <tr><td><b>Risk per trade 1%</b></td><td>If this trade hits its stop, you lose 1% of your account. On $10,000 that is $100 — not 1% of the position, 1% of the <i>account</i>.</td></tr>
+  <tr><td><b>Stop distance 21.2%</b></td><td>The stop sits 21.2% below entry. To risk only 1% of a $10,000 account on that, you buy about $470 of it, because 21.2% of $470 ≈ $100.</td></tr>
+  <tr><td><b>Position size 4.7% of equity</b></td><td>How big the position must be for a 21.2% stop to equal 1% of the account. A wide stop forces a small position — the two numbers are the same fact.</td></tr>
+  <tr><td><b>Reward : risk 0.31</b></td><td>The target is 0.31× the stop distance. You risk 3.2 units to win 1. Needs a ~76% hit rate just to break even.</td></tr>
+  <tr><td><b>UNBOUNDED</b></td><td>No stop was supplied, so no maximum loss exists. Sizing it at any "risk %" is a fiction.</td></tr>
+  <tr><td><b>Halt at drawdown</b></td><td>The account stops trading after losing that share of its peak. Conservative 10% means a $10,000 account stops at $9,000 and reassesses.</td></tr>
+</table>
+
 <h2>Backtest verdict — nothing is viable</h2>
 <p>This was run on real history: four monthly consensus periods per symbol give three consecutive
 period-to-period transitions, roughly 200 label→forward-return observations. Entry at the next close,
