@@ -74,6 +74,13 @@
   .btn { background:#1f2937;border:1px solid #374151;color:#e5e7eb;border-radius:6px;
          padding:.4rem .7rem;font-size:.85rem;cursor:pointer; }
   .btn:hover { background:#374151; }
+  .btn.on { background:#2563eb; border-color:#3b82f6; color:#fff; }
+  .thin { font-size:.68rem; color:#b45309; border:1px solid #b45309; border-radius:999px;
+          padding:0 5px; margin-left:4px; cursor:help; }
+  .dist { display:flex; height:7px; width:92px; margin-top:4px; border-radius:3px; overflow:hidden; }
+  .dist span { display:block; height:100%; }
+  .presets { display:flex; gap:6px; flex-wrap:wrap; margin:.2rem 0 .8rem; }
+  .presets .label { color:var(--dim); font-size:.8rem; align-self:center; }
 </style>
 </head>
 <body>
@@ -127,6 +134,14 @@ both people and language models.</p>
   <datalist id="symbols"></datalist>
   <button class="btn" id="export" type="button">Export CSV</button>
   <span class="count" id="count"></span>
+</div>
+
+<div class="presets">
+  <span class="label">Quick views:</span>
+  <button class="btn" data-view="improved" type="button">Most improved</button>
+  <button class="btn" data-view="deteriorated" type="button">Most deteriorated</button>
+  <button class="btn" data-view="conviction" type="button">Highest conviction (≥15 analysts)</button>
+  <button class="btn" data-view="reset" type="button">Reset</button>
 </div>
 
 <details class="legend" open>
@@ -197,7 +212,7 @@ both people and language models.</p>
       <th data-k="detail" title="Strong Buy / Buy / Hold / Sell / Strong Sell — counts of covering analysts in each bucket." data-label="SB·B·H·S·SS<small>strong buy · buy · hold · sell · strong sell</small>">SB·B·H·S·SS<small>strong buy · buy · hold · sell · strong sell</small></th>
       <th data-k="mom_change_pp" data-label="MoM pp" title="Change in Buy-side % versus the prior month, in percentage points.">MoM pp</th>
       <th data-k="direction" data-label="Trend" title="IMPROVING at >= +2.0 pp, DETERIORATING at <= -2.0 pp, else STABLE. Not an upgrade or downgrade event.">Trend</th>
-      <th data-k="age_days" data-label="Age (d)" title="Days from the period date to the generation timestamp.">Age (d)</th>
+      <th data-k="age_days" data-label="Period age" title="Days since the snapshot month began (e.g. 23 = the 1st of this month). This is NOT a data-freshness timestamp.">Period age</th>
     </tr>
   </thead>
   <tbody id="rows"><tr><td colspan="12" class="na">loading…</td></tr></tbody>
@@ -289,6 +304,25 @@ function emptyMessage() {
     (n ? ` · ${n} symbol(s) failed to fetch, listed under “Symbols with no data”` : '');
 }
 
+function distBar(s) {
+  const t = s.analysts || 0;
+  if (!t) return '';
+  const w = (n) => Math.round((n / t) * 100);
+  const seg = (n, c) => n ? `<span style="width:${w(n)}%;background:${c}"></span>` : '';
+  return `<div class="dist" title="Strong Buy ${s.strong_buy} · Buy ${s.buy} · Hold ${s.hold} · Sell ${s.sell} · Strong Sell ${s.strong_sell}">${
+    seg(s.strong_buy,'#15803d')}${seg(s.buy,'#4ade80')}${seg(s.hold,'#9ca3af')}${seg(s.sell,'#f87171')}${seg(s.strong_sell,'#b91c1c')}</div>`;
+}
+
+function setView(v) {
+  const set = (id, val) => { el(id).value = val; };
+  document.querySelectorAll('[data-view]').forEach(b => b.classList.toggle('on', b.dataset.view === v));
+  if (v === 'improved') { STATE.sortKey='mom_change_pp'; STATE.sortDir=-1; }
+  else if (v === 'deteriorated') { STATE.sortKey='mom_change_pp'; STATE.sortDir=1; }
+  else if (v === 'conviction') { STATE.sortKey='buy_side_pct'; STATE.sortDir=-1; set('f-text',''); }
+  else if (v === 'reset') { STATE.sortKey='analysts'; STATE.sortDir=-1; set('f-class',''); set('f-consensus',''); set('f-direction',''); set('f-age','90'); set('f-text',''); }
+  render();
+}
+
 function exportCsv() {
   const cols = ['symbol','name','asset_class','sector','period','consensus','buy_side_pct',
                 'analysts','strong_buy','buy','hold','sell','strong_sell','mom_change_pp',
@@ -316,8 +350,8 @@ function render() {
       <td>${fmt(s.period)}</td>
       <td><span class="badge ${s.consensus}">${fmt(s.consensus)}</span></td>
       <td>${s.buy_side_pct === null ? '—' : s.buy_side_pct.toFixed(1)}</td>
-      <td>${s.analysts}</td>
-      <td>${s.strong_buy} / ${s.buy} / ${s.hold} / ${s.sell} / ${s.strong_sell}</td>
+      <td>${s.analysts}${s.analysts > 0 && s.analysts < 15 ? '<span class="thin" title="Thin coverage: fewer than 15 analysts">thin</span>' : ''}</td>
+      <td>${s.strong_buy} / ${s.buy} / ${s.hold} / ${s.sell} / ${s.strong_sell}${distBar(s)}</td>
       <td>${s.mom_change_pp === null ? '—' : (s.mom_change_pp > 0 ? '+' : '') + s.mom_change_pp.toFixed(1)}</td>
       <td>${s.direction === 'IMPROVING' ? '<span class="trend up">▲ Improving</span>'
             : s.direction === 'DETERIORATING' ? '<span class="trend down">▼ Deteriorating</span>'
@@ -421,6 +455,7 @@ function boot() {
 }
 
 el('export').addEventListener('click', exportCsv);
+document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
 for (const id of ['f-class', 'f-consensus', 'f-direction', 'f-age', 'f-text']) {
   el(id).addEventListener('input', render);
 }
