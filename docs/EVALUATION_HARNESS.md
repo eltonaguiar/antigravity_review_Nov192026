@@ -73,7 +73,10 @@ PASS requires **all** of:
 
 **Add the gate this programme learned the hard way:** state the **minimum detectable effect** of the
 sample you are judging. A "failed" verdict from a sample that could only resolve 9%/yr is a statement
-about power, not about markets. See `POWER_ANALYSIS.md` and `POSITIVE_CONTROL.md`.
+about power, not about markets. See [`POWER_ANALYSIS.md`](../POWER_ANALYSIS.md) and
+[`CONTEST/ROUND_01_2026-11-23/POSITIVE_CONTROL.md`](../CONTEST/ROUND_01_2026-11-23/POSITIVE_CONTROL.md)
+(the second is the measured control: real SPY monthly returns, 406 months / 33.8 years, injected alpha
+recovered exactly at 0/1/2/3/10 %/yr, **MDE = 5.08%/yr at t=2**).
 
 ---
 
