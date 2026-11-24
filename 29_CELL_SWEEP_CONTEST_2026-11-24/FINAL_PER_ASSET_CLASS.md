@@ -6,15 +6,17 @@ Source: `results/cells/*.json` cross-referenced against `1000_TODOS.json`. Every
 
 The sweep ran **crypto-first**. Of 1000 ledger cells, the crypto class is the only one with measured artifacts. **EQUITY, FOREX, BOND_ETF and COMMODITY_ETF have zero measured cells and therefore no findings.** The table's `in ledger` column makes this explicit; the `measured` column would otherwise read as 'measured and empty', which is a different and false claim.
 
+**Cross-reference:** `30_COST_STRUCTURE_2026-11-24/COST_VS_SIGNAL.md` splits this null into a *signal* problem (median gross <= 0) and a *cost* problem (gross edge exists but is below the 26bp round-turn). The `diagnosis` column below carries that verdict per class, so this table and that document cannot be read as disagreeing.
+
 **Headline: 0 PASS across all measured classes.** Not one cell met the pre-declared bar (CI excluding zero *and* DSR > 0.95 at 1000 trials).
 
-| asset class | in ledger | resolved | measured | KILL | PASS | median net bp | best cell |
-|---|---:|---:|---:|---:|---:|---:|---|
-| **EQUITY** | 400 | 12 | 6 | 4 | 0 | -20.69 | `SPY/donchian/1d` -14.86 |
-| **FOREX** | 150 | 6 | 2 | 2 | 0 | -22.25 | `EURUSD/trend_pullback/1d` -21.66 |
-| **COMMODITY_ETF** | 50 | 10 | 5 | 2 | 0 | -22.76 | `GLD/breakout/1w` -6.85 |
-| **CRYPTO** | 350 | 107 | 28 | 12 | 0 | -31.09 | `SOLUSDT/breakout/1d` +71.90 |
-| **BOND_ETF** | 50 | 10 | 3 | 3 | 0 | -43.29 | `TLT/breakout/1d` -34.83 |
+| asset class | in ledger | resolved | measured | KILL | PASS | median net bp | median gross bp | diagnosis | best cell |
+|---|---:|---:|---:|---:|---:|---:|---:|---|---|
+| **EQUITY** | 400 | 12 | 6 | 4 | 0 | -20.69 | +5.31 | COST problem (gross edge < 26bp) | `SPY/donchian/1d` -14.86 |
+| **FOREX** | 150 | 6 | 2 | 2 | 0 | -22.25 | +3.75 | COST problem (gross edge < 26bp) | `EURUSD/trend_pullback/1d` -21.66 |
+| **COMMODITY_ETF** | 50 | 10 | 5 | 2 | 0 | -22.76 | +3.24 | COST problem (gross edge < 26bp) | `GLD/breakout/1w` -6.85 |
+| **CRYPTO** | 350 | 107 | 28 | 12 | 0 | -31.09 | -5.10 | SIGNAL problem (no gross edge) | `SOLUSDT/breakout/1d` +71.90 |
+| **BOND_ETF** | 50 | 10 | 3 | 3 | 0 | -43.29 | -17.29 | SIGNAL problem (no gross edge) | `TLT/breakout/1d` -34.83 |
 
 ## Per-class commentary
 
