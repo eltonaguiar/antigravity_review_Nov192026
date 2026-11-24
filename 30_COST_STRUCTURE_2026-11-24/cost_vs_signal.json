@@ -1,0 +1,50 @@
+{
+  "cells": 44,
+  "cost_bp": 26.0,
+  "median_gross_bp": -1.51,
+  "pct_gross_positive": 47.7,
+  "verdict": "SIGNAL PROBLEM",
+  "reason": "the median cell has NO gross edge at all; lowering cost cannot rescue a negative expectancy",
+  "per_class": [
+    {
+      "class": "EQUITY",
+      "n": 6,
+      "median_gross": 5.31,
+      "pct_gross_positive": 66.7,
+      "best_gross": 11.14,
+      "breakeven_cost": 11.14
+    },
+    {
+      "class": "FOREX",
+      "n": 2,
+      "median_gross": 3.75,
+      "pct_gross_positive": 100.0,
+      "best_gross": 4.34,
+      "breakeven_cost": 4.34
+    },
+    {
+      "class": "COMMODITY_ETF",
+      "n": 5,
+      "median_gross": 3.24,
+      "pct_gross_positive": 80.0,
+      "best_gross": 19.15,
+      "breakeven_cost": 19.15
+    },
+    {
+      "class": "CRYPTO",
+      "n": 28,
+      "median_gross": -5.1,
+      "pct_gross_positive": 39.3,
+      "best_gross": 97.9,
+      "breakeven_cost": 97.9
+    },
+    {
+      "class": "BOND_ETF",
+      "n": 3,
+      "median_gross": -17.29,
+      "pct_gross_positive": 0.0,
+      "best_gross": -8.83,
+      "breakeven_cost": -8.83
+    }
+  ]
+}

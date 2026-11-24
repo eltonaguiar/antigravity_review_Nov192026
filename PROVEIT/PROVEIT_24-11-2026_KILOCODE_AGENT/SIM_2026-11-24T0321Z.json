@@ -1,0 +1,238 @@
+{
+  "generated_at": "2026-11-24T03:21:50.550300+00:00",
+  "bars": 1255,
+  "years": 4.98,
+  "data": "data/market_prices.csv (adjusted)",
+  "costs": "26bp round-turn where traded; equity/MF total-return adj",
+  "philosophies": {
+    "EQ": {
+      "cagr_pct": 18.3,
+      "max_dd_pct": -18.76,
+      "sharpe_excess": 0.859
+    },
+    "60_40": {
+      "cagr_pct": 11.96,
+      "max_dd_pct": -11.2,
+      "sharpe_excess": 0.71
+    },
+    "TIMING": {
+      "cagr_pct": 13.76,
+      "max_dd_pct": -9.39,
+      "sharpe_excess": 0.779
+    }
+  },
+  "by_size": {
+    "300": {
+      "EQ": {
+        "base": {
+          "terminal": 692.76,
+          "net_cagr_pct": 18.3,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 688.26,
+          "net_cagr_pct": 18.15,
+          "fee_drag_pct_of_start": 0.65
+        },
+        "fxtrade": {
+          "terminal": 678.26,
+          "net_cagr_pct": 17.8,
+          "fee_drag_pct_of_start": 2.09
+        }
+      },
+      "60_40": {
+        "base": {
+          "terminal": 526.57,
+          "net_cagr_pct": 11.96,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 522.07,
+          "net_cagr_pct": 11.77,
+          "fee_drag_pct_of_start": 0.85
+        },
+        "fxtrade": {
+          "terminal": 512.07,
+          "net_cagr_pct": 11.33,
+          "fee_drag_pct_of_start": 2.75
+        }
+      },
+      "TIMING": {
+        "base": {
+          "terminal": 570.1,
+          "net_cagr_pct": 13.76,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 565.6,
+          "net_cagr_pct": 13.58,
+          "fee_drag_pct_of_start": 0.79
+        },
+        "fxtrade": {
+          "terminal": 555.6,
+          "net_cagr_pct": 13.17,
+          "fee_drag_pct_of_start": 2.54
+        }
+      }
+    },
+    "500": {
+      "EQ": {
+        "base": {
+          "terminal": 1154.61,
+          "net_cagr_pct": 18.3,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 1147.11,
+          "net_cagr_pct": 18.15,
+          "fee_drag_pct_of_start": 0.65
+        },
+        "fxtrade": {
+          "terminal": 1137.11,
+          "net_cagr_pct": 17.94,
+          "fee_drag_pct_of_start": 1.52
+        }
+      },
+      "60_40": {
+        "base": {
+          "terminal": 877.61,
+          "net_cagr_pct": 11.96,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 870.11,
+          "net_cagr_pct": 11.77,
+          "fee_drag_pct_of_start": 0.85
+        },
+        "fxtrade": {
+          "terminal": 860.11,
+          "net_cagr_pct": 11.51,
+          "fee_drag_pct_of_start": 1.99
+        }
+      },
+      "TIMING": {
+        "base": {
+          "terminal": 950.16,
+          "net_cagr_pct": 13.76,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 942.66,
+          "net_cagr_pct": 13.58,
+          "fee_drag_pct_of_start": 0.79
+        },
+        "fxtrade": {
+          "terminal": 932.66,
+          "net_cagr_pct": 13.34,
+          "fee_drag_pct_of_start": 1.84
+        }
+      }
+    },
+    "2000": {
+      "EQ": {
+        "base": {
+          "terminal": 4618.43,
+          "net_cagr_pct": 18.3,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 4588.43,
+          "net_cagr_pct": 18.15,
+          "fee_drag_pct_of_start": 0.65
+        },
+        "fxtrade": {
+          "terminal": 4578.43,
+          "net_cagr_pct": 18.09,
+          "fee_drag_pct_of_start": 0.87
+        }
+      },
+      "60_40": {
+        "base": {
+          "terminal": 3510.45,
+          "net_cagr_pct": 11.96,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 3480.45,
+          "net_cagr_pct": 11.77,
+          "fee_drag_pct_of_start": 0.85
+        },
+        "fxtrade": {
+          "terminal": 3470.45,
+          "net_cagr_pct": 11.7,
+          "fee_drag_pct_of_start": 1.14
+        }
+      },
+      "TIMING": {
+        "base": {
+          "terminal": 3800.65,
+          "net_cagr_pct": 13.76,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 3770.65,
+          "net_cagr_pct": 13.58,
+          "fee_drag_pct_of_start": 0.79
+        },
+        "fxtrade": {
+          "terminal": 3760.65,
+          "net_cagr_pct": 13.52,
+          "fee_drag_pct_of_start": 1.05
+        }
+      }
+    },
+    "10000": {
+      "EQ": {
+        "base": {
+          "terminal": 23092.13,
+          "net_cagr_pct": 18.3,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 22942.13,
+          "net_cagr_pct": 18.15,
+          "fee_drag_pct_of_start": 0.65
+        },
+        "fxtrade": {
+          "terminal": 22932.13,
+          "net_cagr_pct": 18.13,
+          "fee_drag_pct_of_start": 0.69
+        }
+      },
+      "60_40": {
+        "base": {
+          "terminal": 17552.27,
+          "net_cagr_pct": 11.96,
+          "fee_drag_pct_of_start": -0.0
+        },
+        "fx": {
+          "terminal": 17402.27,
+          "net_cagr_pct": 11.77,
+          "fee_drag_pct_of_start": 0.85
+        },
+        "fxtrade": {
+          "terminal": 17392.27,
+          "net_cagr_pct": 11.75,
+          "fee_drag_pct_of_start": 0.91
+        }
+      },
+      "TIMING": {
+        "base": {
+          "terminal": 19003.26,
+          "net_cagr_pct": 13.76,
+          "fee_drag_pct_of_start": 0.0
+        },
+        "fx": {
+          "terminal": 18853.26,
+          "net_cagr_pct": 13.58,
+          "fee_drag_pct_of_start": 0.79
+        },
+        "fxtrade": {
+          "terminal": 18843.26,
+          "net_cagr_pct": 13.57,
+          "fee_drag_pct_of_start": 0.84
+        }
+      }
+    }
+  }
+}

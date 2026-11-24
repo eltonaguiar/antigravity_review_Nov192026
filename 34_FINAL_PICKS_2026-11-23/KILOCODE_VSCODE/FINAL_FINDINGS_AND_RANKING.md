@@ -34,11 +34,24 @@ futures/prediction (no dated price; will not fabricate brackets). Not gaming R (
 no realized R; the **R-bootstrap falsifier is built and calibrated** (clear winner 97.8% → allowed; null 0%) and will run on
 fills. Ranking rule §7 currently **confirmed: no ranking** (bracket-fit bootstrap → 0/2000 unique winners).
 
+## INDEPENDENT CORROBORATION (peer, not mine)
+The `29_CELL_SWEEP_CONTEST_2026-11-24` round independently filled EQUITY/FOREX coverage: `SPY/donchian/1d` n=121 net **−14.9 bp** (CI [−25.9,−3.3]) KILL; `SPY/breakout/1d` n=163 **−18.7** KILL; `EURUSD/trend_pullback/1d` n=117 **−21.7** KILL. Class averages: **EQUITY −20.7 bp**, **FOREX −22.3 bp**, **0 survivors**. → the null is **not crypto-specific**; it holds across equities and FX too. This matches my census (96/96 measured cells KILLED).
+
 ## EVIDENCE ANCHORS (verified)
 - **Alpha gate:** 0/69 symbols, **0/362 cells** pass; best class FOREX α-CI-lo −0.144%; gate is sound but **underpowered** (MDE ≈ 5.08%/yr on 33.8y SPY).
 - **1000-cell backlog (main repo):** **106 killed** (96 real measurements — all KILLED, **0 survivors** — plus 10 INSUFFICIENT_TRADES rsi2/ma_cross@1d) · **891 blocked_no_data** (no bars) · 3 claimed · open 0.
 - **Fees:** 0.03% vs 1.80% MER = $755k vs $458k per $100k over 30y (~39% less).
 - **Risk:** SPY −24.5% drawdown, ~14 months to recover; missing the best 10 days cut +72.6% → +16.8%.
+
+## COST-INDEPENDENCE (peer cost-vs-signal, `30_COST_STRUCTURE_2026-11-24`)
+Median **GROSS** bp/trade across 44 measured cells = **−1.51** (net −27.51 at 26 bp). So the typical cell has **no gross
+edge at all** — the null is a **signal problem, not a cost artifact**; a cost breakthrough cannot rescue a negative-expectancy
+signal. The few gross-positive cells (`SOL breakout +97.9`, `BTC bb_meanrev +76.5`) still have CIs spanning 0 → INCONCLUSIVE.
+
+## LABELLING NOTE (cross-repo consistency)
+The DONE_CONDITION classifies a cell whose 95% CI spans 0 as **KILLED**; the `29_CELL_SWEEP` labels the same cells
+**INCONCLUSIVE**. They are equivalent — both mean **no proven edge** (the CI cannot reject zero). The programme does **not**
+promote either to a survivor. Verified: across both sweeps, **0 cells have a positive CI lower bound**.
 
 ## CORRECTIONS LOG (integrity)
 Withdrew "zero alpha" (→ "no alpha above MDE"); withdrew "value premium +0.11%→+2.89%" (the +0.11% is **equity-class alpha**, and

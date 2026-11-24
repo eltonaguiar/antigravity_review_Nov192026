@@ -9,16 +9,16 @@ This is a **ranking of a noisy quantity**, published because it was asked for. R
 | 3 | `SOLUSDT/donchian/1d` | CRYPTO | 33 | +36.41 | [-108.93, 177.46] | 0.145 | 0.0009 | NOT_ROBUST | INCONCLUSIVE |
 | 4 | `BTCUSDT/momentum_12_1/1w` | CRYPTO | 34 | +15.49 | [-191.83, 237.1] | 0.442 | 0.0002 | not run | INCONCLUSIVE |
 | 5 | `BTCUSDT/donchian/1d` | CRYPTO | 48 | +1.66 | [-65.08, 76.07] | 0.214 | 0.0001 | not run | INCONCLUSIVE |
-| 6 | `SOLUSDT/bb_meanrev/1d` | CRYPTO | 54 | -7.58 | [-140.11, 129.3] | 0.365 | 0.0001 | not run | INCONCLUSIVE |
-| 7 | `BTCUSDT/breakout/1d` | CRYPTO | 82 | -12.18 | [-63.86, 40.05] | 0.314 | 0.0 | not run | INCONCLUSIVE |
-| 8 | `SPY/donchian/1d` | EQUITY | 121 | -14.86 | [-25.85, -3.34] | 0.209 | 0.0 | not run | KILL |
-| 9 | `SPY/donchian/1w` | EQUITY | 40 | -15.72 | [-53.62, 22.31] | 0.685 | 0.0 | not run | INCONCLUSIVE |
-| 10 | `SPY/breakout/1d` | EQUITY | 163 | -18.67 | [-28.79, -8.15] | 0.354 | 0.0 | not run | KILL |
-| 11 | `BTCUSDT/donchian/1h` | CRYPTO | 63 | -19.34 | [-31.7, -7.07] | 0.078 | 0.0 | not run | KILL |
-| 12 | `ETHUSDT/bb_meanrev/1d` | CRYPTO | 59 | -19.39 | [-128.54, 100.54] | 0.428 | 0.0 | not run | INCONCLUSIVE |
-| 13 | `EURUSD/trend_pullback/1d` | FOREX | 117 | -21.66 | [-30.71, -12.93] | 0.105 | 0.0 | not run | KILL |
-| 14 | `SPY/vol_compression/1d` | EQUITY | 75 | -22.71 | [-36.36, -9.52] | 0.588 | 0.0 | not run | KILL |
-| 15 | `EURUSD/vol_compression/1d` | FOREX | 53 | -22.84 | [-32.52, -13.12] | 0.25 | 0.0 | not run | KILL |
+| 6 | `GLD/breakout/1w` | COMMODITY_ETF | 34 | -6.85 | [-109.73, 87.9] | 0.697 | 0.0001 | not run | INCONCLUSIVE |
+| 7 | `SOLUSDT/bb_meanrev/1d` | CRYPTO | 54 | -7.58 | [-140.11, 129.3] | 0.365 | 0.0001 | not run | INCONCLUSIVE |
+| 8 | `BTCUSDT/breakout/1d` | CRYPTO | 82 | -12.18 | [-63.86, 40.05] | 0.314 | 0.0 | not run | INCONCLUSIVE |
+| 9 | `SPY/donchian/1d` | EQUITY | 121 | -14.86 | [-25.85, -3.34] | 0.209 | 0.0 | not run | KILL |
+| 10 | `GLD/breakout/1d` | COMMODITY_ETF | 131 | -15.16 | [-40.45, 7.89] | 0.311 | 0.0 | not run | INCONCLUSIVE |
+| 11 | `SPY/donchian/1w` | EQUITY | 40 | -15.72 | [-53.62, 22.31] | 0.685 | 0.0 | not run | INCONCLUSIVE |
+| 12 | `SPY/breakout/1d` | EQUITY | 163 | -18.67 | [-28.79, -8.15] | 0.354 | 0.0 | not run | KILL |
+| 13 | `BTCUSDT/donchian/1h` | CRYPTO | 63 | -19.34 | [-31.7, -7.07] | 0.078 | 0.0 | not run | KILL |
+| 14 | `ETHUSDT/bb_meanrev/1d` | CRYPTO | 59 | -19.39 | [-128.54, 100.54] | 0.428 | 0.0 | not run | INCONCLUSIVE |
+| 15 | `EURUSD/trend_pullback/1d` | FOREX | 117 | -21.66 | [-30.71, -12.93] | 0.105 | 0.0 | not run | KILL |
 
 ## Contest winner: nobody
 
