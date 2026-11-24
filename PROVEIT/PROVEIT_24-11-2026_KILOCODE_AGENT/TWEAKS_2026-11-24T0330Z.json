@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-11-24T03:30:35.461704+00:00",
+  "baseline_buyhold": {
+    "cagr_pct": 19.01,
+    "dd_pct": -18.76,
+    "sharpe": 0.937
+  },
+  "timing": {
+    "100": {
+      "cagr_pct": 11.47,
+      "dd_pct": -10.41,
+      "sharpe": 0.647
+    },
+    "150": {
+      "cagr_pct": 13.38,
+      "dd_pct": -8.41,
+      "sharpe": 0.763
+    },
+    "200": {
+      "cagr_pct": 13.76,
+      "dd_pct": -9.39,
+      "sharpe": 0.779
+    },
+    "250": {
+      "cagr_pct": 13.35,
+      "dd_pct": -15.92,
+      "sharpe": 0.703
+    }
+  },
+  "sixty40": {
+    "21": {
+      "cagr_pct": 6.91,
+      "dd_pct": -20.73,
+      "sharpe": 0.313
+    },
+    "63": {
+      "cagr_pct": 6.78,
+      "dd_pct": -20.87,
+      "sharpe": 0.303
+    },
+    "252": {
+      "cagr_pct": 6.91,
+      "dd_pct": -20.92,
+      "sharpe": 0.312
+    }
+  },
+  "blend": {
+    "50_50_eq_timing200": {
+      "cagr_pct": 16.13,
+      "dd_pct": -13.99,
+      "sharpe": 0.877
+    }
+  },
+  "pareto_beats_baseline": "NONE"
+}
