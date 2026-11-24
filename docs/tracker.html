@@ -111,6 +111,18 @@ indistinguishable from a bad one.</p>
   <tr><td>Clean trades still needed (keeping the one loss)</td><td class="num">+100 → n=141</td></tr>
 </table>
 
+<h2>Ranking rule — why we do not sort by the headline number</h2>
+<p>Sorting by point expectancy ranks the wrong candidate first. Peer review produced this case, and it
+reproduces:</p>
+<table>
+  <tr><th>Candidate</th><th class="num">n</th><th class="num">Win rate</th><th class="num">Point expectancy</th><th class="num">Expectancy at worst-case loss rate</th></tr>
+  <tr><td>TAIL — high hit rate, rare huge losses</td><td class="num">41</td><td class="num">97.6%</td><td class="num">+53.66 bp</td><td class="num" style="color:var(--bad)">−129.16 bp</td></tr>
+  <tr><td>BORING — mediocre but stable</td><td class="num">400</td><td class="num">52.5%</td><td class="num">+36.25 bp</td><td class="num" style="color:var(--ok)">+26.46 bp</td></tr>
+</table>
+<p>Both look strong on the headline. Only one survives its own confidence interval. So the ordering key
+is the <b>worst-case expectancy</b>, never the point estimate, and a candidate whose worst case is
+negative is <b>not rankable at all</b> however good the headline looks.</p>
+
 <h2>When a pick becomes reportable</h2>
 <p>A pick earns a verdict only when all four hold: <b>n</b> reaches its pick-type minimum (day trade
 100, swing 60, position 40, long-term 20, buy-and-hold 10) · expectancy confidence interval excludes
