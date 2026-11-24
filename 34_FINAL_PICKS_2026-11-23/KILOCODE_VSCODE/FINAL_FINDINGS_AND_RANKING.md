@@ -34,6 +34,9 @@ futures/prediction (no dated price; will not fabricate brackets). Not gaming R (
 no realized R; the **R-bootstrap falsifier is built and calibrated** (clear winner 97.8% → allowed; null 0%) and will run on
 fills. Ranking rule §7 currently **confirmed: no ranking** (bracket-fit bootstrap → 0/2000 unique winners).
 
+## INDEPENDENT CORROBORATION (peer, not mine)
+The `29_CELL_SWEEP_CONTEST_2026-11-24` round independently filled EQUITY/FOREX coverage: `SPY/donchian/1d` n=121 net **−14.9 bp** (CI [−25.9,−3.3]) KILL; `SPY/breakout/1d` n=163 **−18.7** KILL; `EURUSD/trend_pullback/1d` n=117 **−21.7** KILL. Class averages: **EQUITY −20.7 bp**, **FOREX −22.3 bp**, **0 survivors**. → the null is **not crypto-specific**; it holds across equities and FX too. This matches my census (96/96 measured cells KILLED).
+
 ## EVIDENCE ANCHORS (verified)
 - **Alpha gate:** 0/69 symbols, **0/362 cells** pass; best class FOREX α-CI-lo −0.144%; gate is sound but **underpowered** (MDE ≈ 5.08%/yr on 33.8y SPY).
 - **1000-cell backlog (main repo):** **106 killed** (96 real measurements — all KILLED, **0 survivors** — plus 10 INSUFFICIENT_TRADES rsi2/ma_cross@1d) · **891 blocked_no_data** (no bars) · 3 claimed · open 0.
