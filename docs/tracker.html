@@ -189,6 +189,42 @@ cost 6.71 bp, returns measured as excess versus SPY.</p>
 and the SELL bucket is <i>positive</i> — on four observations, which is far too few to mean anything.</p>
 
 
+
+<h2>Why the sample-size floors were meaningless</h2>
+<p>This schema shipped minimum-n gates per pick type — 100 for day trades, 60 swing, 40 position,
+20 long-term, 10 buy-and-hold. They read like validity floors: clear 100 picks and a day-trading
+record may be published. They are not validity floors.</p>
+
+<p>If 5,000 candidates were screened, the <i>best</i> of them has a certain hit rate even if every
+candidate is a fair coin. That rate is computable exactly — it is the smallest win count whose
+upper-tail probability is at most 1 in 5,000:</p>
+
+<table>
+  <tr><th class="num">Sample n</th><th class="num">Hit rate pure selection produces</th><th class="num">Wins needed to beat it</th><th>Gate it corresponds to</th></tr>
+  <tr><td class="num">10</td><td class="num"><b>100.0%</b></td><td class="num">10 / 10</td><td>BUY_AND_HOLD (n≥10) — <b>unbeatable</b></td></tr>
+  <tr><td class="num">20</td><td class="num">95.0%</td><td class="num">19 / 20</td><td>LONG_TERM (n≥20)</td></tr>
+  <tr><td class="num">40</td><td class="num">80.0%</td><td class="num">32 / 40</td><td>POSITION (n≥40)</td></tr>
+  <tr><td class="num">60</td><td class="num">73.3%</td><td class="num">44 / 60</td><td>SWING_TRADE (n≥60)</td></tr>
+  <tr><td class="num">100</td><td class="num">69.0%</td><td class="num">69 / 100</td><td>DAY_TRADE (n≥100)</td></tr>
+  <tr><td class="num">500</td><td class="num">58.2%</td><td class="num">291 / 500</td><td>—</td></tr>
+</table>
+
+<div class="warn">
+  <b>Read the first row again.</b> At 10 picks, screening 5,000 candidates produces a perfect 10/10
+  record often enough that it is not even unusual — so the buy-and-hold gate cannot be passed by
+  skill at all, only by luck. At 20 picks you need 19 correct out of 20. Every floor in this schema
+  admitted records that pure selection already produces.
+</div>
+
+<p>The fix is not a bigger n. It is to require a published record to beat <b>the selection null at its
+own n</b> — stored in <code>selection_null</code> and enforced by <code>v_rating_gate</code>, which
+returns <code>NOISE_FROM_SELECTION</code> rather than a tier when a record fails that comparison.</p>
+
+<p><i>Verification:</i> the table was cross-checked against direct simulation — 5,000 coin-flip
+candidates, 200 repetitions. Simulation gave a mean best-of-5,000 hit rate of 88.4% at n=20 and 68.1%
+at n=100, against thresholds of 95% and 69% here. The gap is expected: the threshold is a rare-event
+boundary, the simulation mean sits just below it.</p>
+
 <h2>How much data would actually settle it</h2>
 <p>The backtest above has 284 observations at 21 days and 140 at 63 days. A power calculation on
 those same published aggregates gives the sample needed to detect the observed effect at 80% power:</p>
