@@ -218,4 +218,5 @@ UOB Kay Hian,1,,,underpowered,0
 Vertical Group,1,,,underpowered,0
 Zelman& Assoc,1,,,underpowered,0
 unknown,1,,,underpowered,0
+"# data_limit: no firm clears the 750 clean-event floor (max BofA Securities 551); effect columns are blank by construction and are not measured failures"
 "# next_probe: add about 27 more BofA-covered tickers to reach the 750 floor and rerun the 63d within-ticker placebo"
