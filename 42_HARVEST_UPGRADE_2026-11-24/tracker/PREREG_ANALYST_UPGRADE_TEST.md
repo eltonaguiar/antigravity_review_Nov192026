@@ -226,6 +226,56 @@ about *decay*, and 5d stays as a reported secondary.
 
 ---
 
+## 4c. THE SEVENTH DESIGN (arena.ai agent mode) — and one corrected inference
+
+Total across both surfaces: **7 independent designs** (4 ChatPlayground + 2 AskAnyModel + 1 arena).
+It is the only one that cited an external source for its broker picks, and the only one whose
+stated *reason* for those picks does not survive checking.
+
+**What it adds that the other six did not:**
+
+1. **A population-level falsifier, which is logically different from Luna's.** Arena: "the
+   simultaneous 99% upper confidence bound is at or below zero for **every** eligible brokerage."
+   Luna said the *best* broker's UCB ≤ 0 kills the claim. Luna's version is a single test and more
+   powerful; arena's requires all of them and is more conservative. **Adopted as the population-level
+   secondary**, because "no broker works" is a claim about the whole set, and only arena stated it
+   that way.
+2. **99% simultaneous bounds rather than 95%.** Stricter, and correctly paired with a FWER-controlled
+   max-statistic across brokers. Adopted for the population-level claim; 95% retained for the
+   single-broker pass bar.
+3. **A data gate stated as a precondition, not a caveat:** a permanent issuer/security identifier
+   plus usable price history, or "the return test cannot be run." That is the right shape — it
+   refuses rather than degrades, which is the same lesson as the DSR guard in `CONTEST/tools/dsr.py`.
+4. **Alias normalisation** — reached independently of Claude Opus, which raises it from one model's
+   caution to a consensus requirement: "otherwise the test can split one research operation into
+   several apparent firms."
+
+**The corrected inference.** Arena picks J.P. Morgan, BofA Securities and Morgan Stanley, citing
+Extel's 2025 All-America Research Results, and justifies JPM as "sensible first test for **event
+volume**: it ranked first."
+
+The ranking is real — JPM does top that table. But Extel's All-America is a **buy-side survey of
+research quality, commission-weighted** ("who votes, on what"; "how the buy-side values and rewards
+the sell-side for their research advisory services"), not a count of rating changes. It measures
+**reputation**, not **event volume**. The pick may still be good; the reason given does not support it.
+
+Our own measurement separates the two axes cleanly on 30 mega-caps:
+
+| firm | Extel 2025 standing | measured changes (30 tickers) |
+|---|---|---|
+| J.P. Morgan | **#1** | below 106 (outside the top 14) |
+| Morgan Stanley | tied #2 | **164** |
+| BofA Securities | #2 | **147** |
+| RBC Capital | not cited | **234** |
+| Needham | not cited | **211** |
+
+Reputation and event count are inversely related here, which is the opposite of what the volume
+argument assumes. **Deployment of the pick: keep the block — these are the most-covered names in the
+world and should be tested — but order them by measured change count, not by Extel standing, and
+never describe Extel as a volume measure.**
+
+---
+
 ## 5. WHAT WOULD MAKE ME REPORT A POSITIVE
 
 Only a net-of-cost, characteristic-adjusted, placebo-beating result on a holdout the design never
