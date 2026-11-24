@@ -174,7 +174,13 @@ def kalshi_rows(limit: int):
     ms = payload.get("markets", [])
     rows = []
     for m in ms:
-        bid, ask = num(m.get("yes_bid")), num(m.get("yes_ask"))
+        # Kalshi renamed its fields (verified 2026-11-24): yes_bid -> yes_bid_dollars,
+        # yes_ask -> yes_ask_dollars, volume -> volume_fp, open_interest -> open_interest_fp.
+        # Reading only the old names produced 200 rows of NULLs. Accept both, prefer new.
+        bid = num(m.get("yes_bid_dollars") if m.get("yes_bid_dollars") is not None else m.get("yes_bid"))
+        ask = num(m.get("yes_ask_dollars") if m.get("yes_ask_dollars") is not None else m.get("yes_ask"))
+        if bid is not None and bid > 1: bid = bid / 100.0
+        if ask is not None and ask > 1: ask = ask / 100.0
         mid = ((bid + ask) / 2 / 100) if (bid is not None and ask is not None) else None
         rows.append({
             "venue": "kalshi",
@@ -183,10 +189,10 @@ def kalshi_rows(limit: int):
             "implied_prob": mid,
             "bid": bid / 100 if bid is not None else None,
             "ask": ask / 100 if ask is not None else None,
-            "spread": ((ask - bid) / 100) if (bid is not None and ask is not None) else None,
-            "volume": num(m.get("volume")),
+            "spread": (ask - bid) if (bid is not None and ask is not None) else None,
+            "volume": num(m.get("volume_fp") if m.get("volume_fp") is not None else m.get("volume")),
             "liquidity": num(m.get("liquidity")),
-            "open_interest": num(m.get("open_interest")),
+            "open_interest": num(m.get("open_interest_fp") if m.get("open_interest_fp") is not None else m.get("open_interest")),
             "end_date": m.get("close_time"),
             "url": f"https://kalshi.com/markets/{m.get('event_ticker','')}".rstrip("/"),
         })
@@ -264,6 +270,8 @@ def main() -> int:
             "beta": "null unless estimable from data actually held; beta_status states the reason. "
                     "Bare correlations are never emitted.",
         },
+        "markets": all_rows,
+        "market_count": len(all_rows),
         "sample_of_unmatched_markets": [
             {"venue": r["venue"], "question": r["question"]} for r in all_rows[:8]
         ],
