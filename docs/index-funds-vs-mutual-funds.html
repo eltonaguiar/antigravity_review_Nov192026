@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Index funds vs active mutual funds — 1/3/5/10-year evidence</title>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2330;--ink:#e6edf3;--muted:#8b949e;--line:#30363d;--accent:#6cb6ff;--good:#3fb950;--bad:#f85149;--warn:#d29922}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+header{border-bottom:1px solid var(--line);padding:26px 0 14px;background:linear-gradient(180deg,rgba(108,182,255,.10),transparent)}
+h1{margin:.2rem 0;font-size:1.65rem}.sub{color:var(--muted);max-width:82ch}
+main{padding:20px 0 60px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.eli5{background:rgba(108,182,255,.10);border:1px solid rgba(108,182,255,.35);border-radius:10px;padding:10px 14px;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{border-bottom:1px solid var(--line);padding:7px;text-align:left}
+th{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.idx td{background:rgba(63,185,80,.06)}tr.act td{background:rgba(248,81,73,.04)}
+.pos{color:var(--good)}.neg{color:var(--bad)}
+ul{margin:8px 0 8px 18px}li{margin:5px 0}
+.note{color:var(--muted);font-size:.85rem}
+footer{border-top:1px solid var(--line);padding:16px 0 40px;color:var(--muted);font-size:.85rem}
+</style></head><body>
+<header><div class="wrap">
+<div class="note"><a href="index.html">&larr; main review</a> · <a href="harvest.html">HARVEST analyst data</a> · <a href="best-picks.html">Best attempted picks</a></div>
+<h1>Index funds vs active mutual funds — the actual numbers</h1>
+<p class="sub">Four low-cost index funds against four large active mutual funds, at 1, 3, 5 and 10 years, using total-return NAVs (net of each fund's own expenses). Plus the fee-drag arithmetic at 5/10/20/30 years.</p>
+</div></header>
+<main class="wrap">
+<div class="eli5"><b>ELI5:</b> Two buckets hold the same kind of stocks. One charges ~0.00–0.04% a year; the other charges ~0.57–0.61%. Over ten years the cheap bucket kept more of the return in <b>all four</b> match-ups. Over one year it was mixed — active funds can win a sprint. Fees are the part that never takes a year off.</div>
+
+<div class="card">
+<h2>1. The claim, with its assumptions on the table</h2>
+<p>The site's fee table says an active mutual fund costs <b>$18,520 per $100,000 over ten years</b>, an index mutual fund <b>$4,520</b>, and an index ETF <b>$1,050</b> (17.6× / 4.3×). Those are <b>all-in cost assumptions</b>, not the expense ratios of the funds below: 1.85%/yr for active (including 12b-1/advice), 0.45%/yr for an average index mutual fund, 0.105%/yr for an ETF.</p>
+<p class="note"><b>Important correction:</b> the cheapest index mutual funds are <b>not</b> 4.3× an ETF. FXAIX charges <b>0.015%</b> and VFIAX/VTSAX charge <b>0.04%</b> — as cheap as, or cheaper than, many ETFs. The 4.3× figure is the <i>average</i> index mutual fund, not the best ones.</p>
+</div>
+
+<div class="card">
+<h2>2. Fee drag at multiple horizons — $100,000, 7% gross return</h2>
+<table><thead><tr><th class="num">Horizon</th><th class="num">Index @ 0.015% (FXAIX)</th><th class="num">Index @ 0.04% (VFIAX/VTSAX)</th><th class="num">Active @ 0.61% (AGTHX)</th><th class="num">Active @ 1.00%</th><th class="num">Index − active (0.015 vs 0.61)</th></tr></thead>
+<tbody>
+<tr><td class='num'>5 yr</td><td class='num'>$140,157</td><td class='num'>$139,993</td><td class='num'>$136,303</td><td class='num'>$133,823</td><td class='num'>$3,854</td></tr>
+<tr><td class='num'>10 yr</td><td class='num'>$196,440</td><td class='num'>$195,981</td><td class='num'>$185,784</td><td class='num'>$179,085</td><td class='num'>$10,656</td></tr>
+<tr><td class='num'>20 yr</td><td class='num'>$385,885</td><td class='num'>$384,085</td><td class='num'>$345,157</td><td class='num'>$320,714</td><td class='num'>$40,728</td></tr>
+<tr><td class='num'>30 yr</td><td class='num'>$758,031</td><td class='num'>$752,735</td><td class='num'>$641,245</td><td class='num'>$574,349</td><td class='num'>$116,785</td></tr>
+</tbody></table>
+<p class="note">Assumes the same 7% gross return before fees, compounded annually. The only difference is the annual cost. Over 30 years the 0.61% fund ends with roughly <b>$116,785 less</b> per $100k than the 0.015% fund.</p>
+</div>
+
+<div class="card">
+<h2>3. Real funds, real returns — as of 2026-11-01</h2>
+<table><thead><tr><th>Ticker</th><th>Fund</th><th>Type</th><th class="num">ER</th><th class="num">1 yr</th><th class="num">3 yr</th><th class="num">5 yr</th><th class="num">10 yr</th><th class="num">10y gap vs FXAIX</th></tr></thead>
+<tbody>
+<tr><td><b>FZROX</b></td><td>Fidelity ZERO Total Market</td><td>Index</td><td class='num'>0.000%</td><td class='num'>+2.07%</td><td class='num'>+16.02%</td><td class='num'>+9.47%</td><td class='num'>—</td><td class='num'>—</td></tr>
+<tr><td><b>FXAIX</b></td><td>Fidelity 500 Index</td><td>Index</td><td class='num'>0.015%</td><td class='num'>+2.04%</td><td class='num'>+16.23%</td><td class='num'>+10.17%</td><td class='num'>+13.96%</td><td class='num'>—</td></tr>
+<tr><td><b>VFIAX</b></td><td>Vanguard 500 Index Admiral</td><td>Index</td><td class='num'>0.040%</td><td class='num'>+2.00%</td><td class='num'>+16.20%</td><td class='num'>+10.13%</td><td class='num'>+13.92%</td><td class='num'>—</td></tr>
+<tr><td><b>VTSAX</b></td><td>Vanguard Total Stock Mkt Admiral</td><td>Index</td><td class='num'>0.040%</td><td class='num'>+2.14%</td><td class='num'>+15.96%</td><td class='num'>+9.29%</td><td class='num'>+13.34%</td><td class='num'>—</td></tr>
+<tr><td><b>AIVSX</b></td><td>American Funds Investment Co of America</td><td>Active</td><td class='num'>0.570%</td><td class='num'>-2.77%</td><td class='num'>+15.84%</td><td class='num'>+10.94%</td><td class='num'>+12.45%</td><td class='num'>-1.51 pp</td></tr>
+<tr><td><b>ANCFX</b></td><td>American Funds Fundamental Investors</td><td>Active</td><td class='num'>0.570%</td><td class='num'>+2.23%</td><td class='num'>+18.06%</td><td class='num'>+11.39%</td><td class='num'>+13.07%</td><td class='num'>-0.89 pp</td></tr>
+<tr><td><b>AWSHX</b></td><td>American Funds Washington Mutual</td><td>Active</td><td class='num'>0.570%</td><td class='num'>+3.96%</td><td class='num'>+15.15%</td><td class='num'>+10.78%</td><td class='num'>+12.43%</td><td class='num'>-1.54 pp</td></tr>
+<tr><td><b>AGTHX</b></td><td>American Funds Growth Fund of America</td><td>Active</td><td class='num'>0.610%</td><td class='num'>-4.82%</td><td class='num'>+15.80%</td><td class='num'>+6.94%</td><td class='num'>+13.64%</td><td class='num'>-0.32 pp</td></tr>
+</tbody></table>
+<p class="note">Annualised total returns from Yahoo Finance adjusted NAV (dividends reinvested, net of each fund's expense ratio). Windows end 2026-11-01. FZROX launched 2018, so no 10-year figure. Expense ratios are published prospectus figures; verify before acting.</p>
+</div>
+
+<div class="card">
+<h2>4. What the data actually says</h2>
+<ul>
+<li><b>10 years:</b> every active fund lagged <b>FXAIX</b> (13.96%/yr): AGTHX −0.32 pp, ANCFX −0.89 pp, AIVSX −1.51 pp, AWSHX −1.54 pp per year.</li>
+<li><b>5 years:</b> averages were close (index 9.76% vs active 10.01%), but <b>AGTHX</b> was far behind at 6.94%; one active (ANCFX 11.39%) beat the best index.</li>
+<li><b>3 years:</b> active averaged 16.21% vs index 16.10% — a statistical tie; 3 of 4 actives still trailed the best index.</li>
+<li><b>1 year:</b> mixed. Index averaged +2.06%, active −0.35%; but <b>AWSHX (+3.96%)</b> and <b>ANCFX (+2.23%)</b> beat FXAIX (+2.04%). A single year proves nothing either way.</li>
+<li><b>The persistent part is cost:</b> 0.57–0.61% vs 0.00–0.04% is charged every year, in every window, win or lose.</li>
+</ul>
+<p><b>Which index funds would beat those mutual funds?</b> Over ten years, all four of <b>FXAIX</b> (0.015%), <b>VFIAX</b> (0.04%), <b>VTSAX</b> (0.04%) and <b>FZROX</b> (0.00%, shorter history) are cheaper than <b>AGTHX, AIVSX, ANCFX and AWSHX</b> (0.57–0.61%). On this window, the S&amp;P 500 index funds beat every one of the four active funds over 10 years; over 1 year, two of the four active funds won. That is the honest version.</p>
+</div>
+
+<div class="card">
+<h2>5. Caveats — read before quoting this</h2>
+<ul>
+<li><b>Survivorship:</b> these are four large, surviving active funds. Funds that closed or merged are not in the sample, which flatters active management.</li>
+<li><b>Past performance:</b> a 10-year win is evidence about costs and this window, not a guarantee for the next ten years.</li>
+<li><b>Loads and advice fees:</b> the table uses expense ratios only. Sales loads, platform fees and advisor fees make active worse, not better.</li>
+<li><b>Taxes and account type:</b> not modelled. In Canada, US-listed ETFs belong in an RRSP; CAD-listed wrappers (VFV/XEQT) avoid FX and withholding friction in a TFSA.</li>
+<li><b>Data source:</b> Yahoo Finance adjusted NAV, as of 2026-11-01. Re-run the fetch before acting.</li>
+</ul>
+<p class="note">Analyst ratings and fund returns are opinions/history, not advice. See the <a href="harvest.html">HARVEST</a> page for analyst consensus and the <a href="index.html#endorse">endorsement section</a> for the only vehicle this project endorses.</p>
+</div>
+</main>
+<footer><div class="wrap">Generated by the review pipeline. Raw comparison data: <a href="fund_comparison.json">fund_comparison.json</a>. Sources: Yahoo Finance chart API, published fund expense ratios.</div></footer>
+</body></html>
