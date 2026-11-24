@@ -43,6 +43,11 @@ The `29_CELL_SWEEP_CONTEST_2026-11-24` round independently filled EQUITY/FOREX c
 - **Fees:** 0.03% vs 1.80% MER = $755k vs $458k per $100k over 30y (~39% less).
 - **Risk:** SPY −24.5% drawdown, ~14 months to recover; missing the best 10 days cut +72.6% → +16.8%.
 
+## LABELLING NOTE (cross-repo consistency)
+The DONE_CONDITION classifies a cell whose 95% CI spans 0 as **KILLED**; the `29_CELL_SWEEP` labels the same cells
+**INCONCLUSIVE**. They are equivalent — both mean **no proven edge** (the CI cannot reject zero). The programme does **not**
+promote either to a survivor. Verified: across both sweeps, **0 cells have a positive CI lower bound**.
+
 ## CORRECTIONS LOG (integrity)
 Withdrew "zero alpha" (→ "no alpha above MDE"); withdrew "value premium +0.11%→+2.89%" (the +0.11% is **equity-class alpha**, and
 value/HML was **never measured**; yfinance default is already adjusted); retracted F4 "MF beats its ETF"; corrected Sortino (/N);
