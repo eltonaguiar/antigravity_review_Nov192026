@@ -186,9 +186,23 @@ URI handler, and needs no bridge. (`code chat` remains the better route for Copi
 Also present and useful: `--add-mcp <json>` adds an MCP server definition, and the CLI has
 `serve-web` and `tunnel` subcommands.
 
-`copilot` turns out to be the cleanest headless option for Copilot work: `-p` is designed for
-scripting, and it manages its own sessions, so it does not depend on the chat panel being open at
-all.
+`copilot` is mechanically the cleanest headless option for Copilot work: `-p` is designed for
+scripting and it manages its own sessions, so it does not depend on the chat panel being open.
+
+**But it is quota-blocked on this machine right now.** A live probe:
+
+```
+$ copilot -p "Reply with exactly COPILOT_CLI_OK..."
+You have exceeded your monthly quota (Request ID: DEBB:57A39:87A45:93081:6B050539)
+Changes +0 -0 | AI Credits 0 (1s) | Resume copilot --resume=e01ea405-bd24-4f50-b4ae-45a660c13b83
+```
+
+The invocation itself is fine — it authenticated, opened a resumable session and exited cleanly.
+It is the account's monthly credit that is exhausted, so until it resets the usable Copilot route is
+`code chat` (which draws on the editor's own entitlement) rather than `copilot -p`.
+
+Permission flags confirmed present for unattended runs: `--allow-all` (= `--allow-all-tools
+--allow-all-paths --allow-all-urls`), plus each of those individually.
 
 ### Copilot Chat — there IS a first-class CLI (`code chat`)
 
