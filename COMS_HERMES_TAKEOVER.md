@@ -152,13 +152,23 @@ Tested against the installed bundles, not the documentation:
 Net: the only reliable per-agent doors are the four verified in this document —
 `kilo run`, `code chat`, Zoo's `ROO_CODE_IPC_SOCKET_PATH`, and CDP for Chrome.
 
-### Also available headless on PATH
+### Also available headless on PATH (verified present)
 
-| Tool | Command |
-|---|---|
-| Claude Code | `claude` |
-| OpenAI Codex | `codex` |
-| Hermes | `hermes` |
+| Tool | Path | Headless entry |
+|---|---|---|
+| **GitHub Copilot CLI** | `copilot` (ships in VS Code's `bin/copilot-shim`) | `copilot -p "prompt"` — non-interactive; also `sessions`, `mcp`, `plugin`, `skill`, `sandbox`, `workflow` |
+| Kilo | `kilo` (npm global, opencode 7.8.32) | `kilo run` |
+| Claude Code | `claude` | `claude` |
+| OpenAI Codex | `codex` | `codex` |
+| Hermes | `hermes` | `hermes` |
+
+**NOT present on this machine:** `cline`, `roo` (the npm global registry has only `@kilocode`),
+and `code --open-url` — that flag does not exist in VS Code 1.144.0, so URI links must be fired
+through the OS URL handler (`start "" "vscode://…"` on Windows), not the CLI.
+
+`copilot` turns out to be the cleanest headless option for Copilot work: `-p` is designed for
+scripting, and it manages its own sessions, so it does not depend on the chat panel being open at
+all.
 
 ### Copilot Chat — there IS a first-class CLI (`code chat`)
 
