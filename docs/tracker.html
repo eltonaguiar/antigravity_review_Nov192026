@@ -80,6 +80,42 @@ And a <b>rating design</b> that refuses to collapse to one number, because a hig
 wins and a low hit rate with large wins are different products rather than better and worse ones.</p>
 
 
+
+<h2>Backtest verdict — nothing is viable</h2>
+<p>This was run on real history: four monthly consensus periods per symbol give three consecutive
+period-to-period transitions, roughly 200 label→forward-return observations. Entry at the next close,
+cost 6.71 bp, returns measured as excess versus SPY.</p>
+
+<table>
+  <tr><th>Label</th><th class="num">n (21d)</th><th class="num">mean 21d</th><th class="num">95% CI</th><th class="num">n (63d)</th><th class="num">mean 63d</th><th class="num">95% CI</th></tr>
+  <tr><td>STRONG_BUY</td><td class="num">110</td><td class="num">+1.325%</td><td class="num">[−0.329, +3.109]</td><td class="num">55</td><td class="num">+0.003%</td><td class="num">[−3.249, +3.320]</td></tr>
+  <tr><td>BUY</td><td class="num">117</td><td class="num">+0.580%</td><td class="num">[−0.740, +1.877]</td><td class="num">56</td><td class="num">−2.369%</td><td class="num">[−4.892, +0.100]</td></tr>
+  <tr><td>HOLD</td><td class="num">53</td><td class="num">+1.061%</td><td class="num">[−1.571, +3.736]</td><td class="num">29</td><td class="num">+0.098%</td><td class="num">[−4.949, +5.068]</td></tr>
+  <tr><td>SELL</td><td class="num">4</td><td class="num">+2.969%</td><td class="num">[−2.081, +8.020]</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+</table>
+<p><b>No bucket has a confidence interval above zero.</b> The highest-rated names do not outperform,
+and the SELL bucket is <i>positive</i> — on four observations, which is far too few to mean anything.</p>
+
+<h2>Monte Carlo per asset class (3,000 resamples, 1% risk per trade)</h2>
+<table>
+  <tr><th>Class</th><th class="num">n</th><th class="num">mean / trade</th><th class="num">P(mean &gt; 0)</th><th class="num">equity P5 / P50 / P95</th><th class="num">permutation p</th><th>Read</th></tr>
+  <tr><td>CRYPTO</td><td class="num">1,803</td><td class="num" style="color:var(--bad)">−0.501%</td><td class="num">0.000</td><td class="num">−11.7 / −8.6 / −5.4%</td><td class="num">1.000</td><td><b>reliably negative</b></td></tr>
+  <tr><td>COMMODITY</td><td class="num">54</td><td class="num" style="color:var(--bad)">−2.518%</td><td class="num">0.000</td><td class="num">—</td><td class="num">1.000</td><td><b>reliably negative</b></td></tr>
+  <tr><td>FOREX</td><td class="num">229</td><td class="num">−0.054%</td><td class="num">0.114</td><td class="num">—</td><td class="num">0.885</td><td>no edge</td></tr>
+  <tr><td>BOND</td><td class="num">36</td><td class="num">−0.013%</td><td class="num">0.470</td><td class="num">—</td><td class="num">0.529</td><td>no edge</td></tr>
+  <tr><td>EQUITY</td><td class="num">783</td><td class="num">+0.061%</td><td class="num">0.624</td><td class="num">−2.8 / +0.5 / +3.9%</td><td class="num">0.377</td><td>noise, negative median</td></tr>
+  <tr><td>ETF</td><td class="num">589</td><td class="num">+0.052%</td><td class="num">0.673</td><td class="num">−1.1 / +0.3 / +1.7%</td><td class="num">0.338</td><td>noise, negative median</td></tr>
+</table>
+<p><b>No viable long edge in any class.</b> Crypto and commodities are not merely flat — they are
+reliably negative, which makes them useful as <i>avoid</i> signals rather than longs. Equity and ETF
+means are statistically indistinguishable from zero, with medians below it.</p>
+<div class="warn">
+  <b>Correction to something on this page earlier.</b> I wrote that a consensus backtest was
+  impossible because only one snapshot existed. That was wrong: the vendor returns four monthly
+  periods, so three transitions per symbol are available. The backtest above is that measurement, and
+  its answer is negative. The error was mine, and it was caught by a peer agent.
+</div>
+
 <h2>Plain English — what the numbers mean</h2>
 <p class="note">Every term on this page, decoded. If a number cannot be explained in one sentence, it
 should not be on the page.</p>
@@ -173,8 +209,8 @@ and expectancy at the <b>upper</b> bound of the loss rate stays positive, not th
 averaged together describe nobody, so no cohort is ever pooled.</p>
 
 <div class="warn">
-  <b>What cannot be back-tested yet.</b> The consensus feed is a single monthly snapshot with no
-  history beyond one prior month. Scoring today's consensus against past prices would be look-ahead
+  <b>What cannot be back-tested.</b> Anything needing more than four monthly periods — the consensus feed's
+  entire history. Scoring today's consensus against past prices would be look-ahead
   and would produce a flattering, meaningless number. That is precisely why this tracker is forward
   only — the honest alternative to a fake backtest is a record that starts now and accrues.
 </div>
