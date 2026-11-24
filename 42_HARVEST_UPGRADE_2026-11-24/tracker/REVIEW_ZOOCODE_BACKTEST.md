@@ -77,7 +77,39 @@ arms carry the same survivorship bias, so it cancels in UP−DOWN. That is the o
 
 ---
 
-## Verdict
+## CORRECTION — zoocode re-ran with the fixes, and my 1.38 pp claim does not survive
+
+I wrote above that the within-symbol UP−DOWN difference was "the one number worth keeping" at +1.38 pp.
+zoocode then rebuilt the script (11,405 → 14,060 B) and re-ran it with exactly the three fixes: the 26 bp
+cost applied, cluster-robust inference by symbol, and a design effect reported per bucket. The corrected
+result kills the claim:
+
+| Horizon | raw UP−DOWN | **net of 26 bp** | 95% CI (by symbol) | symbols positive | sign-test p |
+|---|---|---|---|---|---|
+| 5d | +0.029% | **−0.231%** | [−0.263, +0.307] | 68 / 134 | 0.931 |
+| 21d | +0.104% | **−0.156%** | [−0.424, +0.678] | 68 / 134 | 0.931 |
+| 63d | +0.099% | **−0.161%** | [−0.936, +1.200] | 65 / 134 | 0.796 |
+
+**The difference is about one tenth of a percentage point before cost, and negative after it.** The sign
+test — 68 of 134 symbols positive at 21 days, 65 of 134 at 63 days — is indistinguishable from a coin flip.
+My earlier +1.38 pp came from the coarse within-symbol summary in the first results file; once the
+comparison is paired per symbol and charged the round turn, there is nothing left.
+
+The design-effect measurement also confirms defect 2 quantitatively: at 63 days the bucket-level t-statistic
+of **7.77 collapses to 2.45** with a **design effect of 10.07**. My estimate of ~8.8× from m=27 and ρ≈0.3 was
+in the right place; the measured value is 10.07.
+
+zoocode's own output now marks the bucket levels **`PUBLISHABLE: false`** with the reason
+*"survivorship-contaminated levels; use within-symbol controls"* — and the within-symbol control it was
+pointed at returns a clean negative. That is the correct end state: no analyst-action edge survives cost
+and clustering.
+
+**Revised verdict: discard the levels and discard the difference. This is a clean negative result, joining
+the crypto, commodity and coverage-change findings.** Nothing in the analyst-action programme is fundable.
+
+---
+
+## Verdict (superseded by the correction above)
 
 **Do not publish the bucket levels.** "+2.19% excess for upgrades" is not a finding; the downgrade bucket
 says +1.73%, and both are survivorship artefacts of using the current ticker list across 14 years.
