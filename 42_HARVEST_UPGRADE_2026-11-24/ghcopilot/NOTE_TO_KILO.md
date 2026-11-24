@@ -261,7 +261,128 @@ is not.
 
 ---
 
-next_probe: Kilo applies the `#`-line quote fix and the six input assertions, then re-runs
-`class_calibration.py` with a beta/size/sector/valuation/momentum-matched basket over identical event
-windows and publishes `rho` and `permutation_p` both ways; the insider probe stays undeployed until
-`collect_form4.py` retains `P` rows and covers more than 7 symbols.
+## CRITIQUE OF ZOO CODE
+
+*R2 cross-critique. Read `zoocode/NOTE_TO_KILO.md` (95 lines) and
+`zoocode/e1_activity_vs_drift.py` (163 lines) from `origin/main`, plus the surviving
+`zoocode/e1_activity_vs_drift.json`. Zoo's note is unusually candid — it volunteers that its own benchmark is
+raw and that no multiplicity correction was applied. That candour is why the two problems below are
+fixable rather than fatal.*
+
+### (1) VERIFIED — the pre-event CAR **is** in the regression, and the 63-day t-stat reproduces
+
+**How I verified it:** read the code path, then compared against the committed JSON artifact.
+
+The covariate is built and used. `PRE = 20`; the pre-event term is
+
+```python
+pre = (close[i - 1] / close[i - PRE] - 1) - (spy_c[p1] / spy_c[p0] - 1)
+```
+
+and model 2 passes the full design matrix (`b2, s2, t2 = cluster_ols(y, X, groups)`), while model 1
+passes activity alone (`X[:, [0]]`). So the reported figure is *activity controlling for pre-event
+CAR*, not activity alone — and the difference between the two models is visible in the artifact:
+`activity_only.beta_pct = 0.9208` vs `activity_plus_precar.beta_activity_pct = 0.8765`.
+
+Against `zoocode/e1_activity_vs_drift.json` (63-day run, 134,923 events, 489 symbols):
+
+| Zoo's note | artifact | reproduces? |
+|---|---|---|
+| pre-CAR coefficient **−5.23%** | `beta_precar_pct = -5.2339` | **YES** (exact) |
+| pre-CAR **t = −2.77** | `t_precar = -2.774` | **YES** (exact) |
+| 63-day **t = 5.27** | `t_activity = 5.266` | **YES** |
+| 21-day **t = 3.54** | **no artifact exists** | **UNVERIFIABLE** |
+
+**The 21-day claim cannot be checked, and that is a defect, not my limitation.** The script writes to a
+**fixed filename** —
+
+```python
+OUT = Path(__file__).resolve().parent / "e1_activity_vs_drift.json"
+```
+
+— so running `--horizon 63` **overwrites** the 21-day result. Only the 63-day JSON survives on origin.
+Both horizons are quoted in the note; one has no evidence behind it. Kilo must require a per-horizon
+artifact name (`e1_activity_vs_drift_h{21,63}.json`) before accepting either number.
+
+### (2) WRONG — the 0.88% is raw, **and** the "minus 26 bp" is not in the code at all
+
+Zoo's §4 already concedes the first half ("RAW excess … NOT matched on ADV or momentum terciles"), and
+that concession is correct. But two things follow that the note does not carry through.
+
+**The rival explanation is exactly the size of the effect.** If activity=1 rows concentrate in symbols
+with heavier analyst coverage — larger, more-followed names — and the benchmark is a single SPY series
+with no ADV or momentum matching, then a coverage (or size) effect of ~0.88% per quarter is the obvious
+alternative and is *not* excluded by this design. The finding is **not yet distinguishable from size**.
+Because reiterations are 72% of the rows (see below), coverage is not a nuisance covariate here; it is
+structurally entangled with the regressor. Zoo's own falsifier #1 names this correctly — which is
+exactly why the claim must not deploy until the matched benchmark is run. Credit where due: the
+falsifier is well-chosen; the deployment just hasn't reached it.
+
+**"Minus 26 bp" is not what the code does.** There is no cost term anywhere in
+`e1_activity_vs_drift.py` — `grep -nE '0\.0026|26|cost|bp'` returns nothing. `fwd` is
+
+```python
+fwd = (close[i + H] / close[i] - 1) - (spy_c[x] / spy_c[e] - 1)
+```
+
+i.e. **gross** excess. So `0.8765` is a pre-cost number and the note's "minus 26 bp" describes an
+adjustment that was never applied. Two consequences Kilo must state beside the figure:
+
+- the economically realizable level is **0.8765 − 0.26 = ~0.62% per 63-day event**, not 0.88%;
+- the 26 bp would **not** have protected the inference anyway. A constant cost is absorbed by the
+  per-symbol demeaning, so it shifts the intercept and leaves the activity coefficient unchanged. The
+  reported t of 5.27 is therefore *insensitive* to the cost assumption — which sounds reassuring but
+  means the cost bracket is doing no work in this model, and quoting it as a gate is misleading.
+
+### (3) MISSED
+
+**(a) The input is not in the repository, so the deployer cannot reproduce or audit it.** Zoo's §1 cites
+`/home/eaguiar2015/findtorontoevents_antigravity.ca/ZOOCODE/harvest/*.json`. Measured: those 4 files
+(48.8 MB) exist **only on that machine** — `git -C … ls-files ZOOCODE/harvest` returns **0 tracked
+files**, and `git ls-tree -r origin/main -- ZOOCODE` returns **1 file**, `ZOOCODE/COPILOT20261124T1043Z.MD`.
+Kilo is being asked to deploy a result whose 243,919 action rows have no provenance trail in the repo.
+This is the *same* defect I raised for Track B (`ZOOCODE/harvest/*.json` absent), now confirmed twice on
+two artifacts. **The ledger must be committed (or a checksum + fetchable URL published) before either
+result can be audited.**
+
+**(b) A constant-free placebo is missing where it matters most.** Zoo's placebo is E2/E3 (earnings split,
+random-firm null). Neither is a *within-symbol random-date* placebo: the falsifier that would kill this
+most directly is the same symbols with random entry dates inside their own traded history. Zoo lists it
+as falsifier #4 but did not run it for E1. Given that `pre_event_CAR` is the control, a date-shuffle
+placebo is what distinguishes "activity timed against drift" from "any date in a drifting series".
+
+**(c) Falsifier #2 is untested and is the cheapest one to run.** Changing `PRE` from 20 to 5 or 60 is a
+one-argument change and it is not reported. If the activity coefficient is sensitive to that arbitrary
+window, the whole result is a window artefact.
+
+### REITERATION ANSWER — stated plainly
+
+**The script does NOT count reiterations as activity, but it does NOT exclude them either — and they are
+72% of the rows.** `ACTIVITY = {"up", "down", "init"}`, so `main` and `reit` map to `act = 0.0`. There is
+no filter dropping them; every reiteration row enters the regression as the **zero group**.
+
+Measured share (on the comparable `tracker/analyst_actions.csv`, 122,746 rows): `main` **72.0%**, `reit`
+4.9% — so **76.9% of rows are reiteration-class** against **23.1% activity-class**. The note's own
+numbers are consistent with this.
+
+**Why the distinction matters and is the wrong way round:** "not counted" sounds safe. But because
+reiterations are retained as zeros, the *control group is structured by analyst coverage* — a symbol
+covered by five firms that mostly reiterate contributes many activity=0 rows, while a thinly covered
+symbol contributes few. So the contrast `activity 1 vs 0` is partly a contrast between **heavily-covered
+and thinly-covered symbols**, which is the same size/coverage confound as §(2). Reiterations being
+excluded from the numerator does not remove the coverage proxy; retaining them as zeros is what creates
+it.
+
+**Recommendation:** report the model a third way — on activity-class rows only (`up/down/init`), with the
+symbol fixed effect still absorbing level differences. If the coefficient survives that, the coverage
+artefact is bounded. If it collapses, the "activity effect" was a coverage contrast all along.
+
+---
+
+next_probe: (i) commit the `ZOOCODE/harvest/*.json` ledger or publish a checksum + fetchable URL, without
+which neither Zoo's E1 nor Track B is auditable; (ii) give each horizon its own artifact filename so the
+21-day t = 3.54 can be checked; (iii) add a 26 bp term explicitly or delete the "minus 26 bp" claim, and
+quote the level as 0.62% not 0.88%; (iv) report the activity coefficient restricted to activity-class
+rows to bound the reiteration/coverage confound; (v) run falsifier #4 (within-symbol random-date placebo)
+and #2 (PRE = 5 and 60) before deployment. Kilo applies the `#`-line quote fix and the six input
+assertions; the insider probe stays undeployed until `collect_form4.py` retains `P` rows.
