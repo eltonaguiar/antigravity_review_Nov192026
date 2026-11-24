@@ -1,0 +1,11 @@
+{
+ "cell": "SPY/ma_cross/1d",
+ "symbol": "SPY",
+ "strategy": "ma_cross",
+ "horizon": "1d",
+ "verdict": "BLOCKED_NO_DATA",
+ "bars": 0,
+ "reason": "BLOCKED_NO_DATA: bars=0 for SPY at 1d (no daily bars in repo)",
+ "git_sha": "unknown",
+ "generated_at": "2026-11-24T14:30:35Z"
+}
