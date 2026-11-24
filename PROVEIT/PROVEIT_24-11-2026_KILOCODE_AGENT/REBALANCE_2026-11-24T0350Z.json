@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-11-24T03:50:03.183394+00:00",
+  "buyhold_equity_cagr_pct": 11.58,
+  "rules": {
+    "monthly": {
+      "cagr_pct": 6.91,
+      "dd_pct": -20.73,
+      "sharpe": 0.313,
+      "rebalances": 59
+    },
+    "annual": {
+      "cagr_pct": 6.91,
+      "dd_pct": -20.92,
+      "sharpe": 0.312,
+      "rebalances": 4
+    },
+    "band_5pt": {
+      "cagr_pct": 6.95,
+      "dd_pct": -20.92,
+      "sharpe": 0.315,
+      "rebalances": 2
+    },
+    "band_10pt": {
+      "cagr_pct": 7.19,
+      "dd_pct": -20.92,
+      "sharpe": 0.33,
+      "rebalances": 1
+    },
+    "never": {
+      "cagr_pct": 7.44,
+      "dd_pct": -20.92,
+      "sharpe": 0.346,
+      "rebalances": 0
+    }
+  }
+}

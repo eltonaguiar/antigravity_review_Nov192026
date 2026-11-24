@@ -48,6 +48,26 @@ small{color:#666}
 <tr><td>MUTUAL_FUND</td><td>FXAIX/FZROX</td><td>beta — fees decide (corr .998 to SPY)</td></tr>
 <tr><td>COMMODITY / OPTIONS / FUTURES / PM / PRIVATE_CREDIT</td><td>—</td><td>DEAD / UNRANKABLE</td></tr></table>
 
+<h2>Parameter tweaks &amp; blends — nothing beats plain buy-and-hold</h2>
+<table><tr><th>variant</th><th class="num">CAGR</th><th class="num">max DD</th><th class="num">Sharpe</th></tr>
+<tr><td>Buy &amp; hold equity (baseline)</td><td class="num">19.01%</td><td class="num">−18.76%</td><td class="num">0.937</td></tr>
+<tr><td>200d-MA timing MA=100/150/200/250</td><td class="num">11.5–13.8%</td><td class="num">−8.4 to −15.9%</td><td class="num">0.65–0.78</td></tr>
+<tr><td>60/40 rebalance 21/63/252d</td><td class="num">~6.9%</td><td class="num">~−20.7%</td><td class="num">~0.31</td></tr>
+<tr><td>Blend 50/50 equity + timing200</td><td class="num">16.13%</td><td class="num">−13.99%</td><td class="num">0.877</td></tr></table>
+<small><b>Pareto test — higher return AND shallower drawdown vs buy-and-hold → NONE.</b> Every overlay trades return for a shallower drawdown (risk control, not alpha). Blending correlated equity variants adds nothing (Sharpe 0.877 &lt; 0.937). 60/40 was weak this window (bonds drew down in the rate-hike regime).</small>
+
+<h2>Behaviour — what investor mistakes cost</h2>
+<table><tr><th>mistake</th><th class="num">CAGR vs hold 11.66%</th></tr>
+<tr><td><b>miss the best 10 days</b></td><td class="num"><b>3.47%</b></td></tr>
+<tr><td>miss best 20 / 30 days</td><td class="num">−1.62% / −6.05%</td></tr>
+<tr><td>panic-sell on −15% DD, rebuy 63d later</td><td class="num">5.19%</td></tr>
+<tr><td>panic-sell on −10% DD, rebuy 126d later</td><td class="num">7.00%</td></tr>
+<tr><td>(lone “win”: −10%/21d)</td><td class="num">12.10% — dip-buy luck, not robust</td></tr></table>
+<small><b>Stay invested.</b> Missing ~10 up-days erases most of the return; most panic rules lower CAGR. The biggest controllable cost after fees is <b>behaviour</b> — bailing or timing out.</small>
+
+<h2>Operating the portfolio (managed + alerts)</h2>
+<p>Hold the core index <b>indefinitely</b> (≥1 yr min); <b>no TP/SL on the core</b>. 60/40 rebalances on a <b>&gt;5-pt drift band</b> (quarterly check). Alerts: quarterly rebalance, 5-pt drift, monthly contribution, cash-floor, optional monthly MA-cross (risk control), annual fee check. <b>You manage only cost and drift.</b></p>
+
 <h2>What the proof shows</h2>
 <ol>
 <li><b>Cheap beta is reliably powerful; active alpha is not</b> — 1000-cell sweep: 0 survivors; median cell gross edge negative.</li>
@@ -56,5 +76,5 @@ small{color:#666}
 <li><b>Conclusion</b>: the provable edge is <b>cheap, diversified, patient</b> — not clever picking.</li>
 </ol>
 
-<p><small>Detail &amp; machine files: <a href="https://github.com/eltonaguiar/antigravity_review_Nov192026/tree/main/PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT">PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT</a> · contest entry in <span class="mono">CONTEST/_incoming/KILOCODE_VSCODE/</span>. Paper only, not investment advice.</small></p>
+<p><small>Detail &amp; machine files: <a href="https://github.com/eltonaguiar/antigravity_review_Nov192026/tree/main/PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT">PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT</a> · contest entry in <span class="mono">CONTEST/_incoming/KILOCODE_VSCODE/</span> · <a href="https://github.com/eltonaguiar/antigravity_review_Nov192026/blob/main/PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/TWEAKS_REPORT_2026-11-24T0330Z.md">tweaks report</a> · <a href="https://github.com/eltonaguiar/antigravity_review_Nov192026/tree/main/PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT">behaviour report</a> · <a href="https://github.com/eltonaguiar/antigravity_review_Nov192026/blob/main/PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/MANAGED_PORTFOLIO_ALERTS_2026-11-24T0338Z.md">managed/alerts</a>. Paper only, not investment advice.</small></p>
 </body></html>

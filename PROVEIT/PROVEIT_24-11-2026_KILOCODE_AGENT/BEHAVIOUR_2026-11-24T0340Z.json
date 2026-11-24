@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-11-24T03:40:41.442736+00:00",
+  "years": 4.98,
+  "baseline_buyhold_cagr_pct": 11.66,
+  "panic_sell_cagr_pct": {
+    "dd-10_reenter21d": 12.1,
+    "dd-10_reenter63d": 10.11,
+    "dd-10_reenter126d": 7.0,
+    "dd-15_reenter21d": 7.63,
+    "dd-15_reenter63d": 5.19,
+    "dd-15_reenter126d": 6.17,
+    "dd-20_reenter21d": 11.39,
+    "dd-20_reenter63d": 10.5,
+    "dd-20_reenter126d": 10.09
+  },
+  "miss_best_days_cagr_pct": {
+    "miss_top10": 3.47,
+    "miss_top20": -1.62,
+    "miss_top30": -6.05
+  },
+  "notes": {
+    "panic": "dd<=thr exit to cash, rebuy after N days",
+    "miss_best": "drop top-K daily returns",
+    "worst_entry": "enter at deepest 20-day-drop date, hold"
+  },
+  "worst_entry_hold_cagr_pct": 11.66
+}
