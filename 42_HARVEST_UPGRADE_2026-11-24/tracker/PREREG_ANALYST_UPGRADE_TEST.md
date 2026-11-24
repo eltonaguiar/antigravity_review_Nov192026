@@ -164,6 +164,68 @@ the same confound our selection-null gate was built to catch, expressed better.
 
 ---
 
+## 4b. ADDITIONS FROM THE SECOND SURFACE (Gemini 3.1 Pro, Claude Opus 5.5)
+
+Four of the six AskAnyModel panes timed out (Kimi K2.7, MiMo V2.6, DeepSeek V4 Pro, Qwen3.8 Max),
+so this is two models, not six. Both were asked the same prompt. Both add something the
+ChatPlayground four did not.
+
+**1. Pre-event drift as a covariate — proposed independently by Gemini and Claude Opus.**
+This is the sharpest single addition. Upgrades follow price moves: analysts chase winners. If a
+stock ran up 8% in the 20 days before the upgrade, then drifted another 1% afterwards, a naive test
+scores that as analyst skill when it is just momentum persisting. Both models saw the same hole:
+
+- Gemini: "If the stock shows statistically significant outperformance in the 5 trading days prior
+  to the upgrade date, the signal is dead. This falsifier proves the analyst is simply
+  trend-following."
+- Claude Opus: "include the stock's T−21 to T−1 abnormal return as a covariate. Upgrades often
+  chase recent winners, so without this you would be crediting the analyst with short-term momentum."
+
+**Adopted:** pre-event abnormal return over T−21..T−1 enters as a **required covariate**, and the
+event is reported both raw and momentum-residualised. Note this is the same confound our
+`selection_null` work addresses, reached independently by two more models.
+
+On keeping "the ONE falsifier" honest: Gemini proposes pre-drift as *the* falsifier, GLM proposed the
+within-ticker placebo. These overlap — the placebo draws pseudo dates from the same ticker's own
+history, so it already contains that stock's pre-event drift. Rather than smuggle in two false
+kill-switches and call one of them "the" falsifier, the placebo stays the single kill rule and
+pre-drift stays a control. Both are recorded.
+
+**2. Confound exclusions — Claude Opus 5.5, and nobody else specified these:**
+- Drop events where **earnings** fall within T−1..T+2 (the drift is the earnings reaction).
+- Drop events where **two or more other brokerages** changed that ticker within ±2 days — otherwise
+  the move cannot be attributed to this firm.
+- **Keep** events that also carry a price-target change, but add
+  `currentPriceTarget / P(T−1) − 1` as a control, which separates the rating effect from the target
+  effect. (Luna had said target is "pre-registered secondary"; Claude Opus's version is stronger
+  because it stays in the model as a control rather than being set aside.)
+- Report results **with and without** the excluded sample; the verdict uses the excluded sample.
+
+**3. Liquidity-bucketed costs — Claude Opus 5.5:** 10 bps (top 500 by ADV), 30 bps (next 1,000),
+75 bps (rest, with a 1% ADV participation cap), plus drop anything under $5 at entry. This is
+better than a single constant because it is monotone in the thing that actually determines cost.
+Reconciled with 2.3: **Corwin–Schultz + 10bp is the measurement, the ADV bucket is the floor.**
+Charge whichever is larger. A mega-cap then pays ~10bp and a micro-cap pays ~75bp, instead of both
+paying the same 26bp as our existing marks do.
+
+**4. "Hold→Buy only" as the primary sample — Claude Opus 5.5.** Restricting the primary to the most
+common, most cross-firm-comparable transition, with Sell→Hold as a separate secondary. Adopted,
+because it removes an entire axis of scale-mapping disagreement from the primary verdict.
+
+**5. Firm-identity rules — Claude Opus 5.5, and this one bites:** map aliases and mergers to one
+entity, and **do not treat a firm's history as continuous across an acquisition** — split it at the
+merger date. Relevant immediately: "Bernstein (AllianceBernstein)", "B of A Securities" vs
+"Merrill Lynch", and the several "RBC Capital Markets" spellings are all one entity in the raw feed
+or several depending on era, and the measured counts in §0 are contaminated by that until resolved.
+
+**6. Short-horizon disagreement, recorded:** Gemini says **5 trading days** ("information shocks are
+absorbed rapidly"), against 21d from three others. Not adopted — a 5-day window at the measured
+per-ticker event density would leave almost every broker below any usable sample, and Gemini's own
+500-event floor is inconsistent with a horizon that short. But its reasoning is the correct prior
+about *decay*, and 5d stays as a reported secondary.
+
+---
+
 ## 5. WHAT WOULD MAKE ME REPORT A POSITIVE
 
 Only a net-of-cost, characteristic-adjusted, placebo-beating result on a holdout the design never
