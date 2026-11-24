@@ -1,0 +1,1159 @@
+{
+ "n_entrants_with_picks": 18,
+ "entrants": [
+  "ARENA_AI_AGENT",
+  "CHATGPT_6_LUNA",
+  "CLAUDE_5_1_FABLE",
+  "CLAUDE_5_2_FABLE",
+  "CLAUDE_HAIKU_5_5",
+  "CP_PANEL_CHATGPT",
+  "CP_PANEL_CLAUDE_A",
+  "CP_PANEL_CLAUDE_HAIKU",
+  "GEMINI_4_NEON",
+  "GLM_5_3_FLASH",
+  "GPT_4_1_MINI",
+  "GPT_5_3_CODEX",
+  "MS_COPILOT",
+  "MUSE_MUSE_EMBER",
+  "MUSE_MUSE_SPARK",
+  "MUSE_MUSE_SPARK_1_0_META_AI",
+  "QWEN4_MAX",
+  "QWEN_3_6_FLASH"
+ ],
+ "n_distinct_symbols": 25,
+ "n_symbol_side_combos": 30,
+ "consensus_unanimous": [
+  {
+   "symbol": "SPY",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 10,
+   "entrants_any_side": 10,
+   "opposing": 0,
+   "median_size_usd": 275.0,
+   "entrants": [
+    "CHATGPT_6_LUNA",
+    "CLAUDE_5_2_FABLE",
+    "CLAUDE_HAIKU_5_5",
+    "CP_PANEL_CHATGPT",
+    "CP_PANEL_CLAUDE_A",
+    "CP_PANEL_CLAUDE_HAIKU",
+    "GLM_5_3_FLASH",
+    "MS_COPILOT",
+    "MUSE_MUSE_SPARK",
+    "MUSE_MUSE_SPARK_1_0_META_AI"
+   ]
+  },
+  {
+   "symbol": "BTCUSD",
+   "side": "long",
+   "class": "crypto",
+   "entrants_same_side": 7,
+   "entrants_any_side": 7,
+   "opposing": 0,
+   "median_size_usd": 200.0,
+   "entrants": [
+    "CP_PANEL_CLAUDE_A",
+    "GEMINI_4_NEON",
+    "GLM_5_3_FLASH",
+    "GPT_5_3_CODEX",
+    "MS_COPILOT",
+    "MUSE_MUSE_SPARK_1_0_META_AI",
+    "QWEN4_MAX"
+   ]
+  },
+  {
+   "symbol": "AAPL",
+   "side": "long",
+   "class": "equity",
+   "entrants_same_side": 3,
+   "entrants_any_side": 3,
+   "opposing": 0,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "GPT_4_1_MINI",
+    "GPT_5_3_CODEX",
+    "MUSE_MUSE_SPARK"
+   ]
+  },
+  {
+   "symbol": "VTSAX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 3,
+   "entrants_any_side": 3,
+   "opposing": 0,
+   "median_size_usd": 200.0,
+   "entrants": [
+    "MS_COPILOT",
+    "MUSE_MUSE_SPARK",
+    "MUSE_MUSE_SPARK_1_0_META_AI"
+   ]
+  },
+  {
+   "symbol": "IEF",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 265.0,
+   "entrants": [
+    "CLAUDE_5_2_FABLE",
+    "MUSE_MUSE_EMBER"
+   ]
+  },
+  {
+   "symbol": "VFIAX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "CLAUDE_5_1_FABLE",
+    "QWEN_3_6_FLASH"
+   ]
+  },
+  {
+   "symbol": "ETHUSD",
+   "side": "long",
+   "class": "crypto",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 225.0,
+   "entrants": [
+    "GPT_4_1_MINI",
+    "QWEN_3_6_FLASH"
+   ]
+  },
+  {
+   "symbol": "NVDA",
+   "side": "long",
+   "class": "equity",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 190.0,
+   "entrants": [
+    "MUSE_MUSE_SPARK_1_0_META_AI",
+    "QWEN4_MAX"
+   ]
+  },
+  {
+   "symbol": "BRK.B",
+   "side": "long",
+   "class": "equity",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 150.0,
+   "entrants": [
+    "CP_PANEL_CLAUDE_A",
+    "GLM_5_3_FLASH"
+   ]
+  },
+  {
+   "symbol": "VBIRX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 100.0,
+   "entrants": [
+    "CP_PANEL_CLAUDE_A",
+    "GLM_5_3_FLASH"
+   ]
+  },
+  {
+   "symbol": "SGOV",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 400.0,
+   "entrants": [
+    "CLAUDE_5_1_FABLE"
+   ]
+  },
+  {
+   "symbol": "VWINX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 350.0,
+   "entrants": [
+    "CLAUDE_5_2_FABLE"
+   ]
+  },
+  {
+   "symbol": "BIL",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "CLAUDE_5_1_FABLE"
+   ]
+  },
+  {
+   "symbol": "QQQ",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "QWEN_3_6_FLASH"
+   ]
+  },
+  {
+   "symbol": "XLF",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "ARENA_AI_AGENT"
+   ]
+  },
+  {
+   "symbol": "GBPUSD",
+   "side": "short",
+   "class": "fx",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 200.0,
+   "entrants": [
+    "QWEN_3_6_FLASH"
+   ]
+  },
+  {
+   "symbol": "XOM",
+   "side": "long",
+   "class": "equity",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 200.0,
+   "entrants": [
+    "ARENA_AI_AGENT"
+   ]
+  },
+  {
+   "symbol": "FZROX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 150.0,
+   "entrants": [
+    "QWEN4_MAX"
+   ]
+  },
+  {
+   "symbol": "MSFT",
+   "side": "long",
+   "class": "equity",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 100.0,
+   "entrants": [
+    "QWEN_3_6_FLASH"
+   ]
+  },
+  {
+   "symbol": "FUSEX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 50.0,
+   "entrants": [
+    "GPT_4_1_MINI"
+   ]
+  }
+ ],
+ "contested": [
+  {
+   "symbol": "GLD",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 6,
+   "entrants_any_side": 7,
+   "opposing": 1,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "CHATGPT_6_LUNA",
+    "CLAUDE_5_2_FABLE",
+    "CP_PANEL_CHATGPT",
+    "GEMINI_4_NEON",
+    "MS_COPILOT",
+    "QWEN4_MAX"
+   ]
+  },
+  {
+   "symbol": "EURUSD",
+   "side": "long",
+   "class": "fx",
+   "entrants_same_side": 5,
+   "entrants_any_side": 7,
+   "opposing": 2,
+   "median_size_usd": 220.0,
+   "entrants": [
+    "GEMINI_4_NEON",
+    "MS_COPILOT",
+    "MUSE_MUSE_EMBER",
+    "MUSE_MUSE_SPARK",
+    "MUSE_MUSE_SPARK_1_0_META_AI"
+   ]
+  },
+  {
+   "symbol": "TLT",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 3,
+   "entrants_any_side": 4,
+   "opposing": 1,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "CLAUDE_HAIKU_5_5",
+    "CP_PANEL_CLAUDE_HAIKU",
+    "GEMINI_4_NEON"
+   ]
+  },
+  {
+   "symbol": "EURUSD",
+   "side": "short",
+   "class": "fx",
+   "entrants_same_side": 2,
+   "entrants_any_side": 7,
+   "opposing": 5,
+   "median_size_usd": 220.0,
+   "entrants": [
+    "GPT_4_1_MINI",
+    "GPT_5_3_CODEX"
+   ]
+  },
+  {
+   "symbol": "USDJPY",
+   "side": "short",
+   "class": "fx",
+   "entrants_same_side": 2,
+   "entrants_any_side": 3,
+   "opposing": 1,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "MUSE_MUSE_EMBER",
+    "QWEN4_MAX"
+   ]
+  },
+  {
+   "symbol": "XAUUSD",
+   "side": "long",
+   "class": "commodity",
+   "entrants_same_side": 2,
+   "entrants_any_side": 3,
+   "opposing": 1,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "CP_PANEL_CLAUDE_A",
+    "GLM_5_3_FLASH"
+   ]
+  },
+  {
+   "symbol": "GLD",
+   "side": "short",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 7,
+   "opposing": 6,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "GPT_4_1_MINI"
+   ]
+  },
+  {
+   "symbol": "TLT",
+   "side": "short",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 4,
+   "opposing": 3,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "ARENA_AI_AGENT"
+   ]
+  },
+  {
+   "symbol": "USDJPY",
+   "side": "long",
+   "class": "fx",
+   "entrants_same_side": 1,
+   "entrants_any_side": 3,
+   "opposing": 2,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "ARENA_AI_AGENT"
+   ]
+  },
+  {
+   "symbol": "XAUUSD",
+   "side": "short",
+   "class": "commodity",
+   "entrants_same_side": 1,
+   "entrants_any_side": 3,
+   "opposing": 2,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "GPT_5_3_CODEX"
+   ]
+  }
+ ],
+ "top_overall": [
+  {
+   "symbol": "SPY",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 10,
+   "entrants_any_side": 10,
+   "opposing": 0,
+   "median_size_usd": 275.0,
+   "entrants": [
+    "CHATGPT_6_LUNA",
+    "CLAUDE_5_2_FABLE",
+    "CLAUDE_HAIKU_5_5",
+    "CP_PANEL_CHATGPT",
+    "CP_PANEL_CLAUDE_A",
+    "CP_PANEL_CLAUDE_HAIKU",
+    "GLM_5_3_FLASH",
+    "MS_COPILOT",
+    "MUSE_MUSE_SPARK",
+    "MUSE_MUSE_SPARK_1_0_META_AI"
+   ]
+  },
+  {
+   "symbol": "BTCUSD",
+   "side": "long",
+   "class": "crypto",
+   "entrants_same_side": 7,
+   "entrants_any_side": 7,
+   "opposing": 0,
+   "median_size_usd": 200.0,
+   "entrants": [
+    "CP_PANEL_CLAUDE_A",
+    "GEMINI_4_NEON",
+    "GLM_5_3_FLASH",
+    "GPT_5_3_CODEX",
+    "MS_COPILOT",
+    "MUSE_MUSE_SPARK_1_0_META_AI",
+    "QWEN4_MAX"
+   ]
+  },
+  {
+   "symbol": "GLD",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 6,
+   "entrants_any_side": 7,
+   "opposing": 1,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "CHATGPT_6_LUNA",
+    "CLAUDE_5_2_FABLE",
+    "CP_PANEL_CHATGPT",
+    "GEMINI_4_NEON",
+    "MS_COPILOT",
+    "QWEN4_MAX"
+   ]
+  },
+  {
+   "symbol": "EURUSD",
+   "side": "long",
+   "class": "fx",
+   "entrants_same_side": 5,
+   "entrants_any_side": 7,
+   "opposing": 2,
+   "median_size_usd": 220.0,
+   "entrants": [
+    "GEMINI_4_NEON",
+    "MS_COPILOT",
+    "MUSE_MUSE_EMBER",
+    "MUSE_MUSE_SPARK",
+    "MUSE_MUSE_SPARK_1_0_META_AI"
+   ]
+  },
+  {
+   "symbol": "TLT",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 3,
+   "entrants_any_side": 4,
+   "opposing": 1,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "CLAUDE_HAIKU_5_5",
+    "CP_PANEL_CLAUDE_HAIKU",
+    "GEMINI_4_NEON"
+   ]
+  },
+  {
+   "symbol": "AAPL",
+   "side": "long",
+   "class": "equity",
+   "entrants_same_side": 3,
+   "entrants_any_side": 3,
+   "opposing": 0,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "GPT_4_1_MINI",
+    "GPT_5_3_CODEX",
+    "MUSE_MUSE_SPARK"
+   ]
+  },
+  {
+   "symbol": "VTSAX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 3,
+   "entrants_any_side": 3,
+   "opposing": 0,
+   "median_size_usd": 200.0,
+   "entrants": [
+    "MS_COPILOT",
+    "MUSE_MUSE_SPARK",
+    "MUSE_MUSE_SPARK_1_0_META_AI"
+   ]
+  },
+  {
+   "symbol": "EURUSD",
+   "side": "short",
+   "class": "fx",
+   "entrants_same_side": 2,
+   "entrants_any_side": 7,
+   "opposing": 5,
+   "median_size_usd": 220.0,
+   "entrants": [
+    "GPT_4_1_MINI",
+    "GPT_5_3_CODEX"
+   ]
+  },
+  {
+   "symbol": "USDJPY",
+   "side": "short",
+   "class": "fx",
+   "entrants_same_side": 2,
+   "entrants_any_side": 3,
+   "opposing": 1,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "MUSE_MUSE_EMBER",
+    "QWEN4_MAX"
+   ]
+  },
+  {
+   "symbol": "XAUUSD",
+   "side": "long",
+   "class": "commodity",
+   "entrants_same_side": 2,
+   "entrants_any_side": 3,
+   "opposing": 1,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "CP_PANEL_CLAUDE_A",
+    "GLM_5_3_FLASH"
+   ]
+  },
+  {
+   "symbol": "IEF",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 265.0,
+   "entrants": [
+    "CLAUDE_5_2_FABLE",
+    "MUSE_MUSE_EMBER"
+   ]
+  },
+  {
+   "symbol": "VFIAX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "CLAUDE_5_1_FABLE",
+    "QWEN_3_6_FLASH"
+   ]
+  },
+  {
+   "symbol": "ETHUSD",
+   "side": "long",
+   "class": "crypto",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 225.0,
+   "entrants": [
+    "GPT_4_1_MINI",
+    "QWEN_3_6_FLASH"
+   ]
+  },
+  {
+   "symbol": "NVDA",
+   "side": "long",
+   "class": "equity",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 190.0,
+   "entrants": [
+    "MUSE_MUSE_SPARK_1_0_META_AI",
+    "QWEN4_MAX"
+   ]
+  },
+  {
+   "symbol": "BRK.B",
+   "side": "long",
+   "class": "equity",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 150.0,
+   "entrants": [
+    "CP_PANEL_CLAUDE_A",
+    "GLM_5_3_FLASH"
+   ]
+  },
+  {
+   "symbol": "VBIRX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 2,
+   "entrants_any_side": 2,
+   "opposing": 0,
+   "median_size_usd": 100.0,
+   "entrants": [
+    "CP_PANEL_CLAUDE_A",
+    "GLM_5_3_FLASH"
+   ]
+  },
+  {
+   "symbol": "GLD",
+   "side": "short",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 7,
+   "opposing": 6,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "GPT_4_1_MINI"
+   ]
+  },
+  {
+   "symbol": "TLT",
+   "side": "short",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 4,
+   "opposing": 3,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "ARENA_AI_AGENT"
+   ]
+  },
+  {
+   "symbol": "USDJPY",
+   "side": "long",
+   "class": "fx",
+   "entrants_same_side": 1,
+   "entrants_any_side": 3,
+   "opposing": 2,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "ARENA_AI_AGENT"
+   ]
+  },
+  {
+   "symbol": "XAUUSD",
+   "side": "short",
+   "class": "commodity",
+   "entrants_same_side": 1,
+   "entrants_any_side": 3,
+   "opposing": 2,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "GPT_5_3_CODEX"
+   ]
+  },
+  {
+   "symbol": "SGOV",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 400.0,
+   "entrants": [
+    "CLAUDE_5_1_FABLE"
+   ]
+  },
+  {
+   "symbol": "VWINX",
+   "side": "long",
+   "class": "fund",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 350.0,
+   "entrants": [
+    "CLAUDE_5_2_FABLE"
+   ]
+  },
+  {
+   "symbol": "BIL",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "CLAUDE_5_1_FABLE"
+   ]
+  },
+  {
+   "symbol": "QQQ",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 300.0,
+   "entrants": [
+    "QWEN_3_6_FLASH"
+   ]
+  },
+  {
+   "symbol": "XLF",
+   "side": "long",
+   "class": "etf",
+   "entrants_same_side": 1,
+   "entrants_any_side": 1,
+   "opposing": 0,
+   "median_size_usd": 250.0,
+   "entrants": [
+    "ARENA_AI_AGENT"
+   ]
+  }
+ ],
+ "by_class": {
+  "commodity": [
+   {
+    "symbol": "XAUUSD",
+    "side": "long",
+    "class": "commodity",
+    "entrants_same_side": 2,
+    "entrants_any_side": 3,
+    "opposing": 1,
+    "median_size_usd": 250.0,
+    "entrants": [
+     "CP_PANEL_CLAUDE_A",
+     "GLM_5_3_FLASH"
+    ]
+   },
+   {
+    "symbol": "XAUUSD",
+    "side": "short",
+    "class": "commodity",
+    "entrants_same_side": 1,
+    "entrants_any_side": 3,
+    "opposing": 2,
+    "median_size_usd": 250.0,
+    "entrants": [
+     "GPT_5_3_CODEX"
+    ]
+   }
+  ],
+  "crypto": [
+   {
+    "symbol": "BTCUSD",
+    "side": "long",
+    "class": "crypto",
+    "entrants_same_side": 7,
+    "entrants_any_side": 7,
+    "opposing": 0,
+    "median_size_usd": 200.0,
+    "entrants": [
+     "CP_PANEL_CLAUDE_A",
+     "GEMINI_4_NEON",
+     "GLM_5_3_FLASH",
+     "GPT_5_3_CODEX",
+     "MS_COPILOT",
+     "MUSE_MUSE_SPARK_1_0_META_AI",
+     "QWEN4_MAX"
+    ]
+   },
+   {
+    "symbol": "ETHUSD",
+    "side": "long",
+    "class": "crypto",
+    "entrants_same_side": 2,
+    "entrants_any_side": 2,
+    "opposing": 0,
+    "median_size_usd": 225.0,
+    "entrants": [
+     "GPT_4_1_MINI",
+     "QWEN_3_6_FLASH"
+    ]
+   }
+  ],
+  "equity": [
+   {
+    "symbol": "AAPL",
+    "side": "long",
+    "class": "equity",
+    "entrants_same_side": 3,
+    "entrants_any_side": 3,
+    "opposing": 0,
+    "median_size_usd": 250.0,
+    "entrants": [
+     "GPT_4_1_MINI",
+     "GPT_5_3_CODEX",
+     "MUSE_MUSE_SPARK"
+    ]
+   },
+   {
+    "symbol": "NVDA",
+    "side": "long",
+    "class": "equity",
+    "entrants_same_side": 2,
+    "entrants_any_side": 2,
+    "opposing": 0,
+    "median_size_usd": 190.0,
+    "entrants": [
+     "MUSE_MUSE_SPARK_1_0_META_AI",
+     "QWEN4_MAX"
+    ]
+   },
+   {
+    "symbol": "BRK.B",
+    "side": "long",
+    "class": "equity",
+    "entrants_same_side": 2,
+    "entrants_any_side": 2,
+    "opposing": 0,
+    "median_size_usd": 150.0,
+    "entrants": [
+     "CP_PANEL_CLAUDE_A",
+     "GLM_5_3_FLASH"
+    ]
+   },
+   {
+    "symbol": "XOM",
+    "side": "long",
+    "class": "equity",
+    "entrants_same_side": 1,
+    "entrants_any_side": 1,
+    "opposing": 0,
+    "median_size_usd": 200.0,
+    "entrants": [
+     "ARENA_AI_AGENT"
+    ]
+   },
+   {
+    "symbol": "MSFT",
+    "side": "long",
+    "class": "equity",
+    "entrants_same_side": 1,
+    "entrants_any_side": 1,
+    "opposing": 0,
+    "median_size_usd": 100.0,
+    "entrants": [
+     "QWEN_3_6_FLASH"
+    ]
+   }
+  ],
+  "etf": [
+   {
+    "symbol": "SPY",
+    "side": "long",
+    "class": "etf",
+    "entrants_same_side": 10,
+    "entrants_any_side": 10,
+    "opposing": 0,
+    "median_size_usd": 275.0,
+    "entrants": [
+     "CHATGPT_6_LUNA",
+     "CLAUDE_5_2_FABLE",
+     "CLAUDE_HAIKU_5_5",
+     "CP_PANEL_CHATGPT",
+     "CP_PANEL_CLAUDE_A",
+     "CP_PANEL_CLAUDE_HAIKU",
+     "GLM_5_3_FLASH",
+     "MS_COPILOT",
+     "MUSE_MUSE_SPARK",
+     "MUSE_MUSE_SPARK_1_0_META_AI"
+    ]
+   },
+   {
+    "symbol": "GLD",
+    "side": "long",
+    "class": "etf",
+    "entrants_same_side": 6,
+    "entrants_any_side": 7,
+    "opposing": 1,
+    "median_size_usd": 250.0,
+    "entrants": [
+     "CHATGPT_6_LUNA",
+     "CLAUDE_5_2_FABLE",
+     "CP_PANEL_CHATGPT",
+     "GEMINI_4_NEON",
+     "MS_COPILOT",
+     "QWEN4_MAX"
+    ]
+   },
+   {
+    "symbol": "TLT",
+    "side": "long",
+    "class": "etf",
+    "entrants_same_side": 3,
+    "entrants_any_side": 4,
+    "opposing": 1,
+    "median_size_usd": 300.0,
+    "entrants": [
+     "CLAUDE_HAIKU_5_5",
+     "CP_PANEL_CLAUDE_HAIKU",
+     "GEMINI_4_NEON"
+    ]
+   },
+   {
+    "symbol": "IEF",
+    "side": "long",
+    "class": "etf",
+    "entrants_same_side": 2,
+    "entrants_any_side": 2,
+    "opposing": 0,
+    "median_size_usd": 265.0,
+    "entrants": [
+     "CLAUDE_5_2_FABLE",
+     "MUSE_MUSE_EMBER"
+    ]
+   },
+   {
+    "symbol": "GLD",
+    "side": "short",
+    "class": "etf",
+    "entrants_same_side": 1,
+    "entrants_any_side": 7,
+    "opposing": 6,
+    "median_size_usd": 250.0,
+    "entrants": [
+     "GPT_4_1_MINI"
+    ]
+   },
+   {
+    "symbol": "TLT",
+    "side": "short",
+    "class": "etf",
+    "entrants_same_side": 1,
+    "entrants_any_side": 4,
+    "opposing": 3,
+    "median_size_usd": 300.0,
+    "entrants": [
+     "ARENA_AI_AGENT"
+    ]
+   },
+   {
+    "symbol": "SGOV",
+    "side": "long",
+    "class": "etf",
+    "entrants_same_side": 1,
+    "entrants_any_side": 1,
+    "opposing": 0,
+    "median_size_usd": 400.0,
+    "entrants": [
+     "CLAUDE_5_1_FABLE"
+    ]
+   },
+   {
+    "symbol": "BIL",
+    "side": "long",
+    "class": "etf",
+    "entrants_same_side": 1,
+    "entrants_any_side": 1,
+    "opposing": 0,
+    "median_size_usd": 300.0,
+    "entrants": [
+     "CLAUDE_5_1_FABLE"
+    ]
+   }
+  ],
+  "fund": [
+   {
+    "symbol": "VTSAX",
+    "side": "long",
+    "class": "fund",
+    "entrants_same_side": 3,
+    "entrants_any_side": 3,
+    "opposing": 0,
+    "median_size_usd": 200.0,
+    "entrants": [
+     "MS_COPILOT",
+     "MUSE_MUSE_SPARK",
+     "MUSE_MUSE_SPARK_1_0_META_AI"
+    ]
+   },
+   {
+    "symbol": "VFIAX",
+    "side": "long",
+    "class": "fund",
+    "entrants_same_side": 2,
+    "entrants_any_side": 2,
+    "opposing": 0,
+    "median_size_usd": 250.0,
+    "entrants": [
+     "CLAUDE_5_1_FABLE",
+     "QWEN_3_6_FLASH"
+    ]
+   },
+   {
+    "symbol": "VBIRX",
+    "side": "long",
+    "class": "fund",
+    "entrants_same_side": 2,
+    "entrants_any_side": 2,
+    "opposing": 0,
+    "median_size_usd": 100.0,
+    "entrants": [
+     "CP_PANEL_CLAUDE_A",
+     "GLM_5_3_FLASH"
+    ]
+   },
+   {
+    "symbol": "VWINX",
+    "side": "long",
+    "class": "fund",
+    "entrants_same_side": 1,
+    "entrants_any_side": 1,
+    "opposing": 0,
+    "median_size_usd": 350.0,
+    "entrants": [
+     "CLAUDE_5_2_FABLE"
+    ]
+   },
+   {
+    "symbol": "FZROX",
+    "side": "long",
+    "class": "fund",
+    "entrants_same_side": 1,
+    "entrants_any_side": 1,
+    "opposing": 0,
+    "median_size_usd": 150.0,
+    "entrants": [
+     "QWEN4_MAX"
+    ]
+   },
+   {
+    "symbol": "FUSEX",
+    "side": "long",
+    "class": "fund",
+    "entrants_same_side": 1,
+    "entrants_any_side": 1,
+    "opposing": 0,
+    "median_size_usd": 50.0,
+    "entrants": [
+     "GPT_4_1_MINI"
+    ]
+   }
+  ],
+  "fx": [
+   {
+    "symbol": "EURUSD",
+    "side": "long",
+    "class": "fx",
+    "entrants_same_side": 5,
+    "entrants_any_side": 7,
+    "opposing": 2,
+    "median_size_usd": 220.0,
+    "entrants": [
+     "GEMINI_4_NEON",
+     "MS_COPILOT",
+     "MUSE_MUSE_EMBER",
+     "MUSE_MUSE_SPARK",
+     "MUSE_MUSE_SPARK_1_0_META_AI"
+    ]
+   },
+   {
+    "symbol": "EURUSD",
+    "side": "short",
+    "class": "fx",
+    "entrants_same_side": 2,
+    "entrants_any_side": 7,
+    "opposing": 5,
+    "median_size_usd": 220.0,
+    "entrants": [
+     "GPT_4_1_MINI",
+     "GPT_5_3_CODEX"
+    ]
+   },
+   {
+    "symbol": "USDJPY",
+    "side": "short",
+    "class": "fx",
+    "entrants_same_side": 2,
+    "entrants_any_side": 3,
+    "opposing": 1,
+    "median_size_usd": 300.0,
+    "entrants": [
+     "MUSE_MUSE_EMBER",
+     "QWEN4_MAX"
+    ]
+   },
+   {
+    "symbol": "USDJPY",
+    "side": "long",
+    "class": "fx",
+    "entrants_same_side": 1,
+    "entrants_any_side": 3,
+    "opposing": 2,
+    "median_size_usd": 300.0,
+    "entrants": [
+     "ARENA_AI_AGENT"
+    ]
+   },
+   {
+    "symbol": "GBPUSD",
+    "side": "short",
+    "class": "fx",
+    "entrants_same_side": 1,
+    "entrants_any_side": 1,
+    "opposing": 0,
+    "median_size_usd": 200.0,
+    "entrants": [
+     "QWEN_3_6_FLASH"
+    ]
+   }
+  ]
+ },
+ "caveat": "Ranking is not statistically distinguishable: best entrant wins 41.6% of 2000 bootstrap replicates vs a 95% threshold. Consensus here measures AGREEMENT, not expected return, and agreement between models trained on overlapping text is not independent evidence."
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asset-class findings, tool breakdown &amp; contest consensus — 2026-11-24</title>
+<meta name="description" content="Per-asset-class verdicts, the GitHub Copilot / Kilo Code / Zoo Code / Hermes breakdown, and the 15-name contest consensus — with the reasons none of it is investable.">
+<style>
+  :root{
+    --bg:#0b0d10; --panel:#14181d; --panel2:#1a1f26; --line:#262d36;
+    --ink:#e8edf2; --dim:#9aa7b4; --dim2:#6f7d8c;
+    --green:#3ddc97; --red:#ff6b6b; --amber:#ffb454; --blue:#6cb6ff; --violet:#b98cff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:36px 22px 90px}
+  h1{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.02em}
+  h2{font-size:20px;margin:44px 0 12px;letter-spacing:-.01em;border-bottom:1px solid var(--line);padding-bottom:8px}
+  h3{font-size:15px;margin:22px 0 8px;color:var(--ink)}
+  p{color:var(--dim);margin:10px 0}
+  a{color:var(--blue)}
+  .lede{font-size:16px;color:var(--dim)}
+  .banner{background:linear-gradient(90deg,rgba(255,107,107,.14),rgba(255,180,84,.06));
+          border:1px solid #4a2b2b;border-radius:10px;padding:14px 16px;margin:22px 0;color:#ffd0d0;font-weight:600}
+  .grid{display:grid;gap:14px}
+  .g4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .card .k{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim2)}
+  .card .v{font-size:24px;font-weight:700;margin-top:4px;letter-spacing:-.02em}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim2);font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--panel2);padding:1px 6px;border-radius:4px;font-size:13px;color:#cfe3ff}
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.05em}
+  .kill{background:rgba(255,107,107,.14);color:var(--red);border:1px solid #5a2a2a}
+  .weak{background:rgba(255,180,84,.14);color:var(--amber);border:1px solid #5a452a}
+  .ins{background:rgba(108,182,255,.13);color:var(--blue);border:1px solid #294455}
+  .pend{background:rgba(185,140,255,.13);color:var(--violet);border:1px solid #3d2b58}
+  .long{color:var(--green);font-weight:700}
+  .short{color:var(--red);font-weight:700}
+  .note{background:var(--panel2);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;
+        padding:12px 16px;margin:16px 0}
+  .note strong{color:var(--amber)}
+  ul{color:var(--dim);margin:8px 0 8px 20px;padding:0}
+  li{margin:5px 0}
+  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim2);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Asset-class findings, tool breakdown &amp; contest consensus</h1>
+<p class="lede">2026-11-24 · fourteen agents, seven asset classes, twenty-four instruments.
+The short answer is unchanged and unwelcome: <strong style="color:var(--ink)">no asset class is proven,
+no ranking is statistically distinguishable, and zero picks are endorsed.</strong></p>
+
+<div class="banner">PAPER ONLY · ZERO CAPITAL DEPLOYED · NOT INVESTMENT ADVICE</div>
+
+<nav id="toc">
+  <h2 style="margin-top:26px">Contents</h2>
+  <ul>
+    <li><a href="#verdict">1. Verdict per asset class</a></li>
+    <li><a href="#tools">2. Breakdown by tool: Copilot vs Kilo vs Zoo vs Hermes</a></li>
+    <li><a href="#consensus">3. The contest consensus — 15 names</a></li>
+    <li><a href="#why">4. Why consensus is not an edge</a></li>
+    <li><a href="#scoring">5. Performance tracking status</a></li>
+    <li><a href="#next">6. What would change the answer</a></li>
+  </ul>
+</nav>
+
+<h2 id="verdict">1. Verdict per asset class</h2>
+<p>Seven classes were reviewed against the same gates. The gate that matters is a <em>deflated</em>
+Sharpe with trial accounting, net of a 12–20 bp round trip, against a 4.3% T-bill hurdle.</p>
+
+<table>
+<thead><tr><th>Class</th><th>Verdict</th><th>Basis</th></tr></thead>
+<tbody>
+<tr><td><strong>CRYPTO</strong></td><td><span class="pill kill">KILL</span></td>
+    <td>Intrabar truth WR 35.8%, PF 0.917, n=3,726. Daily-vs-intrabar inflation 0.29×. Class aggregate negative.</td></tr>
+<tr><td><strong>COMMODITY</strong></td><td><span class="pill kill">KILL</span></td>
+    <td>Class aggregate −2.9619 net expectancy/trade, n=50, CI [−5.004, −1.338] — excludes zero on the wrong side.</td></tr>
+<tr><td><strong>EQUITY</strong></td><td><span class="pill weak">WEAK</span></td>
+    <td>The only class with positive selection alpha (+0.1058, n=956) but CI [−0.480, +0.693] spans zero. Keep observing; kill verdicts here are symbol-specific, not class-wide.</td></tr>
+<tr><td><strong>ETF</strong></td><td><span class="pill weak">WEAK</span></td>
+    <td>−0.0062, n=590, CI [−0.437, +0.433]. OOS Sharpe exists (+0.21, 53 folds) but required n is 1.7M.</td></tr>
+<tr><td><strong>FOREX</strong></td><td><span class="pill weak">WEAK</span></td>
+    <td>−0.0447, n=264, CI [−0.169, +0.078]. An independent 35-cell FX census returned <strong>0 of 35</strong> cells passing both a CI test and a permutation control at 5 bp. Carry break-even needs 16.4 days of funding against a best observed episode of 1.9–2.3 days.</td></tr>
+<tr><td><strong>BOND</strong></td><td><span class="pill weak">WEAK</span></td>
+    <td>−0.0978, n=37, CI [−0.339, +0.169]. Re-tested independently this session: constant-5y duration vs T-bill over 777 months gave +84 bp/yr excess at Sharpe <strong>0.13</strong>, CI [−75, +243] — and <strong>−91.58 bp</strong> once real monthly rebalance cost is charged.</td></tr>
+<tr><td><strong>FUTURES</strong></td><td><span class="pill ins">INSUFFICIENT_N</span></td>
+    <td>n=4. No verdict is possible; stating one would be fabrication.</td></tr>
+</tbody>
+</table>
+
+<div class="note"><strong>The recurring shape.</strong> In every class the measured gross edge is roughly the
+size of the round trip. That is the single most reproducible result in this programme, and it is why the
+answer keeps being "no" rather than "not yet".</div>
+
+<h2 id="tools">2. Breakdown by tool</h2>
+<p>Each tool filed independently against the same rules. The striking result is unanimity on
+<em>refusing</em>: all four declined to endorse a single position.</p>
+
+<div class="grid g4">
+  <div class="card"><div class="k">Endorsed picks</div><div class="v" style="color:var(--red)">0</div>
+    <p style="margin:6px 0 0;font-size:13px">across all four tools</p></div>
+  <div class="card"><div class="k">Classes with a claim</div><div class="v">0 / 7</div>
+    <p style="margin:6px 0 0;font-size:13px">none passes all gates</p></div>
+  <div class="card"><div class="k">Contest entrants</div><div class="v">18</div>
+    <p style="margin:6px 0 0;font-size:13px">72 picks filed in R01</p></div>
+  <div class="card"><div class="k">Best entrant win rate</div><div class="v" style="color:var(--amber)">41.6%</div>
+    <p style="margin:6px 0 0;font-size:13px">of 2,000 bootstrap replicates — under the 95% bar</p></div>
+</div>
+
+<table>
+<thead><tr><th>Tool</th><th>Stance</th><th>What it actually said</th></tr></thead>
+<tbody>
+<tr><td><strong>GitHub Copilot</strong><br><span style="color:var(--dim2);font-size:12px">DeepSeek V4.1 Flash</span></td>
+    <td><span class="pill kill">0 endorsed</span></td>
+    <td>Filed the ranking criterion and an honest headline rather than picks. Its contribution was the most useful correction of the session: refusing to build a results ledger for a tool it could not find, because the counts and verdicts would then have been invented.</td></tr>
+<tr><td><strong>Kilo Code</strong><br><span style="color:var(--dim2);font-size:12px">VSCode</span></td>
+    <td><span class="pill kill">0 of 69 pass</span></td>
+    <td>STOCKS DEAD · CRYPTO DEAD · BONDS DEAD · ETF DEAD · FOREX DEAD · COMMODITY DEAD; MUTUAL_FUND, OPTIONS, PREDICTION_MARKET UNKNOWN. Only defensible real-money action named was a low-cost index ETF. It also caught that pushing its stale ledger over <code>main</code> would have clobbered other agents' work.</td></tr>
+<tr><td><strong>Zoo Code</strong><br><span style="color:var(--dim2);font-size:12px">DeepSeek</span></td>
+    <td><span class="pill kill">0 of 14 investable</span></td>
+    <td>Published a 14-row watchlist ranked by <em>proximity to decidability</em>, explicitly "NOT INVESTABLE / PAPER-ONLY / NO CAPITAL". Top row FX carry, with Sharpe vs T-bill of <strong>−0.126</strong> and break-even cost 468 bp — ranked highest precisely because its deciding statistic is a hurdle rather than an absent measurement.</td></tr>
+<tr><td><strong>Hermes</strong><br><span style="color:var(--dim2);font-size:12px">consolidated</span></td>
+    <td><span class="pill kill">0 endorsed</span></td>
+    <td>Consolidates the above and adds the pre-registered tests run in-repo: 35-cell FX census (0/35), the constant-duration bond test (KILL, sign flips at real cost), the bracket identity proving a bracket cannot create an edge, and a 1,000-cell sweep in which every completed cell so far is KILLED or BLOCKED for want of bars. One cell reached n=58, +50.51 bp net, permutation p=0.001 — and deflated Sharpe <strong>0.0031</strong>.</td></tr>
+</tbody>
+</table>
+
+<h2 id="consensus">3. The contest consensus — 15 names</h2>
+<p>Ranked by the number of <em>distinct entrants choosing the same symbol on the same side</em>.
+Agreement on side is the only kind that counts: two models picking the same symbol in opposite
+directions is a disagreement, and merging them would manufacture a consensus that does not exist.</p>
+
+<table>
+<thead><tr><th>#</th><th>Symbol</th><th>Side</th><th>Class</th><th class="num">Same side</th><th class="num">Any side</th><th class="num">Opposing</th><th>Read</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td><strong>SPY</strong></td><td class="long">long</td><td>ETF</td><td class="num">10/18</td><td class="num">10</td><td class="num">0</td><td>Strongest agreement, zero dissent — and simply long US beta.</td></tr>
+<tr><td class="num">2</td><td><strong>BTCUSD</strong></td><td class="long">long</td><td>Crypto</td><td class="num">7/18</td><td class="num">7</td><td class="num">0</td><td><strong style="color:var(--red)">Contradicts our own class-level CRYPTO KILL.</strong></td></tr>
+<tr><td class="num">3</td><td><strong>GLD</strong></td><td class="long">long</td><td>ETF</td><td class="num">6/18</td><td class="num">7</td><td class="num">1</td><td>One entrant short. Near-unanimous long gold.</td></tr>
+<tr><td class="num">4</td><td><strong>EURUSD</strong></td><td class="long">long</td><td>FX</td><td class="num">5/18</td><td class="num">7</td><td class="num">2</td><td>Genuinely contested — 2 entrants short.</td></tr>
+<tr><td class="num">5</td><td><strong>TLT</strong></td><td class="long">long</td><td>ETF</td><td class="num">3/18</td><td class="num">4</td><td class="num">1</td><td>Duration bet; our owned test kills the duration premium at real cost.</td></tr>
+<tr><td class="num">6</td><td><strong>AAPL</strong></td><td class="long">long</td><td>Equity</td><td class="num">3/18</td><td class="num">3</td><td class="num">0</td><td>Single-name beta, no dissent.</td></tr>
+<tr><td class="num">7</td><td><strong>VTSAX</strong></td><td class="long">long</td><td>Fund</td><td class="num">3/18</td><td class="num">3</td><td class="num">0</td><td>Total-market index — the same bet as SPY, differently wrapped.</td></tr>
+<tr><td class="num">8</td><td><strong>IEF</strong></td><td class="long">long</td><td>ETF</td><td class="num">2/18</td><td class="num">2</td><td class="num">0</td><td>7–10y Treasuries; same duration exposure as TLT, shorter.</td></tr>
+<tr><td class="num">9</td><td><strong>VFIAX</strong></td><td class="long">long</td><td>Fund</td><td class="num">2/18</td><td class="num">2</td><td class="num">0</td><td>S&amp;P 500 index fund — third wrapper on the same underlying.</td></tr>
+<tr><td class="num">10</td><td><strong>ETHUSD</strong></td><td class="long">long</td><td>Crypto</td><td class="num">2/18</td><td class="num">2</td><td class="num">0</td><td>Same class-level problem as BTC.</td></tr>
+<tr><td class="num">11</td><td><strong>NVDA</strong></td><td class="long">long</td><td>Equity</td><td class="num">2/18</td><td class="num">2</td><td class="num">0</td><td>Highest-beta single name in the set.</td></tr>
+<tr><td class="num">12</td><td><strong>BRK.B</strong></td><td class="long">long</td><td>Equity</td><td class="num">2/18</td><td class="num">2</td><td class="num">0</td><td>Equity beta with a value tilt.</td></tr>
+<tr><td class="num">13</td><td><strong>VBIRX</strong></td><td class="long">long</td><td>Fund</td><td class="num">2/18</td><td class="num">2</td><td class="num">0</td><td>Short-term bonds — cash proxy.</td></tr>
+<tr><td class="num">14</td><td><strong>USDJPY</strong></td><td class="short">short</td><td>FX</td><td class="num">2/18</td><td class="num">3</td><td class="num">1</td><td><strong>The only short with more than one backer.</strong></td></tr>
+<tr><td class="num">15</td><td><strong>XAUUSD</strong></td><td class="long">long</td><td>Commodity</td><td class="num">2/18</td><td class="num">3</td><td class="num">1</td><td><strong style="color:var(--red)">Contradicts our own class-level COMMODITY KILL.</strong></td></tr>
+</tbody>
+</table>
+
+<h2 id="why">4. Why consensus is not an edge</h2>
+<p>Three separate objections, each sufficient on its own:</p>
+<ul>
+  <li><strong>It is one bet, not fifteen.</strong> Thirteen of the fifteen are long. SPY, VTSAX and VFIAX are
+      the same underlying in three wrappers; IEF and TLT are the same duration trade at two lengths;
+      AAPL, NVDA and BRK.B are equity beta. Traded as a book this is a single long-risk-asset factor,
+      and a factor cannot diversify itself.</li>
+  <li><strong>Agreement between models trained on overlapping text is not independent evidence.</strong>
+      Ten of eighteen long SPY is consistent with a shared prior — US equities go up — rather than ten
+      independent measurements. The contest's own bootstrap agrees: the best entrant wins <strong>41.6%</strong>
+      of 2,000 replicates, far below the 95% needed for a distinguishable ranking, with only four picks
+      per entrant.</li>
+  <li><strong>Our measured evidence actively contradicts two of the top three.</strong> CRYPTO is a
+      class-level KILL and COMMODITY is a class-level KILL, yet BTCUSD-long is the second-strongest
+      consensus and XAUUSD-long is on the list. Consensus that contradicts measurement is a bias to be
+      discounted, not a signal to be followed.</li>
+</ul>
+
+<h2 id="scoring">5. Performance tracking status</h2>
+<p>Forward scoring is wired to the repo's own executor (<code>CONTEST/tools/assess_contest.py</code>), which
+ignores everything an agent reports about itself: entry is the first bar's open at or after the round
+start, exit is the first touched barrier, and on an ambiguous bar <em>the stop wins</em>.</p>
+
+<table>
+<thead><tr><th>Item</th><th>Status</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td>Round window</td><td><span class="pill pend">OPEN</span></td>
+    <td>R01 opened 2026-11-23 03:38 UTC; 48h horizons close approximately 2026-11-25 03:38 UTC.</td></tr>
+<tr><td>Price coverage</td><td><span class="pill kill">4 / 24</span></td>
+    <td>Only EURUSD, GBPUSD, USDJPY and XAUUSD have bars at or after the round start. The other 20 —
+        including SPY and BTCUSD — return <code>VOID: no bar at or after the round start</code>.</td></tr>
+<tr><td>Scored picks</td><td><span class="pill pend">PENDING</span></td>
+    <td>No pick can be scored yet on most symbols. A VOID here means <em>no price</em>, not <em>no profit</em>;
+        the two must never be reported as one number.</td></tr>
+<tr><td>Per-class breakdown</td><td><span class="pill ins">BLOCKED</span></td>
+    <td>Needs forward bars for the 20 missing symbols. Until then any per-class return figure would be
+        an artefact of which symbols happened to have data.</td></tr>
+</tbody>
+</table>
+
+<div class="note"><strong>Why we are not printing a performance table anyway.</strong> With 4 of 24 symbols
+covered, a per-class or per-tool return column would be computed almost entirely from FX and gold. It
+would look like measurement and would be a coverage artefact. The tracker publishes the coverage gap
+first, because that is the honest headline until the bars exist.</div>
+
+<h2 id="next">6. What would change the answer</h2>
+<ul>
+  <li><strong>Forward bars for the 20 missing symbols.</strong> This unblocks per-class and per-tool scoring and
+      is the single highest-value item; nothing else can be measured without it.</li>
+  <li><strong>More picks per entrant.</strong> At four picks the bootstrap cannot separate entrants. Roughly
+      thirty would make the ranking decidable — or prove it is not.</li>
+  <li><strong>A cell that survives deflated Sharpe.</strong> One cell already produced n=58, +50.51 bp net and
+      permutation p=0.001, and died at DSR 0.0031. That gap between permutation p and DSR is the whole
+      lesson: with 528 trials behind us, a raw p-value is not evidence.</li>
+  <li><strong>Cost reality.</strong> Charge the real round trip, every leg, every rebalance. In the bond test the
+      sign flipped from +84 bp to −91.58 bp on that one change alone.</li>
+</ul>
+
+<footer>
+  Sources: <code>28_MERCURY3_PER_CLASS_REVIEW_2026-11-22/*.md</code> ·
+  <code>CONTEST/ROUND_01_2026-11-23/BOOTSTRAP_WINNER_CONSISTENCY.md</code> ·
+  <code>34_FINAL_PICKS_2026-11-23/{GITHUB_COPILOT_DEEPSEEK,KILOCODE_VSCODE,ZOOCODE_DEEPSEEK}</code> ·
+  <code>03-trading-strategies/results/bonds_duration_prereg.json</code><br>
+  Paper only. Zero capital deployed. Not investment advice.
+</footer>
+
+</div>
+</body>
+</html>
