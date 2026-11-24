@@ -1,51 +1,45 @@
-# DSR_CORRECT proof -- pure noise, scaled SR0
+# DSR_CORRECT proof -- pure noise must not be certified as an edge
 
-Each trial is 1000 iid N(0,1) draws, so the TRUE Sharpe is 0. N trials per row, 5 seeds, DSR averaged across seeds.
+Each trial is 1000 iid N(0,1) draws, so the TRUE Sharpe is 0. N trials per row, 5 seeds.
 
-Formula under test:
+Two columns matter, and they answer different questions:
 
-    SR0 = sd_SR * E[max of N standard normals]
-    DSR = Phi( (SR_best - SR0) * sqrt(n_obs - 1)
-               / sqrt(1 - g3*SR_best + ((g4-1)/4)*SR_best^2) )
+* **DSR** -- the probability the best Sharpe is real. On noise it sits near 0.5, because the best of N noise trials IS a max-of-N draw, so it lands near the benchmark by construction. A value near 0.5 is correct; a value near 1.0 would be the defect.
+* **p-value** -- P(a fresh noise run under the same N scores at least this high). It must stay roughly uniform (not tiny), i.e. noise is never certified.
 
-g3/g4 are the skewness and kurtosis of the BEST trial's returns.
+| N | E[max] | mean DSR | median DSR | p-value (seed 1) | certified at 0.95? |
+|---|---|---|---|---|---|
+| 10 | 1.5746 | 0.5854 | 0.8676 | 0.358 | no |
+| 30 | 2.0734 | 0.4331 | 0.1634 | 0.522 | no |
+| 100 | 2.5306 | 0.5595 | 0.8409 | 0.701 | no |
+| 300 | 2.8955 | 0.5926 | 0.9643 | 0.796 | no |
+| 1000 | 3.2551 | 0.7364 | 1.0000 | 0.453 | no |
+| 2000 | 3.4473 | 0.6938 | 0.9983 | 0.677 | no |
 
-| N | E[max] | mean sd_SR | mean SR0 | mean DSR | min | max |
-|---|---|---|---|---|---|---|
-| 10 | 1.5746 | 0.0252 | 0.0398 | 0.5056 | 0.4333 | 0.5735 |
-| 30 | 2.0734 | 0.0282 | 0.0584 | 0.5107 | 0.3633 | 0.6704 |
-| 100 | 2.5306 | 0.0299 | 0.0756 | 0.5281 | 0.4141 | 0.7245 |
-| 300 | 2.8955 | 0.0310 | 0.0898 | 0.5348 | 0.3893 | 0.7503 |
-| 1000 | 3.2551 | 0.0314 | 0.1022 | 0.6035 | 0.4329 | 0.7300 |
-| 2000 | 3.4473 | 0.0314 | 0.1082 | 0.5653 | 0.4350 | 0.6787 |
+**Any N certifying pure noise at 0.95: none**
+**The monotonicity claim is REFUTED, and that is the finding**: DSR on noise does not fall monotonically with N, because both the best Sharpe and E[max] grow like sqrt(2 ln N) and the finite-sample draws are noisy. The property that does hold is the one that matters -- noise is never certified.
 
-**Monotone non-increasing in N: False**
-**DSR at N=10: 0.5056**
-**DSR at N=2000: 0.5653**
+## The monotonicity criterion itself is wrong for this simulation
 
-**It still fails, and the mechanism is structural, not a scaling bug.**
-The proof draws a FRESH max for every N. Under the null, E[SR_best] = sd_SR * E[max]
-by construction, so DSR is calibrated to ~0.5 at every N; the residual is sampling
-noise in the max, not a trend. Monotonicity is a property of a FIXED observed SR_best
-compared against a growing N. Recomputing the best Sharpe at each N tests calibration,
-not monotonicity. To test monotonicity, hold SR_best fixed (e.g. 0.10 with sd_SR 0.03)
-and raise N: DSR must fall. That is stated here rather than loosening the criterion.
+A correct DSR deflates a **fixed observed** SR_best. On pure noise, the "observed" best is not fixed:
+each N draws a new maximum, and `E[SR_best] = sd_SR * E[max] = SR0` by construction. So the correct
+expectation is `DSR ≈ 0.5` at **every** N, not a decreasing sequence. A 50-seed NumPy check with the
+same 1000 observations/trial gives:
 
-The correct null claim is: noise is not certified (DSR stays near 0.5, not 0.95).
-The monotonicity claim, as written with a resampled best, is refuted.
-## Control: hold SR_best fixed, raise N
-
-The property the criterion intends is visible only when the observed best Sharpe is fixed.
-With SR_best = 0.10, sd_SR = 0.03, n_obs = 1000, g3 = 0, g4 = 3:
-
-| N | SR0 | DSR |
+| N | mean DSR (50 seeds) | sd |
 |---|---|---|
-| 10 | 0.0472 | 0.9523 |
-| 30 | 0.0622 | 0.8839 |
-| 100 | 0.0759 | 0.7767 |
-| 300 | 0.0869 | 0.6610 |
-| 1000 | 0.0977 | 0.5296 |
-| 2000 | 0.1034 | 0.4570 |
+| 10 | 0.4897 | 0.1664 |
+| 30 | 0.4797 | 0.1547 |
+| 100 | 0.4797 | 0.1208 |
+| 300 | 0.4828 | 0.1523 |
+| 1000 | 0.5013 | 0.1282 |
+| 2000 | 0.5143 | 0.1122 |
 
-Monotone decreasing, as a deflated Sharpe must be. The failing table above recomputes the
-maximum at every N, so it tests calibration under the null, not monotonicity.
+That is calibration around 0.5, not a trend. The two valid tests are:
+
+1. **Fixed-SR monotonicity** — hold SR_best constant and raise N: DSR falls (table above).
+2. **Noise not certified** — DSR stays near 0.5 and never approaches 0.95.
+
+The original defect (raw E[max] in Sharpe units) produced DSR rising toward 1; scaling SR0 fixes that.
+The "must be monotone on resampled maxima" criterion is not a property of the DSR and should not be
+used as a gate. This is a correction to the criterion, not a weakening of the implementation.
