@@ -35,18 +35,22 @@ def main():
             bucket="INITIATION" if d>=2 else ("DROP" if d<=-2 else "STABLE")
             start=date.fromisoformat(now["period"])
             e21=B.excess(px[sym],spy,start,21); e63=B.excess(px[sym],spy,start,63)
-            if e21 is not None: buckets[bucket]["21d"].append(e21)
-            if e63 is not None: buckets[bucket]["63d"].append(e63)
+            if e21 is not None: buckets[bucket]["21d"].append((e21, sym))
+            if e63 is not None: buckets[bucket]["63d"].append((e63, sym))
     out={"experiment":"coverage_change","cost_bps":B.COST_BPS,
          "buckets":{k:{h:B.stats(v) for h,v in d.items()} for k,d in buckets.items()}}
-    OUT.write_text(json.dumps(out,indent=2)+"\n")
     for h in ("21d","63d"):
+        ks=[k for k in ("INITIATION","STABLE","DROP") if buckets[k].get(h)]
+        ps=[B.stats(buckets[k][h])["p_one_sided"] for k in ks]
+        qs=B.bh(ps)
+        for k,q in zip(ks,qs): out["buckets"][k].setdefault("q",{})[h]=q
         print(h)
         for k in ("INITIATION","STABLE","DROP"):
             s=buckets[k].get(h,[])
             st=B.stats(s)
             if st.get("n") and st.get("mean_pct") is not None:
                 print(f"  {k:<10} n={st['n']:<3} mean={st['mean_pct']:+.3f}% CI=[{st['ci95_pct'][0]:+.3f},{st['ci95_pct'][1]:+.3f}] hit={st['hit_rate']:.0%} low>0={st['ci_low_gt_0']}")
+    OUT.write_text(json.dumps(out,indent=2)+"\n")
     print("wrote",OUT)
 
 if __name__=="__main__": main()

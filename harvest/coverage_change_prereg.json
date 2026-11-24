@@ -1,0 +1,24 @@
+{
+  "schema": "preregistration/1",
+  "id": "H-COVERAGE-CHANGE-2026-11-24",
+  "registered_at": "2026-11-24T11:45:00Z",
+  "hypothesis": "A change in the number of covering analysts (>=2 initiations or >=2 drops month-over-month) predicts 21d excess return vs SPY.",
+  "status": "PRE_REGISTERED",
+  "prior_evidence_is_confirmatory": false,
+  "prior_evidence": {
+    "drop_n": 19,
+    "drop_mean_pct": 4.402,
+    "drop_ci95": [
+      1.075,
+      7.814
+    ],
+    "p_one_sided": 0.004,
+    "bh_q": 0.013,
+    "clusters": 19,
+    "note": "n<30; not confirmatory"
+  },
+  "decision_rule": "count only periods after registered_at; require n>=30 symbol clusters with CI-low>0, BH q<0.05, and effect > 2x round-trip cost (13.42bp).",
+  "falsify_if": "no bucket reaches n>=30 with CI-low>0, or BH q>=0.05, or effect <= 2x cost by 2027-06-30.",
+  "asset_class": "EQUITY",
+  "source": "finnhub recommendation history"
+}

@@ -91,3 +91,15 @@ paid redistribution rules apply (Finnhub/FMP/Benzinga/TipRanks).
 P0: consensus + dated firm actions (done). P1: paid person-level ledger.
 P2: crowd markets (Polymarket/Kalshi) + mapping. P3: trader leaderboards +
 style clustering, gated by CPCV/DSR/BH.
+
+## Corrections from the STEP K-REVIEW-R2 audit (2026-11-24)
+- Entry is the **first close strictly after** the signal date. `price_on_or_after`
+  on the period date was a same-bar look-ahead and is removed.
+- All CIs now use a **symbol-clustered bootstrap** (repeated monthly observations
+  and overlapping 63d windows are not independent) and **BH correction**.
+- Corrected results: nothing survives BH q<0.05 at n>=30. HOLD 21d p=0.016,
+  q=0.063; STRONG_BUY p=0.033, q=0.065; BUY q=0.135; 63d all q>=0.739.
+  Coverage-change DROP: n=19, +4.402%, p=0.004, q=0.013 — **not confirmatory**
+  because n<30; pre-registered in `harvest/coverage_change_prereg.json`.
+- Rule: rank only with n>=30 symbol clusters; promote only with forward n>=100,
+  CI-low>0, BH q<0.05, DSR>=0.95, PBO<0.5.
