@@ -427,7 +427,10 @@ function boot() {
       else if (clsErrors.length) {
         const codes = [...new Set(clsErrors.map((e) => e.http))].join('/');
         reading = `access error HTTP ${codes} — data-plan limit, not an absence of coverage`;
-      } else reading = 'no analyst coverage published for this instrument type';
+      } else if (k === 'BOND') reading = 'bond ETFs (fund wrapper) — empty response; sell-side equity analysts do not rate bond funds';
+      else if (k === 'ETF') reading = 'ETFs (fund wrapper) — empty response; analysts rate issuers, not baskets';
+      else if (k === 'CRYPTO') reading = 'crypto pairs — empty response; no sell-side equity coverage';
+      else reading = 'empty response — likely no coverage for this wrapper; not independently verified';
       return `<tr><td>${k}</td><td>${v.probed}</td><td>${v.with_consensus}</td>
         <td class="${pct ? 'ok' : 'zero'}">${pct}%</td><td class="na">${reading}</td></tr>`;
     }).join('');
