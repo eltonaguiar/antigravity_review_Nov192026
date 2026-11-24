@@ -37,3 +37,34 @@
 **The harness is testing the least powerful statistic available.** A cross-sectional IC test uses every name on every period (t ~ IC * sqrt(n)), delivering ~40x the power of a single equity curve.
 
 *Paper only. Zero capital. Not investment advice.*
+
+## Actual sample in use — MDE every verdict must quote
+
+**Actual sample (equity/ETF class verdicts):** SPY monthly adjusted close (Yahoo),
+406 monthly returns = 33.8 years, annualised vol 14.77%.
+
+**MDE at t=2 (95% CI excludes 0):** 2 * vol / sqrt(years)
+  = 2 * 0.1477 / sqrt(33.8)
+  = 5.08%/yr
+
+**Rule:** every PASS / WATCH / FAIL verdict on this sample must quote the MDE
+(5.08%/yr). A "no edge found" verdict is only informative for edges at or above
+~5.1%/yr. Below that, the sample lacks power and the verdict is a statement about
+the gate, not about the market.
+
+**Cross-check against POSITIVE_CONTROL.md**
+(CONTEST/ROUND_01_2026-11-23/POSITIVE_CONTROL.md, real SPY monthly, same gate
+SE = vol/sqrt(T), t = mean/SE, significant iff |t| >= 2):
+
+| injected alpha/yr | recovered alpha/yr | t | significant? | reading |
+| 0.00% | 0.00% | 0.00 | No | null honoured - no false positive |
+| 3.00% | 3.00% | 1.18 | No | real 3%/yr still invisible over 33.8y (below MDE 5.08%) |
+| 10.00% | 10.00% | 3.94 | Yes | detected, above MDE - harness works |
+
+The positive control recovers every injected alpha at the exact magnitude, so the
+gate is unbiased; yet a genuine 3%/yr premium is NOT significant over even 33.8
+years of SPY at 14.8% vol (t = 1.18, CI spans 0). This confirms the MDE statement:
+a 3%/yr edge needs roughly 44 years at 10% vol and ~100 years at 15% vol to reach
+t = 2. Any future edge claim on this sample must state the MDE it can resolve.
+
+*Paper only. Zero capital. Not investment advice.*
