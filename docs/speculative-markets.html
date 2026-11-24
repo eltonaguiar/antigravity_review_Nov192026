@@ -93,6 +93,32 @@ footer{border-top:1px solid var(--line);padding:16px 0 40px;color:var(--muted);f
 </div>
 
 <div class="card">
+<h2>6. Crowd and news pick sources — measured</h2>
+<p class="method">Coverage is not the test. Two pre-registered checks: a Polymarket crowd-favorite hold-to-resolution test and a post-publication audit of a meme-coin listicle. Full method and caveats: <a href="CROWD_SOURCE_PROFITABILITY_AUDIT.md">CROWD_SOURCE_PROFITABILITY_AUDIT.md</a>.</p>
+<h3>Polymarket: buy the crowd favorite at T−7d</h3>
+<table><thead><tr><th>metric</th><th>value</th></tr></thead><tbody>
+<tr><td>usable markets</td><td>50 (of 195 fetched)</td></tr>
+<tr><td>mean net return</td><td style="color:#f85149"><b>−15.96%</b> per market</td></tr>
+<tr><td>95% bootstrap CI</td><td>[−31.78%, −0.87%]</td></tr>
+<tr><td>win rate</td><td>70.0%</td></tr>
+<tr><td>0.9–1.0 price bucket</td><td>predicted 94.4% → realised <b>80.0%</b> (n=25)</td></tr>
+</tbody></table>
+<p><b>Reading:</b> 70% winners and a negative mean is the point — buying at 0.94 pays +6% on a win and −100% on a loss. No crowd-favorite edge; negative skew, not a coin flip.</p>
+<h3>News listicle: bmic.ai “analyst picks”, updated 2026-08-29</h3>
+<table><thead><tr><th>pick</th><th>7d</th><th>30d</th><th>to date</th><th>excess vs BTC</th></tr></thead><tbody>
+<tr><td>DOGE</td><td>+10.81%</td><td>+14.43%</td><td style="color:#f85149">−32.57%</td><td>−9.84 pp</td></tr>
+<tr><td>SHIB</td><td>+11.49%</td><td>+16.13%</td><td style="color:#f85149">−27.82%</td><td>−5.09 pp</td></tr>
+<tr><td>PEPE</td><td>+7.35%</td><td>+25.29%</td><td style="color:#3fb950">+0.59%</td><td>+23.32 pp</td></tr>
+<tr><td>BONK</td><td>+22.22%</td><td>+30.47%</td><td style="color:#f85149">−22.94%</td><td>−0.21 pp</td></tr>
+<tr><td>FLOKI</td><td>+10.25%</td><td>+14.60%</td><td style="color:#f85149">−31.91%</td><td>−9.18 pp</td></tr>
+<tr><td>BTC benchmark</td><td>+3.42%</td><td>+7.70%</td><td>−22.73%</td><td>—</td></tr>
+<tr><td>BMIC (presale)</td><td>—</td><td>—</td><td>unmeasurable</td><td>—</td></tr>
+</tbody></table>
+<p><b>Reading:</b> mean to-date <b>−22.93%</b>, mean excess vs BTC <b>−0.20 pp</b>, 4/5 below BTC. The page promotes the publisher’s own BMIC presale and gives no entry, horizon or target. Source quality <b>4/10</b> (independence 0, track record 0).</p>
+<p><b>Yahoo/CryptoQuant context piece:</b> no picks; reports meme share of alts ~11% → below 3%, Binance meme selling −$1.5B, 1 in 5 alts above the 200-day, 367 hacks in 2026. High-attribution context, zero actionable calls.</p>
+</div>
+
+<div class="card">
 <h2>What would change these verdicts</h2>
 <ul>
 <li><b>Penny:</b> point-in-time OTC bars + delisting + spread/capacity data; until then, no.</li>
