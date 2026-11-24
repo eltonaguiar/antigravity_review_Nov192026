@@ -73,3 +73,22 @@ rows plus a one-row severity summary.
 
 Note: `STALE_FEED` must use the **newest** pick (max timestamp), not the oldest;
 using max(age) wrongly reports ~6,500h for classes with old closed history.
+
+## Refresh 2026-11-24T12:31Z — full population (active_raw + recent_closed)
+
+Same payload (`generated_at 2026-11-24T10:03:34Z`), but this pass checks **all
+4,210 active_raw rows plus 3,500 recent_closed**, not recent_closed alone. The
+earlier 49/13 counts were therefore **understated**.
+
+| Defect | Count | Breakdown |
+|---|---|---|
+| `exit_price <= 0` | **4,023** | OPEN 525, EXPIRED 3,471, SL_HIT 19, TP_HIT 8; CRYPTO 3,546, EQUITY 157, FOREX 193, ETF 33, COMMODITY 51, BOND 35, FUTURES 6, SPORTS 2 |
+| TP/SL wrong side of entry | **107** | EXPIRED 55, WON 23, LOST 21, FLAT 4, OPEN 3, CLOSED 1 |
+| CLOSED/WON/LOST with P&L = 0 | 40 | all CLOSED, TIME_EXIT |
+| Analyst bridge | 0 analysts / 0 predictions | still empty |
+| status counts | 562 OPEN / 3,618 EXPIRED / 19 SL / 11 TP | unchanged |
+
+Examples: `BTCUSDT` LONG entry 73,060.80 with TP 65,523.96 (below entry);
+`XLY` SHORT entry 108.15 with SL 111.39 (below entry). EXPIRED rows should carry a
+settlement price or NULL, not `0`; OPEN rows should carry NULL, not `0`.
+The DQ check must run over `active_raw`, not only the rendered closed list.
