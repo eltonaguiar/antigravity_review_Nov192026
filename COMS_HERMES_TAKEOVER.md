@@ -149,7 +149,13 @@ Tested against the installed bundles, not the documentation:
 | `code --command <id> --args` | **FALSE** — no such flag in VS Code 1.144.0. |
 | Bridge extensions `pokey.command-server`, `eliostruyf.vscode-remote-control` | Real products, **neither installed**. Either would let a CLI execute VS Code commands, including `workbench.action.chat.open`. |
 
-Net: the only reliable per-agent doors are the four verified in this document —
+**Also false for Kilo 7.8.32** (checked against the bundle, not the docs): the extension id
+`kilocode.Kilo-Code`, the commands `kilo-code.newTask` / `kilo-code.plusButtonClicked` /
+`kilo-code.focusInput`, and the claim that Kilo honours `ROO_CODE_IPC_SOCKET_PATH`. None appear.
+Kilo's actual command namespace here is `kilo-code.new.agentManager.*`. So Kilo and Zoo are **not**
+interchangeable: Zoo has the IPC door and `StartNewTask`; Kilo has `kilo run`.
+
+Net: the only reliable per-agent doors are the five verified in this document —
 `kilo run`, `code chat`, Zoo's `ROO_CODE_IPC_SOCKET_PATH`, and CDP for Chrome.
 
 ### Also available headless on PATH (verified present)
@@ -162,9 +168,23 @@ Net: the only reliable per-agent doors are the four verified in this document �
 | OpenAI Codex | `codex` | `codex` |
 | Hermes | `hermes` | `hermes` |
 
-**NOT present on this machine:** `cline`, `roo` (the npm global registry has only `@kilocode`),
-and `code --open-url` — that flag does not exist in VS Code 1.144.0, so URI links must be fired
-through the OS URL handler (`start "" "vscode://…"` on Windows), not the CLI.
+**NOT present on this machine:** `cline`, `roo` (the npm global registry has only `@kilocode`).
+
+**`--open-url` exists, despite not appearing in `--help`.** An earlier revision of this document
+said it did not, based on grepping the help text — that was wrong. VS Code hides several working
+flags from `--help` (`--folder-uri` and `--file-uri` are missing from it too). The reliable test is
+to run the flag and read the warning:
+
+| Probe | Result | Meaning |
+|---|---|---|
+| `code --open-url "vscode://x.invalid/foo"` | exit 0, no warning | **recognised** |
+| `code --command "some.fake.command"` | `Warning: 'command' is not in the list of known options…` | **not a flag** |
+
+So `code --open-url "vscode://<ext>/<path>?prompt=…"` is a legitimate keyboard-free way to fire a
+URI handler, and needs no bridge. (`code chat` remains the better route for Copilot.)
+
+Also present and useful: `--add-mcp <json>` adds an MCP server definition, and the CLI has
+`serve-web` and `tunnel` subcommands.
 
 `copilot` turns out to be the cleanest headless option for Copilot work: `-p` is designed for
 scripting, and it manages its own sessions, so it does not depend on the chat panel being open at
