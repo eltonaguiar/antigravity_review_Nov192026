@@ -1,0 +1,68 @@
+{
+  "A_btc_specialist": {
+    "metrics": {
+      "n": 41,
+      "hit_rate": 0.975609756097561,
+      "wilson_lb": 0.8740465298832191,
+      "mean_ret_pct": 0.34146341463414637,
+      "mean_ci_low_pct": -0.5756097560975609,
+      "mean_ci_high_pct": 0.8,
+      "avg_win_pct": 0.8,
+      "avg_loss_pct": -18.0,
+      "payoff": 0.044444444444444446,
+      "profit_factor": 1.777777777777778,
+      "total_return_pct": 0.1399228067596292,
+      "max_drawdown_pct": -0.18000000000000238,
+      "expectancy_worst_pct": -1.5679252381954814,
+      "half1_positive": true,
+      "half2_positive": false
+    },
+    "score": 40.4,
+    "rating": "WATCH",
+    "parts": {
+      "reliability": 35.0,
+      "magnitude": 9.5,
+      "payoff": 8.9,
+      "consistency": 0,
+      "sample": 2.0
+    },
+    "specialisation": {
+      "slice": "BTCUSDT/1w/long",
+      "slice_n": 41,
+      "tag": "SPECIALIST"
+    }
+  },
+  "B_generalist": {
+    "metrics": {
+      "n": 500,
+      "hit_rate": 0.494,
+      "wilson_lb": 0.4503893365060508,
+      "mean_ret_pct": 1.6572,
+      "mean_ci_low_pct": 1.2116000000000002,
+      "mean_ci_high_pct": 2.1090000000000004,
+      "avg_win_pct": 6.611336032388665,
+      "avg_loss_pct": -3.1794466403162054,
+      "payoff": 2.0793983294310445,
+      "profit_factor": 2.0300845350571857,
+      "total_return_pct": 8.631697453550991,
+      "max_drawdown_pct": -7.7301577577310265,
+      "expectancy_worst_pct": 1.2302174715182794,
+      "half1_positive": true,
+      "half2_positive": false
+    },
+    "score": 58.2,
+    "rating": "A_SURVIVES_STRESS",
+    "parts": {
+      "reliability": 18.0,
+      "magnitude": 25.0,
+      "payoff": 10.2,
+      "consistency": 0,
+      "sample": 5
+    },
+    "specialisation": {
+      "slice": "all",
+      "slice_n": 500,
+      "tag": "GENERALIST"
+    }
+  }
+}
