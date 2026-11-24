@@ -8,6 +8,30 @@ Scripts: `cost_of_hurdle.py` → `out/cost_of_hurdle.json`
 
 ---
 
+> ## ⚠️ READ THE ADDENDUM FIRST — TWO CLAIMS BELOW ARE RETRACTED
+>
+> `CORRECTIONS_ADDENDUM_2026-11-24.md` (same directory) retracts two claims made in §3.
+> Everything else in this file stands. This banner exists because a reader who stops at this
+> file would repeat the retracted numbers — the correction living in a sibling file is not a
+> correction.
+>
+> **1. The "1-day required gross" figures (crypto 95.0% / equity 14.4% / ETF 21.2%) are E3 —
+> withdrawn.** They came from a LINEAR solve `hurdle + N·c`, which answers *what share of
+> capital*, not *what gross return*. The correct compounded solve
+> `((1+g_d)(1−c))^N = 1+h` gives: crypto **158.9%** (not 95.0), commodity 72.8%, FOREX 26.1%,
+> ETF 23.6%, equity 15.4%, bond ETF 5.9%, fund 4.3%. The linear form **understates** required
+> gross everywhere it was applied.
+>
+> **2. The "ETF is dearer than equity" inversion is E1 — withdrawn.** It was produced by
+> grading equity at its CENTRAL cost (4.0124 bp) while grading ETF at a POINT (6.7122 bp).
+> Graded under this repo's own rule (grade at ceiling), equity is **34.7%** vs ETF **21.2%** —
+> no inversion. What actually survives is narrower and less useful: **no cross-class cost
+> RANKING is defensible at all**, because equity's own bracket (0.9756–12.0749 bp, a 12.38×
+> spread) is wider than the gap between any two classes.
+>
+> **3. The required-gross column of the §3 table (1 week) is the same linear form.** It has
+> NOT been recomputed and therefore **understates**; read it as a lower bound only.
+
 ## 1. What survives untouched
 
 The qualitative frame is sound and I would keep it: funds/ETFs as compounding vehicles vs
@@ -73,17 +97,31 @@ things: the **gross edge required just to net a 4.32% hurdle**.
 | commodity | 20.00 bp | 10.1% | 2.4% | 14.4% | 6.7% |
 | crypto | 36.00 bp *(band 20–52)* | 18.1% | 4.3% | 22.5% | 8.6% |
 
+> The two `gross needed` columns above are the **linear** form `hurdle + N·c` and therefore
+> **understate** the true requirement (E3). They are retained only as a lower bound.
+
 At **1-day** turnover the same table reads: crypto needs **95.0% gross/yr** to net 4.32%,
 commodity 54.7%, FOREX 23.3%, ETF 21.2%, equity 14.4%, bond ETF 5.9%, fund 4.3%.
+
+> ❌ **SUPERSEDED by E3 — do not quote the line above.** Correct compounded values:
+> crypto **158.9%**, commodity 72.8%, FOREX 26.1%, ETF 23.6%, equity 15.4%, bond ETF 5.9%,
+> fund 4.3%. The linear form understated crypto by **63.9 percentage points** (95.0 vs 158.9).
 
 **That is the finding that matters more than any of the five corrections.** The reviewer
 says "costs are decisive" and then illustrates it with a number 10× too small. The
 correct framing is stronger than theirs: at the turnover implied by "scalping", the
 required gross return exceeds anything this estate has ever measured, so the suggestion is
-not merely expensive — it is arithmetically foreclosed. Note also the **inversion** at 1 day:
-equity needs 14.4% gross but ETF needs 21.2%, purely because the ETF point cost (6.71 bp)
-sits above the equity central estimate (4.01 bp). Any per-class guidance that assumes
-"ETF is cheaper than stock" is wrong at the instrument level we actually trade.
+not merely expensive — it is arithmetically foreclosed. (Use the compounded 158.9% figure,
+not 95.0%; the conclusion is unchanged and stronger.)
+
+> ❌ **RETRACTED (E1): the "ETF is dearer than equity" inversion below is withdrawn.**
+> Original text: *"equity needs 14.4% gross but ETF needs 21.2%, purely because the ETF point
+> cost (6.71 bp) sits above the equity central estimate (4.01 bp)."* That comparison graded
+> equity at its CENTRAL cost and ETF at a POINT — an asymmetry, not a finding. At ceiling,
+> equity is dearer (34.7% vs 21.2%). The original conclusion ("any guidance assuming ETF is
+> cheaper than stock is wrong at the instrument level we trade") is therefore **unsupported**:
+> equity's own 12.38× bracket swamps the cross-class difference. Do not infer a cost ordering
+> between classes from this table.
 
 ## 4. Corrections to the reviewer's own list
 
