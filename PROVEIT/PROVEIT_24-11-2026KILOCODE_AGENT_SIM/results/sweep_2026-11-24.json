@@ -1,0 +1,338 @@
+[
+  {
+    "cash": 300,
+    "bracket": "no_bracket",
+    "tp": null,
+    "sl": null,
+    "cost": "retail_crypto",
+    "median": -0.06728554210546434,
+    "ci": [
+      -0.12230841860771513,
+      0.0014207561304782068
+    ],
+    "verdict": "KILLED",
+    "beat_hurdle": 0.0075
+  },
+  {
+    "cash": 300,
+    "bracket": "no_bracket",
+    "tp": null,
+    "sl": null,
+    "cost": "programme_sweep",
+    "median": -6.818060460850317e-05,
+    "ci": [
+      -0.07087938187244924,
+      0.08853453237956699
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.17
+  },
+  {
+    "cash": 300,
+    "bracket": "tp5_sl3",
+    "tp": 5.0,
+    "sl": 3.0,
+    "cost": "retail_crypto",
+    "median": -0.06885173181281079,
+    "ci": [
+      -0.13463135684256577,
+      -6.389919469995675e-05
+    ],
+    "verdict": "KILLED",
+    "beat_hurdle": 0.0025
+  },
+  {
+    "cash": 300,
+    "bracket": "tp5_sl3",
+    "tp": 5.0,
+    "sl": 3.0,
+    "cost": "programme_sweep",
+    "median": -0.0008689070550713107,
+    "ci": [
+      -0.08448683730393824,
+      0.08834882248142084
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.165
+  },
+  {
+    "cash": 300,
+    "bracket": "tp2_sl1",
+    "tp": 2.0,
+    "sl": 1.0,
+    "cost": "retail_crypto",
+    "median": -0.034225562723157354,
+    "ci": [
+      -0.0914303939406157,
+      0.029433826114735995
+    ],
+    "verdict": "KILLED",
+    "beat_hurdle": 0.0125
+  },
+  {
+    "cash": 300,
+    "bracket": "tp2_sl1",
+    "tp": 2.0,
+    "sl": 1.0,
+    "cost": "programme_sweep",
+    "median": 0.02089303959872646,
+    "ci": [
+      -0.048268687537784016,
+      0.1009417083342532
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.2925
+  },
+  {
+    "cash": 500,
+    "bracket": "no_bracket",
+    "tp": null,
+    "sl": null,
+    "cost": "retail_crypto",
+    "median": -0.12041920317882654,
+    "ci": [
+      -0.23854056074010033,
+      0.03312807109397631
+    ],
+    "verdict": "KILLED",
+    "beat_hurdle": 0.02
+  },
+  {
+    "cash": 500,
+    "bracket": "no_bracket",
+    "tp": null,
+    "sl": null,
+    "cost": "programme_sweep",
+    "median": 0.02309654059896149,
+    "ci": [
+      -0.13416213511292607,
+      0.22468920366962863
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.4125
+  },
+  {
+    "cash": 500,
+    "bracket": "tp5_sl3",
+    "tp": 5.0,
+    "sl": 3.0,
+    "cost": "retail_crypto",
+    "median": -0.10640703464775675,
+    "ci": [
+      -0.2206182109964423,
+      0.030740430150915987
+    ],
+    "verdict": "KILLED",
+    "beat_hurdle": 0.015
+  },
+  {
+    "cash": 500,
+    "bracket": "tp5_sl3",
+    "tp": 5.0,
+    "sl": 3.0,
+    "cost": "programme_sweep",
+    "median": 0.03463060518911931,
+    "ci": [
+      -0.12211524958889841,
+      0.21510932584912879
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.46
+  },
+  {
+    "cash": 500,
+    "bracket": "tp2_sl1",
+    "tp": 2.0,
+    "sl": 1.0,
+    "cost": "retail_crypto",
+    "median": -0.026345169053976325,
+    "ci": [
+      -0.12473287683658485,
+      0.09263070402052853
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.1375
+  },
+  {
+    "cash": 500,
+    "bracket": "tp2_sl1",
+    "tp": 2.0,
+    "sl": 1.0,
+    "cost": "programme_sweep",
+    "median": 0.07287997004595037,
+    "ci": [
+      -0.04676089363069358,
+      0.2153236634915261
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.6675
+  },
+  {
+    "cash": 2000,
+    "bracket": "no_bracket",
+    "tp": null,
+    "sl": null,
+    "cost": "retail_crypto",
+    "median": -0.1613404253259626,
+    "ci": [
+      -0.32957072580294666,
+      0.05163372118285792
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.0325
+  },
+  {
+    "cash": 2000,
+    "bracket": "no_bracket",
+    "tp": null,
+    "sl": null,
+    "cost": "programme_sweep",
+    "median": 0.026469180253535174,
+    "ci": [
+      -0.19591883896373086,
+      0.3076283763599854
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.44
+  },
+  {
+    "cash": 2000,
+    "bracket": "tp5_sl3",
+    "tp": 5.0,
+    "sl": 3.0,
+    "cost": "retail_crypto",
+    "median": -0.12448677121744078,
+    "ci": [
+      -0.2944368898268602,
+      0.08033234537526224
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.055
+  },
+  {
+    "cash": 2000,
+    "bracket": "tp5_sl3",
+    "tp": 5.0,
+    "sl": 3.0,
+    "cost": "programme_sweep",
+    "median": 0.059078905852492536,
+    "ci": [
+      -0.15645295751479593,
+      0.328992379969973
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.5525
+  },
+  {
+    "cash": 2000,
+    "bracket": "tp2_sl1",
+    "tp": 2.0,
+    "sl": 1.0,
+    "cost": "retail_crypto",
+    "median": 0.002542167670301909,
+    "ci": [
+      -0.12209641521787007,
+      0.15500169033759814
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.28
+  },
+  {
+    "cash": 2000,
+    "bracket": "tp2_sl1",
+    "tp": 2.0,
+    "sl": 1.0,
+    "cost": "programme_sweep",
+    "median": 0.12441752217361546,
+    "ci": [
+      -0.026477309486882317,
+      0.30435159013044655
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.825
+  },
+  {
+    "cash": 10000,
+    "bracket": "no_bracket",
+    "tp": null,
+    "sl": null,
+    "cost": "retail_crypto",
+    "median": -0.20895450792931597,
+    "ci": [
+      -0.40202106996815523,
+      0.05198387139237992
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.035
+  },
+  {
+    "cash": 10000,
+    "bracket": "no_bracket",
+    "tp": null,
+    "sl": null,
+    "cost": "programme_sweep",
+    "median": 0.005427003458765345,
+    "ci": [
+      -0.24991939264626495,
+      0.3495698023610696
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.4
+  },
+  {
+    "cash": 10000,
+    "bracket": "tp5_sl3",
+    "tp": 5.0,
+    "sl": 3.0,
+    "cost": "retail_crypto",
+    "median": -0.13274731895394576,
+    "ci": [
+      -0.348675059516925,
+      0.12323334835739508
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.0925
+  },
+  {
+    "cash": 10000,
+    "bracket": "tp5_sl3",
+    "tp": 5.0,
+    "sl": 3.0,
+    "cost": "programme_sweep",
+    "median": 0.07718765449642295,
+    "ci": [
+      -0.18897463544598803,
+      0.41652404785461594
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.57
+  },
+  {
+    "cash": 10000,
+    "bracket": "tp2_sl1",
+    "tp": 2.0,
+    "sl": 1.0,
+    "cost": "retail_crypto",
+    "median": 0.02696797404378981,
+    "ci": [
+      -0.11857314548166764,
+      0.20569994759972965
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.435
+  },
+  {
+    "cash": 10000,
+    "bracket": "tp2_sl1",
+    "tp": 2.0,
+    "sl": 1.0,
+    "cost": "programme_sweep",
+    "median": 0.1652067825351604,
+    "ci": [
+      -0.018222035810249504,
+      0.3687141253167132
+    ],
+    "verdict": "INCONCLUSIVE",
+    "beat_hurdle": 0.87
+  }
+]

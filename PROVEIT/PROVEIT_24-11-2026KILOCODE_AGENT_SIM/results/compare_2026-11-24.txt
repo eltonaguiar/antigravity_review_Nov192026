@@ -1,0 +1,21 @@
+=== Portfolio comparison, $10,000, retail costs, 1 year, 800 sims ===
+
+portfolio         medAPR                  ciAPR    beatH     lose
+cash_only          4.32% [   4.32%,   4.32%]     0.0%     0.0%
+index_only       -25.90% [ -49.95%,   9.22%]     4.2%    93.5%
+equity_only       -9.45% [ -50.90%,  69.24%]    34.5%    61.4%
+crypto_only      -68.69% [ -94.50%,  49.22%]     6.5%    92.6%
+diversified      -15.66% [ -32.71%,   7.48%]     4.0%    91.2%
+
+diversified minus index_only on the median: +10.24 pp
+
+=== Commission sensitivity: $5 vs $1 vs $0 per trade, 20 trades/yr ===
+
+account      $0/trade   $1/trade   $5/trade    $5 drag
+300               331        311        229      34.1%
+500               552        531        449      20.5%
+2000             2208       2187       2105       5.1%
+10000           11038      11017      10935       1.0%
+
+(fee test assumes a 5% gross return on the account and 20 round trips;
+ the $5 column is the classic full-service-stock commission.)

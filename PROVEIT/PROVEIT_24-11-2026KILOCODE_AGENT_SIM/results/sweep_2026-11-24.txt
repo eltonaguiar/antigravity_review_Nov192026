@@ -1,0 +1,42 @@
+   300 no_bracket  retail_crypto    med=  -6.73% ci=[ -12.23%,  +0.14%] beatH=  0.8% KILLED
+   300 no_bracket  programme_sweep  med=  -0.01% ci=[  -7.09%,  +8.85%] beatH= 17.0% INCONCLUSIVE
+   300 tp5_sl3     retail_crypto    med=  -6.89% ci=[ -13.46%,  -0.01%] beatH=  0.2% KILLED
+   300 tp5_sl3     programme_sweep  med=  -0.09% ci=[  -8.45%,  +8.83%] beatH= 16.5% INCONCLUSIVE
+   300 tp2_sl1     retail_crypto    med=  -3.42% ci=[  -9.14%,  +2.94%] beatH=  1.2% KILLED
+   300 tp2_sl1     programme_sweep  med=  +2.09% ci=[  -4.83%, +10.09%] beatH= 29.2% INCONCLUSIVE
+   500 no_bracket  retail_crypto    med= -12.04% ci=[ -23.85%,  +3.31%] beatH=  2.0% KILLED
+   500 no_bracket  programme_sweep  med=  +2.31% ci=[ -13.42%, +22.47%] beatH= 41.2% INCONCLUSIVE
+   500 tp5_sl3     retail_crypto    med= -10.64% ci=[ -22.06%,  +3.07%] beatH=  1.5% KILLED
+   500 tp5_sl3     programme_sweep  med=  +3.46% ci=[ -12.21%, +21.51%] beatH= 46.0% INCONCLUSIVE
+   500 tp2_sl1     retail_crypto    med=  -2.63% ci=[ -12.47%,  +9.26%] beatH= 13.8% INCONCLUSIVE
+   500 tp2_sl1     programme_sweep  med=  +7.29% ci=[  -4.68%, +21.53%] beatH= 66.8% INCONCLUSIVE
+  2000 no_bracket  retail_crypto    med= -16.13% ci=[ -32.96%,  +5.16%] beatH=  3.2% INCONCLUSIVE
+  2000 no_bracket  programme_sweep  med=  +2.65% ci=[ -19.59%, +30.76%] beatH= 44.0% INCONCLUSIVE
+  2000 tp5_sl3     retail_crypto    med= -12.45% ci=[ -29.44%,  +8.03%] beatH=  5.5% INCONCLUSIVE
+  2000 tp5_sl3     programme_sweep  med=  +5.91% ci=[ -15.65%, +32.90%] beatH= 55.2% INCONCLUSIVE
+  2000 tp2_sl1     retail_crypto    med=  +0.25% ci=[ -12.21%, +15.50%] beatH= 28.0% INCONCLUSIVE
+  2000 tp2_sl1     programme_sweep  med= +12.44% ci=[  -2.65%, +30.44%] beatH= 82.5% INCONCLUSIVE
+ 10000 no_bracket  retail_crypto    med= -20.90% ci=[ -40.20%,  +5.20%] beatH=  3.5% INCONCLUSIVE
+ 10000 no_bracket  programme_sweep  med=  +0.54% ci=[ -24.99%, +34.96%] beatH= 40.0% INCONCLUSIVE
+ 10000 tp5_sl3     retail_crypto    med= -13.27% ci=[ -34.87%, +12.32%] beatH=  9.2% INCONCLUSIVE
+ 10000 tp5_sl3     programme_sweep  med=  +7.72% ci=[ -18.90%, +41.65%] beatH= 57.0% INCONCLUSIVE
+ 10000 tp2_sl1     retail_crypto    med=  +2.70% ci=[ -11.86%, +20.57%] beatH= 43.5% INCONCLUSIVE
+ 10000 tp2_sl1     programme_sweep  med= +16.52% ci=[  -1.82%, +36.87%] beatH= 87.0% INCONCLUSIVE
+
+HEADLINE (no bracket, the measured edge as-is):
+     300 retail_crypto    med=  -6.73% ci=[ -12.23%,  +0.14%] KILLED
+     300 programme_sweep  med=  -0.01% ci=[  -7.09%,  +8.85%] INCONCLUSIVE
+     500 retail_crypto    med= -12.04% ci=[ -23.85%,  +3.31%] KILLED
+     500 programme_sweep  med=  +2.31% ci=[ -13.42%, +22.47%] INCONCLUSIVE
+    2000 retail_crypto    med= -16.13% ci=[ -32.96%,  +5.16%] INCONCLUSIVE
+    2000 programme_sweep  med=  +2.65% ci=[ -19.59%, +30.76%] INCONCLUSIVE
+   10000 retail_crypto    med= -20.90% ci=[ -40.20%,  +5.20%] INCONCLUSIVE
+   10000 programme_sweep  med=  +0.54% ci=[ -24.99%, +34.96%] INCONCLUSIVE
+
+cells: 24 | PROVEN_EDGE: 0 | KILLED: 5 | INCONCLUSIVE: 19
+
+robustness -- share of a scenario's 6 variations that beat the hurdle on median:
+     300  0/6
+     500  1/6
+    2000  2/6
+   10000  2/6
