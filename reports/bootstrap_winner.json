@@ -1,0 +1,123 @@
+{
+  "entrants": {
+    "ARENA_AI_AGENT": {
+      "picks": 4,
+      "inside": 4
+    },
+    "CHATGPT_6_LUNA": {
+      "picks": 2,
+      "inside": 0
+    },
+    "CLAUDE_5_1_FABLE": {
+      "picks": 2,
+      "inside": 2
+    },
+    "CLAUDE_5_2_FABLE": {
+      "picks": 3,
+      "inside": 1
+    },
+    "CLAUDE_HAIKU_5_5": {
+      "picks": 2,
+      "inside": 0
+    },
+    "CP_PANEL_CHATGPT": {
+      "picks": 2,
+      "inside": 0
+    },
+    "CP_PANEL_CLAUDE_A": {
+      "picks": 5,
+      "inside": 1
+    },
+    "CP_PANEL_CLAUDE_HAIKU": {
+      "picks": 2,
+      "inside": 0
+    },
+    "GEMINI_4_NEON": {
+      "picks": 4,
+      "inside": 4
+    },
+    "GLM_5_3_FLASH": {
+      "picks": 4,
+      "inside": 1
+    },
+    "GPT_4_1_MINI": {
+      "picks": 4,
+      "inside": 0
+    },
+    "GPT_5_3_CODEX": {
+      "picks": 4,
+      "inside": 0
+    },
+    "MS_COPILOT": {
+      "picks": 4,
+      "inside": 3
+    },
+    "MUSE_MUSE_EMBER": {
+      "picks": 3,
+      "inside": 0
+    },
+    "MUSE_MUSE_SPARK": {
+      "picks": 3,
+      "inside": 1
+    },
+    "MUSE_MUSE_SPARK_1_0_META_AI": {
+      "picks": 4,
+      "inside": 0
+    },
+    "QWEN4_MAX": {
+      "picks": 4,
+      "inside": 0
+    },
+    "QWEN_3_6_FLASH": {
+      "picks": 4,
+      "inside": 0
+    }
+  },
+  "point_estimate_order": [
+    "ARENA_AI_AGENT",
+    "GEMINI_4_NEON",
+    "CLAUDE_5_1_FABLE",
+    "MS_COPILOT",
+    "CLAUDE_5_2_FABLE",
+    "MUSE_MUSE_SPARK",
+    "GLM_5_3_FLASH",
+    "CP_PANEL_CLAUDE_A",
+    "GPT_4_1_MINI",
+    "GPT_5_3_CODEX",
+    "MUSE_MUSE_SPARK_1_0_META_AI",
+    "QWEN4_MAX",
+    "QWEN_3_6_FLASH",
+    "MUSE_MUSE_EMBER",
+    "CHATGPT_6_LUNA",
+    "CLAUDE_HAIKU_5_5",
+    "CP_PANEL_CHATGPT",
+    "CP_PANEL_CLAUDE_HAIKU"
+  ],
+  "replicates": 2000,
+  "unique_win_counts": {},
+  "top_tie_set_counts": {
+    "ARENA_AI_AGENT": 2000,
+    "CLAUDE_5_1_FABLE": 2000,
+    "GEMINI_4_NEON": 2000,
+    "MS_COPILOT": 634,
+    "MUSE_MUSE_SPARK": 81,
+    "CLAUDE_5_2_FABLE": 80,
+    "GLM_5_3_FLASH": 7
+  },
+  "tie_set_size_distribution": {
+    "3": 1262,
+    "4": 676,
+    "5": 60,
+    "6": 2
+  },
+  "unique_winner_replicates": 0,
+  "top_winner_share": 0,
+  "distinct_orderings": {
+    "3": 1262,
+    "4": 676,
+    "5": 60,
+    "6": 2
+  },
+  "metric": "INSIDE rate (bracket fit) \u2014 NOT realized R (no fills yet)",
+  "verdict": "NOT DISTINGUISHABLE \u2014 winner varies, \u00a77 confirmed"
+}
