@@ -137,6 +137,21 @@ both installed.
 VS Code with `--remote-debugging-port=9333` would make its webview panels drivable the same way,
 which would remove the mic/send/stop misclick class of failure entirely. UNVERIFIED until tried.
 
+### What the API claims get wrong
+
+Tested against the installed bundles, not the documentation:
+
+| Claim (from model research) | Reality here |
+|---|---|
+| Kilo/Roo export `api.startNewTask("...")` | **FALSE for Kilo 7.8.32** — `startNewTask` appears **0 times** in its dist. It exists in **Zoo** as the IPC `StartNewTask` command. |
+| `api.pressPrimaryButton()` | **FALSE for Kilo** — 0 occurrences. |
+| `vscode://kilocode.kilo-code?task=...` | **FALSE** — handler ignores any path but its 3 own. |
+| `code --command <id> --args` | **FALSE** — no such flag in VS Code 1.144.0. |
+| Bridge extensions `pokey.command-server`, `eliostruyf.vscode-remote-control` | Real products, **neither installed**. Either would let a CLI execute VS Code commands, including `workbench.action.chat.open`. |
+
+Net: the only reliable per-agent doors are the four verified in this document —
+`kilo run`, `code chat`, Zoo's `ROO_CODE_IPC_SOCKET_PATH`, and CDP for Chrome.
+
 ### Also available headless on PATH
 
 | Tool | Command |
@@ -222,14 +237,28 @@ Verified against the installed manifests:
 
 | Extension | Version | `onUri` activation | Commands |
 |---|---|---|---|
-| `kilocode.kilo-code` | 7.8.32 | **present** | 72 |
+| `kilocode.kilo-code` | 7.8.32 | **present** (3 paths, none submit a task) | 72 |
 | `saoudrizwan.claude-dev` (Cline) | 4.1.27 | **present** | 19 |
 | `zoocodeorganization.zoo-code` | 3.98.1 | **NONE** | 22 |
 
 `onUri` is the activation event an extension must declare to receive `vscode://` links, so:
 
-- `vscode://kilocode.kilo-code?task=...` — plausible, handler is declared.
-- `vscode://saoudrizwan.claude-dev?task=...` — plausible, handler is declared.
+- `vscode://kilocode.kilo-code?task=...` — **FALSE.** Kilo declares `onUri` and does register a
+  handler, but the handler only matches three paths and silently returns on anything else. Read from
+  `dist/extension.js`:
+
+  ```js
+  async handleUri(uri) {
+    let sessionId = uri.path.match(/^\/kilocode\/s\/([a-zA-Z0-9_-]+)$/)?.[1];   // open cloud session
+    if (uri.path !== "/kilocode/switch" && uri.path !== "/kilocode/model") return;   // everything else ignored
+    ... // applies ?model= and ?agent= selection
+  }
+  ```
+
+  So the only working links are `vscode://kilocode.kilo-code/kilocode/s/<sessionId>`,
+  `/kilocode/switch?model=&agent=`, and `/kilocode/model?model=`. **None of them submits a task.**
+  Use `kilo run` for that.
+- `vscode://saoudrizwan.claude-dev?task=...` — plausible, handler is declared (path not inspected).
 - `vscode://zoocodeorganization.zoo-code?task=...` — **will not activate the extension**: no `onUri`
   event. Nuance found in the bundle: Zoo *does* call `window.registerUriHandler({handleUri: N_r})`
   at activate time, so if Zoo is already running the URI may still be handled. A missing `onUri`
