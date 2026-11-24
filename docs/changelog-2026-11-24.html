@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog — 2026-11-24 · Picks &amp; Accountability</title>
+<meta name="description" content="Dated changelog for 2026-11-24: what was measured, what was retracted, and what the live database actually shows about performance.">
+<style>
+  :root{
+    --bg:#0b0d10; --panel:#14181d; --panel2:#1a1f26; --line:#262d36;
+    --ink:#e8edf2; --dim:#9aa7b4; --dim2:#6f7d8c;
+    --green:#3ddc97; --red:#ff6b6b; --amber:#ffb454; --blue:#6cb6ff; --violet:#b98cff;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:28px 20px 80px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+  h1{margin:0 0 8px;font-size:1.95rem;letter-spacing:-.02em}
+  h2{margin:36px 0 14px;font-size:1.3rem;letter-spacing:-.01em;
+     border-left:3px solid var(--blue);padding-left:11px}
+  h3{margin:22px 0 8px;font-size:1.02rem;color:var(--ink)}
+  .stamp{font-family:var(--mono);font-size:.82rem;color:var(--dim2)}
+  .lede{color:var(--dim);max-width:76ch}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  nav{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;font-size:.88rem}
+  nav a{color:var(--dim)}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));margin:18px 0}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:15px 16px}
+  .card .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.07em;
+           text-transform:uppercase;color:var(--dim2);margin-bottom:7px}
+  .card .v{font-family:var(--mono);font-size:1.5rem;font-weight:600;line-height:1.15}
+  .card .n{font-size:.8rem;color:var(--dim);margin-top:6px}
+  .g{color:var(--green)} .r{color:var(--red)} .a{color:var(--amber)} .b{color:var(--blue)} .v2{color:var(--violet)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.9rem}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim2);font-weight:600;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase}
+  td.num{font-family:var(--mono);text-align:right;white-space:nowrap}
+  code{font-family:var(--mono);font-size:.85em;background:var(--panel2);
+       padding:1px 5px;border-radius:4px;color:var(--ink)}
+  .tl{list-style:none;padding:0;margin:16px 0}
+  .tl li{border-left:2px solid var(--line);padding:0 0 22px 20px;position:relative;margin-left:6px}
+  .tl li:last-child{border-left-color:transparent;padding-bottom:0}
+  .tl li::before{content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;
+                 border-radius:50%;background:var(--blue);box-shadow:0 0 0 3px var(--bg)}
+  .tl li.fix::before{background:var(--red)}
+  .tl li.new::before{background:var(--green)}
+  .tl time{font-family:var(--mono);font-size:.78rem;color:var(--dim2);display:block;margin-bottom:3px}
+  .tl strong{display:block;margin-bottom:3px}
+  .tl p{margin:5px 0 0;color:var(--dim);font-size:.92rem}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--amber);
+        border-radius:0 8px 8px 0;padding:13px 16px;margin:18px 0;font-size:.93rem;color:var(--dim)}
+  .note b{color:var(--ink)}
+  .win{border-left-color:var(--green)}
+  .bad{border-left-color:var(--red)}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);
+         color:var(--dim2);font-size:.82rem;font-family:var(--mono)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Changelog — 2026-11-24</h1>
+  <div class="stamp">compiled 2026-11-24 18:52 EST · 2026-11-24T23:52Z · commit <code>be9d3ce</code></div>
+  <p class="lede">Every entry below is a measurement made today, not a plan. Numbers carry their source
+  table or artifact. Two of the entries are corrections to claims made earlier the same day — by the same
+  author — and they are listed as prominently as the results.</p>
+  <nav>
+    <a href="index.html">← Main page</a>
+    <a href="#headline">Headline</a>
+    <a href="#db">Live database</a>
+    <a href="#research">Research programme</a>
+    <a href="#new">New probe</a>
+    <a href="#corrections">Corrections</a>
+    <a href="#defects">Defects found</a>
+    <a href="#next">Next</a>
+  </nav>
+</header>
+
+<h2 id="headline">The headline</h2>
+<p>The portfolio engine <b>beat a falling market</b>, and nobody could have known that until today, because
+the table that was supposed to hold the benchmark has never had a row in it.</p>
+
+<div class="grid">
+  <div class="card"><div class="k">SPY, same window</div><div class="v r">−4.52%</div>
+    <div class="n">benchmark had to be computed from <code>daily_prices</code></div></div>
+  <div class="card"><div class="k">Median of 123 portfolios</div><div class="v r">−0.52%</div>
+    <div class="n">beats SPY by +4.0 pp</div></div>
+  <div class="card"><div class="k">Best portfolio</div><div class="v g">+7.58%</div>
+    <div class="n">qwen3_5_plus aggressive · +12.1 pp vs SPY</div></div>
+  <div class="card"><div class="k">Cash, same window</div><div class="v a">≈ +2.2%</div>
+    <div class="n">the benchmark that matters — median loses to it</div></div>
+</div>
+
+<div class="note"><b>Why this is progress but not yet an edge.</b> In a falling tape, cash wins without any
+skill. The best portfolio beats cash by 5.4 pp, but that is one portfolio out of 123, and the median
+<b>loses</b> to cash by 2.7 pp. The defensible statement is: the ensemble was defensively positioned and
+that positioning paid off. Whether the top cohort's outperformance persists is now a testable question.</div>
+
+<h2 id="db">Live database — <code>ejaguiar1_stocks</code>, 463 tables</h2>
+
+<table>
+  <thead><tr><th>Instrument coverage</th><th class="num">Count</th><th>Table</th></tr></thead>
+  <tbody>
+    <tr><td>Model portfolios tracked</td><td class="num">123</td><td><code>PF_PORTFOLIO</code></td></tr>
+    <tr><td>NAV snapshots (2026-05-29 → 2026-11-24)</td><td class="num">14,839</td><td><code>PF_NAV_SNAPSHOT</code></td></tr>
+    <tr><td>Resolved pick outcomes</td><td class="num">63,783</td><td><code>at_pick_outcomes</code></td></tr>
+    <tr><td>Pick signals</td><td class="num">152,136</td><td><code>trading_picks</code></td></tr>
+    <tr><td>Distinct symbols with outcomes</td><td class="num">533</td><td><code>at_pick_outcomes</code></td></tr>
+    <tr><td>Open positions / portfolios holding</td><td class="num">452 / 97</td><td><code>PF_POSITION</code></td></tr>
+    <tr><td>Insider transactions (119 tickers)</td><td class="num">10,735</td><td><code>gm_sec_insider_trades</code></td></tr>
+  </tbody>
+</table>
+
+<h3>Portfolio returns split by risk appetite</h3>
+<table>
+  <thead><tr><th>Cohort</th><th class="num">n</th><th class="num">Median</th><th class="num">Best</th>
+  <th class="num">Worst</th><th class="num">Positive</th></tr></thead>
+  <tbody>
+    <tr><td>All</td><td class="num">123</td><td class="num r">−0.52%</td><td class="num g">+7.58%</td><td class="num r">−156.65%</td><td class="num">24 (20%)</td></tr>
+    <tr><td>aggressive</td><td class="num">41</td><td class="num r">−16.14%</td><td class="num g">+7.58%</td><td class="num r">−156.65%</td><td class="num">3</td></tr>
+    <tr><td>balanced</td><td class="num">41</td><td class="num r">−0.50%</td><td class="num g">+4.68%</td><td class="num r">−7.87%</td><td class="num">10</td></tr>
+    <tr><td>conservative</td><td class="num">41</td><td class="num r">−0.07%</td><td class="num g">+0.46%</td><td class="num r">−1.79%</td><td class="num">11</td></tr>
+  </tbody>
+</table>
+
+<h3>The profit window — and its close</h3>
+<table>
+  <thead><tr><th>Month</th><th class="num">n</th><th class="num">Sum PnL</th><th class="num">Win rate</th></tr></thead>
+  <tbody>
+    <tr><td>2026-11</td><td class="num">5,120</td><td class="num r">−3,160.4</td><td class="num r">25.0%</td></tr>
+    <tr><td>2026-10</td><td class="num">4,305</td><td class="num g">+1,092.0</td><td class="num">44.3%</td></tr>
+    <tr><td><b>2026-09</b></td><td class="num">4,776</td><td class="num g"><b>+3,641.5</b></td><td class="num g"><b>52.6%</b></td></tr>
+    <tr><td>2026-08</td><td class="num">4,979</td><td class="num g">+1,754.2</td><td class="num">41.1%</td></tr>
+    <tr><td>2026-07</td><td class="num">3,208</td><td class="num r">−928.4</td><td class="num">29.3%</td></tr>
+    <tr><td>2026-06</td><td class="num">3,478</td><td class="num g">+633.7</td><td class="num">44.7%</td></tr>
+  </tbody>
+</table>
+<p class="lede">Peak was September. November gave back most of it in three weeks at a 25% win rate.
+That is a regime edge, not persistence.</p>
+
+<h3>Did TP/SL work? Mechanically yes — economically no</h3>
+<table>
+  <thead><tr><th>Exit</th><th class="num">n</th><th class="num">Avg PnL</th></tr></thead>
+  <tbody>
+    <tr><td>TP_HIT</td><td class="num">2,361</td><td class="num g">+4.294%</td></tr>
+    <tr><td>SL_HIT</td><td class="num">2,472</td><td class="num r">−3.869%</td></tr>
+    <tr><td>TIME_EXIT_MAX_HOLD</td><td class="num">31,421</td><td class="num">+0.036%</td></tr>
+    <tr><td>still open</td><td class="num">103,753</td><td class="num">—</td></tr>
+  </tbody>
+</table>
+<p class="lede"><b>48.9% TP hit rate</b>, expectancy <b>+0.123% per trade</b>. Stop-first discipline is
+confirmed: intrabar resolution recorded 8,755 <code>SL_HIT</code> against 5,400 <code>TP_HIT</code>, so when
+a bar contains both levels the stop is taken. <b>At a 26 bp round turn that is ≈ −0.14% net</b> — the TP/SL
+structure is currently below its own cost of trading, which is why the equity curves are flat.</p>
+
+<h2 id="research">Research programme — the analyst question is closed</h2>
+<table>
+  <thead><tr><th>Question</th><th>Verdict</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Which action codes count as a rating event?</td><td class="b">SETTLED — <code>up</code> only</td>
+        <td>6 of 6 independent models across two rounds; <code>reit</code>/<code>init</code>/<code>main</code> rejected 0/6</td></tr>
+    <tr><td>Is that definition measurable?</td><td class="r">NO</td>
+        <td>8,498 events, 220 firms after a 182-day clean window · <b>0 firms clear 500 or 750</b> (best: BofA 439)</td></tr>
+    <tr><td>Is the score "inversion" real?</td><td class="a">UNDERDETERMINED</td>
+        <td>pairwise p 0.099 / 0.124 / 0.597 · CIs overlap · design effect 1.31/1.36/0.99</td></tr>
+    <tr><td>Is consensus computable?</td><td class="r">NO — n=0 joinable rows</td>
+        <td><code>tracker/consensus_agreement.md</code></td></tr>
+    <tr><td>Track A firm skill?</td><td class="a">9 firms at floor, effects filled</td>
+        <td>max clean events 551 (BofA) vs the 750 floor; all weights 0</td></tr>
+  </tbody>
+</table>
+<div class="note"><b>The honest reading.</b> The analyst programme is not "no edge" — it is <b>unmeasurable at
+the current ticker count</b>. Reporting a null there is reporting the sample, not the market.</div>
+
+<h2 id="new">New probe: insider filings, where the events actually exist</h2>
+<p>The analyst stream ran out of events. Insider filings do not. Measured today, keyless, from SEC EDGAR:</p>
+<div class="grid">
+  <div class="card"><div class="k">Form 4 rows collected</div><div class="v b">2,640</div>
+    <div class="n">24 tickers · per-owner parsed</div></div>
+  <div class="card"><div class="k">Open-market purchases (code P)</div><div class="v b">52</div>
+    <div class="n">48 with an officer/director owner</div></div>
+  <div class="card"><div class="k">Clean insider set</div><div class="v g">31</div>
+    <div class="n">officer/director and <i>not</i> a 10% owner</div></div>
+  <div class="card"><div class="k">Mega-cap purchases</div><div class="v a">0</div>
+    <div class="n">290 rows across 8 large caps — the event lives in small/mid caps</div></div>
+</div>
+<p class="lede">Filing lag measures <b>2 business days median, 3 at p95</b>, matching the legal 2-day
+deadline — so the probe is not contaminated by look-ahead. Extrapolated to 500 tickers: <b>~958 purchases</b>,
+an order of magnitude more than the analyst stream ever produced at the same coverage.</p>
+
+<h2 id="corrections">Corrections — two claims from today, withdrawn</h2>
+<ul class="tl">
+  <li class="fix"><time>2026-11-24 · withdrawn</time>
+      <strong>"mde_pct 18.868 implies σ = 209% — a units error"</strong>
+      <p>Wrong. The code computes <code>mde = 2·sd·√(n_symbols/n)</code>; inverting with n=963 and n_symbols=485
+      gives <b>sd = 13.29%</b>, entirely ordinary for single-stock returns. The figure is internally
+      consistent. What survives is narrower: 18.868% is the <b>single-symbol</b> MDE and is 22× (√485) the
+      bucket-mean MDE of 0.857%. The difference MDEs are 2.35 / 2.78 / 2.15%, and the observed differences of
+      1.21 / 1.60 / 0.39 pp all fall below them — so UNDERDETERMINED survives on the difference MDEs, not on
+      any units error.</p></li>
+  <li class="fix"><time>2026-11-24 · withdrawn</time>
+      <strong>"only 7 of 46 purchases carry an officer/director flag — 85% is 10%-owner contamination"</strong>
+      <p>Wrong, and wrong in a way that had the story backwards. The count came from a string comparison on a
+      parser that used the <i>first</i> reporting owner's flags for every transaction in a filing. The
+      per-owner parse gives <b>48 of 52</b> purchase owner-rows with an officer or director (44 distinct
+      transactions), of which <b>31</b> are not 10% owners. Most purchases <i>are</i> by insiders; the
+      contamination concern applies to a minority, not 85%.</p></li>
+</ul>
+
+<h2 id="defects">Five database defects, each with its number</h2>
+<table>
+  <thead><tr><th>Defect</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td><b><code>paper_trades</code> is dead</b></td>
+        <td>16,165 rows, <b>all still <code>open</code></b>, <code>return_pct = 0</code>, no exit reason ever recorded</td></tr>
+    <tr><td><b><code>benchmark_series</code> empty</b></td><td>0 rows — the reason performance was never judgeable</td></tr>
+    <tr><td><b>NAV goes negative</b></td>
+        <td><code>pf54</code> ends at <b>−$56,648</b> (−156.65%), <code>pf15</code> at −$501 — no liquidation floor</td></tr>
+    <tr><td><b>Yield indices held as positions</b></td>
+        <td>47 open positions in <code>^TNX</code> and <code>^TYX</code> — quote indices, not tradable instruments</td></tr>
+    <tr><td><b>Impossible risk metrics</b></td>
+        <td><code>PF_DAILY_METRICS</code> carries <code>max_dd = −628%</code> and <code>cagr = 1000%</code> unguarded</td></tr>
+  </tbody>
+</table>
+
+<h2 id="next">What is left</h2>
+<ol>
+  <li><b>Rank persistence across the 123 portfolios.</b> Rank in the first half of the window, measure the
+  second half. Persistence means skill; mean reversion means the +7.58% was luck. Needs no new data and is
+  the single most valuable unrun test in the programme.</li>
+  <li><b>The insider P-vs-S asymmetry test</b> on the 44 distinct officer/director purchases and the 31
+  non-10%-owner subset, at 21/63/126 days with a size × momentum matched control and cluster CI.</li>
+  <li><b>Fix the five defects before any of it is quoted.</b></li>
+</ol>
+
+<footer>
+  Compiled 2026-11-24 18:52 EST / 23:52Z · commit <code>be9d3ce</code><br>
+  Sources: <code>13_EXEC_SUMMARY_DB_2026-11-24.md</code>, <code>12_INSIDER/RESULTS_form4_feasibility_2026-11-24.md</code>,
+  <code>42_HARVEST_UPGRADE_2026-11-24/tracker/up_only_breadth.md</code>,
+  <code>tracker/score_inversion_test.md</code>, <code>DEPLOYMENT_LOG.md</code> · live DB <code>ejaguiar1_stocks</code>
+</footer>
+
+</div>
+</body>
+</html>
