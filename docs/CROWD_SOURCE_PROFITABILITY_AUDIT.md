@@ -35,7 +35,20 @@ pays ~+6%, a loss costs −100%; at 80% realised wins that is ≈ −15% per tra
 | 0.9–1.0 | 25 | 0.944 | **0.800** |
 
 The high-confidence bucket is overpriced by ~14 pp. The low bucket is also overpriced, but n is
-too small to rank buckets. **Verdict: no crowd-favorite edge; negative skew, not a coin flip.**
+too small to rank buckets. **Verdict: no evidence of a positive edge — and the negative point estimate is not robust.**
+A wider run (381 markets, 45-day max age, same rule) gives:
+
+| horizon | n | mean | 95% CI | WR |
+|---|---:|---:|---|---:|
+| 3d | 104 | −4.23% | [−15.96%, +7.26%] | 75.0% |
+| 7d | 109 | **−5.46%** | [−16.58%, +5.01%] | 75.2% |
+| 14d | 117 | −0.46% | [−11.07%, +9.84%] | 78.6% |
+| 30d | 121 | −4.07% | [−13.96%, +6.31%] | 75.2% |
+
+No horizon has a CI excluding zero. The 70%+ win rate with negative means is consistent with
+negative skew, but the small-sample CI [−31.78%, −0.87%] was **selection-sensitive**: it came
+from 50 usable markets with a 30-day age cap. The defensible claim is “no positive edge
+demonstrated,” not “a proven negative edge.”
 
 Caveats: top-volume selection; markets with no T−7 price are excluded; resolution of sports
 O/U markets can be ambiguous; no fee but gas ignored; overlapping markets (same event) are
