@@ -79,6 +79,38 @@ publication, per-row round-turn cost, benchmark measured over the same window wi
 And a <b>rating design</b> that refuses to collapse to one number, because a high hit rate with small
 wins and a low hit rate with large wins are different products rather than better and worse ones.</p>
 
+
+<h2>Plain English — what the numbers mean</h2>
+<p class="note">Every term on this page, decoded. If a number cannot be explained in one sentence, it
+should not be on the page.</p>
+
+<table>
+  <tr><th>Term</th><th>What it actually means</th></tr>
+  <tr><td><b>bp</b> (basis point)</td><td>0.01 of one percent. <b>100 bp = 1%</b>. So −12.7 bp is a loss of 0.127% — on $10,000 that is <b>−$12.70</b>.</td></tr>
+  <tr><td><b>net</b> / <b>gross</b></td><td><b>Net</b> = after trading fees, what you actually keep. <b>Gross</b> = before fees, the flattering number.</td></tr>
+  <tr><td><b>long</b> / <b>short</b></td><td><b>Long</b> = you make money if the price goes <i>up</i>. <b>Short</b> = you make money if it goes <i>down</i>.</td></tr>
+  <tr><td><b>excess</b> / <b>versus benchmark</b></td><td>Your return <i>minus</i> the return of simply holding the benchmark. Losing 1% while the market loses 3% is <b>+2% excess</b> — a loss, but a better loss. This is the only honest way to compare picks, because in a rising market everything looks smart.</td></tr>
+  <tr><td><b>mark-to-market</b></td><td>Valued at today's price without selling. A snapshot, not a result.</td></tr>
+  <tr><td><b>day-zero</b></td><td>The pick was published today and a few hours have passed. There is no track record yet — only a starting point.</td></tr>
+  <tr><td><b>pending_entry</b></td><td>The market has not opened since we published, so the clock has not started. We show no number rather than invent a zero.</td></tr>
+  <tr><td><b>n</b></td><td>How many trades are in the record. A 90% win rate on 10 trades means almost nothing; on 500 it means something.</td></tr>
+  <tr><td><b>Wilson interval</b></td><td>The honest range around a win rate given how few trades there are. 97.6% on a small sample might really be 86% — or 99.6%.</td></tr>
+  <tr><td><b>expectancy</b></td><td>Average profit per trade. Positive means the method makes money over many trades.</td></tr>
+  <tr><td><b>worst-case expectancy</b></td><td>The same average, recomputed assuming your loss rate is as bad as the data still allows. If this is negative, a good-looking record may just be luck.</td></tr>
+  <tr><td><b>profit factor</b></td><td>Total winnings ÷ total losses. 2.0 means you win twice as much as you lose.</td></tr>
+  <tr><td><b>INSUFFICIENT_N</b></td><td>Too few trades to judge. Not a bad rating — a refusal to rate.</td></tr>
+</table>
+
+<h2>Worked example, in one sentence</h2>
+<div class="tldr">
+  <h3>The ENJ and AUDJPY rows</h3>
+  <p><b>AUDJPY</b> is the Australian dollar against the Japanese yen. We bet it would rise. It fell, and
+  after fees the loss was <b>0.127%</b> (−12.7 bp). <b>ENJ</b> is a crypto coin called Enjin; we bet it
+  would rise and it fell <b>1.21%</b> after fees (−121.2 bp). But over those same hours Bitcoin fell about
+  <b>3.07%</b>, so compared with simply holding Bitcoin we were <b>1.85% ahead</b> (+185.4 bp). Both were
+  losses; one was a much better loss than the market's. Both are <b>day-zero snapshots</b>, not results.</p>
+</div>
+
 <h2>What is being tracked</h2>
 <table>
   <tr><th>Source</th><th class="num">Picks</th><th>State</th><th>Basis</th></tr>
