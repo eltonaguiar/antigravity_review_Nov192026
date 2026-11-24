@@ -116,11 +116,76 @@ swap fee ×2 + priority fee ×2 + slippage ×2 + MEV — realistically **100–5
 for meme coins**; the true requirement there is far higher. Any cost table for this estate
 needs a `includes_impact: Y/N` column, and today it would read **N** for every row.
 
+## E3. The "gross needed" column was linear — and linear understates it
+
+Qwen3.6 Flash raised compounding. The instinct is right, the formula they offered answers a
+different question, and settling it **changes my headline number**.
+
+Two questions had been conflated under one column:
+
+- **Q1 — what fraction of capital does cost consume?** $1-(1-c)^N$. This is *smaller* than
+  $N \times c$, so **linear overstates** it. Crypto at 1-day: linear 90.7%, compounded 59.7%.
+- **Q2 — what gross return do I need to net a fixed hurdle?** Solve
+  $((1+g_d)(1-c))^N = 1+h$, giving $g_{ann} = [(1+h)^{1/N}/(1-c)]^N - 1$. This is
+  *larger* than $h + N c$, because cost compounds against a growing base.
+
+My published column was `hurdle + N × c` labelled as "gross needed" — i.e. a Q1-shaped
+formula used to answer a Q2 question. Recomputed (hurdle 4.32%, 1-day turnover,
+`compounded_drag.py` → `out/compounded_drag.json`):
+
+| class | rt bp | published (linear) | correct (compounded) | understated by |
+|---|---:|---:|---:|---:|
+| fund | 0.00 | 4.3% | 4.3% | — |
+| bond ETF | 0.61 | 5.9% | 5.9% | 0.1 pp |
+| equity | 4.01 | 14.4% | 15.4% | 1.0 pp |
+| ETF | 6.71 | 21.2% | 23.6% | 2.3 pp |
+| FOREX | 7.53 | 23.3% | 26.1% | 2.8 pp |
+| commodity | 20.00 | 54.7% | **72.8%** | 18.1 pp |
+| crypto | 36.00 | 95.0% | **158.9%** | 63.8 pp |
+
+**The headline was 95.0% for crypto; it is 158.9%.** The conclusion strengthens rather than
+weakens: at daily turnover, crypto does not merely need an implausible edge, it needs a
+gross return above anything this estate has ever measured. Commodity moves the same way.
+
+So Qwen's direction was right for Q2 and wrong for Q1, where they wrote that compounded drag
+"exceeds 95%" — $N c$ is an upper bound on $1-(1-c)^N$, so it cannot. Both statements are
+true once the questions are separated, which is why the column needed splitting rather than
+patching.
+
+## E4. Hurdle provenance — resolved, and not an inconsistency
+
+The cross-check asked whether 4.32% contradicts the measured SGOV CAGR of 3.89%. It does not;
+they are different quantities:
+
+- **4.32%** = `tools/capacity_model.py` → `HURDLE_TBILL_APR`, labelled **MEASURED**, consumed
+  at `PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT_SIGNALS/sim/proveit.py:44`. A T-bill APR.
+- **3.89%** = realised **SGOV CAGR** over 2021-11-15 → 2026-11-13. A 5-year average.
+
+Sensitivity checked, because every "gross needed" figure scales off it: moving the hurdle
+4.32% → 3.89% shifts the 1-day crypto requirement by only **1.1 pp** (158.9% → 157.8%) and
+equity/ETF by 0.5 pp. The compounding cost dominates, so **no verdict changes**. The hurdle
+choice only matters in the low-cost rows.
+
 ## What these corrections change
 
-- The **95% crypto / 54.7% commodity** gross-at-1d figures stand — those were computed at the
-  band midpoint and are, if anything, understated for the meme venues.
+- **The gross-at-1d figures do NOT stand.** They were linear. Corrected: crypto **158.9%**
+  (not 95.0%), commodity **72.8%** (not 54.7%), ETF 23.6%, FOREX 26.1%, equity 15.4%.
+  The "scalping is foreclosed" conclusion is stronger, not weaker.
 - The **inversion** is withdrawn.
 - The **gap-through-stop** claim is withdrawn and replaced with a measured intrabar wick-out
   rate that is larger and better evidenced than what I originally asserted.
 - The **analyst-coverage** claim is narrowed to the endpoint that was actually tested.
+- The **"10.1×"** was 9.98× — reported to one significant figure as **~10×**.
+
+## Cost stack still not measured — state it, don't estimate it
+
+Beyond impact/slippage/MEV (above), the following are absent from every bp figure here and
+belong on the "cannot measure yet" list:
+
+- **Taxes.** Short-term gains at daily turnover can exceed the transaction cost outright.
+  Jurisdiction-dependent, so unmodellable in this table — but it means every drag figure is an
+  understatement for a taxable account.
+- **Stop-level fill risk.** A stop on an illiquid name fills far from the stop price; this is a
+  cost not in the bp table.
+- **Survivorship.** Every series used here is of instruments that still exist.
+

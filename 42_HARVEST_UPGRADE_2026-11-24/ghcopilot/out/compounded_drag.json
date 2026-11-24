@@ -1,0 +1,55 @@
+{
+  "hurdle_tbill": 0.0432,
+  "hurdle_sgov": 0.0389,
+  "rows": {
+    "fund": {
+      "rt_bp": 0.0,
+      "gross_1d_linear_pct": 4.32,
+      "gross_1d_compounded_pct": 4.319999999999746,
+      "consumed_1d_linear_pct": 0.0,
+      "consumed_1d_compounded_pct": 0.0
+    },
+    "bond ETF": {
+      "rt_bp": 0.6144,
+      "gross_1d_linear_pct": 5.868288,
+      "gross_1d_compounded_pct": 5.947792990995571,
+      "consumed_1d_linear_pct": 154.82879999999997,
+      "consumed_1d_compounded_pct": 1.5364104763686215
+    },
+    "ETF": {
+      "rt_bp": 6.7122,
+      "gross_1d_linear_pct": 21.234744,
+      "gross_1d_compounded_pct": 23.55264384152711,
+      "consumed_1d_linear_pct": 1691.4743999999998,
+      "consumed_1d_compounded_pct": 15.5663555578753
+    },
+    "FOREX": {
+      "rt_bp": 7.533,
+      "gross_1d_linear_pct": 23.303160000000002,
+      "gross_1d_compounded_pct": 26.136699330562486,
+      "consumed_1d_linear_pct": 1898.3160000000003,
+      "consumed_1d_compounded_pct": 17.296075960723954
+    },
+    "equity": {
+      "rt_bp": 4.0124,
+      "gross_1d_linear_pct": 14.431248,
+      "gross_1d_compounded_pct": 15.422102914892989,
+      "consumed_1d_linear_pct": 1011.1247999999999,
+      "consumed_1d_compounded_pct": 9.61869748905595
+    },
+    "commodity": {
+      "rt_bp": 20.0,
+      "gross_1d_linear_pct": 54.72,
+      "gross_1d_compounded_pct": 72.77113009248568,
+      "consumed_1d_linear_pct": 5040.0,
+      "consumed_1d_compounded_pct": 39.619541792568526
+    },
+    "crypto": {
+      "rt_bp": 36.0,
+      "gross_1d_linear_pct": 95.03999999999999,
+      "gross_1d_compounded_pct": 158.8632649907625,
+      "consumed_1d_linear_pct": 9072.0,
+      "consumed_1d_compounded_pct": 59.700732352378004
+    }
+  }
+}
