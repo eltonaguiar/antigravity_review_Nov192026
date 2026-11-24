@@ -94,6 +94,23 @@ loses more slowly.
 Until then the record is: **none proven, several measured negative, passive funds are the only
 zero-edge positive-expectancy comparator.**
 
+## 5. Technical rule sources (no analyst coverage)
+
+Technical rules were tested separately from analyst or crowd coverage:
+
+- **Census (966/1000 cells with artifacts):** **107 KILL**, **893 BLOCKED_NO_DATA**,
+  0 claimed, **0 pass**. 34 cells lack artifacts (rsi2 15, ma_cross 15, trend_pullback 4).
+- **Strategy lab:** 23 variants, N=25 trials. The planted +3%/month control passes and the
+  noise control fails (calibration works), but **every real strategy fails**. PBO is 0.0 for
+  correlated variants and ~0.517 on noise over 12 seeds — uninformative for this menu.
+- **ETF trend rules:** Faber 10-month SMA CAGR **9.51%** vs SPY **12.09%** after the look-ahead
+  fix; dual-momentum CAGR difference CI **[−5.15%, +1.42%]**; both underperform.
+- **DOGE:** 20-day momentum n=70 **−1.257%/trade** (WR 31.4%); 5-day reversal n=142
+  **−0.724%** (WR 42.3%).
+
+None of these are analyst picks, which is the point: the technical menu is measured and
+negative too, not merely unproven.
+
 ## Provenance
 
 - Ledger verdicts: `docs/data/speculative_snapshot.json` (`ledger_verdicts`).
