@@ -1,0 +1,274 @@
+{
+  "synthetic": true,
+  "warning": "SYNTHETIC DEMO \u2014 generated data, not real analysts. Illustrates mechanics only.",
+  "config": {
+    "min_calls": 8,
+    "min_hit_rate": 0.5
+  },
+  "analysts": [
+    {
+      "id": "A02",
+      "firm": "Firm 02",
+      "n_calls": 18,
+      "hit_rate": 0.7777777777777778,
+      "mean_excess_pct": 3.4720074144696538,
+      "latest_symbol": "AMZN",
+      "latest_month": 35
+    },
+    {
+      "id": "A04",
+      "firm": "Firm 04",
+      "n_calls": 13,
+      "hit_rate": 0.7692307692307693,
+      "mean_excess_pct": 2.8361512511207234,
+      "latest_symbol": "MSFT",
+      "latest_month": 35
+    },
+    {
+      "id": "A09",
+      "firm": "Firm 09",
+      "n_calls": 16,
+      "hit_rate": 0.6875,
+      "mean_excess_pct": 3.336443127758519,
+      "latest_symbol": "JPM",
+      "latest_month": 34
+    },
+    {
+      "id": "A14",
+      "firm": "Firm 14",
+      "n_calls": 15,
+      "hit_rate": 0.6666666666666666,
+      "mean_excess_pct": 4.732150515637025,
+      "latest_symbol": "JPM",
+      "latest_month": 35
+    },
+    {
+      "id": "A13",
+      "firm": "Firm 13",
+      "n_calls": 17,
+      "hit_rate": 0.6470588235294118,
+      "mean_excess_pct": 0.46258458198608693,
+      "latest_symbol": "AAPL",
+      "latest_month": 35
+    },
+    {
+      "id": "A10",
+      "firm": "Firm 10",
+      "n_calls": 13,
+      "hit_rate": 0.6153846153846154,
+      "mean_excess_pct": 1.9441527763141504,
+      "latest_symbol": "TSLA",
+      "latest_month": 35
+    },
+    {
+      "id": "A12",
+      "firm": "Firm 12",
+      "n_calls": 18,
+      "hit_rate": 0.6111111111111112,
+      "mean_excess_pct": 1.362102438066538,
+      "latest_symbol": "GOOGL",
+      "latest_month": 35
+    },
+    {
+      "id": "A05",
+      "firm": "Firm 05",
+      "n_calls": 15,
+      "hit_rate": 0.5333333333333333,
+      "mean_excess_pct": 0.9272400854744576,
+      "latest_symbol": "XOM",
+      "latest_month": 35
+    },
+    {
+      "id": "A11",
+      "firm": "Firm 11",
+      "n_calls": 16,
+      "hit_rate": 0.5,
+      "mean_excess_pct": -0.11574627554935295,
+      "latest_symbol": "XOM",
+      "latest_month": 33
+    },
+    {
+      "id": "A06",
+      "firm": "Firm 06",
+      "n_calls": 14,
+      "hit_rate": 0.5,
+      "mean_excess_pct": 0.5012339122971445,
+      "latest_symbol": "META",
+      "latest_month": 35
+    },
+    {
+      "id": "A01",
+      "firm": "Firm 01",
+      "n_calls": 22,
+      "hit_rate": 0.45454545454545453,
+      "mean_excess_pct": -0.4434197826220394,
+      "latest_symbol": "NVDA",
+      "latest_month": 35
+    },
+    {
+      "id": "A07",
+      "firm": "Firm 07",
+      "n_calls": 18,
+      "hit_rate": 0.4444444444444444,
+      "mean_excess_pct": -0.3016904034518717,
+      "latest_symbol": "GOOGL",
+      "latest_month": 35
+    },
+    {
+      "id": "A08",
+      "firm": "Firm 08",
+      "n_calls": 9,
+      "hit_rate": 0.4444444444444444,
+      "mean_excess_pct": 2.2715895593379205,
+      "latest_symbol": "XOM",
+      "latest_month": 35
+    },
+    {
+      "id": "A03",
+      "firm": "Firm 03",
+      "n_calls": 13,
+      "hit_rate": 0.38461538461538464,
+      "mean_excess_pct": 0.44823785790920506,
+      "latest_symbol": "TSLA",
+      "latest_month": 34
+    }
+  ],
+  "portfolio_monthly": [
+    {
+      "month": 12,
+      "ret": 0.0,
+      "n": 0
+    },
+    {
+      "month": 13,
+      "ret": 0.0,
+      "n": 0
+    },
+    {
+      "month": 14,
+      "ret": 0.0,
+      "n": 0
+    },
+    {
+      "month": 15,
+      "ret": 0.0,
+      "n": 0
+    },
+    {
+      "month": 16,
+      "ret": 0.0,
+      "n": 0
+    },
+    {
+      "month": 17,
+      "ret": -0.11514473831373559,
+      "n": 1
+    },
+    {
+      "month": 18,
+      "ret": -0.06727033710385263,
+      "n": 1
+    },
+    {
+      "month": 19,
+      "ret": 0.0,
+      "n": 0
+    },
+    {
+      "month": 20,
+      "ret": 0.08365413263941865,
+      "n": 2
+    },
+    {
+      "month": 21,
+      "ret": 0.017457822709201935,
+      "n": 5
+    },
+    {
+      "month": 22,
+      "ret": 0.058116501874550336,
+      "n": 6
+    },
+    {
+      "month": 23,
+      "ret": 0.012270023841579644,
+      "n": 8
+    },
+    {
+      "month": 24,
+      "ret": 0.04352124707920677,
+      "n": 8
+    },
+    {
+      "month": 25,
+      "ret": 0.04274639503735018,
+      "n": 9
+    },
+    {
+      "month": 26,
+      "ret": 0.013781820881235623,
+      "n": 9
+    },
+    {
+      "month": 27,
+      "ret": 0.13496707625255144,
+      "n": 8
+    },
+    {
+      "month": 28,
+      "ret": 0.09659626651743493,
+      "n": 8
+    },
+    {
+      "month": 29,
+      "ret": 0.10459788119110183,
+      "n": 8
+    },
+    {
+      "month": 30,
+      "ret": 0.007237823217618546,
+      "n": 9
+    },
+    {
+      "month": 31,
+      "ret": -0.04265244916955049,
+      "n": 8
+    },
+    {
+      "month": 32,
+      "ret": 0.00030053361541005014,
+      "n": 8
+    },
+    {
+      "month": 33,
+      "ret": 0.0023785494570370685,
+      "n": 8
+    },
+    {
+      "month": 34,
+      "ret": 0.0300905541937289,
+      "n": 7
+    },
+    {
+      "month": 35,
+      "ret": 0.031670460267749695,
+      "n": 7
+    }
+  ],
+  "portfolio_metrics": {
+    "months": 24,
+    "total_return_pct": 51.881208128729824,
+    "cagr_pct": 23.2400941774753,
+    "ann_vol_pct": 18.19326832236635,
+    "sharpe": 1.2485924907442487,
+    "max_drawdown_pct": -17.466925005548838,
+    "hit_rate": 0.625
+  },
+  "real_data_status": {
+    "yahoo_buy_actions_540d": 52,
+    "firms": 37,
+    "max_calls_per_firm": 4,
+    "finnhub_upgrade_downgrade": "HTTP 403 (paid)",
+    "fmp_upgrades": "HTTP 429 (quota)"
+  }
+}
