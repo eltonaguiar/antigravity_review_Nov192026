@@ -1,0 +1,17 @@
+{
+ "generated": "2026-11-24T17:43:41.045905+00:00",
+ "seed": 20261124,
+ "n_boot": 1000,
+ "block_days": 63,
+ "horizon": 63,
+ "n_up": 4068,
+ "n_maintain": 42864,
+ "mean_up_pct": 2.1883,
+ "mean_maintain_pct": 1.1558,
+ "observed_diff_pct": 1.0324,
+ "ci95_pct": [
+  -0.0476,
+  1.9952
+ ],
+ "p_one_sided": 0.03097
+}
