@@ -118,7 +118,7 @@ both people and language models.</p>
   <label>Trend
     <select id="f-direction"><option value="">all</option></select>
   </label>
-  <label>Recency
+  <label hidden>Recency
     <select id="f-age">
       <option value="7">≤ 1 week</option>
       <option value="30">≤ 1 month</option>
@@ -135,6 +135,7 @@ both people and language models.</p>
   <button class="btn" id="export" type="button">Export CSV</button>
   <span class="count" id="count"></span>
 </div>
+<p class="method">All rows currently share one snapshot period, so the recency filter is hidden until the feed carries more than one month. The period is shown once above the table, not repeated on every row.</p>
 
 <div class="presets">
   <span class="label">Quick views:</span>
@@ -198,6 +199,7 @@ both people and language models.</p>
 </details>
 
 <div class="scroll">
+<p class="sub" id="snapshot"></p>
 <table id="tbl">
   <thead>
     <tr>
@@ -205,17 +207,15 @@ both people and language models.</p>
       <th data-k="name" data-label="Name">Name</th>
       <th data-k="asset_class" data-label="Class">Class</th>
       <th data-k="sector" data-label="Sector">Sector</th>
-      <th data-k="period" data-label="Period" title="Month the analyst snapshot refers to. Periods are dated the 1st.">Period</th>
       <th data-k="consensus" data-label="Consensus" title="Weighted mean of the analyst distribution, bucketed. Derived, not a separate opinion — see the legend.">Consensus</th>
       <th data-k="buy_side_pct" data-label="Buy-side %" title="(Strong Buy + Buy) / total analysts, as a percentage.">Buy-side %</th>
       <th data-k="analysts" data-label="Analysts" title="Total covering analysts = the sum of the five rating buckets.">Analysts</th>
       <th data-k="detail" title="Strong Buy / Buy / Hold / Sell / Strong Sell — counts of covering analysts in each bucket." data-label="SB·B·H·S·SS<small>strong buy · buy · hold · sell · strong sell</small>">SB·B·H·S·SS<small>strong buy · buy · hold · sell · strong sell</small></th>
       <th data-k="mom_change_pp" data-label="MoM pp" title="Change in Buy-side % versus the prior month, in percentage points.">MoM pp</th>
       <th data-k="direction" data-label="Trend" title="IMPROVING at >= +2.0 pp, DETERIORATING at <= -2.0 pp, else STABLE. Not an upgrade or downgrade event.">Trend</th>
-      <th data-k="age_days" data-label="Period age" title="Days since the snapshot month began (e.g. 23 = the 1st of this month). This is NOT a data-freshness timestamp.">Period age</th>
     </tr>
   </thead>
-  <tbody id="rows"><tr><td colspan="12" class="na">loading…</td></tr></tbody>
+  <tbody id="rows"><tr><td colspan="10" class="na">loading…</td></tr></tbody>
 </table>
 </div>
 
@@ -347,7 +347,6 @@ function render() {
       <td>${s.name}</td>
       <td>${s.asset_class}</td>
       <td>${fmt(s.sector)}</td>
-      <td>${fmt(s.period)}</td>
       <td><span class="badge ${s.consensus}">${fmt(s.consensus)}</span></td>
       <td>${s.buy_side_pct === null ? '—' : s.buy_side_pct.toFixed(1)}</td>
       <td>${s.analysts}${s.analysts > 0 && s.analysts < 15 ? '<span class="thin" title="Thin coverage: fewer than 15 analysts">thin</span>' : ''}</td>
@@ -356,8 +355,7 @@ function render() {
       <td>${s.direction === 'IMPROVING' ? '<span class="trend up">▲ Improving</span>'
             : s.direction === 'DETERIORATING' ? '<span class="trend down">▼ Deteriorating</span>'
             : '<span class="trend flat">▬ Stable</span>'}</td>
-      <td>${fmt(s.age_days)}</td>
-    </tr>`).join('') || `<tr><td colspan="12" class="na" style="white-space:normal">${emptyMessage()}</td></tr>`;
+    </tr>`).join('') || `<tr><td colspan="10" class="na" style="white-space:normal">${emptyMessage()}</td></tr>`;
 
   const hidden = STATE.data.signals.length - rows.length;
   el('count').textContent =
@@ -403,6 +401,8 @@ function boot() {
       `change in the analyst distribution, labelled as such.`;
   }
 
+  const period = (d.signals.find((x) => x.period) || {}).period || 'n/a';
+  el('snapshot').textContent = `Snapshot period: ${period} (all rows) · generated ${d.generated_at}.`;
   // filter options — classes come from MEASURED COVERAGE, not from signals.
   // Building them from signals hid every zero-coverage class (ETF/bond/fund/crypto),
   // which are exactly the gaps this page exists to make visible.
@@ -472,7 +472,7 @@ fetch('data/harvest_signals.json', { cache: 'no-store' })
   .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
   .then((d) => { STATE.data = d; boot(); })
   .catch((e) => {
-    el('rows').innerHTML = `<tr><td colspan="12" class="err">could not load data/harvest_signals.json — ${e.message}</td></tr>`;
+    el('rows').innerHTML = `<tr><td colspan="10" class="err">could not load data/harvest_signals.json — ${e.message}</td></tr>`;
     el('banner').hidden = false;
     el('banner').className = 'banner err';
     el('banner').textContent = 'Data feed unavailable. This page shows nothing rather than stale or invented figures.';

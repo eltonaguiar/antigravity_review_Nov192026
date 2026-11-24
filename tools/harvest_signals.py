@@ -68,16 +68,19 @@ def consensus_label(strong_buy: int, buy: int, hold: int, sell: int, strong_sell
     if total == 0:
         return None, None, 0
     score = (2 * strong_buy + buy - sell - 2 * strong_sell) / total
-    if score >= 1.0:
+    buy_side = (strong_buy + buy) / total
+    # A weighted score alone mislabels names like INTC (score 0.35 but only 29%
+    # buy-side, 69% hold). Require the share of buy ratings to agree with the label.
+    if score >= 1.0 and buy_side >= 0.75:
         label = "STRONG_BUY"
-    elif score >= 0.3:
+    elif score >= 0.3 and buy_side >= 0.50:
         label = "BUY"
-    elif score > -0.3:
-        label = "HOLD"
-    elif score > -1.0:
+    elif score <= -1.0 and buy_side <= 0.15:
+        label = "STRONG_SELL"
+    elif score <= -0.3 and buy_side <= 0.30:
         label = "SELL"
     else:
-        label = "STRONG_SELL"
+        label = "HOLD"
     return label, round(score, 3), total
 
 
