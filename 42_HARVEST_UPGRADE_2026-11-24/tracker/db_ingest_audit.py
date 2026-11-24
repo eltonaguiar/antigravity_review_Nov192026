@@ -73,8 +73,15 @@ def main():
 
         # The feed distinguishes OPEN from expired. Forcing every row to 'open' would have
         # counted 3,618 expired picks as live positions - a 7.5x overstatement of the book.
+        # Kilo measured the exact split: 562 OPEN, 3,618 EXPIRED, 19 SL_HIT, 11 TP_HIT.
+        # Terminal hits are resolved, not expired-and-unknown, and must not be counted as open.
         feed_status = (p.get("status") or "").upper()
-        status = "open" if feed_status == "OPEN" else "expired"
+        if feed_status == "OPEN":
+            status = "open"
+        elif feed_status in ("SL_HIT", "TP_HIT"):
+            status = "closed"
+        else:
+            status = "expired"
         note = (f"timeframe={tf} feed_status={feed_status or '?'} trust={p.get('trust_label')} "
                 f"score={p.get('trust_score')} forward_validated={p.get('forward_validated')} "
                 f"display={p.get('id') in display}")

@@ -227,3 +227,48 @@ Every script is idempotent (`IF NOT EXISTS`, `INSERT IGNORE`, `ON DUPLICATE KEY 
    carry a mechanism.
 5. **Top-trader reverse engineering** — only disclosed positions exist (13F quarterly, Form 4, COT
    aggregate, on-chain). Four snapshots a year is hypothesis generation, not an edge.
+
+---
+
+# Peer review round 1 — four external models (2026-11-24)
+
+Schema reviewed by ChatGPT-6 Luna, Claude, Qwen3.6 Flash and GLM 5.3 Flash on the same prompt,
+then by Kilo, Zoo and Copilot. All four external models independently converged on the same
+defect, which is why it is recorded here rather than buried in a commit message.
+
+## The defect they found: mark-row weighting
+
+Hit rates computed over `picktrack_marks` are weighted by how many days a pick was held, not by
+one vote per pick. ChatGPT's worked example: one pick with ten marks at +100 bps and another with
+one mark at −100 bps reports **+81.8 bps** from `AVG(net_bps)`, while the per-pick average is
+**0 bps**. Claude's variant: a pick held 20 days contributes 16 rows (day 5 through 20) and is
+weighted 16× against a 5-day pick.
+
+Qwen and GLM both also flagged derived columns computed at write time, and Qwen refused to review
+prose at all — "Paste the altered DDL. Current input contains nothing to audit" — which is why
+`db_schema_v7_review_fixes.py` exists as executable evidence rather than a description.
+
+## Fixes applied (live, MySQL 8.4.7)
+
+| Criticism | Fix | Enforced by |
+|---|---|---|
+| Mark-row weighting | `v_pick_last_mark_date` → `v_pick_latest_mark` → `v_pick_level` → `v_pick_stats_by_source` | one row per pick by construction |
+| `horizon` string not comparable | `horizon_min_days`, `horizon_max_days` columns + `horizon_ref` (6 rows) | bounds stored with the pick |
+| No registry of rejected candidates | `screened_candidate` (passed, reject_reason, rule_hash, source_run_id) | discarded trials persisted, not counted |
+| Write-time derived columns drift | `v_mark_recomputed` exposing `drift_bps` | drift becomes measurable, not invisible |
+
+Measured at apply time: 494 mark rows → 494 picks (each pick currently holds exactly one mark, so
+the weighting difference is **0 today**; the view prevents it once daily marks accumulate). Rows
+with write-time drift: **0**.
+
+## Status mapping corrected (Kilo, measured on the live feed)
+
+`active_raw` is **4,210**, not 4,210 open positions: **562 OPEN**, **3,618 EXPIRED**, **19 SL_HIT**,
+**11 TP_HIT**. Forcing every row to `open` overstated the live book **7.5×**. The ingest now maps
+OPEN→`open`, SL_HIT/TP_HIT→`closed`, everything else→`expired`.
+
+## Horizon ceiling (Kilo, measured)
+
+Exactly four monthly consensus periods exist (2026-08-01 … 11-01), giving max forward days
+**115 / 84 / 54 / 23**. A 6- or 12-month window is impossible today; **63d is the structural
+ceiling**, available for Aug and Sep only. Any longer claim would be invented.
