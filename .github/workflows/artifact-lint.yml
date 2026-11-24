@@ -1,0 +1,79 @@
+name: artifact-lint
+
+# Guards the defect class documented in PLAN/DEFECT_CLASSES.md: numbers that are
+# arithmetically right but labelled wrong. Every gate here is cheap, read-only,
+# and needs no secrets.
+#
+# Deliberately NOT triggered on every push to every path: the linter only has an
+# opinion about PROVEIT artifacts and the prose that quotes them.
+
+on:
+  pull_request:
+    paths:
+      - 'PROVEIT/**'
+      - 'docs/PROVEIT/**'
+      - 'PLAN/tools/artifact_lint.py'
+      - 'PLAN/lint_baseline.json'
+      - '.github/workflows/artifact-lint.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: artifact-lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Lint PROVEIT artifacts and the README claims
+        run: |
+          set -euo pipefail
+          P=PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT
+          python3 PLAN/tools/artifact_lint.py \
+            "$P/sim_2026-11-24T0350Z.json" \
+            "$P/paramscan_2026-11-24T0350Z.json" \
+            "$P/provenance_2026-11-24T0350Z.json" \
+            --claims "$P/README.md" \
+            --baseline PLAN/lint_baseline.json
+
+      - name: Assert the mirror is byte-identical to the source
+        run: |
+          set -euo pipefail
+          P=PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT
+          D=docs/PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT
+          rc=0
+          for f in README.md sim_2026-11-24T0350Z.json paramscan_2026-11-24T0350Z.json provenance_2026-11-24T0350Z.json; do
+            if [ ! -f "$D/$f" ]; then
+              echo "MISSING in docs mirror: $f"; rc=1; continue
+            fi
+            if cmp -s "$P/$f" "$D/$f"; then
+              echo "ok   $f"
+            else
+              echo "DRIFT $f - the Pages-served copy no longer matches the source"; rc=1
+            fi
+          done
+          # A drifted mirror is how the published page silently diverges from the
+          # reviewed numbers. Fail rather than allow it.
+          exit $rc
+
+      - name: Assert every quoted figure traces to an artifact
+        run: |
+          set -euo pipefail
+          P=PROVEIT/PROVEIT_24-11-2026KILOCODE_AGENT
+          # Numeric membership, not grep. JSON stores 226.8 and 1.5, so grepping
+          # for "226.80" reported a sourced number as unsourced - a gate that
+          # fails on formatting gets deleted within a week.
+          python3 PLAN/tools/assert_quoted_numbers.py \
+            "$P/sim_2026-11-24T0350Z.json" \
+            "$P/paramscan_2026-11-24T0350Z.json" \
+            "$P/provenance_2026-11-24T0350Z.json" \
+            -- 9.18 8.56 8.70 8.55 44.61 90.23 226.80 374.84 1.31 1.42 1.50 72.3 69.0 207.12 92.83
