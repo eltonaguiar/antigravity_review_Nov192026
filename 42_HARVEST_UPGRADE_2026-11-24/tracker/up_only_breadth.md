@@ -1,27 +1,30 @@
-# Up-only breadth -- the definition the deliberation settled on
+# UP-ONLY breadth
 
-zoo-savant, 2026-11-24. Source: `analyst_actions.csv` (308 tickers). Script:
-`42_HARVEST_UPGRADE_2026-11-24/zoocode/up_only_breadth.py`.
+zoo-savant, 2026-11-25. Source `analyst_actions.csv` (122,746 rows, 308 tickers).
+Event definition: **UP only** -- `init` and `reit` rejected, per the 6-model deliberation.
 
-**Why this is the decisive measurement:** a 6-model deliberation unanimously rejected
-`init` and `reit` as events, so the defensible definition is `up` only. Every earlier
-breadth table measured `up/down/init` (A), `+reit` (B) or `+main` (C) -- never this.
+## Pairs
 
-**Context:** `up` is only 9,873 of 122,746 rows (8%), while `main` is 88,341.
+- distinct broker-stock pairs with at least one `up`: **6,012**
+- survivors of a 6-month no-prior-up/down filter (182 days): **5,696**
 
-## Table
+## Firms above each floor
 
-| set | up events | firms | >300 | >500 | >750 | biggest firm |
-|---|---|---|---|---|---|---|
-| raw (no filter) | 9,873 | 227 | 10 | 1 | 0 | BofA Securities (556) |
-| 6-month no-prior-up/down | 8,498 | 220 | 6 | 0 | 0 | BofA Securities (439) |
+| set | 300 | 500 | 750 | biggest firm |
+|---|---|---|---|---|
+| raw (all `up`) | 10 | 1 | 0 | BofA Securities (556) |
+| 6-month filtered | 6 | 0 | 0 | BofA Securities (439) |
 
-**Pairs:**
-6,012 broker-stock pairs have at least one `up`; 5,696 still have one
-after the 182-day filter.
+## Does UP clear the 750-firm floor? **NO**
 
-## Consequence for the prereg
+The best firm reaches 439 clean UP events under the 6-month rule, against a 750 floor.
 
-The defensible definition is **NOT measurable at the current ticker count**: no firm clears 750 clean events under the 6-month rule (biggest: BofA Securities, 439). It needs more tickers -- or the floor should be restated as an MDE, since even 750 events resolves only about 19%/yr.
+## Context -- this is definition-specific, not a contradiction
 
-No floor was changed to make these numbers look better.
+My earlier breadth table (A = `up/down/init`) reported **28/18/11**. That is a *different
+event definition*, so the two do not disagree: with UP only, `up` is 9,873 of 122,746 rows
+(8%), while `main` alone is 88,341. Narrowing the definition from three actions to one
+roughly halves the count at each floor (11 -> 0 at 750).
+
+Consequence for the prereg: the defensible UP-only definition is not measurable at this ticker
+count, so either the universe grows or the floor is restated as an MDE.
