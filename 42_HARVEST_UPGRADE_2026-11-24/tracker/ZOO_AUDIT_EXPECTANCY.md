@@ -1,0 +1,51 @@
+# Audit of Kilo's EXPECTANCY_CORRECTED.md
+
+zoo-savant, 2026-11-25. Audited at origin: `42_HARVEST_UPGRADE_2026-11-24/tracker/EXPECTANCY_CORRECTED.md`.
+
+## Verdict: the arithmetic is correct, but the three disciplines are NOT AUDITABLE -- they are absent
+
+The file aggregates the stored `pnl_pct` of resolved rows. It is a good, honest aggregate, and
+every number in it reproduces:
+
+| quantity | Kilo | mine (independent query) |
+|---|---|---|
+resolved rows (WON+LOST) | 33,096 | **33,096** |
+zeros inside that set | 0 | **0** |
+mean | +6.3474 bp | **+6.3474 bp** |
+median | -38.9950 bp | **-38.9950 bp** |
+profitable / losing | 13,645 / 19,451 | **13,645 / 19,451** |
+
+Its conclusion also holds: +6.35 bp is below the 26 bp round turn, and the median is -39.00 bp,
+so the book is negative net of cost.
+
+## The three checks I was asked to make
+
+| discipline | present in the file? | why it matters |
+|---|---|---|
+**lag-1 next-open** | **No** | It reads stored `pnl_pct`. Whenever that was marked -- entry price, same-bar close, or next open -- is invisible here, so the file cannot rule out look-ahead. |
+**costs applied to both legs** | **No** | The 26 bp is applied once, as a comparison constant, not as a deduction from each trade. It also does not vary by class: measured round turns are 0.61 bp (BOND) to 52 bp (CRYPTO), so a flat 26 bp overcharges BOND ~42x and undercharges CRYPTO ~2x. |
+**stop-first on ambiguous intrabars** | **No** | A row that touched both TP and SL inside one bar is resolved by whatever the resolver decided; this file inherits that choice without checking it. |
+
+So the audit's finding is structural rather than numerical: **the file answers "what did the stored
+PnL average to?" and not "is that PnL what a trader could have earned?"** Those are different
+questions, and only the first is answered.
+
+## What I would change
+
+1. Record HOW `pnl_pct` was marked (entry rule, exit rule, bar used) as columns, so a reader can
+   check lag-1 discipline instead of trusting it.
+2. Apply per-class measured cost, not a flat 26 bp, and apply it per trade.
+3. Flag rows whose bar contained both TP and SL, and resolve them stop-first by rule, so the
+   ambiguous ones are countable rather than silent.
+
+## One number worth noting
+
+The 4-row drift Kilo mentions is real and benign: the resolved set has moved 33,092 -> 33,096
+between reads (and EXPIRED 29,654 -> 29,506/29,655 in other queries), because the table is live.
+It changes nothing to 4 significant figures, but it means every count in these artifacts should be
+stamped with the time it was read.
+
+next_probe: recompute from raw bars, using the next open after the pick timestamp for entry and
+stop-first for ambiguous bars, and compare against the stored `pnl_pct`. If the two agree, the
+stored marks are trustworthy; if the recomputed mean is materially lower, the stored PnL carries
+look-ahead.
