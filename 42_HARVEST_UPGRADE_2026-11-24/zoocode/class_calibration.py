@@ -17,9 +17,9 @@ HOW EACH GATE FROM IMPROVEMENT_PROGRAM.md IS MET
          deep   (>= 30)   -> ETF/index 6.71 bp
      These are MEASURED figures (COST_OF_RECORD), not invented, but the mapping
      from coverage to cost is an ASSUMPTION and is labelled as one.
-  2. Characteristic-matched benchmark: SPY, matched on the one characteristic
-     available (all rows are US-listed equities, so the market factor is the
-     match). A true size/value match is not possible without fundamentals.
+  2. Benchmark: SPY is a single-index market benchmark; characteristic-match
+     gate 2 is UNMET (no beta/size/sector match). A true size/value match is not
+     possible without fundamentals.
   3. MDE published next to every null.
   4. `insufficient` is a distinct outcome from `no effect`.
   5. No gate is lowered.
@@ -285,7 +285,14 @@ def main() -> int:
                                          round(100 * hi, 4) if hi is not None else None],
                             "ci_excludes_zero": bool(lo is not None and (lo > 0 or hi < 0))}
 
-        mde = 2 * (statistics.stdev(nets) / math.sqrt(n / max(res["n_symbols"], 1))) if n > 2 else None
+        # MDE uses the PER-SYMBOL-MEAN SD, not the row-level SD (see
+        # tracker/class_calibration.md: 5.751 pp/month per-symbol mean -> 8.78 pp/yr).
+        by_sym_net = {}
+        for r in rows:
+            by_sym_net.setdefault(r["symbol"], []).append(r["net"])
+        sym_means = [statistics.mean(v) for v in by_sym_net.values()]
+        sd_symbol_means = statistics.stdev(sym_means) if len(sym_means) > 1 else None
+        mde = 2.802 * sd_symbol_means / math.sqrt(max(res["n_symbols"], 1)) if sd_symbol_means is not None else None
         mono = all(buckets[a]["mean_net_pct"] >= buckets[b]["mean_net_pct"]
                    for a, b in zip(("STRONG_SELL", "SELL", "HOLD", "BUY"), ("SELL", "HOLD", "BUY", "STRONG_BUY"))
                    if a in buckets and b in buckets)
@@ -359,7 +366,7 @@ def main() -> int:
         "generated": datetime.now(timezone.utc).isoformat(),
         "seed": SEED, "n_perm": N_PERM, "n_boot": N_BOOT, "class_floor": CLASS_FLOOR,
         "entry_rule": "publication lag (label known only from the 1st of the next month)",
-        "benchmark": "SPY (characteristic-matched on the only available characteristic: all rows are US equities)",
+        "benchmark": "SPY (single-index market benchmark; characteristic-match gate 2 UNMET - no beta/size/sector match)",
         "cost_model": {b: f"{c} bp ({why})" for _, c, b, why in COST_BY_COVERAGE},
         "cost_model_is_assumption": "coverage -> cost mapping is an ASSUMPTION; the bp figures are measured",
         "cost_band_rows": cost_mix,
