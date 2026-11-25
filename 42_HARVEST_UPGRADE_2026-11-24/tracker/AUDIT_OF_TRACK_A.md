@@ -2,30 +2,41 @@
 
 zoo-savant (Track B), 2026-11-24. Cross-check owed under the IMPROVEMENT_PROGRAM routing (B audits A).
 
-## Status: artifact ABSENT -- five counts not assessable
+## Status: artifact PRESENT at a92a51b -- 222 lines, five counts assessed
 
-`firm_skill_weights.csv` does not exist. Checked by a filesystem-wide search of `/home`
-(`find /home -name "firm_skill_weights.csv"`), which returned nothing, and by listing
-`42_HARVEST_UPGRADE_2026-11-24/tracker/`, which does not contain it.
+`firm_skill_weights.csv` exists on `origin/main` at **a92a51b**. Exact-path evidence:
+`git cat-file -e origin/main:42_HARVEST_UPGRADE_2026-11-24/tracker/firm_skill_weights.csv`
+returns success, and `git show` returns **222 lines** (header + 219 firm data rows + 2 comment lines).
+The earlier `/home` filesystem search was the wrong check and is retracted.
 
-This is reported the way the program requires: "clean" is a finding, silence is not -- and
-neither is "cannot check" the same as "checked and fine". Track A has not published its
-artifact yet, so there is nothing to audit. **I am not treating absence as a pass.**
+Head:
+`firm_norm,n_clean_events,mean_net_excess_bps,placebo_p95_bps,verdict,weight`
+
+Key rows:
+- `Morgan Stanley,473,178.20,109.6,beats_placebo,1.0`
+- `BofA Securities,551,-40.61,99.6,indistinguishable,0`
+- `Barclays,297,,,underpowered,0` (n below the 300 clean-event floor)
+
+There are **9** rows with both effect columns filled, and **210** below-floor rows blank/underpowered
+at a92a51b. This is a **discrepancy with the dispatch**, which stated 12 effect rows and 209
+underpowered; the exact-path file wins. The audit below uses the file content, not the dispatch count.
 
 ## The five counts
 
 | # | Required count | Result | Why |
 |---|---|---|---|
-| 1 | rows present vs rows claimed | **not assessable** | no file, so no rows to count and no claim to compare them with |
-| 2 | rows failing the schema or with blank required fields | **not assessable** | no rows |
-| 3 | figures in markdown that disagree with the JSON/CSV they cite | **not assessable** | no markdown or CSV from Track A |
-| 4 | buckets with n below their own floor but still given a verdict | **not assessable** | no buckets |
-| 5 | claims of significance without a CI or placebo reference | **not assessable** | no claims |
+| 1 | rows present vs rows claimed | **222 lines; 219 data; 9 effect rows; 210 underpowered** | exact-path `git show`; dispatch's 12/209/221 does not match a92a51b |
+| 2 | rows failing schema or blank required fields | **0 schema failures; effect blanks only on 210 below-floor rows** | header has all 6 columns; 9 above-floor rows have mean + p95; Barclays 297 is blank and marked underpowered |
+| 3 | markdown figures disagreeing with cited CSV | **0 of 3 spot-checks** | MS 178.20/109.6, BofA −40.61/99.6, Barclays blank/underpowered all match |
+| 4 | buckets below floor given a verdict | **210 below-floor rows are `underpowered`; 0 wrongly given an effect verdict** | Barclays 297 < 300 and has no effect |
+| 5 | significance without CI/placebo | **0** | only Morgan Stanley claims `beats_placebo`, and its own p95 109.6 is present |
 
 ## What I checked, so that this is not just an assertion
 
-- `find /home -name "firm_skill_weights.csv"` -> no output.
-- `ls 42_HARVEST_UPGRADE_2026-11-24/tracker/` -> the file is not listed.
+- `git cat-file -e origin/main:42_HARVEST_UPGRADE_2026-11-24/tracker/firm_skill_weights.csv` -> success.
+- `git show origin/main:42_HARVEST_UPGRADE_2026-11-24/tracker/firm_skill_weights.csv` -> 222 lines.
+- `git rev-parse origin/main` -> a92a51b.
+- Spot-checked the three key rows above against the file; no values were inferred from memory.
 
 ## What Track A must publish for this audit to be possible
 
@@ -41,6 +52,9 @@ Two things I would check first once it exists:
    since those are different statements (one says the test lacked power, the other says it found
    nothing).
 
+Both hold at a92a51b: Morgan Stanley is the only non-zero weight and clears its own p95; Barclays
+(297) and the other below-floor rows are `underpowered`.
+
 ## Note in the other direction
 
 Track A will audit Track C, not me, so I have no audit of my own artifacts to expect from this
@@ -49,5 +63,12 @@ routing. The two numbers of mine most worth a second pair of eyes are `rho = -0.
 means the per-symbol aggregation was *less* variable than the pooled marks -- worth someone
 checking that I did not aggregate in a way that hides within-symbol disagreement.
 
-next_probe: re-run the five counts as soon as `firm_skill_weights.csv` appears on main; the
-single cheapest check is whether any firm carries a non-zero weight without a placebo p95.
+## Append: exact evidence tested
+
+- SHA: **a92a51b**
+- `git cat-file -e origin/main:42_HARVEST_UPGRADE_2026-11-24/tracker/firm_skill_weights.csv` -> success
+- `git show origin/main:42_HARVEST_UPGRADE_2026-11-24/tracker/firm_skill_weights.csv` -> 222 lines
+- `git rev-parse origin/main` -> a92a51b
+
+next_probe: reconcile the dispatch's 12/209 count against the exact-path 9/210; if another branch
+has 12 effect rows, name it and re-run the five counts against that branch -- not a `/home` search.
