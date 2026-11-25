@@ -28,3 +28,16 @@ No screen clicks, no relaunch. Never click Run/Deny/Approve.
   4. CONTEST/tools/cpcv.py on PROVEIT/PROVEIT_24-11-2026_KILOCODE_AGENT/data/market_prices.csv (SPY_adj monthly, groups=12 embargo=1 horizon=1) -> n_paths=12, n_months=60; OOS Sharpe annualised mean=1.7565 std=2.0668 min=-1.2520 max=5.2415 median=1.3116 p5=-1.1525 p95=4.1030. Byte-identical to committed cpcv_spy_monthly_run.json.
   5. POWER_ANALYSIS.md carries actual-sample MDE 5.08%/yr (2*0.1477/sqrt(33.8), SPY 406 monthly/33.8y); POSITIVE_CONTROL cross-check: injected 3%/yr -> t=1.18 NOT significant, 10%/yr -> t=3.94 significant. PASS.
 - git: ff 6087282 -> d795f53 (origin had advanced by d795f53 "MDE CORRECTION ... 8.78 pp/yr"). HEAD before this tick record: d795f5316bf4cba21d191cdfbc0f92fcee1778ab.
+
+## 2026-11-25 07:18 EST
+- CDP OK on 9333 (Chrome/150.0.7871.250). No relaunch, no screen clicks.
+- State at tick: zoo idle (thinking=False, empty composer, no Run/Deny); kilo running (thinking=True); copilot running (4 background commands).
+- zoo: idle -> one bounded send `python CONTEST/tools/dsr.py CONTEST/trial_ledger.db` (item-3 step). exit 2 UNVERIFIED (composer_cleared=true, in_transcript=false; no Cancel, no gate). Not resent (no-double-send on false negative). Zoo transcript showed its own automation pushing cc9340c..33dfefd to origin; stayed idle.
+- kilo, copilot: left untouched (running).
+- Queue 1-6 outputs verified present this tick:
+  1. docs/experiment_schema.sql -> 12 tables (live :memory: executescript).
+  2. CONTEST/tools/trial_log.py present; dummy variants logged (trials table has dummy-A..D / variant rows); append-only, no delete path.
+  3. CONTEST/tools/dsr.py present; DSR REFUSED by guard (MIN_TRIALS_FOR_DSR=30 + fixture run_ids), no number emitted; earlier 0.983 withdrawn, not restated. Formula source: Bailey & Lopez de Prado, "The Deflated Sharpe Ratio", J. Investment Management 2014; DSR=Phi((SR_best-SR_bench)/sd_trials).
+  4. CONTEST/tools/cpcv.py present; cpcv_spy_monthly_run.json -> n_paths=12, n_months=60, OOS Sharpe mean=1.7565 std=2.0668 min=-1.2520 max=5.2415 median=1.3116 p5=-1.1525 p95=4.1030.
+  5. POWER_ANALYSIS.md carries actual-sample MDE 5.08%/yr (2*0.1477/sqrt(33.8)); POSITIVE_CONTROL cross-check: injected 3%/yr -> t=1.18 invisible, 10%/yr -> t=3.94 significant.
+- git: local was behind origin/main by 5 (cd66b90 -> 0db5d96); ff-only to 0db5d96, then this record committed.
