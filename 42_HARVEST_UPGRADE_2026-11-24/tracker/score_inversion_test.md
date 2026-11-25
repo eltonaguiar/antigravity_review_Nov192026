@@ -102,20 +102,15 @@ difference tests above do not either. No upgrade to REAL.
 
 ## INPUT PROVENANCE AND SUPERSESSION
 
-Exact-path checks against `origin/main` at **e491933**:
+Exact-path checks against `origin/main`:
 
-| input | exact-path command result | status |
+| input | exact-path evidence | status |
 |---|---|---|
 | `ZOOCODE/harvest/2026-11-24T1942Z_earnings499.json` | `git cat-file -e origin/main:ZOOCODE/harvest/2026-11-24T1942Z_earnings499.json` → fatal: path does not exist | **MISSING** |
-| `42_HARVEST_UPGRADE_2026-11-24/tracker/analyst_actions.csv` | `git cat-file -e origin/main:42_HARVEST_UPGRADE_2026-11-24/tracker/analyst_actions.csv` → fatal: exists on disk, not in origin/main | **MISSING** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/analyst_actions.csv` | `git cat-file -e` → present; `git cat-file -s` = **9,454,358 bytes**; **122,747 lines** (122,746 data rows); commit **fcee716** | **PRESENT** |
 
-The **UNDERDETERMINED** verdict above is **not withdrawn and not upgraded**. `ITEM_B_SETTLE_PROBE.md`
-claims to supersede this verdict with 967 Strong Buy events, but its own input
-(`tracker/analyst_actions.csv`) is also absent from origin; `settle_inversion_v3.py` line 29 hardcodes
-the local absolute path. Neither file is independently checkable from the repo as published.
-
-One command that would make this checkable:
-
-```bash
-git add 42_HARVEST_UPGRADE_2026-11-24/tracker/analyst_actions.csv && git commit -m "data(tracker): commit analyst_actions.csv for provenance"
-```
+The **UNDERDETERMINED** verdict above is **not withdrawn and not upgraded**. The 967 Strong Buy
+events are now **independently checkable from the repo**: `analyst_actions.csv` has 967 rows whose
+`to_grade` is Strong Buy, spanning 129 symbols and 9 firms. `ITEM_B_SETTLE_PROBE.md`'s supersession
+claim therefore has a published input; the ZOOCODE harvest file remains **MISSING**. The pairwise
+p-values 0.6416 / 0.7284 / 0.6588 are unchanged.
