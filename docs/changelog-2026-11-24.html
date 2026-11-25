@@ -594,6 +594,24 @@ cost, no gate result matters.</p>
   <li><b>Fix the five defects before any of it is quoted.</b></li>
 </ol>
 
+<h2 id="corrections-25">Corrections from 25 November</h2>
+<p class="lede">Five tracker artifacts published today. Each entry states the corrected number and what it replaced; none upgrades a verdict or claims an edge.</p>
+
+<h3>Class coverage — live resolvers only</h3>
+<p>Replaced the all-rows denominator: of <b>63,797</b> raw rows, <b>37,115</b> are backfill and are excluded, leaving <b>26,682</b> live-resolver rows and <b>26,161</b> priced rows. CRYPTO is <b>25,488</b> of those 26,682 (<b>95.5%</b>), so no cross-class comparison is powered.</p>
+
+<h3>Corrected book expectancy</h3>
+<p>Replaced the 33,092-row headline with the priced-only set of <b>33,096</b> WON/LOST rows: mean <b>+6.3474 bp</b> (was +6.34 bp) and median <b>−38.9950 bp</b> (was −38.98 bp). The four-row drift changes no conclusion: the book remains below the <b>26 bp</b> round turn.</p>
+
+<h3>Coverage critique</h3>
+<p>Replaced the claim that reporting coverage fixes comparability with the measured confound: coverage spans <b>0.010 to 0.750</b> — a <b>75×</b> ratio — and is almost perfectly aligned with class. It also corrected the CRYPTO backfill figure to <b>77.8%</b>, not 33.3%, and records <b>37,115 of 63,792</b> rows (<b>58.2%</b>) as backfilled. Disclosure is necessary, not sufficient.</p>
+
+<h3>Dilution sensitivity</h3>
+<p>Replaced any use of a coverage-scaled mean as a corrected estimate with an explicit MAR-dependent bound: FOREX moves from +0.0563% to <b>+0.3066%</b> and COMMODITY from −0.1032% to <b>−0.6583%</b>. Missingness is not random — unjoined rows average <b>−0.0828</b> versus <b>−0.0435</b> for joined rows — so the bound must not be ranked or quoted as a mean.</p>
+
+<h3>Two-table reconciliation</h3>
+<p>Replaced unverified COALESCE of the two PnL columns with the measurement: <b>1,263 of 7,945</b> overlapping rows disagree (<b>15.9%</b>), largest gap <b>187.18 pp</b>, and the means have opposite signs (<b>−0.0929%</b> at_pick vs <b>+0.0172%</b> trading). Price arithmetic matches at_pick <b>5,833/6,049 (96.4%)</b> versus trading <b>4,626/6,049 (76.5%)</b>; prices come from trading_picks, but reported PnL must be recomputed.</p>
+
 <footer>
   Compiled 2026-11-24 18:52 EST / 23:52Z · commit <code>be9d3ce</code><br>
   Sources: <code>13_EXEC_SUMMARY_DB_2026-11-24.md</code>, <code>12_INSIDER/RESULTS_form4_feasibility_2026-11-24.md</code>,
