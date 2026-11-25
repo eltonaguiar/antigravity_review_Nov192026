@@ -22,12 +22,13 @@ coverage to a cost band is an assumption**, since coverage is only a proxy for l
 
 | class | n | symbols | rho | perm p | sign | design effect | MDE | verdict |
 |---|---|---|---|---|---|---|---|---|
-| EQUITY | 963 | 485 | -0.0467 | 0.9995 | inverted | 0.38 | 18.868% | inverted |
+| EQUITY | 963 | 485 | -0.0467 | 0.9995 | inverted | 0.38 | 8.78% | inverted |
 | ETF | 0 | 0 | -- | -- | -- | -- | -- | insufficient |
 | BOND | 0 | 0 | -- | -- | -- | -- | -- | insufficient |
 | MUTUAL_FUND | 0 | 0 | -- | -- | -- | -- | -- | insufficient |
 | CRYPTO | 0 | 0 | -- | -- | -- | -- | -- | insufficient |
 | COMMODITY_FUTURES_FOREX | 0 | 0 | -- | -- | -- | -- | -- | insufficient |
+MDE 8.78 pp/yr is the measured value from the MDE SIGMA AUDIT below; 18.868 was a row-level-SD error, retained there for the record.
 
 Reasons for each `insufficient`:
 
