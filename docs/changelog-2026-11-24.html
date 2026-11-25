@@ -433,8 +433,25 @@ cost, no gate result matters.</p>
   The next question it opens: condition H2 return on <i>exposure</i> as well as H1 return. If exposure
   absorbs the 4.97 pp spread, the engine is a beta-management tool and not a selection engine, and the
   model-comparison exercise can be closed in favour of a fixed allocation.</li>
-  <li><b>The insider P-vs-S asymmetry test</b> on the 44 distinct officer/director purchases and the 31
-  non-10%-owner subset, at 21/63/126 days with a size × momentum matched control and cluster CI.</li>
+  <li><b>The insider P-vs-S asymmetry test — RUN, AND WITHDRAWN.</b> Kilo audited the artifact and found
+  three defects, all of which I verified independently against the raw CSV:
+  <ol>
+    <li><b>The role filter is dead code.</b> Lines 117–119 parse <code>is_officer</code>,
+      <code>is_director</code> and <code>is_ten_percent_owner</code> — and <code>excess(code)</code> never
+      reads them. It takes only the code string and iterates every event of that code. So the headline
+      excess is computed over <b>all</b> open-market purchases, including 10% owners and entities, and is
+      not the insider signal the brief specified.</li>
+    <li><b>The flag parser counts 1 of 20.</b> <code>(r.get("is_officer") or "").lower() == "true"</code>
+      is a literal match, but the CSV stores <code>1</code> and <code>true</code>. Measured on the
+      purchase rows: values are <code>{'0': 23, '1': 19, 'false': 9, 'true': 1}</code> — so the literal
+      test finds <b>1</b> officer row where a truthy test finds <b>20</b>.</li>
+    <li><b>63% concentration.</b> The purchase rows are PARA 10, UPST 10, RIVN 7, LCID 6 — <b>33 of 52 =
+      63%</b> in four names. Any clustered CI on that is a CI on four stocks.</li>
+  </ol>
+  <b>No result from this run may be quoted</b> — not the +10.79% at 21 days, not "asymmetry holds". The
+  repair is: apply the role filter to the event set, parse flags truthily, state the 10%-owner exclusion
+  explicitly, and rerun with clustered CIs. This is the fifth verdict of the day to print a right answer
+  over a wrong denominator, which is now the programme's single most reliable failure mode.</li>
   <li><b>Fix the five defects before any of it is quoted.</b></li>
 </ol>
 
