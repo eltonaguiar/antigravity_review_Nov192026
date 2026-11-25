@@ -98,3 +98,37 @@ None of the three restores monotonicity or a positive rho.
 - Every null carries its MDE so it is quantified, not asserted.
 
 next_probe: extend the class census beyond the documented probes by resolving each symbol's instrument type from an authoritative listing file, so ETF/BOND/FUND rows are identified rather than inferred from a probe -- the current limit is that neither source carries an asset-class field.
+
+## MDE SIGMA AUDIT 2026-11-25
+
+The earlier note refuted the `mde_pct = 18.868` units concern with
+`MDE = 2.802 * sigma_symbol_mean / sqrt(485)` and `sigma_symbol_mean ~= 148.5%`.
+That sigma is **not measured from anything in the repo**. Recomputed from
+`tracker/CLASS_CALIBRATION_PRICE_PANEL.csv` (963 included rows, all usable,
+485 symbols; gross excess = `(exit/entry - 1) - (bench_exit/bench_entry - 1)`):
+
+| quantity | measured |
+|---|---|
+| row-level SD | **13.293 pp** (the brief's 13.286) |
+| per-symbol mean SD | **5.751 pp** per monthly hold (the brief's 5.745) |
+| annualised, x12 | **69.01 pp/yr** (the brief's 68.93) |
+
+**(b) The MDE those imply**, under this file's own formula:
+`2.802 * 5.751 / sqrt(485) = 0.732 pp/month = 8.78 pp/yr`.
+
+**(c) Is 18.868 reproducible? No.** It requires a sigma of
+`18.868/12 * sqrt(485)/2.802 = 12.4 pp monthly = 148.3 pp annualised`, which is
+**2.15x** the measured per-symbol sigma (69.01 pp/yr). The 18.868 figure is
+therefore consistent only with an unmeasured, roughly 2x-larger dispersion --
+most plausibly the ROW-level SD annualised (13.293 x 12 = 159.5 pp/yr), which is
+the wrong unit for a formula that divides by `sqrt(n_symbols)`: the row-level
+SD already contains the per-symbol spread and must not be paired with a count
+of symbols. Small differences from the brief's figures (5.751 vs 5.745, 69.01
+vs 68.93) are floating-point summation order, not method.
+
+**(d) Nothing else changes.** The `inverted` verdict and every gate stand as
+published: this audit corrects a supporting number, not the conclusion. The
+ordering remains STRONG_BUY 1.2818 < BUY 1.6708 < HOLD 2.8798, non-monotone.
+
+next_probe: report the MDE from the symbol-mean SD (8.78 pp/yr) in any future
+summary of this class, and delete the 148.5% figure wherever it is still cited.
