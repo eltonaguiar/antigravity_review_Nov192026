@@ -54,3 +54,15 @@ No screen clicks, no relaunch. Never click Run/Deny/Approve.
   4. CONTEST/tools/cpcv.py present; committed cpcv_spy_monthly_run.json (SPY_adj monthly, groups=12 embargo=1 horizon=1) -> n_paths=12, n_months=60; OOS Sharpe annualised mean=1.7565 std=2.0668 min=-1.2520 max=5.2415 median=1.3116 p5=-1.1525 p95=4.1030.
   5. POWER_ANALYSIS.md carries actual-sample MDE 5.08%/yr (2*0.1477/sqrt(33.8), SPY 406 monthly/33.8y); POSITIVE_CONTROL cross-check (CONTEST/ROUND_01_2026-11-23/POSITIVE_CONTROL.md): injected 3%/yr -> t=1.18 invisible, 10%/yr -> t=3.94 significant.
 - git: local was behind origin/main by 2 (ce14c2e -> fe5be73); ff-only to fe5be73, then this record committed.
+
+## 2026-11-25 10:18-10:55 EST
+- CDP OK on 9333 (Chrome/150.0.7871.250). All three panels idle at tick start; 9 bounded tasks dispatched in 3 rounds, 8 landed on main, 0 gates touched, 0 new sessions.
+- Items A-D all closed and re-verified by exact path this tick. The only live defects left were machine-readable provenance, and those are now fixed at source:
+  - kilo 4ae01a6 zoocode/class_calibration.py: MDE recomputed from PER-SYMBOL-MEAN SD (2.802*sd_symbol_means/sqrt(n_symbols)) instead of row-level SD over rows-per-symbol; SPY benchmark string corrected (gate 2 UNMET). py_compile OK.
+  - zoo df3df24 tracker+zoocode class_calibration.json: mde_pct 8.78 with mde_pct_published_2026-11-24 18.868 retained; benchmark label corrected with original kept; design_effect 0.38, rho -0.04673, perm p 0.9995, all bucket n/means untouched.
+  - copilot abd232e tracker/MDE_MEASUREMENT_RECHECK.md + mde_recheck.py: independent recompute 963 rows / 485 symbols / row SD 13.293 pp / symbol-mean SD 5.7505 pp / 69.006 pp/yr / MDE 0.7317 pp/month = 8.7798 pp/yr. Matches coordinator recompute exactly (residuals <= 0.004).
+- Round 2: kilo c3bb11f class_calibration.md summary table MDE cell 18.868% -> 8.78%; zoo f05f842 landed ZOO_UNJOINED_PATTERN_CORRECTION.md on main (blob identical to branch a3b17e8) + pointer line in ZOO_UNJOINED_PATTERN.md; copilot df3c0df MDE_PROVENANCE_SWEEP.md -- git grep treats 18.868 as a regex, literal counts are 32 and 10, only 1 STALE hit.
+- Round 3: kilo 5a3024c DATABASE_SCHEMA.md collation note for at_pick_outcomes.asset_class (second-hand, cites f05f842); zoo f899645 zoocode/class_calibration.md marked SUPERSEDED and cell synced; copilot 26aa1bd AUDIT_OF_TRACK_B_DEFECTS.md supersession block.
+- Coordinator fixup: reproduce query in the new collation note had unquoted string literals; corrected here (commit with this record).
+- copilot composer: panel_poke reported SEND FAILED twice while the task text had in fact landed in .chat-editor-container (Monaco readback false negative). Both times the whole-document .chat-submit-button click cleared the composer to 0 and the task ran. No re-paste, no duplicate.
+- PR #10 (open, MERGEABLE clean, 3 commits) and PR #5 (mergeable UNKNOWN) left for the owner. Branch track-c/zoo-unjoined-upper-correction-2026-11-25 is now redundant for its one file (content on main byte-identical).

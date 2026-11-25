@@ -282,7 +282,7 @@ Source: `tracker/ZOO_UNJOINED_PATTERN_CORRECTION.md` (landed on main in `f05f842
 Reproduce query (verbatim):
 
 ```sql
-SELECT COLLATION_NAME FROM information_schema.COLUMNS WHERE TABLE_NAME = at_pick_outcomes AND COLUMN_NAME = asset_class;
+SELECT COLLATION_NAME FROM information_schema.COLUMNS WHERE TABLE_NAME = 'at_pick_outcomes' AND COLUMN_NAME = 'asset_class';
 ```
 
 This note is second-hand provenance from that measured audit, not a fresh query by me.
