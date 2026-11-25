@@ -272,3 +272,17 @@ OPEN→`open`, SL_HIT/TP_HIT→`closed`, everything else→`expired`.
 Exactly four monthly consensus periods exist (2026-08-01 … 11-01), giving max forward days
 **115 / 84 / 54 / 23**. A 6- or 12-month window is impossible today; **63d is the structural
 ceiling**, available for Aug and Sep only. Any longer claim would be invented.
+
+## COLLATION NOTE -- asset_class (2026-11-25)
+
+`at_pick_outcomes.asset_class` is `varchar(20)` with collation `utf8mb4_unicode_ci` and is therefore case-insensitive, so plain `GROUP BY asset_class` already merges `crypto` with `CRYPTO` and `UPPER()` changes no count.
+
+Source: `tracker/ZOO_UNJOINED_PATTERN_CORRECTION.md` (landed on main in `f05f842`, blob identical to branch `a3b17e8`).
+
+Reproduce query (verbatim):
+
+```sql
+SELECT COLLATION_NAME FROM information_schema.COLUMNS WHERE TABLE_NAME = at_pick_outcomes AND COLUMN_NAME = asset_class;
+```
+
+This note is second-hand provenance from that measured audit, not a fresh query by me.
