@@ -69,13 +69,18 @@ symbol. **What is a defect is the interpretation:** a design effect of 0.38 is a
 rather than as "the clustered test is more powerful". It does **not** change the inverted verdict,
 which rests on rho and its permutation p.
 
-**2. `mde_pct = 18.868` as a units error -- REFUTED: the units are consistent.**
-`MDE = 2.80 * sigma_symbol_mean / sqrt(n_symbols)` at 80% power gives 18.868% with
-`sigma_symbol_mean` ~ 148.5% annualised. That is a *per-symbol mean* dispersion over 485 symbols,
-not a per-trade one, so the figure is an annualised percentage and the `%` label is correct. The
-real concern is its size: an 18.9%/yr MDE means the test cannot resolve any plausible equity
-premium, so the null is uninformative rather than negative -- which the artifact already says by
-publishing the MDE beside the null. A units test cannot change the inverted verdict either.
+**2. `mde_pct = 18.868` -- SUPERSEDED by the MDE SIGMA AUDIT below.**
+The units are the right kind (an annualised per-symbol-mean dispersion for
+`MDE = 2.80 * sigma_symbol_mean / sqrt(n_symbols)` at 80% power), but the sigma it used,
+`~148.5%` annualised, is **not measured from anything in the repo** and is withdrawn. The MDE
+SIGMA AUDIT recomputes from `tracker/CLASS_CALIBRATION_PRICE_PANEL.csv`: row-level SD 13.293 pp,
+per-symbol mean SD 5.751 pp per monthly hold (69.01 pp/yr annualised), giving
+`2.802 * 5.751 / sqrt(485) = 0.732 pp/month = 8.78 pp/yr`. 18.868 is therefore 2.15x the measured
+MDE and not reproducible from committed data; `class_calibration.json` already carries
+`mde_pct 8.78` with `mde_pct_published_2026-11-24 18.868` retained as history. The concern
+survives in reduced form -- an 8.8%/yr MDE against a plausible equity premium of a few percent/yr
+still leaves the null uninformative, not negative -- and no units test can change the inverted
+verdict.
 
 **3. Benchmark SPY fails the characteristic-matched gate -- REPRODUCED; the gate failure is the verdict.**
 `class_calibration.json` records `benchmark = "SPY (characteristic-matched on the only available
