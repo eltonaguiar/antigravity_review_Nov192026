@@ -87,3 +87,5 @@ look-ahead.
 **Z-VERIFY-18, 2026-11-25T09:52Z: NO CHANGE.** Since b388f09 the only tracker change is `KILO_DELIVERY_VERIFICATION.md` (automated path re-verification); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
 
 **Z-VERIFY-19, 2026-11-25T10:09Z: AUDITED -- no error found.** Since 7a3fbd8 the tracker gained `TRACK_A_FLOOR_COUNT.md` (mine), `TRACK_B_DEFECT_AUDIT.md`, a change to `firm_skill_weights.csv`, and the automated KILO re-verification. I re-read the CSV: 221 rows, largest n_clean_events 551 (BofA), floors 9/1/0, 9 rows with a filled effect (Morgan Stanley is the only `beats_placebo` at 178.20 vs a 109.6 placebo p95) -- identical to my C-FLOORCOUNT read, so the edit did not change the counts and that artifact is not stale. `EXPECTANCY_CORRECTED.md` is unchanged since the audit.
+
+**Z-VERIFY-20, 2026-11-25T10:15Z: NO CHANGE.** Since f20c63b the only tracker change is `KILO_DELIVERY_VERIFICATION.md` (automated path re-verification); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
