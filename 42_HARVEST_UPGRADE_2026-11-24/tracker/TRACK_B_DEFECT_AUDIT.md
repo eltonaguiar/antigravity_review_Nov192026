@@ -75,3 +75,36 @@ None of the three restores monotonicity or a positive rho. No gate was lowered.
 next_probe: commit the row-level input (ZOOCODE/harvest export or per-row checksum) so the
 963 included and 504 excluded rows are auditable, then rebuild a genuine
 ADV/momentum-matched benchmark.
+
+## MDE CORRECTION 2026-11-25
+
+**Supersedes the two lines in "Defect 2" above** (kept for the record, not deleted):
+
+> "MDE = 2.80 * sigma_symbol_mean / sqrt(n_symbols) at 80 percent power gives 18.868
+> percent with sigma_symbol_mean ~ 148.5 percent annualised over 485 symbols. That is a
+> per-symbol mean dispersion, not per-trade; the percent label is correct."
+
+**The 148.5 percent sigma is not measured by anything in the repo and is WITHDRAWN.**
+Measured from `tracker/CLASS_CALIBRATION_PRICE_PANEL.csv` (963 included rows, 485
+symbols, gross excess = `(exit/entry - 1) - (bench_exit/bench_entry - 1)`):
+
+| quantity | measured |
+|---|---|
+| row-level SD | 13.293 pp |
+| per-symbol mean SD | **5.751 pp per monthly hold** |
+| annualised, x12 | **69.01 pp/yr** |
+
+The same formula on the measured sigma gives
+`2.802 * 5.751 / sqrt(485) = 0.732 pp/month = ` **8.78 pp/yr**.
+18.868 is therefore **2.15x** the measured MDE, and is consistent only with a sigma of
+148.3 pp/yr -- most plausibly the row-level SD annualised (159.5 pp/yr), which is the
+wrong unit for a formula that already divides by `sqrt(n_symbols)`.
+
+**Does the magnitude concern survive? YES.** An MDE of about **8.8 percent/yr** against a
+plausible equity premium of a few percent per year still leaves the null weak: the test
+cannot resolve the size of edge it is being asked about, so "no effect detected" remains
+UNINFORMATIVE rather than negative. The concern is smaller than stated (8.8, not 18.9) but
+it is not resolved, and the conclusion is unchanged.
+
+next_probe: replace every remaining citation of 18.868 / 148.5 with the measured
+8.78 pp/yr and 69.01 pp/yr.
