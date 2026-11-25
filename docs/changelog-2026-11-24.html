@@ -322,7 +322,60 @@ its <b>113.0</b> threshold. JPMorgan does <b>not</b> clear. Only Morgan Stanley 
 of nine 5% tests is roughly what chance expects (≈0.45 false positives), so this is <b>one candidate
 entering a forward test</b> — not an edge.</div>
 
-<h2 id="classes">Profitable picks per asset class — where the money actually is</h2>
+<h2 id="classes">Profitable picks per asset class — CORRECTED</h2>
+<div class="note bad"><b>Correction, and it invalidates the table that was here.</b> The per-class
+figures published earlier today were computed over a table in which <b>46.4% of rows (29,577 of 63,792)
+carry <code>pnl_pct = 0</code> because they are <code>status = 'EXPIRED'</code></b> — not because they
+returned nothing. <code>EXPIRED</code> rows are 96.2% zeros; <code>FLAT</code> 100%; while
+<code>WON</code> (13,654) and <code>LOST</code> (19,438) carry <b>zero</b> placeholder zeros and are
+clean. Including the expired pile as flat outcomes pinned every class median to <code>0.00</code> and
+diluted every mean by roughly half.</div>
+
+<h3>What the data actually says — resolved trades only</h3>
+<table>
+  <thead><tr><th>status</th><th class="num">n</th><th class="num">mean</th><th class="num">median</th>
+  <th class="num">min</th><th class="num">max</th></tr></thead>
+  <tbody>
+    <tr><td>WON</td><td class="num">13,654</td><td class="num g">+3.02%</td><td class="num">+3.00%</td>
+        <td class="num">−3.81%</td><td class="num">+427.95%</td></tr>
+    <tr><td>LOST</td><td class="num">19,438</td><td class="num r">−2.01%</td><td class="num">−1.66%</td>
+        <td class="num">−100.00%</td><td class="num">+2.34%</td></tr>
+    <tr><td><b>combined (resolved)</b></td><td class="num"><b>33,092</b></td>
+        <td class="num a"><b>+0.065%</b></td><td class="num">—</td><td class="num">—</td>
+        <td class="num">—</td></tr>
+  </tbody>
+</table>
+
+<div class="grid">
+  <div class="card"><div class="k">Resolved trades</div><div class="v">33,092</div>
+    <div class="n">WON + LOST · zero placeholder zeros</div></div>
+  <div class="card"><div class="k">Gross expectancy</div><div class="v a">+0.065%</div>
+    <div class="n">per resolved trade, before cost</div></div>
+  <div class="card"><div class="k">Round turn, portfolio</div><div class="v r">26 bp</div>
+    <div class="n">expectancy is 2.5 bp — an order of magnitude short</div></div>
+  <div class="card"><div class="k">Expired, never resolved</div><div class="v r">29,654</div>
+    <div class="n">46% of the table, written off as flat</div></div>
+</div>
+
+<p><b>The conclusion survives; the table that supported it does not.</b> Cost still kills everything — but
+it now rests on <b>+0.065% gross expectancy over 33,092 genuinely resolved trades</b>, not on a table
+where half the rows were placeholder zeros. One is a measurement; the other was an artefact that happened
+to point the same way. The distinction is the whole point of the programme.</p>
+
+<div class="note bad"><b>And the expired pile is itself the finding.</b> 29,654 picks reached neither
+take-profit nor stop-loss and were written off as flat. <code>trading_picks</code> has the same shape:
+<b>31,421</b> picks in <code>TIME_EXIT_MAX_HOLD</code>. Two tables, one problem — positions that hit no
+target and no stop, simply timed out. That is an exit-logic defect, not a market outcome, and it is
+larger than any signal in this programme.</div>
+
+<h3>Per-class table — withdrawn pending recompute</h3>
+<p>The class-by-class PnL ranking published earlier is withdrawn. Re-running it on resolved trades only,
+with <code>n</code> printed before and after the <code>EXPIRED</code> exclusion, is the required repair
+and is dispatched. The earlier ordering (crypto and forex positive, commodity and equity negative) should
+not be quoted until that run lands — the sign may survive, but the magnitudes were computed over a
+denominator that was half placeholder.</p>
+
+
 <table>
   <thead><tr><th>Asset class</th><th class="num">n</th><th class="num">Avg</th><th class="num">Win rate</th>
   <th class="num">Total PnL</th><th class="num">W / L</th></tr></thead>
