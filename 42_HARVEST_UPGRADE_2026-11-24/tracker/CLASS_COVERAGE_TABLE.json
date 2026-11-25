@@ -1,0 +1,85 @@
+{
+ "source": "ejaguiar1_stocks.at_pick_outcomes",
+ "filter": "resolver_version NOT LIKE 'backfill%' (NULL included as non-backfill)",
+ "counts": {
+  "raw": 63797,
+  "backfill_excluded": 37115,
+  "live": 26682,
+  "null_resolver": 0,
+  "priced": 26161
+ },
+ "classes": {
+  "CRYPTO": {
+   "n": 25488,
+   "priced": 25353,
+   "priced_coverage_pct": 99.47,
+   "mean_pct": 0.1084,
+   "median_pct": -1.0,
+   "pct_of_all_rows": 39.95
+  },
+  "FOREX": {
+   "n": 612,
+   "priced": 442,
+   "priced_coverage_pct": 72.22,
+   "mean_pct": 0.0732,
+   "median_pct": -0.0035,
+   "pct_of_all_rows": 0.96
+  },
+  "EQUITY": {
+   "n": 192,
+   "priced": 117,
+   "priced_coverage_pct": 60.94,
+   "mean_pct": -0.0791,
+   "median_pct": -1.5,
+   "pct_of_all_rows": 0.3
+  },
+  "COMMODITY": {
+   "n": 161,
+   "priced": 66,
+   "priced_coverage_pct": 40.99,
+   "mean_pct": 0.0024,
+   "median_pct": -0.0034,
+   "pct_of_all_rows": 0.25
+  },
+  "UNKNOWN": {
+   "n": 141,
+   "priced": 141,
+   "priced_coverage_pct": 100.0,
+   "mean_pct": -2.021,
+   "median_pct": -5.15,
+   "pct_of_all_rows": 0.22
+  },
+  "FUTURES": {
+   "n": 69,
+   "priced": 27,
+   "priced_coverage_pct": 39.13,
+   "mean_pct": 0.5859,
+   "median_pct": 0.96,
+   "pct_of_all_rows": 0.11
+  },
+  "MEME": {
+   "n": 13,
+   "priced": 13,
+   "priced_coverage_pct": 100.0,
+   "mean_pct": -9.5432,
+   "median_pct": -6.4062,
+   "pct_of_all_rows": 0.02
+  },
+  "BOND": {
+   "n": 4,
+   "priced": 1,
+   "priced_coverage_pct": 25.0,
+   "mean_pct": -0.0047,
+   "median_pct": -0.0047,
+   "pct_of_all_rows": 0.01
+  },
+  "ETF": {
+   "n": 2,
+   "priced": 1,
+   "priced_coverage_pct": 50.0,
+   "mean_pct": -0.0101,
+   "median_pct": -0.0101,
+   "pct_of_all_rows": 0.0
+  }
+ }
+}
