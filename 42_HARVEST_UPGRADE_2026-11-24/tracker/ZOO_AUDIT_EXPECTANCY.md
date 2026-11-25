@@ -127,3 +127,5 @@ look-ahead.
 **Z-VERIFY-43, 2026-11-25T13:39Z: NO CHANGE.** Since eac64bf the only tracker commit is the automated "re-verify 50 delivery paths" run at 13:38Z; `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
 
 **Z-VERIFY-44, 2026-11-25T13:57Z: AUDITED -- no error found.** New numeric change d2c935e appends a "DEFECT 2 CORRECTION" to `AUDIT_TRACK_B_CALIBRATION_2026-11-25.md` citing 5.751 pp / 69.01 pp/yr / 0.732 pp per month / 8.78 pp/yr and the 2.15x ratio. I independently re-derived these from the committed panel (963 rows, 485 symbols, sample SD 5.7505 pp, population 5.7446; MDE 0.7317 pp/month = 8.780 pp/yr) and they match. It keeps the superseded text, keeps the "null still uninformative" conclusion, and does not touch the design-effect or SPY sections. `EXPECTANCY_CORRECTED.md` remains unchanged since the audit.
+
+**Z-VERIFY-45, 2026-11-25T14:09Z: NO CHANGE.** Since 3697021 the only tracker commits are automated "re-verify 50 delivery paths" runs (14:02Z, 14:08Z); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
