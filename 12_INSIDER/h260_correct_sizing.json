@@ -1,0 +1,56 @@
+{
+ "snapshot": "/home/eaguiar2015/findtorontoevents_antigravity.ca/reports/hl_leaderboard_snapshot_20261124T220111Z.json",
+ "eligible": 8820,
+ "top_decile_n": 882,
+ "copier_equity": 100000.0,
+ "allocation": "equal 1/n of copier equity per top-decile wallet",
+ "stop": -0.1,
+ "slippage": 0.02,
+ "trial_count": 1,
+ "cost": 0.0026,
+ "denominator_A_snapshot_equity": {
+  "n": 882,
+  "raw_mean_pct": -3.7422,
+  "raw_median_pct": 8.1135,
+  "stopped_mean_pct": 7.7159,
+  "stopped_net26bp_pct": 7.4559,
+  "stop_fills": 840,
+  "no_fill_gaps": 42,
+  "loss_below_stop": 154,
+  "loss_below_100pct": 42
+ },
+ "denominator_B_notional_proxy": {
+  "n": 882,
+  "raw_mean_pct": 4.8451,
+  "raw_median_pct": 1.3152,
+  "stopped_mean_pct": 5.0232,
+  "stopped_net26bp_pct": 4.7632,
+  "stop_fills": 881,
+  "no_fill_gaps": 1,
+  "loss_below_stop": 18,
+  "loss_below_100pct": 1
+ },
+ "capacity_top4": {
+  "PARA": {
+   "adv_usd": 166320,
+   "max_5pct_adv_usd": 8316
+  },
+  "UPST": {
+   "adv_usd": 97763710,
+   "max_5pct_adv_usd": 4888186
+  },
+  "RIVN": {
+   "adv_usd": 317422219,
+   "max_5pct_adv_usd": 15871111
+  },
+  "LCID": {
+   "adv_usd": 39167434,
+   "max_5pct_adv_usd": 1958372
+  },
+  "equal_alloc_each_usd": 15750,
+  "max_copier_equity_5pct_adv_usd": 52800
+ },
+ "event_supply_share_top4": "63% (33/52 owner-rows; 46 distinct P transactions)",
+ "verdict": "UNDERDETERMINED",
+ "reason": "The snapshot has no position notional. A is invalid for a leveraged wallet; B uses wk_vlm/2 as a no-leverage proxy. Neither is the committed-capital denominator a copier can replicate. Do not quote a net edge from B."
+}
