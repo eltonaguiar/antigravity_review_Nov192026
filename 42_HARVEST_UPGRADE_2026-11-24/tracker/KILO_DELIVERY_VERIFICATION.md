@@ -53,8 +53,9 @@
 | `docs/speculative-markets.html` | 135 | **PRESENT** |
 | `docs/harvest.html` | 558 | **PRESENT** |
 | `42_HARVEST_UPGRADE_2026-11-24/tracker/UP_ONLY_MDE.md` | 61 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/UP_ONLY_MDE_PRICE_GAP.md` | 58 | **PRESENT** |
 
-**Total artifacts: 49. Present: 49. Missing: 0.**
+**Total artifacts: 50. Present: 50. Missing: 0.**
 
 Path-case note: the H260 JSON is `12_INSIDER/h260_correct_sizing.json` (lowercase h); an uppercase `H260_CORRECT_SIZING.json` does not exist and was not counted.
 
@@ -382,5 +383,15 @@ Exact-path re-run against `origin/main` at **ea1aa68** using
 `UP_ONLY_MDE.md`).
 
 - **PRESENT: 49/49**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T11:02:50Z
+
+Exact-path re-run against `origin/main` at **27cb325** using
+`git cat-file -e origin/main:<path>` for all **50** paths (the 49 prior artifacts plus
+`UP_ONLY_MDE_PRICE_GAP.md`).
+
+- **PRESENT: 50/50**
 - **MISSING: 0**
 - No path was rebuilt; no missing-path rebuild was attempted.
