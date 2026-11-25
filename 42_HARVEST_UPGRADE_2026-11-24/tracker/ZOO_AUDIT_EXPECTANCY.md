@@ -75,3 +75,5 @@ look-ahead.
 **Z-VERIFY-11, 2026-11-25T09:10Z: NO CHANGE.** Since 0d25c82 the only tracker change is `KILO_DELIVERY_VERIFICATION.md` (automated path re-verification); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
 
 **Z-VERIFY-13, 2026-11-25T09:21Z: NO CHANGE.** Since 35dea02 the only tracker change is `KILO_DELIVERY_VERIFICATION.md` (automated path re-verification); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
+
+**Z-VERIFY-14, 2026-11-25T09:27Z: NO CHANGE.** Since 8cd6c79 the only tracker change is `KILO_DELIVERY_VERIFICATION.md` (automated path re-verification); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
