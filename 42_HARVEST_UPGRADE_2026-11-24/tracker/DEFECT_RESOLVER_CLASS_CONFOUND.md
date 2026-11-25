@@ -9,9 +9,22 @@ construction**, and the confound correlates with the ranking itself.
 
 ## The defect, measured
 
-`resolver_version` records which code path stamped each row. The versions split cleanly into **backfill**
-scripts — whose job was to close a backlog and which write a zero when they cannot price a pick — and
-**live resolvers** (`universal_v2`, `v2.1`) that actually price.
+`resolver_version` records which code path stamped each row. The versions split into **backfill** scripts —
+whose job was to close a backlog — and **live resolvers** (`universal_v2`, `v2.1`).
+
+**Refinement, because the first version of this paragraph overstated it.** The backfill scripts did not zero
+everything they touched. `backfill_widened_202` priced **2,420 SL_HIT and 1,929 TP_HIT rows correctly** and
+wrote a zero on only the **20,589 TIME_EXPIRED** rows. So the defect is not "the backfill could not price" —
+it is narrower and more precise:
+
+> **The `TIME_EXPIRED` branch stores `0` instead of a mark-to-market return at expiry.** A pick that hit
+> neither take-profit nor stop-loss still has a return at the moment its window closed, and the resolver
+> discarded it.
+
+That distinction matters for the fix: the repair is not to rewrite a broken backfill, it is to give the
+expiry branch a return — from `exit_price`/`entry_price` where the parent holds them, otherwise from the
+price bar at expiry. It also explains why the zero mass sits exactly on one `resolution_method` value
+(96.4%) while `SL_HIT` and `TP_HIT` are clean (0.0% and 0.02%).
 
 | asset class | n | backfill rows | other rows | **% backfill** |
 |---|---:|---:|---:|---:|
