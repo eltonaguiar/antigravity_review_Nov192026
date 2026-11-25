@@ -566,3 +566,156 @@ Exact-path re-run against `origin/main` at **cf60703** using
 - **PRESENT: 50/50**
 - **MISSING: 0**
 - No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T13:08:49Z
+
+Exact-path re-run against `origin/main` at **c6471e0** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T13:14:49Z
+
+Exact-path re-run against `origin/main` at **35ff4c0** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T13:20:49Z
+
+Exact-path re-run against `origin/main` at **0dc5d9a** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T13:26:48Z
+
+Exact-path re-run against `origin/main` at **f7a1776** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T13:32:49Z
+
+Exact-path re-run against `origin/main` at **69c17e9** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T13:38:49Z
+
+Exact-path re-run against `origin/main` at **392ce4a** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T13:44:49Z
+
+Exact-path re-run against `origin/main` at **3897fb3** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T13:50:41Z
+
+Exact-path re-run against `origin/main` at **d2c935e** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T13:56:48Z
+
+Exact-path re-run against `origin/main` at **0c893b0** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T14:02:49Z
+
+Exact-path re-run against `origin/main` at **3697021** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T14:08:49Z
+
+Exact-path re-run against `origin/main` at **e9236ba** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T14:14:49Z
+
+Exact-path re-run against `origin/main` at **ba5eaaf** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T14:20:49Z
+
+Exact-path re-run against `origin/main` at **8c7f721** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T14:26:49Z
+
+Exact-path re-run against `origin/main` at **6cdc76d** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T14:32:49Z
+
+Exact-path re-run against `origin/main` at **7d0543e** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T14:38:50Z
+
+Exact-path re-run against `origin/main` at **4924240** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T14:44:49Z
+
+Exact-path re-run against `origin/main` at **ded22af** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
