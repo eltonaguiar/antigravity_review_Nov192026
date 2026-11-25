@@ -60,3 +60,42 @@ bootstrap.
 
 next_probe: PIT market-cap size matching + ≥100 STRONG_BUY events; same 21d lag, 10/30/100 bp
 cost, symbol-cluster CI.
+
+## PAIRWISE DIFFERENCE TESTS 2026-11-25
+
+**Method:** symbol-cluster bootstrap, 5,000 replicates, resampling symbols with replacement from the
+union of the two buckets; values are the same per-event net-excess bps used above. CI = 2.5/97.5
+percentiles; two-sided p = 2 × min(share of replicates ≤0, share ≥0), capped at 1. This is a difference
+test, not an overlap-of-per-bucket-CIs argument.
+
+| comparison | mean difference | 95% cluster CI | p |
+|---|---:|---|---:|
+| HOLD − BUY | **−13.037 bp** | **[−66.725, +38.706]** | **0.6416** |
+| HOLD − STRONG_BUY | **+58.985 bp** | **[−353.643, +407.619]** | **0.7284** |
+| BUY − STRONG_BUY | **+72.021 bp** | **[−327.013, +411.686]** | **0.6588** |
+
+Means used: HOLD +11.114 bp (n=2,617), BUY +24.151 bp (n=2,541), STRONG_BUY −47.870 bp (n=23).
+These p-values are **my recomputation**; they are not the Track B values 0.099/0.124/0.597, which come
+from a different row set and were not copied.
+
+**No pairwise difference CI excludes zero.**
+
+## Counting-basis reconciliation
+
+- **My run:** a bucket row is one **analyst-action event** — an `up`/`down` record reduced to one
+  symbol-date event, with the `to` grade mapped to the 1..5 ordinal and a price/control filter. The
+  counts **2,617 / 2,541 / 23** are **event counts** (not monthly snapshots). The STRONG_BUY n=23 is
+  small because strict `to`-grade Strong Buy events with usable prices are rare.
+- **Track B's 963-row set:** a row is a **symbol-period consensus snapshot** (three monthly periods
+  per symbol across ~485 symbols, scored from the consensus bucket counts). The buckets
+  **164 / 579 / 207** are **snapshot observations**, not individual analyst actions. The 963 is a
+  snapshot count, not the same event count as my 2,617/2,541/23, and no multiplier reconciles them.
+- Which is the event count: **2,617 / 2,541 / 23 are the event counts in this file.** The 963 is a
+  monthly-snapshot observation count; the two cannot be pooled or compared as if they were the same
+  unit.
+
+## Verdict
+
+**UNDERDETERMINED — no pairwise difference CI excludes zero.** The bucket ordering BUY > HOLD >
+STRONG_BUY is a point ordering only; overlapping per-bucket CIs do not establish it, and the
+difference tests above do not either. No upgrade to REAL.
