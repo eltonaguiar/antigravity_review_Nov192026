@@ -121,3 +121,5 @@ look-ahead.
 **Z-VERIFY-38, 2026-11-25T12:57Z: NO CHANGE.** Since 0db5d96 the tracker changes are `HERMES_CDP_TICK_LOG.md` and `KILO_DELIVERY_VERIFICATION.md` (coordination logs, no calibration numbers); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
 
 **Z-VERIFY-41, 2026-11-25T13:21Z: NO CHANGE.** Since 03923b0 the only tracker commits are automated "re-verify 50 delivery paths" runs (13:08Z, 13:14Z, 13:20Z) plus a missing-inputs note for score inversion and ITEM_B; `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
+
+**Z-VERIFY-42, 2026-11-25T13:33Z: NO CHANGE.** Since 281fb1b the only tracker commits are automated "re-verify 50 delivery paths" runs (13:26Z, 13:32Z); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
