@@ -476,3 +476,12 @@ Exact-path re-run against `origin/main` at **ac92baa** using
 - **PRESENT: 50/50**
 - **MISSING: 0**
 - No path was rebuilt; no missing-path rebuild was attempted.
+
+## Re-verification — 2026-11-25T12:02:40Z
+
+Exact-path re-run against `origin/main` at **85ec07d** using
+`git cat-file -e origin/main:<path>` for all **50** paths listed above.
+
+- **PRESENT: 50/50**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
