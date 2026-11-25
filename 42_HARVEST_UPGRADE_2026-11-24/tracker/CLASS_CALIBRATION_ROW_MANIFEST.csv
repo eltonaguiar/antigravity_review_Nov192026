@@ -1,0 +1,1468 @@
+symbol,date,bucket,included,exclusion_reason
+A,2026-08-01,-3m,1,
+A,2026-09-01,-2m,1,
+A,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AAPL,2026-08-01,-3m,1,
+AAPL,2026-09-01,-2m,1,
+AAPL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ABBV,2026-08-01,-3m,1,
+ABBV,2026-09-01,-2m,1,
+ABBV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ABNB,2026-08-01,-3m,1,
+ABNB,2026-09-01,-2m,1,
+ABNB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ABT,2026-08-01,-3m,1,
+ABT,2026-09-01,-2m,1,
+ABT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ACGL,2026-08-01,-3m,1,
+ACGL,2026-09-01,-2m,1,
+ACGL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ACN,2026-08-01,-3m,1,
+ACN,2026-09-01,-2m,1,
+ACN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ADBE,2026-08-01,-3m,1,
+ADBE,2026-09-01,-2m,1,
+ADBE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ADI,2026-08-01,-3m,1,
+ADI,2026-09-01,-2m,1,
+ADI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ADM,2026-08-01,-3m,1,
+ADM,2026-09-01,-2m,1,
+ADM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ADP,2026-08-01,-3m,1,
+ADP,2026-09-01,-2m,1,
+ADP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ADSK,2026-08-01,-3m,1,
+ADSK,2026-09-01,-2m,1,
+ADSK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AEE,2026-08-01,-3m,1,
+AEE,2026-09-01,-2m,1,
+AEE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AEP,2026-08-01,-3m,1,
+AEP,2026-09-01,-2m,1,
+AEP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AES,2026-08-01,-3m,1,
+AES,2026-09-01,-2m,1,
+AES,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AFL,2026-08-01,-3m,1,
+AFL,2026-09-01,-2m,1,
+AFL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AIG,2026-08-01,-3m,1,
+AIG,2026-09-01,-2m,1,
+AIG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AIZ,2026-08-01,-3m,1,
+AIZ,2026-09-01,-2m,1,
+AIZ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AJG,2026-08-01,-3m,1,
+AJG,2026-09-01,-2m,1,
+AJG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AKAM,2026-08-01,-3m,1,
+AKAM,2026-09-01,-2m,1,
+AKAM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ALB,2026-08-01,-3m,1,
+ALB,2026-09-01,-2m,1,
+ALB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ALGN,2026-08-01,-3m,1,
+ALGN,2026-09-01,-2m,1,
+ALGN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ALL,2026-08-01,-3m,1,
+ALL,2026-09-01,-2m,1,
+ALL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ALLE,2026-08-01,-3m,1,
+ALLE,2026-09-01,-2m,1,
+ALLE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AMAT,2026-08-01,-3m,1,
+AMAT,2026-09-01,-2m,1,
+AMAT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AMCR,2026-08-01,-3m,1,
+AMCR,2026-09-01,-2m,1,
+AMCR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AMD,2026-08-01,-3m,1,
+AMD,2026-09-01,-2m,1,
+AMD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AME,2026-08-01,-3m,1,
+AME,2026-09-01,-2m,1,
+AME,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AMGN,2026-08-01,-3m,1,
+AMGN,2026-09-01,-2m,1,
+AMGN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AMP,2026-08-01,-3m,1,
+AMP,2026-09-01,-2m,1,
+AMP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AMT,2026-08-01,-3m,1,
+AMT,2026-09-01,-2m,1,
+AMT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AMZN,2026-08-01,-3m,1,
+AMZN,2026-09-01,-2m,1,
+AMZN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ANET,2026-08-01,-3m,1,
+ANET,2026-09-01,-2m,1,
+ANET,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AON,2026-08-01,-3m,1,
+AON,2026-09-01,-2m,1,
+AON,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AOS,2026-08-01,-3m,1,
+AOS,2026-09-01,-2m,1,
+AOS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+APA,2026-08-01,-3m,1,
+APA,2026-09-01,-2m,1,
+APA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+APD,2026-08-01,-3m,1,
+APD,2026-09-01,-2m,1,
+APD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+APH,2026-08-01,-3m,1,
+APH,2026-09-01,-2m,1,
+APH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+APTV,2026-08-01,-3m,1,
+APTV,2026-09-01,-2m,1,
+APTV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ARE,2026-08-01,-3m,1,
+ARE,2026-09-01,-2m,1,
+ARE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ATO,2026-08-01,-3m,1,
+ATO,2026-09-01,-2m,1,
+ATO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AVB,2026-08-01,-3m,0,no complete forward window (entry/exit bar missing)
+AVB,2026-09-01,-2m,0,no complete forward window (entry/exit bar missing)
+AVB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AVGO,2026-08-01,-3m,1,
+AVGO,2026-09-01,-2m,1,
+AVGO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AVY,2026-08-01,-3m,1,
+AVY,2026-09-01,-2m,1,
+AVY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AWK,2026-08-01,-3m,1,
+AWK,2026-09-01,-2m,1,
+AWK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AXON,2026-08-01,-3m,1,
+AXON,2026-09-01,-2m,1,
+AXON,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AXP,2026-08-01,-3m,1,
+AXP,2026-09-01,-2m,1,
+AXP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+AZO,2026-08-01,-3m,1,
+AZO,2026-09-01,-2m,1,
+AZO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BA,2026-08-01,-3m,1,
+BA,2026-09-01,-2m,1,
+BA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BAC,2026-08-01,-3m,1,
+BAC,2026-09-01,-2m,1,
+BAC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BALL,2026-08-01,-3m,1,
+BALL,2026-09-01,-2m,1,
+BALL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BAX,2026-08-01,-3m,1,
+BAX,2026-09-01,-2m,1,
+BAX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BBY,2026-08-01,-3m,1,
+BBY,2026-09-01,-2m,1,
+BBY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BDX,2026-08-01,-3m,1,
+BDX,2026-09-01,-2m,1,
+BDX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BEN,2026-08-01,-3m,1,
+BEN,2026-09-01,-2m,1,
+BEN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BF-B,2026-08-01,-3m,1,
+BF-B,2026-09-01,-2m,1,
+BF-B,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BG,2026-08-01,-3m,1,
+BG,2026-09-01,-2m,1,
+BG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BIIB,2026-08-01,-3m,1,
+BIIB,2026-09-01,-2m,1,
+BIIB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BKNG,2026-08-01,-3m,1,
+BKNG,2026-09-01,-2m,1,
+BKNG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BKR,2026-08-01,-3m,1,
+BKR,2026-09-01,-2m,1,
+BKR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BLDR,2026-08-01,-3m,1,
+BLDR,2026-09-01,-2m,1,
+BLDR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BLK,2026-08-01,-3m,1,
+BLK,2026-09-01,-2m,1,
+BLK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BMY,2026-08-01,-3m,1,
+BMY,2026-09-01,-2m,1,
+BMY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BR,2026-08-01,-3m,1,
+BR,2026-09-01,-2m,1,
+BR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BRK-B,2026-08-01,-3m,1,
+BRK-B,2026-09-01,-2m,1,
+BRK-B,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BRO,2026-08-01,-3m,1,
+BRO,2026-09-01,-2m,1,
+BRO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BSX,2026-08-01,-3m,1,
+BSX,2026-09-01,-2m,1,
+BSX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BX,2026-08-01,-3m,1,
+BX,2026-09-01,-2m,1,
+BX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+BXP,2026-08-01,-3m,1,
+BXP,2026-09-01,-2m,1,
+BXP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+C,2026-08-01,-3m,1,
+C,2026-09-01,-2m,1,
+C,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CAG,2026-08-01,-3m,1,
+CAG,2026-09-01,-2m,1,
+CAG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CAH,2026-08-01,-3m,1,
+CAH,2026-09-01,-2m,1,
+CAH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CARR,2026-08-01,-3m,1,
+CARR,2026-09-01,-2m,1,
+CARR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CAT,2026-08-01,-3m,1,
+CAT,2026-09-01,-2m,1,
+CAT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CB,2026-08-01,-3m,1,
+CB,2026-09-01,-2m,1,
+CB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CBOE,2026-08-01,-3m,1,
+CBOE,2026-09-01,-2m,1,
+CBOE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CBRE,2026-08-01,-3m,1,
+CBRE,2026-09-01,-2m,1,
+CBRE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CCI,2026-08-01,-3m,1,
+CCI,2026-09-01,-2m,1,
+CCI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CCL,2026-08-01,-3m,1,
+CCL,2026-09-01,-2m,1,
+CCL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CDNS,2026-08-01,-3m,1,
+CDNS,2026-09-01,-2m,1,
+CDNS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CDW,2026-08-01,-3m,1,
+CDW,2026-09-01,-2m,1,
+CDW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CE,2026-08-01,-3m,1,
+CE,2026-09-01,-2m,1,
+CE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CEG,2026-08-01,-3m,1,
+CEG,2026-09-01,-2m,1,
+CEG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CF,2026-08-01,-3m,1,
+CF,2026-09-01,-2m,1,
+CF,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CFG,2026-08-01,-3m,1,
+CFG,2026-09-01,-2m,1,
+CFG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CHD,2026-08-01,-3m,1,
+CHD,2026-09-01,-2m,1,
+CHD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CHRW,2026-08-01,-3m,1,
+CHRW,2026-09-01,-2m,1,
+CHRW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CHTR,2026-08-01,-3m,1,
+CHTR,2026-09-01,-2m,1,
+CHTR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CI,2026-08-01,-3m,1,
+CI,2026-09-01,-2m,1,
+CI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CINF,2026-09-01,-2m,1,
+CINF,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CL,2026-08-01,-3m,1,
+CL,2026-09-01,-2m,1,
+CL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CLX,2026-08-01,-3m,1,
+CLX,2026-09-01,-2m,1,
+CLX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CMCSA,2026-08-01,-3m,1,
+CMCSA,2026-09-01,-2m,1,
+CMCSA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CME,2026-08-01,-3m,1,
+CME,2026-09-01,-2m,1,
+CME,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CMG,2026-08-01,-3m,1,
+CMG,2026-09-01,-2m,1,
+CMG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CMI,2026-08-01,-3m,1,
+CMI,2026-09-01,-2m,1,
+CMI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CMS,2026-08-01,-3m,1,
+CMS,2026-09-01,-2m,1,
+CMS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CNC,2026-08-01,-3m,1,
+CNC,2026-09-01,-2m,1,
+CNC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CNP,2026-08-01,-3m,1,
+CNP,2026-09-01,-2m,1,
+CNP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+COF,2026-08-01,-3m,1,
+COF,2026-09-01,-2m,1,
+COF,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+COIN,2026-08-01,-3m,1,
+COIN,2026-09-01,-2m,1,
+COIN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+COO,2026-08-01,-3m,1,
+COO,2026-09-01,-2m,1,
+COO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+COP,2026-08-01,-3m,1,
+COP,2026-09-01,-2m,1,
+COP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+COR,2026-08-01,-3m,1,
+COR,2026-09-01,-2m,1,
+COR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+COST,2026-08-01,-3m,1,
+COST,2026-09-01,-2m,1,
+COST,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CPAY,2026-08-01,-3m,1,
+CPAY,2026-09-01,-2m,1,
+CPAY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CPB,2026-08-01,-3m,1,
+CPB,2026-09-01,-2m,1,
+CPB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CPRT,2026-08-01,-3m,1,
+CPRT,2026-09-01,-2m,1,
+CPRT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CPT,2026-08-01,-3m,1,
+CPT,2026-09-01,-2m,1,
+CPT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CRL,2026-08-01,-3m,1,
+CRL,2026-09-01,-2m,1,
+CRL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CRM,2026-08-01,-3m,1,
+CRM,2026-09-01,-2m,1,
+CRM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CRWD,2026-08-01,-3m,1,
+CRWD,2026-09-01,-2m,1,
+CRWD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CSCO,2026-08-01,-3m,1,
+CSCO,2026-09-01,-2m,1,
+CSCO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CSGP,2026-08-01,-3m,1,
+CSGP,2026-09-01,-2m,1,
+CSGP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CSX,2026-08-01,-3m,1,
+CSX,2026-09-01,-2m,1,
+CSX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CTAS,2026-08-01,-3m,1,
+CTAS,2026-09-01,-2m,1,
+CTAS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CTSH,2026-08-01,-3m,1,
+CTSH,2026-09-01,-2m,1,
+CTSH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CTVA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CVS,2026-08-01,-3m,1,
+CVS,2026-09-01,-2m,1,
+CVS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CVX,2026-08-01,-3m,1,
+CVX,2026-09-01,-2m,1,
+CVX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+CZR,2026-08-01,-3m,1,
+CZR,2026-09-01,-2m,1,
+CZR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+D,2026-08-01,-3m,1,
+D,2026-09-01,-2m,1,
+D,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DAL,2026-08-01,-3m,1,
+DAL,2026-09-01,-2m,1,
+DAL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DD,2026-08-01,-3m,1,
+DD,2026-09-01,-2m,1,
+DD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DE,2026-08-01,-3m,1,
+DE,2026-09-01,-2m,1,
+DE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DECK,2026-08-01,-3m,1,
+DECK,2026-09-01,-2m,1,
+DECK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DELL,2026-08-01,-3m,1,
+DELL,2026-09-01,-2m,1,
+DELL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DG,2026-08-01,-3m,1,
+DG,2026-09-01,-2m,1,
+DG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DGX,2026-08-01,-3m,1,
+DGX,2026-09-01,-2m,1,
+DGX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DHI,2026-08-01,-3m,1,
+DHI,2026-09-01,-2m,1,
+DHI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DHR,2026-08-01,-3m,1,
+DHR,2026-09-01,-2m,1,
+DHR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DIS,2026-08-01,-3m,1,
+DIS,2026-09-01,-2m,1,
+DIS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DLR,2026-08-01,-3m,1,
+DLR,2026-09-01,-2m,1,
+DLR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DLTR,2026-08-01,-3m,1,
+DLTR,2026-09-01,-2m,1,
+DLTR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DOC,2026-08-01,-3m,1,
+DOC,2026-09-01,-2m,1,
+DOC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DOV,2026-08-01,-3m,1,
+DOV,2026-09-01,-2m,1,
+DOV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DOW,2026-08-01,-3m,1,
+DOW,2026-09-01,-2m,1,
+DOW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DPZ,2026-08-01,-3m,1,
+DPZ,2026-09-01,-2m,1,
+DPZ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DRI,2026-08-01,-3m,1,
+DRI,2026-09-01,-2m,1,
+DRI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DTE,2026-08-01,-3m,1,
+DTE,2026-09-01,-2m,1,
+DTE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DUK,2026-08-01,-3m,1,
+DUK,2026-09-01,-2m,1,
+DUK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DVA,2026-08-01,-3m,1,
+DVA,2026-09-01,-2m,1,
+DVA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DVN,2026-08-01,-3m,1,
+DVN,2026-09-01,-2m,1,
+DVN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+DXCM,2026-08-01,-3m,1,
+DXCM,2026-09-01,-2m,1,
+DXCM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EA,2026-08-01,-3m,0,no complete forward window (entry/exit bar missing)
+EA,2026-09-01,-2m,0,no complete forward window (entry/exit bar missing)
+EA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EBAY,2026-08-01,-3m,1,
+EBAY,2026-09-01,-2m,1,
+EBAY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ECL,2026-08-01,-3m,1,
+ECL,2026-09-01,-2m,1,
+ECL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ED,2026-08-01,-3m,1,
+ED,2026-09-01,-2m,1,
+ED,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EFX,2026-08-01,-3m,1,
+EFX,2026-09-01,-2m,1,
+EFX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EG,2026-08-01,-3m,1,
+EG,2026-09-01,-2m,1,
+EG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EIX,2026-08-01,-3m,1,
+EIX,2026-09-01,-2m,1,
+EIX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EL,2026-08-01,-3m,1,
+EL,2026-09-01,-2m,1,
+EL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ELV,2026-08-01,-3m,1,
+ELV,2026-09-01,-2m,1,
+ELV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EMN,2026-08-01,-3m,1,
+EMN,2026-09-01,-2m,1,
+EMN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EMR,2026-08-01,-3m,1,
+EMR,2026-09-01,-2m,1,
+EMR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ENPH,2026-08-01,-3m,1,
+ENPH,2026-09-01,-2m,1,
+ENPH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EOG,2026-08-01,-3m,1,
+EOG,2026-09-01,-2m,1,
+EOG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EPAM,2026-08-01,-3m,1,
+EPAM,2026-09-01,-2m,1,
+EPAM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EQIX,2026-08-01,-3m,1,
+EQIX,2026-09-01,-2m,1,
+EQIX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EQR,2026-08-01,-3m,0,no complete forward window (entry/exit bar missing)
+EQR,2026-09-01,-2m,0,no complete forward window (entry/exit bar missing)
+EQR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EQT,2026-08-01,-3m,1,
+EQT,2026-09-01,-2m,1,
+EQT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ES,2026-08-01,-3m,1,
+ES,2026-09-01,-2m,1,
+ES,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ESS,2026-08-01,-3m,1,
+ESS,2026-09-01,-2m,1,
+ESS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ETN,2026-08-01,-3m,1,
+ETN,2026-09-01,-2m,1,
+ETN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ETR,2026-08-01,-3m,1,
+ETR,2026-09-01,-2m,1,
+ETR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EVRG,2026-08-01,-3m,1,
+EVRG,2026-09-01,-2m,1,
+EVRG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EW,2026-08-01,-3m,1,
+EW,2026-09-01,-2m,1,
+EW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EXC,2026-08-01,-3m,1,
+EXC,2026-09-01,-2m,1,
+EXC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EXPD,2026-08-01,-3m,1,
+EXPD,2026-09-01,-2m,1,
+EXPD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EXPE,2026-08-01,-3m,1,
+EXPE,2026-09-01,-2m,1,
+EXPE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+EXR,2026-08-01,-3m,1,
+EXR,2026-09-01,-2m,1,
+EXR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+F,2026-08-01,-3m,1,
+F,2026-09-01,-2m,1,
+F,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FANG,2026-08-01,-3m,1,
+FANG,2026-09-01,-2m,1,
+FANG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FAST,2026-08-01,-3m,1,
+FAST,2026-09-01,-2m,1,
+FAST,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FCX,2026-08-01,-3m,1,
+FCX,2026-09-01,-2m,1,
+FCX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FDS,2026-08-01,-3m,1,
+FDS,2026-09-01,-2m,1,
+FDS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FDX,2026-08-01,-3m,1,
+FDX,2026-09-01,-2m,1,
+FDX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FE,2026-08-01,-3m,1,
+FE,2026-09-01,-2m,1,
+FE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FFIV,2026-09-01,-2m,1,
+FFIV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FICO,2026-08-01,-3m,1,
+FICO,2026-09-01,-2m,1,
+FICO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FIS,2026-08-01,-3m,1,
+FIS,2026-09-01,-2m,1,
+FIS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FITB,2026-08-01,-3m,1,
+FITB,2026-09-01,-2m,1,
+FITB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FOXA,2026-08-01,-3m,1,
+FOXA,2026-09-01,-2m,1,
+FOXA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FRT,2026-08-01,-3m,1,
+FRT,2026-09-01,-2m,1,
+FRT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FSLR,2026-08-01,-3m,1,
+FSLR,2026-09-01,-2m,1,
+FSLR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FTNT,2026-08-01,-3m,1,
+FTNT,2026-09-01,-2m,1,
+FTNT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+FTV,2026-08-01,-3m,1,
+FTV,2026-09-01,-2m,1,
+FTV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GD,2026-08-01,-3m,1,
+GD,2026-09-01,-2m,1,
+GD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GDDY,2026-08-01,-3m,1,
+GDDY,2026-09-01,-2m,1,
+GDDY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GE,2026-08-01,-3m,1,
+GE,2026-09-01,-2m,1,
+GE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GEHC,2026-08-01,-3m,1,
+GEHC,2026-09-01,-2m,1,
+GEHC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GEN,2026-08-01,-3m,1,
+GEN,2026-09-01,-2m,1,
+GEN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GEV,2026-08-01,-3m,1,
+GEV,2026-09-01,-2m,1,
+GEV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GILD,2026-08-01,-3m,1,
+GILD,2026-09-01,-2m,1,
+GILD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GIS,2026-08-01,-3m,1,
+GIS,2026-09-01,-2m,1,
+GIS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GL,2026-09-01,-2m,1,
+GL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GLW,2026-08-01,-3m,1,
+GLW,2026-09-01,-2m,1,
+GLW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GM,2026-08-01,-3m,1,
+GM,2026-09-01,-2m,1,
+GM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GNRC,2026-08-01,-3m,1,
+GNRC,2026-09-01,-2m,1,
+GNRC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GOOG,2026-08-01,-3m,1,
+GOOG,2026-09-01,-2m,1,
+GOOG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GOOGL,2026-08-01,-3m,1,
+GOOGL,2026-09-01,-2m,1,
+GOOGL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GPC,2026-08-01,-3m,1,
+GPC,2026-09-01,-2m,1,
+GPC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GPN,2026-08-01,-3m,1,
+GPN,2026-09-01,-2m,1,
+GPN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GRMN,2026-08-01,-3m,1,
+GRMN,2026-09-01,-2m,1,
+GRMN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GS,2026-08-01,-3m,1,
+GS,2026-09-01,-2m,1,
+GS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+GWW,2026-08-01,-3m,1,
+GWW,2026-09-01,-2m,1,
+GWW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HAL,2026-08-01,-3m,1,
+HAL,2026-09-01,-2m,1,
+HAL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HAS,2026-08-01,-3m,1,
+HAS,2026-09-01,-2m,1,
+HAS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HBAN,2026-08-01,-3m,1,
+HBAN,2026-09-01,-2m,1,
+HBAN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HCA,2026-08-01,-3m,1,
+HCA,2026-09-01,-2m,1,
+HCA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HD,2026-08-01,-3m,1,
+HD,2026-09-01,-2m,1,
+HD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HIG,2026-08-01,-3m,1,
+HIG,2026-09-01,-2m,1,
+HIG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HII,2026-08-01,-3m,1,
+HII,2026-09-01,-2m,1,
+HII,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HLT,2026-08-01,-3m,1,
+HLT,2026-09-01,-2m,1,
+HLT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HON,2026-08-01,-3m,1,
+HON,2026-09-01,-2m,1,
+HON,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HOOD,2026-08-01,-3m,1,
+HOOD,2026-09-01,-2m,1,
+HOOD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HPE,2026-08-01,-3m,1,
+HPE,2026-09-01,-2m,1,
+HPE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HPQ,2026-08-01,-3m,1,
+HPQ,2026-09-01,-2m,1,
+HPQ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HRL,2026-08-01,-3m,1,
+HRL,2026-09-01,-2m,1,
+HRL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HSIC,2026-08-01,-3m,1,
+HSIC,2026-09-01,-2m,1,
+HSIC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HST,2026-08-01,-3m,1,
+HST,2026-09-01,-2m,1,
+HST,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HSY,2026-08-01,-3m,1,
+HSY,2026-09-01,-2m,1,
+HSY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HUBB,2026-08-01,-3m,1,
+HUBB,2026-09-01,-2m,1,
+HUBB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HUM,2026-08-01,-3m,1,
+HUM,2026-09-01,-2m,1,
+HUM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+HWM,2026-08-01,-3m,1,
+HWM,2026-09-01,-2m,1,
+HWM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IBM,2026-08-01,-3m,1,
+IBM,2026-09-01,-2m,1,
+IBM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ICE,2026-08-01,-3m,1,
+ICE,2026-09-01,-2m,1,
+ICE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IDXX,2026-08-01,-3m,1,
+IDXX,2026-09-01,-2m,1,
+IDXX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IEX,2026-08-01,-3m,1,
+IEX,2026-09-01,-2m,1,
+IEX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IFF,2026-08-01,-3m,1,
+IFF,2026-09-01,-2m,1,
+IFF,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+INCY,2026-08-01,-3m,1,
+INCY,2026-09-01,-2m,1,
+INCY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+INTC,2026-08-01,-3m,1,
+INTC,2026-09-01,-2m,1,
+INTC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+INTU,2026-08-01,-3m,1,
+INTU,2026-09-01,-2m,1,
+INTU,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+INVH,2026-08-01,-3m,1,
+INVH,2026-09-01,-2m,1,
+INVH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IP,2026-08-01,-3m,1,
+IP,2026-09-01,-2m,1,
+IP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IQV,2026-08-01,-3m,1,
+IQV,2026-09-01,-2m,1,
+IQV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IR,2026-08-01,-3m,1,
+IR,2026-09-01,-2m,1,
+IR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IRM,2026-08-01,-3m,1,
+IRM,2026-09-01,-2m,1,
+IRM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ISRG,2026-08-01,-3m,1,
+ISRG,2026-09-01,-2m,1,
+ISRG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IT,2026-08-01,-3m,1,
+IT,2026-09-01,-2m,1,
+IT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ITW,2026-08-01,-3m,1,
+ITW,2026-09-01,-2m,1,
+ITW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+IVZ,2026-08-01,-3m,1,
+IVZ,2026-09-01,-2m,1,
+IVZ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+J,2026-08-01,-3m,1,
+J,2026-09-01,-2m,1,
+J,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+JBHT,2026-08-01,-3m,1,
+JBHT,2026-09-01,-2m,1,
+JBHT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+JBL,2026-08-01,-3m,1,
+JBL,2026-09-01,-2m,1,
+JBL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+JCI,2026-08-01,-3m,1,
+JCI,2026-09-01,-2m,1,
+JCI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+JKHY,2026-08-01,-3m,1,
+JKHY,2026-09-01,-2m,1,
+JKHY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+JNJ,2026-08-01,-3m,1,
+JNJ,2026-09-01,-2m,1,
+JNJ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+JPM,2026-08-01,-3m,1,
+JPM,2026-09-01,-2m,1,
+JPM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KDP,2026-08-01,-3m,1,
+KDP,2026-09-01,-2m,1,
+KDP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KEY,2026-08-01,-3m,1,
+KEY,2026-09-01,-2m,1,
+KEY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KEYS,2026-08-01,-3m,1,
+KEYS,2026-09-01,-2m,1,
+KEYS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KHC,2026-08-01,-3m,1,
+KHC,2026-09-01,-2m,1,
+KHC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KIM,2026-08-01,-3m,1,
+KIM,2026-09-01,-2m,1,
+KIM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KKR,2026-08-01,-3m,1,
+KKR,2026-09-01,-2m,1,
+KKR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KLAC,2026-08-01,-3m,1,
+KLAC,2026-09-01,-2m,1,
+KLAC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KMB,2026-08-01,-3m,1,
+KMB,2026-09-01,-2m,1,
+KMB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KMI,2026-08-01,-3m,1,
+KMI,2026-09-01,-2m,1,
+KMI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KMX,2026-08-01,-3m,1,
+KMX,2026-09-01,-2m,1,
+KMX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KO,2026-08-01,-3m,1,
+KO,2026-09-01,-2m,1,
+KO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KR,2026-08-01,-3m,1,
+KR,2026-09-01,-2m,1,
+KR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+KVUE,2026-08-01,-3m,0,no complete forward window (entry/exit bar missing)
+KVUE,2026-09-01,-2m,0,no complete forward window (entry/exit bar missing)
+KVUE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LDOS,2026-08-01,-3m,1,
+LDOS,2026-09-01,-2m,1,
+LDOS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LEN,2026-08-01,-3m,1,
+LEN,2026-09-01,-2m,1,
+LEN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LH,2026-08-01,-3m,1,
+LH,2026-09-01,-2m,1,
+LH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LHX,2026-08-01,-3m,1,
+LHX,2026-09-01,-2m,1,
+LHX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LIN,2026-08-01,-3m,1,
+LIN,2026-09-01,-2m,1,
+LIN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LKQ,2026-08-01,-3m,1,
+LKQ,2026-09-01,-2m,1,
+LKQ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LLY,2026-08-01,-3m,1,
+LLY,2026-09-01,-2m,1,
+LLY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LMT,2026-08-01,-3m,1,
+LMT,2026-09-01,-2m,1,
+LMT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LNT,2026-08-01,-3m,1,
+LNT,2026-09-01,-2m,1,
+LNT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LOW,2026-08-01,-3m,1,
+LOW,2026-09-01,-2m,1,
+LOW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LRCX,2026-08-01,-3m,1,
+LRCX,2026-09-01,-2m,1,
+LRCX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LULU,2026-08-01,-3m,1,
+LULU,2026-09-01,-2m,1,
+LULU,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LUV,2026-08-01,-3m,1,
+LUV,2026-09-01,-2m,1,
+LUV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LVS,2026-08-01,-3m,1,
+LVS,2026-09-01,-2m,1,
+LVS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LW,2026-08-01,-3m,1,
+LW,2026-09-01,-2m,1,
+LW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LYB,2026-08-01,-3m,1,
+LYB,2026-09-01,-2m,1,
+LYB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+LYV,2026-08-01,-3m,1,
+LYV,2026-09-01,-2m,1,
+LYV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MA,2026-08-01,-3m,1,
+MA,2026-09-01,-2m,1,
+MA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MAA,2026-08-01,-3m,1,
+MAA,2026-09-01,-2m,1,
+MAA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MAR,2026-08-01,-3m,1,
+MAR,2026-09-01,-2m,1,
+MAR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MARA,2026-08-01,-3m,1,
+MARA,2026-09-01,-2m,1,
+MARA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MAS,2026-08-01,-3m,1,
+MAS,2026-09-01,-2m,1,
+MAS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MCD,2026-08-01,-3m,1,
+MCD,2026-09-01,-2m,1,
+MCD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MCHP,2026-08-01,-3m,1,
+MCHP,2026-09-01,-2m,1,
+MCHP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MCK,2026-08-01,-3m,1,
+MCK,2026-09-01,-2m,1,
+MCK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MCO,2026-08-01,-3m,1,
+MCO,2026-09-01,-2m,1,
+MCO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MDLZ,2026-08-01,-3m,1,
+MDLZ,2026-09-01,-2m,1,
+MDLZ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MDT,2026-08-01,-3m,1,
+MDT,2026-09-01,-2m,1,
+MDT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MET,2026-08-01,-3m,1,
+MET,2026-09-01,-2m,1,
+MET,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+META,2026-08-01,-3m,1,
+META,2026-09-01,-2m,1,
+META,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MGM,2026-08-01,-3m,1,
+MGM,2026-09-01,-2m,1,
+MGM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MHK,2026-08-01,-3m,1,
+MHK,2026-09-01,-2m,1,
+MHK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MKC,2026-08-01,-3m,1,
+MKC,2026-09-01,-2m,1,
+MKC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MKTX,2026-08-01,-3m,1,
+MKTX,2026-09-01,-2m,1,
+MKTX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MLM,2026-08-01,-3m,1,
+MLM,2026-09-01,-2m,1,
+MLM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MMM,2026-08-01,-3m,1,
+MMM,2026-09-01,-2m,1,
+MMM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MNST,2026-08-01,-3m,1,
+MNST,2026-09-01,-2m,1,
+MNST,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MO,2026-08-01,-3m,1,
+MO,2026-09-01,-2m,1,
+MO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MOH,2026-08-01,-3m,1,
+MOH,2026-09-01,-2m,1,
+MOH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MOS,2026-08-01,-3m,1,
+MOS,2026-09-01,-2m,1,
+MOS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MPC,2026-08-01,-3m,1,
+MPC,2026-09-01,-2m,1,
+MPC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MPWR,2026-08-01,-3m,1,
+MPWR,2026-09-01,-2m,1,
+MPWR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MRK,2026-08-01,-3m,1,
+MRK,2026-09-01,-2m,1,
+MRK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MRNA,2026-08-01,-3m,1,
+MRNA,2026-09-01,-2m,1,
+MRNA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MRVL,2026-08-01,-3m,1,
+MRVL,2026-09-01,-2m,1,
+MRVL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MS,2026-08-01,-3m,1,
+MS,2026-09-01,-2m,1,
+MS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MSCI,2026-08-01,-3m,1,
+MSCI,2026-09-01,-2m,1,
+MSCI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MSFT,2026-08-01,-3m,1,
+MSFT,2026-09-01,-2m,1,
+MSFT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MSI,2026-08-01,-3m,1,
+MSI,2026-09-01,-2m,1,
+MSI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MSTR,2026-08-01,-3m,1,
+MSTR,2026-09-01,-2m,1,
+MSTR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MTB,2026-08-01,-3m,1,
+MTB,2026-09-01,-2m,1,
+MTB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MTCH,2026-08-01,-3m,1,
+MTCH,2026-09-01,-2m,1,
+MTCH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MTD,2026-08-01,-3m,1,
+MTD,2026-09-01,-2m,1,
+MTD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+MU,2026-08-01,-3m,1,
+MU,2026-09-01,-2m,1,
+MU,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NCLH,2026-08-01,-3m,1,
+NCLH,2026-09-01,-2m,1,
+NCLH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NDAQ,2026-08-01,-3m,1,
+NDAQ,2026-09-01,-2m,1,
+NDAQ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NDSN,2026-09-01,-2m,1,
+NDSN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NEE,2026-08-01,-3m,1,
+NEE,2026-09-01,-2m,1,
+NEE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NEM,2026-08-01,-3m,1,
+NEM,2026-09-01,-2m,1,
+NEM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NFLX,2026-08-01,-3m,1,
+NFLX,2026-09-01,-2m,1,
+NFLX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NI,2026-08-01,-3m,1,
+NI,2026-09-01,-2m,1,
+NI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NIO,2026-08-01,-3m,1,
+NIO,2026-09-01,-2m,1,
+NIO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NKE,2026-08-01,-3m,1,
+NKE,2026-09-01,-2m,1,
+NKE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NOC,2026-08-01,-3m,1,
+NOC,2026-09-01,-2m,1,
+NOC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NOW,2026-08-01,-3m,1,
+NOW,2026-09-01,-2m,1,
+NOW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NRG,2026-08-01,-3m,1,
+NRG,2026-09-01,-2m,1,
+NRG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NSC,2026-08-01,-3m,1,
+NSC,2026-09-01,-2m,1,
+NSC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NTAP,2026-08-01,-3m,1,
+NTAP,2026-09-01,-2m,1,
+NTAP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NTRS,2026-08-01,-3m,1,
+NTRS,2026-09-01,-2m,1,
+NTRS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NUE,2026-08-01,-3m,1,
+NUE,2026-09-01,-2m,1,
+NUE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NVDA,2026-08-01,-3m,1,
+NVDA,2026-09-01,-2m,1,
+NVDA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NVR,2026-08-01,-3m,1,
+NVR,2026-09-01,-2m,1,
+NVR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NWS,2026-08-01,-3m,1,
+NWS,2026-09-01,-2m,1,
+NWS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NWSA,2026-08-01,-3m,1,
+NWSA,2026-09-01,-2m,1,
+NWSA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+NXPI,2026-08-01,-3m,1,
+NXPI,2026-09-01,-2m,1,
+NXPI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+O,2026-08-01,-3m,1,
+O,2026-09-01,-2m,1,
+O,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ODFL,2026-08-01,-3m,1,
+ODFL,2026-09-01,-2m,1,
+ODFL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+OKE,2026-08-01,-3m,1,
+OKE,2026-09-01,-2m,1,
+OKE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+OMC,2026-08-01,-3m,1,
+OMC,2026-09-01,-2m,1,
+OMC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ON,2026-08-01,-3m,1,
+ON,2026-09-01,-2m,1,
+ON,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ORCL,2026-08-01,-3m,1,
+ORCL,2026-09-01,-2m,1,
+ORCL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ORLY,2026-08-01,-3m,1,
+ORLY,2026-09-01,-2m,1,
+ORLY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+OTIS,2026-08-01,-3m,1,
+OTIS,2026-09-01,-2m,1,
+OTIS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+OXY,2026-08-01,-3m,1,
+OXY,2026-09-01,-2m,1,
+OXY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PANW,2026-08-01,-3m,1,
+PANW,2026-09-01,-2m,1,
+PANW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PAYC,2026-08-01,-3m,1,
+PAYC,2026-09-01,-2m,1,
+PAYC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PAYX,2026-08-01,-3m,1,
+PAYX,2026-09-01,-2m,1,
+PAYX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PCAR,2026-08-01,-3m,1,
+PCAR,2026-09-01,-2m,1,
+PCAR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PCG,2026-08-01,-3m,1,
+PCG,2026-09-01,-2m,1,
+PCG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PEG,2026-08-01,-3m,1,
+PEG,2026-09-01,-2m,1,
+PEG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PEP,2026-08-01,-3m,1,
+PEP,2026-09-01,-2m,1,
+PEP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PFE,2026-08-01,-3m,1,
+PFE,2026-09-01,-2m,1,
+PFE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PFG,2026-08-01,-3m,1,
+PFG,2026-09-01,-2m,1,
+PFG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PG,2026-08-01,-3m,1,
+PG,2026-09-01,-2m,1,
+PG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PGR,2026-08-01,-3m,1,
+PGR,2026-09-01,-2m,1,
+PGR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PH,2026-08-01,-3m,1,
+PH,2026-09-01,-2m,1,
+PH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PHM,2026-08-01,-3m,1,
+PHM,2026-09-01,-2m,1,
+PHM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PINS,2026-08-01,-3m,1,
+PINS,2026-09-01,-2m,1,
+PINS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PKG,2026-08-01,-3m,1,
+PKG,2026-09-01,-2m,1,
+PKG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PLD,2026-08-01,-3m,1,
+PLD,2026-09-01,-2m,1,
+PLD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PLTR,2026-08-01,-3m,1,
+PLTR,2026-09-01,-2m,1,
+PLTR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PM,2026-08-01,-3m,1,
+PM,2026-09-01,-2m,1,
+PM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PNC,2026-08-01,-3m,1,
+PNC,2026-09-01,-2m,1,
+PNC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PNR,2026-08-01,-3m,1,
+PNR,2026-09-01,-2m,1,
+PNR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PNW,2026-08-01,-3m,1,
+PNW,2026-09-01,-2m,1,
+PNW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PODD,2026-08-01,-3m,1,
+PODD,2026-09-01,-2m,1,
+PODD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+POOL,2026-08-01,-3m,1,
+POOL,2026-09-01,-2m,1,
+POOL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PPG,2026-08-01,-3m,1,
+PPG,2026-09-01,-2m,1,
+PPG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PPL,2026-08-01,-3m,1,
+PPL,2026-09-01,-2m,1,
+PPL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PRU,2026-08-01,-3m,1,
+PRU,2026-09-01,-2m,1,
+PRU,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PSA,2026-08-01,-3m,1,
+PSA,2026-09-01,-2m,1,
+PSA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PSX,2026-08-01,-3m,1,
+PSX,2026-09-01,-2m,1,
+PSX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PTC,2026-08-01,-3m,1,
+PTC,2026-09-01,-2m,1,
+PTC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PWR,2026-08-01,-3m,1,
+PWR,2026-09-01,-2m,1,
+PWR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+PYPL,2026-08-01,-3m,1,
+PYPL,2026-09-01,-2m,1,
+PYPL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+QCOM,2026-08-01,-3m,1,
+QCOM,2026-09-01,-2m,1,
+QCOM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+QRVO,2026-08-01,-3m,0,no complete forward window (entry/exit bar missing)
+QRVO,2026-09-01,-2m,0,no complete forward window (entry/exit bar missing)
+QRVO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RCL,2026-08-01,-3m,1,
+RCL,2026-09-01,-2m,1,
+RCL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+REG,2026-08-01,-3m,1,
+REG,2026-09-01,-2m,1,
+REG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+REGN,2026-08-01,-3m,1,
+REGN,2026-09-01,-2m,1,
+REGN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RF,2026-08-01,-3m,1,
+RF,2026-09-01,-2m,1,
+RF,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RIOT,2026-08-01,-3m,1,
+RIOT,2026-09-01,-2m,1,
+RIOT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RJF,2026-08-01,-3m,1,
+RJF,2026-09-01,-2m,1,
+RJF,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RL,2026-08-01,-3m,1,
+RL,2026-09-01,-2m,1,
+RL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RMD,2026-08-01,-3m,1,
+RMD,2026-09-01,-2m,1,
+RMD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ROK,2026-08-01,-3m,1,
+ROK,2026-09-01,-2m,1,
+ROK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ROL,2026-08-01,-3m,1,
+ROL,2026-09-01,-2m,1,
+ROL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ROP,2026-08-01,-3m,1,
+ROP,2026-09-01,-2m,1,
+ROP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ROST,2026-08-01,-3m,1,
+ROST,2026-09-01,-2m,1,
+ROST,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RSG,2026-08-01,-3m,1,
+RSG,2026-09-01,-2m,1,
+RSG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RTX,2026-08-01,-3m,1,
+RTX,2026-09-01,-2m,1,
+RTX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RVTY,2026-08-01,-3m,1,
+RVTY,2026-09-01,-2m,1,
+RVTY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+RY.TO,2026-09-01,-2m,1,
+RY.TO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SBAC,2026-08-01,-3m,1,
+SBAC,2026-09-01,-2m,1,
+SBAC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SBUX,2026-08-01,-3m,1,
+SBUX,2026-09-01,-2m,1,
+SBUX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SCHW,2026-08-01,-3m,1,
+SCHW,2026-09-01,-2m,1,
+SCHW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SHOP.TO,2026-08-01,-3m,1,
+SHOP.TO,2026-09-01,-2m,1,
+SHOP.TO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SHW,2026-08-01,-3m,1,
+SHW,2026-09-01,-2m,1,
+SHW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SJM,2026-08-01,-3m,1,
+SJM,2026-09-01,-2m,1,
+SJM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SLB,2026-08-01,-3m,1,
+SLB,2026-09-01,-2m,1,
+SLB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SMCI,2026-08-01,-3m,1,
+SMCI,2026-09-01,-2m,1,
+SMCI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SNA,2026-09-01,-2m,1,
+SNA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SNPS,2026-08-01,-3m,1,
+SNPS,2026-09-01,-2m,1,
+SNPS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SO,2026-08-01,-3m,1,
+SO,2026-09-01,-2m,1,
+SO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SOLV,2026-08-01,-3m,1,
+SOLV,2026-09-01,-2m,1,
+SOLV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SPG,2026-08-01,-3m,1,
+SPG,2026-09-01,-2m,1,
+SPG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SPGI,2026-08-01,-3m,1,
+SPGI,2026-09-01,-2m,1,
+SPGI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SRE,2026-08-01,-3m,1,
+SRE,2026-09-01,-2m,1,
+SRE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+STE,2026-08-01,-3m,1,
+STE,2026-09-01,-2m,1,
+STE,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+STLD,2026-08-01,-3m,1,
+STLD,2026-09-01,-2m,1,
+STLD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+STT,2026-08-01,-3m,1,
+STT,2026-09-01,-2m,1,
+STT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+STX,2026-08-01,-3m,1,
+STX,2026-09-01,-2m,1,
+STX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+STZ,2026-08-01,-3m,1,
+STZ,2026-09-01,-2m,1,
+STZ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SWK,2026-08-01,-3m,1,
+SWK,2026-09-01,-2m,1,
+SWK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SWKS,2026-08-01,-3m,1,
+SWKS,2026-09-01,-2m,1,
+SWKS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SYF,2026-08-01,-3m,1,
+SYF,2026-09-01,-2m,1,
+SYF,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SYK,2026-08-01,-3m,1,
+SYK,2026-09-01,-2m,1,
+SYK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+SYY,2026-08-01,-3m,1,
+SYY,2026-09-01,-2m,1,
+SYY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+T,2026-08-01,-3m,1,
+T,2026-09-01,-2m,1,
+T,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TAP,2026-08-01,-3m,1,
+TAP,2026-09-01,-2m,1,
+TAP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TD.TO,2026-09-01,-2m,1,
+TD.TO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TDG,2026-08-01,-3m,1,
+TDG,2026-09-01,-2m,1,
+TDG,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TDY,2026-08-01,-3m,1,
+TDY,2026-09-01,-2m,1,
+TDY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TECH,2026-08-01,-3m,1,
+TECH,2026-09-01,-2m,1,
+TECH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TEL,2026-08-01,-3m,1,
+TEL,2026-09-01,-2m,1,
+TEL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TER,2026-08-01,-3m,1,
+TER,2026-09-01,-2m,1,
+TER,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TFC,2026-08-01,-3m,1,
+TFC,2026-09-01,-2m,1,
+TFC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TFX,2026-08-01,-3m,1,
+TFX,2026-09-01,-2m,1,
+TFX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TGT,2026-08-01,-3m,1,
+TGT,2026-09-01,-2m,1,
+TGT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TJX,2026-08-01,-3m,1,
+TJX,2026-09-01,-2m,1,
+TJX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TMO,2026-08-01,-3m,1,
+TMO,2026-09-01,-2m,1,
+TMO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TMUS,2026-08-01,-3m,1,
+TMUS,2026-09-01,-2m,1,
+TMUS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TPR,2026-08-01,-3m,1,
+TPR,2026-09-01,-2m,1,
+TPR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TRGP,2026-08-01,-3m,1,
+TRGP,2026-09-01,-2m,1,
+TRGP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TRMB,2026-08-01,-3m,1,
+TRMB,2026-09-01,-2m,1,
+TRMB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TROW,2026-08-01,-3m,1,
+TROW,2026-09-01,-2m,1,
+TROW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TRV,2026-08-01,-3m,1,
+TRV,2026-09-01,-2m,1,
+TRV,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TSCO,2026-08-01,-3m,1,
+TSCO,2026-09-01,-2m,1,
+TSCO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TSLA,2026-08-01,-3m,1,
+TSLA,2026-09-01,-2m,1,
+TSLA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TSN,2026-08-01,-3m,1,
+TSN,2026-09-01,-2m,1,
+TSN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TT,2026-08-01,-3m,1,
+TT,2026-09-01,-2m,1,
+TT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TTWO,2026-08-01,-3m,1,
+TTWO,2026-09-01,-2m,1,
+TTWO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TXN,2026-08-01,-3m,1,
+TXN,2026-09-01,-2m,1,
+TXN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TXT,2026-08-01,-3m,1,
+TXT,2026-09-01,-2m,1,
+TXT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+TYL,2026-08-01,-3m,1,
+TYL,2026-09-01,-2m,1,
+TYL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+UAL,2026-08-01,-3m,1,
+UAL,2026-09-01,-2m,1,
+UAL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+UBER,2026-08-01,-3m,1,
+UBER,2026-09-01,-2m,1,
+UBER,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+UDR,2026-08-01,-3m,1,
+UDR,2026-09-01,-2m,1,
+UDR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+UHS,2026-08-01,-3m,1,
+UHS,2026-09-01,-2m,1,
+UHS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ULTA,2026-08-01,-3m,1,
+ULTA,2026-09-01,-2m,1,
+ULTA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+UNH,2026-08-01,-3m,1,
+UNH,2026-09-01,-2m,1,
+UNH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+UNP,2026-08-01,-3m,1,
+UNP,2026-09-01,-2m,1,
+UNP,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+UPS,2026-08-01,-3m,1,
+UPS,2026-09-01,-2m,1,
+UPS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+URI,2026-08-01,-3m,1,
+URI,2026-09-01,-2m,1,
+URI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+USB,2026-08-01,-3m,1,
+USB,2026-09-01,-2m,1,
+USB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+V,2026-08-01,-3m,1,
+V,2026-09-01,-2m,1,
+V,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VICI,2026-08-01,-3m,1,
+VICI,2026-09-01,-2m,1,
+VICI,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VLO,2026-08-01,-3m,1,
+VLO,2026-09-01,-2m,1,
+VLO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VLTO,2026-08-01,-3m,1,
+VLTO,2026-09-01,-2m,1,
+VLTO,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VMC,2026-08-01,-3m,1,
+VMC,2026-09-01,-2m,1,
+VMC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VRSK,2026-08-01,-3m,1,
+VRSK,2026-09-01,-2m,1,
+VRSK,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VRSN,2026-08-01,-3m,1,
+VRSN,2026-09-01,-2m,1,
+VRSN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VRTX,2026-08-01,-3m,1,
+VRTX,2026-09-01,-2m,1,
+VRTX,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VST,2026-08-01,-3m,1,
+VST,2026-09-01,-2m,1,
+VST,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VTR,2026-08-01,-3m,1,
+VTR,2026-09-01,-2m,1,
+VTR,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VTRS,2026-08-01,-3m,1,
+VTRS,2026-09-01,-2m,1,
+VTRS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+VZ,2026-08-01,-3m,1,
+VZ,2026-09-01,-2m,1,
+VZ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WAB,2026-08-01,-3m,1,
+WAB,2026-09-01,-2m,1,
+WAB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WAT,2026-08-01,-3m,1,
+WAT,2026-09-01,-2m,1,
+WAT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WBD,2026-08-01,-3m,0,no complete forward window (entry/exit bar missing)
+WBD,2026-09-01,-2m,0,no complete forward window (entry/exit bar missing)
+WBD,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WDC,2026-08-01,-3m,1,
+WDC,2026-09-01,-2m,1,
+WDC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WEC,2026-08-01,-3m,1,
+WEC,2026-09-01,-2m,1,
+WEC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WELL,2026-08-01,-3m,1,
+WELL,2026-09-01,-2m,1,
+WELL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WFC,2026-08-01,-3m,1,
+WFC,2026-09-01,-2m,1,
+WFC,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WM,2026-08-01,-3m,1,
+WM,2026-09-01,-2m,1,
+WM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WMB,2026-08-01,-3m,1,
+WMB,2026-09-01,-2m,1,
+WMB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WMT,2026-08-01,-3m,1,
+WMT,2026-09-01,-2m,1,
+WMT,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WRB,2026-08-01,-3m,1,
+WRB,2026-09-01,-2m,1,
+WRB,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WST,2026-08-01,-3m,1,
+WST,2026-09-01,-2m,1,
+WST,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WTW,2026-08-01,-3m,1,
+WTW,2026-09-01,-2m,1,
+WTW,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WY,2026-08-01,-3m,1,
+WY,2026-09-01,-2m,1,
+WY,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+WYNN,2026-08-01,-3m,1,
+WYNN,2026-09-01,-2m,1,
+WYNN,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+XEL,2026-08-01,-3m,1,
+XEL,2026-09-01,-2m,1,
+XEL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+XOM,2026-08-01,-3m,1,
+XOM,2026-09-01,-2m,1,
+XOM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+XYL,2026-08-01,-3m,1,
+XYL,2026-09-01,-2m,1,
+XYL,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+XYZ,2026-08-01,-3m,1,
+XYZ,2026-09-01,-2m,1,
+XYZ,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+YUM,2026-08-01,-3m,1,
+YUM,2026-09-01,-2m,1,
+YUM,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ZBH,2026-08-01,-3m,1,
+ZBH,2026-09-01,-2m,1,
+ZBH,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ZBRA,2026-08-01,-3m,1,
+ZBRA,2026-09-01,-2m,1,
+ZBRA,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
+ZTS,2026-08-01,-3m,1,
+ZTS,2026-09-01,-2m,1,
+ZTS,2026-10-01,-1m,0,no complete forward window (entry/exit bar missing)
