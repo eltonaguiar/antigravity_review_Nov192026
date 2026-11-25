@@ -1,0 +1,60 @@
+# KILO delivery verification
+
+**Verified against `origin/main` at `c575c01`** using `git cat-file -e` per exact path; line count from `git show` (splitlines).
+
+| path | lines | status |
+|---|---:|---|
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/grade_ordinals_draft.csv` | 638 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/grade_ordinals_frozen.csv` | 612 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/firm_skill_weights.csv` | 222 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/AUDIT_OF_TRACK_A.md` | 74 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/AUDIT_OF_TRACK_C.md` | 34 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/score_inversion_test.md` | 62 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/score_inversion_test.json` | 88 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/target_bundle_test.md` | 55 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/target_bundle_test.json` | 53 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/input_assertions.py` | 135 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/DENOMINATOR_AUDIT.md` | 49 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/PLACEBO_AUDIT.md` | 62 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/pattern_tests.md` | 31 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/pattern_tests.json` | 31 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/DATA_MANIFEST_2026-11-24.json` | 31 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/EDGE_SEARCH_PLAN.md` | 90 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/polymarket_leaderboard_snapshot.py` | 49 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/COST_GATE_BY_CLASS.md` | 92 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/COST_GATE_BY_CLASS.json` | 1955 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/cost_gate_by_class.py` | 83 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/EXPIRED_ROOT_CAUSE.md` | 97 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/EXPIRY_MARK_TO_MARKET.md` | 86 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/RESOLVE_FAILED_RECOMPUTE.md` | 49 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/RESOLVE_FAILED_RECOMPUTE.json` | 16663 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/recompute_resolve_failed.py` | 64 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/CLASS_COVERAGE_TABLE.md` | 40 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/CLASS_COVERAGE_TABLE.json` | 85 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/class_coverage_table.py` | 40 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/TWO_TABLE_RECONCILIATION.md` | 85 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/EXPECTANCY_CORRECTED.md` | 42 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/DILUTION_SENSITIVITY.md` | 35 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/DILUTION_SENSITIVITY.json` | 122 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/dilution_sensitivity.py` | 21 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/tracker/COVERAGE_BIAS_CHECK.md` | 69 | **PRESENT** |
+| `12_INSIDER/collect_form4.py` | 257 | **PRESENT** |
+| `12_INSIDER/form4_events_wide.csv` | 2641 | **PRESENT** |
+| `12_INSIDER/form4_summary_wide.md` | 34 | **PRESENT** |
+| `12_INSIDER/H260_CORRECT_SIZING.md` | 53 | **PRESENT** |
+| `12_INSIDER/h260_correct_sizing.json` | 56 | **PRESENT** |
+| `12_INSIDER/h260_correct_sizing.py` | 104 | **PRESENT** |
+| `42_HARVEST_UPGRADE_2026-11-24/DEPLOYMENT_LOG.md` | 69 | **PRESENT** |
+| `CONTEST/trials/README.md` | 11 | **PRESENT** |
+| `CONTEST/trials/trials_union.jsonl` | 19 | **PRESENT** |
+| `docs/ledger.html` | 23 | **PRESENT** |
+| `docs/CROWD_SOURCE_PROFITABILITY_AUDIT.md` | 229 | **PRESENT** |
+| `docs/SPECULATIVE_PROFITABILITY_AND_RISK.md` | 122 | **PRESENT** |
+| `docs/speculative-markets.html` | 135 | **PRESENT** |
+| `docs/harvest.html` | 558 | **PRESENT** |
+
+**Total artifacts: 48. Present: 48. Missing: 0.**
+
+Path-case note: the H260 JSON is `12_INSIDER/h260_correct_sizing.json` (lowercase h); an uppercase `H260_CORRECT_SIZING.json` does not exist and was not counted.
+
+All listed paths are independently checkable with the exact `git cat-file -e origin/main:<path>` command.
