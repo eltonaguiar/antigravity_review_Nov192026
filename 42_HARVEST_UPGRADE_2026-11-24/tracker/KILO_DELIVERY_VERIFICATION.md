@@ -58,3 +58,12 @@
 Path-case note: the H260 JSON is `12_INSIDER/h260_correct_sizing.json` (lowercase h); an uppercase `H260_CORRECT_SIZING.json` does not exist and was not counted.
 
 All listed paths are independently checkable with the exact `git cat-file -e origin/main:<path>` command.
+
+## Re-verification — 2026-11-25T07:26:49Z
+
+Exact-path re-run against `origin/main` at **d6a0a28** using
+`git cat-file -e origin/main:<path>` for all **48** paths listed above.
+
+- **PRESENT: 48/48**
+- **MISSING: 0**
+- No path was rebuilt; no missing-path rebuild was attempted.
