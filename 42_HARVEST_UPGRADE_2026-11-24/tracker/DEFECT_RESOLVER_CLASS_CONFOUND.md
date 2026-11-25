@@ -131,3 +131,57 @@ numbers actually describe — and that is a useful thing to know, just not the t
 The `+6.34 bp` mean and `−38.98 bp` median over 33,092 resolved rows are unaffected by this confound
 (they pool all classes), but they inherit the two-table disagreement and the unjoined-row bias, so they
 carry a stated range rather than a point value until those are resolved.
+
+---
+
+## Third independent corroboration — and the formula that quantifies the bias
+
+A third model family (Meta's Muse Ember, via OpenRouter's playground, answering a differently-worded
+prompt that contained no measured figures at all) named the same defect first and supplied something the
+other two did not — **an expression for the dilution**:
+
+> *"A backfill 0 is not a realised breakeven; it's missing data coded as 0. If class A is 90% backfilled
+> and class B 10%, their published means are roughly `observed_mean ≈ true_mean × priced_share`. The
+> ranking therefore sorts classes largely by resolver coverage / backfill usage, not profitability. A
+> genuinely strong but poorly backfilled class is pulled to 0; a weak but fully priced class can rank
+> above it."*
+
+That is the mechanism stated as arithmetic, and it inverts into a screening correction:
+
+```
+true_mean  ≈  published_mean / priced_share
+```
+
+Applied to the withdrawn table, using priced share = non-zero returns ÷ class rows:
+
+| class | rows | priced rows | priced share | published mean | implied true mean |
+|---|---:|---:|---:|---:|---:|
+| CRYPTO | 38,213 | 29,567 | **77.4%** | +0.029% | **+0.037%** |
+| FOREX | 16,039 | 2,947 | **18.4%** | +0.056% | **+0.30%** |
+| COMMODITY | 5,882 | 922 | **15.7%** | −0.103% | **−0.66%** |
+| EQUITY | 1,984 | 244 | **12.3%** | −0.088% | **−0.72%** |
+
+**The published spread between classes was compressed by up to 6×.** FOREX's +0.056% and COMMODITY's
+−0.103% are 18% and 16% complete respectively; dividing through moves them to +0.30% and −0.66%. The
+ordering happens to survive the correction, but the magnitudes were wrong by a factor of five to six, and
+that is before any cost is applied.
+
+Caveat, and it matters: this division is only valid if unpriced picks are missing at random within a
+class. We know they are not — the unjoined rows average nearly twice as negative as the joined ones — so
+these implied figures are a **sanity bound on the distortion**, not corrected estimates. The correct
+computation remains the one in "What replaces it": recompute from prices, publish coverage, never treat a
+backfill zero as a return.
+
+### Panel accounting, stated plainly
+
+Three model families independently identified this defect:
+
+| source | backend | independent? | contributed |
+|---|---|---|---|
+| router ×3 | deepseek-flash / deepseek-chat-direct | **no** — one family, three samples | D1 (SQL would not compile), D5 (resolver confound), D7 (1,664 recomputable), D9 (join fan-out — refuted by test) |
+| `qwen3:30b-a3b` on the Linux host | Qwen | **yes** — different vendor, numbers withheld | named the confound first; recommended publishing the backfill resolution rate |
+| Muse Ember (OpenRouter playground) | Meta | **yes** — different vendor, different prompt, no figures supplied | the dilution formula `observed ≈ true × priced_share` and `priced_coverage` as the mandatory companion statistic |
+
+Two of the three were genuinely independent, and all three converged on the same defect **while proposing
+different remedies** — which is the reading that matters. Their agreement corroborates the defect; it does
+not corroborate any particular fix.
