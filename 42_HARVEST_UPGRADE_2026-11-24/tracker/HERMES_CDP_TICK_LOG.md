@@ -66,3 +66,17 @@ No screen clicks, no relaunch. Never click Run/Deny/Approve.
 - Coordinator fixup: reproduce query in the new collation note had unquoted string literals; corrected here (commit with this record).
 - copilot composer: panel_poke reported SEND FAILED twice while the task text had in fact landed in .chat-editor-container (Monaco readback false negative). Both times the whole-document .chat-submit-button click cleared the composer to 0 and the task ran. No re-paste, no duplicate.
 - PR #10 (open, MERGEABLE clean, 3 commits) and PR #5 (mergeable UNKNOWN) left for the owner. Branch track-c/zoo-unjoined-upper-correction-2026-11-25 is now redundant for its one file (content on main byte-identical).
+
+## 2026-11-25 10:37 EST
+- CDP OK on 9333 (Chrome/150.0.7871.250). No relaunch, no screen clicks.
+- State at tick: ALL THREE PANELS RUNNING -> 0 sends, 0 gates touched, 0 new sessions.
+  - kilo: RUNNING — "Auto-approved by your global config matched bash rule *" / "Running commands 1m 50s".
+  - zoo: RUNNING — thinking=True. Briefly showed a Run/Deny gate over a file-presence loop (`...; done` -> "MISSING reports/cost_measurement_20261122.json") then transitioned to thinking; gate left untouched.
+  - copilot: RUNNING — "Thinking"; fetched changelog-2026-11-24.html from Pages.
+- Queue 1-6 outputs verified LIVE this tick (real tool output, not restated):
+  1. docs/experiment_schema.sql -> TABLES=12 (live :memory: executescript).
+  2. CONTEST/tools/trial_log.py present; append-only (INSERT only, no delete path); root trial_ledger.db trials row_count=2 (dummy-A/dummy-B).
+  3. CONTEST/tools/dsr.py present; bare run -> REFUSED exit 2: "2 of 2 ledger rows are fixtures (run_id='test-run-1') ... refusing to emit one." CONTEST db 8/8 fixtures also REFUSED. No number emitted (correct per guard, MIN_TRIALS_FOR_DSR=30 + fixture names). Formula source: Bailey & Lopez de Prado, "The Deflated Sharpe Ratio", J. Investment Management 2014; DSR = Phi((SR_best - SR_bench)/sd_trials).
+  4. CONTEST/tools/cpcv.py present; live run (PROVEIT market_prices.csv, date/SPY_adj, groups=12 embargo=1 horizon=1) -> n_paths=12, n_months=60; OOS Sharpe annualised mean=1.7565 std=2.0668 min=-1.2520 max=5.2415 median=1.3116 p5=-1.1525 p95=4.1030.
+  5. POWER_ANALYSIS.md carries actual-sample MDE 5.08%/yr (2*0.1477/sqrt(33.8), SPY 406 monthly/33.8y); POSITIVE_CONTROL cross-check (CONTEST/ROUND_01_2026-11-23/POSITIVE_CONTROL.md): injected 3%/yr -> t=1.18 invisible, 10%/yr -> t=3.94 significant.
+- git: local was behind origin/main by 2 (51f00f1 -> 13e63ec via ff-only: a60982e site-vs-origin audit, 13e63ec CRYPTO backfill reconcile); this record committed on top.
