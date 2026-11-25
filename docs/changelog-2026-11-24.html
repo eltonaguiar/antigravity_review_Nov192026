@@ -322,7 +322,93 @@ its <b>113.0</b> threshold. JPMorgan does <b>not</b> clear. Only Morgan Stanley 
 of nine 5% tests is roughly what chance expects (≈0.45 false positives), so this is <b>one candidate
 entering a forward test</b> — not an edge.</div>
 
-<h2 id="classes">Profitable picks per asset class — CORRECTED</h2>
+<h2 id="classes">Profitable picks per asset class — WITHDRAWN (the ranking measured resolver coverage)</h2>
+<div class="note bad"><b>This table is withdrawn as a measure of strategy performance.</b> The per-class ranking
+below it is confounded by construction, and the confound correlates with the ranking itself. Every per-class
+average is dominated by how much of that class the resolver had actually priced, not by how the strategies did.</div>
+
+<h3>The confound, measured</h3>
+<p><code>resolver_version</code> records which code path stamped each row. Those paths split into <b>backfill
+scripts</b> — written to clear a backlog, and which store a <b>zero</b> when they cannot price a pick — and
+<b>live resolvers</b> that actually price. The backfill share is not spread evenly across classes:</p>
+<table>
+  <thead><tr><th>asset class</th><th class="num">n</th><th class="num">backfill rows</th>
+  <th class="num">% backfill</th></tr></thead>
+  <tbody>
+    <tr><td>INDEX</td><td class="num">314</td><td class="num">314</td><td class="num r">100.0%</td></tr>
+    <tr><td>ETF</td><td class="num">181</td><td class="num">179</td><td class="num r">98.9%</td></tr>
+    <tr><td>BOND</td><td class="num">154</td><td class="num">150</td><td class="num r">97.4%</td></tr>
+    <tr><td><b>COMMODITY</b></td><td class="num">5,882</td><td class="num">5,721</td><td class="num r"><b>97.3%</b></td></tr>
+    <tr><td><b>FOREX</b></td><td class="num">16,039</td><td class="num">15,427</td><td class="num r"><b>96.2%</b></td></tr>
+    <tr><td><b>EQUITY</b></td><td class="num">1,984</td><td class="num">1,792</td><td class="num r">90.3%</td></tr>
+    <tr><td>FUTURES</td><td class="num">473</td><td class="num">404</td><td class="num">85.4%</td></tr>
+    <tr><td><b>CRYPTO</b></td><td class="num">38,213</td><td class="num">12,730</td><td class="num g"><b>33.3%</b></td></tr>
+    <tr><td>UNKNOWN</td><td class="num">141</td><td class="num">0</td><td class="num g">0.0%</td></tr>
+  </tbody>
+</table>
+
+<div class="grid">
+  <div class="card"><div class="k">"Worst" class, COMMODITY</div><div class="v r">97.3%</div>
+    <div class="n">backfilled — 161 genuinely priced rows of 5,882</div></div>
+  <div class="card"><div class="k">"Worst" class, EQUITY</div><div class="v r">90.3%</div>
+    <div class="n">backfilled</div></div>
+  <div class="card"><div class="k">"Best" class, CRYPTO</div><div class="v g">33.3%</div>
+    <div class="n">backfilled — the most-priced class by far</div></div>
+  <div class="card"><div class="k">Two-table disagreement</div><div class="v a">15.9%</div>
+    <div class="n">1,263 of 7,945 rows — and the means have opposite signs</div></div>
+</div>
+
+<p><b>The classes that looked bad are the classes that were mostly never priced.</b> A high backfill share drags a
+class toward zero with placeholder rows, while the one class with real coverage competes against that. The
+ordering measured <i>resolver reach</i>, not performance. This is worse than a wrong cell: a wrong cell looks odd
+and gets checked, whereas a confound that agrees with your conclusion looks like a finding.</p>
+
+<h3>And the two source tables disagree in sign</h3>
+<table>
+  <thead><tr><th>where both tables hold a non-zero return</th><th class="num">value</th></tr></thead>
+  <tbody>
+    <tr><td>rows</td><td class="num">7,945</td></tr>
+    <tr><td>agree</td><td class="num">6,682 (84.1%)</td></tr>
+    <tr><td><b>disagree</b></td><td class="num r"><b>1,263 (15.9%)</b></td></tr>
+    <tr><td>largest disagreement</td><td class="num">187.18 pp</td></tr>
+    <tr><td>mean from <code>at_pick_outcomes</code></td><td class="num r">−0.0929</td></tr>
+    <tr><td>mean from <code>trading_picks</code></td><td class="num g">+0.0172</td></tr>
+  </tbody>
+</table>
+<p>Opposite signs. Which table is authoritative decides whether the book is profitable at all — so no single
+per-class figure may be published until that is settled, and any fix that merges them must report the
+disagreement rate rather than a blended number.</p>
+
+<h3>Also: the unrepairable rows are the worse ones</h3>
+<p>EXPIRED rows that join to the older table give a mean of <b>−0.0435</b> across 26,748; the <b>2,906</b> that do
+not join give <b>−0.0828</b> — nearly twice as negative. Every join-based repair drops them, which biases the
+result <b>upward</b>. Separately, all <b>1,664</b> <code>RESOLVE_FAILED_MAX_RETRIES</code> rows have both an entry
+and an exit price with a dead return: they are computable from prices and simply never were.</p>
+
+<h3>What replaces it</h3>
+<ol>
+  <li>Publish the <b>backfill share beside every per-class statistic</b>.</li>
+  <li>Restrict the comparison to <b>live-resolver rows only</b> and report <code>n</code> after that filter — for
+      most classes that is 2–4% of rows, which is the honest sample.</li>
+  <li>Report the <b>two-table disagreement rate and both means</b>; publish no single figure while they disagree
+      in sign.</li>
+  <li>Recompute the 1,664 from <code>exit_price / entry_price</code> instead of copying a zero.</li>
+  <li>Flag the 2,906 unjoined rows as an explicit <b>upward</b> bias rather than dropping them silently.</li>
+</ol>
+
+<h3>Why the panel verdict here was weighted carefully</h3>
+<p>The multi-model review that raised this came back from <b>one backend three times</b> — the router's
+<code>free-mode-large</code> and <code>free-mode</code> both resolve to the same model, and the third route is the
+same family. Agreement across them is evidence about a shared backend, not corroboration, so every claim was
+tested against the database instead. Two did not survive: a suspected join fan-out was refuted
+(<code>trading_picks.id</code> is unique, 152,283 rows / 152,283 distinct), and a claim that my proposed SQL
+could not compile was <b>confirmed</b> — <code>trading_picks</code> has no <code>asset_class</code> column, a real
+error in a fix I nearly ran. The one <b>genuinely independent</b> model, a local 30B given the mechanism with the
+measured numbers withheld, named this same defect first and recommended the same control. The defect is
+corroborated; the remedies are not.</p>
+
+<h2 id="classes-old">Earlier per-class table — retained only as a resolver-coverage record</h2>
+
 <div class="note bad"><b>Correction, and it invalidates the table that was here.</b> The per-class
 figures published earlier today were computed over a table in which <b>46.4% of rows (29,577 of 63,792)
 carry <code>pnl_pct = 0</code> because they are <code>status = 'EXPIRED'</code></b> — not because they
