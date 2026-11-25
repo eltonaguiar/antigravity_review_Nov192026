@@ -1,0 +1,122 @@
+{
+ "CRYPTO": {
+  "n": 38218,
+  "priced": 29572,
+  "priced_share": 0.7738,
+  "published_mean_pct": 0.0285,
+  "implied_mean_pct": 0.0368,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "UNKNOWN": {
+  "n": 141,
+  "priced": 141,
+  "priced_share": 1.0,
+  "published_mean_pct": -2.021,
+  "implied_mean_pct": -2.021,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "EQUITY": {
+  "n": 1984,
+  "priced": 244,
+  "priced_share": 0.123,
+  "published_mean_pct": -0.0884,
+  "implied_mean_pct": -0.7184,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "BLANK": {
+  "n": 204,
+  "priced": 189,
+  "priced_share": 0.9265,
+  "published_mean_pct": 0.0797,
+  "implied_mean_pct": 0.0861,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "FOREX": {
+  "n": 16039,
+  "priced": 2947,
+  "priced_share": 0.1837,
+  "published_mean_pct": 0.0563,
+  "implied_mean_pct": 0.3066,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "MEME": {
+  "n": 106,
+  "priced": 75,
+  "priced_share": 0.7075,
+  "published_mean_pct": -2.0079,
+  "implied_mean_pct": -2.8379,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "ETF": {
+  "n": 181,
+  "priced": 29,
+  "priced_share": 0.1602,
+  "published_mean_pct": 0.0588,
+  "implied_mean_pct": 0.3672,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "BOND": {
+  "n": 154,
+  "priced": 16,
+  "priced_share": 0.1039,
+  "published_mean_pct": 0.0219,
+  "implied_mean_pct": 0.2103,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "STOCK": {
+  "n": 33,
+  "priced": 29,
+  "priced_share": 0.8788,
+  "published_mean_pct": -0.099,
+  "implied_mean_pct": -0.1126,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "PENNY": {
+  "n": 7,
+  "priced": 2,
+  "priced_share": 0.2857,
+  "published_mean_pct": -1.0286,
+  "implied_mean_pct": -3.6,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "COMMODITY": {
+  "n": 5882,
+  "priced": 922,
+  "priced_share": 0.1567,
+  "published_mean_pct": -0.1032,
+  "implied_mean_pct": -0.6583,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "STOCKS": {
+  "n": 54,
+  "priced": 11,
+  "priced_share": 0.2037,
+  "published_mean_pct": -0.3836,
+  "implied_mean_pct": -1.883,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "FUTURES": {
+  "n": 473,
+  "priced": 33,
+  "priced_share": 0.0698,
+  "published_mean_pct": 0.0684,
+  "implied_mean_pct": 0.9803,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "INDEX": {
+  "n": 314,
+  "priced": 3,
+  "priced_share": 0.0096,
+  "published_mean_pct": 0.0005,
+  "implied_mean_pct": 0.0537,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ },
+ "PENNYSTOCK": {
+  "n": 7,
+  "priced": 7,
+  "priced_share": 1.0,
+  "published_mean_pct": -6.3585,
+  "implied_mean_pct": -6.3585,
+  "label": "BOUND ON DISTORTION, not corrected estimate"
+ }
+}
