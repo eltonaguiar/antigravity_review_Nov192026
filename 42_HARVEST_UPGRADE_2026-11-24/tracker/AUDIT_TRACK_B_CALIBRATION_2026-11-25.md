@@ -69,3 +69,29 @@ next_probe: recompute the bucket differences with a symbol-clustered bootstrap
 directly (rather than the normal approximation from per-bucket CIs), since SELL at
 n=13 is too thin for the published CI to be trusted and the normal approximation may
 understate the tails.
+
+## DEFECT 2 CORRECTION 2026-11-25
+
+**Supersedes these two sentences in “2. `mde_pct = 18.868`” above** (kept for the record, not deleted):
+
+> “`mde = 2 * sd / sqrt(n / n_symbols)` implies `sd = 0.1329`, i.e. **13.29%**
+> annualised -- a per-symbol-mean dispersion. The `%` label is therefore correct.”
+
+> “What is wrong is its usefulness: an 18.9%/yr MDE cannot resolve any plausible equity
+> premium, so the null is *uninformative* rather than negative.”
+
+**Correction:** 13.29 is the **row-level monthly SD**, not an annualised per-symbol-mean
+dispersion. Consequently 18.868 is a **per-month MDE**, not a per-year figure. The measured
+per-symbol-mean SD is **5.751 pp per monthly hold** (69.01 pp/yr annualised); applying the file’s
+own formula gives:
+
+`2.802 * 5.751 / sqrt(485) = 0.732 pp/month = 8.78 pp/yr`.
+
+**The figure to cite is 8.78 pp/yr**, not 18.868; 18.868 is 2.15× the measured MDE and requires
+the unmeasured 148.3 pp/yr sigma.
+
+**Does the “null is uninformative” conclusion survive at 8.78 pp/yr? YES.** An 8.78%/yr MDE is
+still larger than a plausible equity premium of a few percent per year, so the test cannot
+resolve the magnitude it is being asked about; the null remains weak/uninformative, not negative.
+The magnitude concern is smaller than stated but not resolved. The design-effect and SPY sections
+are untouched by this correction.
