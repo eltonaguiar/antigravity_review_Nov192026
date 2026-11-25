@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Insider P (purchase) vs S (sale) asymmetry test.
+"""Insider P (purchase) vs S (sale) asymmetry test -- repaired.
 
 THE QUESTION: if purchases and sales produce the same matched excess return,
 the signal is not insider information and the probe is dead.
@@ -10,17 +10,22 @@ FROZEN RULES (as briefed; not changed here):
   * horizons 21, 63, 126 TRADING days
   * benchmark matched on ADV tercile and 126-day momentum tercile, SAME date
     (not SPY)
-  * costs at all three of 0.98, 4.01 and 12.07 bp round turn
-  * symbol-cluster bootstrap CI, with the design effect actually obtained
+  * costs reported at all three of 0.98, 4.01 and 12.07 bp round turn
+  * symbol-cluster bootstrap CI with the design effect actually obtained
   * within-symbol date-shift placebo as the falsifier
 
-ONE DEVIATION, NAMED: the brief says "cluster by symbol" in the firm table's
-language. These are company insiders, not brokers, so the cluster unit is the
-ISSUER SYMBOL -- one symbol's insiders share that company's return -- which is
-also what the placebo shifts within. Reporting it as "firm" would mislabel it.
-
-Nothing is fabricated: an event without prices on both dates is DROPPED and
-counted.
+REPAIRED 2026-11-25 after an audit found three defects in the first version:
+  1. the role filter was DEAD CODE -- the flags were parsed but never applied,
+     so the P figure included 10% owners and entities;
+  2. flags were parsed as a literal lower()=='true', but the CSV stores '1' as
+     well ('is_officer' is 23x '0', 19x '1', 9x 'false', 1x 'true'), so the
+     literal parser found 6 officer-or-director rows where a truthy parser
+     finds 48;
+  3. purchases are concentrated (PARA 10, UPST 10, RIVN 7, LCID 6 = 33 of 52),
+     so a transaction-level CI is meaningless -- the CI is clustered by SYMBOL.
+Both parsers are now printed so the gap stays visible, and every filter step
+reports its row count. If the clean set is under 30 events the output says
+UNDERPOWERED; the filter is never relaxed to reach a sample.
 
 Usage: python3 p_vs_s_asymmetry.py
 """
@@ -31,11 +36,9 @@ import json
 import math
 import random
 import statistics
-from collections import defaultdict
-from datetime import datetime
+from collections import Counter, defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
-
-import numpy as np
 
 HERE = Path(__file__).resolve().parent
 SRC = HERE / "form4_events_wide.csv"
@@ -47,9 +50,21 @@ COSTS_BP = (0.98, 4.01, 12.07)
 SEED = 20261124
 N_BOOT = 2000
 N_PLACEBO = 500
-Z80 = 2.80          # 80% power, two-sided 5%
+Z80 = 2.80
+MIN_EVENTS = 30
+TRUTHY = {"1", "true", "y", "yes", "t"}
 
 _px_cache: dict[str, object] = {}
+
+
+def lit(v) -> bool:
+    """The old parser: only the literal string 'true'."""
+    return (v or "").strip().lower() == "true"
+
+
+def truthy(v) -> bool:
+    """The correct parser: the CSV stores 1/0 as well as true/false."""
+    return (v or "").strip().lower() in TRUTHY
 
 
 def prices(sym: str):
@@ -67,15 +82,15 @@ def prices(sym: str):
     return _px_cache[sym]
 
 
-def adv_tercile(df, day) -> int:
+def adv_bucket(df, day) -> int:
     prior = df[df.index.date <= day]
     if len(prior) < 30:
         return -1
     adv = float((prior["Close"] * prior["Volume"]).tail(20).mean())
-    return 0 if adv <= 0 else min(2, int(math.log10(adv) // 1) - 3)   # rough $1e3..$1e9 buckets
+    return -1 if adv <= 0 else min(2, max(0, int(math.log10(adv)) - 4))
 
 
-def momentum_tercile(df, day) -> int:
+def mom_tercile(df, day) -> int:
     prior = df[df.index.date <= day]
     if len(prior) < 127:
         return -1
@@ -100,104 +115,126 @@ def event_return(sym: str, filing: datetime, horizon: int):
     exit_close = float(df["Close"].iloc[j])
     if not (entry_open > 0 and math.isfinite(entry_open) and math.isfinite(exit_close)):
         return None
-    return {"entry": idx[i].date(), "exit": idx[j].date(),
-            "ret": exit_close / entry_open - 1.0,
-            "adv_t": adv_tercile(df, idx[i].date()),
-            "mom_t": momentum_tercile(df, idx[i].date())}
+    return {"ret": exit_close / entry_open - 1.0,
+            "adv_t": adv_bucket(df, idx[i].date()),
+            "mom_t": mom_tercile(df, idx[i].date())}
+
+
+def boot_ci(by_sym: dict[str, list[float]], rng: random.Random):
+    keys = sorted(by_sym)
+    if not keys:
+        return None, None
+    means = []
+    for _ in range(N_BOOT):
+        sample = [v for k in (rng.choice(keys) for _ in keys) for v in by_sym[k]]
+        if sample:
+            means.append(statistics.mean(sample))
+    means.sort()
+    return (means[int(0.025 * len(means))], means[int(0.975 * len(means)) - 1]) if means else (None, None)
+
+
+def t_of(xs):
+    if len(xs) < 3:
+        return None
+    m, sd = statistics.mean(xs), statistics.stdev(xs)
+    return m / (sd / math.sqrt(len(xs))) if sd else None
 
 
 def main() -> int:
     rows = list(csv.DictReader(open(SRC, encoding="utf-8")))
-    events = []
-    for r in rows:
-        if r["code"] not in ("P", "S"):
-            continue
-        events.append({"symbol": r["symbol"], "code": r["code"],
-                       "filing": datetime.strptime(r["filing_date"], "%Y-%m-%d"),
-                       "officer": (r.get("is_officer") or "").lower() == "true",
-                       "director": (r.get("is_director") or "").lower() == "true",
-                       "ten": (r.get("is_ten_percent_owner") or "").lower() == "true"})
-    syms = sorted({e["symbol"] for e in events})
-    print(f"P/S owner-rows: {len(events)}  symbols: {len(syms)}")
+    P = [r for r in rows if (r["code"] or "").strip() == "P"]
+    S = [r for r in rows if (r["code"] or "").strip() == "S"]
 
-    # benchmark cells: mean return of NON-event symbols sharing (horizon, adv, mom)
-    results: dict[int, dict] = {}
-    dropped_total = 0
+    # ---- B + C: both parsers, and every filter step ------------------------
+    steps = {
+        "P all": P,
+        "P officer-or-director (TRUTHY)": [r for r in P if truthy(r["is_officer"]) or truthy(r["is_director"])],
+        "P officer-or-director, excluding 10% owners (TRUTHY)": [
+            r for r in P if (truthy(r["is_officer"]) or truthy(r["is_director"]))
+            and not truthy(r["is_ten_percent_owner"])],
+    }
+    steps_lit = {
+        "P officer-or-director (LITERAL)": [r for r in P if lit(r["is_officer"]) or lit(r["is_director"])],
+        "P officer-or-director, excluding 10% owners (LITERAL)": [
+            r for r in P if (lit(r["is_officer"]) or lit(r["is_director"]))
+            and not lit(r["is_ten_percent_owner"])],
+    }
+    print("filter steps (row counts):")
+    for k, v in list(steps_lit.items()) + list(steps.items()):
+        print(f"  {k:<56}{len(v):>5}")
+    print(f"  {'S all (control)':<56}{len(S):>5}")
+    print("  concentration of P:", Counter(r["symbol"] for r in P).most_common(5))
+
+    # The clean set the brief defines: officer/director, not a 10% owner.
+    clean_P = steps["P officer-or-director, excluding 10% owners (TRUTHY)"]
+    underpowered = len(clean_P) < MIN_EVENTS
+
+    results = {}
     for H in HORIZONS:
-        # per[code][symbol] = [(ret, adv_tercile, mom_tercile), ...]
-        per: dict[str, dict[str, list]] = {"P": defaultdict(list), "S": defaultdict(list)}
-        dropped = 0
-        for e in events:
-            ev = event_return(e["symbol"], e["filing"], H)
-            if ev is None:
-                dropped += 1
-                continue
-            per[e["code"]][e["symbol"]].append((ev["ret"], ev["adv_t"], ev["mom_t"]))
-        dropped_total += dropped
-        all_cells = defaultdict(list)
-        for code in ("P", "S"):
-            for lst in per[code].values():
+        # event set is FILTERED FIRST (defect A), then the excess is built from it
+        def collect(rs):
+            per = defaultdict(list)
+            cells = defaultdict(list)
+            dropped = 0
+            for r in rs:
+                ev = event_return(r["symbol"], datetime.strptime(r["filing_date"], "%Y-%m-%d"), H)
+                if ev is None:
+                    dropped += 1
+                    continue
+                per[r["symbol"]].append((ev["ret"], ev["adv_t"], ev["mom_t"]))
+                cells[(ev["adv_t"], ev["mom_t"])].append(ev["ret"])
+            return per, cells, dropped
+
+        def excess(per, bench_cells):
+            """Excess of each event against an OUTSIDE benchmark's cell mean.
+
+            Any benchmark built from the event's own rows makes the excesses
+            average zero by construction -- leave-one-out still does, because
+            the per-cell excesses sum to zero within each cell. So the
+            comparator must be the other code's cells (P judged against S and
+            S against P), which is also what the P-vs-S question means.
+            """
+            bench = {c: statistics.mean(v) for c, v in bench_cells.items() if v}
+            by_sym = defaultdict(list)
+            used = 0
+            for sym, lst in per.items():
                 for ret, at, mt in lst:
-                    all_cells[(at, mt)].append(ret)
-        cell_mean = {c: statistics.mean(v) for c, v in all_cells.items() if v}
+                    bm = bench.get((at, mt))
+                    if bm is not None:
+                        by_sym[sym].append(ret - bm)
+                        used += 1
+            return by_sym, used
 
-        def excess(code):
-            out = defaultdict(list)
-            for sym, lst in per[code].items():
-                for ret, at, mt in lst:
-                    bm = cell_mean.get((at, mt))
-                    if bm is None:
-                        continue
-                    out[sym].append(ret - bm)
-            return out
-
-        p_ex = excess("P")
-        s_ex = excess("S")
-        p_vals = [v for vs in p_ex.values() for v in vs]
-        s_vals = [v for vs in s_ex.values() for v in vs]
-
-        def boot_ci(by_sym, rng):
-            keys = sorted(by_sym)
-            means = []
-            for _ in range(N_BOOT):
-                pick = [rng.choice(keys) for _ in keys]
-                sample = [v for k in pick for v in by_sym[k]]
-                if sample:
-                    means.append(statistics.mean(sample))
-            means.sort()
-            return (means[int(0.025 * len(means))], means[int(0.975 * len(means)) - 1]) if means else (None, None)
-
-        rng = random.Random(SEED)
-        p_lo, p_hi = boot_ci(p_ex, rng)
-        s_lo, s_hi = boot_ci(s_ex, rng)
-
-        # design effect: pooled t vs cluster-mean t
-        def t_of(xs):
-            if len(xs) < 3:
-                return None
-            m, sd = statistics.mean(xs), statistics.stdev(xs)
-            return m / (sd / math.sqrt(len(xs))) if sd else None
+        p_per, p_cells, p_drop = collect(clean_P)
+        s_per, s_cells, s_drop = collect(S)
+        p_by, p_used = excess(p_per, s_cells)   # P judged against S
+        s_by, s_used = excess(s_per, p_cells)   # S judged against P
+        rng = random.Random(SEED + H)
+        p_vals = [v for vs in p_by.values() for v in vs]
+        s_vals = [v for vs in s_by.values() for v in vs]
+        p_lo, p_hi = boot_ci(p_by, rng)
+        s_lo, s_hi = boot_ci(s_by, rng)
         t_raw = t_of(p_vals + s_vals)
-        t_cl = t_of([statistics.mean(v) for v in list(p_ex.values()) + list(s_ex.values())])
+        t_cl = t_of([statistics.mean(v) for v in list(p_by.values()) + list(s_by.values())])
         design = (t_raw / t_cl) ** 2 if (t_raw and t_cl) else None
 
-        # within-symbol date-shift placebo: shift each event 30 trading days later
+        # within-symbol date-shift placebo on the CLEAN set, measured as EXCESS
+        # against the same (S) benchmark -- a raw-return placebo is not comparable
+        # to an excess statistic and would make any positive P look significant.
+        bench_s = {c: statistics.mean(v) for c, v in s_cells.items() if v}
         rngp = random.Random(SEED + H)
         plac = []
         for _ in range(N_PLACEBO):
             shifted = []
-            for e in events:
-                if rngp.random() > 0.3:
-                    continue
-                f = e["filing"]
-                df = prices(e["symbol"])
+            for r in clean_P:
+                df = prices(r["symbol"])
                 if df is None:
                     continue
-                idx = [d for d in df.index if d.date() > f.date()]
+                idx = [d for d in df.index if d.date() > datetime.strptime(r["filing_date"], "%Y-%m-%d").date()]
                 if len(idx) > 30:
-                    ev = event_return(e["symbol"], datetime.combine(idx[30].date(), datetime.min.time()), H)
+                    ev = event_return(r["symbol"], datetime.combine(idx[30].date(), datetime.min.time()), H)
                     if ev:
-                        bm = cell_mean.get((ev["adv_t"], ev["mom_t"]))
+                        bm = bench_s.get((ev["adv_t"], ev["mom_t"]))
                         if bm is not None:
                             shifted.append(ev["ret"] - bm)
             if shifted:
@@ -205,67 +242,80 @@ def main() -> int:
         plac.sort()
         p95 = plac[int(0.95 * (len(plac) - 1))] if plac else None
 
-        # MDE at 80% power from the P-side dispersion, symbol-clustered
         sd_p = statistics.stdev(p_vals) if len(p_vals) > 2 else None
-        n_eff = len(p_ex) if p_ex else 0
-        mde = (Z80 * sd_p / math.sqrt(n_eff)) if (sd_p and n_eff) else None
+        mde = Z80 * sd_p / math.sqrt(len(p_by)) if (sd_p and p_by) else None
+
+        # Rule E is applied to the ANALYSABLE n, not the pre-price count: events
+        # without a full price window cannot contribute, so a 31-event filter set
+        # that yields 16-26 usable events is still UNDERPOWERED.
+        if not p_vals or len(p_vals) < MIN_EVENTS or underpowered:
+            verdict = "UNDERPOWERED"
+        elif p95 is not None and statistics.mean(p_vals) <= p95:
+            verdict = "NULL -- P does not beat its own placebo"
+        elif p_lo is not None and p_lo > 0:
+            verdict = "P beats placebo and CI excludes 0"
+        else:
+            verdict = "inconclusive"
 
         results[H] = {
-            "P_n": len(p_vals), "P_symbols": len(p_ex), "P_mean_excess_pct": round(100 * statistics.mean(p_vals), 4) if p_vals else None,
-            "P_ci95_pct": [round(100 * p_lo, 4) if p_lo is not None else None, round(100 * p_hi, 4) if p_hi is not None else None],
-            "S_n": len(s_vals), "S_symbols": len(s_ex), "S_mean_excess_pct": round(100 * statistics.mean(s_vals), 4) if s_vals else None,
-            "S_ci95_pct": [round(100 * s_lo, 4) if s_lo is not None else None, round(100 * s_hi, 4) if s_hi is not None else None],
+            "P_n": len(p_vals), "P_symbols": len(p_by),
+            "P_mean_excess_pct": round(100 * statistics.mean(p_vals), 4) if p_vals else None,
+            "P_ci95_symbol_cluster_pct": [round(100 * p_lo, 4) if p_lo is not None else None,
+                                          round(100 * p_hi, 4) if p_hi is not None else None],
+            "S_n": len(s_vals), "S_symbols": len(s_by),
+            "S_mean_excess_pct": round(100 * statistics.mean(s_vals), 4) if s_vals else None,
+            "S_ci95_symbol_cluster_pct": [round(100 * s_lo, 4) if s_lo is not None else None,
+                                          round(100 * s_hi, 4) if s_hi is not None else None],
             "design_effect": round(design, 2) if design else None,
             "placebo_p95_pct": round(100 * p95, 4) if p95 is not None else None,
             "mde80_pct": round(100 * mde, 4) if mde else None,
-            "dropped_no_price": dropped,
-            "costs_bp": list(COSTS_BP),
+            "dropped_P": p_drop, "dropped_S": s_drop, "verdict": verdict,
         }
-        asym = (p_vals and s_vals and statistics.mean(p_vals) > statistics.mean(s_vals))
-        results[H]["asymmetry_holds"] = bool(asym) if (p_vals and s_vals) else None
-        print(f"\nH={H}d  dropped={dropped}  P n={len(p_vals)} ({len(p_ex)} sym)  S n={len(s_vals)} ({len(s_ex)} sym)")
-        print(f"  P excess {100*statistics.mean(p_vals):+.4f}%" if p_vals else "  P: none",
-              f"  S excess {100*statistics.mean(s_vals):+.4f}%" if s_vals else "  S: none")
-        print(f"  design effect {results[H]['design_effect']}  MDE80 {results[H]['mde80_pct']}%  placebo p95 {results[H]['placebo_p95_pct']}")
+        print(f"\nH={H}d  P n={len(p_vals)} ({len(p_by)} sym)  S n={len(s_vals)} ({len(s_by)} sym)")
+        print(f"  P excess {results[H]['P_mean_excess_pct']}%  S excess {results[H]['S_mean_excess_pct']}%")
+        print(f"  design {results[H]['design_effect']}  MDE80 {results[H]['mde80_pct']}%  placebo p95 {results[H]['placebo_p95_pct']}%")
+        print(f"  VERDICT: {verdict}")
 
-    advs = []
-    for e in events:
-        df = prices(e["symbol"])
-        if df is not None and len(df) > 20:
-            advs.append(float((df["Close"] * df["Volume"]).tail(20).mean()))
-    advs.sort()
-    adv_dist = {"n": len(advs), "min": round(advs[0]), "median": round(advs[len(advs)//2]),
-                "p90": round(advs[int(0.9 * len(advs))]), "max": round(advs[-1])} if advs else {}
-
-    payload = {"generated": datetime.utcnow().isoformat(),
-               "source": str(SRC.name), "seed": SEED,
-               "cluster_unit": "issuer symbol (insiders, not brokers)",
-               "entry": "next session open after filing_date",
-               "horizons": list(HORIZONS), "costs_bp": list(COSTS_BP),
-               "adv_distribution_usd": adv_dist,
-               "owner_row_counts": {
-                   "P": sum(1 for e in events if e["code"] == "P"),
-                   "S": sum(1 for e in events if e["code"] == "S"),
-                   "P_officer_or_director": sum(1 for e in events if e["code"] == "P" and (e["officer"] or e["director"])),
-                   "P_officer_dir_not_10pct": sum(1 for e in events if e["code"] == "P" and (e["officer"] or e["director"]) and not e["ten"]),
-               },
-               "by_horizon": results}
+    payload = {
+        "generated": datetime.now(timezone.utc).isoformat(),
+        "source": SRC.name, "seed": SEED,
+        "cluster_unit": "issuer symbol",
+        "entry": "next session open after filing_date",
+        "flag_parser": {"literal": "lower()=='true'", "truthy": sorted(TRUTHY),
+                        "is_officer_distribution_P": dict(Counter(r["is_officer"] for r in P))},
+        "filter_steps": {k: len(v) for k, v in list(steps_lit.items()) + list(steps.items())} | {"S all": len(S)},
+        "purchase_concentration": Counter(r["symbol"] for r in P).most_common(6),
+        "min_events": MIN_EVENTS,
+        "clean_set_underpowered": underpowered,
+        "costs_bp": list(COSTS_BP),
+        "by_horizon": results,
+        "withdrawn_prior": ("The 2026-11-24 P +10.79% figure is WITHDRAWN: it applied no role "
+                            "filter and used a literal flag parser."),
+    }
     OUT_JSON.write_text(json.dumps(payload, indent=1), encoding="utf-8")
-    lines = ["# Insider P vs S asymmetry", "",
-             f"zoo-savant, {payload['generated'][:19]}Z. Source `{SRC.name}`.", "",
-             f"**Cluster unit:** issuer symbol (insiders, not brokers), {len(syms)} symbols.",
-             "**Entry:** next session open after `filing_date`. **Benchmark:** ADV x momentum tercile cell mean, same date.",
-             f"**Costs reported at:** {', '.join(str(c) for c in COSTS_BP)} bp.", "",
-             f"**ADV distribution (USD):** {adv_dist}", "",
-             "| H | P n | P excess | S n | S excess | design effect | MDE80 | placebo p95 | asymmetry holds |",
-             "|---|---|---|---|---|---|---|---|---|"]
+
+    md = ["# Insider P vs S -- repaired after audit", "",
+          f"zoo-savant, {payload['generated'][:19]}Z. Source `{SRC.name}`.",
+          "", "**This supersedes the 2026-11-24 result, which is WITHDRAWN:** it applied no role",
+          "filter (the parsed flags were never read) and used a literal `=='true'` parser that",
+          "misses the `1` values the file stores.", "",
+          "## Filter steps (row counts)", "", "| step | rows |", "|---|---|"]
+    for k, v in list(steps_lit.items()) + list(steps.items()):
+        md.append(f"| {k} | {len(v)} |")
+    md += [f"| S all (control) | {len(S)} |", "",
+           f"**Purchase concentration:** {', '.join(f'{s} {n}' for s, n in Counter(r['symbol'] for r in P).most_common(6))}",
+           "", "## Per horizon", "",
+           "| H | P n | P sym | P excess | P CI (symbol) | S n | S excess | design | MDE80 | placebo p95 | verdict |",
+           "|---|---|---|---|---|---|---|---|---|---|---|"]
     for H, r in results.items():
-        lines.append(f"| {H}d | {r['P_n']} | {r['P_mean_excess_pct']}% | {r['S_n']} | {r['S_mean_excess_pct']}% "
-                     f"| {r['design_effect']} | {r['mde80_pct']}% | {r['placebo_p95_pct']}% | {r['asymmetry_holds']} |")
-    lines += ["", "**Owner-row counts (this file):** " + json.dumps(payload["owner_row_counts"]), ""]
-    OUT_MD.write_text("\n".join(lines), encoding="utf-8")
-    print(f"\nADV distribution: {adv_dist}")
-    print(f"wrote {OUT_MD.name} and {OUT_JSON.name}")
+        md.append(f"| {H}d | {r['P_n']} | {r['P_symbols']} | {r['P_mean_excess_pct']}% | {r['P_ci95_symbol_cluster_pct']} "
+                  f"| {r['S_n']} | {r['S_mean_excess_pct']}% | {r['design_effect']} | {r['mde80_pct']}% "
+                  f"| {r['placebo_p95_pct']}% | {r['verdict']} |")
+    md += ["", f"The clean set ({len(clean_P)} events) is "
+           f"{'UNDERPOWERED (< 30 events) -- not a result.' if underpowered else 'large enough to report.'}",
+           "The filter was not relaxed to reach a sample.", ""]
+    OUT_MD.write_text("\n".join(md), encoding="utf-8")
+    print(f"\nwrote {OUT_MD.name} and {OUT_JSON.name}")
     return 0
 
 

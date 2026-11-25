@@ -1,17 +1,31 @@
-# Insider P vs S asymmetry
+# Insider P vs S -- repaired after audit
 
-zoo-savant, 2026-11-25T00:16:49Z. Source `form4_events_wide.csv`.
+zoo-savant, 2026-11-25T01:49:20Z. Source `form4_events_wide.csv`.
 
-**Cluster unit:** issuer symbol (insiders, not brokers), 21 symbols.
-**Entry:** next session open after `filing_date`. **Benchmark:** ADV x momentum tercile cell mean, same date.
-**Costs reported at:** 0.98, 4.01, 12.07 bp.
+**This supersedes the 2026-11-24 result, which is WITHDRAWN:** it applied no role
+filter (the parsed flags were never read) and used a literal `=='true'` parser that
+misses the `1` values the file stores.
 
-**ADV distribution (USD):** {'n': 979, 'min': 22963888, 'median': 1232185209, 'p90': 26611694552, 'max': 26611694552}
+## Filter steps (row counts)
 
-| H | P n | P excess | S n | S excess | design effect | MDE80 | placebo p95 | asymmetry holds |
-|---|---|---|---|---|---|---|---|---|
-| 21d | 46 | 10.7873% | 865 | -0.5737% | 0.0 | 42.7384% | -4.6515% | True |
-| 63d | 44 | 7.2321% | 690 | -0.4612% | 0.0 | 18.0284% | 1.7091% | True |
-| 126d | 35 | 10.3969% | 277 | -1.3137% | 0.0 | 39.5876% | 13.5985% | True |
+| step | rows |
+|---|---|
+| P officer-or-director (LITERAL) | 6 |
+| P officer-or-director, excluding 10% owners (LITERAL) | 3 |
+| P all | 52 |
+| P officer-or-director (TRUTHY) | 48 |
+| P officer-or-director, excluding 10% owners (TRUTHY) | 31 |
+| S all (control) | 927 |
 
-**Owner-row counts (this file):** {"P": 52, "S": 927, "P_officer_or_director": 6, "P_officer_dir_not_10pct": 3}
+**Purchase concentration:** PARA 10, UPST 10, RIVN 7, LCID 6, CVNA 3, INTC 3
+
+## Per horizon
+
+| H | P n | P sym | P excess | P CI (symbol) | S n | S excess | design | MDE80 | placebo p95 | verdict |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 21d | 26 | 10 | 5.885% | [1.4878, 10.4291] | 847 | -7.4942% | 20.66 | 8.5965% | -5.287% | UNDERPOWERED |
+| 63d | 25 | 10 | 10.6088% | [4.3317, 15.4047] | 648 | -11.4073% | 40.28 | 21.2437% | 27.8514% | UNDERPOWERED |
+| 126d | 16 | 7 | 29.2019% | [-2.9293, 81.8927] | 264 | -43.7956% | 41.35 | 59.6082% | 4.8861% | UNDERPOWERED |
+
+The clean set (31 events) is large enough to report.
+The filter was not relaxed to reach a sample.
