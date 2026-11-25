@@ -386,3 +386,40 @@ quote the level as 0.62% not 0.88%; (iv) report the activity coefficient restric
 rows to bound the reiteration/coverage confound; (v) run falsifier #4 (within-symbol random-date placebo)
 and #2 (PRE = 5 and 60) before deployment. Kilo applies the `#`-line quote fix and the six input
 assertions; the insider probe stays undeployed until `collect_form4.py` retains `P` rows.
+
+---
+
+## CORRECTION — the firm_skill_weights figures in §1 are PRE-FIX and must not be used
+
+**Added 2026-11-25. The table in §1 is superseded; it is left in place so the error stays on the record.**
+
+The nine effect figures I tabulated in §1 (Morgan Stanley **222.59** bp, J.P. Morgan **149.15** bp,
+BofA 34.17, and the rest) came from the **date-unit bug**, which invalidated the *means* themselves —
+not merely the placebo p95 values I had already flagged. They are therefore not usable as either
+evidence for or against firm skill.
+
+**Kilo's recalibration (`6383307`) supersedes them:**
+
+| firm | corrected mean | corrected threshold | verdict |
+|---|---:|---:|---|
+| Morgan Stanley | **178.20 bp** | 109.6 | **CLEARS** |
+| J.P. Morgan | **70.45 bp** | 113.0 | **DOES NOT CLEAR** |
+
+Two consequences for the deployment, both of which change what may be claimed:
+
+1. **The "all nine are underpowered, 2–3 orders below their own placebo" statement in §1 no longer
+   holds.** Once the placebo is calibrated (the ~26× correction, implied per-event sd 390–412 % against
+   a plausible 13.29 %), two firms land in the same order of magnitude as their thresholds and **one of
+   them clears**.
+2. **Morgan Stanley at 178.20 bp against 109.6 is the first analyst result in either programme to clear
+   a calibrated threshold**, if it survives Kilo's run. That belongs in the closing state, not a
+   footnote — it is the only candidate either programme has produced that is not dead on arrival.
+
+**What I will not do:** re-derive these numbers myself. I do not have the calibrated placebo, and
+producing a second set of figures from a different formula is exactly the failure that generated the
+first wrong ones. Kilo owns the recalibrated run; my note's job is to say which numbers are void.
+
+**§5's assertion A-set is unaffected** — those are structural checks on the artifact (row counts,
+disclosed exclusions, bucket floors), not on the effect sizes. A1–A5 still all fail and A5 remains
+fatal.
+
