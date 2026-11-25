@@ -72,6 +72,11 @@
     <a href="index.html">← Main page</a>
     <a href="#headline">Headline</a>
     <a href="#rank">Rank test</a>
+    <a href="#analyst">Analysts</a>
+    <a href="#classes">Per class</a>
+    <a href="#tracker">Tracker</a>
+    <a href="#audits">audit2/3</a>
+    <a href="#track">Right track?</a>
     <a href="#db">Live database</a>
     <a href="#research">Research programme</a>
     <a href="#new">New probe</a>
@@ -261,6 +266,166 @@ an order of magnitude more than the analyst stream ever produced at the same cov
         <td><code>PF_DAILY_METRICS</code> carries <code>max_dd = −628%</code> and <code>cagr = 1000%</code> unguarded</td></tr>
   </tbody>
 </table>
+
+
+<h2 id="analyst">Analyst recommendations — where we actually are, and one survivor</h2>
+<p>The analyst programme is no longer "unmeasurable". After Kilo's placebo repair (<code>6383307</code>)
+it has <b>one firm that survives a calibrated test</b> — and the reason the earlier null looked total was a
+bug, not an absence of signal.</p>
+
+<div class="grid">
+  <div class="card"><div class="k">Survivors of a calibrated placebo</div><div class="v g">1 of 9</div>
+    <div class="n">Morgan Stanley · 178.20 bp vs 109.6 threshold</div></div>
+  <div class="card"><div class="k">Placebo error found</div><div class="v r">27.45×</div>
+    <div class="n">old p95 2,733 bp now raises DATA_INVALID</div></div>
+  <div class="card"><div class="k">Clean up-only firms at 750</div><div class="v a">0</div>
+    <div class="n">best 439 (BofA) — event supply is the binding limit</div></div>
+  <div class="card"><div class="k">Firms in the file</div><div class="v">219</div>
+    <div class="n">9 above the n≥300 floor · 210 documented underpowered</div></div>
+</div>
+
+<h3>Why the earlier null was wrong: two bugs, not one</h3>
+<table>
+  <thead><tr><th>Bug</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr><td><b>Date-unit mismatch</b></td>
+        <td>Prices keyed in <b>nanoseconds</b>, event date in <b>days</b> — <code>searchsorted</code> returned
+        bar 0, so every event and every placebo used the <b>first price bar</b>. Old <i>means</i> were
+        invalid too, not only the p95.</td></tr>
+    <tr><td><b>Wrong statistic</b></td>
+        <td><code>placebo_p95</code> was a <b>per-event</b> percentile compared against a firm <b>mean</b>.
+        The mean-null threshold is <code>1.645·sd/√n</code>. That mismatch produced 2,579–3,117 bp and an
+        implied per-event SD of 390–412% against a realistic 13.29%.</td></tr>
+  </tbody>
+</table>
+
+<table>
+  <thead><tr><th>Firm</th><th class="num">n</th><th class="num">Corrected mean</th>
+  <th class="num">Corrected threshold</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td><b>Morgan Stanley</b></td><td class="num">473</td><td class="num g">+178.20</td>
+        <td class="num">109.6</td><td class="g">beats_placebo · weight 1.0</td></tr>
+    <tr><td>UBS</td><td class="num">359</td><td class="num">+97.15</td><td class="num">121.6</td><td>indistinguishable</td></tr>
+    <tr><td>J.P. Morgan</td><td class="num">454</td><td class="num">+70.45</td><td class="num">113.0</td><td>indistinguishable</td></tr>
+    <tr><td>Deutsche Bank</td><td class="num">331</td><td class="num">+2.58</td><td class="num">127.3</td><td>indistinguishable</td></tr>
+    <tr><td>Goldman Sachs</td><td class="num">448</td><td class="num">−2.06</td><td class="num">109.3</td><td>indistinguishable</td></tr>
+    <tr><td>BofA</td><td class="num">551</td><td class="num r">−40.61</td><td class="num">99.6</td><td>indistinguishable</td></tr>
+    <tr><td>Citi</td><td class="num">350</td><td class="num r">−71.76</td><td class="num">124.4</td><td>indistinguishable</td></tr>
+    <tr><td>Wells Fargo</td><td class="num">313</td><td class="num r">−87.23</td><td class="num">128.8</td><td>indistinguishable</td></tr>
+    <tr><td>Jefferies</td><td class="num">313</td><td class="num r">−125.55</td><td class="num">131.1</td><td>indistinguishable</td></tr>
+  </tbody>
+</table>
+
+<div class="note bad"><b>Correction, again mine.</b> I predicted JPMorgan would also clear, citing +149.15 bp.
+That figure was produced by the same date-unit bug; the corrected event-date mean is <b>+70.45</b>, below
+its <b>113.0</b> threshold. JPMorgan does <b>not</b> clear. Only Morgan Stanley does. And one survivor out
+of nine 5% tests is roughly what chance expects (≈0.45 false positives), so this is <b>one candidate
+entering a forward test</b> — not an edge.</div>
+
+<h2 id="classes">Profitable picks per asset class — where the money actually is</h2>
+<table>
+  <thead><tr><th>Asset class</th><th class="num">n</th><th class="num">Avg</th><th class="num">Win rate</th>
+  <th class="num">Total PnL</th><th class="num">W / L</th></tr></thead>
+  <tbody>
+    <tr><td><b>CRYPTO</b></td><td class="num">38,204</td><td class="num g">+0.029%</td><td class="num">32.3%</td><td class="num g">+1,109.3</td><td class="num">12,321 / 25,883</td></tr>
+    <tr><td><b>FOREX</b></td><td class="num">16,039</td><td class="num g">+0.056%</td><td class="num r">7.4%</td><td class="num g">+903.5</td><td class="num">1,185 / 14,854</td></tr>
+    <tr><td>FUTURES</td><td class="num">473</td><td class="num g">+0.068%</td><td class="num">3.4%</td><td class="num g">+32.3</td><td class="num">16 / 457</td></tr>
+    <tr><td>ETF</td><td class="num">181</td><td class="num g">+0.059%</td><td class="num">5.5%</td><td class="num g">+10.6</td><td class="num">10 / 171</td></tr>
+    <tr><td>BOND</td><td class="num">154</td><td class="num g">+0.022%</td><td class="num">2.6%</td><td class="num g">+3.4</td><td class="num">4 / 150</td></tr>
+    <tr><td>INDEX</td><td class="num">314</td><td class="num">+0.001%</td><td class="num">1.0%</td><td class="num">+0.2</td><td class="num">3 / 311</td></tr>
+    <tr><td>STOCKS</td><td class="num">54</td><td class="num r">−0.384%</td><td class="num">13.0%</td><td class="num r">−20.7</td><td class="num">7 / 47</td></tr>
+    <tr><td>EQUITY</td><td class="num">1,984</td><td class="num r">−0.088%</td><td class="num">4.6%</td><td class="num r">−175.3</td><td class="num">92 / 1,892</td></tr>
+    <tr><td>MEME</td><td class="num">106</td><td class="num r">−2.008%</td><td class="num">21.7%</td><td class="num r">−212.8</td><td class="num">23 / 83</td></tr>
+    <tr><td>UNKNOWN</td><td class="num">141</td><td class="num r">−2.021%</td><td class="num">37.6%</td><td class="num r">−285.0</td><td class="num">53 / 88</td></tr>
+    <tr><td>COMMODITY</td><td class="num">5,882</td><td class="num r">−0.103%</td><td class="num">5.9%</td><td class="num r">−606.9</td><td class="num">347 / 5,535</td></tr>
+  </tbody>
+</table>
+
+<table>
+  <thead><tr><th>Top symbols by realised PnL</th><th class="num">n</th><th class="num">Total</th>
+  <th class="num">Avg</th><th class="num">Win rate</th></tr></thead>
+  <tbody>
+    <tr><td>DOGEUSDT</td><td class="num">2,399</td><td class="num g">+1,256.7</td><td class="num">+0.524%</td><td class="num">34.8%</td></tr>
+    <tr><td>AVAXUSDT</td><td class="num">1,755</td><td class="num g">+1,066.6</td><td class="num">+0.608%</td><td class="num">48.9%</td></tr>
+    <tr><td>CADJPY=X</td><td class="num">1,342</td><td class="num g">+853.7</td><td class="num">+0.636%</td><td class="num r">9.3%</td></tr>
+    <tr><td>ETHUSDT</td><td class="num">3,542</td><td class="num g">+770.4</td><td class="num">+0.217%</td><td class="num">30.2%</td></tr>
+    <tr><td>SOLUSDT</td><td class="num">2,784</td><td class="num g">+700.5</td><td class="num">+0.252%</td><td class="num">36.5%</td></tr>
+    <tr><td>RENDERUSDT</td><td class="num">613</td><td class="num g">+494.6</td><td class="num">+0.807%</td><td class="num">50.6%</td></tr>
+    <tr><td>TONUSDT</td><td class="num">100</td><td class="num g">+487.6</td><td class="num">+4.876%</td><td class="num">44.0%</td></tr>
+    <tr><td>JUPUSDT</td><td class="num">733</td><td class="num g">+470.6</td><td class="num">+0.642%</td><td class="num">53.5%</td></tr>
+  </tbody>
+</table>
+
+<div class="note"><b>Two things to read carefully.</b> The book is <b>crypto plus one FX pair</b> — crypto
+carries +1,109 and forex +903, while commodity (−607), equity (−175), meme (−213) and unknown (−285) all
+lose. And <b>FOREX is a lottery profile</b>: a 7.4% win rate with a positive total means ~1,185 huge
+winners against 14,854 small losers. That is a take-profit set far from entry and a stop set very close —
+a payoff shape, not predictive skill, and it breaks the first time the winners stop arriving. CADJPY=X
+alone carries most of the FX total at a 9.3% win rate.</div>
+
+<h2 id="tracker">The portfolio tracker: is TP/SL set, and is entry timestamped?</h2>
+<p>Verified directly against the live tables — this was asked explicitly, so here is the coverage:</p>
+<table>
+  <thead><tr><th>Table</th><th class="num">Rows</th><th class="num">Has TP</th>
+  <th class="num">Has SL</th><th>Entry / creation timestamp</th></tr></thead>
+  <tbody>
+    <tr><td><code>PF_POSITION</code></td><td class="num">5,843</td><td class="num a"><b>83%</b></td>
+        <td class="num g"><b>100%</b></td>
+        <td><code>entry_date</code> 2026-05-29 → 2026-11-23 · <code>created_at</code> to the
+        <b>second</b> (e.g. 22:31:14)</td></tr>
+    <tr><td><code>trading_picks</code></td><td class="num">152,155</td><td class="num g">100%</td>
+        <td class="num g">100%</td>
+        <td><code>created_at</code> 2024-11-06 → 2026-11-24 23:47:41</td></tr>
+    <tr><td><code>paper_trades</code></td><td class="num">16,165</td><td class="num">columns exist</td>
+        <td class="num">columns exist</td>
+        <td><b>dead</b> — no row has ever resolved</td></tr>
+  </tbody>
+</table>
+<div class="note bad"><b>Gap worth naming.</b> 17% of portfolio positions (<b>982 of 5,843</b>) carry
+<b>no take-profit</b>. Stops are universal at 100%, so no position is unprotected — but a position without
+a target has no exit rule except time, and that is the same failure class as the
+<code>TIME_EXIT_MAX_HOLD</code> bucket that already holds 31,421 picks.</div>
+
+<h2 id="audits">audit / audit2 / audit3 — are those picks tracked here?</h2>
+<p>Yes, both are in this database, and neither endorses anything.</p>
+<table>
+  <thead><tr><th>Site</th><th>Backed by</th><th>State</th></tr></thead>
+  <tbody>
+    <tr><td><code>/audit3</code> — Quant Kill Tribunal</td>
+        <td><code>audit3_cell_verdicts</code> 366 · <code>audit3_forward_observations</code> 430 ·
+            <code>audit3_hypotheses</code> 106 · <code>audit3_pod_clocks</code> 7</td>
+        <td><b>293 INSUFFICIENT_N · 63 WEAK · 10 KILL · 0 endorsed.</b> Every tested cell either lacked
+            sample or was killed. The 430 forward observations are the clock that must run before any cell
+            can be promoted.</td></tr>
+    <tr><td><code>/audit2</code> — candidate &amp; methodology library</td>
+        <td><code>at_*</code> tables — <code>at_local_picks</code> <b>137,354,376</b> rows,
+            <code>at_filter_log</code> 818,190, <code>at_raw_picks</code> 113,968,
+            <code>at_pick_outcomes</code> 63,783, <code>at_signal_outcomes</code> 51,298</td>
+        <td>This is where the resolved outcomes and the per-class numbers above come from. Same book, same
+            verdicts: the PnL is real but no cell clears its gate.</td></tr>
+    <tr><td><code>/audit</code> — main ledger (1.44 MB)</td>
+        <td>The published picks/accountability page itself</td>
+        <td>Its own header still reads 2026-11-23; today's findings live on this page instead.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="track">Are we on the right track?</h2>
+<div class="grid">
+  <div class="card"><div class="k">Right</div><div class="v g">3 things</div>
+    <div class="n">gates before claims · every number to an artefact · powered negatives accepted</div></div>
+  <div class="card"><div class="k">Wrong</div><div class="v a">1 pattern</div>
+    <div class="n">four verdicts today printed a right answer over a wrong denominator</div></div>
+  <div class="card"><div class="k">Unknown</div><div class="v b">2 signals</div>
+    <div class="n">Zoo activity effect · Morgan Stanley forward test</div></div>
+  <div class="card"><div class="k">Deployable edge</div><div class="v r">0</div>
+    <div class="n">capital deployed $0 — unchanged</div></div>
+</div>
+<p><b>Yes on method, no on edge.</b> Today produced the first <i>powered</i> negative (portfolio rank,
+ρ −0.020, p 0.839, n 122) and the first analyst survivor of a calibrated threshold (Morgan Stanley). Those
+are the right kind of outputs: one closes a question, one opens a forward test. What the programme does not
+have is anything proven profitable — and the diagnostics say why. TP/SL expectancy is +0.123% gross against
+a 26 bp round turn, so every strategy in this book sits below its own trading cost. Until something clears
+cost, no gate result matters.</p>
 
 <h2 id="next">What is left</h2>
 <ol>
