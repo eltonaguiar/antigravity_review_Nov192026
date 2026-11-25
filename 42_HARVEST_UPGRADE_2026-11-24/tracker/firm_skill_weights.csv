@@ -1,13 +1,13 @@
 firm_norm,n_clean_events,mean_net_excess_bps,placebo_p95_bps,verdict,weight
-BofA Securities,551,34.17,2733.86,underpowered,0
-Morgan Stanley,473,222.59,3117.2,underpowered,0
-J.P. Morgan,454,149.15,2972.78,underpowered,0
-Goldman Sachs,448,13.77,2896.85,underpowered,0
-UBS,359,114.92,2972.78,underpowered,0
-Citi,350,-42.81,2733.86,underpowered,0
-Deutsche Bank,331,4.53,2983.33,underpowered,0
-Jefferies,313,33.02,2733.86,underpowered,0
-Wells Fargo,313,-72.36,2579.26,underpowered,0
+BofA Securities,551,-40.61,99.6,indistinguishable,0
+Morgan Stanley,473,178.20,109.6,beats_placebo,1.0
+J.P. Morgan,454,70.45,113.0,indistinguishable,0
+Goldman Sachs,448,-2.06,109.3,indistinguishable,0
+UBS,359,97.15,121.6,indistinguishable,0
+Citi,350,-71.76,124.4,indistinguishable,0
+Deutsche Bank,331,2.58,127.3,indistinguishable,0
+Jefferies,313,-125.55,131.1,indistinguishable,0
+Wells Fargo,313,-87.23,128.8,indistinguishable,0
 Barclays,297,,,underpowered,0
 Evercore ISI Group,254,,,underpowered,0
 Raymond James,251,,,underpowered,0
@@ -218,5 +218,5 @@ UOB Kay Hian,1,,,underpowered,0
 Vertical Group,1,,,underpowered,0
 Zelman& Assoc,1,,,underpowered,0
 unknown,1,,,underpowered,0
-"# data_limit: 9 firms clear n>=300 and have effects; 210 below the floor keep blank effects and underpowered verdicts; no firm clears 750 (max BofA 551)"
+"""# data_limit: 9 firms measured at n>=300; Morgan Stanley clears the corrected mean-null; 8 indistinguishable; 210 below floor blank/underpowered; no firm at 750 (max BofA 551)"""
 # next_probe: add about 27 more BofA-covered tickers to reach the 750 floor and rerun the 63d within-ticker placebo

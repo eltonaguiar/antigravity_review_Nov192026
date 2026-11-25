@@ -14,6 +14,7 @@ API:
     guarded(metric, fn) -> {"status": "OK"|"DATA_INVALID"|"UNMEASURED", ...}
 """
 from __future__ import annotations
+import math
 from dataclasses import dataclass
 from typing import Any, Callable, Iterable
 
@@ -65,6 +66,19 @@ def require_leverage(metric: str, value: float, max_plausible: float) -> None:
         raise DataInvalid(metric, f"leverage {value!r}x exceeds declared maximum {max_plausible}x")
 
 
+def require_placebo_p95(metric: str, p95_bps: float, n: int,
+                        expected_sd: float = 0.1329, rel_tol: float = 1.0) -> None:
+    """A mean-null p95 must be 1.645*sd/sqrt(n), not a per-event percentile.
+
+    This catches the 26x error: 2733 bp at BofA implies an impossible 390% per-event
+    sd; the expected p95 at sd=13.29% is ~99.6 bp for n=482.
+    """
+    if n is None or n <= 0:
+        raise DataInvalid(metric, "placebo n is non-positive")
+    expected = 1.645 * expected_sd * 10000.0 / math.sqrt(n)
+    require_unit_scale(f"{metric} placebo_p95", p95_bps, expected, rel_tol=rel_tol)
+
+
 def require_unit_scale(metric: str, observed: float, expected: float,
                        rel_tol: float = 0.25) -> None:
     """Catch a denominator/numerator unit mismatch before it becomes a 10x verdict."""
@@ -103,12 +117,14 @@ def _selftest() -> int:
     rows = [{"exposure": 0}] * 115 + [{"exposure": 1}] * 373
     cases.append(guarded("coverage", lambda: denominator_coverage("coverage", rows, "exposure")))
     cases.append(guarded("leverage", lambda: require_leverage("leverage", 1133.6, 50)))
+    cases.append(guarded("old_p95", lambda: require_placebo_p95("old_p95", 2733.86, 482)))
+    cases.append(guarded("new_p95", lambda: require_placebo_p95("new_p95", 99.6, 482)))
     cases.append(bucket_status("empty_bucket", 0, 30))
     cases.append(bucket_status("floor_bucket", 12, 30))
     cases.append(bucket_status("ok_bucket", 100, 30))
     for c in cases:
         print(f"  {c.metric:18s} {c.status:12s} {c.reason}")
-    expected = ["DATA_INVALID", "DATA_INVALID", "DATA_INVALID", "DATA_INVALID", "UNMEASURED", "UNMEASURED", "OK"]
+    expected = ["DATA_INVALID", "DATA_INVALID", "DATA_INVALID", "DATA_INVALID", "DATA_INVALID", "OK", "UNMEASURED", "UNMEASURED", "OK"]
     got = [c.status for c in cases]
     ok = got == expected
     print("selftest", "PASS" if ok else f"FAIL got={got}")
