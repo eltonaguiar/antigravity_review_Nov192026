@@ -103,3 +103,9 @@ that could move it, and settling it requires a re-run with a characteristic-matc
 ---
 
 next_probe: re-run `class_calibration.py` with a beta/size/sector-matched benchmark over the identical per-event windows and publish `rho` and `permutation_p` both ways; if the sign does not survive the re-basing, the "inverted" verdict is a benchmark artefact and should be withdrawn, and if it does survive, the artifact gains the one thing it currently lacks — a gate-2-compliant result.
+
+## SUPERSEDED 2026-11-25
+
+(a) The measured MDE is **8.78 pp/yr**, from a per-symbol-mean SD of **5.751 pp/month** on **963 rows over 485 symbols**.
+(b) **18.868 is 2.15x** that, and required an **unmeasured 148.5 pp/yr sigma** — **now withdrawn**.
+(c) See `tracker/TRACK_B_DEFECT_AUDIT.md` **MDE CORRECTION 2026-11-25** and `tracker/MDE_PROVENANCE_SWEEP.md` **section 4b**.
