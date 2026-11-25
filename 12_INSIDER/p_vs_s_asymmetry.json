@@ -1,0 +1,110 @@
+{
+ "generated": "2026-11-25T00:16:49.174360",
+ "source": "form4_events_wide.csv",
+ "seed": 20261124,
+ "cluster_unit": "issuer symbol (insiders, not brokers)",
+ "entry": "next session open after filing_date",
+ "horizons": [
+  21,
+  63,
+  126
+ ],
+ "costs_bp": [
+  0.98,
+  4.01,
+  12.07
+ ],
+ "adv_distribution_usd": {
+  "n": 979,
+  "min": 22963888,
+  "median": 1232185209,
+  "p90": 26611694552,
+  "max": 26611694552
+ },
+ "owner_row_counts": {
+  "P": 52,
+  "S": 927,
+  "P_officer_or_director": 6,
+  "P_officer_dir_not_10pct": 3
+ },
+ "by_horizon": {
+  "21": {
+   "P_n": 46,
+   "P_symbols": 12,
+   "P_mean_excess_pct": 10.7873,
+   "P_ci95_pct": [
+    2.1517,
+    19.3872
+   ],
+   "S_n": 865,
+   "S_symbols": 20,
+   "S_mean_excess_pct": -0.5737,
+   "S_ci95_pct": [
+    -5.6376,
+    1.6456
+   ],
+   "design_effect": 0.0,
+   "placebo_p95_pct": -4.6515,
+   "mde80_pct": 42.7384,
+   "dropped_no_price": 68,
+   "costs_bp": [
+    0.98,
+    4.01,
+    12.07
+   ],
+   "asymmetry_holds": true
+  },
+  "63": {
+   "P_n": 44,
+   "P_symbols": 12,
+   "P_mean_excess_pct": 7.2321,
+   "P_ci95_pct": [
+    0.9419,
+    14.1654
+   ],
+   "S_n": 690,
+   "S_symbols": 18,
+   "S_mean_excess_pct": -0.4612,
+   "S_ci95_pct": [
+    -11.9443,
+    5.4382
+   ],
+   "design_effect": 0.0,
+   "placebo_p95_pct": 1.7091,
+   "mde80_pct": 18.0284,
+   "dropped_no_price": 245,
+   "costs_bp": [
+    0.98,
+    4.01,
+    12.07
+   ],
+   "asymmetry_holds": true
+  },
+  "126": {
+   "P_n": 35,
+   "P_symbols": 9,
+   "P_mean_excess_pct": 10.3969,
+   "P_ci95_pct": [
+    -5.3581,
+    45.4797
+   ],
+   "S_n": 277,
+   "S_symbols": 14,
+   "S_mean_excess_pct": -1.3137,
+   "S_ci95_pct": [
+    -21.9576,
+    12.0404
+   ],
+   "design_effect": 0.0,
+   "placebo_p95_pct": 13.5985,
+   "mde80_pct": 39.5876,
+   "dropped_no_price": 667,
+   "costs_bp": [
+    0.98,
+    4.01,
+    12.07
+   ],
+   "asymmetry_holds": true
+  }
+ }
+}
