@@ -166,9 +166,63 @@ def main() -> int:
             if not math.isfinite(net):
                 excluded += 1
                 continue
+            # MATCHED benchmark inputs, computed per event over the SAME window:
+            # market beta from the 250 days before entry, and size (dollar ADV)
+            # plus momentum as terciles. The benchmark itself is assigned after
+            # all events are collected (peer cell means), so it cannot use the
+            # event's own outcome.
+            k0 = max(0, i - 250)
+            sr, mr = [], []
+            for k in range(k0, i):
+                if k + 1 >= len(idx):
+                    break
+                sr.append(closes[k + 1] / closes[k] - 1)
+                d1, d2 = idx[k], idx[k + 1]
+                if d1 in spy_c and d2 in spy_c:
+                    mr.append(spy_c[d2] / spy_c[d1] - 1)
+            beta = None
+            if len(sr) >= 60 and len(sr) == len(mr):
+                vm = statistics.pvariance(mr)
+                if vm > 0:
+                    beta = statistics.covariance(sr, mr) / vm
+            adv = statistics.mean(closes[max(0, i - 20):i]) if i > 0 else None
+            mom = (closes[i - 1] / closes[i - 127] - 1) if i >= 127 else None
             obs.append({"symbol": sym, "period": pk, "score": score, "net": net,
+                        "raw": stock, "mkt": bench,
                         "n_analysts": n, "band": band, "cost_bps": cost_bps,
-                        "bucket": bucket_of(score)})
+                        "bucket": bucket_of(score),
+                        "beta": beta, "adv": adv, "mom": mom,
+                        "entry": idx[i], "exit": idx[j]})
+    # ---- matched benchmark: tercile cells of (size, momentum), beta-adjusted --
+    def tercile(values, v):
+        if v is None:
+            return None
+        vs = sorted(x for x in values if x is not None)
+        if len(vs) < 6:
+            return None
+        a, b = vs[len(vs) // 3], vs[2 * len(vs) // 3]
+        return 0 if v <= a else (1 if v <= b else 2)
+    advs = [o["adv"] for o in obs]
+    moms = [o["mom"] for o in obs]
+    peers: dict[tuple, list] = {}
+    for o in obs:
+        st, mt = tercile(advs, o["adv"]), tercile(moms, o["mom"])
+        o["cell"] = (st, mt) if st is not None and mt is not None else None
+        if o["cell"] is not None:
+            peers.setdefault(o["cell"], []).append(o)
+    # each event is benchmarked by ITS peers' market return, beta-scaled, over
+    # the same window -- leave-one-out so it never includes itself
+    for o in obs:
+        cell = o["cell"]
+        if cell is None or o["beta"] is None:
+            o["net_matched"] = None
+            continue
+        others = [q for q in peers.get(cell, []) if q is not o]
+        if len(others) < 5:
+            o["net_matched"] = None
+            continue
+        peer_mkt = statistics.mean(q["mkt"] for q in others)
+        o["net_matched"] = o["raw"] - o["beta"] * peer_mkt - o["cost_bps"] / 10000.0
 
     by_symbol: dict[str, list[dict]] = {}
     for o in obs:
@@ -235,7 +289,45 @@ def main() -> int:
         mono = all(buckets[a]["mean_net_pct"] >= buckets[b]["mean_net_pct"]
                    for a, b in zip(("STRONG_SELL", "SELL", "HOLD", "BUY"), ("SELL", "HOLD", "BUY", "STRONG_BUY"))
                    if a in buckets and b in buckets)
+        # ---- the same rho and p under the MATCHED benchmark ------------------
+        def rho_p(nets_col: str):
+            # NOTE: `rows` here is analyse()'s list of dicts; do not shadow it with
+            # the outer loop's tuples (that was a KeyError: 962).
+            # Only events with a non-null value in this column can be ranked --
+            # a matched benchmark is undefined where the peer cell is too thin.
+            usable = [rec for rec in rows if rec.get(nets_col) is not None]
+            xs = [rec["score"] for rec in usable]
+            ys = [rec[nets_col] for rec in usable]
+            if len(usable) < 2:
+                return None, None
+            r0 = spearman(xs, ys)
+            rg = random.Random(SEED)
+            ids_by_sym: dict[str, list[int]] = {}
+            for q, rec in enumerate(usable):
+                ids_by_sym.setdefault(rec["symbol"], []).append(q)
+            nl = []
+            for _ in range(N_PERM):
+                perm = list(xs)
+                for ids in ids_by_sym.values():
+                    vals = [xs[q] for q in ids]
+                    rg.shuffle(vals)
+                    for q, v in zip(ids, vals):
+                        perm[q] = v
+                nl.append(spearman(perm, ys))
+            return r0, (sum(1 for z in nl if abs(z) >= abs(r0)) + 1) / (N_PERM + 1)
+        matched_rows = [r for r in rows if r.get("net_matched") is not None]
+        if len(matched_rows) >= CLASS_FLOOR:
+            rho_m, p_m = rho_p("net_matched")
+            matched = {"rho": round(rho_m, 5), "permutation_p": round(p_m, 5),
+                       "n": len(matched_rows),
+                       "sign": "inverted" if rho_m < 0 else "as expected",
+                       "sign_survives": (rho_m < 0) == (rho < 0)}
+        else:
+            matched = {"rho": None, "permutation_p": None, "n": len(matched_rows),
+                       "verdict": "insufficient matched events"}
         res.update(
+            rho_spy=round(rho, 5), permutation_p_spy=round(p, 5),
+            matched=matched,
             rho=round(rho, 5), permutation_p=round(p, 5),
             sign="inverted" if rho < 0 else "as expected",
             monotone=mono,
