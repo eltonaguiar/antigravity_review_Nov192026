@@ -218,5 +218,5 @@ UOB Kay Hian,1,,,underpowered,0
 Vertical Group,1,,,underpowered,0
 Zelman& Assoc,1,,,underpowered,0
 unknown,1,,,underpowered,0
-"""# data_limit: 9 firms clear n>=300 and have effects; 210 below the floor keep blank effects and underpowered verdicts; no firm clears 750 (max BofA 551)"""
+"# data_limit: 9 firms clear n>=300 and have effects; 210 below the floor keep blank effects and underpowered verdicts; no firm clears 750 (max BofA 551)"
 # next_probe: add about 27 more BofA-covered tickers to reach the 750 floor and rerun the 63d within-ticker placebo
