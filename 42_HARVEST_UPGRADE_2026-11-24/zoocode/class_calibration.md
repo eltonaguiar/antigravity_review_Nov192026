@@ -1,3 +1,5 @@
+> SUPERSEDED 2026-11-25 -- canonical copy is tracker/class_calibration.md (mde_pct 8.78 pp/yr, benchmark gate 2 UNMET); this file is retained as the 2026-11-24 original.
+
 # Track B -- per-asset-class calibration
 
 zoo-savant, 2026-11-24. Source: `ZOOCODE/harvest/*.json` (499 tickers) + yfinance, seed 20261124.
@@ -22,7 +24,7 @@ coverage to a cost band is an assumption**, since coverage is only a proxy for l
 
 | class | n | symbols | rho | perm p | sign | design effect | MDE | verdict |
 |---|---|---|---|---|---|---|---|---|
-| EQUITY | 963 | 485 | -0.0467 | 0.9995 | inverted | 0.38 | 18.868% | inverted |
+| EQUITY | 963 | 485 | -0.0467 | 0.9995 | inverted | 0.38 | 8.78% | inverted |
 | ETF | 0 | 0 | -- | -- | -- | -- | -- | insufficient |
 | BOND | 0 | 0 | -- | -- | -- | -- | -- | insufficient |
 | MUTUAL_FUND | 0 | 0 | -- | -- | -- | -- | -- | insufficient |
