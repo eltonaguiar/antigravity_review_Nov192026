@@ -1,110 +1,133 @@
 {
- "generated": "2026-11-25T00:16:49.174360",
+ "generated": "2026-11-25T01:49:20.242807+00:00",
  "source": "form4_events_wide.csv",
  "seed": 20261124,
- "cluster_unit": "issuer symbol (insiders, not brokers)",
+ "cluster_unit": "issuer symbol",
  "entry": "next session open after filing_date",
- "horizons": [
-  21,
-  63,
-  126
+ "flag_parser": {
+  "literal": "lower()=='true'",
+  "truthy": [
+   "1",
+   "t",
+   "true",
+   "y",
+   "yes"
+  ],
+  "is_officer_distribution_P": {
+   "0": 23,
+   "1": 19,
+   "false": 9,
+   "true": 1
+  }
+ },
+ "filter_steps": {
+  "P officer-or-director (LITERAL)": 6,
+  "P officer-or-director, excluding 10% owners (LITERAL)": 3,
+  "P all": 52,
+  "P officer-or-director (TRUTHY)": 48,
+  "P officer-or-director, excluding 10% owners (TRUTHY)": 31,
+  "S all": 927
+ },
+ "purchase_concentration": [
+  [
+   "PARA",
+   10
+  ],
+  [
+   "UPST",
+   10
+  ],
+  [
+   "RIVN",
+   7
+  ],
+  [
+   "LCID",
+   6
+  ],
+  [
+   "CVNA",
+   3
+  ],
+  [
+   "INTC",
+   3
+  ]
  ],
+ "min_events": 30,
+ "clean_set_underpowered": false,
  "costs_bp": [
   0.98,
   4.01,
   12.07
  ],
- "adv_distribution_usd": {
-  "n": 979,
-  "min": 22963888,
-  "median": 1232185209,
-  "p90": 26611694552,
-  "max": 26611694552
- },
- "owner_row_counts": {
-  "P": 52,
-  "S": 927,
-  "P_officer_or_director": 6,
-  "P_officer_dir_not_10pct": 3
- },
  "by_horizon": {
   "21": {
-   "P_n": 46,
-   "P_symbols": 12,
-   "P_mean_excess_pct": 10.7873,
-   "P_ci95_pct": [
-    2.1517,
-    19.3872
+   "P_n": 26,
+   "P_symbols": 10,
+   "P_mean_excess_pct": 5.885,
+   "P_ci95_symbol_cluster_pct": [
+    1.4878,
+    10.4291
    ],
-   "S_n": 865,
+   "S_n": 847,
    "S_symbols": 20,
-   "S_mean_excess_pct": -0.5737,
-   "S_ci95_pct": [
-    -5.6376,
-    1.6456
+   "S_mean_excess_pct": -7.4942,
+   "S_ci95_symbol_cluster_pct": [
+    -12.3468,
+    -5.4873
    ],
-   "design_effect": 0.0,
-   "placebo_p95_pct": -4.6515,
-   "mde80_pct": 42.7384,
-   "dropped_no_price": 68,
-   "costs_bp": [
-    0.98,
-    4.01,
-    12.07
-   ],
-   "asymmetry_holds": true
+   "design_effect": 20.66,
+   "placebo_p95_pct": -5.287,
+   "mde80_pct": 8.5965,
+   "dropped_P": 5,
+   "dropped_S": 67,
+   "verdict": "UNDERPOWERED"
   },
   "63": {
-   "P_n": 44,
-   "P_symbols": 12,
-   "P_mean_excess_pct": 7.2321,
-   "P_ci95_pct": [
-    0.9419,
-    14.1654
+   "P_n": 25,
+   "P_symbols": 10,
+   "P_mean_excess_pct": 10.6088,
+   "P_ci95_symbol_cluster_pct": [
+    4.3317,
+    15.4047
    ],
-   "S_n": 690,
+   "S_n": 648,
    "S_symbols": 18,
-   "S_mean_excess_pct": -0.4612,
-   "S_ci95_pct": [
-    -11.9443,
-    5.4382
+   "S_mean_excess_pct": -11.4073,
+   "S_ci95_symbol_cluster_pct": [
+    -20.692,
+    -5.8482
    ],
-   "design_effect": 0.0,
-   "placebo_p95_pct": 1.7091,
-   "mde80_pct": 18.0284,
-   "dropped_no_price": 245,
-   "costs_bp": [
-    0.98,
-    4.01,
-    12.07
-   ],
-   "asymmetry_holds": true
+   "design_effect": 40.28,
+   "placebo_p95_pct": 27.8514,
+   "mde80_pct": 21.2437,
+   "dropped_P": 6,
+   "dropped_S": 266,
+   "verdict": "UNDERPOWERED"
   },
   "126": {
-   "P_n": 35,
-   "P_symbols": 9,
-   "P_mean_excess_pct": 10.3969,
-   "P_ci95_pct": [
-    -5.3581,
-    45.4797
+   "P_n": 16,
+   "P_symbols": 7,
+   "P_mean_excess_pct": 29.2019,
+   "P_ci95_symbol_cluster_pct": [
+    -2.9293,
+    81.8927
    ],
-   "S_n": 277,
+   "S_n": 264,
    "S_symbols": 14,
-   "S_mean_excess_pct": -1.3137,
-   "S_ci95_pct": [
-    -21.9576,
-    12.0404
+   "S_mean_excess_pct": -43.7956,
+   "S_ci95_symbol_cluster_pct": [
+    -62.8504,
+    -14.5213
    ],
-   "design_effect": 0.0,
-   "placebo_p95_pct": 13.5985,
-   "mde80_pct": 39.5876,
-   "dropped_no_price": 667,
-   "costs_bp": [
-    0.98,
-    4.01,
-    12.07
-   ],
-   "asymmetry_holds": true
+   "design_effect": 41.35,
+   "placebo_p95_pct": 4.8861,
+   "mde80_pct": 59.6082,
+   "dropped_P": 15,
+   "dropped_S": 650,
+   "verdict": "UNDERPOWERED"
   }
- }
+ },
+ "withdrawn_prior": "The 2026-11-24 P +10.79% figure is WITHDRAWN: it applied no role filter and used a literal flag parser."
 }
