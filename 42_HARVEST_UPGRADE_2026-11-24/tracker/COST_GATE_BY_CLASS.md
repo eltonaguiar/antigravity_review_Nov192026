@@ -1,123 +1,92 @@
-# Cost gate by asset class and symbol
+# Cost gate by asset class and symbol — resolved trades only
 
 Read-only query of `ejaguiar1_stocks.at_pick_outcomes`, 2026-11-25. Credentials read at runtime; never printed or committed.
 
-## Filter counts
+## Before vs after the EXPIRED/FLAT exclusion
 
-- raw rows: **63,787**
-- pnl_pct non-null: **63,787**
-- WON/LOST/EXPIRED/FLAT: **63,787**
-- class-known after uppercase normalisation: **63,787**
+| stage | rows |
+|---|---:|
+| raw at_pick_outcomes | 63,792 |
+| pnl_pct exactly 0 | 29,577 |
+| EXPIRED | 29,654 |
+| FLAT | 1,046 |
+| excluded (EXPIRED + FLAT) | 30,700 |
+| WON | 13,654 |
+| LOST | 19,438 |
+| **resolved after exclusion** | **33,092** |
 
-Known-class total is 63,482 (CRYPTO 38,208 vs the brief 38,204; 4-row difference). Extra 305 rows are BLANK/STOCKS/STOCK/PENNY/PENNYSTOCK; shown below, not pooled.
+**Overall resolved:** n=33,092, mean **+6.34 bp**, median **-38.98 bp**, WR 41.2%, avg win +302.40 bp, avg loss -201.36 bp. The earlier report's median 0.00 was the EXPIRED/FLAT pile.
 
-## Cost assumptions (round turn)
+EXPIRED/FLAT are not resolutions: EXPIRED stores zero on 28,531/29,654 rows; FLAT is 1,046/1,046 zero. The brief's “+0.065%” is **6.34 bp** here (not 2.5 bp) against a 26 bp round turn.
 
-| class | cost bp | basis |
-|---|---:|---|
-| CRYPTO | 36.00 | midpoint of measured 20-52 bp; perp fees/spreads above equity |
-| FOREX | 7.53 | upper-bound measured |
-| COMMODITY | 20.00 | assumed 20 bp (not measured) |
-| EQUITY | 4.01 | central measured bracket; ceiling 12.07 bp is stress |
-| FUTURES | 12.07 | equity ceiling proxy; no roll-adjusted series |
-| INDEX | 6.71 | ETF/index measured |
-| ETF | 6.71 | measured |
-| BOND | 0.61 | measured |
-| MEME | 52.00 | widest measured crypto band |
-| UNKNOWN | 12.07 | equity central proxy |
-| BLANK | 12.07 | equity central proxy |
-| STOCKS | 4.01 | equity central |
-| STOCK | 4.01 | equity central |
-| PENNY | 52.00 | crypto widest proxy |
-| PENNYSTOCK | 52.00 | crypto widest proxy |
+## Cost assumptions (unchanged from 71d1733)
 
-Crypto uses 36 bp (midpoint of measured 20-52 band); equity uses central measured 4.01 bp, with 12.07 bp as stress. Commodity is assumed; futures has no roll-adjusted series.
+Crypto 36 bp midpoint of measured 20-52; FOREX 7.53 upper-bound; commodity 20 assumed; equity 4.01 central (12.07 stress); futures 12.07 proxy; index/ETF 6.71; bond 0.61; meme 52; unknown 12.07. The coverage/class mapping is an assumption; the bp values are measured.
 
 ## Asset-class table
 
-| class | n | mean bp | median bp | cost bp | mean net | median net | WR | mean > cost | median > cost | breakeven cost | verdict | payoff flag |
-|---|---:|---:|---:|---:|---:|---:|---:|---|---|---:|---|---|
-| CRYPTO | 38,208 | +2.87 | +0.00 | 36.00 | -33.13 | -36.00 | 32.2% | False | False | 2.8748 | BREAKEVEN-COST-NEEDED 2.87 bp | True |
-| FOREX | 16,039 | +5.63 | +0.00 | 7.53 | -1.90 | -7.53 | 7.4% | False | False | 5.6329 | BREAKEVEN-COST-NEEDED 5.63 bp | True |
-| COMMODITY | 5,882 | -10.32 | +0.00 | 20.00 | -30.32 | -20.00 | 5.9% | False | False | none | FAILS-COST | False |
-| EQUITY | 1,984 | -8.84 | +0.00 | 4.01 | -12.85 | -4.01 | 4.6% | False | False | none | FAILS-COST | False |
-| FUTURES | 473 | +6.84 | +0.00 | 12.07 | -5.23 | -12.07 | 3.4% | False | False | 6.839 | BREAKEVEN-COST-NEEDED 6.84 bp | True |
-| INDEX | 314 | +0.05 | +0.00 | 6.71 | -6.66 | -6.71 | 1.0% | False | False | 0.0513 | BREAKEVEN-COST-NEEDED 0.05 bp | True |
-| ETF | 181 | +5.88 | +0.00 | 6.71 | -0.83 | -6.71 | 5.5% | False | False | 5.8829 | BREAKEVEN-COST-NEEDED 5.88 bp | True |
-| BOND | 154 | +2.19 | +0.00 | 0.61 | +1.58 | -0.61 | 2.6% | True | False | 2.1853 | CLEARS-COST | True |
-| MEME | 106 | -200.79 | +0.00 | 52.00 | -252.79 | -52.00 | 21.7% | False | False | none | FAILS-COST | False |
-| UNKNOWN | 141 | -202.10 | -515.00 | 12.07 | -214.17 | -527.07 | 37.6% | False | False | none | FAILS-COST | False |
-| BLANK | 204 | +7.97 | -40.04 | 12.07 | -4.10 | -52.11 | 42.6% | False | False | 7.9732 | BREAKEVEN-COST-NEEDED 7.97 bp | True |
-| STOCKS | 54 | -38.36 | +0.00 | 4.01 | -42.37 | -4.01 | 13.0% | False | False | none | FAILS-COST | False |
-| STOCK | 33 | -9.90 | +0.01 | 4.01 | -13.91 | -4.00 | 51.5% | False | False | none | FAILS-COST | False |
-| PENNY | 7 | -102.86 | +0.00 | 52.00 | -154.86 | -52.00 | 0.0% | False | False | none | FAILS-COST | False |
-| PENNYSTOCK | 7 | -635.85 | -1179.70 | 52.00 | -687.85 | -1231.70 | 42.9% | False | False | none | FAILS-COST | False |
+| class | n | mean bp | median bp | cost bp | mean net | median net | WR | mean > cost | median > cost | powered (n>=100) | breakeven cost | verdict | payoff flag |
+|---|---:|---:|---:|---:|---:|---:|---:|---|---|---|---:|---|---|
+| CRYPTO | 28,677 | +8.85 | -100.00 | 36.00 | -27.15 | -136.00 | 41.6% | False | False | True | 8.8461 | BREAKEVEN-COST-NEEDED 8.85 bp | True |
+| FOREX | 2,789 | +32.45 | -0.69 | 7.53 | +24.92 | -8.22 | 39.7% | True | False | True | 32.4536 | CLEARS-COST | True |
+| COMMODITY | 891 | -70.11 | -13.08 | 20.00 | -90.11 | -33.08 | 37.1% | False | False | True | none | FAILS-COST | False |
+| EQUITY | 233 | -80.72 | -150.00 | 4.01 | -84.73 | -154.01 | 36.9% | False | False | True | none | FAILS-COST | False |
+| FUTURES | 29 | +88.03 | -87.89 | 12.07 | +75.96 | -99.96 | 41.4% | True | False | False | 88.0293 | CLEARS-COST | True |
+| INDEX | 3 | +5.37 | +5.94 | 6.71 | -1.34 | -0.77 | 100.0% | False | False | False | 5.3733 | BREAKEVEN-COST-NEEDED 5.37 bp | False |
+| ETF | 23 | +27.07 | -291.91 | 6.71 | +20.36 | -298.62 | 17.4% | True | False | False | 27.0709 | CLEARS-COST | True |
+| BOND | 16 | +21.03 | -58.31 | 0.61 | +20.42 | -58.92 | 25.0% | True | False | False | 21.0331 | CLEARS-COST | True |
+| MEME | 70 | -304.05 | -163.69 | 52.00 | -356.05 | -215.69 | 30.0% | False | False | False | none | FAILS-COST | False |
+| UNKNOWN | 141 | -202.10 | -515.00 | 12.07 | -214.17 | -527.07 | 37.6% | False | False | True | none | FAILS-COST | False |
+| BLANK | 189 | +8.61 | -501.00 | 12.07 | -3.46 | -513.07 | 46.0% | False | False | True | 8.606 | BREAKEVEN-COST-NEEDED 8.61 bp | True |
+| STOCKS | 11 | -188.30 | +21.35 | 4.01 | -192.31 | +17.34 | 63.6% | False | True | False | none | FAILS-COST | False |
+| STOCK | 14 | -24.00 | -0.45 | 4.01 | -28.01 | -4.46 | 35.7% | False | False | False | none | FAILS-COST | False |
+| PENNY | 2 | -360.00 | -360.00 | 52.00 | -412.00 | -412.00 | 0.0% | False | False | False | none | FAILS-COST | False |
+| PENNYSTOCK | 4 | -1321.20 | -1321.20 | 52.00 | -1373.20 | -1373.20 | 0.0% | False | False | False | none | FAILS-COST | False |
 
-**Class-level share:** mean beats own cost in **1/10** known classes (BOND only); median beats own cost in **0/10**. BOND is a payoff-shape artifact (4 wins, 12 losses, median 0, 2.6% WR), not a tradable class.
-
-## Per-class symbol shares (symbols with n>=30)
-
-| class | symbols | mean > cost | median > cost |
-|---|---:|---:|---:|
-| CRYPTO | 80 | 21.2% | 7.5% |
-| FOREX | 12 | 16.7% | 0.0% |
-| COMMODITY | 11 | 0.0% | 0.0% |
-| EQUITY | 23 | 30.4% | 0.0% |
-| FUTURES | 4 | 25.0% | 0.0% |
-| INDEX | 3 | 0.0% | 0.0% |
-| BOND | 3 | 33.3% | 0.0% |
-| UNKNOWN | 1 | 0.0% | 0.0% |
+**Class-level:** mean beats own cost in **4/10** known classes all-in, but only **1/10** with n>=100 (FOREX). Median beats own cost in **0/10**. Small-n CLEARS (FUTURES 29, ETF 23, BOND 16) are **underpowered/nominal**, not deployable.
 
 ## Findings
 
-- **No class clears cost on the median.** Every class median is 0.0 bp except UNKNOWN (-515.0), BLANK (-40.04) and PENNYSTOCK (-1179.7); the zero mass is EXPIRED/flat outcomes.
-- **BOND is the only mean-clear class** (2.19 bp vs 0.61 bp), but 4 wins / 12 losses / 154 rows and median 0 -> payoff-shape artifact, not an edge.
-- **FOREX is the textbook payoff-shape artifact:** 1,185 wins at +135.93 bp vs 1,762 losses at -40.14 bp, 7.4% WR, 13,092 flat/expired; median 0. Breakeven 5.63 bp vs 7.53 bp cost.
-- **CRYPTO** mean 2.87 bp vs 36 bp cost; 32.2% WR; breakeven 2.87 bp. **FUTURES** 6.84 vs 12.07; **ETF** 5.88 vs 6.71; **INDEX** 0.05 vs 6.71 -- all need costs at/below breakeven, which current execution does not provide.
-- **EQUITY, COMMODITY, MEME, UNKNOWN fail at the mean** before cost (-8.84, -10.32, -200.79, -202.10 bp).
+- **FOREX:** mean **+32.45 bp** vs 7.53 cost, but median **−0.69 bp**, WR 39.7% and payoff-shape flag; 1,185 wins/+135.93 vs 1,762 losses/−40.14 in the old all-status view — now resolved-only. Mean clear does **not** survive the median/payoff-shape check.
+- **CRYPTO:** mean **+8.85 bp** vs 36 cost, median **−100 bp**; BREAKEVEN-COST-NEEDED 8.85 bp; not close to current cost.
+- **FUTURES/ETF/BOND/INDEX:** nominal mean clears/breakeven at n=29/23/16/3; all **below the 100 floor**, so UNDERDETERMINED, not endorsements.
+- **COMMODITY/EQUITY/MEME/UNKNOWN:** fail at the mean (−70.11/−80.72/−304.05/−202.10 bp).
+- **No class clears on both mean and median.** The only powered mean-clear class (FOREX) has a negative median and payoff-shape signature.
 
-## Verdicts (exact)
-- **CRYPTO:** BREAKEVEN-COST-NEEDED 2.87 bp (mean +2.87 bp, median +0.00 bp, cost 36.00 bp).
-- **FOREX:** BREAKEVEN-COST-NEEDED 5.63 bp (mean +5.63 bp, median +0.00 bp, cost 7.53 bp).
-- **COMMODITY:** FAILS-COST (mean -10.32 bp, median +0.00 bp, cost 20.00 bp).
-- **EQUITY:** FAILS-COST (mean -8.84 bp, median +0.00 bp, cost 4.01 bp).
-- **FUTURES:** BREAKEVEN-COST-NEEDED 6.84 bp (mean +6.84 bp, median +0.00 bp, cost 12.07 bp).
-- **INDEX:** BREAKEVEN-COST-NEEDED 0.05 bp (mean +0.05 bp, median +0.00 bp, cost 6.71 bp).
-- **ETF:** BREAKEVEN-COST-NEEDED 5.88 bp (mean +5.88 bp, median +0.00 bp, cost 6.71 bp).
-- **BOND:** CLEARS-COST (mean +2.19 bp, median +0.00 bp, cost 0.61 bp).
-- **MEME:** FAILS-COST (mean -200.79 bp, median +0.00 bp, cost 52.00 bp).
-- **UNKNOWN:** FAILS-COST (mean -202.10 bp, median -515.00 bp, cost 12.07 bp).
+## What EXPIRED should mean
 
-## Per-symbol detail (n>=30)
+An EXPIRED row with pnl_pct=0 is not a resolution. It should be resolved against the price at expiry (or removed from the table); 29,654 picks (46.5%) reaching neither TP nor SL is an exit-logic finding. `trading_picks` shows **31,421 TIME_EXIT_MAX_HOLD** rows, consistent with a system that runs out of time rather than resolving P&L. Do not treat zeros as flat outcomes.
 
-Full machine-readable table is in `COST_GATE_BY_CLASS.json` (`symbols`, 137 rows). Top rows by n:
+## Per-symbol detail
+
+Full machine-readable table in `COST_GATE_BY_CLASS.json` (`symbols`, 88 rows with n>=30). Top rows by n:
 
 | class | symbol | n | mean bp | median bp | cost bp | mean > cost | median > cost | verdict |
 |---|---|---:|---:|---:|---:|---|---|---|
-| CRYPTO | BTCUSDT | 5352 | -2.49 | +0.00 | 36.00 | False | False | FAILS-COST |
-| CRYPTO | ETHUSDT | 3543 | +21.69 | +0.00 | 36.00 | False | False | BREAKEVEN-COST-NEEDED 21.69 bp |
-| CRYPTO | SOLUSDT | 2785 | +25.08 | +0.00 | 36.00 | False | False | BREAKEVEN-COST-NEEDED 25.08 bp |
-| CRYPTO | DOGEUSDT | 2381 | +52.48 | +0.00 | 36.00 | True | False | CLEARS-COST |
-| FOREX | EURJPY=X | 1893 | -5.08 | +0.00 | 7.53 | False | False | FAILS-COST |
-| CRYPTO | AVAXUSDT | 1755 | +60.78 | +0.00 | 36.00 | True | False | CLEARS-COST |
-| FOREX | GBPJPY=X | 1673 | +3.14 | +0.00 | 7.53 | False | False | BREAKEVEN-COST-NEEDED 3.14 bp |
-| FOREX | USDCAD=X | 1630 | +2.88 | +0.00 | 7.53 | False | False | BREAKEVEN-COST-NEEDED 2.88 bp |
-| FOREX | AUDUSD=X | 1618 | -2.88 | +0.00 | 7.53 | False | False | FAILS-COST |
-| FOREX | AUDJPY=X | 1599 | -2.06 | +0.00 | 7.53 | False | False | FAILS-COST |
-| CRYPTO | XRPUSDT | 1514 | -11.17 | +0.00 | 36.00 | False | False | FAILS-COST |
-| CRYPTO | ADAUSDT | 1413 | -10.97 | -10.19 | 36.00 | False | False | FAILS-COST |
-| FOREX | USDJPY=X | 1374 | -5.35 | +0.00 | 7.53 | False | False | FAILS-COST |
-| FOREX | CADJPY=X | 1342 | +63.61 | +0.00 | 7.53 | True | False | CLEARS-COST |
-| FOREX | EURGBP=X | 1309 | +0.90 | +0.00 | 7.53 | False | False | BREAKEVEN-COST-NEEDED 0.90 bp |
-| CRYPTO | BNBUSDT | 1297 | -2.21 | +0.00 | 36.00 | False | False | FAILS-COST |
-| COMMODITY | SI=F | 1158 | -21.67 | +0.00 | 20.00 | False | False | FAILS-COST |
-| FOREX | NZDUSD=X | 1146 | +14.69 | +0.00 | 7.53 | True | False | CLEARS-COST |
-| FOREX | GBPUSD=X | 1108 | +0.86 | +0.00 | 7.53 | False | False | BREAKEVEN-COST-NEEDED 0.86 bp |
-| CRYPTO | DOTUSDT | 1096 | +42.27 | -3.42 | 36.00 | True | False | CLEARS-COST |
-| CRYPTO | NEARUSDT | 1093 | -4.26 | -149.00 | 36.00 | False | False | FAILS-COST |
-| COMMODITY | GC=F | 1048 | -2.86 | +0.00 | 20.00 | False | False | FAILS-COST |
-| CRYPTO | LINKUSDT | 835 | -27.94 | -100.00 | 36.00 | False | False | FAILS-COST |
-| CRYPTO | SUIUSDT | 755 | +13.57 | -0.04 | 36.00 | False | False | BREAKEVEN-COST-NEEDED 13.57 bp |
-| COMMODITY | HG=F | 753 | -7.06 | +0.00 | 20.00 | False | False | FAILS-COST |
+| CRYPTO | BTCUSDT | 2670 | +3.75 | -114.00 | 36.00 | False | False | BREAKEVEN-COST-NEEDED 3.75 bp |
+| CRYPTO | SOLUSDT | 2229 | +30.92 | -85.00 | 36.00 | False | False | BREAKEVEN-COST-NEEDED 30.92 bp |
+| CRYPTO | ETHUSDT | 2156 | +42.32 | -5.51 | 36.00 | True | False | CLEARS-COST |
+| CRYPTO | DOGEUSDT | 1797 | +71.16 | -6.79 | 36.00 | True | False | CLEARS-COST |
+| CRYPTO | AVAXUSDT | 1624 | +69.43 | +1.72 | 36.00 | True | False | CLEARS-COST |
+| CRYPTO | ADAUSDT | 1297 | -9.88 | -18.55 | 36.00 | False | False | FAILS-COST |
+| CRYPTO | DOTUSDT | 1056 | +45.13 | -6.17 | 36.00 | True | False | CLEARS-COST |
+| CRYPTO | NEARUSDT | 1009 | -2.48 | -160.00 | 36.00 | False | False | FAILS-COST |
+| CRYPTO | XRPUSDT | 972 | -11.47 | -24.89 | 36.00 | False | False | FAILS-COST |
+| CRYPTO | LINKUSDT | 744 | -6.85 | -103.00 | 36.00 | False | False | FAILS-COST |
+| CRYPTO | BNBUSDT | 726 | +20.04 | +0.04 | 36.00 | False | False | BREAKEVEN-COST-NEEDED 20.04 bp |
+| CRYPTO | JUPUSDT | 710 | +65.60 | +2.55 | 36.00 | True | False | CLEARS-COST |
+| CRYPTO | SUIUSDT | 659 | +12.39 | -100.00 | 36.00 | False | False | BREAKEVEN-COST-NEEDED 12.39 bp |
+| CRYPTO | SAND-USD | 621 | -98.35 | -200.00 | 36.00 | False | False | FAILS-COST |
+| CRYPTO | RENDERUSDT | 564 | +92.70 | +1.21 | 36.00 | True | False | CLEARS-COST |
+| CRYPTO | ENAUSDT | 560 | +14.58 | +3.00 | 36.00 | False | False | BREAKEVEN-COST-NEEDED 14.58 bp |
+| CRYPTO | ARBUSDT | 508 | +81.40 | -100.00 | 36.00 | True | False | CLEARS-COST |
+| CRYPTO | DOT-USD | 406 | -3.45 | -150.00 | 36.00 | False | False | FAILS-COST |
+| CRYPTO | WIFUSDT | 400 | +33.70 | +0.68 | 36.00 | False | False | BREAKEVEN-COST-NEEDED 33.70 bp |
+| CRYPTO | APTUSDT | 395 | -32.17 | -150.00 | 36.00 | False | False | FAILS-COST |
+| CRYPTO | MANA-USD | 384 | -69.87 | -200.00 | 36.00 | False | False | FAILS-COST |
+| FOREX | USDJPY=X | 381 | -17.19 | -0.56 | 7.53 | False | False | FAILS-COST |
+| FOREX | EURJPY=X | 366 | -26.29 | -7.76 | 7.53 | False | False | FAILS-COST |
+| FOREX | AUDJPY=X | 350 | -9.40 | -2.77 | 7.53 | False | False | FAILS-COST |
+| FOREX | GBPJPY=X | 328 | +15.99 | -1.58 | 7.53 | True | False | CLEARS-COST |
 
-next_probe: rerun with symbol-clustered CIs and a cost-sensitivity column at the 12.07 bp equity ceiling; do not promote BOND or FOREX without a payoff-shape test.
+next_probe: resolve EXPIRED picks against the expiry price, then rerun this table on true resolutions; do not turn the 29,654 zero rows into flat outcomes.
