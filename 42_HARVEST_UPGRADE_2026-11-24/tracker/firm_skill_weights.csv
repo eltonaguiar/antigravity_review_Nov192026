@@ -218,5 +218,5 @@ UOB Kay Hian,1,,,underpowered,0
 Vertical Group,1,,,underpowered,0
 Zelman& Assoc,1,,,underpowered,0
 unknown,1,,,underpowered,0
-"""# data_limit: 9 firms measured at n>=300; Morgan Stanley clears the corrected mean-null; 8 indistinguishable; 210 below floor blank/underpowered; no firm at 750 (max BofA 551)"""
+"# data_limit: 9 firms measured at n>=300 (floor restated as MDE, not lowered); Morgan Stanley clears; 8 indistinguishable; 210 below-floor rows blank/underpowered; largest blank n=297 (Barclays); no firm at 750 (max BofA 551)"
 # next_probe: add about 27 more BofA-covered tickers to reach the 750 floor and rerun the 63d within-ticker placebo
