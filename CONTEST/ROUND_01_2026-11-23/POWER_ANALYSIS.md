@@ -150,3 +150,32 @@ Each class below is evaluated at the same sample length as the SPY positive cont
 **Volatility assumptions:** bond 5%, etf 15%, equity 16%, fund 10%, fx 10%, commodity 20%, futures 22%, option 25%, crypto 80%, prediction 30%. These are illustrative; measured vols per class would tighten or loosen the MDEs proportionally.
 
 *Paper only. No live orders, no credentials. Not investment advice.*
+
+---
+
+## 8. The MDE every verdict must quote
+
+For the **actual sample in use** — the audit's own SPY series, **33.8 years (406 months), annualised vol 14.77%** — the
+minimum detectable effect at t = 2 is:
+
+> **MDE = 5.08%/yr.**
+
+From the same arithmetic as §3: `MDE(t=2) = 2 × vol / √T = 2 × 0.1477 / √33.8 = 2 × 0.1477 / 5.813 ≈ 0.0508`, i.e. **5.08%/yr**.
+
+**Every verdict in this audit must quote this number.** Any "the effect was not there" statement drawn from this sample is
+a statement about the gate's power, not about the market: an effect smaller than 5.08%/yr cannot be resolved here and must
+not be reported as absent. The per-class table in §7 scales this same rule by each class's volatility; the SPY figure here
+(14.77% vol → 5.08%/yr) is the headline every verdict must be measured against.
+
+**Cross-check against the positive control** (`POSITIVE_CONTROL.md`, same gate, tool `CONTEST/tools/positive_control.py`,
+real SPY monthly, demeaned so the 0% case is a true null):
+
+- A **genuine injected 3%/yr alpha is statistically invisible** over 33.8 years at 14.8% vol — recovered at exactly 3%,
+  but **t = 1.18 < 2**, 95% CI [−1.98%, +7.98%]. A real effect the gate cannot see.
+- A **10%/yr** injected alpha **is** detected (t = 3.94, 95% CI [+5.02%, +14.98%]) — the harness works *above* the MDE.
+- The 0% null reports nothing (t = 0.00) — no false positive.
+
+The MDE is therefore not hypothetical: an effect 2.5× finer than the gate's resolution (3% vs 5.08%) vanished over 33.8
+years of the audit's own data — the same failure mode as calling a live factor "dead" from a few-year sample.
+
+*Paper only. No live orders, no credentials. Not investment advice.*
