@@ -49,3 +49,7 @@ next_probe: recompute from raw bars, using the next open after the pick timestam
 stop-first for ambiguous bars, and compare against the stored `pnl_pct`. If the two agree, the
 stored marks are trustworthy; if the recomputed mean is materially lower, the stored PnL carries
 look-ahead.
+
+---
+
+**Z-VERIFY-1, 2026-11-25T07:51Z: NO CHANGE.** `EXPECTANCY_CORRECTED.md` is unchanged since this audit (`git diff 702e00f origin/main -- .../EXPECTANCY_CORRECTED.md` is empty); the only new `tracker/` commits are automated "re-verify 48 delivery paths" runs and my own delivery verification, so there is nothing new to audit against the DB.
