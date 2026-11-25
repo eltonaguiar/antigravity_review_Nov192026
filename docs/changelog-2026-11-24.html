@@ -86,6 +86,87 @@
   </nav>
 </header>
 
+<h2 id="benefits">Key benefits and top achievements</h2>
+
+<div class="note"><b>Read this first.</b> The programme's benefit is not a return. It is that every number below
+names what it divides by, every correction is published as prominently as the result it replaced, and no gate
+was ever moved to let a candidate pass. <b>Capital deployed: $0.</b> Nothing here is a claim of edge, profit,
+class ranking or skill &mdash; three of those were tested and withdrawn.</div>
+
+<h3>What the programme is actually good for</h3>
+<ul>
+  <li><b>Denominator discipline.</b> Each figure states the row count it divides by. The per-class ranking was
+      withdrawn precisely because it did not.</li>
+  <li><b>Corrections at equal weight.</b> Withdrawn results, refuted units errors and our own wrong claims appear
+      beside the findings, not in a footnote.</li>
+  <li><b>No gate lowered.</b> No threshold was moved to pass a candidate; a clean null is an accepted outcome.</li>
+  <li><b>Adversarial review.</b> Independent model families and a pre-publication overclaim guard were used as
+      critics, with our own numbers withheld from them so they had to supply their own reasoning.</li>
+</ul>
+
+<h3>Top achievements, each with the evidence that supports it</h3>
+
+<table>
+  <thead><tr><th>Achievement</th><th>The number</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>The per-class ranking was withdrawn, not defended</b><br>
+          <span class="muted">It measured resolver coverage, not performance.</span></td>
+      <td>63,797 raw rows &rarr; 37,115 backfill (<b>58.2%</b>) excluded &rarr; <b>26,682</b> live-resolver,
+          <b>26,161</b> priced. CRYPTO is <b>25,488 of 26,682 (95.5%)</b>, so no cross-class comparison is
+          powered.</td>
+    </tr>
+    <tr>
+      <td><b>The cost gate was closed on a real sample</b><br>
+          <span class="muted">Not on a placeholder, and nothing clears it.</span></td>
+      <td><b>33,092</b> resolved trades: mean <b>+6.34&nbsp;bp</b>, median <b>&minus;38.99&nbsp;bp</b> against a
+          <b>26&nbsp;bp</b> round turn &mdash; <b>0 of 10</b> classes clear on the median.</td>
+    </tr>
+    <tr>
+      <td><b>Backfill was proved not-missing-at-random</b><br>
+          <span class="muted">Resolver lineage is perfectly confounded with label case.</span></td>
+      <td>Uppercase <code>CRYPTO</code>: <b>16,360</b> rows, <b>12,730</b> backfilled, 3,630 live.
+          Lowercase <code>crypto</code>: <b>21,858</b> rows, <b>0</b> backfilled. Same 12,730 rows are
+          <b>77.8%</b> of 16,360 and <b>33.3%</b> of 38,218 &mdash; both true, different denominators.</td>
+    </tr>
+    <tr>
+      <td><b>The dilution correction was bounded, not asserted</b><br>
+          <span class="muted">Because the missingness is provably not random.</span></td>
+      <td>FOREX <b>+0.0563% &rarr; +0.3066%</b>; COMMODITY <b>&minus;0.1032% &rarr; &minus;0.6583%</b>. Labelled a
+          bound on distortion, never a corrected mean; unjoined rows average <b>&minus;0.0828</b> vs
+          <b>&minus;0.0435</b> joined.</td>
+    </tr>
+    <tr>
+      <td><b>The two source tables were reconciled</b><br>
+          <span class="muted">They disagree, and the disagreement flips the sign.</span></td>
+      <td><b>1,263 of 7,945</b> overlapping rows disagree (<b>15.9%</b>), largest gap <b>187.18&nbsp;pp</b>, means
+          of opposite sign (<b>&minus;0.0929%</b> vs <b>+0.0172%</b>). Price arithmetic consistent on
+          <b>96.4%</b> vs <b>76.5%</b>.</td>
+    </tr>
+    <tr>
+      <td><b>Options and futures were investigated instead of left blank</b><br>
+          <span class="muted">Both previously read <code>UNKNOWN</code>.</span></td>
+      <td><b>Options: forward-only</b> &mdash; live SPY chain 30 expiries / 178 calls, but a historical contract
+          returns <b>0 bars</b>. <b>Futures: measurable now</b> &mdash; ES=F <b>6,613</b> daily bars from
+          2000-09-18, with unmodelled roll gaps and no contract-level data (ESZ26 404).</td>
+    </tr>
+    <tr>
+      <td><b>A pre-publication overclaim guard was applied</b><br>
+          <span class="muted">Before this section was written, not after.</span></td>
+      <td><b>17</b> claims classified: <b>8 UNSUPPORTED</b>, <b>7 OVERSTATED</b>, <b>2 MANUFACTURED</b> &mdash;
+          including &ldquo;CRYPTO is the best-performing class&rdquo;, which is true only under a denominator
+          this programme withdrew.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>What this is explicitly not</h3>
+<p>No profitable edge was found. No asset class is proven. No analyst or firm skill is established. No
+cross-class ranking is offered, because one class holds 95.5% of the usable rows. The honest summary of the
+research is <b>a measured negative with real denominators</b>, and the honest summary of the work is
+<b>that it is willing to withdraw its own conclusions</b> &mdash; which is the only reason to trust the
+numbers that survived.</p>
+
 <h2 id="headline">The headline</h2>
 <p>The portfolio engine <b>beat a falling market</b>, and nobody could have known that until today, because
 the table that was supposed to hold the benchmark has never had a row in it.</p>
@@ -615,7 +696,7 @@ cost, no gate result matters.</p>
 <p>Replaced unverified COALESCE of the two PnL columns with the measurement: <b>1,263 of 7,945</b> overlapping rows disagree (<b>15.9%</b>), largest gap <b>187.18 pp</b>, and the means have opposite signs (<b>−0.0929%</b> at_pick vs <b>+0.0172%</b> trading). Price arithmetic matches at_pick <b>5,833/6,049 (96.4%)</b> versus trading <b>4,626/6,049 (76.5%)</b>; prices come from trading_picks, but reported PnL must be recomputed.</p>
 
 <footer>
-  Compiled 2026-11-24 18:52 EST / 23:52Z · commit <code>be9d3ce</code><br>
+  Compiled 2026-11-24 &middot; benefits and achievements added 2026-11-25<code>be9d3ce</code><br>
   Sources: <code>13_EXEC_SUMMARY_DB_2026-11-24.md</code>, <code>12_INSIDER/RESULTS_form4_feasibility_2026-11-24.md</code>,
   <code>42_HARVEST_UPGRADE_2026-11-24/tracker/up_only_breadth.md</code>,
   <code>tracker/score_inversion_test.md</code>, <code>DEPLOYMENT_LOG.md</code> · live DB <code>ejaguiar1_stocks</code>
