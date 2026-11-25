@@ -81,3 +81,5 @@ look-ahead.
 **Z-VERIFY-15, 2026-11-25T09:33Z: NO CHANGE.** Since 274a00b the only tracker change is `KILO_DELIVERY_VERIFICATION.md` (automated path re-verification); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
 
 **Z-VERIFY-16, 2026-11-25T09:40Z: NO CHANGE.** Since e872845 the only tracker change is `KILO_DELIVERY_VERIFICATION.md` (automated path re-verification); `EXPECTANCY_CORRECTED.md` is unchanged since the audit, so there is nothing new to check against the DB.
+
+**Z-VERIFY-17, 2026-11-25T09:45Z: AUDITED, nothing wrong.** Since 94f84b7 the tracker changes are `KILO_DELIVERY_VERIFICATION.md` (automated) and `up_only_breadth.md` (my ITEM A artifact, reworded). I re-derived the latter from the CSV and every figure reproduces: 6,012 pairs / 5,696 surviving; raw 10/1/0 (BofA 556); 6-month 6/0/0 (BofA 439). `EXPECTANCY_CORRECTED.md` is unchanged since the audit.
