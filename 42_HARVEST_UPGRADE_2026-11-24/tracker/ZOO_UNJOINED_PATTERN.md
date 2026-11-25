@@ -1,3 +1,5 @@
+> CORRECTION 2026-11-25: finding 2 of this file is refuted -- asset_class is utf8mb4_unicode_ci so UPPER() changes no count; see tracker/ZOO_UNJOINED_PATTERN_CORRECTION.md (branch a3b17e8, landed this commit).
+
 # The unjoined EXPIRED rows -- are they random?
 
 zoo-savant, 2026-11-25. Measured read-only from `ejaguiar1_stocks`.
