@@ -5,7 +5,7 @@
  "n_boot": 1000,
  "class_floor": 100,
  "entry_rule": "publication lag (label known only from the 1st of the next month)",
- "benchmark": "SPY (characteristic-matched on the only available characteristic: all rows are US equities)",
+ "benchmark": "SPY (single-index market benchmark; characteristic-match gate 2 UNMET)",
  "cost_model": {
   "deep": "6.71 bp (ETF/index measured round turn)",
   "normal": "12.07 bp (equity measured round turn)",
@@ -40,7 +40,7 @@
    "design_effect": 0.38,
    "t_raw": 4.117,
    "t_cluster": 6.709,
-   "mde_pct": 18.868,
+   "mde_pct": 8.78,
    "buckets": {
     "STRONG_BUY": {
      "n": 207,
@@ -78,7 +78,9 @@
      ],
      "ci_excludes_zero": false
     }
-   }
+   },
+   "mde_pct_published_2026-11-24": 18.868,
+   "mde_pct_note": "18.868 used a row-level SD and is 2.15x the measured MDE"
   },
   {
    "class": "ETF",
@@ -115,5 +117,7 @@
    "verdict": "insufficient",
    "reason": "no analyst consensus source exists; the appropriate signals are CFTC COT / funding rates, not ratings"
   }
- ]
+ ],
+ "benchmark_label_original": "SPY (characteristic-matched on the only available characteristic: all rows are US equities)",
+ "_superseded_by": "42_HARVEST_UPGRADE_2026-11-24/tracker/class_calibration.json (canonical)"
 }
