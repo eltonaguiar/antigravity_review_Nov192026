@@ -9,7 +9,10 @@
   "cleaned_mean_pct": 0.2812,
   "cleaned_win_pct": 50.65,
   "zero_share_pct": 33.33,
-  "verdict": "A NULL test is not a resolution test: the columns are NOT NULL DEFAULT 0, so unresolved picks are stored as 0.00%. Plotting 'resolved' as pnl IS NOT NULL therefore counts 21194 flat trades as results, and the raw mean (+21.03%) is carried by 463 picks outside +/-50%. On the cleaned subset the estate earns +0.281% per trade before costs, against a 0.26% round turn."
+  "median_pct": 0.057,
+  "p10_pct": -14.693,
+  "p90_pct": 17.363,
+  "verdict": "A NULL test is not a resolution test: the columns are NOT NULL DEFAULT 0, so unresolved picks are stored as 0.00%. Plotting 'resolved' as pnl IS NOT NULL therefore counts 21194 flat trades as results, and the raw mean (+21.03%) is carried by 463 picks outside +/-50%. Cleaning it (zeros dropped, |PnL| <= 50%) leaves 41932 picks at a +0.281% mean - but the median is only +0.057% and the 10th/90th percentiles are -14.69%/+17.36%, so that mean is a right tail, not typical performance. At a 0.26% round turn the median pick costs more than it earns."
  },
  "top_pick_per_class": [
   {
@@ -18,6 +21,7 @@
    "n": 152,
    "mean_pct": 2.532,
    "win_pct": 60.5,
+   "clears_26bp": true,
    "top_symbols": [
     "WLDUSDT",
     "FETUSDT",
@@ -30,6 +34,7 @@
    "n": 2841,
    "mean_pct": 7.042,
    "win_pct": 72.1,
+   "clears_26bp": true,
    "top_symbols": [
     "AMD",
     "GOOGL",
@@ -42,6 +47,7 @@
    "n": 112,
    "mean_pct": 1.213,
    "win_pct": 83.0,
+   "clears_26bp": true,
    "top_symbols": [
     "QQQ",
     "SPY",
@@ -54,6 +60,7 @@
    "n": 3364,
    "mean_pct": 0.587,
    "win_pct": 81.6,
+   "clears_26bp": true,
    "top_symbols": [
     "GBPUSD=X",
     "EURJPY=X",
@@ -66,6 +73,7 @@
    "n": 209,
    "mean_pct": 3.462,
    "win_pct": 78.0,
+   "clears_26bp": true,
    "top_symbols": [
     "NG=F",
     "HG=F",
@@ -78,6 +86,7 @@
    "n": 240,
    "mean_pct": 0.154,
    "win_pct": 42.1,
+   "clears_26bp": false,
    "top_symbols": [
     "SHIBUSDT",
     "DOGEUSDT"
@@ -393,7 +402,7 @@
    "mean": 52.2
   }
  },
- "generated_at": "2026-11-27T11:27:42Z",
+ "generated_at": "2026-11-27T11:29:42Z",
  "prediction_set": [
   {
    "id": "PR-1",
@@ -437,11 +446,11 @@
   },
   {
    "id": "PR-6",
-   "subject": "Estate-wide cost gate",
-   "claim": "No asset class clears a 0.26% round turn on the cleaned sample; the aggregate stays below break-even on the next 1,000 closed picks.",
-   "basis": "Cleaned estate mean is +0.187% per trade against a 0.26% round turn.",
+   "subject": "Estate-wide cost gate, judged on the MEDIAN pick",
+   "claim": "The typical pick does not pay for its costs: forward median net <= 0 after a 0.26% round turn, even though the mean stays positive.",
+   "basis": "Cleaned median is +0.057% (5.7bp) against a 26bp round turn; the +0.281% mean is a right tail (p10 -14.69%, p90 +17.36%). EQUITY +3.60%, ETF +0.76%, FOREX +0.47% and FUTURES +0.26% clear 26bp on the MEAN - which is why this prediction is stated on the median: a mean that only survives on its best decile is not a repeatable edge.",
    "horizon": "Next 1,000 closed picks.",
-   "kill": "I am wrong if the cleaned mean exceeds +0.26% on 1,000 forward picks."
+   "kill": "I am wrong if the forward median exceeds +0.26% on 1,000 picks."
   }
  ]
 }

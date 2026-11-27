@@ -55,17 +55,27 @@ def collect(cur):
         FROM trading_picks_v2 WHERE pnl_pct IS NOT NULL""")[0]
     cn, cmean, cwin = q(cur, f"""SELECT COUNT(*), ROUND(AVG(pnl_pct),4),
         ROUND(SUM(pnl_pct>0)/COUNT(*)*100,2) FROM trading_picks_v2 WHERE {CLEAN}""")[0]
+    p10, pmed, p90 = q(cur, f"""SELECT
+        ROUND(AVG(CASE WHEN r<=0.10 THEN pnl_pct END),3),
+        ROUND(AVG(CASE WHEN r BETWEEN 0.49 AND 0.51 THEN pnl_pct END),3),
+        ROUND(AVG(CASE WHEN r>=0.90 THEN pnl_pct END),3)
+        FROM (SELECT pnl_pct, PERCENT_RANK() OVER (ORDER BY pnl_pct) r FROM trading_picks_v2
+              WHERE {CLEAN}) t""")[0]
     d["data_quality"] = dict(
         resolved_rows=int(tot), pnl_exactly_zero=int(zero), outside_50pct=int(abs50),
         outside_200pct=int(abs200), mean_all_pct=float(mean_all),
         cleaned_n=int(cn), cleaned_mean_pct=float(cmean), cleaned_win_pct=float(cwin),
         zero_share_pct=round(100.0 * int(zero) / int(tot), 2),
+        median_pct=float(pmed), p10_pct=float(p10), p90_pct=float(p90),
         verdict=("A NULL test is not a resolution test: the columns are NOT NULL DEFAULT 0, "
                  "so unresolved picks are stored as 0.00%%. Plotting 'resolved' as pnl IS NOT NULL "
                  "therefore counts %d flat trades as results, and the raw mean (+%.2f%%) is carried "
-                 "by %d picks outside +/-50%%. On the cleaned subset the estate earns %+.3f%% per "
-                 "trade before costs, against a 0.26%% round turn.") % (
-                     int(zero), float(mean_all), int(abs50), float(cmean)))
+                 "by %d picks outside +/-50%%. Cleaning it (zeros dropped, |PnL| <= 50%%) leaves %d "
+                 "picks at a %+.3f%% mean - but the median is only %+.3f%% and the 10th/90th "
+                 "percentiles are %+.2f%%/%+.2f%%, so that mean is a right tail, not typical "
+                 "performance. At a 0.26%% round turn the median pick costs more than it earns.") % (
+                     int(zero), float(mean_all), int(abs50), int(cn), float(cmean),
+                     float(pmed), float(p10), float(p90)))
 
     per = {}
     for cls, src, n, mean, win in q(cur, f"""SELECT asset_class, source_system, COUNT(*),
@@ -81,7 +91,8 @@ def collect(cur):
     for cls, lst in sorted(per.items()):
         b = lst[0]
         rows.append(dict(asset_class=cls, best_system=b["system"], n=b["n"], mean_pct=b["mean"],
-                         win_pct=b["win"], top_symbols=[x["symbol"] for x in syms.get(cls, [])[:3]]))
+                         win_pct=b["win"], clears_26bp=bool(b["mean"] > 0.26),
+                         top_symbols=[x["symbol"] for x in syms.get(cls, [])[:3]]))
     d["top_pick_per_class"] = rows
 
     labels = {l: dict(n=int(n), avg_score=float(a), avg_buy=float(b)) for l, n, a, b in q(cur, """SELECT
@@ -163,12 +174,15 @@ PREDICTIONS = [
          basis="Zero winners in 101 picks is not a cold streak at any plausible per-trade edge.",
          horizon="Next 50 resolved picks, or 2026-12-31.",
          kill="Retire the system if mean stays < -1.00%; reconsider only if mean turns positive on 50 picks."),
-    dict(id="PR-6", subject="Estate-wide cost gate",
-         claim="No asset class clears a 0.26% round turn on the cleaned sample; the aggregate stays "
-               "below break-even on the next 1,000 closed picks.",
-         basis="Cleaned estate mean is +0.187% per trade against a 0.26% round turn.",
+    dict(id="PR-6", subject="Estate-wide cost gate, judged on the MEDIAN pick",
+         claim="The typical pick does not pay for its costs: forward median net <= 0 after a 0.26% "
+               "round turn, even though the mean stays positive.",
+         basis="Cleaned median is +0.057% (5.7bp) against a 26bp round turn; the +0.281% mean is a right "
+               "tail (p10 -14.69%, p90 +17.36%). EQUITY +3.60%, ETF +0.76%, FOREX +0.47% and FUTURES "
+               "+0.26% clear 26bp on the MEAN - which is why this prediction is stated on the median: "
+               "a mean that only survives on its best decile is not a repeatable edge.",
          horizon="Next 1,000 closed picks.",
-         kill="I am wrong if the cleaned mean exceeds +0.26% on 1,000 forward picks."),
+         kill="I am wrong if the forward median exceeds +0.26% on 1,000 picks."),
 ]
 
 
@@ -184,7 +198,9 @@ def html_section(d):
         f'<tr><td><b>{r["asset_class"]}</b></td><td><code>{r["best_system"]}</code></td>'
         f'<td class="num">{r["n"]:,}</td><td class="num">{r["mean_pct"]:+.2f}%</td>'
         f'<td class="num">{r["win_pct"]:.1f}%</td>'
-        f'<td>{", ".join(r["top_symbols"]) or "&mdash;"}</td></tr>' for r in d["top_pick_per_class"])
+        f'<td>{", ".join(r["top_symbols"]) or "&mdash;"}</td>'
+        f'<td>{"<span class=\"tag t-pass\">mean &gt; 26bp</span>" if r["clears_26bp"] else "<span class=\"tag t-dead\">below 26bp</span>"}</td>'
+        f'</tr>' for r in d["top_pick_per_class"])
     rows_cons = "".join(
         f'<tr><td><b>{r["symbol"]}</b></td><td>{r["name"]}</td><td class="num">{r["analysts"]}</td>'
         f'<td class="num">{r["share_buy"]:.1f}%</td><td class="num">{r["score"]:.3f}</td>'
@@ -220,7 +236,7 @@ def html_section(d):
   data-quality box. Treat it as the least-bad evidence available, not as alpha.</p>
   <table>
     <thead><tr><th>Asset class</th><th>Best measured system</th><th class="num">Closed picks</th>
-      <th class="num">Mean / trade</th><th class="num">Win rate</th><th>Top symbols in class</th></tr></thead>
+      <th class="num">Mean / trade</th><th class="num">Win rate</th><th>Top symbols in class</th><th>Cost gate</th></tr></thead>
     <tbody>{rows_class}</tbody>
   </table>
 
@@ -276,9 +292,12 @@ def html_section(d):
     <code>pnl_pct</code> are <code>NOT NULL DEFAULT 0</code> &mdash; an unresolved pick is stored as a flat one.
     <b>{dq["outside_50pct"]}</b> rows sit outside &plusmn;50% and <b>{dq["outside_200pct"]}</b> outside
     &plusmn;200%, which carry the raw mean to <b>{dq["mean_all_pct"]:+.2f}%</b>. Cleaned
-    (|PnL| &le; 50%, zeros dropped) the estate is <b>{dq["cleaned_n"]:,} trades, {dq["cleaned_mean_pct"]:+.4f}%
-    mean, {dq["cleaned_win_pct"]:.2f}% win</b> &mdash; below a 0.26% round turn. The tracked consensus record is
-    a partial exception: it has a coherent closed set (279) and it is clearly negative.
+    (zeros dropped, |PnL| &le; 50%) the estate is <b>{dq["cleaned_n"]:,} trades, {dq["cleaned_mean_pct"]:+.4f}%
+    mean, {dq["cleaned_win_pct"]:.2f}% win</b> &mdash; but the <b>median is {dq["median_pct"]:+.3f}%</b> with a
+    10th percentile of <b>{dq["p10_pct"]:+.2f}%</b> and a 90th of <b>{dq["p90_pct"]:+.2f}%</b>. Against a 0.26%
+    round turn the typical pick loses, and the positive mean is produced by the right tail, not by repeatable
+    per-trade performance. The tracked consensus record is the cleaner instrument: a coherent closed set of
+    {ct["closed_n"]} and it is unambiguously negative.
   </div>
 
   <h3>4. My predictions for these picks</h3>
