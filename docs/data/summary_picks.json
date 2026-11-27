@@ -235,29 +235,29 @@
   "consensus_tracker": {
    "by_status": {
     "closed_loss": {
-     "n": 131,
-     "avg": -3.8774,
-     "sum": -507.94
+     "n": 151,
+     "avg": -3.7923,
+     "sum": -572.64
     },
     "closed_neutral": {
-     "n": 44,
+     "n": 45,
      "avg": 0.0,
      "sum": 0.0
     },
     "closed_win": {
-     "n": 104,
-     "avg": 4.3079,
-     "sum": 448.02
+     "n": 120,
+     "avg": 4.5605,
+     "sum": 547.26
     },
     "open": {
-     "n": 39,
+     "n": 2,
      "avg": 0.0,
      "sum": 0.0
     }
    },
-   "closed_n": 279,
-   "closed_mean_pct": -0.2148,
-   "cumulative_pct": -59.92,
+   "closed_n": 316,
+   "closed_mean_pct": -0.0803,
+   "cumulative_pct": -25.38,
    "portfolio_now": 3929.65,
    "portfolio_start": 10000.0,
    "window": "2026-02-10 to 2026-04-27",
@@ -402,13 +402,13 @@
    "mean": 52.2
   }
  },
- "generated_at": "2026-11-27T11:29:42Z",
+ "generated_at": "2026-11-27T11:31:33Z",
  "prediction_set": [
   {
    "id": "PR-1",
    "subject": "The 48 fresh consensus picks (entered 2026-11-25, TP 8% / SL 4% / 14-day hold)",
    "claim": "The batch repeats the tracker's failure: mean net return <= 0 after a 0.26% round turn.",
-   "basis": "The same tracker lost 59.92pp over 279 closed trades (mean -0.215%), 37.3% win.",
+   "basis": "The same tracker lost {ct_cum}pp over {ct_closed} closed trades (mean {ct_mean}%), {ct_win}% win.",
    "horizon": "By 2026-12-16 (14-day hold + resolver lag), or at 40 resolved rows, whichever first.",
    "kill": "I am wrong if mean final_return_pct over >=40 resolved rows exceeds +1.00%."
   },

@@ -150,7 +150,8 @@ def collect(cur):
 PREDICTIONS = [
     dict(id="PR-1", subject="The 48 fresh consensus picks (entered 2026-11-25, TP 8% / SL 4% / 14-day hold)",
          claim="The batch repeats the tracker's failure: mean net return <= 0 after a 0.26% round turn.",
-         basis="The same tracker lost 59.92pp over 279 closed trades (mean -0.215%), 37.3% win.",
+         basis="The same tracker lost {ct_cum}pp over {ct_closed} closed trades "
+               "(mean {ct_mean}%), {ct_win}% win.",
          horizon="By 2026-12-16 (14-day hold + resolver lag), or at 40 resolved rows, whichever first.",
          kill="I am wrong if mean final_return_pct over >=40 resolved rows exceeds +1.00%."),
     dict(id="PR-2", subject="multi_asset_copytrader (88.6% win, +0.512% mean, n=2067)",
@@ -215,9 +216,16 @@ def html_section(d):
     at_txt = "; ".join(f"{k}: n={v['n']}, mean {v['mean']:+.3f}%" for k, v in at.items()) or "none"
     # Predictions contain "<=" which an HTML parser would swallow as a tag start.
     e = _html.escape
+    ctx = dict(ct_closed=ct["closed_n"], ct_mean=ct["closed_mean_pct"], ct_cum=ct["cumulative_pct"],
+               ct_win=f'{100.0 * by.get("closed_win", {}).get("n", 0) / max(1, ct["closed_n"]):.1f}')
+    class _Safe(dict):
+        def __missing__(self, k):
+            return "{" + k + "}"
+    def _f(v):
+        return e(str(v).format_map(_Safe(ctx)))
     rows_pred = "".join(
-        f'<tr><td><b>{p["id"]}</b></td><td>{e(p["subject"])}</td><td>{e(p["claim"])}</td>'
-        f'<td>{e(p["kill"])}</td><td>{e(p["horizon"])}</td></tr>' for p in PREDICTIONS)
+        f'<tr><td><b>{p["id"]}</b></td><td>{_f(p["subject"])}</td><td>{_f(p["claim"])}</td>'
+        f'<td>{_f(p["kill"])}</td><td>{_f(p["horizon"])}</td></tr>' for p in PREDICTIONS)
 
     return f"""
 <!-- SUMMARY:START -->
@@ -260,8 +268,12 @@ def html_section(d):
           <td class="num">{ct["closed_mean_pct"]:+.3f}%</td>
           <td><span class="tag t-dead">FAILS</span> {by.get("closed_win",{}).get("n",0)}W /
               {by.get("closed_loss",{}).get("n",0)}L / {by.get("closed_neutral",{}).get("n",0)} flat,
-              cumulative <b>{ct["cumulative_pct"]:+.2f}pp</b>, ${ct["portfolio_start"]:,.0f} &rarr;
-              <b>${ct["portfolio_now"]:,.2f}</b> (&minus;60.7%). Stopped 2026-04-27.</td></tr>
+              sum of per-trade returns <b>{ct["cumulative_pct"]:+.2f}pp</b> over {ct["closed_n"]} closed
+              (mean {ct["closed_mean_pct"]:+.3f}%/trade). The tracker's own daily series last read
+              <b>${ct["portfolio_now"]:,.2f}</b> from ${ct["portfolio_start"]:,.0f} on 2026-04-27, before
+              37 positions that it had abandoned were closed on their original 14-day rule &mdash; so the
+              dollar figure and this pp figure do not describe the same trade set. Automated resolution
+              stopped 2026-04-27.</td></tr>
       <tr><td><b>Copy trader</b> &mdash; <code>multi_asset_copytrader</code></td>
           <td class="num">{_st("multi_asset_copytrader")["n"]:,}</td>
           <td class="num">{_st("multi_asset_copytrader")["mean"]:+.3f}%</td>

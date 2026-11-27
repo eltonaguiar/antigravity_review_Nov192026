@@ -237,12 +237,16 @@
   <table>
     <thead><tr><th>System</th><th class="num">n</th><th class="num">Mean / trade</th><th>Verdict</th></tr></thead>
     <tbody>
-      <tr><td><b>Consensus tracker</b> (all closed, 2026-02-10 to 2026-04-27)</td><td class="num">279</td>
-          <td class="num">-0.215%</td>
-          <td><span class="tag t-dead">FAILS</span> 104W /
-              131L / 44 flat,
-              cumulative <b>-59.92pp</b>, $10,000 &rarr;
-              <b>$3,929.65</b> (&minus;60.7%). Stopped 2026-04-27.</td></tr>
+      <tr><td><b>Consensus tracker</b> (all closed, 2026-02-10 to 2026-04-27)</td><td class="num">316</td>
+          <td class="num">-0.080%</td>
+          <td><span class="tag t-dead">FAILS</span> 120W /
+              151L / 45 flat,
+              sum of per-trade returns <b>-25.38pp</b> over 316 closed
+              (mean -0.080%/trade). The tracker's own daily series last read
+              <b>$3,929.65</b> from $10,000 on 2026-04-27, before
+              37 positions that it had abandoned were closed on their original 14-day rule &mdash; so the
+              dollar figure and this pp figure do not describe the same trade set. Automated resolution
+              stopped 2026-04-27.</td></tr>
       <tr><td><b>Copy trader</b> &mdash; <code>multi_asset_copytrader</code></td>
           <td class="num">2,065</td>
           <td class="num">+0.512%</td>
@@ -278,7 +282,7 @@
     10th percentile of <b>-14.69%</b> and a 90th of <b>+17.36%</b>. Against a 0.26%
     round turn the typical pick loses, and the positive mean is produced by the right tail, not by repeatable
     per-trade performance. The tracked consensus record is the cleaner instrument: a coherent closed set of
-    279 and it is unambiguously negative.
+    316 and it is unambiguously negative.
   </div>
 
   <h3>4. My predictions for these picks</h3>
@@ -289,7 +293,7 @@
     <tbody><tr><td><b>PR-1</b></td><td>The 48 fresh consensus picks (entered 2026-11-25, TP 8% / SL 4% / 14-day hold)</td><td>The batch repeats the tracker&#x27;s failure: mean net return &lt;= 0 after a 0.26% round turn.</td><td>I am wrong if mean final_return_pct over &gt;=40 resolved rows exceeds +1.00%.</td><td>By 2026-12-16 (14-day hold + resolver lag), or at 40 resolved rows, whichever first.</td></tr><tr><td><b>PR-2</b></td><td>multi_asset_copytrader (88.6% win, +0.512% mean, n=2067)</td><td>High win rate, negative expectancy: mean net after costs &lt;= 0 on the next 200 resolved picks.</td><td>I am wrong if forward mean net exceeds +0.26% on &gt;=200 rows.</td><td>Next 200 resolved picks, or 2026-12-31.</td></tr><tr><td><b>PR-3</b></td><td>smart_money (+7.04% mean, 72.1% win, n=2842)</td><td>Not reproducible forward: it will fail to hold +1.00% mean on a clean forward sample.</td><td>I am wrong if it holds &gt;= +1.00% mean over 100 forward picks.</td><td>First 100 resolved picks after 2026-11-27.</td></tr><tr><td><b>PR-4</b></td><td>audit3 forward hypothesis H-119 (430 observations, +1.788pp gross)</td><td>Post-cost edge survives: net +1.5pp +/- 0.5pp over the next 100 closed observations.</td><td>Kill the hypothesis if net falls below +0.50pp, or if positive share drops under 55%.</td><td>Next 100 closed observations.</td></tr><tr><td><b>PR-5</b></td><td>copy_trader_polymarket (101 picks, 0 wins, -5.335% mean)</td><td>The system stays negative: mean &lt; 0 and win rate &lt; 15% on the next 50 resolved picks.</td><td>Retire the system if mean stays &lt; -1.00%; reconsider only if mean turns positive on 50 picks.</td><td>Next 50 resolved picks, or 2026-12-31.</td></tr><tr><td><b>PR-6</b></td><td>Estate-wide cost gate, judged on the MEDIAN pick</td><td>The typical pick does not pay for its costs: forward median net &lt;= 0 after a 0.26% round turn, even though the mean stays positive.</td><td>I am wrong if the forward median exceeds +0.26% on 1,000 picks.</td><td>Next 1,000 closed picks.</td></tr></tbody>
   </table>
   <p style="color:#9aa7b4;font-size:14px;margin-top:12px">
-    <b>Provenance.</b> Generated 2026-11-27T11:29:42Z from <code>ejaguiar1_stocks</code>:
+    <b>Provenance.</b> Generated 2026-11-27T11:31:33Z from <code>ejaguiar1_stocks</code>:
     <code>trading_picks_v2</code> (74,314 rows), <code>consensus_snapshot</code> (71 symbols),
     <code>consensus_tracked</code> (48 rows fed today, 318 legacy),
     <code>consensus_performance_daily</code> (62 days), <code>audit3_forward_observations</code>
