@@ -381,28 +381,23 @@
  },
  "polymarket": {
   "copy_trader_polymarket": {
-   "n": 127,
-   "mean": -4.242,
-   "wins": 0
-  },
-  "polymarket_signals": {
-   "n": 4,
-   "mean": 0.0,
+   "n": 66,
+   "mean": -8.163,
    "wins": 0
   }
  },
  "kalshi": {},
  "audit_trail": {
   "audit_trail_local": {
-   "n": 5774,
-   "mean": -0.079
+   "n": 1858,
+   "mean": -0.244
   },
   "Predictions": {
-   "n": 6168,
-   "mean": 52.2
+   "n": 2297,
+   "mean": -4.496
   }
  },
- "generated_at": "2026-11-27T11:32:03Z",
+ "generated_at": "2026-11-27T12:02:06Z",
  "prediction_set": [
   {
    "id": "PR-1",
@@ -438,7 +433,7 @@
   },
   {
    "id": "PR-5",
-   "subject": "copy_trader_polymarket (101 picks, 0 wins, -5.335% mean)",
+   "subject": "copy_trader_polymarket (66 clean picks, 0 wins, -8.163% mean)",
    "claim": "The system stays negative: mean < 0 and win rate < 15% on the next 50 resolved picks.",
    "basis": "Zero winners in 101 picks is not a cold streak at any plausible per-trade edge.",
    "horizon": "Next 50 resolved picks, or 2026-12-31.",

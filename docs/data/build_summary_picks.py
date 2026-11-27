@@ -135,15 +135,18 @@ def collect(cur):
         FROM audit3_forward_observations WHERE hypothesis_id='H-119'""")[0]
     d["audit3_h119"] = dict(hypothesis="H-119", n=int(h[0]), gross_pp=float(h[1]), slippage_bps=float(h[2]),
                             positive_pct=float(h[3]), window=f"{h[4]} to {h[5]}")
+    # Both of these MUST carry the CLEAN filter: raw AVG(pnl_pct) is dominated by
+    # instrument-error rows (the estate has individual picks beyond +/-200%), which
+    # is how 'Predictions' showed +52.2% while every other table on the page was cleaned.
     d["polymarket"] = dict(
-        [(r[0], dict(n=int(r[1]), mean=float(r[2]), wins=int(r[3]))) for r in q(cur,
-            """SELECT source_system, COUNT(*), ROUND(AVG(pnl_pct),3), SUM(pnl_pct>0) FROM trading_picks_v2
-               WHERE source_system LIKE '%poly%' GROUP BY 1""")])
+        [(r[0], dict(n=int(r[1]), mean=(float(r[2]) if r[2] is not None else None), wins=int(r[3]))) for r in q(cur,
+            f"""SELECT source_system, COUNT(*), ROUND(AVG(pnl_pct),3), COALESCE(SUM(pnl_pct>0),0)
+                FROM trading_picks_v2 WHERE {CLEAN} AND source_system LIKE '%poly%' GROUP BY 1""")])
     d["kalshi"] = dict([(r[0], int(r[1])) for r in q(cur,
         "SELECT source_system, COUNT(*) FROM trading_picks_v2 WHERE source_system LIKE '%kalshi%' GROUP BY 1")])
-    d["audit_trail"] = dict([(r[0], dict(n=int(r[1]), mean=float(r[2]))) for r in q(cur,
-        """SELECT source_system, COUNT(*), ROUND(AVG(pnl_pct),3) FROM trading_picks_v2
-           WHERE source_system IN ('audit_trail_local','Predictions') GROUP BY 1""")])
+    d["audit_trail"] = dict([(r[0], dict(n=int(r[1]), mean=(float(r[2]) if r[2] is not None else None))) for r in q(cur,
+        f"""SELECT source_system, COUNT(*), ROUND(AVG(pnl_pct),3) FROM trading_picks_v2
+            WHERE {CLEAN} AND source_system IN ('audit_trail_local','Predictions') GROUP BY 1""")])
     return d
 
 
@@ -170,7 +173,7 @@ PREDICTIONS = [
          basis="+1.788pp gross against 16.0 bps mean slippage leaves ~+1.63pp net on the record so far.",
          horizon="Next 100 closed observations.",
          kill="Kill the hypothesis if net falls below +0.50pp, or if positive share drops under 55%."),
-    dict(id="PR-5", subject="copy_trader_polymarket (101 picks, 0 wins, -5.335% mean)",
+    dict(id="PR-5", subject="copy_trader_polymarket (66 clean picks, 0 wins, -8.163% mean)",
          claim="The system stays negative: mean < 0 and win rate < 15% on the next 50 resolved picks.",
          basis="Zero winners in 101 picks is not a cold streak at any plausible per-trade edge.",
          horizon="Next 50 resolved picks, or 2026-12-31.",
