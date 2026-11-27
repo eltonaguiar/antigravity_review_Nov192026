@@ -299,9 +299,55 @@ antigravity_review_Nov192026/
 ├── 04_RECOMMENDATIONS/
 │   ├── forward_path.md           ← 90-day plan
 │   └── EVIDENCE_INDEX.md         ← every claim → source
-└── 05_AUDIT2_SPEC.md             ← curated content spec for /audit2 (candidates, measures, methodology)
-└── 07_FUND_MANAGER_PLAYBOOK.md   ← per-asset-class strategies tiered by risk (Conservative/Moderate/Aggressive)
-└── 08_IMPLEMENTATION_PACKAGE/    ← ready-to-adapt artifacts (pods, SQL, shadow harness, audit2 checklist)
+├── 05_AUDIT2_SPEC.md             ← curated content spec for /audit2 (candidates, measures, methodology)
+├── 05_KILO_REVIEW/                ← Kilo audit3 next-gen enhancements + findings + peer synthesis + plan
+├── 06_AUDIT2_PAGE/                ← standalone /audit2 HTML page prototype + data
+├── 06_CORROBORATION_UNIVERSAL_PISCES/  ← independent corroboration of Kilo’s universal-pisces review + tracking gaps
+├── 07_FUND_MANAGER_PLAYBOOK.md   ← per-asset-class strategies tiered by risk (Conservative/Moderate/Aggressive)
+├── 08_IMPLEMENTATION_PACKAGE/    ← ready-to-adapt artifacts (pods, SQL, shadow harness, audit2 checklist)
+├── 10_KILO_VANILLA_HANDSAW/      ← Kilo vanilla-handsaw audit-surface reviews, audit2-vs-audit3, $2k live-sim plan
+├── 12_INSIDER/                    ← Form 4 insider filings + H260 correct sizing
+├── 2026-11-23/                    ← per-agent final picks (buffy-freebuff, copilot-cli-deepseek-flash, kilo-vanilla-handsaw)
+├── 22_WORKTREE_SNAPSHOT_1723Z/   ← peer-worktree snapshot 17:23Z + COMS patch handoff
+├── 23_VANILLA_FINAL_DOCS/        ← Kilo vanilla-handsaw final docs + COMS audit3 G8/DSR/family handoffs
+├── 24_PRESERVED_BRANCHES/        ← preserved-branch audit3 G8/DSR/family-gate scope
+├── 25_MONEYRESEARCH_WIP_20261119T192021Z/  ← moneyresearch WIP snapshot (wip.patch, untracked, status)
+├── 26_ASSET_CLASS_DOSSIERS/      ← per-asset-class dossiers + frozen surface baseline
+├── 26_PEER_REVIEWS/              ← peer reviews of copilot’s money-maker plan
+├── 27_FLEET_BRAINSTORM_2026-11-22/  ← fleet review + brainstorm + replies on ten strategies
+├── 27_INDEPENDENT_REVIEW_2026-11-20/  ← independent audit2/audit3 review + COMS messages/handoffs
+├── 28_MERCURY3_PER_CLASS_REVIEW_2026-11-22/  ← Mercury-3 AI per-class deep-dive review + GHA QA
+├── 29_CELL_SWEEP_CONTEST_2026-11-24/  ← cell-sweep contest rankings (top net bp cells)
+├── 29_LEDGER_MINE_AND_NEW_HYPOTHESES_2026-11-22/  ← ledger-mine + new hypotheses
+├── 30_COST_STRUCTURE_2026-11-24/  ← cost-structure vs signal break-even
+├── 30_ETF_COST_AND_MEGA_MUTATION_KILL_2026-11-22/  ← ETF spread estimator failures; mega-mutation quarantined
+├── 31_SWEEP_CLOSURE_2026-11-24/  ← sweep closure per-class outcome
+├── 31_VERIFICATION_AND_BINDING_CONSTRAINT_2026-11-22/  ← dedup default, round-29 correction, re-cost robustness, promo gate
+├── 32_PROVENANCE_LEDGER_2026-11-22/  ← provenance ledger emit-before-outcome + verifier
+├── 33_VALUE_PEAD_AND_COST_GAPS_2026-11-23/  ← EQUITY ~30x cost-model blocker, value-vs-PEAD, open PR backlog
+├── 34_FINAL_PICKS_2026-11-23/  ← final picks, justifications, cost-of-record
+├── 35_TOP_GAINERS_HARVEST_2026-11-23/  ← top-gainers 1-min harvest + arena.ai harness review
+├── 36_BUFFY_REVIEW_2026-11-23/  ← Buffy independent review of contest + final picks
+├── 37_BUFFY_DRAFT_PATCHES_2026-11-23/  ← Buffy’s draft patches (contest scorer, DSR, equity cost settlement)
+├── 38_FINAL_ASSET_CLASS_RANKING_2026-11-24/  ← final asset-class findings, tool breakdown, contest consensus
+├── 41_SCRAPING_KIT_2026-11-24/  ← autonomous hybrid scraping blueprint + scripts
+├── 42_HARVEST_UPGRADE_2026-11-24/  ← analyst-rating harvest upgrade (plan/log/tracker)
+├── agents/                    ← per-agent working dirs (linux-deepseek-v4-flash, windows-hermes-deepseek-flash)
+├── artifacts/                 ← archived agent artifacts snapshot
+├── census_blocked_artifacts/  ← 34 census-blocked-cell stub artifacts
+├── COMMUNICATION/            ← cross-agent handoffs
+├── CONTEST/                   ← contest ledger, R01 trials, run results
+├── docs/                      ← GitHub Pages site sources
+├── harvest/                   ← harvest universe + coverage prereg
+├── KILOCODE/                  ← Kilo harvest analyst endorsements + script
+├── PLAN/                      ← three-lane agent plan + pages/proveit plan
+├── PROVEIT/                   ← PROVEIT signal-proof folders + merge record
+├── reports/                   ← machine-readable report JSONs
+├── SNAPSHOT_2026-11-19T2308Z_linux_github-copilot-vscode/  ← Copilot VS Code/CLI snapshot
+├── tools/                     ← shared scripts (harvest_signals.py)
+├── universe/                  ← universe taxonomy
+├── windows/                   ← Windows-seat working dir (opencode)
+└── ZOOCODE/                   ← Zoo analyst-consensus harvest run
 ```
 
 ---
