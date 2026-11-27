@@ -1,0 +1,341 @@
+{
+ "generated_at": "2026-11-27T12:15:30Z",
+ "window_hours": 24,
+ "status_mix": {
+  "ACTIVE": 3170082,
+  "LOST": 41332,
+  "WON": 34900,
+  "OPEN": 245,
+  "EXPIRED": 24,
+  "CLOSED": 3
+ },
+ "by_source": [
+  {
+   "source": "coinglass",
+   "picks": 3169938,
+   "resolved": 0,
+   "won": 0,
+   "lost": 0,
+   "mean_pct": null,
+   "no_pnl": 0
+  },
+  {
+   "source": "battleground",
+   "picks": 38632,
+   "resolved": 38632,
+   "won": 23640,
+   "lost": 14992,
+   "mean_pct": 2.045,
+   "no_pnl": 0
+  },
+  {
+   "source": "alpha_engine",
+   "picks": 21593,
+   "resolved": 21389,
+   "won": 4841,
+   "lost": 16524,
+   "mean_pct": -1.026,
+   "no_pnl": 0
+  },
+  {
+   "source": "ml_battleground_system_f_clawsofdoom",
+   "picks": 14771,
+   "resolved": 14771,
+   "won": 6179,
+   "lost": 8592,
+   "mean_pct": null,
+   "no_pnl": 14771
+  },
+  {
+   "source": "crypto_signal_engine",
+   "picks": 1508,
+   "resolved": 1464,
+   "won": 240,
+   "lost": 1224,
+   "mean_pct": -0.349,
+   "no_pnl": 0
+  },
+  {
+   "source": "regime_terminal",
+   "picks": 83,
+   "resolved": 0,
+   "won": 0,
+   "lost": 0,
+   "mean_pct": null,
+   "no_pnl": 0
+  },
+  {
+   "source": "super_signals",
+   "picks": 61,
+   "resolved": 0,
+   "won": 0,
+   "lost": 0,
+   "mean_pct": null,
+   "no_pnl": 0
+  }
+ ],
+ "latest_resolved": [
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "DOGE",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "LINK",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "ADA",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "ETH",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "SOL",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "XRP",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "BNB",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "DOT",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "LINK",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "BNB",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "LINK",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "DOT",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "ETH",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "XRP",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "SOL",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "ADA",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "AVAX",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "DOGE",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "DOT",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "2026-11-27 11:50",
+   "symbol": "BTC",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  }
+ ],
+ "latest_emitted": [
+  {
+   "at": "11:50",
+   "symbol": "DOGE",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "LINK",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "ADA",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "ETH",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "SOL",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "XRP",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "BNB",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "DOT",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "LINK",
+   "direction": "LONG",
+   "status": "WON",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "BNB",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "LINK",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  },
+  {
+   "at": "11:50",
+   "symbol": "DOT",
+   "direction": "LONG",
+   "status": "LOST",
+   "pnl_pct": null,
+   "source": "ml_battleground_system_f_clawsofdoom"
+  }
+ ],
+ "frozen_stores": {
+  "trading_picks_v2": "2026-06-05",
+  "trading_picks": "2026-11-27"
+ }
+}
