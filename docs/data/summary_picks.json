@@ -1,0 +1,447 @@
+{
+ "data_quality": {
+  "resolved_rows": 63589,
+  "pnl_exactly_zero": 21194,
+  "outside_50pct": 463,
+  "outside_200pct": 14,
+  "mean_all_pct": 21.0269,
+  "cleaned_n": 41932,
+  "cleaned_mean_pct": 0.2812,
+  "cleaned_win_pct": 50.65,
+  "zero_share_pct": 33.33,
+  "verdict": "A NULL test is not a resolution test: the columns are NOT NULL DEFAULT 0, so unresolved picks are stored as 0.00%. Plotting 'resolved' as pnl IS NOT NULL therefore counts 21194 flat trades as results, and the raw mean (+21.03%) is carried by 463 picks outside +/-50%. On the cleaned subset the estate earns +0.281% per trade before costs, against a 0.26% round turn."
+ },
+ "top_pick_per_class": [
+  {
+   "asset_class": "CRYPTO",
+   "best_system": "luxalgo_filters",
+   "n": 152,
+   "mean_pct": 2.532,
+   "win_pct": 60.5,
+   "top_symbols": [
+    "WLDUSDT",
+    "FETUSDT",
+    "INJUSDT"
+   ]
+  },
+  {
+   "asset_class": "EQUITY",
+   "best_system": "smart_money",
+   "n": 2841,
+   "mean_pct": 7.042,
+   "win_pct": 72.1,
+   "top_symbols": [
+    "AMD",
+    "GOOGL",
+    "NVDA"
+   ]
+  },
+  {
+   "asset_class": "ETF",
+   "best_system": "AlphaEngine",
+   "n": 112,
+   "mean_pct": 1.213,
+   "win_pct": 83.0,
+   "top_symbols": [
+    "QQQ",
+    "SPY",
+    "TLT"
+   ]
+  },
+  {
+   "asset_class": "FOREX",
+   "best_system": "alpha_engine_unified",
+   "n": 3364,
+   "mean_pct": 0.587,
+   "win_pct": 81.6,
+   "top_symbols": [
+    "GBPUSD=X",
+    "EURJPY=X",
+    "CADJPY=X"
+   ]
+  },
+  {
+   "asset_class": "FUTURES",
+   "best_system": "AlphaEngine",
+   "n": 209,
+   "mean_pct": 3.462,
+   "win_pct": 78.0,
+   "top_symbols": [
+    "NG=F",
+    "HG=F",
+    "ES=F"
+   ]
+  },
+  {
+   "asset_class": "MEMECOIN",
+   "best_system": "audit_trail_local",
+   "n": 240,
+   "mean_pct": 0.154,
+   "win_pct": 42.1,
+   "top_symbols": [
+    "SHIBUSDT",
+    "DOGEUSDT"
+   ]
+  }
+ ],
+ "consensus_picks": {
+  "snapshot_period": "2026-11-01",
+  "labels": {
+   "BUY": {
+    "n": 31,
+    "avg_score": 0.805,
+    "avg_buy": 62.5
+   },
+   "STRONG_BUY": {
+    "n": 28,
+    "avg_score": 1.139,
+    "avg_buy": 87.0
+   },
+   "HOLD": {
+    "n": 11,
+    "avg_score": 0.442,
+    "avg_buy": 38.0
+   },
+   "SELL": {
+    "n": 1,
+    "avg_score": -0.8,
+    "avg_buy": 10.0
+   }
+  },
+  "top": [
+   {
+    "symbol": "NVDA",
+    "name": "NVIDIA Corp",
+    "analysts": 69,
+    "score": 1.3043,
+    "share_buy": 95.7,
+    "last_close": 149.3,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "MSFT",
+    "name": "Microsoft Corp",
+    "analysts": 65,
+    "score": 1.2923,
+    "share_buy": 95.4,
+    "last_close": 489.93,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "BA",
+    "name": "Boeing Co",
+    "analysts": 37,
+    "score": 1.2703,
+    "share_buy": 91.9,
+    "last_close": 164.53,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "AVGO",
+    "name": "Broadcom Inc",
+    "analysts": 57,
+    "score": 1.2456,
+    "share_buy": 94.7,
+    "last_close": 300.86,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "AMZN",
+    "name": "Amazon.com Inc",
+    "analysts": 70,
+    "score": 1.2286,
+    "share_buy": 95.7,
+    "last_close": 244.43,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "NEM",
+    "name": "NEM",
+    "analysts": 31,
+    "score": 1.1935,
+    "share_buy": 87.1,
+    "last_close": null,
+    "last_close_date": null
+   },
+   {
+    "symbol": "GOOGL",
+    "name": "Alphabet Inc",
+    "analysts": 68,
+    "score": 1.1912,
+    "share_buy": 89.7,
+    "last_close": 273.1,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "NOW",
+    "name": "ServiceNow Inc",
+    "analysts": 52,
+    "score": 1.1731,
+    "share_buy": 90.4,
+    "last_close": 92.16,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "META",
+    "name": "Meta Platforms Inc",
+    "analysts": 69,
+    "score": 1.1594,
+    "share_buy": 88.4,
+    "last_close": 609.89,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "MA",
+    "name": "Mastercard Inc",
+    "analysts": 52,
+    "score": 1.1538,
+    "share_buy": 92.3,
+    "last_close": 659.97,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "WMT",
+    "name": "Walmart Inc",
+    "analysts": 48,
+    "score": 1.1458,
+    "share_buy": 89.6,
+    "last_close": 131.94,
+    "last_close_date": "2026-11-25"
+   },
+   {
+    "symbol": "V",
+    "name": "Visa Inc",
+    "analysts": 49,
+    "score": 1.1429,
+    "share_buy": 89.8,
+    "last_close": 424.39,
+    "last_close_date": "2026-11-25"
+   }
+  ],
+  "fed_rows": 48,
+  "entry_date": "2026-11-25",
+  "tracked": true
+ },
+ "tracked_results": {
+  "consensus_tracker": {
+   "by_status": {
+    "closed_loss": {
+     "n": 131,
+     "avg": -3.8774,
+     "sum": -507.94
+    },
+    "closed_neutral": {
+     "n": 44,
+     "avg": 0.0,
+     "sum": 0.0
+    },
+    "closed_win": {
+     "n": 104,
+     "avg": 4.3079,
+     "sum": 448.02
+    },
+    "open": {
+     "n": 39,
+     "avg": 0.0,
+     "sum": 0.0
+    }
+   },
+   "closed_n": 279,
+   "closed_mean_pct": -0.2148,
+   "cumulative_pct": -59.92,
+   "portfolio_now": 3929.65,
+   "portfolio_start": 10000.0,
+   "window": "2026-02-10 to 2026-04-27",
+   "stopped": true
+  },
+  "strategy_table": [
+   {
+    "system": "smart_money",
+    "n": 2841,
+    "mean": 7.042,
+    "win": 72.09,
+    "total": 20006.5
+   },
+   {
+    "system": "AlphaEngine",
+    "n": 5327,
+    "mean": 1.476,
+    "win": 53.61,
+    "total": 7865.3
+   },
+   {
+    "system": "alpha_engine_unified",
+    "n": 11991,
+    "mean": 0.882,
+    "win": 58.38,
+    "total": 10575.2
+   },
+   {
+    "system": "multi_asset_copytrader",
+    "n": 2065,
+    "mean": 0.512,
+    "win": 88.72,
+    "total": 1057.4
+   },
+   {
+    "system": "meta_strategy",
+    "n": 1277,
+    "mean": 0.291,
+    "win": 42.21,
+    "total": 371.4
+   },
+   {
+    "system": "quan_engine",
+    "n": 8305,
+    "mean": -0.015,
+    "win": 41.05,
+    "total": -121.4
+   },
+   {
+    "system": "audit_trail_local",
+    "n": 1858,
+    "mean": -0.244,
+    "win": 39.77,
+    "total": -453.2
+   },
+   {
+    "system": "alpha_engine",
+    "n": 273,
+    "mean": -0.455,
+    "win": 49.08,
+    "total": -124.2
+   },
+   {
+    "system": "KIMI_RiseOfTheClaw",
+    "n": 225,
+    "mean": -0.472,
+    "win": 40.0,
+    "total": -106.2
+   },
+   {
+    "system": "battleground",
+    "n": 1196,
+    "mean": -1.877,
+    "win": 45.23,
+    "total": -2245.0
+   },
+   {
+    "system": "incubator_gainer",
+    "n": 316,
+    "mean": -2.123,
+    "win": 42.72,
+    "total": -670.9
+   },
+   {
+    "system": "Predictions",
+    "n": 2297,
+    "mean": -4.496,
+    "win": 31.08,
+    "total": -10327.5
+   },
+   {
+    "system": "sandbox_opposite",
+    "n": 277,
+    "mean": -4.853,
+    "win": 5.78,
+    "total": -1344.2
+   },
+   {
+    "system": "ml_crypto_pred",
+    "n": 1775,
+    "mean": -4.975,
+    "win": 28.28,
+    "total": -8831.3
+   },
+   {
+    "system": "Battleground_Main",
+    "n": 517,
+    "mean": -5.39,
+    "win": 21.08,
+    "total": -2786.4
+   }
+  ]
+ },
+ "audit3_h119": {
+  "hypothesis": "H-119",
+  "n": 430,
+  "gross_pp": 1.788,
+  "slippage_bps": 16.0,
+  "positive_pct": 73.3,
+  "window": "2026-02-24 20:04:53 to 2026-11-17 19:02:27"
+ },
+ "polymarket": {
+  "copy_trader_polymarket": {
+   "n": 127,
+   "mean": -4.242,
+   "wins": 0
+  },
+  "polymarket_signals": {
+   "n": 4,
+   "mean": 0.0,
+   "wins": 0
+  }
+ },
+ "kalshi": {},
+ "audit_trail": {
+  "audit_trail_local": {
+   "n": 5774,
+   "mean": -0.079
+  },
+  "Predictions": {
+   "n": 6168,
+   "mean": 52.2
+  }
+ },
+ "generated_at": "2026-11-27T11:27:42Z",
+ "prediction_set": [
+  {
+   "id": "PR-1",
+   "subject": "The 48 fresh consensus picks (entered 2026-11-25, TP 8% / SL 4% / 14-day hold)",
+   "claim": "The batch repeats the tracker's failure: mean net return <= 0 after a 0.26% round turn.",
+   "basis": "The same tracker lost 59.92pp over 279 closed trades (mean -0.215%), 37.3% win.",
+   "horizon": "By 2026-12-16 (14-day hold + resolver lag), or at 40 resolved rows, whichever first.",
+   "kill": "I am wrong if mean final_return_pct over >=40 resolved rows exceeds +1.00%."
+  },
+  {
+   "id": "PR-2",
+   "subject": "multi_asset_copytrader (88.6% win, +0.512% mean, n=2067)",
+   "claim": "High win rate, negative expectancy: mean net after costs <= 0 on the next 200 resolved picks.",
+   "basis": "88.6% win with a +0.51% mean implies an average loss near -3.6% - a small-wins/big-losses shape.",
+   "horizon": "Next 200 resolved picks, or 2026-12-31.",
+   "kill": "I am wrong if forward mean net exceeds +0.26% on >=200 rows."
+  },
+  {
+   "id": "PR-3",
+   "subject": "smart_money (+7.04% mean, 72.1% win, n=2842)",
+   "claim": "Not reproducible forward: it will fail to hold +1.00% mean on a clean forward sample.",
+   "basis": "+7.0% mean at a 72% win rate is far outside what stop-managed equity trades produce; it is more consistent with a selection or duplicate-counting artefact than with edge.",
+   "horizon": "First 100 resolved picks after 2026-11-27.",
+   "kill": "I am wrong if it holds >= +1.00% mean over 100 forward picks."
+  },
+  {
+   "id": "PR-4",
+   "subject": "audit3 forward hypothesis H-119 (430 observations, +1.788pp gross)",
+   "claim": "Post-cost edge survives: net +1.5pp +/- 0.5pp over the next 100 closed observations.",
+   "basis": "+1.788pp gross against 16.0 bps mean slippage leaves ~+1.63pp net on the record so far.",
+   "horizon": "Next 100 closed observations.",
+   "kill": "Kill the hypothesis if net falls below +0.50pp, or if positive share drops under 55%."
+  },
+  {
+   "id": "PR-5",
+   "subject": "copy_trader_polymarket (101 picks, 0 wins, -5.335% mean)",
+   "claim": "The system stays negative: mean < 0 and win rate < 15% on the next 50 resolved picks.",
+   "basis": "Zero winners in 101 picks is not a cold streak at any plausible per-trade edge.",
+   "horizon": "Next 50 resolved picks, or 2026-12-31.",
+   "kill": "Retire the system if mean stays < -1.00%; reconsider only if mean turns positive on 50 picks."
+  },
+  {
+   "id": "PR-6",
+   "subject": "Estate-wide cost gate",
+   "claim": "No asset class clears a 0.26% round turn on the cleaned sample; the aggregate stays below break-even on the next 1,000 closed picks.",
+   "basis": "Cleaned estate mean is +0.187% per trade against a 0.26% round turn.",
+   "horizon": "Next 1,000 closed picks.",
+   "kill": "I am wrong if the cleaned mean exceeds +0.26% on 1,000 forward picks."
+  }
+ ]
+}

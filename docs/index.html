@@ -201,6 +201,102 @@
   </div>
 </header>
 
+<!-- SUMMARY:START -->
+<section id="summary">
+  <h2><span class="num">S</span>Summary &mdash; top picks, consensus picks, and what the database measured</h2>
+  <div class="eli5" style="background:#0f2418;border:1px solid #1f6f43;border-left:4px solid #3ddc97;border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0">
+    <b>ELI5:</b> Two different questions. <b>What did we pick?</b> &mdash; the best measured system in each
+    asset class, in the table below. <b>What do the analysts and the crowd say?</b> &mdash; the second table,
+    which is the same list of names every bank publishes, scored and entered into our own tracker so it can be
+    graded. The last table is my prediction for each, with the number that would prove me wrong.
+  </div>
+
+  <h3>1. Top pick per asset class &mdash; measured, not asserted</h3>
+  <p class="lede">Best-performing system per class on the cleaned sample (picks whose |PnL| &le; 50%, zeros excluded;
+  minimum 100 picks). This is <b>recorded resolver output</b>, and the resolver has a known defect &mdash; see the
+  data-quality box. Treat it as the least-bad evidence available, not as alpha.</p>
+  <table>
+    <thead><tr><th>Asset class</th><th>Best measured system</th><th class="num">Closed picks</th>
+      <th class="num">Mean / trade</th><th class="num">Win rate</th><th>Top symbols in class</th></tr></thead>
+    <tbody><tr><td><b>CRYPTO</b></td><td><code>luxalgo_filters</code></td><td class="num">152</td><td class="num">+2.53%</td><td class="num">60.5%</td><td>WLDUSDT, FETUSDT, INJUSDT</td></tr><tr><td><b>EQUITY</b></td><td><code>smart_money</code></td><td class="num">2,841</td><td class="num">+7.04%</td><td class="num">72.1%</td><td>AMD, GOOGL, NVDA</td></tr><tr><td><b>ETF</b></td><td><code>AlphaEngine</code></td><td class="num">112</td><td class="num">+1.21%</td><td class="num">83.0%</td><td>QQQ, SPY, TLT</td></tr><tr><td><b>FOREX</b></td><td><code>alpha_engine_unified</code></td><td class="num">3,364</td><td class="num">+0.59%</td><td class="num">81.6%</td><td>GBPUSD=X, EURJPY=X, CADJPY=X</td></tr><tr><td><b>FUTURES</b></td><td><code>AlphaEngine</code></td><td class="num">209</td><td class="num">+3.46%</td><td class="num">78.0%</td><td>NG=F, HG=F, ES=F</td></tr><tr><td><b>MEMECOIN</b></td><td><code>audit_trail_local</code></td><td class="num">240</td><td class="num">+0.15%</td><td class="num">42.1%</td><td>SHIBUSDT, DOGEUSDT</td></tr></tbody>
+  </table>
+
+  <h3>2. Analyst / crowd consensus picks</h3>
+  <p class="lede">48 buy-side names from the
+  <b>2026-11-01</b> consensus snapshot, entered into
+  <code>consensus_tracked</code> at the <b>2026-11-25</b> close and tracked under the
+  tracker's own contract (LONG, TP 8%, SL 4%, 14-day hold). Consensus labels across all 71 covered symbols:
+  <b>BUY</b> 31 &middot; <b>STRONG_BUY</b> 28 &middot; <b>HOLD</b> 11 &middot; <b>SELL</b> 1.</p>
+  <table>
+    <thead><tr><th>Symbol</th><th>Company</th><th class="num">Analysts</th><th class="num">Buy-side</th>
+      <th class="num">Score</th><th class="num">Entry</th><th>Price date</th><th>Status</th></tr></thead>
+    <tbody><tr><td><b>NVDA</b></td><td>NVIDIA Corp</td><td class="num">69</td><td class="num">95.7%</td><td class="num">1.304</td><td class="num">149.30</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>MSFT</b></td><td>Microsoft Corp</td><td class="num">65</td><td class="num">95.4%</td><td class="num">1.292</td><td class="num">489.93</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>BA</b></td><td>Boeing Co</td><td class="num">37</td><td class="num">91.9%</td><td class="num">1.270</td><td class="num">164.53</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>AVGO</b></td><td>Broadcom Inc</td><td class="num">57</td><td class="num">94.7%</td><td class="num">1.246</td><td class="num">300.86</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>AMZN</b></td><td>Amazon.com Inc</td><td class="num">70</td><td class="num">95.7%</td><td class="num">1.229</td><td class="num">244.43</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>GOOGL</b></td><td>Alphabet Inc</td><td class="num">68</td><td class="num">89.7%</td><td class="num">1.191</td><td class="num">273.10</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>NOW</b></td><td>ServiceNow Inc</td><td class="num">52</td><td class="num">90.4%</td><td class="num">1.173</td><td class="num">92.16</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>META</b></td><td>Meta Platforms Inc</td><td class="num">69</td><td class="num">88.4%</td><td class="num">1.159</td><td class="num">609.89</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>MA</b></td><td>Mastercard Inc</td><td class="num">52</td><td class="num">92.3%</td><td class="num">1.154</td><td class="num">659.97</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>WMT</b></td><td>Walmart Inc</td><td class="num">48</td><td class="num">89.6%</td><td class="num">1.146</td><td class="num">131.94</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr><tr><td><b>V</b></td><td>Visa Inc</td><td class="num">49</td><td class="num">89.8%</td><td class="num">1.143</td><td class="num">424.39</td><td>2026-11-25</td><td><span class="tag t-pass">TRACKED</span></td></tr></tbody>
+  </table>
+
+  <h3>3. Does any of it work? The measured answer</h3>
+  <table>
+    <thead><tr><th>System</th><th class="num">n</th><th class="num">Mean / trade</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><b>Consensus tracker</b> (all closed, 2026-02-10 to 2026-04-27)</td><td class="num">279</td>
+          <td class="num">-0.215%</td>
+          <td><span class="tag t-dead">FAILS</span> 104W /
+              131L / 44 flat,
+              cumulative <b>-59.92pp</b>, $10,000 &rarr;
+              <b>$3,929.65</b> (&minus;60.7%). Stopped 2026-04-27.</td></tr>
+      <tr><td><b>Copy trader</b> &mdash; <code>multi_asset_copytrader</code></td>
+          <td class="num">2,065</td>
+          <td class="num">+0.512%</td>
+          <td><span class="tag t-unk">SUSPECT</span> 88.6% win rate with a +0.51% mean implies an average loss
+              near &minus;3.6%: a small-wins / big-losses shape that cost kills.</td></tr>
+      <tr><td><b>Copy trader</b> &mdash; <code>copy_trader_intel</code></td>
+          <td class="num">0</td>
+          <td class="num">+0.000%</td>
+          <td><span class="tag t-dead">FAILS</span> 4.3% win rate.</td></tr>
+      <tr><td><b>Copy trader</b> &mdash; Polymarket (copy_trader_polymarket: n=127, mean -4.242%, wins 0; polymarket_signals: n=4, mean +0.000%, wins 0)</td><td class="num">&mdash;</td>
+          <td class="num">&mdash;</td>
+          <td><span class="tag t-dead">FAILS</span> zero winners in 101 picks. No Kalshi rows exist in the estate
+              at all (no rows), so Kalshi is <b>unmeasured</b>, not refuted.</td></tr>
+      <tr><td><b>findtorontoevents audit</b> &mdash; <code>audit_trail_local</code> / <code>Predictions</code></td>
+          <td class="num">&mdash;</td><td class="num">&mdash;</td>
+          <td><span class="tag t-dead">FAILS</span> audit_trail_local: n=5774, mean -0.079%; Predictions: n=6168, mean +52.200%.</td></tr>
+      <tr><td><b>audit3 forward</b> &mdash; H-119</td><td class="num">430</td>
+          <td class="num">+1.788pp</td>
+          <td><span class="tag t-pass">ONLY CANDIDATE</span> 73.3% positive,
+              16.0 bps mean slippage, 2026-02-24 20:04:53 to 2026-11-17 19:02:27. Forward-recorded, not backfilled.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="border:1px solid #5a4a1f;border-left:4px solid #e0b23a;padding:14px 18px;margin:18px 0;background:rgba(224,178,58,.07)">
+    <b>Data quality &mdash; read this before believing any number above.</b>
+    63,589 rows carry a PnL, but <b>21,194 of them
+    (33.3%) are exactly 0.00%</b> because <code>final_return_pct</code> and
+    <code>pnl_pct</code> are <code>NOT NULL DEFAULT 0</code> &mdash; an unresolved pick is stored as a flat one.
+    <b>463</b> rows sit outside &plusmn;50% and <b>14</b> outside
+    &plusmn;200%, which carry the raw mean to <b>+21.03%</b>. Cleaned
+    (|PnL| &le; 50%, zeros dropped) the estate is <b>41,932 trades, +0.2812%
+    mean, 50.65% win</b> &mdash; below a 0.26% round turn. The tracked consensus record is
+    a partial exception: it has a coherent closed set (279) and it is clearly negative.
+  </div>
+
+  <h3>4. My predictions for these picks</h3>
+  <p class="lede">Predictions are not measurements. Each carries a horizon and the number that falsifies it, so
+  these can be graded later instead of quietly forgotten.</p>
+  <table>
+    <thead><tr><th>ID</th><th>Subject</th><th>Prediction</th><th>Falsified if</th><th>Horizon</th></tr></thead>
+    <tbody><tr><td><b>PR-1</b></td><td>The 48 fresh consensus picks (entered 2026-11-25, TP 8% / SL 4% / 14-day hold)</td><td>The batch repeats the tracker&#x27;s failure: mean net return &lt;= 0 after a 0.26% round turn.</td><td>I am wrong if mean final_return_pct over &gt;=40 resolved rows exceeds +1.00%.</td><td>By 2026-12-16 (14-day hold + resolver lag), or at 40 resolved rows, whichever first.</td></tr><tr><td><b>PR-2</b></td><td>multi_asset_copytrader (88.6% win, +0.512% mean, n=2067)</td><td>High win rate, negative expectancy: mean net after costs &lt;= 0 on the next 200 resolved picks.</td><td>I am wrong if forward mean net exceeds +0.26% on &gt;=200 rows.</td><td>Next 200 resolved picks, or 2026-12-31.</td></tr><tr><td><b>PR-3</b></td><td>smart_money (+7.04% mean, 72.1% win, n=2842)</td><td>Not reproducible forward: it will fail to hold +1.00% mean on a clean forward sample.</td><td>I am wrong if it holds &gt;= +1.00% mean over 100 forward picks.</td><td>First 100 resolved picks after 2026-11-27.</td></tr><tr><td><b>PR-4</b></td><td>audit3 forward hypothesis H-119 (430 observations, +1.788pp gross)</td><td>Post-cost edge survives: net +1.5pp +/- 0.5pp over the next 100 closed observations.</td><td>Kill the hypothesis if net falls below +0.50pp, or if positive share drops under 55%.</td><td>Next 100 closed observations.</td></tr><tr><td><b>PR-5</b></td><td>copy_trader_polymarket (101 picks, 0 wins, -5.335% mean)</td><td>The system stays negative: mean &lt; 0 and win rate &lt; 15% on the next 50 resolved picks.</td><td>Retire the system if mean stays &lt; -1.00%; reconsider only if mean turns positive on 50 picks.</td><td>Next 50 resolved picks, or 2026-12-31.</td></tr><tr><td><b>PR-6</b></td><td>Estate-wide cost gate</td><td>No asset class clears a 0.26% round turn on the cleaned sample; the aggregate stays below break-even on the next 1,000 closed picks.</td><td>I am wrong if the cleaned mean exceeds +0.26% on 1,000 forward picks.</td><td>Next 1,000 closed picks.</td></tr></tbody>
+  </table>
+  <p style="color:#9aa7b4;font-size:14px;margin-top:12px">
+    <b>Provenance.</b> Generated 2026-11-27T11:27:42Z from <code>ejaguiar1_stocks</code>:
+    <code>trading_picks_v2</code> (74,314 rows), <code>consensus_snapshot</code> (71 symbols),
+    <code>consensus_tracked</code> (48 rows fed today, 318 legacy),
+    <code>consensus_performance_daily</code> (62 days), <code>audit3_forward_observations</code>
+    (430 observations), <code>daily_prices</code> (closes to 2026-11-25).
+    Regenerate with <code>docs/data/build_summary_picks.py</code>.
+  </p>
+</section>
+<!-- SUMMARY:END -->
+
+
 <main class="wrap">
   <section class="callout" id="key-benefits" style="border:1px solid var(--line,#2a3340);border-left:4px solid #4a9eff;padding:18px 20px;margin:0 0 28px;background:rgba(74,158,255,.06)">
     <h2 style="margin-top:0">Key benefits and top achievements</h2>
@@ -314,6 +410,7 @@
   <div class="toc">
     <ol>
       <li><a href="#eli5">The whole thing in plain English <span class="d">lemonade stand analogy, no jargon</span></a></li>
+      <li><a href="#summary">Summary &mdash; top picks, consensus picks, and what got measured <span class="d">the two lists, the tracker, and six falsifiable predictions</span></a></li>
       <li><a href="#endorse">What we endorse — and what we refuse to <span class="d">one low-risk vehicle, zero alpha claims</span></a></li>
       <li><a href="best-picks.html">Best attempted pick per asset class <span class="d">what 19 agents picked, and which we endorse</span></a></li>
       <li><a href="#answer">The answer in one sentence <span class="d">what we would actually buy, and why the answer is "index fund"</span></a></li>
