@@ -1,0 +1,321 @@
+{
+ "generated_at": "2026-11-27T17:08:16Z",
+ "window_hours": 24,
+ "max_id": 148178672,
+ "id_floor": 145178672,
+ "resolved_rows": 67022,
+ "unique_picks": 2864,
+ "duplicate_share_pct": 95.7,
+ "per_class": [
+  {
+   "asset_class": "CRYPTO",
+   "unique_picks": 2692,
+   "won": 1065,
+   "lost": 1626,
+   "win_pct": 39.6,
+   "mean_pct": -0.055,
+   "median_pct": -2.0,
+   "with_numbers": 2692,
+   "number_share_pct": 100.0,
+   "best": 21.019,
+   "worst": -8.644
+  },
+  {
+   "asset_class": "MEMECOIN",
+   "unique_picks": 126,
+   "won": 66,
+   "lost": 60,
+   "win_pct": 52.4,
+   "mean_pct": 1.212,
+   "median_pct": 2.357,
+   "with_numbers": 124,
+   "number_share_pct": 98.4,
+   "best": 12.62,
+   "worst": -6.0
+  },
+  {
+   "asset_class": "FOREX",
+   "unique_picks": 35,
+   "won": 6,
+   "lost": 29,
+   "win_pct": 17.1,
+   "mean_pct": -0.324,
+   "median_pct": -0.519,
+   "with_numbers": 35,
+   "number_share_pct": 100.0,
+   "best": 0.985,
+   "worst": -0.895
+  },
+  {
+   "asset_class": "ETF",
+   "unique_picks": 7,
+   "won": 1,
+   "lost": 6,
+   "win_pct": 14.3,
+   "mean_pct": -0.415,
+   "median_pct": -0.063,
+   "with_numbers": 7,
+   "number_share_pct": 100.0,
+   "best": 0.054,
+   "worst": -1.503
+  },
+  {
+   "asset_class": "EQUITY",
+   "unique_picks": 2,
+   "won": 1,
+   "lost": 1,
+   "win_pct": 50.0,
+   "mean_pct": -0.017,
+   "median_pct": -0.017,
+   "with_numbers": 2,
+   "number_share_pct": 100.0,
+   "best": 0.014,
+   "worst": -0.047
+  },
+  {
+   "asset_class": "UNKNOWN",
+   "unique_picks": 1,
+   "won": 0,
+   "lost": 1,
+   "win_pct": 0.0,
+   "mean_pct": -0.005,
+   "median_pct": -0.005,
+   "with_numbers": 1,
+   "number_share_pct": 100.0,
+   "best": -0.005,
+   "worst": -0.005
+  },
+  {
+   "asset_class": "BOND",
+   "unique_picks": 1,
+   "won": 0,
+   "lost": 1,
+   "win_pct": 0.0,
+   "mean_pct": -0.742,
+   "median_pct": -0.742,
+   "with_numbers": 1,
+   "number_share_pct": 100.0,
+   "best": -0.742,
+   "worst": -0.742
+  }
+ ],
+ "top_closed": {
+  "CRYPTO": [
+   {
+    "symbol": "ENAUSDT",
+    "direction": "LONG",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 21.019,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "STXUSDT",
+    "direction": "LONG",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 20.12,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "ENAUSDT",
+    "direction": "LONG",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 15.825,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "RENDERUSDT",
+    "direction": "SHORT",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 15.364,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "ENAUSDT",
+    "direction": "LONG",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 15.013,
+    "ts": "2026-11-27 16:49"
+   }
+  ],
+  "MEMECOIN": [
+   {
+    "symbol": "WIFUSDT",
+    "direction": "LONG",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 12.62,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "WIFUSDT",
+    "direction": "SHORT",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 12.442,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "WIFUSDT",
+    "direction": "LONG",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 11.872,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "WIFUSDT",
+    "direction": "LONG",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 9.027,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "WIFUSDT",
+    "direction": "SHORT",
+    "source": "battleground",
+    "status": "WON",
+    "pnl": 8.879,
+    "ts": "2026-11-27 16:49"
+   }
+  ],
+  "FOREX": [
+   {
+    "symbol": "AUDJPY=X",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "WON",
+    "pnl": 0.9845,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "AUDJPY=X",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "WON",
+    "pnl": 0.8986,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "AUDJPY=X",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "WON",
+    "pnl": 0.8437,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "AUDJPY=X",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "WON",
+    "pnl": 0.6216,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "AUDJPY=X",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "WON",
+    "pnl": 0.5919,
+    "ts": "2026-11-27 16:49"
+   }
+  ],
+  "ETF": [
+   {
+    "symbol": "QQQ",
+    "direction": "SHORT",
+    "source": "alpha_engine",
+    "status": "WON",
+    "pnl": 0.0543,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "SPY",
+    "direction": "SHORT",
+    "source": "alpha_engine",
+    "status": "LOST",
+    "pnl": -0.042,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "SPY",
+    "direction": "SHORT",
+    "source": "alpha_engine",
+    "status": "LOST",
+    "pnl": -0.0421,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "QQQ",
+    "direction": "SHORT",
+    "source": "alpha_engine",
+    "status": "LOST",
+    "pnl": -0.0626,
+    "ts": "2026-11-27 16:49"
+   },
+   {
+    "symbol": "TLT",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "LOST",
+    "pnl": -0.4742,
+    "ts": "2026-11-27 14:50"
+   }
+  ],
+  "EQUITY": [
+   {
+    "symbol": "AAPL",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "WON",
+    "pnl": 0.0136,
+    "ts": "2026-11-27 01:50"
+   },
+   {
+    "symbol": "META",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "LOST",
+    "pnl": -0.0471,
+    "ts": "2026-11-27 16:49"
+   }
+  ],
+  "UNKNOWN": [
+   {
+    "symbol": "BND",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "LOST",
+    "pnl": -0.0049,
+    "ts": "2026-11-27 16:49"
+   }
+  ],
+  "BOND": [
+   {
+    "symbol": "IEF",
+    "direction": "LONG",
+    "source": "alpha_engine",
+    "status": "LOST",
+    "pnl": -0.7417,
+    "ts": "2026-11-27 16:49"
+   }
+  ]
+ },
+ "resolved_missing_tpsl": 39508,
+ "long_bad_stop": 2441,
+ "short_bad_stop": 644,
+ "exit_reasons": {
+  "SL_HIT": 29928,
+  "TP_HIT": 27945,
+  "SL": 2465,
+  "TIME": 2386,
+  "TP": 2015,
+  "(none)": 1409
+ }
+}
