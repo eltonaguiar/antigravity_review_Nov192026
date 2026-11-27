@@ -339,7 +339,16 @@ def main():
     c = connect(); cur = c.cursor()
     d = collect(cur); c.close()
     d["generated_at"] = NOW
-    d["prediction_set"] = PREDICTIONS
+    # The JSON must not ship unresolved {placeholders}: format the same context the HTML uses.
+    ct = d["tracked_results"]["consensus_tracker"]
+    by = ct["by_status"]
+    ctx = dict(ct_closed=ct["closed_n"], ct_mean=ct["closed_mean_pct"], ct_cum=ct["cumulative_pct"],
+               ct_win=f'{100.0 * by.get("closed_win", {}).get("n", 0) / max(1, ct["closed_n"]):.1f}')
+    class _Safe(dict):
+        def __missing__(self, k):
+            return "{" + k + "}"
+    d["prediction_set"] = [{k: (v.format_map(_Safe(ctx)) if isinstance(v, str) else v)
+                            for k, v in p.items()} for p in PREDICTIONS]
 
     data_path = os.path.join(a.repo, "docs", "data", "summary_picks.json")
     json.dump(d, open(data_path, "w"), indent=1, default=str)

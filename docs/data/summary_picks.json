@@ -402,13 +402,13 @@
    "mean": 52.2
   }
  },
- "generated_at": "2026-11-27T11:31:33Z",
+ "generated_at": "2026-11-27T11:32:03Z",
  "prediction_set": [
   {
    "id": "PR-1",
    "subject": "The 48 fresh consensus picks (entered 2026-11-25, TP 8% / SL 4% / 14-day hold)",
    "claim": "The batch repeats the tracker's failure: mean net return <= 0 after a 0.26% round turn.",
-   "basis": "The same tracker lost {ct_cum}pp over {ct_closed} closed trades (mean {ct_mean}%), {ct_win}% win.",
+   "basis": "The same tracker lost -25.38pp over 316 closed trades (mean -0.0803%), 38.0% win.",
    "horizon": "By 2026-12-16 (14-day hold + resolver lag), or at 40 resolved rows, whichever first.",
    "kill": "I am wrong if mean final_return_pct over >=40 resolved rows exceeds +1.00%."
   },
