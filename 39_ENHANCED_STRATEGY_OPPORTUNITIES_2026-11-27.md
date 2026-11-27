@@ -36,11 +36,12 @@ need a Playwright pass, not scheduled here.
   duplicates, 86 non-performance exits, 76 resolver-breakeven-fallback → **9,034 canonical of 15,345
   closed**, with the canonical SHA-256 on the wire. This is exactly the single-denominator honesty
   the review demanded. ✅
-- **⚠ `asset_class_health` is now EMPTY in the live payload.** The review flagged this block as a
+- **✅ `asset_class_health` is regenerated, not removed/emptied.** The review flagged this block as a
   stale snapshot with contradictory cohorts (COMMODITY dashboard PF 5,624 vs ledger 0.12; ETF n=15 vs
-  n=590). Today the key returns `[]`. The contradiction is gone, but so is per-class health entirely.
-  If removal was deliberate, say so in the changelog; if it's a generation regression, restore it
-  from the canonical denominator — an empty tile and a lying tile are equally unreadable.
+  n=590). The stale snapshot has been replaced by a fresh, honest one — the block is fully populated:
+  BOND n=3 PF 7.39; COMMODITY n=47 PF 0.40 (intrabar PF 1.02, n=236); CRYPTO flagged `stressed`.
+  COMMODITY is no longer PF 5,624 — it is PF 0.40/1.02. The contradiction is gone and per-class health
+  is back.
 - Division of labour (`/audit` = wide, `/audit3` = judge, `/audit2` = candidates) is intact.
 
 ### A.2 `/audit2` — candidate & methodology library
@@ -60,7 +61,9 @@ need a Playwright pass, not scheduled here.
   at `/audit/data/denominator.json`. The review's spec is explicit: one class-verdict table on one
   canonical denominator, never a second source (`11_AUDIT2_SPEC_CONSOLIDATED.md`). Either deploy a
   copy to `/audit2/data/` or point the fetch at `/audit/data/denominator.json`. One-line fix; until
-  then the "population:" strip shows an error string.
+  then the "population:" strip shows an error string. **Note:** the 404 is confirmed, and the fix is
+  already upstream — `findtorontoevents` PR #1235 merged: `audit2.js` now resolves
+  `../audit/data/denominator.json` first, with relative fallbacks.
 
 ### A.3 `/audit3` — the kill tribunal
 
@@ -134,8 +137,9 @@ ladder explains every prior result. Hard rule: reject any class whose per-trade 
 round trip (`07_FUND_MANAGER_PLAYBOOK.md` §0.3).
 
 **B.5 Stand up the forward-observation machine — adopt the orphan H-119 clock.**
-The strongest OOS signal in the book certifies nothing: **H-119, +1.79% selection alpha, n=435,
-73.3% alpha WR, 100% intrabar, live on `/audit2` today** (`README.md` Part 2; verified Part A.2).
+The strongest OOS signal in the book certifies nothing: **H-119, n=435, 73.3% alpha WR, 100%
+intrabar, live on `/audit2` today — not gated** (`excess_vs_benchmark_pct` 1.1764, net PF 1.135;
+gate: `PF CI-LB 0.9325 ≤ 1.0`, `coverage 80% < 90%`; `README.md` Part 2; verified Part A.2).
 Action: create **POD-H119-FORWARD-ALPHA**; convert the 8 `observe` pods to emitting paper legs with
 benchmark legs; keep known-loser cells as shadow negative controls; kill rule = forward CI-LB ≤ 0 at
 day 30/60. Concentrate emission on ≤3 pods in 2 classes; pause everything else
@@ -263,7 +267,7 @@ sequence risk, stated openly) (`THE_DECISION` §2–3; `tools/recommended_portfo
 
 | Artifact | URL | generated_at (UTC) | Headline |
 |---|---|---|---|
-| dashboard | `/audit` + `data/dashboard_data.json` | 11-27 17:36 | 135 systems, 15,284 closed, 9,072 resolved; `asset_class_health` empty |
+| dashboard | `/audit` + `data/dashboard_data.json` | 11-27 17:36 | 135 systems, 15,284 closed, 9,072 resolved; `asset_class_health` populated (regenerated) |
 | denominator | `/audit/data/denominator.json` | 11-27 12:35 | canonical 9,034/15,345; 12,232 invalid_row quarantined; SHA-256 published |
 | pods | `/audit2/audit2_pods.json` | 11-27 12:35 | 11 pods: 2 declined, 1 post_hoc, 8 observe |
 | forward | `/audit2/audit2_forward.json` | 11-27 12:35 | 456 rows; H-119 n=435 orphan, gate_ready=false |
@@ -273,10 +277,13 @@ sequence risk, stated openly) (`THE_DECISION` §2–3; `tools/recommended_portfo
 
 **Defects filed from the wire (actionable, in order):**
 1. `/audit2` fetches `denominator.json` → 404; canonical file is at `/audit/data/denominator.json`.
-   Fix path or deploy a copy. (Breaks the single-denominator strip the spec requires.)
-2. `asset_class_health` empty in live `/audit` payload — confirm deliberate removal vs generation bug.
-3. H-119 forward rows (435, intrabar-true) still orphan — no pod owns them; the +1.79% selection-alpha
-   signal the review called the strongest in the book still certifies nothing.
+   Fix path or deploy a copy. (Breaks the single-denominator strip the spec requires.) — **already
+   fixed upstream**: `findtorontoevents` PR #1235 merged; `audit2.js` now resolves
+   `../audit/data/denominator.json` first, with relative fallbacks.
+2. ~~`asset_class_health` empty in live `/audit` payload~~ — not a defect: the stale snapshot was
+   regenerated, not removed; COMMODITY is now PF 0.40/1.02 (intrabar), not 5,624.
+3. H-119 forward rows (435, intrabar-true) still orphan — no pod owns them; the review's strongest
+   signal (`excess_vs_benchmark_pct` 1.1764, net PF 1.135 — not gated) still certifies nothing.
 
 **Coverage note:** synthesized from `README.md`, `FINAL_SYNTHESIS.md`, `THE_DECISION`, `NEXT_STEPS.md`,
 02–14, 16–18, 28–33, 35, 38 doc families. The `26_ASSET_CLASS_DOSSIERS` and `42_HARVEST_UPGRADE`
