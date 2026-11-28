@@ -1,17 +1,17 @@
 {
- "generated_at": "2026-11-27T21:29:58Z",
+ "generated_at": "2026-11-28T00:34:40Z",
  "window_hours": 24,
  "status_mix": {
-  "ACTIVE": 3177610,
-  "LOST": 36800,
-  "WON": 34047,
-  "OPEN": 276,
+  "ACTIVE": 3180083,
+  "LOST": 36776,
+  "WON": 34097,
+  "OPEN": 297,
   "EXPIRED": 24
  },
  "by_source": [
   {
    "source": "coinglass",
-   "picks": 3177452,
+   "picks": 3179913,
    "resolved": 0,
    "won": 0,
    "lost": 0,
@@ -20,43 +20,43 @@
   },
   {
    "source": "battleground",
-   "picks": 39132,
-   "resolved": 39132,
-   "won": 23987,
-   "lost": 15145,
-   "mean_pct": 2.051,
+   "picks": 39135,
+   "resolved": 39135,
+   "won": 24011,
+   "lost": 15124,
+   "mean_pct": 2.061,
    "no_pnl": 1
   },
   {
    "source": "alpha_engine",
-   "picks": 15661,
-   "resolved": 15433,
-   "won": 3596,
-   "lost": 11813,
-   "mean_pct": -0.986,
+   "picks": 15678,
+   "resolved": 15429,
+   "won": 3607,
+   "lost": 11798,
+   "mean_pct": -0.983,
    "no_pnl": 0
   },
   {
    "source": "ml_battleground_system_f_clawsofdoom",
-   "picks": 14828,
-   "resolved": 14828,
-   "won": 6224,
-   "lost": 8604,
-   "mean_pct": -0.293,
-   "no_pnl": 2504
+   "picks": 14849,
+   "resolved": 14849,
+   "won": 6239,
+   "lost": 8610,
+   "mean_pct": -0.288,
+   "no_pnl": 4364
   },
   {
    "source": "crypto_signal_engine",
-   "picks": 1526,
-   "resolved": 1478,
+   "picks": 1532,
+   "resolved": 1484,
    "won": 240,
-   "lost": 1238,
-   "mean_pct": -0.355,
+   "lost": 1244,
+   "mean_pct": -0.358,
    "no_pnl": 0
   },
   {
-   "source": "regime_terminal",
-   "picks": 82,
+   "source": "super_signals",
+   "picks": 87,
    "resolved": 0,
    "won": 0,
    "lost": 0,
@@ -64,8 +64,8 @@
    "no_pnl": 0
   },
   {
-   "source": "super_signals",
-   "picks": 76,
+   "source": "regime_terminal",
+   "picks": 83,
    "resolved": 0,
    "won": 0,
    "lost": 0,
@@ -75,7 +75,7 @@
  ],
  "latest_resolved": [
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "LINK",
    "direction": "LONG",
    "status": "LOST",
@@ -83,7 +83,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "ETH",
    "direction": "LONG",
    "status": "LOST",
@@ -91,7 +91,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "DOGE",
    "direction": "LONG",
    "status": "WON",
@@ -99,7 +99,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "LINK",
    "direction": "LONG",
    "status": "WON",
@@ -107,7 +107,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "ADA",
    "direction": "LONG",
    "status": "WON",
@@ -115,7 +115,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "ETH",
    "direction": "LONG",
    "status": "WON",
@@ -123,7 +123,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "SOL",
    "direction": "LONG",
    "status": "WON",
@@ -131,7 +131,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "XRP",
    "direction": "LONG",
    "status": "WON",
@@ -139,7 +139,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "BNB",
    "direction": "LONG",
    "status": "WON",
@@ -147,7 +147,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "DOT",
    "direction": "LONG",
    "status": "WON",
@@ -155,7 +155,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "LINK",
    "direction": "LONG",
    "status": "WON",
@@ -163,7 +163,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "BNB",
    "direction": "LONG",
    "status": "LOST",
@@ -171,7 +171,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "LINK",
    "direction": "LONG",
    "status": "LOST",
@@ -179,7 +179,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "DOT",
    "direction": "LONG",
    "status": "LOST",
@@ -187,7 +187,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "ETH",
    "direction": "LONG",
    "status": "LOST",
@@ -195,7 +195,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "XRP",
    "direction": "LONG",
    "status": "LOST",
@@ -203,7 +203,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "SOL",
    "direction": "LONG",
    "status": "LOST",
@@ -211,7 +211,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "ADA",
    "direction": "LONG",
    "status": "LOST",
@@ -219,7 +219,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "AVAX",
    "direction": "LONG",
    "status": "LOST",
@@ -227,7 +227,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "2026-11-27 20:50",
+   "at": "2026-11-27 23:50",
    "symbol": "DOGE",
    "direction": "LONG",
    "status": "LOST",
@@ -237,7 +237,7 @@
  ],
  "latest_emitted": [
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "LINK",
    "direction": "LONG",
    "status": "LOST",
@@ -245,7 +245,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "ETH",
    "direction": "LONG",
    "status": "LOST",
@@ -253,7 +253,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "DOGE",
    "direction": "LONG",
    "status": "WON",
@@ -261,7 +261,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "LINK",
    "direction": "LONG",
    "status": "WON",
@@ -269,7 +269,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "ADA",
    "direction": "LONG",
    "status": "WON",
@@ -277,7 +277,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "ETH",
    "direction": "LONG",
    "status": "WON",
@@ -285,7 +285,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "SOL",
    "direction": "LONG",
    "status": "WON",
@@ -293,7 +293,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "XRP",
    "direction": "LONG",
    "status": "WON",
@@ -301,7 +301,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "BNB",
    "direction": "LONG",
    "status": "WON",
@@ -309,7 +309,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "DOT",
    "direction": "LONG",
    "status": "WON",
@@ -317,7 +317,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "LINK",
    "direction": "LONG",
    "status": "WON",
@@ -325,7 +325,7 @@
    "source": "ml_battleground_system_f_clawsofdoom"
   },
   {
-   "at": "20:50",
+   "at": "23:50",
    "symbol": "BNB",
    "direction": "LONG",
    "status": "LOST",
